@@ -1,0 +1,580 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FAE733C22034494D00898E65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE733C12034494D00898E65 /* AppDelegate.swift */; };
+		FAE733C42034494D00898E65 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE733C32034494D00898E65 /* ViewController.swift */; };
+		FAE733C72034494D00898E65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAE733C52034494D00898E65 /* Main.storyboard */; };
+		FAE733CA2034494D00898E65 /* MySkinDoctor.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAE733C82034494D00898E65 /* MySkinDoctor.xcdatamodeld */; };
+		FAE733CC2034494D00898E65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAE733CB2034494D00898E65 /* Assets.xcassets */; };
+		FAE733CF2034494D00898E65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAE733CD2034494D00898E65 /* LaunchScreen.storyboard */; };
+		FAE733DA2034494E00898E65 /* MySkinDoctorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE733D92034494E00898E65 /* MySkinDoctorTests.swift */; };
+		FAE733E52034494E00898E65 /* MySkinDoctorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE733E42034494E00898E65 /* MySkinDoctorUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FAE733D62034494E00898E65 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FAE733B62034494D00898E65 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FAE733BD2034494D00898E65;
+			remoteInfo = MySkinDoctor;
+		};
+		FAE733E12034494E00898E65 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FAE733B62034494D00898E65 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FAE733BD2034494D00898E65;
+			remoteInfo = MySkinDoctor;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FAE733BE2034494D00898E65 /* MySkinDoctor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySkinDoctor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAE733C12034494D00898E65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FAE733C32034494D00898E65 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FAE733C62034494D00898E65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FAE733C92034494D00898E65 /* MySkinDoctor.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MySkinDoctor.xcdatamodel; sourceTree = "<group>"; };
+		FAE733CB2034494D00898E65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FAE733CE2034494D00898E65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FAE733D02034494D00898E65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAE733D52034494E00898E65 /* MySkinDoctorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MySkinDoctorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAE733D92034494E00898E65 /* MySkinDoctorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySkinDoctorTests.swift; sourceTree = "<group>"; };
+		FAE733DB2034494E00898E65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAE733E02034494E00898E65 /* MySkinDoctorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MySkinDoctorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAE733E42034494E00898E65 /* MySkinDoctorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySkinDoctorUITests.swift; sourceTree = "<group>"; };
+		FAE733E62034494E00898E65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FAE733BB2034494D00898E65 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAE733D22034494E00898E65 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAE733DD2034494E00898E65 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FAE733B52034494D00898E65 = {
+			isa = PBXGroup;
+			children = (
+				FAE733C02034494D00898E65 /* MySkinDoctor */,
+				FAE733D82034494E00898E65 /* MySkinDoctorTests */,
+				FAE733E32034494E00898E65 /* MySkinDoctorUITests */,
+				FAE733BF2034494D00898E65 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FAE733BF2034494D00898E65 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FAE733BE2034494D00898E65 /* MySkinDoctor.app */,
+				FAE733D52034494E00898E65 /* MySkinDoctorTests.xctest */,
+				FAE733E02034494E00898E65 /* MySkinDoctorUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FAE733C02034494D00898E65 /* MySkinDoctor */ = {
+			isa = PBXGroup;
+			children = (
+				FAE733C12034494D00898E65 /* AppDelegate.swift */,
+				FAE733C32034494D00898E65 /* ViewController.swift */,
+				FAE733C52034494D00898E65 /* Main.storyboard */,
+				FAE733CB2034494D00898E65 /* Assets.xcassets */,
+				FAE733CD2034494D00898E65 /* LaunchScreen.storyboard */,
+				FAE733D02034494D00898E65 /* Info.plist */,
+				FAE733C82034494D00898E65 /* MySkinDoctor.xcdatamodeld */,
+			);
+			path = MySkinDoctor;
+			sourceTree = "<group>";
+		};
+		FAE733D82034494E00898E65 /* MySkinDoctorTests */ = {
+			isa = PBXGroup;
+			children = (
+				FAE733D92034494E00898E65 /* MySkinDoctorTests.swift */,
+				FAE733DB2034494E00898E65 /* Info.plist */,
+			);
+			path = MySkinDoctorTests;
+			sourceTree = "<group>";
+		};
+		FAE733E32034494E00898E65 /* MySkinDoctorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FAE733E42034494E00898E65 /* MySkinDoctorUITests.swift */,
+				FAE733E62034494E00898E65 /* Info.plist */,
+			);
+			path = MySkinDoctorUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FAE733BD2034494D00898E65 /* MySkinDoctor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAE733E92034494E00898E65 /* Build configuration list for PBXNativeTarget "MySkinDoctor" */;
+			buildPhases = (
+				FAE733BA2034494D00898E65 /* Sources */,
+				FAE733BB2034494D00898E65 /* Frameworks */,
+				FAE733BC2034494D00898E65 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MySkinDoctor;
+			productName = MySkinDoctor;
+			productReference = FAE733BE2034494D00898E65 /* MySkinDoctor.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FAE733D42034494E00898E65 /* MySkinDoctorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAE733EC2034494E00898E65 /* Build configuration list for PBXNativeTarget "MySkinDoctorTests" */;
+			buildPhases = (
+				FAE733D12034494E00898E65 /* Sources */,
+				FAE733D22034494E00898E65 /* Frameworks */,
+				FAE733D32034494E00898E65 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FAE733D72034494E00898E65 /* PBXTargetDependency */,
+			);
+			name = MySkinDoctorTests;
+			productName = MySkinDoctorTests;
+			productReference = FAE733D52034494E00898E65 /* MySkinDoctorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FAE733DF2034494E00898E65 /* MySkinDoctorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAE733EF2034494E00898E65 /* Build configuration list for PBXNativeTarget "MySkinDoctorUITests" */;
+			buildPhases = (
+				FAE733DC2034494E00898E65 /* Sources */,
+				FAE733DD2034494E00898E65 /* Frameworks */,
+				FAE733DE2034494E00898E65 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FAE733E22034494E00898E65 /* PBXTargetDependency */,
+			);
+			name = MySkinDoctorUITests;
+			productName = MySkinDoctorUITests;
+			productReference = FAE733E02034494E00898E65 /* MySkinDoctorUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FAE733B62034494D00898E65 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = TouchSoft;
+				TargetAttributes = {
+					FAE733BD2034494D00898E65 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					FAE733D42034494E00898E65 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = FAE733BD2034494D00898E65;
+					};
+					FAE733DF2034494E00898E65 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = FAE733BD2034494D00898E65;
+					};
+				};
+			};
+			buildConfigurationList = FAE733B92034494D00898E65 /* Build configuration list for PBXProject "MySkinDoctor" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FAE733B52034494D00898E65;
+			productRefGroup = FAE733BF2034494D00898E65 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FAE733BD2034494D00898E65 /* MySkinDoctor */,
+				FAE733D42034494E00898E65 /* MySkinDoctorTests */,
+				FAE733DF2034494E00898E65 /* MySkinDoctorUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FAE733BC2034494D00898E65 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAE733CF2034494D00898E65 /* LaunchScreen.storyboard in Resources */,
+				FAE733CC2034494D00898E65 /* Assets.xcassets in Resources */,
+				FAE733C72034494D00898E65 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAE733D32034494E00898E65 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAE733DE2034494E00898E65 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FAE733BA2034494D00898E65 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAE733CA2034494D00898E65 /* MySkinDoctor.xcdatamodeld in Sources */,
+				FAE733C42034494D00898E65 /* ViewController.swift in Sources */,
+				FAE733C22034494D00898E65 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAE733D12034494E00898E65 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAE733DA2034494E00898E65 /* MySkinDoctorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAE733DC2034494E00898E65 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAE733E52034494E00898E65 /* MySkinDoctorUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FAE733D72034494E00898E65 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FAE733BD2034494D00898E65 /* MySkinDoctor */;
+			targetProxy = FAE733D62034494E00898E65 /* PBXContainerItemProxy */;
+		};
+		FAE733E22034494E00898E65 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FAE733BD2034494D00898E65 /* MySkinDoctor */;
+			targetProxy = FAE733E12034494E00898E65 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FAE733C52034494D00898E65 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FAE733C62034494D00898E65 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FAE733CD2034494D00898E65 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FAE733CE2034494D00898E65 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FAE733E72034494E00898E65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FAE733E82034494E00898E65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FAE733EA2034494E00898E65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 75343VFMU9;
+				INFOPLIST_FILE = MySkinDoctor/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.touchsoft.MySkinDoctor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FAE733EB2034494E00898E65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 75343VFMU9;
+				INFOPLIST_FILE = MySkinDoctor/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.touchsoft.MySkinDoctor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FAE733ED2034494E00898E65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 75343VFMU9;
+				INFOPLIST_FILE = MySkinDoctorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.touchsoft.MySkinDoctorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MySkinDoctor.app/MySkinDoctor";
+			};
+			name = Debug;
+		};
+		FAE733EE2034494E00898E65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 75343VFMU9;
+				INFOPLIST_FILE = MySkinDoctorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.touchsoft.MySkinDoctorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MySkinDoctor.app/MySkinDoctor";
+			};
+			name = Release;
+		};
+		FAE733F02034494E00898E65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 75343VFMU9;
+				INFOPLIST_FILE = MySkinDoctorUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.touchsoft.MySkinDoctorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MySkinDoctor;
+			};
+			name = Debug;
+		};
+		FAE733F12034494E00898E65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 75343VFMU9;
+				INFOPLIST_FILE = MySkinDoctorUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.touchsoft.MySkinDoctorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MySkinDoctor;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FAE733B92034494D00898E65 /* Build configuration list for PBXProject "MySkinDoctor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAE733E72034494E00898E65 /* Debug */,
+				FAE733E82034494E00898E65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FAE733E92034494E00898E65 /* Build configuration list for PBXNativeTarget "MySkinDoctor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAE733EA2034494E00898E65 /* Debug */,
+				FAE733EB2034494E00898E65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FAE733EC2034494E00898E65 /* Build configuration list for PBXNativeTarget "MySkinDoctorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAE733ED2034494E00898E65 /* Debug */,
+				FAE733EE2034494E00898E65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FAE733EF2034494E00898E65 /* Build configuration list for PBXNativeTarget "MySkinDoctorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAE733F02034494E00898E65 /* Debug */,
+				FAE733F12034494E00898E65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FAE733C82034494D00898E65 /* MySkinDoctor.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FAE733C92034494D00898E65 /* MySkinDoctor.xcdatamodel */,
+			);
+			currentVersion = FAE733C92034494D00898E65 /* MySkinDoctor.xcdatamodel */;
+			path = MySkinDoctor.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = FAE733B62034494D00898E65 /* Project object */;
+}
