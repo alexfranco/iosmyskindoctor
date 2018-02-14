@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,92 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MySkinDoctor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C0d-7b-P5f">
+                                <rect key="frame" x="0.0" y="20" width="375" height="596"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fxj-Gv-hJz">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="190"/>
+                                        <subviews>
+                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="1hK-Fg-wIB">
+                                                <rect key="frame" x="20" y="20" width="335" height="150"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="150" id="fdp-gy-vpy"/>
+                                                </constraints>
+                                            </imageView>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s3j-at-y44" customClass="AkiraTextField" customModule="TextFieldEffects">
+                                                <rect key="frame" x="20" y="203" width="335" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="0mY-9A-bFe"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UPC-Qa-yGG" customClass="AkiraTextField" customModule="TextFieldEffects">
+                                                <rect key="frame" x="20" y="253" width="335" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="bDh-WF-eh7"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="UPC-Qa-yGG" firstAttribute="trailing" secondItem="s3j-at-y44" secondAttribute="trailing" id="2dF-99-y7P"/>
+                                            <constraint firstItem="s3j-at-y44" firstAttribute="top" secondItem="1hK-Fg-wIB" secondAttribute="bottom" constant="33" id="4m2-tQ-cWr"/>
+                                            <constraint firstAttribute="trailing" secondItem="s3j-at-y44" secondAttribute="trailing" constant="20" id="8Px-nd-3IE"/>
+                                            <constraint firstAttribute="bottom" secondItem="1hK-Fg-wIB" secondAttribute="bottom" constant="20" id="ATb-NO-TXg"/>
+                                            <constraint firstItem="s3j-at-y44" firstAttribute="leading" secondItem="Fxj-Gv-hJz" secondAttribute="leading" constant="20" id="IZH-lO-8bS"/>
+                                            <constraint firstItem="1hK-Fg-wIB" firstAttribute="top" secondItem="Fxj-Gv-hJz" secondAttribute="top" constant="20" id="N0L-ka-mCp"/>
+                                            <constraint firstAttribute="trailing" secondItem="1hK-Fg-wIB" secondAttribute="trailing" constant="20" id="R6l-TZ-1Sm"/>
+                                            <constraint firstItem="UPC-Qa-yGG" firstAttribute="leading" secondItem="s3j-at-y44" secondAttribute="leading" id="TP6-TS-9hT"/>
+                                            <constraint firstItem="1hK-Fg-wIB" firstAttribute="leading" secondItem="Fxj-Gv-hJz" secondAttribute="leading" constant="20" id="j4O-rV-jbT"/>
+                                            <constraint firstItem="UPC-Qa-yGG" firstAttribute="bottom" secondItem="s3j-at-y44" secondAttribute="bottom" constant="50" id="tmY-VZ-7Wz"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Fxj-Gv-hJz" firstAttribute="leading" secondItem="C0d-7b-P5f" secondAttribute="leading" id="1Jp-Tp-zVR"/>
+                                    <constraint firstAttribute="trailing" secondItem="Fxj-Gv-hJz" secondAttribute="trailing" id="Mra-ev-ai8"/>
+                                    <constraint firstItem="Fxj-Gv-hJz" firstAttribute="top" secondItem="C0d-7b-P5f" secondAttribute="top" id="QNe-G2-Dcx"/>
+                                    <constraint firstAttribute="bottom" secondItem="Fxj-Gv-hJz" secondAttribute="bottom" id="foi-2g-1oZ"/>
+                                    <constraint firstItem="Fxj-Gv-hJz" firstAttribute="centerX" secondItem="C0d-7b-P5f" secondAttribute="centerX" id="qkD-OE-9Nd"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="C0d-7b-P5f" secondAttribute="trailing" id="Bzi-Pi-c8P"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="C0d-7b-P5f" secondAttribute="bottom" constant="51" id="fri-iy-vOD"/>
+                            <constraint firstItem="C0d-7b-P5f" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="o5g-ez-PMf"/>
+                            <constraint firstItem="C0d-7b-P5f" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="xQa-ud-upA"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="141.59999999999999" y="133.5832083958021"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo" width="678" height="244"/>
+    </resources>
 </document>
