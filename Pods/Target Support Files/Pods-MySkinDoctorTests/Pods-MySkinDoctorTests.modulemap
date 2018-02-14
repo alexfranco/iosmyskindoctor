@@ -1,0 +1,6 @@
+framework module Pods_MySkinDoctorTests {
+  umbrella header "Pods-MySkinDoctorTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

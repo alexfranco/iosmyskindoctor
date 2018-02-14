@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BACDC2609AC77EBE02475BED /* Pods_MySkinDoctor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01583D02E29AF032A253E558 /* Pods_MySkinDoctor.framework */; };
+		F282CA516A5C0262A9EDB9AE /* Pods_MySkinDoctorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E2D019D11880DC312A040CC /* Pods_MySkinDoctorTests.framework */; };
+		F9D2102A6279AFF2B59A69CC /* Pods_MySkinDoctorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0C3C2F56ED18563B887D4D9 /* Pods_MySkinDoctorUITests.framework */; };
 		FAE733C22034494D00898E65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE733C12034494D00898E65 /* AppDelegate.swift */; };
 		FAE733C42034494D00898E65 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE733C32034494D00898E65 /* ViewController.swift */; };
 		FAE733C72034494D00898E65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAE733C52034494D00898E65 /* Main.storyboard */; };
@@ -15,6 +18,15 @@
 		FAE733CF2034494D00898E65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAE733CD2034494D00898E65 /* LaunchScreen.storyboard */; };
 		FAE733DA2034494E00898E65 /* MySkinDoctorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE733D92034494E00898E65 /* MySkinDoctorTests.swift */; };
 		FAE733E52034494E00898E65 /* MySkinDoctorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE733E42034494E00898E65 /* MySkinDoctorUITests.swift */; };
+		FAE733F420344AE200898E65 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE733F320344AE200898E65 /* LoginViewController.swift */; };
+		FAE733F520344AE200898E65 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE733F320344AE200898E65 /* LoginViewController.swift */; };
+		FAE733F620344AE200898E65 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE733F320344AE200898E65 /* LoginViewController.swift */; };
+		FAE733F820344B2800898E65 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE733F720344B2800898E65 /* RegistrationViewController.swift */; };
+		FAE733F920344B2800898E65 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE733F720344B2800898E65 /* RegistrationViewController.swift */; };
+		FAE733FA20344B2800898E65 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE733F720344B2800898E65 /* RegistrationViewController.swift */; };
+		FAE733FC20344B5100898E65 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = FAE733FB20344B5100898E65 /* Podfile */; };
+		FAE733FD20344B5100898E65 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = FAE733FB20344B5100898E65 /* Podfile */; };
+		FAE733FE20344B5100898E65 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = FAE733FB20344B5100898E65 /* Podfile */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +47,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01583D02E29AF032A253E558 /* Pods_MySkinDoctor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MySkinDoctor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		06490DD71C9874D0D9972FBE /* Pods-MySkinDoctorUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySkinDoctorUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MySkinDoctorUITests/Pods-MySkinDoctorUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		19DF0ED90EB9C405B3E38F3B /* Pods-MySkinDoctor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySkinDoctor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MySkinDoctor/Pods-MySkinDoctor.debug.xcconfig"; sourceTree = "<group>"; };
+		2E2D019D11880DC312A040CC /* Pods_MySkinDoctorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MySkinDoctorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2EA351FB6344405FCA1ECF1E /* Pods-MySkinDoctor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySkinDoctor.release.xcconfig"; path = "Pods/Target Support Files/Pods-MySkinDoctor/Pods-MySkinDoctor.release.xcconfig"; sourceTree = "<group>"; };
+		85B14CEDA9F10AD5CDFAFE54 /* Pods-MySkinDoctorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySkinDoctorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MySkinDoctorTests/Pods-MySkinDoctorTests.release.xcconfig"; sourceTree = "<group>"; };
+		A8E80ED1315E894849856D66 /* Pods-MySkinDoctorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySkinDoctorUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MySkinDoctorUITests/Pods-MySkinDoctorUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B7FBD70382F1461742FB7DCB /* Pods-MySkinDoctorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySkinDoctorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MySkinDoctorTests/Pods-MySkinDoctorTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E0C3C2F56ED18563B887D4D9 /* Pods_MySkinDoctorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MySkinDoctorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAE733BE2034494D00898E65 /* MySkinDoctor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySkinDoctor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAE733C12034494D00898E65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAE733C32034494D00898E65 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +70,9 @@
 		FAE733E02034494E00898E65 /* MySkinDoctorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MySkinDoctorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAE733E42034494E00898E65 /* MySkinDoctorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySkinDoctorUITests.swift; sourceTree = "<group>"; };
 		FAE733E62034494E00898E65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAE733F320344AE200898E65 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		FAE733F720344B2800898E65 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		FAE733FB20344B5100898E65 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BACDC2609AC77EBE02475BED /* Pods_MySkinDoctor.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F282CA516A5C0262A9EDB9AE /* Pods_MySkinDoctorTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +96,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9D2102A6279AFF2B59A69CC /* Pods_MySkinDoctorUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6C7CC2BD03758D6ACE1BAADC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				01583D02E29AF032A253E558 /* Pods_MySkinDoctor.framework */,
+				2E2D019D11880DC312A040CC /* Pods_MySkinDoctorTests.framework */,
+				E0C3C2F56ED18563B887D4D9 /* Pods_MySkinDoctorUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C48825061086BF1E8DD69024 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				19DF0ED90EB9C405B3E38F3B /* Pods-MySkinDoctor.debug.xcconfig */,
+				2EA351FB6344405FCA1ECF1E /* Pods-MySkinDoctor.release.xcconfig */,
+				B7FBD70382F1461742FB7DCB /* Pods-MySkinDoctorTests.debug.xcconfig */,
+				85B14CEDA9F10AD5CDFAFE54 /* Pods-MySkinDoctorTests.release.xcconfig */,
+				06490DD71C9874D0D9972FBE /* Pods-MySkinDoctorUITests.debug.xcconfig */,
+				A8E80ED1315E894849856D66 /* Pods-MySkinDoctorUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		FAE733B52034494D00898E65 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +133,8 @@
 				FAE733D82034494E00898E65 /* MySkinDoctorTests */,
 				FAE733E32034494E00898E65 /* MySkinDoctorUITests */,
 				FAE733BF2034494D00898E65 /* Products */,
+				C48825061086BF1E8DD69024 /* Pods */,
+				6C7CC2BD03758D6ACE1BAADC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +151,8 @@
 		FAE733C02034494D00898E65 /* MySkinDoctor */ = {
 			isa = PBXGroup;
 			children = (
+				FAE733FB20344B5100898E65 /* Podfile */,
+				FAE733F220344AC700898E65 /* LoginFlow */,
 				FAE733C12034494D00898E65 /* AppDelegate.swift */,
 				FAE733C32034494D00898E65 /* ViewController.swift */,
 				FAE733C52034494D00898E65 /* Main.storyboard */,
@@ -128,6 +182,15 @@
 			path = MySkinDoctorUITests;
 			sourceTree = "<group>";
 		};
+		FAE733F220344AC700898E65 /* LoginFlow */ = {
+			isa = PBXGroup;
+			children = (
+				FAE733F720344B2800898E65 /* RegistrationViewController.swift */,
+				FAE733F320344AE200898E65 /* LoginViewController.swift */,
+			);
+			path = LoginFlow;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +198,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FAE733E92034494E00898E65 /* Build configuration list for PBXNativeTarget "MySkinDoctor" */;
 			buildPhases = (
+				599E3B59ED4ABB32FFB4C9CB /* [CP] Check Pods Manifest.lock */,
 				FAE733BA2034494D00898E65 /* Sources */,
 				FAE733BB2034494D00898E65 /* Frameworks */,
 				FAE733BC2034494D00898E65 /* Resources */,
+				ED28A5A8DB3F63ABEE6B8B14 /* [CP] Embed Pods Frameworks */,
+				363F0DD382C62687F4FF9C65 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -152,9 +218,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FAE733EC2034494E00898E65 /* Build configuration list for PBXNativeTarget "MySkinDoctorTests" */;
 			buildPhases = (
+				536B31C71E39F4BD4BEE67BF /* [CP] Check Pods Manifest.lock */,
 				FAE733D12034494E00898E65 /* Sources */,
 				FAE733D22034494E00898E65 /* Frameworks */,
 				FAE733D32034494E00898E65 /* Resources */,
+				A2D3A90483A6C2221D90BD7E /* [CP] Embed Pods Frameworks */,
+				A91ADE6B10F1A1D7EEC87720 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -170,9 +239,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FAE733EF2034494E00898E65 /* Build configuration list for PBXNativeTarget "MySkinDoctorUITests" */;
 			buildPhases = (
+				6CF245219EA6E3D297764BBB /* [CP] Check Pods Manifest.lock */,
 				FAE733DC2034494E00898E65 /* Sources */,
 				FAE733DD2034494E00898E65 /* Frameworks */,
 				FAE733DE2034494E00898E65 /* Resources */,
+				BFF4438418AD4AA5E52B3C14 /* [CP] Embed Pods Frameworks */,
+				0B6CC20917054CFD63FFFB19 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -237,6 +309,7 @@
 			files = (
 				FAE733CF2034494D00898E65 /* LaunchScreen.storyboard in Resources */,
 				FAE733CC2034494D00898E65 /* Assets.xcassets in Resources */,
+				FAE733FC20344B5100898E65 /* Podfile in Resources */,
 				FAE733C72034494D00898E65 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -245,6 +318,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAE733FD20344B5100898E65 /* Podfile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,19 +326,214 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAE733FE20344B5100898E65 /* Podfile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0B6CC20917054CFD63FFFB19 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MySkinDoctorUITests/Pods-MySkinDoctorUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		363F0DD382C62687F4FF9C65 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MySkinDoctor/Pods-MySkinDoctor-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		536B31C71E39F4BD4BEE67BF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MySkinDoctorTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		599E3B59ED4ABB32FFB4C9CB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MySkinDoctor-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6CF245219EA6E3D297764BBB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MySkinDoctorUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A2D3A90483A6C2221D90BD7E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MySkinDoctorTests/Pods-MySkinDoctorTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ActionSheetPicker-3.0/ActionSheetPicker_3_0.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/BSKeyboardControls/BSKeyboardControls.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/JSONModel/JSONModel.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ActionSheetPicker_3_0.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BSKeyboardControls.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSONModel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MySkinDoctorTests/Pods-MySkinDoctorTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A91ADE6B10F1A1D7EEC87720 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MySkinDoctorTests/Pods-MySkinDoctorTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BFF4438418AD4AA5E52B3C14 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MySkinDoctorUITests/Pods-MySkinDoctorUITests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ActionSheetPicker-3.0/ActionSheetPicker_3_0.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/BSKeyboardControls/BSKeyboardControls.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/JSONModel/JSONModel.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ActionSheetPicker_3_0.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BSKeyboardControls.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSONModel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MySkinDoctorUITests/Pods-MySkinDoctorUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ED28A5A8DB3F63ABEE6B8B14 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MySkinDoctor/Pods-MySkinDoctor-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ActionSheetPicker-3.0/ActionSheetPicker_3_0.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/BSKeyboardControls/BSKeyboardControls.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/JSONModel/JSONModel.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ActionSheetPicker_3_0.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BSKeyboardControls.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSONModel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MySkinDoctor/Pods-MySkinDoctor-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FAE733BA2034494D00898E65 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAE733F420344AE200898E65 /* LoginViewController.swift in Sources */,
 				FAE733CA2034494D00898E65 /* MySkinDoctor.xcdatamodeld in Sources */,
 				FAE733C42034494D00898E65 /* ViewController.swift in Sources */,
 				FAE733C22034494D00898E65 /* AppDelegate.swift in Sources */,
+				FAE733F820344B2800898E65 /* RegistrationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +541,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAE733F920344B2800898E65 /* RegistrationViewController.swift in Sources */,
+				FAE733F520344AE200898E65 /* LoginViewController.swift in Sources */,
 				FAE733DA2034494E00898E65 /* MySkinDoctorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,6 +551,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAE733FA20344B2800898E65 /* RegistrationViewController.swift in Sources */,
+				FAE733F620344AE200898E65 /* LoginViewController.swift in Sources */,
 				FAE733E52034494E00898E65 /* MySkinDoctorUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,6 +701,7 @@
 		};
 		FAE733EA2034494E00898E65 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19DF0ED90EB9C405B3E38F3B /* Pods-MySkinDoctor.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -443,6 +717,7 @@
 		};
 		FAE733EB2034494E00898E65 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2EA351FB6344405FCA1ECF1E /* Pods-MySkinDoctor.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -458,8 +733,8 @@
 		};
 		FAE733ED2034494E00898E65 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7FBD70382F1461742FB7DCB /* Pods-MySkinDoctorTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 75343VFMU9;
@@ -475,8 +750,8 @@
 		};
 		FAE733EE2034494E00898E65 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 85B14CEDA9F10AD5CDFAFE54 /* Pods-MySkinDoctorTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 75343VFMU9;
@@ -492,8 +767,8 @@
 		};
 		FAE733F02034494E00898E65 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06490DD71C9874D0D9972FBE /* Pods-MySkinDoctorUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 75343VFMU9;
 				INFOPLIST_FILE = MySkinDoctorUITests/Info.plist;
@@ -508,8 +783,8 @@
 		};
 		FAE733F12034494E00898E65 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8E80ED1315E894849856D66 /* Pods-MySkinDoctorUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 75343VFMU9;
 				INFOPLIST_FILE = MySkinDoctorUITests/Info.plist;
