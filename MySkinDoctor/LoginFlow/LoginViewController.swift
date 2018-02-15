@@ -7,3 +7,20 @@
 //
 
 import Foundation
+import TextFieldEffects
+import UIKit
+
+class LoginViewController: FormViewController {
+	
+	@IBOutlet weak var logoImageView: UIImageView!
+	@IBOutlet weak var emailTextField: AkiraTextField!
+	@IBOutlet weak var passwordTextField: AkiraTextField!
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		registerForKeyboardReturnKey([emailTextField, passwordTextField])
+	}
+	
+	@IBAction func onNextButtonPressed(_ sender: Any) {
+	}
+}

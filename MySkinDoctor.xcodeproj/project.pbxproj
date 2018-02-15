@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		780F7017203587CB00D96601 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780F7016203587CB00D96601 /* FormViewController.swift */; };
+		780F70192035885E00D96601 /* ProgressBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780F70182035885E00D96601 /* ProgressBarViewController.swift */; };
+		780F701A203592B400D96601 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780F7016203587CB00D96601 /* FormViewController.swift */; };
+		780F701B203592B500D96601 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780F7016203587CB00D96601 /* FormViewController.swift */; };
+		780F701C203592B800D96601 /* ProgressBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780F70182035885E00D96601 /* ProgressBarViewController.swift */; };
+		780F701D203592B900D96601 /* ProgressBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780F70182035885E00D96601 /* ProgressBarViewController.swift */; };
 		BACDC2609AC77EBE02475BED /* Pods_MySkinDoctor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01583D02E29AF032A253E558 /* Pods_MySkinDoctor.framework */; };
 		F282CA516A5C0262A9EDB9AE /* Pods_MySkinDoctorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E2D019D11880DC312A040CC /* Pods_MySkinDoctorTests.framework */; };
 		F9D2102A6279AFF2B59A69CC /* Pods_MySkinDoctorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0C3C2F56ED18563B887D4D9 /* Pods_MySkinDoctorUITests.framework */; };
@@ -52,6 +58,8 @@
 		19DF0ED90EB9C405B3E38F3B /* Pods-MySkinDoctor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySkinDoctor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MySkinDoctor/Pods-MySkinDoctor.debug.xcconfig"; sourceTree = "<group>"; };
 		2E2D019D11880DC312A040CC /* Pods_MySkinDoctorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MySkinDoctorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EA351FB6344405FCA1ECF1E /* Pods-MySkinDoctor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySkinDoctor.release.xcconfig"; path = "Pods/Target Support Files/Pods-MySkinDoctor/Pods-MySkinDoctor.release.xcconfig"; sourceTree = "<group>"; };
+		780F7016203587CB00D96601 /* FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
+		780F70182035885E00D96601 /* ProgressBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarViewController.swift; sourceTree = "<group>"; };
 		85B14CEDA9F10AD5CDFAFE54 /* Pods-MySkinDoctorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySkinDoctorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MySkinDoctorTests/Pods-MySkinDoctorTests.release.xcconfig"; sourceTree = "<group>"; };
 		A8E80ED1315E894849856D66 /* Pods-MySkinDoctorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySkinDoctorUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MySkinDoctorUITests/Pods-MySkinDoctorUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B7FBD70382F1461742FB7DCB /* Pods-MySkinDoctorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySkinDoctorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MySkinDoctorTests/Pods-MySkinDoctorTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -126,13 +134,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		FAC1AF0720345B3800547BBC /* Custom */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Custom;
-			sourceTree = "<group>";
-		};
 		FAE733B52034494D00898E65 = {
 			isa = PBXGroup;
 			children = (
@@ -158,7 +159,6 @@
 		FAE733C02034494D00898E65 /* MySkinDoctor */ = {
 			isa = PBXGroup;
 			children = (
-				FAC1AF0720345B3800547BBC /* Custom */,
 				FAE733FB20344B5100898E65 /* Podfile */,
 				FAE733F220344AC700898E65 /* LoginFlow */,
 				FAE733C12034494D00898E65 /* AppDelegate.swift */,
@@ -168,6 +168,8 @@
 				FAE733CD2034494D00898E65 /* LaunchScreen.storyboard */,
 				FAE733D02034494D00898E65 /* Info.plist */,
 				FAE733C82034494D00898E65 /* MySkinDoctor.xcdatamodeld */,
+				780F7016203587CB00D96601 /* FormViewController.swift */,
+				780F70182035885E00D96601 /* ProgressBarViewController.swift */,
 			);
 			path = MySkinDoctor;
 			sourceTree = "<group>";
@@ -436,6 +438,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/BSKeyboardControls/BSKeyboardControls.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/JSONModel/JSONModel.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
@@ -447,6 +450,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BSKeyboardControls.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSONModel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
@@ -483,6 +487,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/BSKeyboardControls/BSKeyboardControls.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/JSONModel/JSONModel.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
@@ -494,6 +499,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BSKeyboardControls.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSONModel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
@@ -515,6 +521,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/BSKeyboardControls/BSKeyboardControls.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/JSONModel/JSONModel.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
@@ -526,6 +533,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BSKeyboardControls.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSONModel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
@@ -543,6 +551,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				780F7017203587CB00D96601 /* FormViewController.swift in Sources */,
+				780F70192035885E00D96601 /* ProgressBarViewController.swift in Sources */,
 				FAE733F420344AE200898E65 /* LoginViewController.swift in Sources */,
 				FAE733CA2034494D00898E65 /* MySkinDoctor.xcdatamodeld in Sources */,
 				FAE733C42034494D00898E65 /* ViewController.swift in Sources */,
@@ -557,6 +567,8 @@
 			files = (
 				FAE733F920344B2800898E65 /* RegistrationViewController.swift in Sources */,
 				FAE733F520344AE200898E65 /* LoginViewController.swift in Sources */,
+				780F701C203592B800D96601 /* ProgressBarViewController.swift in Sources */,
+				780F701A203592B400D96601 /* FormViewController.swift in Sources */,
 				FAE733DA2034494E00898E65 /* MySkinDoctorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -567,6 +579,8 @@
 			files = (
 				FAE733FA20344B2800898E65 /* RegistrationViewController.swift in Sources */,
 				FAE733F620344AE200898E65 /* LoginViewController.swift in Sources */,
+				780F701D203592B900D96601 /* ProgressBarViewController.swift in Sources */,
+				780F701B203592B500D96601 /* FormViewController.swift in Sources */,
 				FAE733E52034494E00898E65 /* MySkinDoctorUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

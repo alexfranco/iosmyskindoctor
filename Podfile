@@ -9,8 +9,9 @@ pod 'BSKeyboardControls'
 pod 'ActionSheetPicker-3.0'
 pod 'JSONModel'
 pod 'Firebase/Core'
-pod 'Alamofire', '~> 4.6'
-pod 'TextFieldEffects', '~> 1.4'
+pod 'Alamofire'
+pod 'TextFieldEffects'
+pod 'IQKeyboardManagerSwift'
 
 end
 
