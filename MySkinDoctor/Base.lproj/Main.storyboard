@@ -19,10 +19,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C0d-7b-P5f">
-                                <rect key="frame" x="0.0" y="20" width="375" height="586"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="577"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fxj-Gv-hJz">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="424"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="427"/>
                                         <subviews>
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="1hK-Fg-wIB">
                                                 <rect key="frame" x="20" y="20" width="335" height="150"/>
@@ -40,7 +40,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FJp-az-mfl" customClass="AkiraTextField" customModule="TextFieldEffects">
-                                                <rect key="frame" x="20" y="251" width="335" height="50"/>
+                                                <rect key="frame" x="20" y="245" width="335" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="Niu-KS-meq"/>
                                                 </constraints>
@@ -48,35 +48,33 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byO-ag-8v2">
-                                                <rect key="frame" x="20" y="313" width="335" height="50"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byO-ag-8v2" customClass="PositiveButton" customModule="MySkinDoctor" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="307" width="335" height="50"/>
                                                 <state key="normal" title="Sign In"/>
                                                 <connections>
                                                     <action selector="onNextButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T1Q-fd-SWg"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot Password?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8hW-WU-FYj">
-                                                <rect key="frame" x="20" y="383" width="335" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IrI-S3-egB" customClass="NoBackgroundButton" customModule="MySkinDoctor" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="377" width="335" height="30"/>
+                                                <state key="normal" title="Forgot Password?"/>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="FJp-az-mfl" firstAttribute="leading" secondItem="Yw0-UV-ync" secondAttribute="leading" id="3K4-Zz-8U2"/>
-                                            <constraint firstItem="8hW-WU-FYj" firstAttribute="top" secondItem="byO-ag-8v2" secondAttribute="bottom" constant="20" id="IjF-6t-cqQ"/>
+                                            <constraint firstItem="IrI-S3-egB" firstAttribute="top" secondItem="byO-ag-8v2" secondAttribute="bottom" constant="20" id="7Sv-3z-IJf"/>
                                             <constraint firstItem="FJp-az-mfl" firstAttribute="trailing" secondItem="Yw0-UV-ync" secondAttribute="trailing" id="JfX-dY-6vV"/>
                                             <constraint firstItem="Yw0-UV-ync" firstAttribute="leading" secondItem="Fxj-Gv-hJz" secondAttribute="leading" constant="20" id="KWO-h8-9Rh"/>
-                                            <constraint firstItem="FJp-az-mfl" firstAttribute="top" secondItem="Yw0-UV-ync" secondAttribute="bottom" constant="11" id="Kfi-7O-56u"/>
+                                            <constraint firstItem="FJp-az-mfl" firstAttribute="top" secondItem="Yw0-UV-ync" secondAttribute="bottom" constant="5" id="Kfi-7O-56u"/>
+                                            <constraint firstAttribute="bottom" secondItem="IrI-S3-egB" secondAttribute="bottom" constant="20" id="LpD-jY-w9I"/>
                                             <constraint firstItem="1hK-Fg-wIB" firstAttribute="top" secondItem="Fxj-Gv-hJz" secondAttribute="top" constant="20" id="N0L-ka-mCp"/>
                                             <constraint firstAttribute="trailing" secondItem="1hK-Fg-wIB" secondAttribute="trailing" constant="20" id="R6l-TZ-1Sm"/>
                                             <constraint firstItem="byO-ag-8v2" firstAttribute="trailing" secondItem="FJp-az-mfl" secondAttribute="trailing" id="RWn-ox-Ky5"/>
                                             <constraint firstItem="byO-ag-8v2" firstAttribute="height" secondItem="FJp-az-mfl" secondAttribute="height" id="W98-fW-KAn"/>
                                             <constraint firstItem="byO-ag-8v2" firstAttribute="top" secondItem="FJp-az-mfl" secondAttribute="bottom" constant="12" id="XOk-wu-ywM"/>
-                                            <constraint firstItem="8hW-WU-FYj" firstAttribute="leading" secondItem="byO-ag-8v2" secondAttribute="leading" id="Xjj-At-vsb"/>
-                                            <constraint firstItem="8hW-WU-FYj" firstAttribute="trailing" secondItem="byO-ag-8v2" secondAttribute="trailing" id="aRG-xp-nbv"/>
-                                            <constraint firstAttribute="bottom" secondItem="8hW-WU-FYj" secondAttribute="bottom" constant="20" id="aRY-Ck-uy3"/>
+                                            <constraint firstItem="IrI-S3-egB" firstAttribute="leading" secondItem="Fxj-Gv-hJz" secondAttribute="leading" constant="20" id="dwI-6N-T8o"/>
+                                            <constraint firstAttribute="trailing" secondItem="IrI-S3-egB" secondAttribute="trailing" constant="20" id="g8g-LY-bex"/>
                                             <constraint firstItem="1hK-Fg-wIB" firstAttribute="leading" secondItem="Fxj-Gv-hJz" secondAttribute="leading" constant="20" id="j4O-rV-jbT"/>
                                             <constraint firstItem="Yw0-UV-ync" firstAttribute="top" secondItem="1hK-Fg-wIB" secondAttribute="bottom" constant="20" id="sfE-Pe-5Q6"/>
                                             <constraint firstItem="byO-ag-8v2" firstAttribute="leading" secondItem="FJp-az-mfl" secondAttribute="leading" id="w6f-zk-vou"/>
@@ -92,20 +90,18 @@
                                     <constraint firstItem="Fxj-Gv-hJz" firstAttribute="centerX" secondItem="C0d-7b-P5f" secondAttribute="centerX" id="qkD-OE-9Nd"/>
                                 </constraints>
                             </scrollView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not registered? Create an account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L4t-bS-ZvY">
-                                <rect key="frame" x="20" y="626" width="335" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ehD-Ue-ib8" customClass="NoBackgroundButton" customModule="MySkinDoctor" customModuleProvider="target">
+                                <rect key="frame" x="20" y="617" width="335" height="30"/>
+                                <state key="normal" title="Not registered? Create an account"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ehD-Ue-ib8" secondAttribute="bottom" constant="20" id="0Hh-8g-45W"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="C0d-7b-P5f" secondAttribute="trailing" id="Bzi-Pi-c8P"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="L4t-bS-ZvY" secondAttribute="trailing" constant="20" id="CDb-hH-ytt"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="L4t-bS-ZvY" secondAttribute="bottom" constant="20" id="DI8-RD-INF"/>
-                            <constraint firstItem="L4t-bS-ZvY" firstAttribute="top" secondItem="C0d-7b-P5f" secondAttribute="bottom" constant="20" id="Hrg-rE-aSJ"/>
-                            <constraint firstItem="L4t-bS-ZvY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Ta2-cM-r1J"/>
+                            <constraint firstItem="ehD-Ue-ib8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="crn-sP-1fT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ehD-Ue-ib8" secondAttribute="trailing" constant="20" id="gG5-yb-TOO"/>
+                            <constraint firstItem="ehD-Ue-ib8" firstAttribute="top" secondItem="C0d-7b-P5f" secondAttribute="bottom" constant="20" id="n5K-rY-FZI"/>
                             <constraint firstItem="C0d-7b-P5f" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="o5g-ez-PMf"/>
                             <constraint firstItem="C0d-7b-P5f" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="xQa-ud-upA"/>
                         </constraints>

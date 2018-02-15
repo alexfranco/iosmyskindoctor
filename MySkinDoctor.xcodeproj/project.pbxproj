@@ -13,6 +13,10 @@
 		780F701B203592B500D96601 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780F7016203587CB00D96601 /* FormViewController.swift */; };
 		780F701C203592B800D96601 /* ProgressBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780F70182035885E00D96601 /* ProgressBarViewController.swift */; };
 		780F701D203592B900D96601 /* ProgressBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780F70182035885E00D96601 /* ProgressBarViewController.swift */; };
+		780F70202035A07000D96601 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780F701F2035A07000D96601 /* Style.swift */; };
+		780F70222035A1B400D96601 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780F70212035A1B400D96601 /* ThemeManager.swift */; };
+		780F70242035A63700D96601 /* PositiveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780F70232035A63700D96601 /* PositiveButton.swift */; };
+		780F70262035AABB00D96601 /* NoBackgroundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780F70252035AABB00D96601 /* NoBackgroundButton.swift */; };
 		BACDC2609AC77EBE02475BED /* Pods_MySkinDoctor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01583D02E29AF032A253E558 /* Pods_MySkinDoctor.framework */; };
 		F282CA516A5C0262A9EDB9AE /* Pods_MySkinDoctorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E2D019D11880DC312A040CC /* Pods_MySkinDoctorTests.framework */; };
 		F9D2102A6279AFF2B59A69CC /* Pods_MySkinDoctorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0C3C2F56ED18563B887D4D9 /* Pods_MySkinDoctorUITests.framework */; };
@@ -60,6 +64,10 @@
 		2EA351FB6344405FCA1ECF1E /* Pods-MySkinDoctor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySkinDoctor.release.xcconfig"; path = "Pods/Target Support Files/Pods-MySkinDoctor/Pods-MySkinDoctor.release.xcconfig"; sourceTree = "<group>"; };
 		780F7016203587CB00D96601 /* FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
 		780F70182035885E00D96601 /* ProgressBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarViewController.swift; sourceTree = "<group>"; };
+		780F701F2035A07000D96601 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
+		780F70212035A1B400D96601 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
+		780F70232035A63700D96601 /* PositiveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositiveButton.swift; sourceTree = "<group>"; };
+		780F70252035AABB00D96601 /* NoBackgroundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoBackgroundButton.swift; sourceTree = "<group>"; };
 		85B14CEDA9F10AD5CDFAFE54 /* Pods-MySkinDoctorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySkinDoctorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MySkinDoctorTests/Pods-MySkinDoctorTests.release.xcconfig"; sourceTree = "<group>"; };
 		A8E80ED1315E894849856D66 /* Pods-MySkinDoctorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySkinDoctorUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MySkinDoctorUITests/Pods-MySkinDoctorUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B7FBD70382F1461742FB7DCB /* Pods-MySkinDoctorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySkinDoctorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MySkinDoctorTests/Pods-MySkinDoctorTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -121,6 +129,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		780F701E2035A06000D96601 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				780F701F2035A07000D96601 /* Style.swift */,
+				780F70212035A1B400D96601 /* ThemeManager.swift */,
+				780F70232035A63700D96601 /* PositiveButton.swift */,
+				780F70252035AABB00D96601 /* NoBackgroundButton.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
 		C48825061086BF1E8DD69024 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +178,7 @@
 		FAE733C02034494D00898E65 /* MySkinDoctor */ = {
 			isa = PBXGroup;
 			children = (
+				780F701E2035A06000D96601 /* Theme */,
 				FAE733FB20344B5100898E65 /* Podfile */,
 				FAE733F220344AC700898E65 /* LoginFlow */,
 				FAE733C12034494D00898E65 /* AppDelegate.swift */,
@@ -551,13 +571,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				780F70242035A63700D96601 /* PositiveButton.swift in Sources */,
 				780F7017203587CB00D96601 /* FormViewController.swift in Sources */,
+				780F70262035AABB00D96601 /* NoBackgroundButton.swift in Sources */,
 				780F70192035885E00D96601 /* ProgressBarViewController.swift in Sources */,
 				FAE733F420344AE200898E65 /* LoginViewController.swift in Sources */,
 				FAE733CA2034494D00898E65 /* MySkinDoctor.xcdatamodeld in Sources */,
 				FAE733C42034494D00898E65 /* ViewController.swift in Sources */,
+				780F70222035A1B400D96601 /* ThemeManager.swift in Sources */,
 				FAE733C22034494D00898E65 /* AppDelegate.swift in Sources */,
 				FAE733F820344B2800898E65 /* RegistrationViewController.swift in Sources */,
+				780F70202035A07000D96601 /* Style.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
