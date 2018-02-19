@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MySkinDoctor/Web/ApiUtils.swift"
+            timestampString = "540743053.077781"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "request(url:httpMethod:params:parseToModelType:accessToken:completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MySkinDoctor/Web/ApiUtils.swift"
+            timestampString = "540743053.0784431"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
+            landmarkName = "login(email:password:completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MySkinDoctor/Web/ApiUtils.swift"
+            timestampString = "540743053.078892"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
+            landmarkName = "registration(email:password:firstName:lastName:dob:mobileNumber:postcode:deviceID:completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MySkinDoctor/Web/ApiUtils.swift"
+            timestampString = "540743053.080013"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "request(url:httpMethod:params:parseToModelType:accessToken:completionHandler:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static MySkinDoctor.ApiUtils.(request in _FAB47420421E27E3ADDBA474576B3292)&lt;A where A: ObjectMapper.BaseMappable&gt;(url: Swift.String, httpMethod: Alamofire.HTTPMethod, params: Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;, parseToModelType: A.Type, accessToken: Swift.Optional&lt;Swift.String&gt;, completionHandler: (MySkinDoctor.ApiUtils.ApiResult) -&gt; ()) -&gt; ()"
+                  moduleName = "MySkinDoctor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alex/MySkinDoctor/MySkinDoctor/Web/ApiUtils.swift"
+                  timestampString = "540743053.502323"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "1348">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in static MySkinDoctor.ApiUtils.(request in _FAB47420421E27E3ADDBA474576B3292)&lt;A where A: ObjectMapper.BaseMappable&gt;(url: Swift.String, httpMethod: Alamofire.HTTPMethod, params: Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;, parseToModelType: A.Type, accessToken: Swift.Optional&lt;Swift.String&gt;, completionHandler: (MySkinDoctor.ApiUtils.ApiResult) -&gt; ()) -&gt; ()"
+                  moduleName = "MySkinDoctor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alex/MySkinDoctor/MySkinDoctor/Web/ApiUtils.swift"
+                  timestampString = "540743053.505915"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "85"
+                  endingLineNumber = "85"
+                  offsetFromSymbolStart = "171">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

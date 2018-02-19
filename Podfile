@@ -12,6 +12,7 @@ pod 'Firebase/Core'
 pod 'Alamofire'
 pod 'TextFieldEffects'
 pod 'IQKeyboardManagerSwift'
+pod 'ObjectMapper'
 
 end
 

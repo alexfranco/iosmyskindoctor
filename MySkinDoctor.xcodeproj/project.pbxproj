@@ -20,6 +20,17 @@
 		BACDC2609AC77EBE02475BED /* Pods_MySkinDoctor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01583D02E29AF032A253E558 /* Pods_MySkinDoctor.framework */; };
 		F282CA516A5C0262A9EDB9AE /* Pods_MySkinDoctorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E2D019D11880DC312A040CC /* Pods_MySkinDoctorTests.framework */; };
 		F9D2102A6279AFF2B59A69CC /* Pods_MySkinDoctorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0C3C2F56ED18563B887D4D9 /* Pods_MySkinDoctorUITests.framework */; };
+		FA9760D6203AFBD200242255 /* LoginResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9760D5203AFBD200242255 /* LoginResponseModel.swift */; };
+		FA9760D9203B0E0A00242255 /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9760D8203B0E0A00242255 /* UIViewController+Alerts.swift */; };
+		FA9760DA203B0E0A00242255 /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9760D8203B0E0A00242255 /* UIViewController+Alerts.swift */; };
+		FA9760DB203B0E0A00242255 /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9760D8203B0E0A00242255 /* UIViewController+Alerts.swift */; };
+		FA9760DD203B0EDC00242255 /* BaseResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9760DC203B0EDC00242255 /* BaseResponseModel.swift */; };
+		FA9760DE203B0EDC00242255 /* BaseResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9760DC203B0EDC00242255 /* BaseResponseModel.swift */; };
+		FA9760DF203B0EDC00242255 /* BaseResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9760DC203B0EDC00242255 /* BaseResponseModel.swift */; };
+		FAC1AF0E2036F46F00547BBC /* ApiUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC1AF0D2036F46F00547BBC /* ApiUtils.swift */; };
+		FAC1AF112036FCE200547BBC /* RegistrationResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC1AF102036FCE200547BBC /* RegistrationResponseModel.swift */; };
+		FAC1AF122036FCE200547BBC /* RegistrationResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC1AF102036FCE200547BBC /* RegistrationResponseModel.swift */; };
+		FAC1AF132036FCE200547BBC /* RegistrationResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC1AF102036FCE200547BBC /* RegistrationResponseModel.swift */; };
 		FAE733C22034494D00898E65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE733C12034494D00898E65 /* AppDelegate.swift */; };
 		FAE733C42034494D00898E65 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE733C32034494D00898E65 /* ViewController.swift */; };
 		FAE733C72034494D00898E65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAE733C52034494D00898E65 /* Main.storyboard */; };
@@ -72,6 +83,11 @@
 		A8E80ED1315E894849856D66 /* Pods-MySkinDoctorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySkinDoctorUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MySkinDoctorUITests/Pods-MySkinDoctorUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B7FBD70382F1461742FB7DCB /* Pods-MySkinDoctorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySkinDoctorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MySkinDoctorTests/Pods-MySkinDoctorTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E0C3C2F56ED18563B887D4D9 /* Pods_MySkinDoctorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MySkinDoctorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA9760D5203AFBD200242255 /* LoginResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseModel.swift; sourceTree = "<group>"; };
+		FA9760D8203B0E0A00242255 /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
+		FA9760DC203B0EDC00242255 /* BaseResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponseModel.swift; sourceTree = "<group>"; };
+		FAC1AF0D2036F46F00547BBC /* ApiUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiUtils.swift; sourceTree = "<group>"; };
+		FAC1AF102036FCE200547BBC /* RegistrationResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationResponseModel.swift; sourceTree = "<group>"; };
 		FAE733BE2034494D00898E65 /* MySkinDoctor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySkinDoctor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAE733C12034494D00898E65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAE733C32034494D00898E65 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -88,7 +104,7 @@
 		FAE733E62034494E00898E65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAE733F320344AE200898E65 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FAE733F720344B2800898E65 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
-		FAE733FB20344B5100898E65 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
+		FAE733FB20344B5100898E65 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +169,33 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		FA9760D7203B0DF000242255 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				FA9760D8203B0E0A00242255 /* UIViewController+Alerts.swift */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
+		FAC1AF0C2036F41300547BBC /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				FAC1AF0F2036FCCE00547BBC /* APIModels */,
+				FAC1AF0D2036F46F00547BBC /* ApiUtils.swift */,
+			);
+			path = Web;
+			sourceTree = "<group>";
+		};
+		FAC1AF0F2036FCCE00547BBC /* APIModels */ = {
+			isa = PBXGroup;
+			children = (
+				FA9760DC203B0EDC00242255 /* BaseResponseModel.swift */,
+				FAC1AF102036FCE200547BBC /* RegistrationResponseModel.swift */,
+				FA9760D5203AFBD200242255 /* LoginResponseModel.swift */,
+			);
+			path = APIModels;
+			sourceTree = "<group>";
+		};
 		FAE733B52034494D00898E65 = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +221,8 @@
 		FAE733C02034494D00898E65 /* MySkinDoctor */ = {
 			isa = PBXGroup;
 			children = (
+				FA9760D7203B0DF000242255 /* Extentions */,
+				FAC1AF0C2036F41300547BBC /* Web */,
 				780F701E2035A06000D96601 /* Theme */,
 				FAE733FB20344B5100898E65 /* Podfile */,
 				FAE733F220344AC700898E65 /* LoginFlow */,
@@ -461,6 +506,7 @@
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/JSONModel/JSONModel.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -473,6 +519,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSONModel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -510,6 +557,7 @@
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/JSONModel/JSONModel.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -522,6 +570,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSONModel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -544,6 +593,7 @@
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/JSONModel/JSONModel.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -556,6 +606,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSONModel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -571,16 +622,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAC1AF112036FCE200547BBC /* RegistrationResponseModel.swift in Sources */,
+				FAC1AF0E2036F46F00547BBC /* ApiUtils.swift in Sources */,
 				780F70242035A63700D96601 /* PositiveButton.swift in Sources */,
 				780F7017203587CB00D96601 /* FormViewController.swift in Sources */,
 				780F70262035AABB00D96601 /* NoBackgroundButton.swift in Sources */,
 				780F70192035885E00D96601 /* ProgressBarViewController.swift in Sources */,
 				FAE733F420344AE200898E65 /* LoginViewController.swift in Sources */,
 				FAE733CA2034494D00898E65 /* MySkinDoctor.xcdatamodeld in Sources */,
+				FA9760D6203AFBD200242255 /* LoginResponseModel.swift in Sources */,
 				FAE733C42034494D00898E65 /* ViewController.swift in Sources */,
 				780F70222035A1B400D96601 /* ThemeManager.swift in Sources */,
 				FAE733C22034494D00898E65 /* AppDelegate.swift in Sources */,
 				FAE733F820344B2800898E65 /* RegistrationViewController.swift in Sources */,
+				FA9760DD203B0EDC00242255 /* BaseResponseModel.swift in Sources */,
+				FA9760D9203B0E0A00242255 /* UIViewController+Alerts.swift in Sources */,
 				780F70202035A07000D96601 /* Style.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -590,9 +646,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAE733F920344B2800898E65 /* RegistrationViewController.swift in Sources */,
+				FAC1AF122036FCE200547BBC /* RegistrationResponseModel.swift in Sources */,
 				FAE733F520344AE200898E65 /* LoginViewController.swift in Sources */,
 				780F701C203592B800D96601 /* ProgressBarViewController.swift in Sources */,
 				780F701A203592B400D96601 /* FormViewController.swift in Sources */,
+				FA9760DE203B0EDC00242255 /* BaseResponseModel.swift in Sources */,
+				FA9760DA203B0E0A00242255 /* UIViewController+Alerts.swift in Sources */,
 				FAE733DA2034494E00898E65 /* MySkinDoctorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -602,9 +661,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAE733FA20344B2800898E65 /* RegistrationViewController.swift in Sources */,
+				FAC1AF132036FCE200547BBC /* RegistrationResponseModel.swift in Sources */,
 				FAE733F620344AE200898E65 /* LoginViewController.swift in Sources */,
 				780F701D203592B900D96601 /* ProgressBarViewController.swift in Sources */,
 				780F701B203592B500D96601 /* FormViewController.swift in Sources */,
+				FA9760DF203B0EDC00242255 /* BaseResponseModel.swift in Sources */,
+				FA9760DB203B0E0A00242255 /* UIViewController+Alerts.swift in Sources */,
 				FAE733E52034494E00898E65 /* MySkinDoctorUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

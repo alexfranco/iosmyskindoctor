@@ -22,5 +22,18 @@ class LoginViewController: FormViewController {
 	}
 	
 	@IBAction func onNextButtonPressed(_ sender: Any) {
+		showSpinner(nil)
+		
+		ApiUtils.login(email: emailTextField.text!, password: passwordTextField.text!) { (result) in
+			self.hideSpinner()
+			
+			switch result {
+			case .success(let model):
+				print("login success")
+			case .failure(let model, let error):
+				print("error")
+				self.showResponseError(responseModel: model as? BaseResponseModel, apiGenericError: error)
+			}
+		}
 	}
 }
