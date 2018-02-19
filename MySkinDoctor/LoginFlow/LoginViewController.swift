@@ -13,17 +13,24 @@ import UIKit
 class LoginViewController: FormViewController {
 	
 	@IBOutlet weak var logoImageView: UIImageView!
-	@IBOutlet weak var emailTextField: AkiraTextField!
-	@IBOutlet weak var passwordTextField: AkiraTextField!
+	@IBOutlet weak var emailTextField: FormTextField!
+	@IBOutlet weak var passwordTextField: FormTextField!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
+		emailTextField.placeholder = "Email"
+		passwordTextField.placeholder = "Password"
+
 		registerForKeyboardReturnKey([emailTextField, passwordTextField])
 	}
 	
 	@IBAction func onNextButtonPressed(_ sender: Any) {
-		showSpinner(nil)
+		if !validateForm() {
+			return
+		}
 		
+		showSpinner(nil)
 		ApiUtils.login(email: emailTextField.text!, password: passwordTextField.text!) { (result) in
 			self.hideSpinner()
 			
@@ -35,5 +42,25 @@ class LoginViewController: FormViewController {
 				self.showResponseError(responseModel: model as? BaseResponseModel, apiGenericError: error)
 			}
 		}
+	}
+	
+	override func validateForm() -> Bool {
+		var isValid = true
+		
+		if Validations.isValidEmail(testStr: emailTextField.text!) {
+			emailTextField.errorMessage = ""
+		} else {
+			emailTextField.errorMessage = "The email is invalid"
+			isValid = false
+		}
+		
+		if Validations.isValidPassword(testStr: passwordTextField.text!) {
+			passwordTextField.errorMessage = ""
+		} else {
+			passwordTextField.errorMessage = "The password is invalid"
+			isValid = false
+		}
+		
+		return isValid
 	}
 }

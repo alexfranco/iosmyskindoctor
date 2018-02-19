@@ -27,6 +27,12 @@
 		FA9760DD203B0EDC00242255 /* BaseResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9760DC203B0EDC00242255 /* BaseResponseModel.swift */; };
 		FA9760DE203B0EDC00242255 /* BaseResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9760DC203B0EDC00242255 /* BaseResponseModel.swift */; };
 		FA9760DF203B0EDC00242255 /* BaseResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9760DC203B0EDC00242255 /* BaseResponseModel.swift */; };
+		FA9760E3203B29D600242255 /* Validations.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9760E2203B29D600242255 /* Validations.swift */; };
+		FA9760E4203B29D600242255 /* Validations.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9760E2203B29D600242255 /* Validations.swift */; };
+		FA9760E5203B29D600242255 /* Validations.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9760E2203B29D600242255 /* Validations.swift */; };
+		FA9760E8203B359400242255 /* FormTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9760E7203B359400242255 /* FormTextField.swift */; };
+		FA9760E9203B359400242255 /* FormTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9760E7203B359400242255 /* FormTextField.swift */; };
+		FA9760EA203B359400242255 /* FormTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9760E7203B359400242255 /* FormTextField.swift */; };
 		FAC1AF0E2036F46F00547BBC /* ApiUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC1AF0D2036F46F00547BBC /* ApiUtils.swift */; };
 		FAC1AF112036FCE200547BBC /* RegistrationResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC1AF102036FCE200547BBC /* RegistrationResponseModel.swift */; };
 		FAC1AF122036FCE200547BBC /* RegistrationResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC1AF102036FCE200547BBC /* RegistrationResponseModel.swift */; };
@@ -86,6 +92,8 @@
 		FA9760D5203AFBD200242255 /* LoginResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseModel.swift; sourceTree = "<group>"; };
 		FA9760D8203B0E0A00242255 /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
 		FA9760DC203B0EDC00242255 /* BaseResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponseModel.swift; sourceTree = "<group>"; };
+		FA9760E2203B29D600242255 /* Validations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validations.swift; sourceTree = "<group>"; };
+		FA9760E7203B359400242255 /* FormTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FormTextField.swift; path = MySkinDoctor/Custom/FormTextField.swift; sourceTree = SOURCE_ROOT; };
 		FAC1AF0D2036F46F00547BBC /* ApiUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiUtils.swift; sourceTree = "<group>"; };
 		FAC1AF102036FCE200547BBC /* RegistrationResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationResponseModel.swift; sourceTree = "<group>"; };
 		FAE733BE2034494D00898E65 /* MySkinDoctor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySkinDoctor.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -177,6 +185,15 @@
 			path = Extentions;
 			sourceTree = "<group>";
 		};
+		FA9760E6203B2BFC00242255 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				FA9760E7203B359400242255 /* FormTextField.swift */,
+			);
+			name = Custom;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		FAC1AF0C2036F41300547BBC /* Web */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +238,7 @@
 		FAE733C02034494D00898E65 /* MySkinDoctor */ = {
 			isa = PBXGroup;
 			children = (
+				FA9760E6203B2BFC00242255 /* Custom */,
 				FA9760D7203B0DF000242255 /* Extentions */,
 				FAC1AF0C2036F41300547BBC /* Web */,
 				780F701E2035A06000D96601 /* Theme */,
@@ -228,6 +246,7 @@
 				FAE733F220344AC700898E65 /* LoginFlow */,
 				FAE733C12034494D00898E65 /* AppDelegate.swift */,
 				FAE733C32034494D00898E65 /* ViewController.swift */,
+				FA9760E2203B29D600242255 /* Validations.swift */,
 				FAE733C52034494D00898E65 /* Main.storyboard */,
 				FAE733CB2034494D00898E65 /* Assets.xcassets */,
 				FAE733CD2034494D00898E65 /* LaunchScreen.storyboard */,
@@ -623,9 +642,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAC1AF112036FCE200547BBC /* RegistrationResponseModel.swift in Sources */,
+				FA9760E8203B359400242255 /* FormTextField.swift in Sources */,
 				FAC1AF0E2036F46F00547BBC /* ApiUtils.swift in Sources */,
 				780F70242035A63700D96601 /* PositiveButton.swift in Sources */,
 				780F7017203587CB00D96601 /* FormViewController.swift in Sources */,
+				FA9760E3203B29D600242255 /* Validations.swift in Sources */,
 				780F70262035AABB00D96601 /* NoBackgroundButton.swift in Sources */,
 				780F70192035885E00D96601 /* ProgressBarViewController.swift in Sources */,
 				FAE733F420344AE200898E65 /* LoginViewController.swift in Sources */,
@@ -646,9 +667,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAE733F920344B2800898E65 /* RegistrationViewController.swift in Sources */,
+				FA9760E9203B359400242255 /* FormTextField.swift in Sources */,
 				FAC1AF122036FCE200547BBC /* RegistrationResponseModel.swift in Sources */,
 				FAE733F520344AE200898E65 /* LoginViewController.swift in Sources */,
 				780F701C203592B800D96601 /* ProgressBarViewController.swift in Sources */,
+				FA9760E4203B29D600242255 /* Validations.swift in Sources */,
 				780F701A203592B400D96601 /* FormViewController.swift in Sources */,
 				FA9760DE203B0EDC00242255 /* BaseResponseModel.swift in Sources */,
 				FA9760DA203B0E0A00242255 /* UIViewController+Alerts.swift in Sources */,
@@ -661,9 +684,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAE733FA20344B2800898E65 /* RegistrationViewController.swift in Sources */,
+				FA9760EA203B359400242255 /* FormTextField.swift in Sources */,
 				FAC1AF132036FCE200547BBC /* RegistrationResponseModel.swift in Sources */,
 				FAE733F620344AE200898E65 /* LoginViewController.swift in Sources */,
 				780F701D203592B900D96601 /* ProgressBarViewController.swift in Sources */,
+				FA9760E5203B29D600242255 /* Validations.swift in Sources */,
 				780F701B203592B500D96601 /* FormViewController.swift in Sources */,
 				FA9760DF203B0EDC00242255 /* BaseResponseModel.swift in Sources */,
 				FA9760DB203B0E0A00242255 /* UIViewController+Alerts.swift in Sources */,

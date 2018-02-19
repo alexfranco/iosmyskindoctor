@@ -34,12 +34,11 @@ class ApiUtils {
 	}
 	
 	enum ApiMethod: String {
-		case LOGIN = "/api/accounts/login/"
-		case REGISTER = "/api/accounts/register"
-		case FORGOTTEN_PASSWORD = "/api/accounts/password/reset/"
-		case USER_PROFILE = "/api/ttul-profiles/user/"
-		case USER_APPOINTMENTS = "/api/appointments/user-appointments/"
-		case CHANGE_PASSWORD = "/api/accounts/password/change/"
+		case login = "/api/accounts/login/"
+		case register = "/api/accounts/register"
+		case forgottenPassword = "/api/accounts/password/reset/"
+		case userProfile = "/api/ttul-profiles/user/"
+		case changePassword = "/api/accounts/password/change/"
 	}
 	
 	fileprivate class func getBaseUrl() -> String {
@@ -112,7 +111,7 @@ class ApiUtils {
 	}
 	
 	static func registration(email: String, password: String, firstName: String, lastName: String, dob: Date, mobileNumber: String, postcode: String, deviceID: String, completionHandler: @escaping ((_ result: ApiResult) -> Void)) {		
-		let url = ApiUtils.getApiUrl(ApiMethod.REGISTER, nil)
+		let url = ApiUtils.getApiUrl(ApiMethod.register, nil)
 		let params: Parameters =	["email": email,
 									 "password": password,
 									 "firstName": firstName,
@@ -127,7 +126,7 @@ class ApiUtils {
 	}
 	
 	static func login(email: String, password: String, completionHandler: @escaping ((_ result: ApiResult) -> Void)) {
-		let url = ApiUtils.getApiUrl(ApiMethod.LOGIN, nil)
+		let url = ApiUtils.getApiUrl(ApiMethod.login, nil)
 		let params: Parameters =	["email": email,
 									 "password": password]
 		

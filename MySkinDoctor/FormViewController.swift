@@ -63,5 +63,8 @@ class FormViewController: ProgressBarViewController, UITextFieldDelegate, BSKeyb
 	func keyboardControlsDonePressed(_ keyboardControls: BSKeyboardControls!) {
 		keyboardControls.activeField.resignFirstResponder()
 	}
-
+	
+	func validateForm() -> Bool {
+		return true
+	}
 }
