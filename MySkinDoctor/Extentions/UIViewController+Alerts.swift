@@ -11,15 +11,14 @@ import UIKit
 
 extension UIViewController {
 	
-	func showAlertView(title: String, message: String) {
+	func showAlertView(title: String, message: String, handler: ((UIAlertAction) -> Swift.Void)? = nil) {
 		let alertController = UIAlertController(
 			title: title,
 			message: message,
 			preferredStyle: .alert)
-		
-		let OKAction = UIAlertAction(title: NSLocalizedString("ok", comment: "Close button"), style: .default) { (action) in
-		}
-		
+	
+		let OKAction = UIAlertAction(title: NSLocalizedString("ok", comment: "Close button"), style: .default, handler: handler)
+	
 		alertController.addAction(OKAction)
 		self.present(alertController, animated: true) {}
 	}
@@ -44,5 +43,4 @@ extension UIViewController {
 	func showConnectivityError() {
 		showAlertView(title: NSLocalizedString("offline_generic_title", comment: "Connectivity error"), message: NSLocalizedString("offline_generic_message", comment: "No internet"))
 	}
-	
 }

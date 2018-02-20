@@ -67,7 +67,7 @@ class ApiUtils {
 		return "\(getBaseUrl())\(method.rawValue)"
 	}
 	
-	/* Request
+	/* Generic Request
 	  TODO add info
 	*/
 	fileprivate class func request<T: BaseMappable>(url: String, httpMethod: HTTPMethod, params: Parameters?, parseToModelType: T.Type, accessToken: String?, completionHandler: @escaping ((_ result: ApiResult) -> Void)) {
@@ -94,7 +94,7 @@ class ApiUtils {
 					
 					if let status = response.response?.statusCode {
 						switch(status){
-						case 201, ApiUtils.Api.DEFAULT_STATUS_CODE:
+						case 200, 201, ApiUtils.Api.DEFAULT_STATUS_CODE:
 							completionHandler(ApiResult.success(jsonResult))
 						default:
 							print("error with response status: \(status)")
@@ -108,6 +108,15 @@ class ApiUtils {
 				completionHandler(ApiResult.failure(nil, ApiGenericError.httpQueryError))
 			}
 		}
+	}
+	
+	static func login(email: String, password: String, completionHandler: @escaping ((_ result: ApiResult) -> Void)) {
+		let url = ApiUtils.getApiUrl(ApiMethod.login, nil)
+		let params: Parameters =	["email": email,
+									 "password": password]
+		
+		
+		ApiUtils.request(url: url, httpMethod: HTTPMethod.post, params: params, parseToModelType: LoginResponseModel.self, accessToken: nil, completionHandler: completionHandler)
 	}
 	
 	static func registration(email: String, password: String, firstName: String, lastName: String, dob: Date, mobileNumber: String, postcode: String, deviceID: String, completionHandler: @escaping ((_ result: ApiResult) -> Void)) {		
@@ -125,12 +134,11 @@ class ApiUtils {
 		ApiUtils.request(url: url, httpMethod: HTTPMethod.post, params: params, parseToModelType: RegistrationResponseModel.self, accessToken: nil, completionHandler: completionHandler)
 	}
 	
-	static func login(email: String, password: String, completionHandler: @escaping ((_ result: ApiResult) -> Void)) {
-		let url = ApiUtils.getApiUrl(ApiMethod.login, nil)
-		let params: Parameters =	["email": email,
-									 "password": password]
+	static func forgotPassword(email: String, completionHandler: @escaping ((_ result: ApiResult) -> Void)) {
+		let url = ApiUtils.getApiUrl(ApiMethod.forgottenPassword, nil)
+		let params: Parameters =	["email": email]
 		
-		
-		ApiUtils.request(url: url, httpMethod: HTTPMethod.post, params: params, parseToModelType: LoginResponseModel.self, accessToken: nil, completionHandler: completionHandler)
+		ApiUtils.request(url: url, httpMethod: HTTPMethod.post, params: params, parseToModelType: ForgotPasswordResposeModel.self, accessToken: nil, completionHandler: completionHandler)
 	}
+	
 }

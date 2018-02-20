@@ -21,7 +21,7 @@ struct ThemeManager {
 		// Navigation bar
 		UINavigationBar.appearance().barStyle = UIBarStyle.default
 		UINavigationBar.appearance().barTintColor = Style.defaultNavigationBarColor
-		UINavigationBar.appearance().tintColor = Style.defaultNavigationBarColor
+		UINavigationBar.appearance().tintColor = Style.defaultNavigationBarTitleColor
 		UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor : Style.defaultNavigationBarTitleColor]
 		
 		// Label

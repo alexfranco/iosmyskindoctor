@@ -17,6 +17,10 @@
 		780F70222035A1B400D96601 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780F70212035A1B400D96601 /* ThemeManager.swift */; };
 		780F70242035A63700D96601 /* PositiveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780F70232035A63700D96601 /* PositiveButton.swift */; };
 		780F70262035AABB00D96601 /* NoBackgroundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780F70252035AABB00D96601 /* NoBackgroundButton.swift */; };
+		78B9E516203C2B920054CAD3 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B9E515203C2B920054CAD3 /* ForgotPasswordViewController.swift */; };
+		78B9E518203C2C670054CAD3 /* ForgotPasswordResposeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B9E517203C2C670054CAD3 /* ForgotPasswordResposeModel.swift */; };
+		78B9E520203C2E630054CAD3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78B9E522203C2E630054CAD3 /* Localizable.strings */; };
+		78B9E524203C2F100054CAD3 /* CustomErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B9E523203C2F100054CAD3 /* CustomErrors.swift */; };
 		BACDC2609AC77EBE02475BED /* Pods_MySkinDoctor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01583D02E29AF032A253E558 /* Pods_MySkinDoctor.framework */; };
 		F282CA516A5C0262A9EDB9AE /* Pods_MySkinDoctorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E2D019D11880DC312A040CC /* Pods_MySkinDoctorTests.framework */; };
 		F9D2102A6279AFF2B59A69CC /* Pods_MySkinDoctorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0C3C2F56ED18563B887D4D9 /* Pods_MySkinDoctorUITests.framework */; };
@@ -85,6 +89,10 @@
 		780F70212035A1B400D96601 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		780F70232035A63700D96601 /* PositiveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositiveButton.swift; sourceTree = "<group>"; };
 		780F70252035AABB00D96601 /* NoBackgroundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoBackgroundButton.swift; sourceTree = "<group>"; };
+		78B9E515203C2B920054CAD3 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		78B9E517203C2C670054CAD3 /* ForgotPasswordResposeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordResposeModel.swift; sourceTree = "<group>"; };
+		78B9E521203C2E630054CAD3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		78B9E523203C2F100054CAD3 /* CustomErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomErrors.swift; path = MySkinDoctor/CustomErrors.swift; sourceTree = SOURCE_ROOT; };
 		85B14CEDA9F10AD5CDFAFE54 /* Pods-MySkinDoctorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySkinDoctorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MySkinDoctorTests/Pods-MySkinDoctorTests.release.xcconfig"; sourceTree = "<group>"; };
 		A8E80ED1315E894849856D66 /* Pods-MySkinDoctorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySkinDoctorUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MySkinDoctorUITests/Pods-MySkinDoctorUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B7FBD70382F1461742FB7DCB /* Pods-MySkinDoctorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySkinDoctorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MySkinDoctorTests/Pods-MySkinDoctorTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -112,7 +120,7 @@
 		FAE733E62034494E00898E65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAE733F320344AE200898E65 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FAE733F720344B2800898E65 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
-		FAE733FB20344B5100898E65 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		FAE733FB20344B5100898E65 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Podfile; path = MySkinDoctor/SupportFiles/Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +172,44 @@
 			path = Theme;
 			sourceTree = "<group>";
 		};
+		78B9E51B203C2D600054CAD3 /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				FAE733C12034494D00898E65 /* AppDelegate.swift */,
+				FAE733CB2034494D00898E65 /* Assets.xcassets */,
+				FAE733C82034494D00898E65 /* MySkinDoctor.xcdatamodeld */,
+				78B9E522203C2E630054CAD3 /* Localizable.strings */,
+				FAE733FB20344B5100898E65 /* Podfile */,
+			);
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		78B9E51C203C2D730054CAD3 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				FA9760E2203B29D600242255 /* Validations.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		78B9E51D203C2D820054CAD3 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				FAE733CD2034494D00898E65 /* LaunchScreen.storyboard */,
+				FAE733C52034494D00898E65 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		78B9E51F203C2DBD0054CAD3 /* BaseViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				780F7016203587CB00D96601 /* FormViewController.swift */,
+				780F70182035885E00D96601 /* ProgressBarViewController.swift */,
+			);
+			path = BaseViewControllers;
+			sourceTree = "<group>";
+		};
 		C48825061086BF1E8DD69024 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				FA9760E7203B359400242255 /* FormTextField.swift */,
+				78B9E523203C2F100054CAD3 /* CustomErrors.swift */,
 			);
 			name = Custom;
 			path = "New Group";
@@ -209,6 +256,7 @@
 				FA9760DC203B0EDC00242255 /* BaseResponseModel.swift */,
 				FAC1AF102036FCE200547BBC /* RegistrationResponseModel.swift */,
 				FA9760D5203AFBD200242255 /* LoginResponseModel.swift */,
+				78B9E517203C2C670054CAD3 /* ForgotPasswordResposeModel.swift */,
 			);
 			path = APIModels;
 			sourceTree = "<group>";
@@ -238,22 +286,17 @@
 		FAE733C02034494D00898E65 /* MySkinDoctor */ = {
 			isa = PBXGroup;
 			children = (
+				FAE733D02034494D00898E65 /* Info.plist */,
+				78B9E51F203C2DBD0054CAD3 /* BaseViewControllers */,
 				FA9760E6203B2BFC00242255 /* Custom */,
 				FA9760D7203B0DF000242255 /* Extentions */,
-				FAC1AF0C2036F41300547BBC /* Web */,
-				780F701E2035A06000D96601 /* Theme */,
-				FAE733FB20344B5100898E65 /* Podfile */,
 				FAE733F220344AC700898E65 /* LoginFlow */,
-				FAE733C12034494D00898E65 /* AppDelegate.swift */,
+				78B9E51D203C2D820054CAD3 /* Storyboards */,
+				78B9E51B203C2D600054CAD3 /* SupportFiles */,
+				780F701E2035A06000D96601 /* Theme */,
+				78B9E51C203C2D730054CAD3 /* Utils */,
 				FAE733C32034494D00898E65 /* ViewController.swift */,
-				FA9760E2203B29D600242255 /* Validations.swift */,
-				FAE733C52034494D00898E65 /* Main.storyboard */,
-				FAE733CB2034494D00898E65 /* Assets.xcassets */,
-				FAE733CD2034494D00898E65 /* LaunchScreen.storyboard */,
-				FAE733D02034494D00898E65 /* Info.plist */,
-				FAE733C82034494D00898E65 /* MySkinDoctor.xcdatamodeld */,
-				780F7016203587CB00D96601 /* FormViewController.swift */,
-				780F70182035885E00D96601 /* ProgressBarViewController.swift */,
+				FAC1AF0C2036F41300547BBC /* Web */,
 			);
 			path = MySkinDoctor;
 			sourceTree = "<group>";
@@ -281,6 +324,7 @@
 			children = (
 				FAE733F720344B2800898E65 /* RegistrationViewController.swift */,
 				FAE733F320344AE200898E65 /* LoginViewController.swift */,
+				78B9E515203C2B920054CAD3 /* ForgotPasswordViewController.swift */,
 			);
 			path = LoginFlow;
 			sourceTree = "<group>";
@@ -401,6 +445,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78B9E520203C2E630054CAD3 /* Localizable.strings in Resources */,
 				FAE733CF2034494D00898E65 /* LaunchScreen.storyboard in Resources */,
 				FAE733CC2034494D00898E65 /* Assets.xcassets in Resources */,
 				FAE733FC20344B5100898E65 /* Podfile in Resources */,
@@ -647,6 +692,8 @@
 				780F70242035A63700D96601 /* PositiveButton.swift in Sources */,
 				780F7017203587CB00D96601 /* FormViewController.swift in Sources */,
 				FA9760E3203B29D600242255 /* Validations.swift in Sources */,
+				78B9E518203C2C670054CAD3 /* ForgotPasswordResposeModel.swift in Sources */,
+				78B9E524203C2F100054CAD3 /* CustomErrors.swift in Sources */,
 				780F70262035AABB00D96601 /* NoBackgroundButton.swift in Sources */,
 				780F70192035885E00D96601 /* ProgressBarViewController.swift in Sources */,
 				FAE733F420344AE200898E65 /* LoginViewController.swift in Sources */,
@@ -655,6 +702,7 @@
 				FAE733C42034494D00898E65 /* ViewController.swift in Sources */,
 				780F70222035A1B400D96601 /* ThemeManager.swift in Sources */,
 				FAE733C22034494D00898E65 /* AppDelegate.swift in Sources */,
+				78B9E516203C2B920054CAD3 /* ForgotPasswordViewController.swift in Sources */,
 				FAE733F820344B2800898E65 /* RegistrationViewController.swift in Sources */,
 				FA9760DD203B0EDC00242255 /* BaseResponseModel.swift in Sources */,
 				FA9760D9203B0E0A00242255 /* UIViewController+Alerts.swift in Sources */,
@@ -712,6 +760,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		78B9E522203C2E630054CAD3 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				78B9E521203C2E630054CAD3 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		FAE733C52034494D00898E65 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fzo-Kc-ghL">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,6 +10,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="3h2-qi-Ki0">
+            <objects>
+                <navigationController id="fzo-Kc-ghL" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3MY-nQ-rOB">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="PrK-mX-F1K"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="soo-Un-Ukx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-371" y="134"/>
+        </scene>
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -37,7 +53,7 @@
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FJp-az-mfl" customClass="FormTextField" customModule="MySkinDoctor" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="245" width="335" height="50"/>
@@ -46,7 +62,7 @@
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byO-ag-8v2" customClass="PositiveButton" customModule="MySkinDoctor" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="307" width="335" height="50"/>
@@ -58,6 +74,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IrI-S3-egB" customClass="NoBackgroundButton" customModule="MySkinDoctor" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="377" width="335" height="30"/>
                                                 <state key="normal" title="Forgot Password?"/>
+                                                <connections>
+                                                    <segue destination="SM0-O1-huI" kind="show" id="YaX-2U-fMO"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -107,6 +126,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="4L3-bv-Sej"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="emailTextField" destination="Yw0-UV-ync" id="vMm-09-r1z"/>
                         <outlet property="logoImageView" destination="1hK-Fg-wIB" id="z2O-At-EpW"/>
@@ -118,6 +139,90 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="141.59999999999999" y="133.5832083958021"/>
+        </scene>
+        <!--Forgot Password View Controller-->
+        <scene sceneID="yQ0-ys-yRM">
+            <objects>
+                <viewController id="SM0-O1-huI" customClass="ForgotPasswordViewController" customModule="MySkinDoctor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="l2W-Yi-3ip">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ei-eM-dCF">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qFD-Xp-Rpw">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="310"/>
+                                        <subviews>
+                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="OwI-LS-gpj">
+                                                <rect key="frame" x="20" y="0.0" width="335" height="150"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="150" id="c0Y-lk-ET4"/>
+                                                </constraints>
+                                            </imageView>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mW0-iZ-SKj" customClass="FormTextField" customModule="MySkinDoctor" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="170" width="335" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="KzZ-55-zpb"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="done"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y25-tL-gYc" customClass="PositiveButton" customModule="MySkinDoctor" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="240" width="335" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="gAs-ZG-lgr"/>
+                                                </constraints>
+                                                <state key="normal" title="Reset Password"/>
+                                                <connections>
+                                                    <action selector="onNextButtonPressed:" destination="SM0-O1-huI" eventType="touchUpInside" id="KCM-vb-GuR"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="Y25-tL-gYc" firstAttribute="top" secondItem="mW0-iZ-SKj" secondAttribute="bottom" constant="20" id="8ll-8y-zrP"/>
+                                            <constraint firstItem="Y25-tL-gYc" firstAttribute="leading" secondItem="mW0-iZ-SKj" secondAttribute="leading" id="KCE-wf-uju"/>
+                                            <constraint firstItem="mW0-iZ-SKj" firstAttribute="leading" secondItem="qFD-Xp-Rpw" secondAttribute="leading" constant="20" id="NrZ-P4-Kbt"/>
+                                            <constraint firstAttribute="bottom" secondItem="Y25-tL-gYc" secondAttribute="bottom" constant="20" id="Ut9-oZ-Rdl"/>
+                                            <constraint firstItem="Y25-tL-gYc" firstAttribute="trailing" secondItem="mW0-iZ-SKj" secondAttribute="trailing" id="bV9-hy-DVY"/>
+                                            <constraint firstAttribute="trailing" secondItem="OwI-LS-gpj" secondAttribute="trailing" constant="20" id="cKj-fw-l1b"/>
+                                            <constraint firstItem="OwI-LS-gpj" firstAttribute="top" secondItem="qFD-Xp-Rpw" secondAttribute="top" id="kHg-kj-ey1"/>
+                                            <constraint firstItem="OwI-LS-gpj" firstAttribute="leading" secondItem="qFD-Xp-Rpw" secondAttribute="leading" constant="20" id="m7h-7w-kSI"/>
+                                            <constraint firstAttribute="trailing" secondItem="mW0-iZ-SKj" secondAttribute="trailing" constant="20" id="qJr-ca-Lr1"/>
+                                            <constraint firstItem="mW0-iZ-SKj" firstAttribute="top" secondItem="OwI-LS-gpj" secondAttribute="bottom" constant="20" id="qTp-dS-gla"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="qFD-Xp-Rpw" firstAttribute="top" secondItem="0ei-eM-dCF" secondAttribute="top" id="1gk-ue-Vvt"/>
+                                    <constraint firstAttribute="bottom" secondItem="qFD-Xp-Rpw" secondAttribute="bottom" id="2vi-UP-4UX"/>
+                                    <constraint firstItem="qFD-Xp-Rpw" firstAttribute="centerX" secondItem="0ei-eM-dCF" secondAttribute="centerX" id="9cv-yV-yid"/>
+                                    <constraint firstAttribute="trailing" secondItem="qFD-Xp-Rpw" secondAttribute="trailing" id="Uld-aW-mSG"/>
+                                    <constraint firstItem="qFD-Xp-Rpw" firstAttribute="leading" secondItem="0ei-eM-dCF" secondAttribute="leading" id="vHg-Wc-Zlq"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="0ei-eM-dCF" firstAttribute="top" secondItem="cIT-73-J0j" secondAttribute="top" id="6Mn-IT-Ofd"/>
+                            <constraint firstItem="cIT-73-J0j" firstAttribute="bottom" secondItem="0ei-eM-dCF" secondAttribute="bottom" id="Tbw-yk-0d6"/>
+                            <constraint firstItem="cIT-73-J0j" firstAttribute="trailing" secondItem="0ei-eM-dCF" secondAttribute="trailing" id="Thk-nv-F8F"/>
+                            <constraint firstItem="0ei-eM-dCF" firstAttribute="leading" secondItem="cIT-73-J0j" secondAttribute="leading" id="uQA-Vj-qxB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cIT-73-J0j"/>
+                    </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="mW0-iZ-SKj" id="c8s-59-ZHP"/>
+                        <outlet property="logoImageView" destination="OwI-LS-gpj" id="rYb-tH-QZd"/>
+                        <outlet property="nextButton" destination="Y25-tL-gYc" id="DgA-gk-mQ1"/>
+                        <outlet property="scrollView" destination="0ei-eM-dCF" id="9PT-Hw-5c8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gyk-cx-E8t" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="868" y="134"/>
         </scene>
     </scenes>
     <resources>

@@ -25,6 +25,13 @@ class LoginViewController: FormViewController {
 		registerForKeyboardReturnKey([emailTextField, passwordTextField])
 	}
 	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		
+		// Hide the navigation bar on the this view controller
+		self.navigationController?.setNavigationBarHidden(true, animated: animated)
+	}
+	
 	@IBAction func onNextButtonPressed(_ sender: Any) {
 		if !validateForm() {
 			return

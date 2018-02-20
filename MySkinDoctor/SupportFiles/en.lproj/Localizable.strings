@@ -1,0 +1,29 @@
+/* 
+  Localizable.strings
+  MySkinDoctor
+
+  Created by Alex Núñez on 20/02/2018.
+  Copyright © 2018 TouchSoft. All rights reserved.
+*/
+
+"login_error_generic_title" = "Login Error";
+"login_error_generic_message" = "Unable to log in with provided credentials.";
+"login_error_get_user_profile_failed_message" = "There was an error logging in. Please try again later.";
+"login_error_get_default_category_failed_message" = "There was an error logging in. Please try again later.";
+
+"registration_success_title" = "Sign Up";
+"registration_success_message" = "Thanks for signing up to %@. An email has been sent to you, please verify your email address.";
+"registration_success_message_no_verification" = "Thanks for signing up to %@. Please log in to continue.";
+
+"registration_error_generic_title" = "Sign Up Error";
+"registration_error_generic_message" = "There was an error signing up. Please try again later.";
+
+"registration_empty_fields_error_title" = "Sign Up Error";
+"registration_empty_fields_error_message" = "Please complete all fields. Fields may not be blank.";
+
+"reset_password_error_generic_title" = "Reset Password Error";
+"reset_password_error_generic_message" = "There was an error resetting your password. Please try again later.";
+"reset_password_empty_fields_error_message" = "Please enter a valid email.";
+
+"reset_password_success_title" = "Success";
+"reset_password_success_message" = "You will receive an email shortly with a link to reset your password.";
