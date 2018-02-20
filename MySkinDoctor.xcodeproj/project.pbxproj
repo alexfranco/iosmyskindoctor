@@ -27,7 +27,36 @@
 		78B9E52A203C4AF20054CAD3 /* Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B9E529203C4AF20054CAD3 /* Consts.swift */; };
 		78B9E52B203C4C680054CAD3 /* Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B9E529203C4AF20054CAD3 /* Consts.swift */; };
 		78B9E52C203C4C690054CAD3 /* Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B9E529203C4AF20054CAD3 /* Consts.swift */; };
+		78B9E530203C4CD70054CAD3 /* RegistrationResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC1AF102036FCE200547BBC /* RegistrationResponseModel.swift */; };
+		78B9E531203C4CD70054CAD3 /* FormTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9760E7203B359400242255 /* FormTextField.swift */; };
+		78B9E532203C4CD70054CAD3 /* ApiUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC1AF0D2036F46F00547BBC /* ApiUtils.swift */; };
+		78B9E533203C4CD70054CAD3 /* PositiveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780F70232035A63700D96601 /* PositiveButton.swift */; };
+		78B9E534203C4CD70054CAD3 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780F7016203587CB00D96601 /* FormViewController.swift */; };
+		78B9E535203C4CD70054CAD3 /* Validations.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9760E2203B29D600242255 /* Validations.swift */; };
+		78B9E536203C4CD70054CAD3 /* ForgotPasswordResposeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B9E517203C2C670054CAD3 /* ForgotPasswordResposeModel.swift */; };
+		78B9E537203C4CD70054CAD3 /* CustomErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B9E523203C2F100054CAD3 /* CustomErrors.swift */; };
+		78B9E538203C4CD70054CAD3 /* NoBackgroundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780F70252035AABB00D96601 /* NoBackgroundButton.swift */; };
+		78B9E539203C4CD70054CAD3 /* ProgressBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780F70182035885E00D96601 /* ProgressBarViewController.swift */; };
+		78B9E53A203C4CD70054CAD3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE733F320344AE200898E65 /* LoginViewController.swift */; };
+		78B9E53B203C4CD70054CAD3 /* MySkinDoctor.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAE733C82034494D00898E65 /* MySkinDoctor.xcdatamodeld */; };
+		78B9E53C203C4CD70054CAD3 /* LoginResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9760D5203AFBD200242255 /* LoginResponseModel.swift */; };
+		78B9E53D203C4CD70054CAD3 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780F70212035A1B400D96601 /* ThemeManager.swift */; };
+		78B9E53E203C4CD70054CAD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE733C12034494D00898E65 /* AppDelegate.swift */; };
+		78B9E53F203C4CD70054CAD3 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B9E515203C2B920054CAD3 /* ForgotPasswordViewController.swift */; };
+		78B9E540203C4CD70054CAD3 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE733F720344B2800898E65 /* RegistrationViewController.swift */; };
+		78B9E541203C4CD70054CAD3 /* BaseResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9760DC203B0EDC00242255 /* BaseResponseModel.swift */; };
+		78B9E542203C4CD70054CAD3 /* Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B9E529203C4AF20054CAD3 /* Consts.swift */; };
+		78B9E543203C4CD70054CAD3 /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9760D8203B0E0A00242255 /* UIViewController+Alerts.swift */; };
+		78B9E544203C4CD70054CAD3 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780F701F2035A07000D96601 /* Style.swift */; };
+		78B9E546203C4CD70054CAD3 /* Pods_MySkinDoctor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01583D02E29AF032A253E558 /* Pods_MySkinDoctor.framework */; };
+		78B9E548203C4CD70054CAD3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78B9E522203C2E630054CAD3 /* Localizable.strings */; };
+		78B9E549203C4CD70054CAD3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAE733CD2034494D00898E65 /* LaunchScreen.storyboard */; };
+		78B9E54A203C4CD70054CAD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAE733CB2034494D00898E65 /* Assets.xcassets */; };
+		78B9E54B203C4CD70054CAD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78B9E527203C4A920054CAD3 /* Main.storyboard */; };
+		78B9E54D203C4CD70054CAD3 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAE733C52034494D00898E65 /* Login.storyboard */; };
+		78B9E558203C4ED70054CAD3 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 78B9E557203C4ED70054CAD3 /* Podfile */; };
 		BACDC2609AC77EBE02475BED /* Pods_MySkinDoctor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01583D02E29AF032A253E558 /* Pods_MySkinDoctor.framework */; };
+		D75D874EF6F3C1F821CF13C0 /* Pods_MySkinDoctorLive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E880F85E25D18BC10BE7217F /* Pods_MySkinDoctorLive.framework */; };
 		F282CA516A5C0262A9EDB9AE /* Pods_MySkinDoctorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E2D019D11880DC312A040CC /* Pods_MySkinDoctorTests.framework */; };
 		F9D2102A6279AFF2B59A69CC /* Pods_MySkinDoctorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0C3C2F56ED18563B887D4D9 /* Pods_MySkinDoctorUITests.framework */; };
 		FA9760D6203AFBD200242255 /* LoginResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9760D5203AFBD200242255 /* LoginResponseModel.swift */; };
@@ -60,9 +89,6 @@
 		FAE733F820344B2800898E65 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE733F720344B2800898E65 /* RegistrationViewController.swift */; };
 		FAE733F920344B2800898E65 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE733F720344B2800898E65 /* RegistrationViewController.swift */; };
 		FAE733FA20344B2800898E65 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE733F720344B2800898E65 /* RegistrationViewController.swift */; };
-		FAE733FC20344B5100898E65 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = FAE733FB20344B5100898E65 /* Podfile */; };
-		FAE733FD20344B5100898E65 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = FAE733FB20344B5100898E65 /* Podfile */; };
-		FAE733FE20344B5100898E65 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = FAE733FB20344B5100898E65 /* Podfile */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +114,7 @@
 		19DF0ED90EB9C405B3E38F3B /* Pods-MySkinDoctor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySkinDoctor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MySkinDoctor/Pods-MySkinDoctor.debug.xcconfig"; sourceTree = "<group>"; };
 		2E2D019D11880DC312A040CC /* Pods_MySkinDoctorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MySkinDoctorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EA351FB6344405FCA1ECF1E /* Pods-MySkinDoctor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySkinDoctor.release.xcconfig"; path = "Pods/Target Support Files/Pods-MySkinDoctor/Pods-MySkinDoctor.release.xcconfig"; sourceTree = "<group>"; };
+		75FFF5257900F06BA6D613F0 /* Pods-MySkinDoctorLive.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySkinDoctorLive.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MySkinDoctorLive/Pods-MySkinDoctorLive.debug.xcconfig"; sourceTree = "<group>"; };
 		780F7016203587CB00D96601 /* FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
 		780F70182035885E00D96601 /* ProgressBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarViewController.swift; sourceTree = "<group>"; };
 		780F701F2035A07000D96601 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
@@ -100,10 +127,17 @@
 		78B9E523203C2F100054CAD3 /* CustomErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomErrors.swift; path = MySkinDoctor/CustomErrors.swift; sourceTree = SOURCE_ROOT; };
 		78B9E527203C4A920054CAD3 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		78B9E529203C4AF20054CAD3 /* Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consts.swift; sourceTree = "<group>"; };
+		78B9E553203C4CD70054CAD3 /* MySkinDoctorLive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySkinDoctorLive.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		78B9E554203C4CD70054CAD3 /* MySkinDoctorLive.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = MySkinDoctorLive.plist; path = /Users/alexnunez/iosmyskindoctor/MySkinDoctor/MySkinDoctorLive.plist; sourceTree = "<absolute>"; };
+		78B9E555203C4CED0054CAD3 /* MySkinDoctor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MySkinDoctor.entitlements; sourceTree = "<group>"; };
+		78B9E556203C4CF30054CAD3 /* MySkinDoctorLive.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MySkinDoctorLive.entitlements; sourceTree = "<group>"; };
+		78B9E557203C4ED70054CAD3 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
 		85B14CEDA9F10AD5CDFAFE54 /* Pods-MySkinDoctorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySkinDoctorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MySkinDoctorTests/Pods-MySkinDoctorTests.release.xcconfig"; sourceTree = "<group>"; };
 		A8E80ED1315E894849856D66 /* Pods-MySkinDoctorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySkinDoctorUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MySkinDoctorUITests/Pods-MySkinDoctorUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B7FBD70382F1461742FB7DCB /* Pods-MySkinDoctorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySkinDoctorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MySkinDoctorTests/Pods-MySkinDoctorTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E0C3C2F56ED18563B887D4D9 /* Pods_MySkinDoctorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MySkinDoctorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E880F85E25D18BC10BE7217F /* Pods_MySkinDoctorLive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MySkinDoctorLive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F492478A85E247C0FDC4AC62 /* Pods-MySkinDoctorLive.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySkinDoctorLive.release.xcconfig"; path = "Pods/Target Support Files/Pods-MySkinDoctorLive/Pods-MySkinDoctorLive.release.xcconfig"; sourceTree = "<group>"; };
 		FA9760D5203AFBD200242255 /* LoginResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseModel.swift; sourceTree = "<group>"; };
 		FA9760D8203B0E0A00242255 /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
 		FA9760DC203B0EDC00242255 /* BaseResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponseModel.swift; sourceTree = "<group>"; };
@@ -117,7 +151,7 @@
 		FAE733C92034494D00898E65 /* MySkinDoctor.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MySkinDoctor.xcdatamodel; sourceTree = "<group>"; };
 		FAE733CB2034494D00898E65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAE733CE2034494D00898E65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		FAE733D02034494D00898E65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAE733D02034494D00898E65 /* MySkinDoctor.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = MySkinDoctor.plist; sourceTree = "<group>"; };
 		FAE733D52034494E00898E65 /* MySkinDoctorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MySkinDoctorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAE733D92034494E00898E65 /* MySkinDoctorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySkinDoctorTests.swift; sourceTree = "<group>"; };
 		FAE733DB2034494E00898E65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -126,10 +160,18 @@
 		FAE733E62034494E00898E65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAE733F320344AE200898E65 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FAE733F720344B2800898E65 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
-		FAE733FB20344B5100898E65 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Podfile; path = MySkinDoctor/SupportFiles/Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		78B9E545203C4CD70054CAD3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78B9E546203C4CD70054CAD3 /* Pods_MySkinDoctor.framework in Frameworks */,
+				D75D874EF6F3C1F821CF13C0 /* Pods_MySkinDoctorLive.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FAE733BB2034494D00898E65 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -163,6 +205,7 @@
 				01583D02E29AF032A253E558 /* Pods_MySkinDoctor.framework */,
 				2E2D019D11880DC312A040CC /* Pods_MySkinDoctorTests.framework */,
 				E0C3C2F56ED18563B887D4D9 /* Pods_MySkinDoctorUITests.framework */,
+				E880F85E25D18BC10BE7217F /* Pods_MySkinDoctorLive.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -181,11 +224,11 @@
 		78B9E51B203C2D600054CAD3 /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
+				78B9E557203C4ED70054CAD3 /* Podfile */,
 				FAE733C12034494D00898E65 /* AppDelegate.swift */,
 				FAE733CB2034494D00898E65 /* Assets.xcassets */,
 				FAE733C82034494D00898E65 /* MySkinDoctor.xcdatamodeld */,
 				78B9E522203C2E630054CAD3 /* Localizable.strings */,
-				FAE733FB20344B5100898E65 /* Podfile */,
 				78B9E529203C4AF20054CAD3 /* Consts.swift */,
 			);
 			path = SupportFiles;
@@ -227,6 +270,8 @@
 				85B14CEDA9F10AD5CDFAFE54 /* Pods-MySkinDoctorTests.release.xcconfig */,
 				06490DD71C9874D0D9972FBE /* Pods-MySkinDoctorUITests.debug.xcconfig */,
 				A8E80ED1315E894849856D66 /* Pods-MySkinDoctorUITests.release.xcconfig */,
+				75FFF5257900F06BA6D613F0 /* Pods-MySkinDoctorLive.debug.xcconfig */,
+				F492478A85E247C0FDC4AC62 /* Pods-MySkinDoctorLive.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -287,6 +332,7 @@
 				FAE733BE2034494D00898E65 /* MySkinDoctor.app */,
 				FAE733D52034494E00898E65 /* MySkinDoctorTests.xctest */,
 				FAE733E02034494E00898E65 /* MySkinDoctorUITests.xctest */,
+				78B9E553203C4CD70054CAD3 /* MySkinDoctorLive.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -294,7 +340,10 @@
 		FAE733C02034494D00898E65 /* MySkinDoctor */ = {
 			isa = PBXGroup;
 			children = (
-				FAE733D02034494D00898E65 /* Info.plist */,
+				78B9E555203C4CED0054CAD3 /* MySkinDoctor.entitlements */,
+				78B9E556203C4CF30054CAD3 /* MySkinDoctorLive.entitlements */,
+				FAE733D02034494D00898E65 /* MySkinDoctor.plist */,
+				78B9E554203C4CD70054CAD3 /* MySkinDoctorLive.plist */,
 				78B9E51F203C2DBD0054CAD3 /* BaseViewControllers */,
 				FA9760E6203B2BFC00242255 /* Custom */,
 				FA9760D7203B0DF000242255 /* Extentions */,
@@ -339,6 +388,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		78B9E52D203C4CD70054CAD3 /* MySkinDoctorLive */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 78B9E550203C4CD70054CAD3 /* Build configuration list for PBXNativeTarget "MySkinDoctorLive" */;
+			buildPhases = (
+				78B9E52E203C4CD70054CAD3 /* [CP] Check Pods Manifest.lock */,
+				78B9E52F203C4CD70054CAD3 /* Sources */,
+				78B9E545203C4CD70054CAD3 /* Frameworks */,
+				78B9E547203C4CD70054CAD3 /* Resources */,
+				78B9E54E203C4CD70054CAD3 /* [CP] Embed Pods Frameworks */,
+				78B9E54F203C4CD70054CAD3 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MySkinDoctorLive;
+			productName = MySkinDoctor;
+			productReference = 78B9E553203C4CD70054CAD3 /* MySkinDoctorLive.app */;
+			productType = "com.apple.product-type.application";
+		};
 		FAE733BD2034494D00898E65 /* MySkinDoctor */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FAE733E92034494E00898E65 /* Build configuration list for PBXNativeTarget "MySkinDoctor" */;
@@ -411,9 +480,22 @@
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = TouchSoft;
 				TargetAttributes = {
+					78B9E52D203C4CD70054CAD3 = {
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
+					};
 					FAE733BD2034494D00898E65 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					FAE733D42034494E00898E65 = {
 						CreatedOnToolsVersion = 9.2;
@@ -441,6 +523,7 @@
 			projectRoot = "";
 			targets = (
 				FAE733BD2034494D00898E65 /* MySkinDoctor */,
+				78B9E52D203C4CD70054CAD3 /* MySkinDoctorLive */,
 				FAE733D42034494E00898E65 /* MySkinDoctorTests */,
 				FAE733DF2034494E00898E65 /* MySkinDoctorUITests */,
 			);
@@ -448,15 +531,27 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		78B9E547203C4CD70054CAD3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78B9E548203C4CD70054CAD3 /* Localizable.strings in Resources */,
+				78B9E549203C4CD70054CAD3 /* LaunchScreen.storyboard in Resources */,
+				78B9E54A203C4CD70054CAD3 /* Assets.xcassets in Resources */,
+				78B9E54B203C4CD70054CAD3 /* Main.storyboard in Resources */,
+				78B9E54D203C4CD70054CAD3 /* Login.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FAE733BC2034494D00898E65 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78B9E558203C4ED70054CAD3 /* Podfile in Resources */,
 				78B9E520203C2E630054CAD3 /* Localizable.strings in Resources */,
 				FAE733CF2034494D00898E65 /* LaunchScreen.storyboard in Resources */,
 				FAE733CC2034494D00898E65 /* Assets.xcassets in Resources */,
 				78B9E528203C4A920054CAD3 /* Main.storyboard in Resources */,
-				FAE733FC20344B5100898E65 /* Podfile in Resources */,
 				FAE733C72034494D00898E65 /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -465,7 +560,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAE733FD20344B5100898E65 /* Podfile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,7 +567,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAE733FE20344B5100898E65 /* Podfile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -562,6 +655,75 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		78B9E52E203C4CD70054CAD3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MySkinDoctorLive-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		78B9E54E203C4CD70054CAD3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MySkinDoctorLive/Pods-MySkinDoctorLive-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ActionSheetPicker-3.0/ActionSheetPicker_3_0.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/BSKeyboardControls/BSKeyboardControls.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/JSONModel/JSONModel.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ActionSheetPicker_3_0.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BSKeyboardControls.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSONModel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MySkinDoctorLive/Pods-MySkinDoctorLive-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		78B9E54F203C4CD70054CAD3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MySkinDoctorLive/Pods-MySkinDoctorLive-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A2D3A90483A6C2221D90BD7E /* [CP] Embed Pods Frameworks */ = {
@@ -690,6 +852,34 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		78B9E52F203C4CD70054CAD3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78B9E530203C4CD70054CAD3 /* RegistrationResponseModel.swift in Sources */,
+				78B9E531203C4CD70054CAD3 /* FormTextField.swift in Sources */,
+				78B9E532203C4CD70054CAD3 /* ApiUtils.swift in Sources */,
+				78B9E533203C4CD70054CAD3 /* PositiveButton.swift in Sources */,
+				78B9E534203C4CD70054CAD3 /* FormViewController.swift in Sources */,
+				78B9E535203C4CD70054CAD3 /* Validations.swift in Sources */,
+				78B9E536203C4CD70054CAD3 /* ForgotPasswordResposeModel.swift in Sources */,
+				78B9E537203C4CD70054CAD3 /* CustomErrors.swift in Sources */,
+				78B9E538203C4CD70054CAD3 /* NoBackgroundButton.swift in Sources */,
+				78B9E539203C4CD70054CAD3 /* ProgressBarViewController.swift in Sources */,
+				78B9E53A203C4CD70054CAD3 /* LoginViewController.swift in Sources */,
+				78B9E53B203C4CD70054CAD3 /* MySkinDoctor.xcdatamodeld in Sources */,
+				78B9E53C203C4CD70054CAD3 /* LoginResponseModel.swift in Sources */,
+				78B9E53D203C4CD70054CAD3 /* ThemeManager.swift in Sources */,
+				78B9E53E203C4CD70054CAD3 /* AppDelegate.swift in Sources */,
+				78B9E53F203C4CD70054CAD3 /* ForgotPasswordViewController.swift in Sources */,
+				78B9E540203C4CD70054CAD3 /* RegistrationViewController.swift in Sources */,
+				78B9E541203C4CD70054CAD3 /* BaseResponseModel.swift in Sources */,
+				78B9E542203C4CD70054CAD3 /* Consts.swift in Sources */,
+				78B9E543203C4CD70054CAD3 /* UIViewController+Alerts.swift in Sources */,
+				78B9E544203C4CD70054CAD3 /* Style.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FAE733BA2034494D00898E65 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -799,6 +989,40 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		78B9E551203C4CD70054CAD3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75FFF5257900F06BA6D613F0 /* Pods-MySkinDoctorLive.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MySkinDoctor/MySkinDoctorLive.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 75343VFMU9;
+				INFOPLIST_FILE = MySkinDoctor/MySkinDoctorLive.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.touchsoft.MySkinDoctor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		78B9E552203C4CD70054CAD3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F492478A85E247C0FDC4AC62 /* Pods-MySkinDoctorLive.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MySkinDoctor/MySkinDoctorLive.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 75343VFMU9;
+				INFOPLIST_FILE = MySkinDoctor/MySkinDoctorLive.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.touchsoft.MySkinDoctor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		FAE733E72034494E00898E65 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -911,11 +1135,13 @@
 			baseConfigurationReference = 19DF0ED90EB9C405B3E38F3B /* Pods-MySkinDoctor.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MySkinDoctor/MySkinDoctor.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 75343VFMU9;
-				INFOPLIST_FILE = MySkinDoctor/Info.plist;
+				INFOPLIST_FILE = MySkinDoctor/MySkinDoctor.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.touchsoft.MySkinDoctor;
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DDEV\"";
+				PRODUCT_BUNDLE_IDENTIFIER = com.touchsoft.dev.MySkinDoctor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -927,11 +1153,13 @@
 			baseConfigurationReference = 2EA351FB6344405FCA1ECF1E /* Pods-MySkinDoctor.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MySkinDoctor/MySkinDoctor.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 75343VFMU9;
-				INFOPLIST_FILE = MySkinDoctor/Info.plist;
+				INFOPLIST_FILE = MySkinDoctor/MySkinDoctor.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.touchsoft.MySkinDoctor;
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DDEV\"";
+				PRODUCT_BUNDLE_IDENTIFIER = com.touchsoft.dev.MySkinDoctor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1007,6 +1235,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		78B9E550203C4CD70054CAD3 /* Build configuration list for PBXNativeTarget "MySkinDoctorLive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78B9E551203C4CD70054CAD3 /* Debug */,
+				78B9E552203C4CD70054CAD3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FAE733B92034494D00898E65 /* Build configuration list for PBXProject "MySkinDoctor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

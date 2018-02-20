@@ -20,6 +20,10 @@ target 'MySkinDoctor' do
 	shared_pods
 end
 
+target 'MySkinDoctorLive' do
+	shared_pods
+end
+
 target 'MySkinDoctorUITests' do
 	shared_pods
 end

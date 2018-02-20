@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0920"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9B33003DE1798F62990211915106098C"
-               BuildableName = "Pods_MySkinDoctor.framework"
-               BlueprintName = "Pods-MySkinDoctor"
-               ReferencedContainer = "container:Pods.xcodeproj">
+               BlueprintIdentifier = "78B9E52D203C4CD70054CAD3"
+               BuildableName = "MySkinDoctorLive.app"
+               BlueprintName = "MySkinDoctorLive"
+               ReferencedContainer = "container:MySkinDoctor.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -30,6 +30,15 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "78B9E52D203C4CD70054CAD3"
+            BuildableName = "MySkinDoctorLive.app"
+            BlueprintName = "MySkinDoctorLive"
+            ReferencedContainer = "container:MySkinDoctor.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -44,15 +53,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9B33003DE1798F62990211915106098C"
-            BuildableName = "Pods_MySkinDoctor.framework"
-            BlueprintName = "Pods-MySkinDoctor"
-            ReferencedContainer = "container:Pods.xcodeproj">
+            BlueprintIdentifier = "78B9E52D203C4CD70054CAD3"
+            BuildableName = "MySkinDoctorLive.app"
+            BlueprintName = "MySkinDoctorLive"
+            ReferencedContainer = "container:MySkinDoctor.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -62,6 +72,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "78B9E52D203C4CD70054CAD3"
+            BuildableName = "MySkinDoctorLive.app"
+            BlueprintName = "MySkinDoctorLive"
+            ReferencedContainer = "container:MySkinDoctor.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
