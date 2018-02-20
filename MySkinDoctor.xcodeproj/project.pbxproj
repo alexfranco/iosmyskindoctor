@@ -21,6 +21,12 @@
 		78B9E518203C2C670054CAD3 /* ForgotPasswordResposeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B9E517203C2C670054CAD3 /* ForgotPasswordResposeModel.swift */; };
 		78B9E520203C2E630054CAD3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78B9E522203C2E630054CAD3 /* Localizable.strings */; };
 		78B9E524203C2F100054CAD3 /* CustomErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B9E523203C2F100054CAD3 /* CustomErrors.swift */; };
+		78B9E525203C48FC0054CAD3 /* ApiUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC1AF0D2036F46F00547BBC /* ApiUtils.swift */; };
+		78B9E526203C48FC0054CAD3 /* ApiUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC1AF0D2036F46F00547BBC /* ApiUtils.swift */; };
+		78B9E528203C4A920054CAD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78B9E527203C4A920054CAD3 /* Main.storyboard */; };
+		78B9E52A203C4AF20054CAD3 /* Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B9E529203C4AF20054CAD3 /* Consts.swift */; };
+		78B9E52B203C4C680054CAD3 /* Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B9E529203C4AF20054CAD3 /* Consts.swift */; };
+		78B9E52C203C4C690054CAD3 /* Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B9E529203C4AF20054CAD3 /* Consts.swift */; };
 		BACDC2609AC77EBE02475BED /* Pods_MySkinDoctor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01583D02E29AF032A253E558 /* Pods_MySkinDoctor.framework */; };
 		F282CA516A5C0262A9EDB9AE /* Pods_MySkinDoctorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E2D019D11880DC312A040CC /* Pods_MySkinDoctorTests.framework */; };
 		F9D2102A6279AFF2B59A69CC /* Pods_MySkinDoctorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0C3C2F56ED18563B887D4D9 /* Pods_MySkinDoctorUITests.framework */; };
@@ -42,8 +48,7 @@
 		FAC1AF122036FCE200547BBC /* RegistrationResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC1AF102036FCE200547BBC /* RegistrationResponseModel.swift */; };
 		FAC1AF132036FCE200547BBC /* RegistrationResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC1AF102036FCE200547BBC /* RegistrationResponseModel.swift */; };
 		FAE733C22034494D00898E65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE733C12034494D00898E65 /* AppDelegate.swift */; };
-		FAE733C42034494D00898E65 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE733C32034494D00898E65 /* ViewController.swift */; };
-		FAE733C72034494D00898E65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAE733C52034494D00898E65 /* Main.storyboard */; };
+		FAE733C72034494D00898E65 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAE733C52034494D00898E65 /* Login.storyboard */; };
 		FAE733CA2034494D00898E65 /* MySkinDoctor.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAE733C82034494D00898E65 /* MySkinDoctor.xcdatamodeld */; };
 		FAE733CC2034494D00898E65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAE733CB2034494D00898E65 /* Assets.xcassets */; };
 		FAE733CF2034494D00898E65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAE733CD2034494D00898E65 /* LaunchScreen.storyboard */; };
@@ -93,6 +98,8 @@
 		78B9E517203C2C670054CAD3 /* ForgotPasswordResposeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordResposeModel.swift; sourceTree = "<group>"; };
 		78B9E521203C2E630054CAD3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		78B9E523203C2F100054CAD3 /* CustomErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomErrors.swift; path = MySkinDoctor/CustomErrors.swift; sourceTree = SOURCE_ROOT; };
+		78B9E527203C4A920054CAD3 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		78B9E529203C4AF20054CAD3 /* Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consts.swift; sourceTree = "<group>"; };
 		85B14CEDA9F10AD5CDFAFE54 /* Pods-MySkinDoctorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySkinDoctorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MySkinDoctorTests/Pods-MySkinDoctorTests.release.xcconfig"; sourceTree = "<group>"; };
 		A8E80ED1315E894849856D66 /* Pods-MySkinDoctorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySkinDoctorUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MySkinDoctorUITests/Pods-MySkinDoctorUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B7FBD70382F1461742FB7DCB /* Pods-MySkinDoctorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySkinDoctorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MySkinDoctorTests/Pods-MySkinDoctorTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -106,8 +113,7 @@
 		FAC1AF102036FCE200547BBC /* RegistrationResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationResponseModel.swift; sourceTree = "<group>"; };
 		FAE733BE2034494D00898E65 /* MySkinDoctor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySkinDoctor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAE733C12034494D00898E65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FAE733C32034494D00898E65 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		FAE733C62034494D00898E65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FAE733C62034494D00898E65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		FAE733C92034494D00898E65 /* MySkinDoctor.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MySkinDoctor.xcdatamodel; sourceTree = "<group>"; };
 		FAE733CB2034494D00898E65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAE733CE2034494D00898E65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -180,6 +186,7 @@
 				FAE733C82034494D00898E65 /* MySkinDoctor.xcdatamodeld */,
 				78B9E522203C2E630054CAD3 /* Localizable.strings */,
 				FAE733FB20344B5100898E65 /* Podfile */,
+				78B9E529203C4AF20054CAD3 /* Consts.swift */,
 			);
 			path = SupportFiles;
 			sourceTree = "<group>";
@@ -196,7 +203,8 @@
 			isa = PBXGroup;
 			children = (
 				FAE733CD2034494D00898E65 /* LaunchScreen.storyboard */,
-				FAE733C52034494D00898E65 /* Main.storyboard */,
+				FAE733C52034494D00898E65 /* Login.storyboard */,
+				78B9E527203C4A920054CAD3 /* Main.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -295,7 +303,6 @@
 				78B9E51B203C2D600054CAD3 /* SupportFiles */,
 				780F701E2035A06000D96601 /* Theme */,
 				78B9E51C203C2D730054CAD3 /* Utils */,
-				FAE733C32034494D00898E65 /* ViewController.swift */,
 				FAC1AF0C2036F41300547BBC /* Web */,
 			);
 			path = MySkinDoctor;
@@ -448,8 +455,9 @@
 				78B9E520203C2E630054CAD3 /* Localizable.strings in Resources */,
 				FAE733CF2034494D00898E65 /* LaunchScreen.storyboard in Resources */,
 				FAE733CC2034494D00898E65 /* Assets.xcassets in Resources */,
+				78B9E528203C4A920054CAD3 /* Main.storyboard in Resources */,
 				FAE733FC20344B5100898E65 /* Podfile in Resources */,
-				FAE733C72034494D00898E65 /* Main.storyboard in Resources */,
+				FAE733C72034494D00898E65 /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -699,12 +707,12 @@
 				FAE733F420344AE200898E65 /* LoginViewController.swift in Sources */,
 				FAE733CA2034494D00898E65 /* MySkinDoctor.xcdatamodeld in Sources */,
 				FA9760D6203AFBD200242255 /* LoginResponseModel.swift in Sources */,
-				FAE733C42034494D00898E65 /* ViewController.swift in Sources */,
 				780F70222035A1B400D96601 /* ThemeManager.swift in Sources */,
 				FAE733C22034494D00898E65 /* AppDelegate.swift in Sources */,
 				78B9E516203C2B920054CAD3 /* ForgotPasswordViewController.swift in Sources */,
 				FAE733F820344B2800898E65 /* RegistrationViewController.swift in Sources */,
 				FA9760DD203B0EDC00242255 /* BaseResponseModel.swift in Sources */,
+				78B9E52A203C4AF20054CAD3 /* Consts.swift in Sources */,
 				FA9760D9203B0E0A00242255 /* UIViewController+Alerts.swift in Sources */,
 				780F70202035A07000D96601 /* Style.swift in Sources */,
 			);
@@ -715,9 +723,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAE733F920344B2800898E65 /* RegistrationViewController.swift in Sources */,
+				78B9E52B203C4C680054CAD3 /* Consts.swift in Sources */,
 				FA9760E9203B359400242255 /* FormTextField.swift in Sources */,
 				FAC1AF122036FCE200547BBC /* RegistrationResponseModel.swift in Sources */,
 				FAE733F520344AE200898E65 /* LoginViewController.swift in Sources */,
+				78B9E525203C48FC0054CAD3 /* ApiUtils.swift in Sources */,
 				780F701C203592B800D96601 /* ProgressBarViewController.swift in Sources */,
 				FA9760E4203B29D600242255 /* Validations.swift in Sources */,
 				780F701A203592B400D96601 /* FormViewController.swift in Sources */,
@@ -732,9 +742,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAE733FA20344B2800898E65 /* RegistrationViewController.swift in Sources */,
+				78B9E52C203C4C690054CAD3 /* Consts.swift in Sources */,
 				FA9760EA203B359400242255 /* FormTextField.swift in Sources */,
 				FAC1AF132036FCE200547BBC /* RegistrationResponseModel.swift in Sources */,
 				FAE733F620344AE200898E65 /* LoginViewController.swift in Sources */,
+				78B9E526203C48FC0054CAD3 /* ApiUtils.swift in Sources */,
 				780F701D203592B900D96601 /* ProgressBarViewController.swift in Sources */,
 				FA9760E5203B29D600242255 /* Validations.swift in Sources */,
 				780F701B203592B500D96601 /* FormViewController.swift in Sources */,
@@ -768,12 +780,12 @@
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
-		FAE733C52034494D00898E65 /* Main.storyboard */ = {
+		FAE733C52034494D00898E65 /* Login.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				FAE733C62034494D00898E65 /* Base */,
 			);
-			name = Main.storyboard;
+			name = Login.storyboard;
 			sourceTree = "<group>";
 		};
 		FAE733CD2034494D00898E65 /* LaunchScreen.storyboard */ = {

@@ -38,12 +38,15 @@ class LoginViewController: FormViewController {
 		}
 		
 		showSpinner(nil)
+		nextButton.isEnabled = false
 		ApiUtils.login(email: emailTextField.text!, password: passwordTextField.text!) { (result) in
 			self.hideSpinner()
+			self.nextButton.isEnabled = true
 			
 			switch result {
 			case .success(let model):
 				print("login success")
+				self.performSegue(withIdentifier: Segues.goToMainStoryboardFromLogin, sender: nil)
 			case .failure(let model, let error):
 				print("error")
 				self.showResponseError(responseModel: model as? BaseResponseModel, apiGenericError: error)
@@ -69,5 +72,10 @@ class LoginViewController: FormViewController {
 		}
 		
 		return isValid
+	}
+	
+	// MARK: Unwind
+	
+	@IBAction func unwindToLogin(segue:UIStoryboardSegue) {
 	}
 }

@@ -112,6 +112,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ehD-Ue-ib8" customClass="NoBackgroundButton" customModule="MySkinDoctor" customModuleProvider="target">
                                 <rect key="frame" x="20" y="617" width="335" height="30"/>
                                 <state key="normal" title="Not registered? Create an account"/>
+                                <connections>
+                                    <segue destination="PGh-27-rQV" kind="show" id="8Y6-bn-RpT"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -134,11 +137,12 @@
                         <outlet property="nextButton" destination="byO-ag-8v2" id="Zq6-HE-Gn9"/>
                         <outlet property="passwordTextField" destination="FJp-az-mfl" id="Pr1-io-iZe"/>
                         <outlet property="scrollView" destination="C0d-7b-P5f" id="ADm-ao-gpc"/>
+                        <segue destination="Zao-QA-S2N" kind="presentation" identifier="goToMainStoryboardFromLogin" id="7Wl-ly-Rz8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="141.59999999999999" y="133.5832083958021"/>
+            <point key="canvasLocation" x="452" y="134"/>
         </scene>
         <!--Forgot Password View Controller-->
         <scene sceneID="yQ0-ys-yRM">
@@ -222,10 +226,139 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gyk-cx-E8t" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="868" y="134"/>
+            <point key="canvasLocation" x="1265" y="134"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="zWa-eQ-02Y">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="Zao-QA-S2N" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rGa-33-3uq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2310" y="79"/>
+        </scene>
+        <!--Registration View Controller-->
+        <scene sceneID="6Sf-rW-0mY">
+            <objects>
+                <viewController id="PGh-27-rQV" customClass="RegistrationViewController" customModule="MySkinDoctor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ncg-bj-EJd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lzh-dg-SsL">
+                                <rect key="frame" x="0.0" y="20" width="375" height="577"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SM1-n8-c0R">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="427"/>
+                                        <subviews>
+                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="gCB-ys-X0o">
+                                                <rect key="frame" x="20" y="20" width="335" height="150"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="150" id="flS-tA-lFL"/>
+                                                </constraints>
+                                            </imageView>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hNs-dd-byr" customClass="FormTextField" customModule="MySkinDoctor" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="190" width="335" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="un4-VR-gaj"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f90-ib-u2H" customClass="FormTextField" customModule="MySkinDoctor" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="245" width="335" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="BZL-f8-dh2"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Abm-NQ-RSO" customClass="PositiveButton" customModule="MySkinDoctor" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="307" width="335" height="50"/>
+                                                <state key="normal" title="Register Account"/>
+                                                <connections>
+                                                    <action selector="onNextButtonPressed:" destination="PGh-27-rQV" eventType="touchUpInside" id="fxq-hS-bd2"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fa2-ly-aLa" customClass="NoBackgroundButton" customModule="MySkinDoctor" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="377" width="335" height="30"/>
+                                                <state key="normal" title="Forgot Password?"/>
+                                                <connections>
+                                                    <segue destination="SM0-O1-huI" kind="show" id="V9C-z3-L2B"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="f90-ib-u2H" firstAttribute="top" secondItem="hNs-dd-byr" secondAttribute="bottom" constant="5" id="0ef-ys-ucE"/>
+                                            <constraint firstItem="f90-ib-u2H" firstAttribute="trailing" secondItem="hNs-dd-byr" secondAttribute="trailing" id="0qp-IV-IAM"/>
+                                            <constraint firstItem="gCB-ys-X0o" firstAttribute="leading" secondItem="SM1-n8-c0R" secondAttribute="leading" constant="20" id="3Y5-qp-R9d"/>
+                                            <constraint firstAttribute="trailing" secondItem="fa2-ly-aLa" secondAttribute="trailing" constant="20" id="7IP-II-8qr"/>
+                                            <constraint firstItem="Abm-NQ-RSO" firstAttribute="top" secondItem="f90-ib-u2H" secondAttribute="bottom" constant="12" id="Jl7-Ne-hgP"/>
+                                            <constraint firstItem="Abm-NQ-RSO" firstAttribute="height" secondItem="f90-ib-u2H" secondAttribute="height" id="KEU-50-wDa"/>
+                                            <constraint firstItem="gCB-ys-X0o" firstAttribute="top" secondItem="SM1-n8-c0R" secondAttribute="top" constant="20" id="PYe-5n-RUl"/>
+                                            <constraint firstItem="fa2-ly-aLa" firstAttribute="top" secondItem="Abm-NQ-RSO" secondAttribute="bottom" constant="20" id="RZ8-ur-k44"/>
+                                            <constraint firstItem="Abm-NQ-RSO" firstAttribute="trailing" secondItem="f90-ib-u2H" secondAttribute="trailing" id="XM2-9E-hcV"/>
+                                            <constraint firstItem="f90-ib-u2H" firstAttribute="leading" secondItem="hNs-dd-byr" secondAttribute="leading" id="boA-df-qd3"/>
+                                            <constraint firstItem="hNs-dd-byr" firstAttribute="leading" secondItem="SM1-n8-c0R" secondAttribute="leading" constant="20" id="fyi-ci-FsD"/>
+                                            <constraint firstItem="Abm-NQ-RSO" firstAttribute="leading" secondItem="f90-ib-u2H" secondAttribute="leading" id="joI-ab-oc1"/>
+                                            <constraint firstAttribute="trailing" secondItem="hNs-dd-byr" secondAttribute="trailing" constant="20" id="kHq-2t-nSk"/>
+                                            <constraint firstItem="hNs-dd-byr" firstAttribute="top" secondItem="gCB-ys-X0o" secondAttribute="bottom" constant="20" id="tY3-nB-zaa"/>
+                                            <constraint firstItem="fa2-ly-aLa" firstAttribute="leading" secondItem="SM1-n8-c0R" secondAttribute="leading" constant="20" id="txv-RM-Zo8"/>
+                                            <constraint firstAttribute="trailing" secondItem="gCB-ys-X0o" secondAttribute="trailing" constant="20" id="vhZ-WR-PLy"/>
+                                            <constraint firstAttribute="bottom" secondItem="fa2-ly-aLa" secondAttribute="bottom" constant="20" id="xC8-8W-zbP"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="SM1-n8-c0R" firstAttribute="top" secondItem="Lzh-dg-SsL" secondAttribute="top" id="P1L-Am-y9o"/>
+                                    <constraint firstItem="SM1-n8-c0R" firstAttribute="centerX" secondItem="Lzh-dg-SsL" secondAttribute="centerX" id="Qe9-kZ-oW1"/>
+                                    <constraint firstItem="SM1-n8-c0R" firstAttribute="leading" secondItem="Lzh-dg-SsL" secondAttribute="leading" id="rLM-kl-RGw"/>
+                                    <constraint firstAttribute="bottom" secondItem="SM1-n8-c0R" secondAttribute="bottom" id="tsw-3I-BDU"/>
+                                    <constraint firstAttribute="trailing" secondItem="SM1-n8-c0R" secondAttribute="trailing" id="uSD-Qn-exW"/>
+                                </constraints>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lzP-AF-9Fi" customClass="NoBackgroundButton" customModule="MySkinDoctor" customModuleProvider="target">
+                                <rect key="frame" x="20" y="617" width="335" height="30"/>
+                                <state key="normal" title="Already registered?"/>
+                                <connections>
+                                    <segue destination="KAW-nj-Ojh" kind="unwind" unwindAction="unwindToLoginWithSegue:" id="bD5-Ni-Ahu"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="gIF-kq-gsO" firstAttribute="trailing" secondItem="Lzh-dg-SsL" secondAttribute="trailing" id="0gO-eW-8El"/>
+                            <constraint firstItem="gIF-kq-gsO" firstAttribute="bottom" secondItem="lzP-AF-9Fi" secondAttribute="bottom" constant="20" id="5gG-XS-BMP"/>
+                            <constraint firstItem="lzP-AF-9Fi" firstAttribute="top" secondItem="Lzh-dg-SsL" secondAttribute="bottom" constant="20" id="Cv3-CG-bnG"/>
+                            <constraint firstItem="lzP-AF-9Fi" firstAttribute="leading" secondItem="gIF-kq-gsO" secondAttribute="leading" constant="20" id="J3Q-cm-tCk"/>
+                            <constraint firstItem="Lzh-dg-SsL" firstAttribute="top" secondItem="gIF-kq-gsO" secondAttribute="top" id="slB-X7-WqU"/>
+                            <constraint firstItem="gIF-kq-gsO" firstAttribute="trailing" secondItem="lzP-AF-9Fi" secondAttribute="trailing" constant="20" id="wCO-HS-E3S"/>
+                            <constraint firstItem="Lzh-dg-SsL" firstAttribute="leading" secondItem="gIF-kq-gsO" secondAttribute="leading" id="zAm-ep-G8Q"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gIF-kq-gsO"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="iUf-7j-Kxy"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="hNs-dd-byr" id="c6x-Q2-ixo"/>
+                        <outlet property="logoImageView" destination="gCB-ys-X0o" id="uYx-HC-Eqe"/>
+                        <outlet property="nextButton" destination="Abm-NQ-RSO" id="iyc-x7-i3l"/>
+                        <outlet property="passwordTextField" destination="f90-ib-u2H" id="2LO-Qr-LR5"/>
+                        <outlet property="scrollView" destination="Lzh-dg-SsL" id="jI6-Eq-B0j"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e6D-BB-lZK" sceneMemberID="firstResponder"/>
+                <exit id="KAW-nj-Ojh" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1265" y="-550"/>
         </scene>
     </scenes>
     <resources>
         <image name="logo" width="678" height="244"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="YaX-2U-fMO"/>
+    </inferredMetricsTieBreakers>
 </document>
