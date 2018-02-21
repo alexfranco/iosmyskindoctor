@@ -74,7 +74,7 @@
                   moduleName = "MySkinDoctor"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/alex/MySkinDoctor/MySkinDoctor/Web/ApiUtils.swift"
-                  timestampString = "540750954.201454"
+                  timestampString = "540925002.399289"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "83"
@@ -89,7 +89,7 @@
                   moduleName = "MySkinDoctor"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/alex/MySkinDoctor/MySkinDoctor/Web/ApiUtils.swift"
-                  timestampString = "540750954.204872"
+                  timestampString = "540925002.40221"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "84"
@@ -97,38 +97,6 @@
                   offsetFromSymbolStart = "171">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MySkinDoctor/LoginFlow/LoginViewController.swift"
-            timestampString = "540751116.845268"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "validateForm()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MySkinDoctor/LoginFlow/LoginViewController.swift"
-            timestampString = "540751116.845374"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "validateForm()"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -145,6 +113,54 @@
             endingLineNumber = "36"
             landmarkName = "errorMessage"
             landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MySkinDoctor/LoginFlow/ViewModels/LoginViewModel.swift"
+            timestampString = "540925002.196154"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "loginUser()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MySkinDoctor.LoginViewModel.loginUser() -&gt; ()"
+                  moduleName = "MySkinDoctor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alex/MySkinDoctor/MySkinDoctor/LoginFlow/ViewModels/LoginViewModel.swift"
+                  timestampString = "540925002.412256"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "82">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (MySkinDoctor.ApiUtils.ApiResult) -&gt; () in MySkinDoctor.LoginViewModel.loginUser() -&gt; ()"
+                  moduleName = "MySkinDoctor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alex/MySkinDoctor/MySkinDoctor/LoginFlow/ViewModels/LoginViewModel.swift"
+                  timestampString = "540925002.415846"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "30">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

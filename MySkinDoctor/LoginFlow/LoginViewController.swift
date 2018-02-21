@@ -13,8 +13,19 @@ import UIKit
 class LoginViewController: FormViewController {
 	
 	@IBOutlet weak var logoImageView: UIImageView!
-	@IBOutlet weak var emailTextField: FormTextField!
-	@IBOutlet weak var passwordTextField: FormTextField!
+	@IBOutlet weak var emailTextField: FormTextField! {
+		didSet {
+			emailTextField.bind { self.viewModel.email = $0 }
+		}
+	}
+	
+	@IBOutlet weak var passwordTextField: FormTextField! {
+		didSet {
+			passwordTextField.bind { self.viewModel.password = $0 }
+		}
+	}
+	
+	var viewModel = LoginViewModel()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -23,6 +34,8 @@ class LoginViewController: FormViewController {
 		passwordTextField.placeholder = "Password"
 
 		registerForKeyboardReturnKey([emailTextField, passwordTextField])
+		
+		initVM()
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
@@ -32,46 +45,58 @@ class LoginViewController: FormViewController {
 		self.navigationController?.setNavigationBarHidden(true, animated: animated)
 	}
 	
-	@IBAction func onNextButtonPressed(_ sender: Any) {
-		if !validateForm() {
-			return
-		}
-		
-		showSpinner(nil)
-		nextButton.isEnabled = false
-		ApiUtils.login(email: emailTextField.text!, password: passwordTextField.text!) { (result) in
-			self.hideSpinner()
-			self.nextButton.isEnabled = true
-			
-			switch result {
-			case .success(let model):
-				print("login success")
-				self.performSegue(withIdentifier: Segues.goToMainStoryboardFromLogin, sender: nil)
-			case .failure(let model, let error):
-				print("error")
-				self.showResponseError(responseModel: model as? BaseResponseModel, apiGenericError: error)
+	// MARK: Bindings
+	
+	func initVM() {
+		viewModel.showAlert = { [weak self] (title, message) in
+			DispatchQueue.main.async {
+				self?.showAlertView(title: title, message: message)
 			}
 		}
+		
+		viewModel.showResponseErrorAlert = { [weak self] (baseResponseModel, apiGenericError) in
+			DispatchQueue.main.async {
+				self?.showResponseError(responseModel: baseResponseModel, apiGenericError: apiGenericError)
+			}
+		}
+		
+		viewModel.updateLoadingStatus = { [weak self] () in
+			DispatchQueue.main.async {
+				let isLoading = self?.viewModel.isLoading ?? false
+				if isLoading {
+					self?.showSpinner("")
+					self?.nextButton.isEnabled = false
+				} else {
+					self?.hideSpinner()
+					self?.nextButton.isEnabled = true
+				}
+			}
+		}
+		
+		viewModel.goNextSegue = { [] () in
+			DispatchQueue.main.async {
+				self.performSegue(withIdentifier: Segues.goToMainStoryboardFromLogin, sender: nil)
+			}
+		}
+		
+		viewModel.emailValidationStatus = { [weak self] () in
+			DispatchQueue.main.async {
+				self?.emailTextField.errorMessage = self?.viewModel.emailErrorMessage
+			}
+		}
+		
+		viewModel.passwordValidationStatus = { [weak self] () in
+			DispatchQueue.main.async {
+				self?.passwordTextField.errorMessage = self?.viewModel.passwordErrorMessage
+			}
+		}
+
 	}
 	
-	override func validateForm() -> Bool {
-		var isValid = true
-		
-		if Validations.isValidEmail(testStr: emailTextField.text!) {
-			emailTextField.errorMessage = ""
-		} else {
-			emailTextField.errorMessage = "The email is invalid"
-			isValid = false
-		}
-		
-		if Validations.isValidPassword(testStr: passwordTextField.text!) {
-			passwordTextField.errorMessage = ""
-		} else {
-			passwordTextField.errorMessage = "The password is invalid"
-			isValid = false
-		}
-		
-		return isValid
+	// MARK: IBActions
+	
+	@IBAction func onNextButtonPressed(_ sender: Any) {
+		viewModel.loginUser()
 	}
 	
 	// MARK: Unwind

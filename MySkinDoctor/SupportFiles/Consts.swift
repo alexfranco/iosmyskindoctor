@@ -16,3 +16,12 @@ struct Segues {
 	static let goToMainStoryboardFromSignUp = "goToMainStoryboardFromSignUp"
 }
 
+struct Storyboard {
+	static let mainStoryboardName = "Main"
+	static let mainNavigationControllerId = "MainNavigationController"
+}
+
+struct UserDefaultConsts {
+	static let isUserLoggedIn = "isUserLoggedIn"
+}
+

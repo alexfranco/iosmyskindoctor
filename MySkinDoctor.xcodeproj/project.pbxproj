@@ -89,6 +89,10 @@
 		FAE733F820344B2800898E65 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE733F720344B2800898E65 /* RegistrationViewController.swift */; };
 		FAE733F920344B2800898E65 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE733F720344B2800898E65 /* RegistrationViewController.swift */; };
 		FAE733FA20344B2800898E65 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE733F720344B2800898E65 /* RegistrationViewController.swift */; };
+		FAEC573B203DBEAE00D1A0AE /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEC573A203DBEAE00D1A0AE /* LoginViewModel.swift */; };
+		FAEC573C203DBEAE00D1A0AE /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEC573A203DBEAE00D1A0AE /* LoginViewModel.swift */; };
+		FAEC573D203DBEAE00D1A0AE /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEC573A203DBEAE00D1A0AE /* LoginViewModel.swift */; };
+		FAEC573E203DBEAE00D1A0AE /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEC573A203DBEAE00D1A0AE /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -160,6 +164,7 @@
 		FAE733E62034494E00898E65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAE733F320344AE200898E65 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FAE733F720344B2800898E65 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		FAEC573A203DBEAE00D1A0AE /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -378,11 +383,20 @@
 		FAE733F220344AC700898E65 /* LoginFlow */ = {
 			isa = PBXGroup;
 			children = (
+				FAEC5739203DBE8B00D1A0AE /* ViewModels */,
 				FAE733F720344B2800898E65 /* RegistrationViewController.swift */,
 				FAE733F320344AE200898E65 /* LoginViewController.swift */,
 				78B9E515203C2B920054CAD3 /* ForgotPasswordViewController.swift */,
 			);
 			path = LoginFlow;
+			sourceTree = "<group>";
+		};
+		FAEC5739203DBE8B00D1A0AE /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				FAEC573A203DBEAE00D1A0AE /* LoginViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -858,6 +872,7 @@
 			files = (
 				78B9E530203C4CD70054CAD3 /* RegistrationResponseModel.swift in Sources */,
 				78B9E531203C4CD70054CAD3 /* FormTextField.swift in Sources */,
+				FAEC573C203DBEAE00D1A0AE /* LoginViewModel.swift in Sources */,
 				78B9E532203C4CD70054CAD3 /* ApiUtils.swift in Sources */,
 				78B9E533203C4CD70054CAD3 /* PositiveButton.swift in Sources */,
 				78B9E534203C4CD70054CAD3 /* FormViewController.swift in Sources */,
@@ -886,6 +901,7 @@
 			files = (
 				FAC1AF112036FCE200547BBC /* RegistrationResponseModel.swift in Sources */,
 				FA9760E8203B359400242255 /* FormTextField.swift in Sources */,
+				FAEC573B203DBEAE00D1A0AE /* LoginViewModel.swift in Sources */,
 				FAC1AF0E2036F46F00547BBC /* ApiUtils.swift in Sources */,
 				780F70242035A63700D96601 /* PositiveButton.swift in Sources */,
 				780F7017203587CB00D96601 /* FormViewController.swift in Sources */,
@@ -920,6 +936,7 @@
 				78B9E525203C48FC0054CAD3 /* ApiUtils.swift in Sources */,
 				780F701C203592B800D96601 /* ProgressBarViewController.swift in Sources */,
 				FA9760E4203B29D600242255 /* Validations.swift in Sources */,
+				FAEC573D203DBEAE00D1A0AE /* LoginViewModel.swift in Sources */,
 				780F701A203592B400D96601 /* FormViewController.swift in Sources */,
 				FA9760DE203B0EDC00242255 /* BaseResponseModel.swift in Sources */,
 				FA9760DA203B0E0A00242255 /* UIViewController+Alerts.swift in Sources */,
@@ -939,6 +956,7 @@
 				78B9E526203C48FC0054CAD3 /* ApiUtils.swift in Sources */,
 				780F701D203592B900D96601 /* ProgressBarViewController.swift in Sources */,
 				FA9760E5203B29D600242255 /* Validations.swift in Sources */,
+				FAEC573E203DBEAE00D1A0AE /* LoginViewModel.swift in Sources */,
 				780F701B203592B500D96601 /* FormViewController.swift in Sources */,
 				FA9760DF203B0EDC00242255 /* BaseResponseModel.swift in Sources */,
 				FA9760DB203B0E0A00242255 /* UIViewController+Alerts.swift in Sources */,

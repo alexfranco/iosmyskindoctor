@@ -19,6 +19,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 		IQKeyboardManager.sharedManager().enable = true // controls the scrollviews and uitextfields
 		ThemeManager.applyTheme()
+		
+		let defaults = UserDefaults.standard
+
+		if defaults.bool(forKey: UserDefaultConsts.isUserLoggedIn) {
+			let mainStoryboard : UIStoryboard = UIStoryboard(name: Storyboard.mainStoryboardName, bundle: nil)
+			let initialVC : UIViewController = mainStoryboard.instantiateViewController(withIdentifier: Storyboard.mainNavigationControllerId) as UIViewController
+			self.window = UIWindow(frame: UIScreen.main.bounds)
+			self.window?.rootViewController = initialVC
+			self.window?.makeKeyAndVisible()
+		}
+		
 		return true
 	}
 

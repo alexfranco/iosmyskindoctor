@@ -51,7 +51,7 @@ class ForgotPasswordViewController: FormViewController {
 		}
 	}
 	
-	override func validateForm() -> Bool {
+	func validateForm() -> Bool {
 		var isValid = true
 		
 		if Validations.isValidEmail(testStr: emailTextField.text!) {

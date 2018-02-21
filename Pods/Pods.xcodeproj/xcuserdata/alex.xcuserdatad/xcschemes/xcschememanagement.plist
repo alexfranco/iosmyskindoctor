@@ -67,6 +67,11 @@
 			<key>orderHint</key>
 			<integer>9</integer>
 		</dict>
+		<key>Pods-MySkinDoctorLive.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>15</integer>
+		</dict>
 		<key>Pods-MySkinDoctorTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
