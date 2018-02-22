@@ -1,14 +1,14 @@
 //
-//  LoginViewModel.swift
+//  RegistrationViewModel.swift
 //  MySkinDoctor
 //
-//  Created by Alex on 21/02/2018.
+//  Created by Alex Núñez on 22/02/2018.
 //  Copyright © 2018 TouchSoft. All rights reserved.
 //
 
 import Foundation
 
-class LoginViewModel: BaseViewModel {
+class RegistrationViewModel: BaseViewModel {
 	
 	var email = ""
 	var password = ""
@@ -30,25 +30,25 @@ class LoginViewModel: BaseViewModel {
 	
 	override func validateForm() -> Bool {
 		var isValid = true
-
+		
 		if Validations.isValidEmail(testStr: email) {
 			emailErrorMessage = ""
 		} else {
 			emailErrorMessage = "The email is invalid"
 			isValid = false
 		}
-
+		
 		if Validations.isValidPassword(testStr: password) {
 			passwordErrorMessage = ""
 		} else {
 			passwordErrorMessage = "The password is invalid"
 			isValid = false
 		}
-
+		
 		return isValid
 	}
 	
-	func loginUser() {
+	func registerUser() {
 		
 		if !self.validateForm() {
 			return
@@ -56,12 +56,12 @@ class LoginViewModel: BaseViewModel {
 		
 		self.isLoading = true
 		
-		ApiUtils.login(email: email, password:password) { (result) in
+		ApiUtils.registration(email: email, password: password, firstName: "", lastName: "", dob: Date(), mobileNumber: "", postcode: "", deviceID: "") { (result) in
 			self.isLoading = false
 			
 			switch result {
 			case .success(let model):
-				print("login success")
+				print("registration success")
 				
 				// TODO save token
 				let defaults = UserDefaults.standard
@@ -72,8 +72,6 @@ class LoginViewModel: BaseViewModel {
 				self.showResponseErrorAlert!(model as? BaseResponseModel, error)
 			}
 		}
-		
-	}
-	
+	}	
 }
 

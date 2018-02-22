@@ -6,15 +6,24 @@
 //  Copyright © 2018 TouchSoft. All rights reserved.
 //
 
-import Foundation
 import TextFieldEffects
 import UIKit
 
 class RegistrationViewController: FormViewController {
 	
 	@IBOutlet weak var logoImageView: UIImageView!
-	@IBOutlet weak var emailTextField: FormTextField!
-	@IBOutlet weak var passwordTextField: PasswordTextField!
+	@IBOutlet weak var emailTextField: FormTextField! {
+		didSet {
+			emailTextField.bind { (self.viewModel as! RegistrationViewModel).email = $0 }
+		}
+	}
+	
+	@IBOutlet weak var passwordTextField: PasswordTextField! {
+		didSet {
+			passwordTextField.bind { (self.viewModel as! RegistrationViewModel).password = $0 }
+		}
+	}
+	
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -23,6 +32,8 @@ class RegistrationViewController: FormViewController {
 		passwordTextField.placeholder = "Password"
 		
 		registerForKeyboardReturnKey([emailTextField, passwordTextField])
+		
+		initViewModel(viewModel: RegistrationViewModel())
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
@@ -32,46 +43,38 @@ class RegistrationViewController: FormViewController {
 		self.navigationController?.setNavigationBarHidden(false, animated: animated)
 	}
 	
-	@IBAction func onNextButtonPressed(_ sender: Any) {
-		if !validateForm() {
-			return
+	// MARK: Bindings
+	
+	override func initViewModel(viewModel: BaseViewModel) {
+		super.initViewModel(viewModel: viewModel)
+		
+		let registrationViewModel = viewModel as! RegistrationViewModel
+		
+		registrationViewModel.goNextSegue = { [] () in
+			DispatchQueue.main.async {
+				self.performSegue(withIdentifier: Segues.goToMainStoryboardFromLogin, sender: nil)
+			}
 		}
 		
-		showSpinner(nil)
-		nextButton.isEnabled = false
-		ApiUtils.registration(email: emailTextField.text!, password: passwordTextField.text!, firstName: "", lastName: "", dob: Date(), mobileNumber: "", postcode: "", deviceID: "") { (result) in
-			self.hideSpinner()
-			self.nextButton.isEnabled = true
-			
-			switch result {
-			case .success(let model):
-				print("sign up success")
-				self.performSegue(withIdentifier: Segues.goToMainStoryboardFromLogin, sender: nil)
-			case .failure(let model, let error):
-				print("error")
-				self.showResponseError(responseModel: model as? BaseResponseModel, apiGenericError: error)
+		registrationViewModel.emailValidationStatus = { [weak self] () in
+			DispatchQueue.main.async {
+				self?.emailTextField.errorMessage = registrationViewModel.emailErrorMessage
+				self?.emailTextField.becomeFirstResponder()
+			}
+		}
+		
+		registrationViewModel.passwordValidationStatus = { [weak self] () in
+			DispatchQueue.main.async {
+				self?.passwordTextField.errorMessage = registrationViewModel.passwordErrorMessage
+				self?.passwordTextField.becomeFirstResponder()
 			}
 		}
 	}
 	
-	func validateForm() -> Bool {
-		var isValid = true
-		
-		if Validations.isValidEmail(testStr: emailTextField.text!) {
-			emailTextField.errorMessage = ""
-		} else {
-			emailTextField.errorMessage = "The email is invalid"
-			isValid = false
-		}
-		
-		if Validations.isValidPassword(testStr: passwordTextField.text!) {
-			passwordTextField.errorMessage = ""
-		} else {
-			passwordTextField.errorMessage = "The password is invalid"
-			isValid = false
-		}
-		
-		return isValid
+	// MARK: IBActions
+	
+	@IBAction func onNextButtonPressed(_ sender: Any) {
+		(viewModel as! RegistrationViewModel).registerUser()
 	}
 }
 

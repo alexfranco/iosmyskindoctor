@@ -15,18 +15,16 @@ class LoginViewController: FormViewController {
 	@IBOutlet weak var logoImageView: UIImageView!
 	@IBOutlet weak var emailTextField: FormTextField! {
 		didSet {
-			emailTextField.bind { self.viewModel.email = $0 }
+			emailTextField.bind { (self.viewModel as! LoginViewModel).email = $0 }
 		}
 	}
 	
 	@IBOutlet weak var passwordTextField: PasswordTextField! {
 		didSet {
-			passwordTextField.bind { self.viewModel.password = $0 }
+			passwordTextField.bind { (self.viewModel as! LoginViewModel).password = $0 }
 		}
 	}
-	
-	var viewModel = LoginViewModel()
-	
+		
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
@@ -35,7 +33,7 @@ class LoginViewController: FormViewController {
 		
 		registerForKeyboardReturnKey([emailTextField, passwordTextField])
 		
-		initVM()
+		initViewModel(viewModel: LoginViewModel())
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
@@ -47,48 +45,27 @@ class LoginViewController: FormViewController {
 	
 	// MARK: Bindings
 	
-	func initVM() {
-		viewModel.showAlert = { [weak self] (title, message) in
-			DispatchQueue.main.async {
-				self?.showAlertView(title: title, message: message)
-			}
-		}
+	override func initViewModel(viewModel: BaseViewModel) {
+		super.initViewModel(viewModel: viewModel)
 		
-		viewModel.showResponseErrorAlert = { [weak self] (baseResponseModel, apiGenericError) in
-			DispatchQueue.main.async {
-				self?.showResponseError(responseModel: baseResponseModel, apiGenericError: apiGenericError)
-			}
-		}
+		let loginViewModel = (viewModel as! LoginViewModel)
 		
-		viewModel.updateLoadingStatus = { [weak self] () in
-			DispatchQueue.main.async {
-				let isLoading = self?.viewModel.isLoading ?? false
-				if isLoading {
-					self?.showSpinner("")
-					self?.nextButton.isEnabled = false
-				} else {
-					self?.hideSpinner()
-					self?.nextButton.isEnabled = true
-				}
-			}
-		}
-		
-		viewModel.goNextSegue = { [] () in
+		loginViewModel.goNextSegue = { [] () in
 			DispatchQueue.main.async {
 				self.performSegue(withIdentifier: Segues.goToMainStoryboardFromLogin, sender: nil)
 			}
 		}
 		
-		viewModel.emailValidationStatus = { [weak self] () in
+		loginViewModel.emailValidationStatus = { [weak self] () in
 			DispatchQueue.main.async {
-				self?.emailTextField.errorMessage = self?.viewModel.emailErrorMessage
+				self?.emailTextField.errorMessage = loginViewModel.emailErrorMessage
 				self?.emailTextField.becomeFirstResponder()
 			}
 		}
 		
-		viewModel.passwordValidationStatus = { [weak self] () in
+		loginViewModel.passwordValidationStatus = { [weak self] () in
 			DispatchQueue.main.async {
-				self?.passwordTextField.errorMessage = self?.viewModel.passwordErrorMessage
+				self?.passwordTextField.errorMessage = loginViewModel.passwordErrorMessage
 				self?.passwordTextField.becomeFirstResponder()
 			}
 		}
@@ -97,7 +74,7 @@ class LoginViewController: FormViewController {
 	// MARK: IBActions
 	
 	@IBAction func onNextButtonPressed(_ sender: Any) {
-		viewModel.loginUser()
+		(self.viewModel as! LoginViewModel).loginUser()
 	}
 	
 	// MARK: Unwind

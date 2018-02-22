@@ -1,54 +1,39 @@
 //
-//  LoginViewModel.swift
+//  ForgotPasswordViewModel.swift
 //  MySkinDoctor
 //
-//  Created by Alex on 21/02/2018.
+//  Created by Alex Núñez on 22/02/2018.
 //  Copyright © 2018 TouchSoft. All rights reserved.
 //
 
 import Foundation
 
-class LoginViewModel: BaseViewModel {
+class ForgotPasswordViewModel: BaseViewModel {
 	
 	var email = ""
-	var password = ""
 	
 	var emailValidationStatus: (()->())?
-	var passwordValidationStatus: (()->())?
-	
+
 	var emailErrorMessage: String = "" {
 		didSet {
 			self.emailValidationStatus?()
 		}
 	}
-	
-	var passwordErrorMessage: String = "" {
-		didSet {
-			self.passwordValidationStatus?()
-		}
-	}
-	
+		
 	override func validateForm() -> Bool {
 		var isValid = true
-
+		
 		if Validations.isValidEmail(testStr: email) {
 			emailErrorMessage = ""
 		} else {
 			emailErrorMessage = "The email is invalid"
 			isValid = false
 		}
-
-		if Validations.isValidPassword(testStr: password) {
-			passwordErrorMessage = ""
-		} else {
-			passwordErrorMessage = "The password is invalid"
-			isValid = false
-		}
-
+		
 		return isValid
 	}
 	
-	func loginUser() {
+	func requestPassword() {
 		
 		if !self.validateForm() {
 			return
@@ -56,24 +41,17 @@ class LoginViewModel: BaseViewModel {
 		
 		self.isLoading = true
 		
-		ApiUtils.login(email: email, password:password) { (result) in
+		ApiUtils.forgotPassword(email: email) { (result) in
 			self.isLoading = false
 			
 			switch result {
 			case .success(let model):
-				print("login success")
-				
-				// TODO save token
-				let defaults = UserDefaults.standard
-				defaults.set(true, forKey: UserDefaultConsts.isUserLoggedIn)
+				print("forgot password success")
 				self.goNextSegue!()
 			case .failure(let model, let error):
 				print("error")
 				self.showResponseErrorAlert!(model as? BaseResponseModel, error)
 			}
 		}
-		
 	}
-	
 }
-

@@ -26,11 +26,6 @@ class ProgressBarViewController: UIViewController {
 		// Show spinner
 		self.hud = MBProgressHUD.showAdded(to: view!, animated:true)
 		if let spinner = self.hud {
-//			spinner.mode = MBProgressHUDMode.customView
-//			spinner.color = ThemeManager.currentTheme().loadingBezelColour
-//			spinner.backgroundColor = ThemeManager.currentTheme().loadingBackgroundColour
-//			spinner.isUserInteractionEnabled = true
-			
 			if let textSafe = text {
 				spinner.label.text = textSafe
 			}

@@ -17,6 +17,18 @@
 		780F70222035A1B400D96601 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780F70212035A1B400D96601 /* ThemeManager.swift */; };
 		780F70242035A63700D96601 /* PositiveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780F70232035A63700D96601 /* PositiveButton.swift */; };
 		780F70262035AABB00D96601 /* NoBackgroundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780F70252035AABB00D96601 /* NoBackgroundButton.swift */; };
+		7849CC9E203EE15A0030A7B1 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7849CC9D203EE15A0030A7B1 /* RegistrationViewModel.swift */; };
+		7849CC9F203EE15A0030A7B1 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7849CC9D203EE15A0030A7B1 /* RegistrationViewModel.swift */; };
+		7849CCA0203EE15A0030A7B1 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7849CC9D203EE15A0030A7B1 /* RegistrationViewModel.swift */; };
+		7849CCA1203EE15A0030A7B1 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7849CC9D203EE15A0030A7B1 /* RegistrationViewModel.swift */; };
+		7849CCA3203EE2030030A7B1 /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7849CCA2203EE2030030A7B1 /* ForgotPasswordViewModel.swift */; };
+		7849CCA4203EE2030030A7B1 /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7849CCA2203EE2030030A7B1 /* ForgotPasswordViewModel.swift */; };
+		7849CCA5203EE2030030A7B1 /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7849CCA2203EE2030030A7B1 /* ForgotPasswordViewModel.swift */; };
+		7849CCA6203EE2030030A7B1 /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7849CCA2203EE2030030A7B1 /* ForgotPasswordViewModel.swift */; };
+		7849CCA8203EE3E60030A7B1 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7849CCA7203EE3E60030A7B1 /* BaseViewModel.swift */; };
+		7849CCA9203EE3E60030A7B1 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7849CCA7203EE3E60030A7B1 /* BaseViewModel.swift */; };
+		7849CCAA203EE3E60030A7B1 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7849CCA7203EE3E60030A7B1 /* BaseViewModel.swift */; };
+		7849CCAB203EE3E60030A7B1 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7849CCA7203EE3E60030A7B1 /* BaseViewModel.swift */; };
 		78B9E516203C2B920054CAD3 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B9E515203C2B920054CAD3 /* ForgotPasswordViewController.swift */; };
 		78B9E518203C2C670054CAD3 /* ForgotPasswordResposeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B9E517203C2C670054CAD3 /* ForgotPasswordResposeModel.swift */; };
 		78B9E520203C2E630054CAD3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78B9E522203C2E630054CAD3 /* Localizable.strings */; };
@@ -137,6 +149,9 @@
 		780F70212035A1B400D96601 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		780F70232035A63700D96601 /* PositiveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositiveButton.swift; sourceTree = "<group>"; };
 		780F70252035AABB00D96601 /* NoBackgroundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoBackgroundButton.swift; sourceTree = "<group>"; };
+		7849CC9D203EE15A0030A7B1 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
+		7849CCA2203EE2030030A7B1 /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
+		7849CCA7203EE3E60030A7B1 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		78B9E515203C2B920054CAD3 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		78B9E517203C2C670054CAD3 /* ForgotPasswordResposeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordResposeModel.swift; sourceTree = "<group>"; };
 		78B9E521203C2E630054CAD3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -412,7 +427,10 @@
 		FAEC5739203DBE8B00D1A0AE /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				7849CCA7203EE3E60030A7B1 /* BaseViewModel.swift */,
 				FAEC573A203DBEAE00D1A0AE /* LoginViewModel.swift */,
+				7849CC9D203EE15A0030A7B1 /* RegistrationViewModel.swift */,
+				7849CCA2203EE2030030A7B1 /* ForgotPasswordViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -897,12 +915,15 @@
 				78B9E535203C4CD70054CAD3 /* Validations.swift in Sources */,
 				78B9E536203C4CD70054CAD3 /* ForgotPasswordResposeModel.swift in Sources */,
 				78B9E537203C4CD70054CAD3 /* CustomErrors.swift in Sources */,
+				7849CC9F203EE15A0030A7B1 /* RegistrationViewModel.swift in Sources */,
 				78E44A9D203EB2E30094F3AF /* PasswordTextField.swift in Sources */,
 				78B9E538203C4CD70054CAD3 /* NoBackgroundButton.swift in Sources */,
 				78B9E539203C4CD70054CAD3 /* ProgressBarViewController.swift in Sources */,
 				78B9E53A203C4CD70054CAD3 /* LoginViewController.swift in Sources */,
 				78B9E53B203C4CD70054CAD3 /* MySkinDoctor.xcdatamodeld in Sources */,
+				7849CCA4203EE2030030A7B1 /* ForgotPasswordViewModel.swift in Sources */,
 				78B9E53C203C4CD70054CAD3 /* LoginResponseModel.swift in Sources */,
+				7849CCA9203EE3E60030A7B1 /* BaseViewModel.swift in Sources */,
 				78B9E53D203C4CD70054CAD3 /* ThemeManager.swift in Sources */,
 				78E44AA2203EBD830094F3AF /* PasswordProgressBarView.swift in Sources */,
 				78B9E53E203C4CD70054CAD3 /* AppDelegate.swift in Sources */,
@@ -929,12 +950,15 @@
 				FA9760E3203B29D600242255 /* Validations.swift in Sources */,
 				78B9E518203C2C670054CAD3 /* ForgotPasswordResposeModel.swift in Sources */,
 				78B9E524203C2F100054CAD3 /* CustomErrors.swift in Sources */,
+				7849CC9E203EE15A0030A7B1 /* RegistrationViewModel.swift in Sources */,
 				78E44A9C203EB2DF0094F3AF /* PasswordTextField.swift in Sources */,
 				780F70262035AABB00D96601 /* NoBackgroundButton.swift in Sources */,
 				780F70192035885E00D96601 /* ProgressBarViewController.swift in Sources */,
 				FAE733F420344AE200898E65 /* LoginViewController.swift in Sources */,
 				FAE733CA2034494D00898E65 /* MySkinDoctor.xcdatamodeld in Sources */,
+				7849CCA3203EE2030030A7B1 /* ForgotPasswordViewModel.swift in Sources */,
 				FA9760D6203AFBD200242255 /* LoginResponseModel.swift in Sources */,
+				7849CCA8203EE3E60030A7B1 /* BaseViewModel.swift in Sources */,
 				780F70222035A1B400D96601 /* ThemeManager.swift in Sources */,
 				78E44AA1203EBD7C0094F3AF /* PasswordProgressBarView.swift in Sources */,
 				FAE733C22034494D00898E65 /* AppDelegate.swift in Sources */,
@@ -953,10 +977,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAE733F920344B2800898E65 /* RegistrationViewController.swift in Sources */,
+				7849CCA0203EE15A0030A7B1 /* RegistrationViewModel.swift in Sources */,
 				78E44AA3203EBD830094F3AF /* PasswordProgressBarView.swift in Sources */,
 				78B9E52B203C4C680054CAD3 /* Consts.swift in Sources */,
 				78E44AA8203EBE5C0094F3AF /* PasswordStrength.swift in Sources */,
 				78E44A9E203EB2E40094F3AF /* PasswordTextField.swift in Sources */,
+				7849CCA5203EE2030030A7B1 /* ForgotPasswordViewModel.swift in Sources */,
 				FA9760E9203B359400242255 /* FormTextField.swift in Sources */,
 				FAC1AF122036FCE200547BBC /* RegistrationResponseModel.swift in Sources */,
 				FAE733F520344AE200898E65 /* LoginViewController.swift in Sources */,
@@ -964,6 +990,7 @@
 				780F701C203592B800D96601 /* ProgressBarViewController.swift in Sources */,
 				FA9760E4203B29D600242255 /* Validations.swift in Sources */,
 				FAEC573D203DBEAE00D1A0AE /* LoginViewModel.swift in Sources */,
+				7849CCAA203EE3E60030A7B1 /* BaseViewModel.swift in Sources */,
 				780F701A203592B400D96601 /* FormViewController.swift in Sources */,
 				FA9760DE203B0EDC00242255 /* BaseResponseModel.swift in Sources */,
 				FA9760DA203B0E0A00242255 /* UIViewController+Alerts.swift in Sources */,
@@ -976,10 +1003,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAE733FA20344B2800898E65 /* RegistrationViewController.swift in Sources */,
+				7849CCA1203EE15A0030A7B1 /* RegistrationViewModel.swift in Sources */,
 				78E44AA4203EBD840094F3AF /* PasswordProgressBarView.swift in Sources */,
 				78B9E52C203C4C690054CAD3 /* Consts.swift in Sources */,
 				78E44AA9203EBE5C0094F3AF /* PasswordStrength.swift in Sources */,
 				78E44A9F203EB2E40094F3AF /* PasswordTextField.swift in Sources */,
+				7849CCA6203EE2030030A7B1 /* ForgotPasswordViewModel.swift in Sources */,
 				FA9760EA203B359400242255 /* FormTextField.swift in Sources */,
 				FAC1AF132036FCE200547BBC /* RegistrationResponseModel.swift in Sources */,
 				FAE733F620344AE200898E65 /* LoginViewController.swift in Sources */,
@@ -987,6 +1016,7 @@
 				780F701D203592B900D96601 /* ProgressBarViewController.swift in Sources */,
 				FA9760E5203B29D600242255 /* Validations.swift in Sources */,
 				FAEC573E203DBEAE00D1A0AE /* LoginViewModel.swift in Sources */,
+				7849CCAB203EE3E60030A7B1 /* BaseViewModel.swift in Sources */,
 				780F701B203592B500D96601 /* FormViewController.swift in Sources */,
 				FA9760DF203B0EDC00242255 /* BaseResponseModel.swift in Sources */,
 				FA9760DB203B0E0A00242255 /* UIViewController+Alerts.swift in Sources */,
