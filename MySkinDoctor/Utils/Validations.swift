@@ -17,7 +17,8 @@ class Validations {
 		return emailTest.evaluate(with: testStr)
 	}
 
-	static func isValidPassword(testStr:String) -> Bool {
-		return testStr.count >= 4 && testStr.count <= 8
+	static func isValidPassword(testStr: String) -> Bool {
+		let validType = PasswordStrength.checkPasswordStrength(testStr)
+		return validType != PasswordStrengthType.noValidLength && validType != PasswordStrengthType.empty
 	}
 }

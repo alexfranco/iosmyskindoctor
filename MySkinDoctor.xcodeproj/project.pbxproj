@@ -59,6 +59,14 @@
 		78E44A9D203EB2E30094F3AF /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E44A9B203EB2DF0094F3AF /* PasswordTextField.swift */; };
 		78E44A9E203EB2E40094F3AF /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E44A9B203EB2DF0094F3AF /* PasswordTextField.swift */; };
 		78E44A9F203EB2E40094F3AF /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E44A9B203EB2DF0094F3AF /* PasswordTextField.swift */; };
+		78E44AA1203EBD7C0094F3AF /* PasswordProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E44AA0203EBD7C0094F3AF /* PasswordProgressBarView.swift */; };
+		78E44AA2203EBD830094F3AF /* PasswordProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E44AA0203EBD7C0094F3AF /* PasswordProgressBarView.swift */; };
+		78E44AA3203EBD830094F3AF /* PasswordProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E44AA0203EBD7C0094F3AF /* PasswordProgressBarView.swift */; };
+		78E44AA4203EBD840094F3AF /* PasswordProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E44AA0203EBD7C0094F3AF /* PasswordProgressBarView.swift */; };
+		78E44AA6203EBE5C0094F3AF /* PasswordStrength.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E44AA5203EBE5C0094F3AF /* PasswordStrength.swift */; };
+		78E44AA7203EBE5C0094F3AF /* PasswordStrength.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E44AA5203EBE5C0094F3AF /* PasswordStrength.swift */; };
+		78E44AA8203EBE5C0094F3AF /* PasswordStrength.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E44AA5203EBE5C0094F3AF /* PasswordStrength.swift */; };
+		78E44AA9203EBE5C0094F3AF /* PasswordStrength.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E44AA5203EBE5C0094F3AF /* PasswordStrength.swift */; };
 		BACDC2609AC77EBE02475BED /* Pods_MySkinDoctor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01583D02E29AF032A253E558 /* Pods_MySkinDoctor.framework */; };
 		D75D874EF6F3C1F821CF13C0 /* Pods_MySkinDoctorLive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E880F85E25D18BC10BE7217F /* Pods_MySkinDoctorLive.framework */; };
 		F282CA516A5C0262A9EDB9AE /* Pods_MySkinDoctorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E2D019D11880DC312A040CC /* Pods_MySkinDoctorTests.framework */; };
@@ -141,6 +149,8 @@
 		78B9E556203C4CF30054CAD3 /* MySkinDoctorLive.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MySkinDoctorLive.entitlements; sourceTree = "<group>"; };
 		78B9E557203C4ED70054CAD3 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
 		78E44A9B203EB2DF0094F3AF /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = SOURCE_ROOT; };
+		78E44AA0203EBD7C0094F3AF /* PasswordProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordProgressBarView.swift; sourceTree = SOURCE_ROOT; };
+		78E44AA5203EBE5C0094F3AF /* PasswordStrength.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordStrength.swift; sourceTree = "<group>"; };
 		85B14CEDA9F10AD5CDFAFE54 /* Pods-MySkinDoctorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySkinDoctorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MySkinDoctorTests/Pods-MySkinDoctorTests.release.xcconfig"; sourceTree = "<group>"; };
 		A8E80ED1315E894849856D66 /* Pods-MySkinDoctorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySkinDoctorUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MySkinDoctorUITests/Pods-MySkinDoctorUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B7FBD70382F1461742FB7DCB /* Pods-MySkinDoctorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySkinDoctorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MySkinDoctorTests/Pods-MySkinDoctorTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -248,6 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				FA9760E2203B29D600242255 /* Validations.swift */,
+				78E44AA5203EBE5C0094F3AF /* PasswordStrength.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -300,6 +311,7 @@
 				FA9760E7203B359400242255 /* FormTextField.swift */,
 				78B9E523203C2F100054CAD3 /* CustomErrors.swift */,
 				78E44A9B203EB2DF0094F3AF /* PasswordTextField.swift */,
+				78E44AA0203EBD7C0094F3AF /* PasswordProgressBarView.swift */,
 			);
 			name = Custom;
 			path = "New Group";
@@ -892,7 +904,9 @@
 				78B9E53B203C4CD70054CAD3 /* MySkinDoctor.xcdatamodeld in Sources */,
 				78B9E53C203C4CD70054CAD3 /* LoginResponseModel.swift in Sources */,
 				78B9E53D203C4CD70054CAD3 /* ThemeManager.swift in Sources */,
+				78E44AA2203EBD830094F3AF /* PasswordProgressBarView.swift in Sources */,
 				78B9E53E203C4CD70054CAD3 /* AppDelegate.swift in Sources */,
+				78E44AA7203EBE5C0094F3AF /* PasswordStrength.swift in Sources */,
 				78B9E53F203C4CD70054CAD3 /* ForgotPasswordViewController.swift in Sources */,
 				78B9E540203C4CD70054CAD3 /* RegistrationViewController.swift in Sources */,
 				78B9E541203C4CD70054CAD3 /* BaseResponseModel.swift in Sources */,
@@ -922,7 +936,9 @@
 				FAE733CA2034494D00898E65 /* MySkinDoctor.xcdatamodeld in Sources */,
 				FA9760D6203AFBD200242255 /* LoginResponseModel.swift in Sources */,
 				780F70222035A1B400D96601 /* ThemeManager.swift in Sources */,
+				78E44AA1203EBD7C0094F3AF /* PasswordProgressBarView.swift in Sources */,
 				FAE733C22034494D00898E65 /* AppDelegate.swift in Sources */,
+				78E44AA6203EBE5C0094F3AF /* PasswordStrength.swift in Sources */,
 				78B9E516203C2B920054CAD3 /* ForgotPasswordViewController.swift in Sources */,
 				FAE733F820344B2800898E65 /* RegistrationViewController.swift in Sources */,
 				FA9760DD203B0EDC00242255 /* BaseResponseModel.swift in Sources */,
@@ -937,7 +953,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAE733F920344B2800898E65 /* RegistrationViewController.swift in Sources */,
+				78E44AA3203EBD830094F3AF /* PasswordProgressBarView.swift in Sources */,
 				78B9E52B203C4C680054CAD3 /* Consts.swift in Sources */,
+				78E44AA8203EBE5C0094F3AF /* PasswordStrength.swift in Sources */,
 				78E44A9E203EB2E40094F3AF /* PasswordTextField.swift in Sources */,
 				FA9760E9203B359400242255 /* FormTextField.swift in Sources */,
 				FAC1AF122036FCE200547BBC /* RegistrationResponseModel.swift in Sources */,
@@ -958,7 +976,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAE733FA20344B2800898E65 /* RegistrationViewController.swift in Sources */,
+				78E44AA4203EBD840094F3AF /* PasswordProgressBarView.swift in Sources */,
 				78B9E52C203C4C690054CAD3 /* Consts.swift in Sources */,
+				78E44AA9203EBE5C0094F3AF /* PasswordStrength.swift in Sources */,
 				78E44A9F203EB2E40094F3AF /* PasswordTextField.swift in Sources */,
 				FA9760EA203B359400242255 /* FormTextField.swift in Sources */,
 				FAC1AF132036FCE200547BBC /* RegistrationResponseModel.swift in Sources */,

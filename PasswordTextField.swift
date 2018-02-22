@@ -11,12 +11,16 @@ import UIKit
 
 class PasswordTextField: FormTextField {
 	
-	//KVO Context
-	fileprivate var kvoContext: UInt8 = 0
-	
 	var secureTextButton: UIButton?
+	var passwordProgressBarView: PasswordProgressBarView?
 	var showPasswordImage = UIImage(named: "passwordVisibleIcon")
 	var hidePasswordImage = UIImage(named: "passwordNotVisibleIcon")
+	
+	var getPasswordStrength: PasswordStrengthType {
+		get {
+			return PasswordStrength.checkPasswordStrength(self.text!)
+		}
+	}
 	
 	required init?(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)
@@ -31,36 +35,56 @@ class PasswordTextField: FormTextField {
 	Initialize properties and values
 	*/
 	func setup() {
-		self.isSecureTextEntry = true
-		self.autocapitalizationType = .none
-		self.autocorrectionType = .no
-		self.keyboardType = .asciiCapable
+		isSecureTextEntry = true
+		clearsOnBeginEditing = true
+		autocapitalizationType = .none
+		autocorrectionType = .no
+		keyboardType = .asciiCapable
 		
 		setRightViewIcon(icon: showPasswordImage!)
+		addStrengthView()
+	}
+	
+	func addStrengthView() {
+		passwordProgressBarView = PasswordProgressBarView()
+		
+		self.addSubview(passwordProgressBarView!)
+		
+		self.passwordProgressBarView!.translatesAutoresizingMaskIntoConstraints = false
+		let bottomConstraint = NSLayoutConstraint(item: passwordProgressBarView!, attribute: NSLayoutAttribute.bottomMargin, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.bottomMargin, multiplier: 1, constant: (passwordProgressBarView?.frame.height)!)
+		
+		let leadConstraint = NSLayoutConstraint(item: passwordProgressBarView!, attribute: NSLayoutAttribute.leadingMargin, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.leadingMargin, multiplier: 1, constant: 0)
+		
+		let trailConstraint = NSLayoutConstraint(item: passwordProgressBarView!, attribute: NSLayoutAttribute.trailingMargin, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.trailingMargin, multiplier: 1, constant: 0)
+		
+		self.addConstraints([bottomConstraint, leadConstraint, trailConstraint])
 	}
 	
 	func setRightViewIcon(icon: UIImage) {
 		let padding = CGFloat(3)
 		
-		secureTextButton = UIButton(frame: CGRect(x: 0, y: 0, width: self.frame.height * 0.70, height: self.frame.height * 0.70))
+		secureTextButton = UIButton(frame: CGRect(x: 0, y: 0, width: frame.height * 0.70, height: frame.height * 0.70))
 		secureTextButton?.setImage(icon, for: .normal)
 		secureTextButton?.imageEdgeInsets = UIEdgeInsets(top: padding * 2, left: padding, bottom: 0, right: padding)
 		secureTextButton?.addTarget(self, action: #selector(toggleShowPassword(_:)), for: UIControlEvents.touchUpInside)
-		self.rightViewMode = .always
-		self.rightView = secureTextButton
+		rightViewMode = .always
+		rightView = secureTextButton
 	}
 	
 	@objc func toggleShowPassword(_ sender: Any) {
-		self.setSecureMode(!self.isSecureTextEntry)
+		setSecureMode(!self.isSecureTextEntry)
 	}
 	
 	/**
 	Toggle the secure text view or not
 	*/
 	open func setSecureMode(_ secure:Bool) {
-		self.isSecureTextEntry = secure
-		self.secureTextButton?.setImage(secure ? showPasswordImage : hidePasswordImage, for: UIControlState.normal)
+		isSecureTextEntry = secure
+		secureTextButton?.setImage(secure ? showPasswordImage : hidePasswordImage, for: UIControlState.normal)
 	}
 	
+	override func textFieldDidChange(_ textField: UITextField) {
+		super.textFieldDidChange(textField)
+		passwordProgressBarView?.updatePasswordStrength(strength: getPasswordStrength)
+	}
 }
-
