@@ -55,7 +55,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FJp-az-mfl" customClass="FormTextField" customModule="MySkinDoctor" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FJp-az-mfl" customClass="PasswordTextField" customModule="MySkinDoctor" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="245" width="335" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="Niu-KS-meq"/>
@@ -265,7 +265,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f90-ib-u2H" customClass="FormTextField" customModule="MySkinDoctor" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f90-ib-u2H" customClass="PasswordTextField" customModule="MySkinDoctor" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="245" width="335" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="BZL-f8-dh2"/>
@@ -359,6 +359,6 @@
         <image name="logo" width="678" height="244"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="YaX-2U-fMO"/>
+        <segue reference="V9C-z3-L2B"/>
     </inferredMetricsTieBreakers>
 </document>

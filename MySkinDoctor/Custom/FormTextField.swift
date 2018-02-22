@@ -58,9 +58,8 @@ class FormTextField: AkiraTextField {
 		self.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
 	}
 	
-	@objc func textFieldDidChange(_ textField :UITextField) {
-		
+	@objc func textFieldDidChange(_ textField :UITextField) {		
 		self.textChanged(textField.text!)
-	}
+	}	
 }
 

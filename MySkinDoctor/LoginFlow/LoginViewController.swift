@@ -19,7 +19,7 @@ class LoginViewController: FormViewController {
 		}
 	}
 	
-	@IBOutlet weak var passwordTextField: FormTextField! {
+	@IBOutlet weak var passwordTextField: PasswordTextField! {
 		didSet {
 			passwordTextField.bind { self.viewModel.password = $0 }
 		}
@@ -32,7 +32,7 @@ class LoginViewController: FormViewController {
 		
 		emailTextField.placeholder = "Email"
 		passwordTextField.placeholder = "Password"
-
+		
 		registerForKeyboardReturnKey([emailTextField, passwordTextField])
 		
 		initVM()
@@ -82,15 +82,16 @@ class LoginViewController: FormViewController {
 		viewModel.emailValidationStatus = { [weak self] () in
 			DispatchQueue.main.async {
 				self?.emailTextField.errorMessage = self?.viewModel.emailErrorMessage
+				self?.emailTextField.becomeFirstResponder()
 			}
 		}
 		
 		viewModel.passwordValidationStatus = { [weak self] () in
 			DispatchQueue.main.async {
 				self?.passwordTextField.errorMessage = self?.viewModel.passwordErrorMessage
+				self?.passwordTextField.becomeFirstResponder()
 			}
 		}
-
 	}
 	
 	// MARK: IBActions

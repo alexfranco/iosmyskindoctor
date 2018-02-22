@@ -55,6 +55,10 @@
 		78B9E54B203C4CD70054CAD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78B9E527203C4A920054CAD3 /* Main.storyboard */; };
 		78B9E54D203C4CD70054CAD3 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAE733C52034494D00898E65 /* Login.storyboard */; };
 		78B9E558203C4ED70054CAD3 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 78B9E557203C4ED70054CAD3 /* Podfile */; };
+		78E44A9C203EB2DF0094F3AF /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E44A9B203EB2DF0094F3AF /* PasswordTextField.swift */; };
+		78E44A9D203EB2E30094F3AF /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E44A9B203EB2DF0094F3AF /* PasswordTextField.swift */; };
+		78E44A9E203EB2E40094F3AF /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E44A9B203EB2DF0094F3AF /* PasswordTextField.swift */; };
+		78E44A9F203EB2E40094F3AF /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E44A9B203EB2DF0094F3AF /* PasswordTextField.swift */; };
 		BACDC2609AC77EBE02475BED /* Pods_MySkinDoctor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01583D02E29AF032A253E558 /* Pods_MySkinDoctor.framework */; };
 		D75D874EF6F3C1F821CF13C0 /* Pods_MySkinDoctorLive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E880F85E25D18BC10BE7217F /* Pods_MySkinDoctorLive.framework */; };
 		F282CA516A5C0262A9EDB9AE /* Pods_MySkinDoctorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E2D019D11880DC312A040CC /* Pods_MySkinDoctorTests.framework */; };
@@ -136,6 +140,7 @@
 		78B9E555203C4CED0054CAD3 /* MySkinDoctor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MySkinDoctor.entitlements; sourceTree = "<group>"; };
 		78B9E556203C4CF30054CAD3 /* MySkinDoctorLive.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MySkinDoctorLive.entitlements; sourceTree = "<group>"; };
 		78B9E557203C4ED70054CAD3 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
+		78E44A9B203EB2DF0094F3AF /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = SOURCE_ROOT; };
 		85B14CEDA9F10AD5CDFAFE54 /* Pods-MySkinDoctorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySkinDoctorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MySkinDoctorTests/Pods-MySkinDoctorTests.release.xcconfig"; sourceTree = "<group>"; };
 		A8E80ED1315E894849856D66 /* Pods-MySkinDoctorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySkinDoctorUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MySkinDoctorUITests/Pods-MySkinDoctorUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B7FBD70382F1461742FB7DCB /* Pods-MySkinDoctorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySkinDoctorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MySkinDoctorTests/Pods-MySkinDoctorTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -294,6 +299,7 @@
 			children = (
 				FA9760E7203B359400242255 /* FormTextField.swift */,
 				78B9E523203C2F100054CAD3 /* CustomErrors.swift */,
+				78E44A9B203EB2DF0094F3AF /* PasswordTextField.swift */,
 			);
 			name = Custom;
 			path = "New Group";
@@ -879,6 +885,7 @@
 				78B9E535203C4CD70054CAD3 /* Validations.swift in Sources */,
 				78B9E536203C4CD70054CAD3 /* ForgotPasswordResposeModel.swift in Sources */,
 				78B9E537203C4CD70054CAD3 /* CustomErrors.swift in Sources */,
+				78E44A9D203EB2E30094F3AF /* PasswordTextField.swift in Sources */,
 				78B9E538203C4CD70054CAD3 /* NoBackgroundButton.swift in Sources */,
 				78B9E539203C4CD70054CAD3 /* ProgressBarViewController.swift in Sources */,
 				78B9E53A203C4CD70054CAD3 /* LoginViewController.swift in Sources */,
@@ -908,6 +915,7 @@
 				FA9760E3203B29D600242255 /* Validations.swift in Sources */,
 				78B9E518203C2C670054CAD3 /* ForgotPasswordResposeModel.swift in Sources */,
 				78B9E524203C2F100054CAD3 /* CustomErrors.swift in Sources */,
+				78E44A9C203EB2DF0094F3AF /* PasswordTextField.swift in Sources */,
 				780F70262035AABB00D96601 /* NoBackgroundButton.swift in Sources */,
 				780F70192035885E00D96601 /* ProgressBarViewController.swift in Sources */,
 				FAE733F420344AE200898E65 /* LoginViewController.swift in Sources */,
@@ -930,6 +938,7 @@
 			files = (
 				FAE733F920344B2800898E65 /* RegistrationViewController.swift in Sources */,
 				78B9E52B203C4C680054CAD3 /* Consts.swift in Sources */,
+				78E44A9E203EB2E40094F3AF /* PasswordTextField.swift in Sources */,
 				FA9760E9203B359400242255 /* FormTextField.swift in Sources */,
 				FAC1AF122036FCE200547BBC /* RegistrationResponseModel.swift in Sources */,
 				FAE733F520344AE200898E65 /* LoginViewController.swift in Sources */,
@@ -950,6 +959,7 @@
 			files = (
 				FAE733FA20344B2800898E65 /* RegistrationViewController.swift in Sources */,
 				78B9E52C203C4C690054CAD3 /* Consts.swift in Sources */,
+				78E44A9F203EB2E40094F3AF /* PasswordTextField.swift in Sources */,
 				FA9760EA203B359400242255 /* FormTextField.swift in Sources */,
 				FAC1AF132036FCE200547BBC /* RegistrationResponseModel.swift in Sources */,
 				FAE733F620344AE200898E65 /* LoginViewController.swift in Sources */,

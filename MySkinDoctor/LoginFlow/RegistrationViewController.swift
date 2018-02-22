@@ -14,7 +14,7 @@ class RegistrationViewController: FormViewController {
 	
 	@IBOutlet weak var logoImageView: UIImageView!
 	@IBOutlet weak var emailTextField: FormTextField!
-	@IBOutlet weak var passwordTextField: FormTextField!
+	@IBOutlet weak var passwordTextField: PasswordTextField!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
