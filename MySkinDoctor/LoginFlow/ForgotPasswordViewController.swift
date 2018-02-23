@@ -23,7 +23,7 @@ class ForgotPasswordViewController: FormViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		emailTextField.placeholder = "Email"
+		emailTextField.placeholder = NSLocalizedString("email", comment: "")
 		registerForKeyboardReturnKey([emailTextField])
 	
 		initViewModel(viewModel: ForgotPasswordViewModel())

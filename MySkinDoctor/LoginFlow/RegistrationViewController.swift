@@ -28,8 +28,8 @@ class RegistrationViewController: FormViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		emailTextField.placeholder = "Email"
-		passwordTextField.placeholder = "Password"
+		emailTextField.placeholder = NSLocalizedString("email", comment: "")
+		passwordTextField.placeholder = NSLocalizedString("password", comment: "")
 		
 		registerForKeyboardReturnKey([emailTextField, passwordTextField])
 		

@@ -10,11 +10,9 @@ import Foundation
 import UIKit
 import BSKeyboardControls
 
-class FormViewController: ProgressBarViewController, UITextFieldDelegate, BSKeyboardControlsDelegate {
+class FormViewController: BindingViewController, UITextFieldDelegate, BSKeyboardControlsDelegate {
 	
 	@IBOutlet weak var scrollView: UIScrollView!
-	@IBOutlet weak var nextButton: UIButton!
-	var viewModel: BaseViewModel?
 	
 	var fields: [UITextField] = []
 	var keyboardControls: BSKeyboardControls? // Here's our property
@@ -36,42 +34,7 @@ class FormViewController: ProgressBarViewController, UITextFieldDelegate, BSKeyb
 		keyboardControls = BSKeyboardControls(fields: fields)
 		keyboardControls?.delegate = self
 	}
-	
-	
-	// MARK: Bindings
-	
-	func initViewModel(viewModel: BaseViewModel) {
-		self.viewModel = viewModel
 		
-		guard let viewModelSafe = self.viewModel else {
-			return
-		}
-		viewModelSafe.showAlert = { [weak self] (title, message) in
-			DispatchQueue.main.async {
-				self?.showAlertView(title: title, message: message)
-			}
-		}
-		
-		viewModelSafe.showResponseErrorAlert = { [weak self] (baseResponseModel, apiGenericError) in
-			DispatchQueue.main.async {
-				self?.showResponseError(responseModel: baseResponseModel, apiGenericError: apiGenericError)
-			}
-		}
-		
-		viewModelSafe.updateLoadingStatus = { [weak self] () in
-			DispatchQueue.main.async {
-				let isLoading = viewModelSafe.isLoading
-				if isLoading {
-					self?.showSpinner("")
-					self?.nextButton.isEnabled = false
-				} else {
-					self?.hideSpinner()
-					self?.nextButton.isEnabled = true
-				}
-			}
-		}
-	}
-	
 	// MARK: UITextFieldDelegate
 	
 	func textFieldDidBeginEditing(_ textField: UITextField) {

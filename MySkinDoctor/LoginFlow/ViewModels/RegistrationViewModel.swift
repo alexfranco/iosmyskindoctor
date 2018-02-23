@@ -34,14 +34,14 @@ class RegistrationViewModel: BaseViewModel {
 		if Validations.isValidEmail(testStr: email) {
 			emailErrorMessage = ""
 		} else {
-			emailErrorMessage = "The email is invalid"
+			emailErrorMessage = NSLocalizedString("error_email_not_valid", comment: "")
 			isValid = false
 		}
 		
 		if Validations.isValidPassword(testStr: password) {
 			passwordErrorMessage = ""
 		} else {
-			passwordErrorMessage = "The password is invalid"
+			passwordErrorMessage = String.init(format: NSLocalizedString("error_password_not_valid", comment: ""), minimunPasswordLength)
 			isValid = false
 		}
 		

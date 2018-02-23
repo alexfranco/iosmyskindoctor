@@ -26,7 +26,7 @@ class ForgotPasswordViewModel: BaseViewModel {
 		if Validations.isValidEmail(testStr: email) {
 			emailErrorMessage = ""
 		} else {
-			emailErrorMessage = "The email is invalid"
+			emailErrorMessage = NSLocalizedString("error_email_not_valid", comment: "")
 			isValid = false
 		}
 		

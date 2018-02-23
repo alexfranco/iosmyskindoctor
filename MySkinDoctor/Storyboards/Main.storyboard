@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,11 +27,11 @@
             </objects>
             <point key="canvasLocation" x="2052" y="398"/>
         </scene>
-        <!--Proile-->
+        <!--Profile-->
         <scene sceneID="Chp-QE-L4z">
             <objects>
                 <navigationController id="s0P-bJ-sLe" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Proile" id="20L-4w-E4j"/>
+                    <tabBarItem key="tabBarItem" title="Profile" id="20L-4w-E4j"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jEG-jt-x7n">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -41,7 +42,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aDu-3I-1my" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1199" y="1101"/>
+            <point key="canvasLocation" x="1204" y="1180"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="W2n-Bx-4WH">
@@ -56,7 +57,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ngk-PR-mkY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2050" y="1102"/>
+            <point key="canvasLocation" x="2052" y="1180"/>
         </scene>
         <!--My Skin Problems-->
         <scene sceneID="NEN-1c-aiF">
@@ -78,13 +79,30 @@
                                 <rect key="frame" x="20" y="132" width="335" height="466"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MySKinProblemsCellId" id="DmB-tB-AsL">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MySKinProblemsCellId" id="DmB-tB-AsL" customClass="MySkinProblemsTableViewCell" customModule="MySkinDoctor" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="335" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DmB-tB-AsL" id="ZuT-O3-Tw2">
                                             <rect key="frame" x="0.0" y="0.0" width="335" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Uz-u7-Xhd">
+                                                    <rect key="frame" x="35" y="11" width="265" height="22"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="3Uz-u7-Xhd" secondAttribute="bottom" id="7Vp-AA-gG4"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="3Uz-u7-Xhd" secondAttribute="trailing" constant="20" id="Isq-Vs-ryK"/>
+                                                <constraint firstItem="3Uz-u7-Xhd" firstAttribute="leading" secondItem="ZuT-O3-Tw2" secondAttribute="leadingMargin" constant="20" id="mNe-RR-P9U"/>
+                                                <constraint firstItem="3Uz-u7-Xhd" firstAttribute="top" secondItem="ZuT-O3-Tw2" secondAttribute="topMargin" id="yRm-Qf-p0y"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="3Uz-u7-Xhd" id="6em-eR-ZUC"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

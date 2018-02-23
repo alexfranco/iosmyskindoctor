@@ -91,6 +91,22 @@
 		FA33264120401A8C00657C8A /* MySkinProblemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA33263F20401A8C00657C8A /* MySkinProblemsViewController.swift */; };
 		FA33264220401A8C00657C8A /* MySkinProblemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA33263F20401A8C00657C8A /* MySkinProblemsViewController.swift */; };
 		FA33264320401A8C00657C8A /* MySkinProblemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA33263F20401A8C00657C8A /* MySkinProblemsViewController.swift */; };
+		FA3326462040220200657C8A /* MySkinProblemsTableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3326452040220200657C8A /* MySkinProblemsTableCellViewModel.swift */; };
+		FA3326472040220200657C8A /* MySkinProblemsTableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3326452040220200657C8A /* MySkinProblemsTableCellViewModel.swift */; };
+		FA3326482040220200657C8A /* MySkinProblemsTableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3326452040220200657C8A /* MySkinProblemsTableCellViewModel.swift */; };
+		FA3326492040220200657C8A /* MySkinProblemsTableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3326452040220200657C8A /* MySkinProblemsTableCellViewModel.swift */; };
+		FA33264C2040240400657C8A /* MySkinProblemsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA33264B2040240400657C8A /* MySkinProblemsTableViewCell.swift */; };
+		FA33264D2040240400657C8A /* MySkinProblemsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA33264B2040240400657C8A /* MySkinProblemsTableViewCell.swift */; };
+		FA33264E2040240400657C8A /* MySkinProblemsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA33264B2040240400657C8A /* MySkinProblemsTableViewCell.swift */; };
+		FA33264F2040240400657C8A /* MySkinProblemsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA33264B2040240400657C8A /* MySkinProblemsTableViewCell.swift */; };
+		FA3326512040287900657C8A /* BindingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3326502040287900657C8A /* BindingViewController.swift */; };
+		FA3326522040287900657C8A /* BindingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3326502040287900657C8A /* BindingViewController.swift */; };
+		FA3326532040287900657C8A /* BindingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3326502040287900657C8A /* BindingViewController.swift */; };
+		FA3326542040287900657C8A /* BindingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3326502040287900657C8A /* BindingViewController.swift */; };
+		FA332656204029BD00657C8A /* MySkinProblemsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA332655204029BD00657C8A /* MySkinProblemsViewModel.swift */; };
+		FA332657204029BD00657C8A /* MySkinProblemsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA332655204029BD00657C8A /* MySkinProblemsViewModel.swift */; };
+		FA332658204029BD00657C8A /* MySkinProblemsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA332655204029BD00657C8A /* MySkinProblemsViewModel.swift */; };
+		FA332659204029BD00657C8A /* MySkinProblemsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA332655204029BD00657C8A /* MySkinProblemsViewModel.swift */; };
 		FA9760D6203AFBD200242255 /* LoginResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9760D5203AFBD200242255 /* LoginResponseModel.swift */; };
 		FA9760D9203B0E0A00242255 /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9760D8203B0E0A00242255 /* UIViewController+Alerts.swift */; };
 		FA9760DA203B0E0A00242255 /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9760D8203B0E0A00242255 /* UIViewController+Alerts.swift */; };
@@ -182,6 +198,10 @@
 		F492478A85E247C0FDC4AC62 /* Pods-MySkinDoctorLive.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySkinDoctorLive.release.xcconfig"; path = "Pods/Target Support Files/Pods-MySkinDoctorLive/Pods-MySkinDoctorLive.release.xcconfig"; sourceTree = "<group>"; };
 		FA33263920400FD200657C8A /* DashboardTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTabViewController.swift; sourceTree = "<group>"; };
 		FA33263F20401A8C00657C8A /* MySkinProblemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySkinProblemsViewController.swift; sourceTree = "<group>"; };
+		FA3326452040220200657C8A /* MySkinProblemsTableCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySkinProblemsTableCellViewModel.swift; sourceTree = "<group>"; };
+		FA33264B2040240400657C8A /* MySkinProblemsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySkinProblemsTableViewCell.swift; sourceTree = "<group>"; };
+		FA3326502040287900657C8A /* BindingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingViewController.swift; sourceTree = "<group>"; };
+		FA332655204029BD00657C8A /* MySkinProblemsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySkinProblemsViewModel.swift; sourceTree = "<group>"; };
 		FA9760D5203AFBD200242255 /* LoginResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseModel.swift; sourceTree = "<group>"; };
 		FA9760D8203B0E0A00242255 /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
 		FA9760DC203B0EDC00242255 /* BaseResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponseModel.swift; sourceTree = "<group>"; };
@@ -301,8 +321,9 @@
 		78B9E51F203C2DBD0054CAD3 /* BaseViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				780F7016203587CB00D96601 /* FormViewController.swift */,
 				780F70182035885E00D96601 /* ProgressBarViewController.swift */,
+				FA3326502040287900657C8A /* BindingViewController.swift */,
+				780F7016203587CB00D96601 /* FormViewController.swift */,
 			);
 			path = BaseViewControllers;
 			sourceTree = "<group>";
@@ -334,9 +355,28 @@
 		FA33263E20401A7300657C8A /* MySkinProblems */ = {
 			isa = PBXGroup;
 			children = (
+				FA33264A204023F000657C8A /* Cells */,
+				FA332644204021F000657C8A /* ViewModels */,
 				FA33263F20401A8C00657C8A /* MySkinProblemsViewController.swift */,
 			);
 			path = MySkinProblems;
+			sourceTree = "<group>";
+		};
+		FA332644204021F000657C8A /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				FA3326452040220200657C8A /* MySkinProblemsTableCellViewModel.swift */,
+				FA332655204029BD00657C8A /* MySkinProblemsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		FA33264A204023F000657C8A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FA33264B2040240400657C8A /* MySkinProblemsTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		FA9760D7203B0DF000242255 /* Extentions */ = {
@@ -935,6 +975,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78B9E530203C4CD70054CAD3 /* RegistrationResponseModel.swift in Sources */,
+				FA332657204029BD00657C8A /* MySkinProblemsViewModel.swift in Sources */,
 				78B9E531203C4CD70054CAD3 /* FormTextField.swift in Sources */,
 				FAEC573C203DBEAE00D1A0AE /* LoginViewModel.swift in Sources */,
 				78B9E532203C4CD70054CAD3 /* ApiUtils.swift in Sources */,
@@ -943,6 +984,7 @@
 				78B9E534203C4CD70054CAD3 /* FormViewController.swift in Sources */,
 				78B9E535203C4CD70054CAD3 /* Validations.swift in Sources */,
 				78B9E536203C4CD70054CAD3 /* ForgotPasswordResposeModel.swift in Sources */,
+				FA3326472040220200657C8A /* MySkinProblemsTableCellViewModel.swift in Sources */,
 				78B9E537203C4CD70054CAD3 /* CustomErrors.swift in Sources */,
 				7849CC9F203EE15A0030A7B1 /* RegistrationViewModel.swift in Sources */,
 				78E44A9D203EB2E30094F3AF /* PasswordTextField.swift in Sources */,
@@ -956,9 +998,11 @@
 				7849CCA9203EE3E60030A7B1 /* BaseViewModel.swift in Sources */,
 				78B9E53D203C4CD70054CAD3 /* ThemeManager.swift in Sources */,
 				78E44AA2203EBD830094F3AF /* PasswordProgressBarView.swift in Sources */,
+				FA3326522040287900657C8A /* BindingViewController.swift in Sources */,
 				78B9E53E203C4CD70054CAD3 /* AppDelegate.swift in Sources */,
 				78E44AA7203EBE5C0094F3AF /* PasswordStrength.swift in Sources */,
 				78B9E53F203C4CD70054CAD3 /* ForgotPasswordViewController.swift in Sources */,
+				FA33264D2040240400657C8A /* MySkinProblemsTableViewCell.swift in Sources */,
 				78B9E540203C4CD70054CAD3 /* RegistrationViewController.swift in Sources */,
 				78B9E541203C4CD70054CAD3 /* BaseResponseModel.swift in Sources */,
 				78B9E542203C4CD70054CAD3 /* Consts.swift in Sources */,
@@ -972,6 +1016,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAC1AF112036FCE200547BBC /* RegistrationResponseModel.swift in Sources */,
+				FA332656204029BD00657C8A /* MySkinProblemsViewModel.swift in Sources */,
 				FA9760E8203B359400242255 /* FormTextField.swift in Sources */,
 				FAEC573B203DBEAE00D1A0AE /* LoginViewModel.swift in Sources */,
 				FAC1AF0E2036F46F00547BBC /* ApiUtils.swift in Sources */,
@@ -980,6 +1025,7 @@
 				780F7017203587CB00D96601 /* FormViewController.swift in Sources */,
 				FA9760E3203B29D600242255 /* Validations.swift in Sources */,
 				78B9E518203C2C670054CAD3 /* ForgotPasswordResposeModel.swift in Sources */,
+				FA3326462040220200657C8A /* MySkinProblemsTableCellViewModel.swift in Sources */,
 				78B9E524203C2F100054CAD3 /* CustomErrors.swift in Sources */,
 				7849CC9E203EE15A0030A7B1 /* RegistrationViewModel.swift in Sources */,
 				78E44A9C203EB2DF0094F3AF /* PasswordTextField.swift in Sources */,
@@ -993,9 +1039,11 @@
 				7849CCA8203EE3E60030A7B1 /* BaseViewModel.swift in Sources */,
 				780F70222035A1B400D96601 /* ThemeManager.swift in Sources */,
 				78E44AA1203EBD7C0094F3AF /* PasswordProgressBarView.swift in Sources */,
+				FA3326512040287900657C8A /* BindingViewController.swift in Sources */,
 				FAE733C22034494D00898E65 /* AppDelegate.swift in Sources */,
 				78E44AA6203EBE5C0094F3AF /* PasswordStrength.swift in Sources */,
 				78B9E516203C2B920054CAD3 /* ForgotPasswordViewController.swift in Sources */,
+				FA33264C2040240400657C8A /* MySkinProblemsTableViewCell.swift in Sources */,
 				FAE733F820344B2800898E65 /* RegistrationViewController.swift in Sources */,
 				FA9760DD203B0EDC00242255 /* BaseResponseModel.swift in Sources */,
 				78B9E52A203C4AF20054CAD3 /* Consts.swift in Sources */,
@@ -1011,10 +1059,12 @@
 				FAE733F920344B2800898E65 /* RegistrationViewController.swift in Sources */,
 				7849CCA0203EE15A0030A7B1 /* RegistrationViewModel.swift in Sources */,
 				78E44AA3203EBD830094F3AF /* PasswordProgressBarView.swift in Sources */,
+				FA3326482040220200657C8A /* MySkinProblemsTableCellViewModel.swift in Sources */,
 				78B9E52B203C4C680054CAD3 /* Consts.swift in Sources */,
 				78E44AA8203EBE5C0094F3AF /* PasswordStrength.swift in Sources */,
 				78E44A9E203EB2E40094F3AF /* PasswordTextField.swift in Sources */,
 				FA33264220401A8C00657C8A /* MySkinProblemsViewController.swift in Sources */,
+				FA3326532040287900657C8A /* BindingViewController.swift in Sources */,
 				7849CCA5203EE2030030A7B1 /* ForgotPasswordViewModel.swift in Sources */,
 				FA9760E9203B359400242255 /* FormTextField.swift in Sources */,
 				FAC1AF122036FCE200547BBC /* RegistrationResponseModel.swift in Sources */,
@@ -1023,8 +1073,10 @@
 				780F701C203592B800D96601 /* ProgressBarViewController.swift in Sources */,
 				FA9760E4203B29D600242255 /* Validations.swift in Sources */,
 				FAEC573D203DBEAE00D1A0AE /* LoginViewModel.swift in Sources */,
+				FA33264E2040240400657C8A /* MySkinProblemsTableViewCell.swift in Sources */,
 				FA33263C20400FD200657C8A /* DashboardTabViewController.swift in Sources */,
 				7849CCAA203EE3E60030A7B1 /* BaseViewModel.swift in Sources */,
+				FA332658204029BD00657C8A /* MySkinProblemsViewModel.swift in Sources */,
 				780F701A203592B400D96601 /* FormViewController.swift in Sources */,
 				FA9760DE203B0EDC00242255 /* BaseResponseModel.swift in Sources */,
 				FA9760DA203B0E0A00242255 /* UIViewController+Alerts.swift in Sources */,
@@ -1039,10 +1091,12 @@
 				FAE733FA20344B2800898E65 /* RegistrationViewController.swift in Sources */,
 				7849CCA1203EE15A0030A7B1 /* RegistrationViewModel.swift in Sources */,
 				78E44AA4203EBD840094F3AF /* PasswordProgressBarView.swift in Sources */,
+				FA3326492040220200657C8A /* MySkinProblemsTableCellViewModel.swift in Sources */,
 				78B9E52C203C4C690054CAD3 /* Consts.swift in Sources */,
 				78E44AA9203EBE5C0094F3AF /* PasswordStrength.swift in Sources */,
 				78E44A9F203EB2E40094F3AF /* PasswordTextField.swift in Sources */,
 				FA33264320401A8C00657C8A /* MySkinProblemsViewController.swift in Sources */,
+				FA3326542040287900657C8A /* BindingViewController.swift in Sources */,
 				7849CCA6203EE2030030A7B1 /* ForgotPasswordViewModel.swift in Sources */,
 				FA9760EA203B359400242255 /* FormTextField.swift in Sources */,
 				FAC1AF132036FCE200547BBC /* RegistrationResponseModel.swift in Sources */,
@@ -1051,8 +1105,10 @@
 				780F701D203592B900D96601 /* ProgressBarViewController.swift in Sources */,
 				FA9760E5203B29D600242255 /* Validations.swift in Sources */,
 				FAEC573E203DBEAE00D1A0AE /* LoginViewModel.swift in Sources */,
+				FA33264F2040240400657C8A /* MySkinProblemsTableViewCell.swift in Sources */,
 				FA33263D20400FD200657C8A /* DashboardTabViewController.swift in Sources */,
 				7849CCAB203EE3E60030A7B1 /* BaseViewModel.swift in Sources */,
+				FA332659204029BD00657C8A /* MySkinProblemsViewModel.swift in Sources */,
 				780F701B203592B500D96601 /* FormViewController.swift in Sources */,
 				FA9760DF203B0EDC00242255 /* BaseResponseModel.swift in Sources */,
 				FA9760DB203B0E0A00242255 /* UIViewController+Alerts.swift in Sources */,

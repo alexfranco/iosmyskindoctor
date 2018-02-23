@@ -27,3 +27,13 @@
 
 "reset_password_success_title" = "Success";
 "reset_password_success_message" = "You will receive an email shortly with a link to reset your password.";
+
+"myskinproblems_main_vc_title" = "My Skin Problems";
+
+"no_data_available" = "No data available";
+"email" = "Email";
+"password" = "Password";
+
+"error_email_not_valid" = "The email is invalid";
+"error_password_not_valid" = "Your password must be:\n\n - Minimum %@ characters long";
+

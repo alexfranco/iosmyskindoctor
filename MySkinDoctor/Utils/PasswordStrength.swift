@@ -8,8 +8,8 @@
 
 import Foundation
 
-private let minimunPasswordLength: Int = 8
-private let maximunPasswordLength: Int = 25
+let minimunPasswordLength: Int = 8
+let maximunPasswordLength: Int = 25
 
 let REGEX_PASSWORD_ONE_UPPERCASE = "^(?=.*[A-Z]).*$"
 let REGEX_PASSWORD_ONE_LOWERCASE = "^(?=.*[a-z]).*$"
