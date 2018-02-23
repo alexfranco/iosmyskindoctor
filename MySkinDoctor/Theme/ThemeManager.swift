@@ -20,29 +20,29 @@ struct ThemeManager {
 		
 		// Navigation bar
 		UINavigationBar.appearance().barStyle = UIBarStyle.default
-		UINavigationBar.appearance().barTintColor = Style.defaultNavigationBarColor
-		UINavigationBar.appearance().tintColor = Style.defaultNavigationBarTitleColor
-		UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor : Style.defaultNavigationBarTitleColor]
+		UINavigationBar.appearance().barTintColor = AppStyle.defaultNavigationBarColor
+		UINavigationBar.appearance().tintColor = AppStyle.defaultNavigationBarTitleColor
+		UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor : AppStyle.defaultNavigationBarTitleColor]
 		
 		// Label
-		UILabel.appearance().font = Style.defaultLabelFont
-		UILabel.appearance().textColor = Style.defaultLabelTextColor
+		UILabel.appearance().font = AppStyle.defaultLabelFont
+		UILabel.appearance().textColor = AppStyle.defaultLabelTextColor
 				
 		// Segmented control
-		UISegmentedControl.appearance().tintColor = Style.defaultSegmentedColor
+		UISegmentedControl.appearance().tintColor = AppStyle.defaultSegmentedColor
 		
 		// TextFields
-		UITextField.appearance().font = Style.defaultTextFieldFont
+		UITextField.appearance().font = AppStyle.defaultTextFieldFont
 
-		AkiraTextField.appearance().backgroundColor = Style.defaultTextFieldBackgroundColor
-		AkiraTextField.appearance().placeholderColor = Style.defaultTextFieldPlaceHolderColor
-		AkiraTextField.appearance().borderColor = Style.defaultTextFieldPlaceHolderColor
+		AkiraTextField.appearance().backgroundColor = AppStyle.defaultTextFieldBackgroundColor
+		AkiraTextField.appearance().placeholderColor = AppStyle.defaultTextFieldPlaceHolderColor
+		AkiraTextField.appearance().borderColor = AppStyle.defaultTextFieldPlaceHolderColor
 				
 		// Buttons
-		PositiveButton.appearance().backgroundColor = Style.positiveButtonBackgroundColor
-		PositiveButton.appearance().tintColor = Style.positiveButtonTextColor
+		PositiveButton.appearance().backgroundColor = AppStyle.positiveButtonBackgroundColor
+		PositiveButton.appearance().tintColor = AppStyle.positiveButtonTextColor
 		
-		NoBackgroundButton.appearance().backgroundColor = Style.noBackgroundButtonBackgroundColor
-		NoBackgroundButton.appearance().tintColor = Style.noBackgroundButtonTextColor
+		NoBackgroundButton.appearance().backgroundColor = AppStyle.noBackgroundButtonBackgroundColor
+		NoBackgroundButton.appearance().tintColor = AppStyle.noBackgroundButtonTextColor
 	}
 }

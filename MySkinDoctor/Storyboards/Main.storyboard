@@ -30,34 +30,64 @@
         <!--Profile-->
         <scene sceneID="Chp-QE-L4z">
             <objects>
-                <navigationController id="s0P-bJ-sLe" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="s0P-bJ-sLe" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" id="20L-4w-E4j"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jEG-jt-x7n">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="WfN-R1-QQK" kind="show" id="BNw-HS-vA5"/>
+                        <segue destination="WfN-R1-QQK" kind="relationship" relationship="rootViewController" id="4Tv-fd-c0U"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aDu-3I-1my" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1204" y="1180"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile View Controller-->
         <scene sceneID="W2n-Bx-4WH">
             <objects>
-                <viewController id="WfN-R1-QQK" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileViewController" id="WfN-R1-QQK" customClass="ProfileViewController" customModule="MySkinDoctor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2dg-bR-OgE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8wT-3I-hMH">
+                                <rect key="frame" x="0.0" y="64" width="375" height="96"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hXK-Gf-6Eq">
+                                <rect key="frame" x="137" y="104" width="100" height="100"/>
+                                <color key="backgroundColor" red="0.80098684210000004" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Uwd-Yz-zfl"/>
+                                    <constraint firstAttribute="width" constant="100" id="aW7-W5-S38"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hXK-Gf-6Eq" firstAttribute="top" secondItem="PSz-1x-K0U" secondAttribute="top" constant="40" id="1b7-Uh-EEq"/>
+                            <constraint firstItem="8wT-3I-hMH" firstAttribute="bottom" secondItem="hXK-Gf-6Eq" secondAttribute="bottom" constant="-44" id="XSm-YZ-lgu"/>
+                            <constraint firstItem="PSz-1x-K0U" firstAttribute="trailing" secondItem="8wT-3I-hMH" secondAttribute="trailing" id="Z75-qA-sk0"/>
+                            <constraint firstItem="hXK-Gf-6Eq" firstAttribute="centerX" secondItem="2dg-bR-OgE" secondAttribute="centerX" id="heg-Fy-Kgr"/>
+                            <constraint firstItem="8wT-3I-hMH" firstAttribute="leading" secondItem="PSz-1x-K0U" secondAttribute="leading" id="qBi-Wh-IRB"/>
+                            <constraint firstItem="8wT-3I-hMH" firstAttribute="top" secondItem="PSz-1x-K0U" secondAttribute="top" id="wmK-Dt-rTe"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="PSz-1x-K0U"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Jq9-97-klM">
+                        <barButtonItem key="leftBarButtonItem" image="settingsIcon" id="rRG-dg-1Dk"/>
+                        <barButtonItem key="rightBarButtonItem" image="walletIcon" id="v6h-6W-WdQ"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="profileTopView" destination="8wT-3I-hMH" id="cKB-vq-uAx"/>
+                        <outlet property="userPhotoImageView" destination="hXK-Gf-6Eq" id="75R-bx-fOZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ngk-PR-mkY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2052" y="1180"/>
+            <point key="canvasLocation" x="2052" y="1179.7601199400301"/>
         </scene>
         <!--My Skin Problems-->
         <scene sceneID="NEN-1c-aiF">
@@ -143,7 +173,7 @@
                     <connections>
                         <segue destination="qew-3f-0D8" kind="relationship" relationship="viewControllers" id="Ol7-aG-UK0"/>
                         <segue destination="mva-9L-Tu9" kind="relationship" relationship="viewControllers" id="gtu-eX-9r5"/>
-                        <segue destination="s0P-bJ-sLe" kind="relationship" relationship="viewControllers" id="OU2-JP-ayB"/>
+                        <segue destination="s0P-bJ-sLe" kind="relationship" relationship="viewControllers" id="7gk-uO-yTn"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9wr-L8-RAH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -189,4 +219,8 @@
             <point key="canvasLocation" x="1204.8" y="398.50074962518744"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="settingsIcon" width="76" height="88"/>
+        <image name="walletIcon" width="92" height="82"/>
+    </resources>
 </document>

@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 class MySkinProblemsViewController: BindingViewController {
+	
 	@IBOutlet weak var diagnosesSegmentedControl: UISegmentedControl!
 	@IBOutlet weak var tableView: UITableView!
 		
