@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 		if defaults.bool(forKey: UserDefaultConsts.isUserLoggedIn) {
 			let mainStoryboard : UIStoryboard = UIStoryboard(name: Storyboard.mainStoryboardName, bundle: nil)
-			let initialVC : UIViewController = mainStoryboard.instantiateViewController(withIdentifier: Storyboard.mainNavigationControllerId) as UIViewController
+			let initialVC : UIViewController = mainStoryboard.instantiateViewController(withIdentifier: Storyboard.mainTabNavigationControllerId) as UIViewController
 			self.window = UIWindow(frame: UIScreen.main.bounds)
 			self.window?.rootViewController = initialVC
 			self.window?.makeKeyAndVisible()

@@ -73,9 +73,7 @@ class PasswordStrength {
 	// Validate the input string with the given pattern and
 	// return the result as a boolean
 	static func validate(_ string: String, withPattern pattern: String) -> Int {
-		var error: Error? = nil
-		
-		var  regex = try? NSRegularExpression(pattern: pattern)
+		let  regex = try? NSRegularExpression(pattern: pattern)
 		assert(regex != nil, "Unable to create regular expression")
 		let textRange = NSRange(location: 0, length: string.count)
 		let matchRange: NSRange? = regex?.rangeOfFirstMatch(in: string, options: .reportProgress, range: textRange)

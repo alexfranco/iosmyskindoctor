@@ -18,10 +18,14 @@ struct Segues {
 
 struct Storyboard {
 	static let mainStoryboardName = "Main"
-	static let mainNavigationControllerId = "MainNavigationController"
+	static let mainTabNavigationControllerId = "MainTabNavigationController"
 }
 
 struct UserDefaultConsts {
 	static let isUserLoggedIn = "isUserLoggedIn"
+}
+
+struct CellId {
+	static let mySKinProblemsCellId = "MySKinProblemsCellId"
 }
 

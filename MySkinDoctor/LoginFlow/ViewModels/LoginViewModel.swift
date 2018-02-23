@@ -54,24 +54,24 @@ class LoginViewModel: BaseViewModel {
 			return
 		}
 		
-		self.isLoading = true
+//		self.isLoading = true
 		
-		ApiUtils.login(email: email, password:password) { (result) in
-			self.isLoading = false
-			
-			switch result {
-			case .success(let model):
-				print("login success")
-				
+//		ApiUtils.login(email: email, password:password) { (result) in
+//			self.isLoading = false
+//
+//			switch result {
+//			case .success(let model):
+//				print("login success")
+//
 				// TODO save token
 				let defaults = UserDefaults.standard
 				defaults.set(true, forKey: UserDefaultConsts.isUserLoggedIn)
 				self.goNextSegue!()
-			case .failure(let model, let error):
-				print("error")
-				self.showResponseErrorAlert!(model as? BaseResponseModel, error)
-			}
-		}
+//			case .failure(let model, let error):
+//				print("error")
+//				self.showResponseErrorAlert!(model as? BaseResponseModel, error)
+//			}
+//		}
 		
 	}
 	
