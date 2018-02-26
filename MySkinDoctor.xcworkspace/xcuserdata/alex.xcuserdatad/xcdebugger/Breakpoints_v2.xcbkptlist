@@ -74,7 +74,7 @@
                   moduleName = "MySkinDoctor"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/alex/MySkinDoctor/MySkinDoctor/Web/ApiUtils.swift"
-                  timestampString = "541075690.9428459"
+                  timestampString = "541337269.448047"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "83"
@@ -89,7 +89,7 @@
                   moduleName = "MySkinDoctor"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/alex/MySkinDoctor/MySkinDoctor/Web/ApiUtils.swift"
-                  timestampString = "541075690.946748"
+                  timestampString = "541337269.451896"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "84"
@@ -113,22 +113,6 @@
             endingLineNumber = "36"
             landmarkName = "errorMessage"
             landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MySkinDoctor/LoginFlow/ViewModels/LoginViewModel.swift"
-            timestampString = "541094762.0248049"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
-            landmarkName = "loginUser()"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

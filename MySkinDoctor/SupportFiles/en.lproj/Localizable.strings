@@ -35,5 +35,5 @@
 "password" = "Password";
 
 "error_email_not_valid" = "The email is invalid";
-"error_password_not_valid" = "Your password must be:\n\n - Minimum %@ characters long";
+"error_password_not_valid" = "Your password must be minimum %d characters long";
 

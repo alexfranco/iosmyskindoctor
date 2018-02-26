@@ -18,6 +18,7 @@ class ProfileViewController: FormViewController {
 	
 	@IBOutlet weak var personalDetailsSectionLabel: BoldLabel!
 	@IBOutlet weak var dobTextField: ProfileTextField!
+	let datePicker = UIDatePicker()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -39,7 +40,47 @@ class ProfileViewController: FormViewController {
 		navigationController?.navigationBar.tintColor = AppStyle.profileNavigationBarTitleColor
 		navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : AppStyle.profileNavigationBarTitleColor]
 		
+		registerForKeyboardReturnKey([dobTextField])
+		
 		initViewModel(viewModel: ProfileViewModel())
+	}
+	
+	func showDatePicker() {
+		//Formate Date
+		datePicker.datePickerMode = .date
+		
+		//ToolBar
+		let toolbar = UIToolbar();
+		toolbar.sizeToFit()
+		let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(donedatePicker));
+		let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+		let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker));
+		
+		toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
+		
+		dobTextField.inputAccessoryView = toolbar
+		dobTextField.inputView = datePicker
+	}
+	
+	@objc func donedatePicker() {
+		let formatter = DateFormatter()
+		formatter.dateFormat = "dd/MM/yyyy"
+		dobTextField.text = formatter.string(from: datePicker.date)
+		self.view.endEditing(true)
+	}
+	
+	@objc func cancelDatePicker() {
+		self.view.endEditing(true)
+	}
+	
+	// MARK: UITextFieldDelegate
+	
+	override func textFieldDidBeginEditing(_ textField: UITextField) {
+		super.textFieldDidBeginEditing(textField)
+		
+		if textField == dobTextField {
+			showDatePicker()
+		}
 	}
 }
 
