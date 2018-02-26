@@ -63,7 +63,18 @@ struct AppStyle {
 	static let defaultNavigationBarColor = UIColor.white
 	static let defaultNavigationBarTitleColor = UIColor.black
 
-	// Third tabbar
+	// Tabbar
+	static let defaultTabBarColor = BaseColors.gray
+	
+	// MySkin TabBar
+	static let mySkinTabBarTitleColor = AppColors.firstTabColor
+	
+	// Consult TabBar
+	static let consultTabBarTitleColor = AppColors.secondTabColor
+	
+	// MyProfile TabBar
+	static let profileBarTitleColor = AppColors.thirdTabColor
+	
 	static let profileNavigationBarColor = AppColors.thirdTabColor
 	static let profileNavigationBarTitleColor = UIColor.white
 	static let profileTopViewBackgroundColor = AppColors.thirdTabColor
