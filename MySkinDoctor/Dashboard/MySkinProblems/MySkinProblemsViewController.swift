@@ -39,9 +39,10 @@ extension MySkinProblemsViewController: UITableViewDelegate, UITableViewDataSour
 	
 	func numberOfSections(in tableView: UITableView) -> Int {
 		var numOfSections: Int = 0
-		if  (viewModel as! MySkinProblemsViewModel).getDataSourceCount() > 0 {
+		if  (viewModel as! MySkinProblemsViewModel).getDataSourceCount(section: MySkinProblemsViewModel.undiagnosedSection) > 0
+			|| (viewModel as! MySkinProblemsViewModel).getDataSourceCount(section: MySkinProblemsViewModel.diagnosedSection) > 0 {
 			tableView.separatorStyle = .singleLine
-			numOfSections            = 1
+			numOfSections            = 2
 			tableView.backgroundView = nil
 		} else {
 			let noDataLabel: UILabel     = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
@@ -56,7 +57,19 @@ extension MySkinProblemsViewController: UITableViewDelegate, UITableViewDataSour
 	}
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return (viewModel as! MySkinProblemsViewModel).getDataSourceCount()
+		return (viewModel as! MySkinProblemsViewModel).getDataSourceCount(section: section)
+	}
+	
+	func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+		return (viewModel as! MySkinProblemsViewModel).getSectionTitle(section: section)
+	}
+	
+	func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+		let headerView = (view as! UITableViewHeaderFooterView)
+		
+		headerView.backgroundView?.backgroundColor = section == MySkinProblemsViewModel.undiagnosedSection ? AppStyle.mySkinUndiagnosedColor : AppStyle.mySkinDiagnosedColor
+		headerView.textLabel?.textColor = AppStyle.mySkinTableSectionTextColor
+		headerView.textLabel?.font = AppStyle.mySkinTableSectionTextFont
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

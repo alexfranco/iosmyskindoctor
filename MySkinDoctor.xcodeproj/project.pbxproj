@@ -164,6 +164,7 @@
 		FAC1AF112036FCE200547BBC /* RegistrationResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC1AF102036FCE200547BBC /* RegistrationResponseModel.swift */; };
 		FAC1AF122036FCE200547BBC /* RegistrationResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC1AF102036FCE200547BBC /* RegistrationResponseModel.swift */; };
 		FAC1AF132036FCE200547BBC /* RegistrationResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC1AF102036FCE200547BBC /* RegistrationResponseModel.swift */; };
+		FAD6ADB520442C130050C1A9 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6ADB420442C130050C1A9 /* DateUtils.swift */; };
 		FAE733C22034494D00898E65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE733C12034494D00898E65 /* AppDelegate.swift */; };
 		FAE733C72034494D00898E65 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAE733C52034494D00898E65 /* Login.storyboard */; };
 		FAE733CA2034494D00898E65 /* MySkinDoctor.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAE733C82034494D00898E65 /* MySkinDoctor.xcdatamodeld */; };
@@ -258,6 +259,7 @@
 		FA9760E2203B29D600242255 /* Validations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validations.swift; sourceTree = "<group>"; };
 		FAC1AF0D2036F46F00547BBC /* ApiUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiUtils.swift; sourceTree = "<group>"; };
 		FAC1AF102036FCE200547BBC /* RegistrationResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationResponseModel.swift; sourceTree = "<group>"; };
+		FAD6ADB420442C130050C1A9 /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		FAE733BE2034494D00898E65 /* MySkinDoctor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySkinDoctor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAE733C12034494D00898E65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAE733C62034494D00898E65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
@@ -354,6 +356,7 @@
 				FA9760E2203B29D600242255 /* Validations.swift */,
 				78E44AA5203EBE5C0094F3AF /* PasswordStrength.swift */,
 				FA33268520440EA400657C8A /* PhotoUtils.swift */,
+				FAD6ADB420442C130050C1A9 /* DateUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1130,6 +1133,7 @@
 				FAE733C22034494D00898E65 /* AppDelegate.swift in Sources */,
 				78E44AA6203EBE5C0094F3AF /* PasswordStrength.swift in Sources */,
 				78B9E516203C2B920054CAD3 /* ForgotPasswordViewController.swift in Sources */,
+				FAD6ADB520442C130050C1A9 /* DateUtils.swift in Sources */,
 				FA3326C220441C8500657C8A /* BoldLabel.swift in Sources */,
 				FA33264C2040240400657C8A /* MySkinProblemsTableViewCell.swift in Sources */,
 				FAE733F820344B2800898E65 /* RegistrationViewController.swift in Sources */,

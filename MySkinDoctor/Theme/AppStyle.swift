@@ -17,6 +17,7 @@ struct BaseColors {
 	static let blue =		UIColor.init(red: 0.00, green: 0.82, blue: 0.86, alpha: 1.0)
 	static let gray = 		UIColor.init(red: 0.55, green: 0.52, blue: 0.50, alpha: 1.0)
 	static let violet = 	UIColor.init(red: 0.600, green: 0.404, blue: 0.808, alpha: 1.00)
+	static let red =		UIColor.init(red: 0.925, green: 0.451, blue: 0.455, alpha: 1.0)
 }
 
 struct AppColors {
@@ -68,6 +69,12 @@ struct AppStyle {
 	
 	// MySkin TabBar
 	static let mySkinTabBarTitleColor = AppColors.firstTabColor
+	
+	static let mySkinDiagnosedColor = BaseColors.green
+	static let mySkinUndiagnosedColor = BaseColors.red
+	
+	static let mySkinTableSectionTextColor = UIColor.white
+	static let mySkinTableSectionTextFont = AppFonts.defaultBoldFont
 	
 	// Consult TabBar
 	static let consultTabBarTitleColor = AppColors.secondTabColor
