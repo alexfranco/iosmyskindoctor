@@ -11,37 +11,93 @@ import UIKit
 
 class MySkinProblemsViewModel: BaseViewModel {
 	
+	enum DiagnosesSegmentedEnum: Int {
+		case all
+		case undiagnosed
+		case diagnosed
+	}
+	
 	static let undiagnosedSection = 0
 	static let diagnosedSection = 1
 	
-	var items = [MySkinProblemsTableCellViewModel]()
+	var refresh: (()->())?
+
+	var selectedSegmented = DiagnosesSegmentedEnum.all {
+		didSet {
+			refresh!()
+		}
+	}
 	
+	var allItems = [MySkinProblemsTableCellViewModel]()
 	var undiagnosedItems = [MySkinProblemsTableCellViewModel]()
 	var diagnosedItems = [MySkinProblemsTableCellViewModel]()
 
 	override init() {
 		// Generate tests
-		items = [MySkinProblemsTableCellViewModel(withName: "New Skin Problem", date: Date(), isDiagnosed: true, problemDescription: "My son has suffered with several rashes spanning over the space of 5 months which come and go...."),
+		allItems = [MySkinProblemsTableCellViewModel(withName: "New Skin Problem", date: Date(), isDiagnosed: true, problemDescription: "My son has suffered with several rashes spanning over the space of 5 months which come and go...."),
 				 MySkinProblemsTableCellViewModel(withName: "Serious", date: Date(), isDiagnosed: false, problemDescription: "I do have some skin issues")]
 		
-		diagnosedItems = items.filter { (model) -> Bool in model.isDiagnosed == true }
-		undiagnosedItems = items.filter { (model) -> Bool in model.isDiagnosed == false }
+		diagnosedItems = allItems.filter { (model) -> Bool in model.isDiagnosed == true }
+		undiagnosedItems = allItems.filter { (model) -> Bool in model.isDiagnosed == false }
 	}
 	
 	func getHeaderBackgroundColor(section: Int) -> UIColor {
-		return section == MySkinProblemsViewModel.undiagnosedSection ? AppStyle.mySkinUndiagnosedColor : AppStyle.mySkinDiagnosedColor
+		switch selectedSegmented {
+		case .all:
+			return section == MySkinProblemsViewModel.undiagnosedSection ? AppStyle.mySkinUndiagnosedColor : AppStyle.mySkinDiagnosedColor
+		case .undiagnosed:
+			return AppStyle.mySkinUndiagnosedColor
+		case .diagnosed:
+			return AppStyle.mySkinDiagnosedColor
+		}		
 	}
 	
 	func getSectionTitle(section: Int) -> String {
-		let headerTitle =  section == MySkinProblemsViewModel.undiagnosedSection ? "Undiagnosed (%d)" : "Diagnosed (%d)"
+		var headerTitle: String!
+		
+		switch selectedSegmented {
+		case .all:
+			headerTitle = section == MySkinProblemsViewModel.undiagnosedSection ? "Undiagnosed (%d)" : "Diagnosed (%d)"
+		case .undiagnosed:
+			headerTitle = "Undiagnosed (%d)"
+		case .diagnosed:
+			headerTitle = "Diagnosed (%d)"
+		}
+		
 		return String.init(format: headerTitle.uppercased(), getDataSourceCount(section: section))
 	}
 	
 	func getDataSourceCount(section: Int) -> Int {
-		return section == MySkinProblemsViewModel.undiagnosedSection ? undiagnosedItems.count : diagnosedItems.count
+		switch selectedSegmented {
+		case .all:
+			return section == MySkinProblemsViewModel.undiagnosedSection ? undiagnosedItems.count : diagnosedItems.count
+		case .undiagnosed:
+			return undiagnosedItems.count
+		case .diagnosed:
+			return diagnosedItems.count
+		}
 	}
 	
 	func getItemAtIndexPath(indexPath: IndexPath) -> MySkinProblemsTableCellViewModel {
-		return indexPath.section == MySkinProblemsViewModel.undiagnosedSection ? undiagnosedItems[indexPath.row] : diagnosedItems[indexPath.row]
+		switch selectedSegmented {
+		case .all:
+			return indexPath.section == MySkinProblemsViewModel.undiagnosedSection ? undiagnosedItems[indexPath.row] : diagnosedItems[indexPath.row]
+		case .undiagnosed:
+			return undiagnosedItems[indexPath.row]
+		case .diagnosed:
+			return diagnosedItems[indexPath.row]
+		}
+	}
+	
+	func getNumberOfSections() -> Int {
+		switch selectedSegmented {
+		case .all:
+			let dataSourceCount = getDataSourceCount(section: MySkinProblemsViewModel.undiagnosedSection) > 0 || getDataSourceCount(section: MySkinProblemsViewModel.diagnosedSection) > 0
+			return dataSourceCount ? 2 : 0
+		case .undiagnosed:
+			return getDataSourceCount(section: MySkinProblemsViewModel.undiagnosedSection) > 0 ? 1 : 0
+		case .diagnosed:
+			return getDataSourceCount(section: MySkinProblemsViewModel.undiagnosedSection) > 0 ? 1 : 0
+		}
 	}
 }

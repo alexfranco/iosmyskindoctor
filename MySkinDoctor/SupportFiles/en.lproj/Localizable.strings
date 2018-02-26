@@ -29,6 +29,11 @@
 "reset_password_success_message" = "You will receive an email shortly with a link to reset your password.";
 
 "myskinproblems_main_vc_title" = "My Skin Problems";
+"myskinproblems_no_data" = "You don't have any cases yet.\n\n Press + to begin.";
+
+"myskinproblems_segmented_all" = "All";
+"myskinproblems_segmented_undiagnosed" = "Undiagnosed";
+"myskinproblems_segmented_diagnosed" = "Diagnosed";
 
 "no_data_available" = "No data available";
 "email" = "Email";

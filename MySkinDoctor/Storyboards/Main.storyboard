@@ -173,6 +173,9 @@
                                     <segment title="Undiagnosed"/>
                                     <segment title="Diagnoses"/>
                                 </segments>
+                                <connections>
+                                    <action selector="onDiagnosesSegmentedControlValueChanged:" destination="W0a-aH-PFa" eventType="valueChanged" id="2xv-F8-sSu"/>
+                                </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yvV-Yd-xT0">
                                 <rect key="frame" x="20" y="132" width="335" height="466"/>

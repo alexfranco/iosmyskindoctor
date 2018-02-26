@@ -19,9 +19,25 @@ class MySkinProblemsViewController: BindingViewController {
 		
 		title = NSLocalizedString("myskinproblems_main_vc_title", comment: "")
 		
+		diagnosesSegmentedControl.setTitle(NSLocalizedString("myskinproblems_segmented_all", comment: ""), forSegmentAt: MySkinProblemsViewModel.DiagnosesSegmentedEnum.all.rawValue)
+		diagnosesSegmentedControl.setTitle(NSLocalizedString("myskinproblems_segmented_undiagnosed", comment: ""), forSegmentAt: MySkinProblemsViewModel.DiagnosesSegmentedEnum.undiagnosed.rawValue)
+		diagnosesSegmentedControl.setTitle(NSLocalizedString("myskinproblems_segmented_diagnosed", comment: ""), forSegmentAt: MySkinProblemsViewModel.DiagnosesSegmentedEnum.diagnosed.rawValue)
+				
 		configureTableView()
 		
 		initViewModel(viewModel: MySkinProblemsViewModel())
+	}
+
+	override func initViewModel(viewModel: BaseViewModel) {
+		super.initViewModel(viewModel: viewModel)
+		
+		guard let viewModelSafe = viewModel as? MySkinProblemsViewModel else { return }
+		
+		viewModelSafe.refresh = { [weak self] () in
+			DispatchQueue.main.async {
+				self?.tableView.reloadData()
+			}
+		}
 	}
 	
 	func configureTableView() {
@@ -31,26 +47,31 @@ class MySkinProblemsViewController: BindingViewController {
 		tableView.estimatedRowHeight = 80.0
 		tableView.rowHeight = UITableViewAutomaticDimension
 	}
-}
 	
+	// MARK: IBAction
+	
+	@IBAction func onDiagnosesSegmentedControlValueChanged(_ sender: Any) {
+		(viewModel as! MySkinProblemsViewModel).selectedSegmented = MySkinProblemsViewModel.DiagnosesSegmentedEnum(rawValue: self.diagnosesSegmentedControl.selectedSegmentIndex)!
+	}
+}
+
 extension MySkinProblemsViewController: UITableViewDelegate, UITableViewDataSource {
 	
 	// MARK: UITableView
 	
 	func numberOfSections(in tableView: UITableView) -> Int {
-		var numOfSections: Int = 0
-		if  (viewModel as! MySkinProblemsViewModel).getDataSourceCount(section: MySkinProblemsViewModel.undiagnosedSection) > 0
-			|| (viewModel as! MySkinProblemsViewModel).getDataSourceCount(section: MySkinProblemsViewModel.diagnosedSection) > 0 {
-			tableView.separatorStyle = .singleLine
-			numOfSections            = 2
-			tableView.backgroundView = nil
-		} else {
+		let numOfSections = (viewModel as! MySkinProblemsViewModel).getNumberOfSections()
+		
+		if numOfSections == 0 {
 			let noDataLabel: UILabel     = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
-			noDataLabel.text          = NSLocalizedString("no_data_available", comment: "")
+			noDataLabel.text          = NSLocalizedString("myskinproblems_no_data", comment: "")
 			noDataLabel.textColor     = UIColor.black
 			noDataLabel.textAlignment = .center
 			tableView.backgroundView  = noDataLabel
 			tableView.separatorStyle  = .none
+		} else {
+			tableView.separatorStyle = .singleLine
+			tableView.backgroundView = nil
 		}
 		
 		return numOfSections
@@ -82,3 +103,4 @@ extension MySkinProblemsViewController: UITableViewDelegate, UITableViewDataSour
 		return cell
 	}
 }
+
