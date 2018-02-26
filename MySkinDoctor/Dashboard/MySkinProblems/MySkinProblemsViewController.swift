@@ -13,7 +13,7 @@ class MySkinProblemsViewController: BindingViewController {
 	
 	@IBOutlet weak var diagnosesSegmentedControl: UISegmentedControl!
 	@IBOutlet weak var tableView: UITableView!
-		
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
@@ -22,12 +22,12 @@ class MySkinProblemsViewController: BindingViewController {
 		diagnosesSegmentedControl.setTitle(NSLocalizedString("myskinproblems_segmented_all", comment: ""), forSegmentAt: MySkinProblemsViewModel.DiagnosesSegmentedEnum.all.rawValue)
 		diagnosesSegmentedControl.setTitle(NSLocalizedString("myskinproblems_segmented_undiagnosed", comment: ""), forSegmentAt: MySkinProblemsViewModel.DiagnosesSegmentedEnum.undiagnosed.rawValue)
 		diagnosesSegmentedControl.setTitle(NSLocalizedString("myskinproblems_segmented_diagnosed", comment: ""), forSegmentAt: MySkinProblemsViewModel.DiagnosesSegmentedEnum.diagnosed.rawValue)
-				
+		
 		configureTableView()
 		
 		initViewModel(viewModel: MySkinProblemsViewModel())
 	}
-
+	
 	// MARK: Helpers
 	
 	override func initViewModel(viewModel: BaseViewModel) {
@@ -66,6 +66,13 @@ class MySkinProblemsViewController: BindingViewController {
 	@IBAction func onDiagnosesSegmentedControlValueChanged(_ sender: Any) {
 		(viewModel as! MySkinProblemsViewModel).selectedSegmented = MySkinProblemsViewModel.DiagnosesSegmentedEnum(rawValue: self.diagnosesSegmentedControl.selectedSegmentIndex)!
 	}
+	
+	
+	// MARK: Segues
+	
+	@IBAction func unwindToMySkinProblems(segue:UIStoryboardSegue) {
+	}
+	
 }
 
 extension MySkinProblemsViewController: UITableViewDelegate, UITableViewDataSource {
