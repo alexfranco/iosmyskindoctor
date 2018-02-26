@@ -64,14 +64,78 @@
                                     <constraint firstAttribute="width" constant="100" id="aW7-W5-S38"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mr. John Smith" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sb0-1z-y8v" customClass="TitleLabel" customModule="MySkinDoctor" customModuleProvider="target">
+                                <rect key="frame" x="10" y="214" width="355" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="johhsmith@gmail.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YXW-J2-Htj" customClass="GrayLabel" customModule="MySkinDoctor" customModuleProvider="target">
+                                <rect key="frame" x="10" y="241" width="355" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IQu-JN-mZm">
+                                <rect key="frame" x="20" y="282" width="335" height="316"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Il0-o0-Z6m">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="316"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Personal Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a55-hi-Oy6" customClass="BoldLabel" customModule="MySkinDoctor" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="334" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="08/02/1983" placeholder="Date of Birth" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yp1-wZ-c3h" customClass="ProfileTextField" customModule="MySkinDoctor" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="31" width="334" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="VJ8-26-clm"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="a55-hi-Oy6" secondAttribute="trailing" id="1Pm-ns-XU4"/>
+                                            <constraint firstItem="a55-hi-Oy6" firstAttribute="top" secondItem="Il0-o0-Z6m" secondAttribute="top" id="CPf-6j-ckM"/>
+                                            <constraint firstItem="a55-hi-Oy6" firstAttribute="leading" secondItem="Il0-o0-Z6m" secondAttribute="leading" id="GyV-5Z-4YF"/>
+                                            <constraint firstItem="Yp1-wZ-c3h" firstAttribute="leading" secondItem="Il0-o0-Z6m" secondAttribute="leading" id="SAH-1G-Sc8"/>
+                                            <constraint firstItem="Yp1-wZ-c3h" firstAttribute="top" secondItem="a55-hi-Oy6" secondAttribute="bottom" constant="10" id="Unq-te-eEF"/>
+                                            <constraint firstAttribute="trailing" secondItem="Yp1-wZ-c3h" secondAttribute="trailing" id="zZn-Ne-EOY"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Il0-o0-Z6m" firstAttribute="leading" secondItem="IQu-JN-mZm" secondAttribute="leading" id="42a-SF-FOB"/>
+                                    <constraint firstAttribute="trailing" secondItem="Il0-o0-Z6m" secondAttribute="trailing" id="SZu-MK-brt"/>
+                                    <constraint firstItem="Il0-o0-Z6m" firstAttribute="top" secondItem="IQu-JN-mZm" secondAttribute="top" id="Trj-Rn-ZNx"/>
+                                    <constraint firstItem="Il0-o0-Z6m" firstAttribute="centerX" secondItem="IQu-JN-mZm" secondAttribute="centerX" id="WSX-tf-JC1"/>
+                                    <constraint firstAttribute="bottom" secondItem="Il0-o0-Z6m" secondAttribute="bottom" id="uov-Wt-M72"/>
+                                    <constraint firstItem="Il0-o0-Z6m" firstAttribute="centerY" secondItem="IQu-JN-mZm" secondAttribute="centerY" id="wR9-6m-lOw"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="PSz-1x-K0U" firstAttribute="trailing" secondItem="Sb0-1z-y8v" secondAttribute="trailing" constant="10" id="15z-9S-TlP"/>
                             <constraint firstItem="hXK-Gf-6Eq" firstAttribute="top" secondItem="PSz-1x-K0U" secondAttribute="top" constant="40" id="1b7-Uh-EEq"/>
+                            <constraint firstItem="YXW-J2-Htj" firstAttribute="top" secondItem="Sb0-1z-y8v" secondAttribute="bottom" constant="6" id="4xV-ze-rYA"/>
+                            <constraint firstItem="Sb0-1z-y8v" firstAttribute="leading" secondItem="PSz-1x-K0U" secondAttribute="leading" constant="10" id="9ii-Aa-eaC"/>
+                            <constraint firstItem="IQu-JN-mZm" firstAttribute="top" secondItem="YXW-J2-Htj" secondAttribute="bottom" constant="20" id="AEz-QT-zVo"/>
+                            <constraint firstItem="YXW-J2-Htj" firstAttribute="leading" secondItem="Sb0-1z-y8v" secondAttribute="leading" id="DPP-Q2-GZ4"/>
+                            <constraint firstItem="IQu-JN-mZm" firstAttribute="leading" secondItem="PSz-1x-K0U" secondAttribute="leading" constant="20" id="GW5-fe-9Mc"/>
+                            <constraint firstItem="YXW-J2-Htj" firstAttribute="trailing" secondItem="Sb0-1z-y8v" secondAttribute="trailing" id="O5x-jn-7r3"/>
                             <constraint firstItem="8wT-3I-hMH" firstAttribute="bottom" secondItem="hXK-Gf-6Eq" secondAttribute="bottom" constant="-44" id="XSm-YZ-lgu"/>
                             <constraint firstItem="PSz-1x-K0U" firstAttribute="trailing" secondItem="8wT-3I-hMH" secondAttribute="trailing" id="Z75-qA-sk0"/>
+                            <constraint firstItem="PSz-1x-K0U" firstAttribute="trailing" secondItem="IQu-JN-mZm" secondAttribute="trailing" constant="20" id="hUr-hJ-U9Q"/>
                             <constraint firstItem="hXK-Gf-6Eq" firstAttribute="centerX" secondItem="2dg-bR-OgE" secondAttribute="centerX" id="heg-Fy-Kgr"/>
+                            <constraint firstItem="PSz-1x-K0U" firstAttribute="bottom" secondItem="IQu-JN-mZm" secondAttribute="bottom" constant="20" id="kf3-LD-QoO"/>
                             <constraint firstItem="8wT-3I-hMH" firstAttribute="leading" secondItem="PSz-1x-K0U" secondAttribute="leading" id="qBi-Wh-IRB"/>
+                            <constraint firstItem="Sb0-1z-y8v" firstAttribute="top" secondItem="hXK-Gf-6Eq" secondAttribute="bottom" constant="10" id="vg6-ER-Mkk"/>
                             <constraint firstItem="8wT-3I-hMH" firstAttribute="top" secondItem="PSz-1x-K0U" secondAttribute="top" id="wmK-Dt-rTe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PSz-1x-K0U"/>
@@ -81,8 +145,13 @@
                         <barButtonItem key="rightBarButtonItem" image="walletIcon" id="v6h-6W-WdQ"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="dobTextField" destination="Yp1-wZ-c3h" id="Gaj-mL-w3g"/>
+                        <outlet property="emailLabel" destination="YXW-J2-Htj" id="ulZ-si-qrB"/>
+                        <outlet property="nameLabel" destination="Sb0-1z-y8v" id="FwZ-xd-yrf"/>
+                        <outlet property="personalDetailsSectionLabel" destination="a55-hi-Oy6" id="K8c-R1-lTh"/>
                         <outlet property="profileTopView" destination="8wT-3I-hMH" id="cKB-vq-uAx"/>
-                        <outlet property="userPhotoImageView" destination="hXK-Gf-6Eq" id="75R-bx-fOZ"/>
+                        <outlet property="scrollView" destination="IQu-JN-mZm" id="A5P-vN-wzQ"/>
+                        <outlet property="userPhotoImageView" destination="hXK-Gf-6Eq" id="y2h-1V-fgQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ngk-PR-mkY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -109,7 +178,7 @@
                                 <rect key="frame" x="20" y="132" width="335" height="466"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MySKinProblemsCellId" id="DmB-tB-AsL" customClass="MySkinProblemsTableViewCell" customModule="MySkinDoctor" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MySkinProblemsCellId" id="DmB-tB-AsL" customClass="MySkinProblemsTableViewCell" customModule="MySkinDoctor" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="335" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DmB-tB-AsL" id="ZuT-O3-Tw2">

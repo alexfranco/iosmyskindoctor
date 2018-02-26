@@ -60,7 +60,7 @@ extension MySkinProblemsViewController: UITableViewDelegate, UITableViewDataSour
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: CellId.mySKinProblemsCellId) as! MySkinProblemsTableViewCell
+		let cell = tableView.dequeueReusableCell(withIdentifier: CellId.mySkinProblemsCellId) as! MySkinProblemsTableViewCell
 		
 		let viewModel = (self.viewModel as! MySkinProblemsViewModel).getItemAtIndexPath(indexPath: indexPath)
 		

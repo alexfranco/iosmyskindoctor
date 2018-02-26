@@ -9,7 +9,10 @@
 import Foundation
 import UIKit
 
-private struct BaseColors {
+private let defaultFontName = "Helvetica"
+private let defaultFontBoldName = "HelveticaNeue-Bold"
+
+struct BaseColors {
 	static let green = 		UIColor.init(red: 0.21, green: 0.89, blue: 0.56, alpha: 1.0)
 	static let blue =		UIColor.init(red: 0.00, green: 0.82, blue: 0.86, alpha: 1.0)
 	static let gray = 		UIColor.init(red: 0.55, green: 0.52, blue: 0.50, alpha: 1.0)
@@ -25,12 +28,23 @@ struct AppColors {
 	static let thirdTabColor = BaseColors.violet
 }
 
-private struct AppFonts {
-	static let defaultFont = UIFont(name: "Helvetica", size: AppFontSizes.defaultTextSize)
+struct AppFonts {
+	static let defaultFont = UIFont(name: defaultFontName, size: AppFontSizes.defaultTextSize)
+	static let mediumFont = UIFont(name: defaultFontName, size: AppFontSizes.mediumTextSize)
+	static let bigFont = UIFont(name: defaultFontName, size: AppFontSizes.mediumTextSize)
+	static let veryBigFont = UIFont(name: defaultFontName, size: AppFontSizes.mediumTextSize)
+	
+	static let defaultBoldFont = UIFont(name: defaultFontName, size: AppFontSizes.defaultTextSize)
+	static let mediumBoldFont = UIFont(name: defaultFontName, size: AppFontSizes.mediumTextSize)
+	static let bigBoldFont = UIFont(name: defaultFontName, size: AppFontSizes.mediumTextSize)
+	static let veryBigBoldFont = UIFont(name: defaultFontName, size: AppFontSizes.mediumTextSize)
 }
 
 private struct AppFontSizes {
 	static let defaultTextSize: CGFloat = 12.0
+	static let mediumTextSize: CGFloat = 14.0
+	static let bigTextSize: CGFloat = 16.0
+	static let veryBigTextSize: CGFloat = 18.0
 	static let fieldTextSize: CGFloat = 14.0
 }
 
@@ -64,6 +78,10 @@ struct AppStyle {
 	static let defaultTextFieldError = UIColor.red
 	static let defaultTextFieldPlaceHolderColor = UIColor.gray
 	static let defaultTextFieldFont = AppFonts.defaultFont
+	
+	static let formTextFieldBorderActiveColor = AppColors.secudaryColor
+	static let formTextFieldBorderInactiveColor = BaseColors.gray
+	
 
 	// Positive Button
 	static let positiveButtonBackgroundColor = AppColors.primaryColor

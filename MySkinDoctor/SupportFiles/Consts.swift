@@ -26,6 +26,7 @@ struct UserDefaultConsts {
 }
 
 struct CellId {
-	static let mySKinProblemsCellId = "MySKinProblemsCellId"
+	static let mySkinProblemsCellId = "MySkinProblemsCellId"
+	static let myProfileCellId = "myProfileCellId"
 }
 

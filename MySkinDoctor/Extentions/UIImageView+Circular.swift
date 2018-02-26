@@ -15,7 +15,9 @@ extension UIImageView {
 		let radius = self.frame.width / 2
 		self.layer.cornerRadius = radius
 		self.layer.masksToBounds = true
-		
+	}
+	
+	func setWhiteBorder() {
 		self.layer.borderWidth = 5
 		self.layer.borderColor = AppStyle.circularImageViewBorderColor.cgColor
 	}

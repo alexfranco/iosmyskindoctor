@@ -27,17 +27,29 @@ struct ThemeManager {
 		// Label
 		UILabel.appearance().font = AppStyle.defaultLabelFont
 		UILabel.appearance().textColor = AppStyle.defaultLabelTextColor
-				
+	
+		BoldLabel.appearance().font = AppFonts.defaultBoldFont
+		BoldLabel.appearance().textColor = AppStyle.defaultLabelTextColor
+		
+		TitleLabel.appearance().font = AppFonts.bigBoldFont
+		TitleLabel.appearance().textColor = AppStyle.defaultLabelTextColor
+		
+		GrayLabel.appearance().font = AppFonts.defaultFont
+		GrayLabel.appearance().textColor = BaseColors.gray
+		
 		// Segmented control
 		UISegmentedControl.appearance().tintColor = AppStyle.defaultSegmentedColor
 		
 		// TextFields
 		UITextField.appearance().font = AppStyle.defaultTextFieldFont
 
-		AkiraTextField.appearance().backgroundColor = AppStyle.defaultTextFieldBackgroundColor
-		AkiraTextField.appearance().placeholderColor = AppStyle.defaultTextFieldPlaceHolderColor
-		AkiraTextField.appearance().borderColor = AppStyle.defaultTextFieldPlaceHolderColor
-				
+		FormTextField.appearance().backgroundColor = AppStyle.defaultTextFieldBackgroundColor
+		FormTextField.appearance().placeholderColor = AppStyle.defaultTextFieldPlaceHolderColor
+		FormTextField.appearance().borderColor = AppStyle.defaultTextFieldPlaceHolderColor
+		
+		ProfileTextField.appearance().backgroundColor = AppStyle.defaultTextFieldBackgroundColor
+		ProfileTextField.appearance().placeholderColor = AppStyle.defaultTextFieldPlaceHolderColor
+		
 		// Buttons
 		PositiveButton.appearance().backgroundColor = AppStyle.positiveButtonBackgroundColor
 		PositiveButton.appearance().tintColor = AppStyle.positiveButtonTextColor
