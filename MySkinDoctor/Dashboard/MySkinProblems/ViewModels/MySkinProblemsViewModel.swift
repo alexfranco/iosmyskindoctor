@@ -41,6 +41,11 @@ class MySkinProblemsViewModel: BaseViewModel {
 		undiagnosedItems = allItems.filter { (model) -> Bool in model.isDiagnosed == false }
 	}
 	
+	func refreshData() {
+		// TODO
+		refresh!()
+	}
+	
 	func getHeaderBackgroundColor(section: Int) -> UIColor {
 		switch selectedSegmented {
 		case .all:
@@ -49,7 +54,7 @@ class MySkinProblemsViewModel: BaseViewModel {
 			return AppStyle.mySkinUndiagnosedColor
 		case .diagnosed:
 			return AppStyle.mySkinDiagnosedColor
-		}		
+		}
 	}
 	
 	func getSectionTitle(section: Int) -> String {

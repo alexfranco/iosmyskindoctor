@@ -28,6 +28,8 @@ class MySkinProblemsViewController: BindingViewController {
 		initViewModel(viewModel: MySkinProblemsViewModel())
 	}
 
+	// MARK: Helpers
+	
 	override func initViewModel(viewModel: BaseViewModel) {
 		super.initViewModel(viewModel: viewModel)
 		
@@ -36,6 +38,7 @@ class MySkinProblemsViewController: BindingViewController {
 		viewModelSafe.refresh = { [weak self] () in
 			DispatchQueue.main.async {
 				self?.tableView.reloadData()
+				self?.tableView.refreshControl?.endRefreshing()
 			}
 		}
 	}
@@ -46,6 +49,16 @@ class MySkinProblemsViewController: BindingViewController {
 		
 		tableView.estimatedRowHeight = 80.0
 		tableView.rowHeight = UITableViewAutomaticDimension
+		
+		let refreshControl = UIRefreshControl()
+		refreshControl.backgroundColor = UIColor.clear
+		refreshControl.tintColor = UIColor.black
+		tableView.refreshControl =  refreshControl
+		tableView.refreshControl?.addTarget(self, action: #selector(handleRefresh(refreshControl:)), for: UIControlEvents.valueChanged)
+	}
+	
+	@objc func handleRefresh(refreshControl: UIRefreshControl) {
+		(viewModel as! MySkinProblemsViewModel).refreshData()
 	}
 	
 	// MARK: IBAction
