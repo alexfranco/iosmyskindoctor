@@ -39,6 +39,8 @@ struct ThemeManager {
 		
 		// Segmented control
 		UISegmentedControl.appearance().tintColor = AppStyle.defaultSegmentedColor
+		UISegmentedControl.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.white], for: .selected)
+		UISegmentedControl.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: AppStyle.defaultSegmentedColor], for: .normal)
 		
 		// TextFields
 		UITextField.appearance().font = AppStyle.defaultTextFieldFont
