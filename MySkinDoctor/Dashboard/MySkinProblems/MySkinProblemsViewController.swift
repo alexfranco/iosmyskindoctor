@@ -67,7 +67,7 @@ extension MySkinProblemsViewController: UITableViewDelegate, UITableViewDataSour
 	func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
 		let headerView = (view as! UITableViewHeaderFooterView)
 		
-		headerView.backgroundView?.backgroundColor = section == MySkinProblemsViewModel.undiagnosedSection ? AppStyle.mySkinUndiagnosedColor : AppStyle.mySkinDiagnosedColor
+		headerView.backgroundView?.backgroundColor = (viewModel as! MySkinProblemsViewModel).getHeaderBackgroundColor(section: section)
 		headerView.textLabel?.textColor = AppStyle.mySkinTableSectionTextColor
 		headerView.textLabel?.font = AppStyle.mySkinTableSectionTextFont
 	}

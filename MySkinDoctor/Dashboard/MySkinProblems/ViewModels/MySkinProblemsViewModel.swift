@@ -19,7 +19,6 @@ class MySkinProblemsViewModel: BaseViewModel {
 	var undiagnosedItems = [MySkinProblemsTableCellViewModel]()
 	var diagnosedItems = [MySkinProblemsTableCellViewModel]()
 
-
 	override init() {
 		// Generate tests
 		items = [MySkinProblemsTableCellViewModel(withName: "New Skin Problem", date: Date(), isDiagnosed: true, problemDescription: "My son has suffered with several rashes spanning over the space of 5 months which come and go...."),
@@ -27,6 +26,10 @@ class MySkinProblemsViewModel: BaseViewModel {
 		
 		diagnosedItems = items.filter { (model) -> Bool in model.isDiagnosed == true }
 		undiagnosedItems = items.filter { (model) -> Bool in model.isDiagnosed == false }
+	}
+	
+	func getHeaderBackgroundColor(section: Int) -> UIColor {
+		return section == MySkinProblemsViewModel.undiagnosedSection ? AppStyle.mySkinUndiagnosedColor : AppStyle.mySkinDiagnosedColor
 	}
 	
 	func getSectionTitle(section: Int) -> String {
