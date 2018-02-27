@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class MySkinProblemsTableCellViewModel: NSObject {
 	
@@ -31,7 +32,7 @@ class MySkinProblemsTableCellViewModel: NSObject {
 		// Formater
 		let dateFormater = DateFormatter()
 		dateFormater.dateFormat = dateFormat
-
+		
 		return (DateUtils.getOrdinaryDay(date: date) + " " + dateFormater.string(from: date)).uppercased()
 	}
 }

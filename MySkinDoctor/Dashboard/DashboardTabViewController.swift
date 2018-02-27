@@ -26,13 +26,13 @@ class DashboardTabViewController: UITabBarController {
 		self.tabBar.items?[consultTab].setTitleTextAttributes([NSAttributedStringKey.foregroundColor: AppStyle.consultTabBarTitleColor], for: .selected)
 		self.tabBar.items?[myProfileTab].setTitleTextAttributes([NSAttributedStringKey.foregroundColor: AppStyle.profileBarTitleColor], for: .selected)
 		
-//		self.tabBar.items?[mySkinTab].image = UIImage(named: "imageName")?.withRenderingMode(.alwaysOriginal)
-//		self.tabBar.items?[consultTab].image = UIImage(named: "imageName")?.withRenderingMode(.alwaysOriginal)
-//		self.tabBar.items?[myProfileTab].image = UIImage(named: "imageName")?.withRenderingMode(.alwaysOriginal)
-//
-//		self.tabBar.items?[mySkinTab].selectedImage = UIImage(named: "imageName")?.withRenderingMode(.alwaysOriginal)
-//		self.tabBar.items?[consultTab].selectedImage = UIImage(named: "imageName")?.withRenderingMode(.alwaysOriginal)
-//		self.tabBar.items?[myProfileTab].selectedImage = UIImage(named: "imageName")?.withRenderingMode(.alwaysOriginal)
+		self.tabBar.items?[mySkinTab].image = UIImage(named: "skinProblemsInactive")?.withRenderingMode(.alwaysOriginal)
+		self.tabBar.items?[consultTab].image = UIImage(named: "consultsInactive")?.withRenderingMode(.alwaysOriginal)
+		self.tabBar.items?[myProfileTab].image = UIImage(named: "profileInactive")?.withRenderingMode(.alwaysOriginal)
+
+		self.tabBar.items?[mySkinTab].selectedImage = UIImage(named: "skinProblemsActive")?.withRenderingMode(.alwaysOriginal)
+		self.tabBar.items?[consultTab].selectedImage = UIImage(named: "consultsActive")?.withRenderingMode(.alwaysOriginal)
+		self.tabBar.items?[myProfileTab].selectedImage = UIImage(named: "profileActive")?.withRenderingMode(.alwaysOriginal)
 	}
 }
 

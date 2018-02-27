@@ -29,6 +29,9 @@
 		7849CCA9203EE3E60030A7B1 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7849CCA7203EE3E60030A7B1 /* BaseViewModel.swift */; };
 		7849CCAA203EE3E60030A7B1 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7849CCA7203EE3E60030A7B1 /* BaseViewModel.swift */; };
 		7849CCAB203EE3E60030A7B1 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7849CCA7203EE3E60030A7B1 /* BaseViewModel.swift */; };
+		784DE13420454968000D4013 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6ADB420442C130050C1A9 /* DateUtils.swift */; };
+		784DE13520454969000D4013 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6ADB420442C130050C1A9 /* DateUtils.swift */; };
+		784DE13620454969000D4013 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6ADB420442C130050C1A9 /* DateUtils.swift */; };
 		78B9E516203C2B920054CAD3 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B9E515203C2B920054CAD3 /* ForgotPasswordViewController.swift */; };
 		78B9E518203C2C670054CAD3 /* ForgotPasswordResposeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B9E517203C2C670054CAD3 /* ForgotPasswordResposeModel.swift */; };
 		78B9E520203C2E630054CAD3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78B9E522203C2E630054CAD3 /* Localizable.strings */; };
@@ -1083,6 +1086,7 @@
 				FA3326BF20441C8500657C8A /* FormTextField.swift in Sources */,
 				78B9E535203C4CD70054CAD3 /* Validations.swift in Sources */,
 				78B9E536203C4CD70054CAD3 /* ForgotPasswordResposeModel.swift in Sources */,
+				784DE13420454968000D4013 /* DateUtils.swift in Sources */,
 				FAD6ADB820445EB20050C1A9 /* AddSkinProblemTableViewCell.swift in Sources */,
 				FAD6ADC220446D310050C1A9 /* AddSkinPhotoViewModel.swift in Sources */,
 				FA3326472040220200657C8A /* MySkinProblemsTableCellViewModel.swift in Sources */,
@@ -1192,6 +1196,7 @@
 				FAC1AF122036FCE200547BBC /* RegistrationResponseModel.swift in Sources */,
 				FAD6ADBE204461050050C1A9 /* AddSkinPhotoViewController.swift in Sources */,
 				FAE733F520344AE200898E65 /* LoginViewController.swift in Sources */,
+				784DE13520454969000D4013 /* DateUtils.swift in Sources */,
 				78B9E525203C48FC0054CAD3 /* ApiUtils.swift in Sources */,
 				780F701C203592B800D96601 /* ProgressBarViewController.swift in Sources */,
 				FA3326CC20441C8500657C8A /* GrayLabel.swift in Sources */,
@@ -1238,6 +1243,7 @@
 				FAC1AF132036FCE200547BBC /* RegistrationResponseModel.swift in Sources */,
 				FAD6ADBF204461050050C1A9 /* AddSkinPhotoViewController.swift in Sources */,
 				FAE733F620344AE200898E65 /* LoginViewController.swift in Sources */,
+				784DE13620454969000D4013 /* DateUtils.swift in Sources */,
 				78B9E526203C48FC0054CAD3 /* ApiUtils.swift in Sources */,
 				780F701D203592B900D96601 /* ProgressBarViewController.swift in Sources */,
 				FA3326CD20441C8500657C8A /* GrayLabel.swift in Sources */,

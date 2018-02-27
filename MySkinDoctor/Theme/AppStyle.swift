@@ -13,20 +13,29 @@ private let defaultFontName = "Helvetica"
 private let defaultFontBoldName = "HelveticaNeue-Bold"
 
 struct BaseColors {
-	static let green = 		UIColor.init(red: 0.21, green: 0.89, blue: 0.56, alpha: 1.0)
-	static let blue =		UIColor.init(red: 0.00, green: 0.82, blue: 0.86, alpha: 1.0)
-	static let gray = 		UIColor.init(red: 0.55, green: 0.52, blue: 0.50, alpha: 1.0)
-	static let violet = 	UIColor.init(red: 0.600, green: 0.404, blue: 0.808, alpha: 1.00)
-	static let red =		UIColor.init(red: 0.925, green: 0.451, blue: 0.455, alpha: 1.0)
+	static var hospitalGreen: UIColor { return UIColor(red: 120.0 / 255.0, green: 219.0 / 255.0, blue: 140.0 / 255.0, alpha: 1.0) }
+	static var amethyst: UIColor { return UIColor(red: 154.0 / 255.0, green: 99.0 / 255.0, blue: 209.0 / 255.0, alpha: 1.0) }
+	static var orangeish: UIColor { return UIColor(red: 248.0 / 255.0, green: 142.0 / 255.0, blue: 71.0 / 255.0, alpha: 1.0) }
+	static var blush: UIColor { return UIColor(red: 238.0 / 255.0, green: 114.0 / 255.0, blue: 114.0 / 255.0, alpha: 1.0) }
+	static var skyBlue: UIColor { return UIColor(red: 77.0 / 255.0, green: 200.0 / 255.0, blue: 1.0, alpha: 1.0) }
+	static var brownishGrey: UIColor { return UIColor(white: 110.0 / 255.0, alpha: 1.0) }
+	static var white: UIColor { return UIColor(white: 240.0 / 255.0, alpha: 1.0) }
+	static var whiteTwo: UIColor { return UIColor(white: 236.0 / 255.0, alpha: 1.0) }
+	static var warmGrey: UIColor { return UIColor(white: 129.0 / 255.0, alpha: 1.0) }
+	static var warmGreyTwo: UIColor { return UIColor(white: 113.0 / 255.0, alpha: 1.0) }
+	static var warmGreyThree: UIColor { return UIColor(white: 132.0 / 255.0, alpha: 1.0) }
+	static var black: UIColor { return UIColor(white: 46.0 / 255.0, alpha: 1.0) }
+	static var greyishBrown: UIColor { return UIColor(white: 70.0 / 255.0, alpha: 1.0) }
+	static var ice: UIColor { return UIColor(red: 239.0 / 255.0, green: 1.0, blue: 242.0 / 255.0, alpha: 1.0) }
 }
 
 struct AppColors {
-	static let primaryColor = BaseColors.green
-	static let secudaryColor = BaseColors.blue
+	static let primaryColor = BaseColors.hospitalGreen
+	static let secudaryColor = BaseColors.skyBlue
 	
-	static let firstTabColor = BaseColors.green
-	static let secondTabColor = BaseColors.blue
-	static let thirdTabColor = BaseColors.violet
+	static let firstTabColor = BaseColors.hospitalGreen
+	static let secondTabColor = BaseColors.hospitalGreen
+	static let thirdTabColor = BaseColors.amethyst
 }
 
 struct AppFonts {
@@ -59,19 +68,19 @@ struct AppStyle {
 	static let sectionHeaderBackgroundColorHighlighted = UIColor.gray
 	static let sectionHeaderAlpha: CGFloat = 1.0
 
-	static let defaultSegmentedColor = BaseColors.blue
+	static let defaultSegmentedColor = BaseColors.skyBlue
 
 	static let defaultNavigationBarColor = UIColor.white
 	static let defaultNavigationBarTitleColor = UIColor.black
 
 	// Tabbar
-	static let defaultTabBarColor = BaseColors.gray
+	static let defaultTabBarColor = BaseColors.warmGrey
 	
 	// MySkin TabBar
 	static let mySkinTabBarTitleColor = AppColors.firstTabColor
 	
-	static let mySkinDiagnosedColor = BaseColors.green
-	static let mySkinUndiagnosedColor = BaseColors.red
+	static let mySkinDiagnosedColor = BaseColors.hospitalGreen
+	static let mySkinUndiagnosedColor = BaseColors.blush
 	
 	static let mySkinTableSectionTextColor = UIColor.white
 	static let mySkinTableSectionTextFont = AppFonts.defaultBoldFont
@@ -91,14 +100,14 @@ struct AppStyle {
 	// Default TextField
 
 	static let defaultTextFieldBackgroundColor = UIColor.white
-	static let defaultTextFieldBorderColor = BaseColors.gray
-	static let defaultTextFieldTextColor = BaseColors.gray
+	static let defaultTextFieldBorderColor = BaseColors.warmGrey
+	static let defaultTextFieldTextColor = BaseColors.warmGrey
 	static let defaultTextFieldError = UIColor.red
 	static let defaultTextFieldPlaceHolderColor = UIColor.gray
 	static let defaultTextFieldFont = AppFonts.defaultFont
 	
 	static let formTextFieldBorderActiveColor = AppColors.secudaryColor
-	static let formTextFieldBorderInactiveColor = BaseColors.gray
+	static let formTextFieldBorderInactiveColor = BaseColors.warmGrey
 	
 
 	// Positive Button

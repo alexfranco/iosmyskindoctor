@@ -31,12 +31,12 @@ class AddSkinPhotoViewController: BindingViewController {
 		
 		guard let viewModelSafe = viewModel as? AddSkinPhotoViewModel else { return }
 		
-		viewModelSafe.refresh = { [weak self] () in
-			DispatchQueue.main.async {
-				self?.tableView.reloadData()
-				self?.tableView.refreshControl?.endRefreshing()
-			}
-		}
+//		viewModelSafe.refresh = { [weak self] () in
+//			DispatchQueue.main.async {
+//				self?.tableView.reloadData()
+//				self?.tableView.refreshControl?.endRefreshing()
+//			}
+//		}
 	}
 	
 	func configureTableView() {
@@ -48,7 +48,7 @@ class AddSkinPhotoViewController: BindingViewController {
 	}
 }
 
-extension MySkinProblemsViewController: UITableViewDelegate, UITableViewDataSource {
+extension AddSkinPhotoViewController: UITableViewDelegate, UITableViewDataSource {
 	
 	// MARK: UITableView
 	
@@ -63,7 +63,7 @@ extension MySkinProblemsViewController: UITableViewDelegate, UITableViewDataSour
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: CellId.mySkinProblemsCellId) as! AddSkinProblemTableViewCell
 		
-		let viewModel = (self.viewModel as! AddSkinPhotoViewModel).getItemAtIndexPath(indexPath: indexPath)
+//		let viewModel = (self.viewModel as! AddSkinPhotoViewModel).getItemAtIndexPath(indexPath: indexPath)
 		
 //		cell.configure(withViewModel: viewModel)
 		

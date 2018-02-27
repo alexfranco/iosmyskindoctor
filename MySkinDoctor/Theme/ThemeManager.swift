@@ -35,7 +35,7 @@ struct ThemeManager {
 		TitleLabel.appearance().textColor = AppStyle.defaultLabelTextColor
 		
 		GrayLabel.appearance().font = AppFonts.defaultFont
-		GrayLabel.appearance().textColor = BaseColors.gray
+		GrayLabel.appearance().textColor = BaseColors.warmGrey
 		
 		// Segmented control
 		UISegmentedControl.appearance().tintColor = AppStyle.defaultSegmentedColor

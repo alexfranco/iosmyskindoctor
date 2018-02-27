@@ -32,7 +32,7 @@
         <scene sceneID="Chp-QE-L4z">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="s0P-bJ-sLe" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" id="20L-4w-E4j"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="profileInactive" selectedImage="profileActive" id="20L-4w-E4j"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jEG-jt-x7n">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -406,7 +406,7 @@
         <scene sceneID="v3S-AI-tbe">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qew-3f-0D8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Skin Problems" id="EkC-39-abX"/>
+                    <tabBarItem key="tabBarItem" title="Skin Problems" image="skinProblemsInactive" selectedImage="skinProblemsActive" id="EkC-39-abX"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5nw-aw-BBZ">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -425,7 +425,7 @@
         <scene sceneID="i3B-IZ-IWy">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mva-9L-Tu9" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Consults" id="tfe-54-RkD"/>
+                    <tabBarItem key="tabBarItem" title="Consults" image="consultsInactive" selectedImage="consultsActive" id="tfe-54-RkD"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fTP-sA-vZs">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -443,8 +443,14 @@
     </scenes>
     <resources>
         <image name="addPhoto" width="92" height="90"/>
+        <image name="consultsActive" width="48" height="32"/>
+        <image name="consultsInactive" width="48" height="32"/>
         <image name="diagnosed" width="86" height="76"/>
+        <image name="profileActive" width="48" height="32"/>
+        <image name="profileInactive" width="48" height="32"/>
         <image name="settingsIcon" width="76" height="88"/>
+        <image name="skinProblemsActive" width="48" height="32"/>
+        <image name="skinProblemsInactive" width="48" height="32"/>
         <image name="walletIcon" width="92" height="82"/>
     </resources>
 </document>
