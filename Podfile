@@ -13,6 +13,7 @@ pod 'Alamofire'
 pod 'TextFieldEffects'
 pod 'IQKeyboardManagerSwift'
 pod 'ObjectMapper'
+pod 'LRTextField'
 
 end
 

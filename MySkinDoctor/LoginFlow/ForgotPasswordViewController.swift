@@ -33,9 +33,9 @@ class ForgotPasswordViewController: FormViewController {
 		super.viewWillAppear(animated)
 		
 		// Hide the navigation bar on the this view controller
-		self.navigationController?.setNavigationBarHidden(true, animated: animated)
+		self.navigationController?.setNavigationBarHidden(false, animated: animated)			
 	}
-	
+		
 	// MARK: Bindings
 	
 	override func initViewModel(viewModel: BaseViewModel) {

@@ -1,0 +1,6 @@
+framework module LRTextField {
+  umbrella header "LRTextField-umbrella.h"
+
+  export *
+  module * { export * }
+}

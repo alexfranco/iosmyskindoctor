@@ -27,6 +27,8 @@ struct BaseColors {
 	static var black: UIColor { return UIColor(white: 46.0 / 255.0, alpha: 1.0) }
 	static var greyishBrown: UIColor { return UIColor(white: 70.0 / 255.0, alpha: 1.0) }
 	static var ice: UIColor { return UIColor(red: 239.0 / 255.0, green: 1.0, blue: 242.0 / 255.0, alpha: 1.0) }
+	
+	static var formGrey: UIColor { return UIColor(red: 210.0 / 255.0, green: 210.0 / 255.0, blue: 210.0 / 255.0, alpha: 1.0) }
 }
 
 struct AppColors {
@@ -100,10 +102,10 @@ struct AppStyle {
 	// Default TextField
 
 	static let defaultTextFieldBackgroundColor = UIColor.white
-	static let defaultTextFieldBorderColor = BaseColors.warmGrey
-	static let defaultTextFieldTextColor = BaseColors.warmGrey
+	static let defaultTextFieldBorderColor = BaseColors.formGrey
+	static let defaultTextFieldTextColor = BaseColors.formGrey
 	static let defaultTextFieldError = UIColor.red
-	static let defaultTextFieldPlaceHolderColor = UIColor.gray
+	static let defaultTextFieldPlaceHolderColor = BaseColors.warmGrey
 	static let defaultTextFieldFont = AppFonts.defaultFont
 	
 	static let formTextFieldBorderActiveColor = AppColors.secudaryColor

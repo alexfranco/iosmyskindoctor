@@ -30,8 +30,14 @@ class LoginViewController: FormViewController {
 		
 		emailTextField.placeholder = NSLocalizedString("email", comment: "")
 		passwordTextField.placeholder = NSLocalizedString("password", comment: "")
+
 		
 		registerForKeyboardReturnKey([emailTextField, passwordTextField])
+
+		navigationController?.navigationBar.barTintColor = UIColor.white
+		navigationController?.navigationBar.isTranslucent = false
+		navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+		navigationController?.navigationBar.shadowImage = UIImage()
 		
 		initViewModel(viewModel: LoginViewModel())
 	}

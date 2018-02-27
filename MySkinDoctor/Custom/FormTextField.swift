@@ -8,8 +8,29 @@
 
 import Foundation
 import TextFieldEffects
+import LRTextField
 
-class FormTextField: AkiraTextField {
+class FormTextField: LRTextField {
+	
+	private var originalPlaceholderActiveColor = BaseColors.warmGrey
+	private var originalPlaceholderInactiveColor = BaseColors.formGrey
+	private var originalTextFieldBorder = BaseColors.formGrey
+	private var errorColor = BaseColors.blush
+	
+	var hasErrors: Bool = false {
+		didSet {
+			if hasErrors {
+				layer.borderColor = errorColor.cgColor
+				placeholderActiveColor = errorColor
+				placeholderInactiveColor = errorColor
+			} else {
+				// default colours
+				layer.borderColor = originalTextFieldBorder.cgColor
+				placeholderActiveColor = originalPlaceholderActiveColor
+				placeholderInactiveColor = originalPlaceholderInactiveColor
+			}
+		}
+	}
 	
 	private var originalPlaceholder: String?
 	
@@ -24,28 +45,30 @@ class FormTextField: AkiraTextField {
 		}
 	}
 	
-	private var _placeholderColor: UIColor = .black
-	override var placeholderColor: UIColor {
-		didSet {
-			_placeholderColor = placeholderColor
-		}
-	}
-	
 	var errorMessage: String? {
 		didSet {
 			if let errorMessage = errorMessage, !errorMessage.isEmpty {
-				let _placeholder = placeholder
-				placeholder = errorMessage
-				self._placeholder = _placeholder
+				self.placeholder = errorMessage
+				hasErrors = true
 				
-				let _placeholderColor = placeholderColor
-				placeholderColor = UIColor.red
-				self._placeholderColor = _placeholderColor
 			} else {
-				placeholderColor = _placeholderColor
-				placeholder = originalPlaceholder
+				self.placeholder = originalPlaceholder
+				hasErrors = false
 			}
 		}
+	}
+
+	override func awakeFromNib() {
+		super.awakeFromNib()
+
+		textColor = BaseColors.warmGrey
+		borderStyle = UITextBorderStyle.roundedRect
+		layer.borderWidth = 1
+		layer.borderColor = originalTextFieldBorder.cgColor
+		
+		floatingLabelHeight = 12
+		placeholderActiveColor = originalPlaceholderActiveColor
+		placeholderInactiveColor = originalPlaceholderInactiveColor
 	}
 	
 	// MARK: Binding
@@ -60,6 +83,8 @@ class FormTextField: AkiraTextField {
 	
 	@objc func textFieldDidChange(_ textField :UITextField) {		
 		self.textChanged(textField.text!)
+		
+		self.errorMessage = ""
 	}	
 }
 

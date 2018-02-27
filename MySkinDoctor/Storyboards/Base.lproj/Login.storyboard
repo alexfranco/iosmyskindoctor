@@ -38,65 +38,73 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="577"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fxj-Gv-hJz">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="427"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="434"/>
                                         <subviews>
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="1hK-Fg-wIB">
-                                                <rect key="frame" x="20" y="20" width="335" height="150"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="150" id="fdp-gy-vpy"/>
-                                                </constraints>
+                                                <rect key="frame" x="20" y="101" width="335" height="86"/>
                                             </imageView>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yw0-UV-ync" customClass="FormTextField" customModule="MySkinDoctor" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="190" width="335" height="50"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yw0-UV-ync" customClass="FormTextField" customModule="MySkinDoctor" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="207" width="335" height="40"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="ZVd-9m-pok"/>
+                                                    <constraint firstAttribute="height" constant="40" id="vji-Jy-QOI"/>
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FJp-az-mfl" customClass="PasswordTextField" customModule="MySkinDoctor" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="245" width="335" height="50"/>
+                                                <rect key="frame" x="20" y="262" width="335" height="40"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="Niu-KS-meq"/>
+                                                    <constraint firstAttribute="height" constant="40" id="Niu-KS-meq"/>
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byO-ag-8v2" customClass="PositiveButton" customModule="MySkinDoctor" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="307" width="335" height="50"/>
+                                                <rect key="frame" x="20" y="314" width="335" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="4sQ-W5-6cd"/>
+                                                </constraints>
                                                 <state key="normal" title="Sign In"/>
                                                 <connections>
                                                     <action selector="onNextButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T1Q-fd-SWg"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IrI-S3-egB" customClass="NoBackgroundButton" customModule="MySkinDoctor" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="377" width="335" height="30"/>
+                                                <rect key="frame" x="20" y="384" width="335" height="30"/>
                                                 <state key="normal" title="Forgot Password?"/>
                                                 <connections>
                                                     <segue destination="SM0-O1-huI" kind="show" id="YaX-2U-fMO"/>
                                                 </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vSP-65-Q2t" customClass="TitleLabel" customModule="MySkinDoctor" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="40" width="335" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="FJp-az-mfl" firstAttribute="leading" secondItem="Yw0-UV-ync" secondAttribute="leading" id="3K4-Zz-8U2"/>
+                                            <constraint firstItem="vSP-65-Q2t" firstAttribute="centerX" secondItem="Fxj-Gv-hJz" secondAttribute="centerX" id="5Wi-MC-lLy"/>
                                             <constraint firstItem="IrI-S3-egB" firstAttribute="top" secondItem="byO-ag-8v2" secondAttribute="bottom" constant="20" id="7Sv-3z-IJf"/>
                                             <constraint firstItem="FJp-az-mfl" firstAttribute="trailing" secondItem="Yw0-UV-ync" secondAttribute="trailing" id="JfX-dY-6vV"/>
                                             <constraint firstItem="Yw0-UV-ync" firstAttribute="leading" secondItem="Fxj-Gv-hJz" secondAttribute="leading" constant="20" id="KWO-h8-9Rh"/>
-                                            <constraint firstItem="FJp-az-mfl" firstAttribute="top" secondItem="Yw0-UV-ync" secondAttribute="bottom" constant="5" id="Kfi-7O-56u"/>
+                                            <constraint firstItem="FJp-az-mfl" firstAttribute="top" secondItem="Yw0-UV-ync" secondAttribute="bottom" constant="15" id="Kfi-7O-56u"/>
                                             <constraint firstAttribute="bottom" secondItem="IrI-S3-egB" secondAttribute="bottom" constant="20" id="LpD-jY-w9I"/>
-                                            <constraint firstItem="1hK-Fg-wIB" firstAttribute="top" secondItem="Fxj-Gv-hJz" secondAttribute="top" constant="20" id="N0L-ka-mCp"/>
-                                            <constraint firstAttribute="trailing" secondItem="1hK-Fg-wIB" secondAttribute="trailing" constant="20" id="R6l-TZ-1Sm"/>
+                                            <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="1hK-Fg-wIB" secondAttribute="trailing" constant="20" id="R6l-TZ-1Sm"/>
                                             <constraint firstItem="byO-ag-8v2" firstAttribute="trailing" secondItem="FJp-az-mfl" secondAttribute="trailing" id="RWn-ox-Ky5"/>
-                                            <constraint firstItem="byO-ag-8v2" firstAttribute="height" secondItem="FJp-az-mfl" secondAttribute="height" id="W98-fW-KAn"/>
                                             <constraint firstItem="byO-ag-8v2" firstAttribute="top" secondItem="FJp-az-mfl" secondAttribute="bottom" constant="12" id="XOk-wu-ywM"/>
+                                            <constraint firstItem="1hK-Fg-wIB" firstAttribute="top" secondItem="vSP-65-Q2t" secondAttribute="bottom" constant="40" id="YXU-k5-Bej"/>
                                             <constraint firstItem="IrI-S3-egB" firstAttribute="leading" secondItem="Fxj-Gv-hJz" secondAttribute="leading" constant="20" id="dwI-6N-T8o"/>
                                             <constraint firstAttribute="trailing" secondItem="IrI-S3-egB" secondAttribute="trailing" constant="20" id="g8g-LY-bex"/>
-                                            <constraint firstItem="1hK-Fg-wIB" firstAttribute="leading" secondItem="Fxj-Gv-hJz" secondAttribute="leading" constant="20" id="j4O-rV-jbT"/>
+                                            <constraint firstAttribute="trailing" secondItem="vSP-65-Q2t" secondAttribute="trailing" constant="20" id="gYC-HJ-x18"/>
+                                            <constraint firstItem="1hK-Fg-wIB" firstAttribute="leading" relation="lessThanOrEqual" secondItem="Fxj-Gv-hJz" secondAttribute="leading" constant="20" id="j4O-rV-jbT"/>
                                             <constraint firstItem="Yw0-UV-ync" firstAttribute="top" secondItem="1hK-Fg-wIB" secondAttribute="bottom" constant="20" id="sfE-Pe-5Q6"/>
                                             <constraint firstItem="byO-ag-8v2" firstAttribute="leading" secondItem="FJp-az-mfl" secondAttribute="leading" id="w6f-zk-vou"/>
+                                            <constraint firstItem="vSP-65-Q2t" firstAttribute="top" secondItem="Fxj-Gv-hJz" secondAttribute="top" constant="40" id="xH6-rh-PGH"/>
                                             <constraint firstAttribute="trailing" secondItem="Yw0-UV-ync" secondAttribute="trailing" constant="20" id="yAU-IE-jvF"/>
                                         </constraints>
                                     </view>
@@ -156,25 +164,22 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qFD-Xp-Rpw">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="310"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="307"/>
                                         <subviews>
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="OwI-LS-gpj">
-                                                <rect key="frame" x="20" y="0.0" width="335" height="150"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="150" id="c0Y-lk-ET4"/>
-                                                </constraints>
+                                                <rect key="frame" x="20" y="61" width="335" height="86"/>
                                             </imageView>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mW0-iZ-SKj" customClass="FormTextField" customModule="MySkinDoctor" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="170" width="335" height="50"/>
+                                                <rect key="frame" x="20" y="167" width="335" height="40"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="KzZ-55-zpb"/>
+                                                    <constraint firstAttribute="height" constant="40" id="KzZ-55-zpb"/>
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="done"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y25-tL-gYc" customClass="PositiveButton" customModule="MySkinDoctor" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="240" width="335" height="50"/>
+                                                <rect key="frame" x="20" y="237" width="335" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="gAs-ZG-lgr"/>
                                                 </constraints>
@@ -183,19 +188,28 @@
                                                     <action selector="onNextButtonPressed:" destination="SM0-O1-huI" eventType="touchUpInside" id="KCM-vb-GuR"/>
                                                 </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lr4-To-6NH" customClass="TitleLabel" customModule="MySkinDoctor" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="0.0" width="335" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="Y25-tL-gYc" firstAttribute="top" secondItem="mW0-iZ-SKj" secondAttribute="bottom" constant="20" id="8ll-8y-zrP"/>
+                                            <constraint firstItem="Y25-tL-gYc" firstAttribute="top" secondItem="mW0-iZ-SKj" secondAttribute="bottom" constant="30" id="8ll-8y-zrP"/>
+                                            <constraint firstItem="Lr4-To-6NH" firstAttribute="top" secondItem="qFD-Xp-Rpw" secondAttribute="top" id="HOe-yh-ZvI"/>
                                             <constraint firstItem="Y25-tL-gYc" firstAttribute="leading" secondItem="mW0-iZ-SKj" secondAttribute="leading" id="KCE-wf-uju"/>
                                             <constraint firstItem="mW0-iZ-SKj" firstAttribute="leading" secondItem="qFD-Xp-Rpw" secondAttribute="leading" constant="20" id="NrZ-P4-Kbt"/>
                                             <constraint firstAttribute="bottom" secondItem="Y25-tL-gYc" secondAttribute="bottom" constant="20" id="Ut9-oZ-Rdl"/>
                                             <constraint firstItem="Y25-tL-gYc" firstAttribute="trailing" secondItem="mW0-iZ-SKj" secondAttribute="trailing" id="bV9-hy-DVY"/>
-                                            <constraint firstAttribute="trailing" secondItem="OwI-LS-gpj" secondAttribute="trailing" constant="20" id="cKj-fw-l1b"/>
-                                            <constraint firstItem="OwI-LS-gpj" firstAttribute="top" secondItem="qFD-Xp-Rpw" secondAttribute="top" id="kHg-kj-ey1"/>
-                                            <constraint firstItem="OwI-LS-gpj" firstAttribute="leading" secondItem="qFD-Xp-Rpw" secondAttribute="leading" constant="20" id="m7h-7w-kSI"/>
+                                            <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="OwI-LS-gpj" secondAttribute="trailing" constant="20" id="cKj-fw-l1b"/>
+                                            <constraint firstAttribute="trailing" secondItem="Lr4-To-6NH" secondAttribute="trailing" constant="20" id="fQw-og-hFd"/>
+                                            <constraint firstItem="Lr4-To-6NH" firstAttribute="leading" secondItem="qFD-Xp-Rpw" secondAttribute="leading" constant="20" id="j1L-7h-FHs"/>
+                                            <constraint firstItem="OwI-LS-gpj" firstAttribute="leading" relation="lessThanOrEqual" secondItem="qFD-Xp-Rpw" secondAttribute="leading" constant="20" id="m7h-7w-kSI"/>
                                             <constraint firstAttribute="trailing" secondItem="mW0-iZ-SKj" secondAttribute="trailing" constant="20" id="qJr-ca-Lr1"/>
                                             <constraint firstItem="mW0-iZ-SKj" firstAttribute="top" secondItem="OwI-LS-gpj" secondAttribute="bottom" constant="20" id="qTp-dS-gla"/>
+                                            <constraint firstItem="OwI-LS-gpj" firstAttribute="top" secondItem="Lr4-To-6NH" secondAttribute="bottom" constant="40" id="zr1-4z-RBb"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -248,65 +262,73 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="577"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SM1-n8-c0R">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="427"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="394"/>
                                         <subviews>
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="gCB-ys-X0o">
-                                                <rect key="frame" x="20" y="20" width="335" height="150"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="150" id="flS-tA-lFL"/>
-                                                </constraints>
+                                                <rect key="frame" x="20" y="61" width="335" height="86"/>
                                             </imageView>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hNs-dd-byr" customClass="FormTextField" customModule="MySkinDoctor" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="190" width="335" height="50"/>
+                                                <rect key="frame" x="20" y="167" width="335" height="40"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="un4-VR-gaj"/>
+                                                    <constraint firstAttribute="height" constant="40" id="un4-VR-gaj"/>
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f90-ib-u2H" customClass="PasswordTextField" customModule="MySkinDoctor" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="245" width="335" height="50"/>
+                                                <rect key="frame" x="20" y="222" width="335" height="40"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="BZL-f8-dh2"/>
+                                                    <constraint firstAttribute="height" constant="40" id="BZL-f8-dh2"/>
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Abm-NQ-RSO" customClass="PositiveButton" customModule="MySkinDoctor" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="307" width="335" height="50"/>
+                                                <rect key="frame" x="20" y="274" width="335" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="mS0-D3-Hu7"/>
+                                                </constraints>
                                                 <state key="normal" title="Register Account"/>
                                                 <connections>
                                                     <action selector="onNextButtonPressed:" destination="PGh-27-rQV" eventType="touchUpInside" id="fxq-hS-bd2"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fa2-ly-aLa" customClass="NoBackgroundButton" customModule="MySkinDoctor" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="377" width="335" height="30"/>
+                                                <rect key="frame" x="20" y="344" width="335" height="30"/>
                                                 <state key="normal" title="Forgot Password?"/>
                                                 <connections>
                                                     <segue destination="SM0-O1-huI" kind="show" id="V9C-z3-L2B"/>
                                                 </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Registration" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QML-BJ-7S1" customClass="TitleLabel" customModule="MySkinDoctor" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="0.0" width="335" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="f90-ib-u2H" firstAttribute="top" secondItem="hNs-dd-byr" secondAttribute="bottom" constant="5" id="0ef-ys-ucE"/>
+                                            <constraint firstItem="f90-ib-u2H" firstAttribute="top" secondItem="hNs-dd-byr" secondAttribute="bottom" constant="15" id="0ef-ys-ucE"/>
                                             <constraint firstItem="f90-ib-u2H" firstAttribute="trailing" secondItem="hNs-dd-byr" secondAttribute="trailing" id="0qp-IV-IAM"/>
-                                            <constraint firstItem="gCB-ys-X0o" firstAttribute="leading" secondItem="SM1-n8-c0R" secondAttribute="leading" constant="20" id="3Y5-qp-R9d"/>
+                                            <constraint firstItem="gCB-ys-X0o" firstAttribute="leading" relation="lessThanOrEqual" secondItem="SM1-n8-c0R" secondAttribute="leading" constant="20" id="3Y5-qp-R9d"/>
                                             <constraint firstAttribute="trailing" secondItem="fa2-ly-aLa" secondAttribute="trailing" constant="20" id="7IP-II-8qr"/>
+                                            <constraint firstItem="QML-BJ-7S1" firstAttribute="leading" secondItem="SM1-n8-c0R" secondAttribute="leading" constant="20" id="Cbl-w6-Ewc"/>
                                             <constraint firstItem="Abm-NQ-RSO" firstAttribute="top" secondItem="f90-ib-u2H" secondAttribute="bottom" constant="12" id="Jl7-Ne-hgP"/>
-                                            <constraint firstItem="Abm-NQ-RSO" firstAttribute="height" secondItem="f90-ib-u2H" secondAttribute="height" id="KEU-50-wDa"/>
-                                            <constraint firstItem="gCB-ys-X0o" firstAttribute="top" secondItem="SM1-n8-c0R" secondAttribute="top" constant="20" id="PYe-5n-RUl"/>
                                             <constraint firstItem="fa2-ly-aLa" firstAttribute="top" secondItem="Abm-NQ-RSO" secondAttribute="bottom" constant="20" id="RZ8-ur-k44"/>
                                             <constraint firstItem="Abm-NQ-RSO" firstAttribute="trailing" secondItem="f90-ib-u2H" secondAttribute="trailing" id="XM2-9E-hcV"/>
                                             <constraint firstItem="f90-ib-u2H" firstAttribute="leading" secondItem="hNs-dd-byr" secondAttribute="leading" id="boA-df-qd3"/>
+                                            <constraint firstAttribute="trailing" secondItem="QML-BJ-7S1" secondAttribute="trailing" constant="20" id="eAq-gE-mgu"/>
                                             <constraint firstItem="hNs-dd-byr" firstAttribute="leading" secondItem="SM1-n8-c0R" secondAttribute="leading" constant="20" id="fyi-ci-FsD"/>
                                             <constraint firstItem="Abm-NQ-RSO" firstAttribute="leading" secondItem="f90-ib-u2H" secondAttribute="leading" id="joI-ab-oc1"/>
                                             <constraint firstAttribute="trailing" secondItem="hNs-dd-byr" secondAttribute="trailing" constant="20" id="kHq-2t-nSk"/>
+                                            <constraint firstItem="gCB-ys-X0o" firstAttribute="top" secondItem="QML-BJ-7S1" secondAttribute="bottom" constant="40" id="nKK-jF-hYB"/>
+                                            <constraint firstItem="QML-BJ-7S1" firstAttribute="top" secondItem="SM1-n8-c0R" secondAttribute="top" id="ois-vA-0ET"/>
                                             <constraint firstItem="hNs-dd-byr" firstAttribute="top" secondItem="gCB-ys-X0o" secondAttribute="bottom" constant="20" id="tY3-nB-zaa"/>
                                             <constraint firstItem="fa2-ly-aLa" firstAttribute="leading" secondItem="SM1-n8-c0R" secondAttribute="leading" constant="20" id="txv-RM-Zo8"/>
-                                            <constraint firstAttribute="trailing" secondItem="gCB-ys-X0o" secondAttribute="trailing" constant="20" id="vhZ-WR-PLy"/>
+                                            <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="gCB-ys-X0o" secondAttribute="trailing" constant="20" id="vhZ-WR-PLy"/>
                                             <constraint firstAttribute="bottom" secondItem="fa2-ly-aLa" secondAttribute="bottom" constant="20" id="xC8-8W-zbP"/>
                                         </constraints>
                                     </view>
@@ -356,7 +378,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="logo" width="678" height="244"/>
+        <image name="logo" width="246" height="86"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="V9C-z3-L2B"/>
