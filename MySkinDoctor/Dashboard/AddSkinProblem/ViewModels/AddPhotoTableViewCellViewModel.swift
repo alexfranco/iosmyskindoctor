@@ -1,5 +1,6 @@
 //
-//  AddSkinPhotoViewModel.swift
+//  AddPhotoTableViewCellViewModel.swift
+
 //  MySkinDoctor
 //
 //  Created by Alex on 26/02/2018.
@@ -8,6 +9,6 @@
 
 import Foundation
 
-class AddSkinPhotoViewModel: BaseViewModel {
+class AddPhotoTableViewCellViewModel: BaseViewModel {
 	
 }

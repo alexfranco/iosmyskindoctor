@@ -6,6 +6,13 @@
   Copyright © 2018 TouchSoft. All rights reserved.
 */
 
+"no_data_available" = "No data available";
+"email" = "Email";
+"password" = "Password";
+
+"error_email_not_valid" = "The email is invalid";
+"error_password_not_valid" = "Your password must be minimum %d characters long";
+
 "login_error_generic_title" = "Login Error";
 "login_error_generic_message" = "Unable to log in with provided credentials.";
 "login_error_get_user_profile_failed_message" = "There was an error logging in. Please try again later.";
@@ -35,10 +42,6 @@
 "myskinproblems_segmented_undiagnosed" = "Undiagnosed";
 "myskinproblems_segmented_diagnosed" = "Diagnosed";
 
-"no_data_available" = "No data available";
-"email" = "Email";
-"password" = "Password";
+"addskinproblems_main_vc_title" = "Add Skin Problem";
 
-"error_email_not_valid" = "The email is invalid";
-"error_password_not_valid" = "Your password must be minimum %d characters long";
 
