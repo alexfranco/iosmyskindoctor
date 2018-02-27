@@ -36,7 +36,7 @@ struct AppColors {
 	static let secudaryColor = BaseColors.skyBlue
 	
 	static let firstTabColor = BaseColors.hospitalGreen
-	static let secondTabColor = BaseColors.hospitalGreen
+	static let secondTabColor = BaseColors.skyBlue
 	static let thirdTabColor = BaseColors.amethyst
 }
 
@@ -90,7 +90,7 @@ struct AppStyle {
 	// Consult TabBar
 	static let consultTabBarTitleColor = AppColors.secondTabColor
 	
-	// MyProfile TabBar
+	// MyProfile TabBar	
 	static let profileBarTitleColor = AppColors.thirdTabColor
 	
 	static let profileNavigationBarColor = AppColors.thirdTabColor

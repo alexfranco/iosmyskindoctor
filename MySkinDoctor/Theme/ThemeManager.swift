@@ -45,14 +45,7 @@ struct ThemeManager {
 		// TextFields
 		UITextField.appearance().font = AppStyle.defaultTextFieldFont
 		UITextField.appearance().tintColor = AppStyle.defaultTextFieldPlaceHolderColor
-	
-//		FormTextField.appearance().placeholderColor = BaseColors.warmGrey
-		FormTextField.appearance().backgroundColor = UIColor.white
-		
-//		FormTextField.appearance().activeBorderColor = BaseColors.formGrey
-//		FormTextField.appearance().inactiveBorderColor = BaseColors.formGrey
-//		FormTextField.appearance().activeBackgroundColor = UIColor.white
-//
+	//
 		ProfileTextField.appearance().backgroundColor = AppStyle.defaultTextFieldBackgroundColor
 		ProfileTextField.appearance().placeholderColor = AppStyle.defaultTextFieldPlaceHolderColor
 		

@@ -67,6 +67,12 @@
 		78B9E54B203C4CD70054CAD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78B9E527203C4A920054CAD3 /* Main.storyboard */; };
 		78B9E54D203C4CD70054CAD3 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAE733C52034494D00898E65 /* Login.storyboard */; };
 		78B9E558203C4ED70054CAD3 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 78B9E557203C4ED70054CAD3 /* Podfile */; };
+		78C205C820459BD500F8E407 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAE733CB2034494D00898E65 /* Assets.xcassets */; };
+		78C205C920459BD500F8E407 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAE733CB2034494D00898E65 /* Assets.xcassets */; };
+		78C205CB20459D7D00F8E407 /* UINavigationController+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C205CA20459D7D00F8E407 /* UINavigationController+Extentions.swift */; };
+		78C205CC20459D7D00F8E407 /* UINavigationController+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C205CA20459D7D00F8E407 /* UINavigationController+Extentions.swift */; };
+		78C205CD20459D7D00F8E407 /* UINavigationController+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C205CA20459D7D00F8E407 /* UINavigationController+Extentions.swift */; };
+		78C205CE20459D7D00F8E407 /* UINavigationController+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C205CA20459D7D00F8E407 /* UINavigationController+Extentions.swift */; };
 		78E44AA6203EBE5C0094F3AF /* PasswordStrength.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E44AA5203EBE5C0094F3AF /* PasswordStrength.swift */; };
 		78E44AA7203EBE5C0094F3AF /* PasswordStrength.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E44AA5203EBE5C0094F3AF /* PasswordStrength.swift */; };
 		78E44AA8203EBE5C0094F3AF /* PasswordStrength.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E44AA5203EBE5C0094F3AF /* PasswordStrength.swift */; };
@@ -242,6 +248,7 @@
 		78B9E555203C4CED0054CAD3 /* MySkinDoctor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MySkinDoctor.entitlements; sourceTree = "<group>"; };
 		78B9E556203C4CF30054CAD3 /* MySkinDoctorLive.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MySkinDoctorLive.entitlements; sourceTree = "<group>"; };
 		78B9E557203C4ED70054CAD3 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
+		78C205CA20459D7D00F8E407 /* UINavigationController+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extentions.swift"; sourceTree = "<group>"; };
 		78E44AA5203EBE5C0094F3AF /* PasswordStrength.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordStrength.swift; sourceTree = "<group>"; };
 		85B14CEDA9F10AD5CDFAFE54 /* Pods-MySkinDoctorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySkinDoctorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MySkinDoctorTests/Pods-MySkinDoctorTests.release.xcconfig"; sourceTree = "<group>"; };
 		A8E80ED1315E894849856D66 /* Pods-MySkinDoctorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySkinDoctorUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MySkinDoctorUITests/Pods-MySkinDoctorUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -492,6 +499,7 @@
 			children = (
 				FA9760D8203B0E0A00242255 /* UIViewController+Alerts.swift */,
 				FA33265F204034B300657C8A /* UIImageView+Circular.swift */,
+				78C205CA20459D7D00F8E407 /* UINavigationController+Extentions.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -775,6 +783,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78C205C820459BD500F8E407 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -782,6 +791,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78C205C920459BD500F8E407 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1095,6 +1105,7 @@
 				78B9E535203C4CD70054CAD3 /* Validations.swift in Sources */,
 				78B9E536203C4CD70054CAD3 /* ForgotPasswordResposeModel.swift in Sources */,
 				784DE13420454968000D4013 /* DateUtils.swift in Sources */,
+				78C205CC20459D7D00F8E407 /* UINavigationController+Extentions.swift in Sources */,
 				FAD6ADB820445EB20050C1A9 /* AddSkinProblemTableViewCell.swift in Sources */,
 				FAD6ADC220446D310050C1A9 /* AddSkinPhotoViewModel.swift in Sources */,
 				FA3326472040220200657C8A /* MySkinProblemsTableCellViewModel.swift in Sources */,
@@ -1149,6 +1160,7 @@
 				78B9E518203C2C670054CAD3 /* ForgotPasswordResposeModel.swift in Sources */,
 				FA3326462040220200657C8A /* MySkinProblemsTableCellViewModel.swift in Sources */,
 				7849CC9E203EE15A0030A7B1 /* RegistrationViewModel.swift in Sources */,
+				78C205CB20459D7D00F8E407 /* UINavigationController+Extentions.swift in Sources */,
 				780F70262035AABB00D96601 /* NoBackgroundButton.swift in Sources */,
 				780F70192035885E00D96601 /* ProgressBarViewController.swift in Sources */,
 				FAE733F420344AE200898E65 /* LoginViewController.swift in Sources */,
@@ -1208,6 +1220,7 @@
 				78B9E525203C48FC0054CAD3 /* ApiUtils.swift in Sources */,
 				780F701C203592B800D96601 /* ProgressBarViewController.swift in Sources */,
 				FA3326CC20441C8500657C8A /* GrayLabel.swift in Sources */,
+				78C205CD20459D7D00F8E407 /* UINavigationController+Extentions.swift in Sources */,
 				FA9760E4203B29D600242255 /* Validations.swift in Sources */,
 				FA3326C820441C8500657C8A /* TitleLabel.swift in Sources */,
 				FAEC573D203DBEAE00D1A0AE /* LoginViewModel.swift in Sources */,
@@ -1255,6 +1268,7 @@
 				78B9E526203C48FC0054CAD3 /* ApiUtils.swift in Sources */,
 				780F701D203592B900D96601 /* ProgressBarViewController.swift in Sources */,
 				FA3326CD20441C8500657C8A /* GrayLabel.swift in Sources */,
+				78C205CE20459D7D00F8E407 /* UINavigationController+Extentions.swift in Sources */,
 				FA9760E5203B29D600242255 /* Validations.swift in Sources */,
 				FA3326C920441C8500657C8A /* TitleLabel.swift in Sources */,
 				FAEC573E203DBEAE00D1A0AE /* LoginViewModel.swift in Sources */,

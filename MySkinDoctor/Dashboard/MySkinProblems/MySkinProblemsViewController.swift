@@ -23,6 +23,8 @@ class MySkinProblemsViewController: BindingViewController {
 		diagnosesSegmentedControl.setTitle(NSLocalizedString("myskinproblems_segmented_undiagnosed", comment: ""), forSegmentAt: MySkinProblemsViewModel.DiagnosesSegmentedEnum.undiagnosed.rawValue)
 		diagnosesSegmentedControl.setTitle(NSLocalizedString("myskinproblems_segmented_diagnosed", comment: ""), forSegmentAt: MySkinProblemsViewModel.DiagnosesSegmentedEnum.diagnosed.rawValue)
 		
+		navigationController?.setBackgroundColorWithoutShadowImage(bgColor: AppStyle.defaultNavigationBarColor, titleColor: AppStyle.defaultNavigationBarTitleColor)
+		
 		configureTableView()
 		
 		initViewModel(viewModel: MySkinProblemsViewModel())

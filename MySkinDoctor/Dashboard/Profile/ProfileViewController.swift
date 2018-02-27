@@ -35,10 +35,7 @@ class ProfileViewController: FormViewController {
 		imageTapGesture.numberOfTapsRequired = 1
 		userPhotoImageView.isUserInteractionEnabled = true
 		
-		navigationController?.navigationBar.isTranslucent = false
-		navigationController?.navigationBar.barTintColor = AppStyle.profileTopViewBackgroundColor
-		navigationController?.navigationBar.tintColor = AppStyle.profileNavigationBarTitleColor
-		navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : AppStyle.profileNavigationBarTitleColor]
+		navigationController?.setBackgroundColorWithoutShadowImage(bgColor: AppStyle.profileNavigationBarColor, titleColor: AppStyle.profileNavigationBarTitleColor)
 		
 		registerForKeyboardReturnKey([dobTextField])
 		
