@@ -9,9 +9,16 @@
 import Foundation
 import UIKit
 
+protocol PhotoViewControllerDelegate : NSObjectProtocol {
+	func photoViewController(_ photoViewController: PhotoViewController, imageChanged: UIImage)
+}
+
 class PhotoViewController: FormViewController, UIGestureRecognizerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 	
 	@IBOutlet weak var userPhotoImageView: UIImageView!
+	
+	weak open var delegate: PhotoViewControllerDelegate?
+	
 	var pickerController = UIImagePickerController()
 	var imageView = UIImage()
 	
@@ -28,7 +35,7 @@ class PhotoViewController: FormViewController, UIGestureRecognizerDelegate, UIIm
 		userPhotoImageView.setRounded()
 	}
 	
-	@objc func tapUserPhoto(_ sender: UITapGestureRecognizer) {
+	@objc func tapUserPhoto(_ sender: UITapGestureRecognizer?) {
 		let alertViewController = UIAlertController(title: "", message: "Choose your option", preferredStyle: .actionSheet)
 		let camera = UIAlertAction(title: "Camera", style: .default, handler: { (alert) in
 			self.openCamera()
@@ -69,10 +76,14 @@ class PhotoViewController: FormViewController, UIGestureRecognizerDelegate, UIIm
 	// MARK: UIImagePickerControllerDelegate
 		
 	func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-		
 		imageView = info[UIImagePickerControllerEditedImage] as! UIImage
 		userPhotoImageView.contentMode = .scaleAspectFill
 		userPhotoImageView.image = imageView
+		
+		if delegate != nil {
+			delegate?.photoViewController(self, imageChanged: imageView)
+		}
+		
 		dismiss(animated:true, completion: nil)
 	}
 		

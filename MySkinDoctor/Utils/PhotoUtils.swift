@@ -26,10 +26,10 @@ class PhotoUtils: NSObject, UIGestureRecognizerDelegate, UIImagePickerController
 		self.completionHandler = completionHandler
 		
 		let alertViewController = UIAlertController(title: "", message: "Choose your option", preferredStyle: .actionSheet)
-		let camera = UIAlertAction(title: "Camera", style: .default, handler: { (alert) in
+		let camera = UIAlertAction(title: "Take Photo", style: .default, handler: { (alert) in
 			self.openCamera()
 		})
-		let gallery = UIAlertAction(title: "Gallery", style: .default) { (alert) in
+		let gallery = UIAlertAction(title: "Choose Photo", style: .default) { (alert) in
 			self.openGallery()
 		}
 		let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (alert) in

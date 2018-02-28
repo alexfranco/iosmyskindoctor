@@ -76,7 +76,6 @@ class FormTextField: LRTextField {
 	var textChanged :(String) -> () = { _ in }
 	
 	func bind(callback :@escaping (String) -> ()) {
-		
 		self.textChanged = callback
 		self.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
 	}

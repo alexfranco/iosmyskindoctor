@@ -16,12 +16,11 @@ class SkinProblemTableCellViewModel : NSObject {
 	var problemDescription: String!
 	var problemImage: UIImage
 		
-	required init(withName name: String, location: String, problemDescription: String, problemImage: UIImage) {
-		
-		self.name = name
-		self.location = location
-		self.problemImage = problemImage
-		self.problemDescription = problemDescription
+	required init(withModel model: SkinProblemModel) {
+		self.name = model.name
+		self.location = model.location
+		self.problemImage = model.problemImage == nil ? UIImage(named: "logo")! : model.problemImage! // TODO change it to a default image
+		self.problemDescription = model.problemDescription
 		
 		super.init()
 	}

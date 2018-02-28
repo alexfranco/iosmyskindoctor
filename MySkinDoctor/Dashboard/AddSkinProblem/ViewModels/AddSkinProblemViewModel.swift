@@ -11,25 +11,26 @@ import UIKit
 
 class AddSkinProblemViewModel: BaseViewModel {
 	
+	var skinProblemDescription = ""
+	
 	var refresh: (()->())?
 
-	var items = [SkinProblemTableCellViewModel]()
+	var items = [SkinProblemModel]()
 	
 	override init() {
 		// Generate tests
-		items = [SkinProblemTableCellViewModel(withName: "Name", location: "My location", problemDescription: "My problem", problemImage: UIImage(named: "logo")!)]
+		items = [SkinProblemModel(withName: "Face", location: "Feet", problemDescription: "A lot of pain", problemImage: nil, date: Date())]
 	}
 	
 	func refreshData() {
 		refresh!()
 	}
 	
-	
 	func getDataSourceCount(section: Int) -> Int {
 		return items.count + 1
 	}
 	
-	func getItemAtIndexPath(indexPath: IndexPath) -> SkinProblemTableCellViewModel {
+	func getItemAtIndexPath(indexPath: IndexPath) -> SkinProblemModel {
 		return items[indexPath.row]
 	}
 	

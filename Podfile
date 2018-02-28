@@ -14,6 +14,7 @@ pod 'TextFieldEffects'
 pod 'IQKeyboardManagerSwift'
 pod 'ObjectMapper'
 pod 'LRTextField'
+pod 'SZTextView'
 
 end
 

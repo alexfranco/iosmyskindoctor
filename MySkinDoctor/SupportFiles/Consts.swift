@@ -14,6 +14,8 @@ struct Consts {
 struct Segues {
 	static let goToMainStoryboardFromLogin = "goToMainStoryboardFromLogin"
 	static let goToMainStoryboardFromSignUp = "goToMainStoryboardFromSignUp"
+	static let goToSkinProblemPhotoInformationViewController = "goToSkinProblemPhotoInformationViewController"
+	static let goToSkinProblemLocationViewController = "goToSkinProblemLocationViewController"
 }
 
 struct Storyboard {

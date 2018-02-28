@@ -45,7 +45,12 @@ struct ThemeManager {
 		// TextFields
 		UITextField.appearance().font = AppStyle.defaultTextFieldFont
 		UITextField.appearance().tintColor = AppStyle.defaultTextFieldPlaceHolderColor
-	//
+		
+		// TextViews
+		FormTextView.appearance().font = AppStyle.defaultTextFieldFont
+		FormTextView.appearance().textColor = AppStyle.defaultTextFieldTextColor
+		FormTextView.appearance().placeholderTextColor = AppStyle.defaultTextFieldPlaceHolderColor
+		
 		ProfileTextField.appearance().backgroundColor = AppStyle.defaultTextFieldBackgroundColor
 		ProfileTextField.appearance().placeholderColor = AppStyle.defaultTextFieldPlaceHolderColor
 		

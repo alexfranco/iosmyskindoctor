@@ -198,6 +198,30 @@
 		FAD6ADC220446D310050C1A9 /* AddPhotoTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6ADC020446D310050C1A9 /* AddPhotoTableViewCellViewModel.swift */; };
 		FAD6ADC320446D310050C1A9 /* AddPhotoTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6ADC020446D310050C1A9 /* AddPhotoTableViewCellViewModel.swift */; };
 		FAD6ADC420446D310050C1A9 /* AddPhotoTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6ADC020446D310050C1A9 /* AddPhotoTableViewCellViewModel.swift */; };
+		FADC33332046BF2F0065A7EB /* SkinProblemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC33322046BF2F0065A7EB /* SkinProblemModel.swift */; };
+		FADC33342046BF2F0065A7EB /* SkinProblemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC33322046BF2F0065A7EB /* SkinProblemModel.swift */; };
+		FADC33352046BF2F0065A7EB /* SkinProblemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC33322046BF2F0065A7EB /* SkinProblemModel.swift */; };
+		FADC33362046BF2F0065A7EB /* SkinProblemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC33322046BF2F0065A7EB /* SkinProblemModel.swift */; };
+		FADC33392046DA9A0065A7EB /* SkinProblemPhotoInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC33382046DA9A0065A7EB /* SkinProblemPhotoInformationViewController.swift */; };
+		FADC333A2046DA9A0065A7EB /* SkinProblemPhotoInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC33382046DA9A0065A7EB /* SkinProblemPhotoInformationViewController.swift */; };
+		FADC333B2046DA9A0065A7EB /* SkinProblemPhotoInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC33382046DA9A0065A7EB /* SkinProblemPhotoInformationViewController.swift */; };
+		FADC333C2046DA9A0065A7EB /* SkinProblemPhotoInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC33382046DA9A0065A7EB /* SkinProblemPhotoInformationViewController.swift */; };
+		FADC333F2046E8C80065A7EB /* FormTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC333E2046E8C80065A7EB /* FormTextView.swift */; };
+		FADC33402046E8C80065A7EB /* FormTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC333E2046E8C80065A7EB /* FormTextView.swift */; };
+		FADC33412046E8C80065A7EB /* FormTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC333E2046E8C80065A7EB /* FormTextView.swift */; };
+		FADC33422046E8C80065A7EB /* FormTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC333E2046E8C80065A7EB /* FormTextView.swift */; };
+		FADC33442046F16C0065A7EB /* SkinProblemPhotoInformationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC33432046F16C0065A7EB /* SkinProblemPhotoInformationViewModel.swift */; };
+		FADC33452046F16C0065A7EB /* SkinProblemPhotoInformationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC33432046F16C0065A7EB /* SkinProblemPhotoInformationViewModel.swift */; };
+		FADC33462046F16C0065A7EB /* SkinProblemPhotoInformationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC33432046F16C0065A7EB /* SkinProblemPhotoInformationViewModel.swift */; };
+		FADC33472046F16C0065A7EB /* SkinProblemPhotoInformationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC33432046F16C0065A7EB /* SkinProblemPhotoInformationViewModel.swift */; };
+		FADC334A204706DC0065A7EB /* SkinProblemLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC3349204706DC0065A7EB /* SkinProblemLocationViewController.swift */; };
+		FADC334B204706DC0065A7EB /* SkinProblemLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC3349204706DC0065A7EB /* SkinProblemLocationViewController.swift */; };
+		FADC334C204706DC0065A7EB /* SkinProblemLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC3349204706DC0065A7EB /* SkinProblemLocationViewController.swift */; };
+		FADC334D204706DC0065A7EB /* SkinProblemLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC3349204706DC0065A7EB /* SkinProblemLocationViewController.swift */; };
+		FADC334F204706E70065A7EB /* SkinProblemLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC334E204706E70065A7EB /* SkinProblemLocationViewModel.swift */; };
+		FADC3350204706E70065A7EB /* SkinProblemLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC334E204706E70065A7EB /* SkinProblemLocationViewModel.swift */; };
+		FADC3351204706E70065A7EB /* SkinProblemLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC334E204706E70065A7EB /* SkinProblemLocationViewModel.swift */; };
+		FADC3352204706E70065A7EB /* SkinProblemLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC334E204706E70065A7EB /* SkinProblemLocationViewModel.swift */; };
 		FAE733C22034494D00898E65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE733C12034494D00898E65 /* AppDelegate.swift */; };
 		FAE733C72034494D00898E65 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAE733C52034494D00898E65 /* Login.storyboard */; };
 		FAE733CA2034494D00898E65 /* MySkinDoctor.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAE733C82034494D00898E65 /* MySkinDoctor.xcdatamodeld */; };
@@ -300,6 +324,12 @@
 		FAD6ADB620445EB20050C1A9 /* AddPhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoTableViewCell.swift; sourceTree = "<group>"; };
 		FAD6ADBB204461050050C1A9 /* AddSkinProblemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSkinProblemViewController.swift; sourceTree = "<group>"; };
 		FAD6ADC020446D310050C1A9 /* AddPhotoTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		FADC33322046BF2F0065A7EB /* SkinProblemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinProblemModel.swift; sourceTree = "<group>"; };
+		FADC33382046DA9A0065A7EB /* SkinProblemPhotoInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinProblemPhotoInformationViewController.swift; sourceTree = "<group>"; };
+		FADC333E2046E8C80065A7EB /* FormTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextView.swift; sourceTree = "<group>"; };
+		FADC33432046F16C0065A7EB /* SkinProblemPhotoInformationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinProblemPhotoInformationViewModel.swift; sourceTree = "<group>"; };
+		FADC3349204706DC0065A7EB /* SkinProblemLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinProblemLocationViewController.swift; sourceTree = "<group>"; };
+		FADC334E204706E70065A7EB /* SkinProblemLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinProblemLocationViewModel.swift; sourceTree = "<group>"; };
 		FAE733BE2034494D00898E65 /* MySkinDoctor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySkinDoctor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAE733C12034494D00898E65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAE733C62034494D00898E65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
@@ -425,6 +455,7 @@
 		78C205DE2045A91800F8E407 /* AddSkinProblem */ = {
 			isa = PBXGroup;
 			children = (
+				FADC33312046BF160065A7EB /* Models */,
 				78C205DF2045AA5400F8E407 /* Cells */,
 				78C205E02045AA5E00F8E407 /* ViewModels */,
 				FAD6ADBB204461050050C1A9 /* AddSkinProblemViewController.swift */,
@@ -469,9 +500,11 @@
 		FA33263820400FB000657C8A /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
-				FA33263920400FD200657C8A /* DashboardTabViewController.swift */,
 				FA33263E20401A7300657C8A /* MySkinProblems */,
 				78C205DE2045A91800F8E407 /* AddSkinProblem */,
+				FADC33372046DA560065A7EB /* SkinProblemPhotoInformation */,
+				FADC3348204706920065A7EB /* SkinProblemLocationViewController */,
+				FA33263920400FD200657C8A /* DashboardTabViewController.swift */,
 				FA3326642040350400657C8A /* Profile */,
 			);
 			path = Dashboard;
@@ -529,6 +562,7 @@
 				FA3326A820441C8500657C8A /* PasswordProgressBarView.swift */,
 				FA3326A920441C8500657C8A /* CustomErrors.swift */,
 				FA3326AA20441C8500657C8A /* FormTextField.swift */,
+				FADC333E2046E8C80065A7EB /* FormTextView.swift */,
 				FA3326AB20441C8500657C8A /* BoldLabel.swift */,
 				FA3326AC20441C8500657C8A /* TitleLabel.swift */,
 				FA3326AD20441C8500657C8A /* GrayLabel.swift */,
@@ -564,6 +598,33 @@
 				78B9E517203C2C670054CAD3 /* ForgotPasswordResposeModel.swift */,
 			);
 			path = APIModels;
+			sourceTree = "<group>";
+		};
+		FADC33312046BF160065A7EB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FADC33322046BF2F0065A7EB /* SkinProblemModel.swift */,
+			);
+			name = Models;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		FADC33372046DA560065A7EB /* SkinProblemPhotoInformation */ = {
+			isa = PBXGroup;
+			children = (
+				FADC33432046F16C0065A7EB /* SkinProblemPhotoInformationViewModel.swift */,
+				FADC33382046DA9A0065A7EB /* SkinProblemPhotoInformationViewController.swift */,
+			);
+			path = SkinProblemPhotoInformation;
+			sourceTree = "<group>";
+		};
+		FADC3348204706920065A7EB /* SkinProblemLocationViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FADC334E204706E70065A7EB /* SkinProblemLocationViewModel.swift */,
+				FADC3349204706DC0065A7EB /* SkinProblemLocationViewController.swift */,
+			);
+			path = SkinProblemLocationViewController;
 			sourceTree = "<group>";
 		};
 		FAE733B52034494D00898E65 = {
@@ -958,6 +1019,7 @@
 				"${BUILT_PRODUCTS_DIR}/LRTextField/LRTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/SZTextView/SZTextView.framework",
 				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -972,6 +1034,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LRTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SZTextView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -1011,6 +1074,7 @@
 				"${BUILT_PRODUCTS_DIR}/LRTextField/LRTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/SZTextView/SZTextView.framework",
 				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -1025,6 +1089,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LRTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SZTextView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -1064,6 +1129,7 @@
 				"${BUILT_PRODUCTS_DIR}/LRTextField/LRTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/SZTextView/SZTextView.framework",
 				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -1078,6 +1144,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LRTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SZTextView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -1102,6 +1169,7 @@
 				"${BUILT_PRODUCTS_DIR}/LRTextField/LRTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/SZTextView/SZTextView.framework",
 				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -1116,6 +1184,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LRTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SZTextView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -1131,8 +1200,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FADC33452046F16C0065A7EB /* SkinProblemPhotoInformationViewModel.swift in Sources */,
 				78B9E530203C4CD70054CAD3 /* RegistrationResponseModel.swift in Sources */,
+				FADC33402046E8C80065A7EB /* FormTextView.swift in Sources */,
 				FA332657204029BD00657C8A /* MySkinProblemsViewModel.swift in Sources */,
+				FADC3350204706E70065A7EB /* SkinProblemLocationViewModel.swift in Sources */,
 				78C205E32045AA9900F8E407 /* AddSkinProblemViewModel.swift in Sources */,
 				FAEC573C203DBEAE00D1A0AE /* LoginViewModel.swift in Sources */,
 				FA33268C204413B500657C8A /* ProfileViewModel.swift in Sources */,
@@ -1169,15 +1241,18 @@
 				FA3326AF20441C8500657C8A /* ProfileTextField.swift in Sources */,
 				FA33268720440EA400657C8A /* PhotoUtils.swift in Sources */,
 				FA3326522040287900657C8A /* BindingViewController.swift in Sources */,
+				FADC334B204706DC0065A7EB /* SkinProblemLocationViewController.swift in Sources */,
 				78B9E53E203C4CD70054CAD3 /* AppDelegate.swift in Sources */,
 				78E44AA7203EBE5C0094F3AF /* PasswordStrength.swift in Sources */,
 				78B9E53F203C4CD70054CAD3 /* ForgotPasswordViewController.swift in Sources */,
 				FA3326C320441C8500657C8A /* BoldLabel.swift in Sources */,
+				FADC333A2046DA9A0065A7EB /* SkinProblemPhotoInformationViewController.swift in Sources */,
 				FA33264D2040240400657C8A /* MySkinProblemsTableViewCell.swift in Sources */,
 				78B9E540203C4CD70054CAD3 /* RegistrationViewController.swift in Sources */,
 				78B9E541203C4CD70054CAD3 /* BaseResponseModel.swift in Sources */,
 				78B9E542203C4CD70054CAD3 /* Consts.swift in Sources */,
 				FA3326672040351500657C8A /* ProfileViewController.swift in Sources */,
+				FADC33342046BF2F0065A7EB /* SkinProblemModel.swift in Sources */,
 				FA3326CB20441C8500657C8A /* GrayLabel.swift in Sources */,
 				FA3326C720441C8500657C8A /* TitleLabel.swift in Sources */,
 				78B9E543203C4CD70054CAD3 /* UIViewController+Alerts.swift in Sources */,
@@ -1189,8 +1264,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FADC33442046F16C0065A7EB /* SkinProblemPhotoInformationViewModel.swift in Sources */,
 				FAC1AF112036FCE200547BBC /* RegistrationResponseModel.swift in Sources */,
+				FADC333F2046E8C80065A7EB /* FormTextView.swift in Sources */,
 				FA332656204029BD00657C8A /* MySkinProblemsViewModel.swift in Sources */,
+				FADC334F204706E70065A7EB /* SkinProblemLocationViewModel.swift in Sources */,
 				78C205E22045AA9900F8E407 /* AddSkinProblemViewModel.swift in Sources */,
 				FAEC573B203DBEAE00D1A0AE /* LoginViewModel.swift in Sources */,
 				FA33268B204413B500657C8A /* ProfileViewModel.swift in Sources */,
@@ -1227,15 +1305,18 @@
 				FAE733C22034494D00898E65 /* AppDelegate.swift in Sources */,
 				78E44AA6203EBE5C0094F3AF /* PasswordStrength.swift in Sources */,
 				78B9E516203C2B920054CAD3 /* ForgotPasswordViewController.swift in Sources */,
+				FADC334A204706DC0065A7EB /* SkinProblemLocationViewController.swift in Sources */,
 				FAD6ADB520442C130050C1A9 /* DateUtils.swift in Sources */,
 				FA3326C220441C8500657C8A /* BoldLabel.swift in Sources */,
 				FAD6ADC120446D310050C1A9 /* AddPhotoTableViewCellViewModel.swift in Sources */,
 				FA33264C2040240400657C8A /* MySkinProblemsTableViewCell.swift in Sources */,
+				FADC33392046DA9A0065A7EB /* SkinProblemPhotoInformationViewController.swift in Sources */,
 				FAE733F820344B2800898E65 /* RegistrationViewController.swift in Sources */,
 				FA9760DD203B0EDC00242255 /* BaseResponseModel.swift in Sources */,
 				78B9E52A203C4AF20054CAD3 /* Consts.swift in Sources */,
 				FAD6ADB720445EB20050C1A9 /* AddPhotoTableViewCell.swift in Sources */,
 				FA3326662040351500657C8A /* ProfileViewController.swift in Sources */,
+				FADC33332046BF2F0065A7EB /* SkinProblemModel.swift in Sources */,
 				FA3326CA20441C8500657C8A /* GrayLabel.swift in Sources */,
 				FA3326C620441C8500657C8A /* TitleLabel.swift in Sources */,
 				FA9760D9203B0E0A00242255 /* UIViewController+Alerts.swift in Sources */,
@@ -1254,10 +1335,12 @@
 				78B9E52B203C4C680054CAD3 /* Consts.swift in Sources */,
 				78E44AA8203EBE5C0094F3AF /* PasswordStrength.swift in Sources */,
 				FA3326C420441C8500657C8A /* BoldLabel.swift in Sources */,
+				FADC33462046F16C0065A7EB /* SkinProblemPhotoInformationViewModel.swift in Sources */,
 				78C205D72045A65C00F8E407 /* SkinProblemTableCellViewModel.swift in Sources */,
 				FA3326BC20441C8500657C8A /* CustomErrors.swift in Sources */,
 				FA33268820440EA400657C8A /* PhotoUtils.swift in Sources */,
 				FA3326B020441C8500657C8A /* ProfileTextField.swift in Sources */,
+				FADC334C204706DC0065A7EB /* SkinProblemLocationViewController.swift in Sources */,
 				FA33264220401A8C00657C8A /* MySkinProblemsViewController.swift in Sources */,
 				FA3326532040287900657C8A /* BindingViewController.swift in Sources */,
 				FA3326C020441C8500657C8A /* FormTextField.swift in Sources */,
@@ -1268,7 +1351,9 @@
 				FAD6ADBE204461050050C1A9 /* AddSkinProblemViewController.swift in Sources */,
 				FAE733F520344AE200898E65 /* LoginViewController.swift in Sources */,
 				784DE13520454969000D4013 /* DateUtils.swift in Sources */,
+				FADC333B2046DA9A0065A7EB /* SkinProblemPhotoInformationViewController.swift in Sources */,
 				78B9E525203C48FC0054CAD3 /* ApiUtils.swift in Sources */,
+				FADC33412046E8C80065A7EB /* FormTextView.swift in Sources */,
 				780F701C203592B800D96601 /* ProgressBarViewController.swift in Sources */,
 				FA3326CC20441C8500657C8A /* GrayLabel.swift in Sources */,
 				78C205CD20459D7D00F8E407 /* UINavigationController+Extentions.swift in Sources */,
@@ -1279,6 +1364,7 @@
 				FAD6ADB920445EB20050C1A9 /* AddPhotoTableViewCell.swift in Sources */,
 				FA3326B820441C8500657C8A /* PasswordProgressBarView.swift in Sources */,
 				FA3326682040351500657C8A /* ProfileViewController.swift in Sources */,
+				FADC33352046BF2F0065A7EB /* SkinProblemModel.swift in Sources */,
 				FA33263C20400FD200657C8A /* DashboardTabViewController.swift in Sources */,
 				7849CCAA203EE3E60030A7B1 /* BaseViewModel.swift in Sources */,
 				FA3326B420441C8500657C8A /* PasswordTextField.swift in Sources */,
@@ -1286,6 +1372,7 @@
 				780F701A203592B400D96601 /* FormViewController.swift in Sources */,
 				FA9760DE203B0EDC00242255 /* BaseResponseModel.swift in Sources */,
 				FA332662204034B300657C8A /* UIImageView+Circular.swift in Sources */,
+				FADC3351204706E70065A7EB /* SkinProblemLocationViewModel.swift in Sources */,
 				FA9760DA203B0E0A00242255 /* UIViewController+Alerts.swift in Sources */,
 				FA3326742040750700657C8A /* AppStyle.swift in Sources */,
 				FA33268D204413B500657C8A /* ProfileViewModel.swift in Sources */,
@@ -1305,10 +1392,12 @@
 				78B9E52C203C4C690054CAD3 /* Consts.swift in Sources */,
 				78E44AA9203EBE5C0094F3AF /* PasswordStrength.swift in Sources */,
 				FA3326C520441C8500657C8A /* BoldLabel.swift in Sources */,
+				FADC33472046F16C0065A7EB /* SkinProblemPhotoInformationViewModel.swift in Sources */,
 				78C205D82045A65C00F8E407 /* SkinProblemTableCellViewModel.swift in Sources */,
 				FA3326BD20441C8500657C8A /* CustomErrors.swift in Sources */,
 				FA33268920440EA400657C8A /* PhotoUtils.swift in Sources */,
 				FA3326B120441C8500657C8A /* ProfileTextField.swift in Sources */,
+				FADC334D204706DC0065A7EB /* SkinProblemLocationViewController.swift in Sources */,
 				FA33264320401A8C00657C8A /* MySkinProblemsViewController.swift in Sources */,
 				FA3326542040287900657C8A /* BindingViewController.swift in Sources */,
 				FA3326C120441C8500657C8A /* FormTextField.swift in Sources */,
@@ -1319,7 +1408,9 @@
 				FAD6ADBF204461050050C1A9 /* AddSkinProblemViewController.swift in Sources */,
 				FAE733F620344AE200898E65 /* LoginViewController.swift in Sources */,
 				784DE13620454969000D4013 /* DateUtils.swift in Sources */,
+				FADC333C2046DA9A0065A7EB /* SkinProblemPhotoInformationViewController.swift in Sources */,
 				78B9E526203C48FC0054CAD3 /* ApiUtils.swift in Sources */,
+				FADC33422046E8C80065A7EB /* FormTextView.swift in Sources */,
 				780F701D203592B900D96601 /* ProgressBarViewController.swift in Sources */,
 				FA3326CD20441C8500657C8A /* GrayLabel.swift in Sources */,
 				78C205CE20459D7D00F8E407 /* UINavigationController+Extentions.swift in Sources */,
@@ -1330,6 +1421,7 @@
 				FAD6ADBA20445EB20050C1A9 /* AddPhotoTableViewCell.swift in Sources */,
 				FA3326B920441C8500657C8A /* PasswordProgressBarView.swift in Sources */,
 				FA3326692040351500657C8A /* ProfileViewController.swift in Sources */,
+				FADC33362046BF2F0065A7EB /* SkinProblemModel.swift in Sources */,
 				FA33263D20400FD200657C8A /* DashboardTabViewController.swift in Sources */,
 				7849CCAB203EE3E60030A7B1 /* BaseViewModel.swift in Sources */,
 				FA3326B520441C8500657C8A /* PasswordTextField.swift in Sources */,
@@ -1337,6 +1429,7 @@
 				780F701B203592B500D96601 /* FormViewController.swift in Sources */,
 				FA9760DF203B0EDC00242255 /* BaseResponseModel.swift in Sources */,
 				FA332663204034B300657C8A /* UIImageView+Circular.swift in Sources */,
+				FADC3352204706E70065A7EB /* SkinProblemLocationViewModel.swift in Sources */,
 				FA9760DB203B0E0A00242255 /* UIViewController+Alerts.swift in Sources */,
 				FA3326752040750900657C8A /* AppStyle.swift in Sources */,
 				FA33268E204413B500657C8A /* ProfileViewModel.swift in Sources */,

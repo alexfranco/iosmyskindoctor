@@ -119,8 +119,7 @@ extension MySkinProblemsViewController: UITableViewDelegate, UITableViewDataSour
 		let cell = tableView.dequeueReusableCell(withIdentifier: CellId.mySkinProblemsCellId) as! MySkinProblemsTableViewCell
 		
 		let viewModel = (self.viewModel as! MySkinProblemsViewModel).getItemAtIndexPath(indexPath: indexPath)
-		
-		cell.configure(withViewModel: viewModel)
+		cell.configure(withViewModel: MySkinProblemsTableCellViewModel(withModel: viewModel))
 		
 		return cell
 	}

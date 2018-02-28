@@ -28,14 +28,15 @@ class MySkinProblemsViewModel: BaseViewModel {
 		}
 	}
 	
-	var allItems = [MySkinProblemsTableCellViewModel]()
-	var undiagnosedItems = [MySkinProblemsTableCellViewModel]()
-	var diagnosedItems = [MySkinProblemsTableCellViewModel]()
+	var allItems = [SkinProblemModel]()
+	var undiagnosedItems = [SkinProblemModel]()
+	var diagnosedItems = [SkinProblemModel]()
 
 	override init() {
 		// Generate tests
-		allItems = [MySkinProblemsTableCellViewModel(withName: "New Skin Problem", date: Date(), isDiagnosed: true, problemDescription: "My son has suffered with several rashes spanning over the space of 5 months which come and go...."),
-				 MySkinProblemsTableCellViewModel(withName: "Serious", date: Date(), isDiagnosed: false, problemDescription: "I do have some skin issues")]
+		
+		allItems = [SkinProblemModel(withName: "New Skin Problem", location: "Face", problemDescription: "My son has suffered with several rashes spanning over the space of 5 months which come and go....", problemImage: nil, date: Date(), isDiagnosed: true),
+					SkinProblemModel(withName: "Skin Problem", location: "Hand", problemDescription: "My daugher has suffered with several rashes spanning over the space of 10 months which come and go....", problemImage: nil, date: Date(), isDiagnosed: false)]
 		
 		diagnosedItems = allItems.filter { (model) -> Bool in model.isDiagnosed == true }
 		undiagnosedItems = allItems.filter { (model) -> Bool in model.isDiagnosed == false }
@@ -83,7 +84,7 @@ class MySkinProblemsViewModel: BaseViewModel {
 		}
 	}
 	
-	func getItemAtIndexPath(indexPath: IndexPath) -> MySkinProblemsTableCellViewModel {
+	func getItemAtIndexPath(indexPath: IndexPath) -> SkinProblemModel {
 		switch selectedSegmented {
 		case .all:
 			return indexPath.section == MySkinProblemsViewModel.undiagnosedSection ? undiagnosedItems[indexPath.row] : diagnosedItems[indexPath.row]
