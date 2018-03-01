@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 
 class SkinProblemPhotoInformationViewModel: BaseViewModel {
-	var model: SkinProblemModel!
 	
+	var model: SkinProblemModel!
 	var problemDescription: String!
 	var problemImage: UIImage!
 	

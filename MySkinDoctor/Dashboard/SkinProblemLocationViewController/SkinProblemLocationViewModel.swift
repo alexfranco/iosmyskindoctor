@@ -14,7 +14,7 @@ class SkinProblemLocationViewModel: BaseViewModel {
 	static let bodyFrontImage = UIImage(named: "bodyFront")!
 	static let bodyBackImage = UIImage(named: "bodyBack")!
 	
-	private var model: SkinProblemModel
+	var model: SkinProblemModel
 	
 	var locationProblemUpdated: ((_ locationProblemType: SkinProblemModel.LocationProblemType)->())?
 	var bodyImageChanged: ((_ isFrontSelected: Bool, _ bodyImage: UIImage)->())?

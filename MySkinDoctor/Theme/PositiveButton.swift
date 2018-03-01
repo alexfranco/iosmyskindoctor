@@ -11,4 +11,8 @@ import UIKit
 
 class PositiveButton: UIButton {
 	
+	override func awakeFromNib() {
+		super.awakeFromNib()
+		setTitleColor(AppStyle.positiveButtonTextColorDisable, for: .disabled)
+	}
 }

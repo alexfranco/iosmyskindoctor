@@ -124,6 +124,7 @@ struct AppStyle {
 	// Positive Button
 	static let positiveButtonBackgroundColor = AppColors.primaryColor
 	static let positiveButtonTextColor = UIColor.white
+	static let positiveButtonTextColorDisable = BaseColors.formGrey
 
 	// No Background Button
 	static let noBackgroundButtonBackgroundColor = UIColor.clear

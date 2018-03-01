@@ -14,6 +14,8 @@ class MySkinProblemsViewController: BindingViewController {
 	@IBOutlet weak var diagnosesSegmentedControl: UISegmentedControl!
 	@IBOutlet weak var tableView: UITableView!
 	
+	var viewModelCast: MySkinProblemsViewModel!
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
@@ -35,9 +37,9 @@ class MySkinProblemsViewController: BindingViewController {
 	override func initViewModel(viewModel: BaseViewModel) {
 		super.initViewModel(viewModel: viewModel)
 		
-		guard let viewModelSafe = viewModel as? MySkinProblemsViewModel else { return }
+		viewModelCast = viewModel as! MySkinProblemsViewModel
 		
-		viewModelSafe.refresh = { [weak self] () in
+		viewModelCast.refresh = { [weak self] () in
 			DispatchQueue.main.async {
 				self?.tableView.reloadData()
 				self?.tableView.refreshControl?.endRefreshing()
@@ -60,13 +62,13 @@ class MySkinProblemsViewController: BindingViewController {
 	}
 	
 	@objc func handleRefresh(refreshControl: UIRefreshControl) {
-		(viewModel as! MySkinProblemsViewModel).refreshData()
+		viewModelCast.refreshData()
 	}
 	
 	// MARK: IBAction
 	
 	@IBAction func onDiagnosesSegmentedControlValueChanged(_ sender: Any) {
-		(viewModel as! MySkinProblemsViewModel).selectedSegmented = MySkinProblemsViewModel.DiagnosesSegmentedEnum(rawValue: self.diagnosesSegmentedControl.selectedSegmentIndex)!
+		viewModelCast.selectedSegmented = MySkinProblemsViewModel.DiagnosesSegmentedEnum(rawValue: self.diagnosesSegmentedControl.selectedSegmentIndex)!
 	}
 	
 	
@@ -100,17 +102,17 @@ extension MySkinProblemsViewController: UITableViewDelegate, UITableViewDataSour
 	}
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return (viewModel as! MySkinProblemsViewModel).getDataSourceCount(section: section)
+		return viewModelCast.getDataSourceCount(section: section)
 	}
 	
 	func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-		return (viewModel as! MySkinProblemsViewModel).getSectionTitle(section: section)
+		return viewModelCast.getSectionTitle(section: section)
 	}
 	
 	func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
 		let headerView = (view as! UITableViewHeaderFooterView)
 		
-		headerView.backgroundView?.backgroundColor = (viewModel as! MySkinProblemsViewModel).getHeaderBackgroundColor(section: section)
+		headerView.backgroundView?.backgroundColor = viewModelCast.getHeaderBackgroundColor(section: section)
 		headerView.textLabel?.textColor = AppStyle.mySkinTableSectionTextColor
 		headerView.textLabel?.font = AppStyle.mySkinTableSectionTextFont
 	}
@@ -118,7 +120,7 @@ extension MySkinProblemsViewController: UITableViewDelegate, UITableViewDataSour
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: CellId.mySkinProblemsCellId) as! MySkinProblemsTableViewCell
 		
-		let viewModel = (self.viewModel as! MySkinProblemsViewModel).getItemAtIndexPath(indexPath: indexPath)
+		let viewModel = viewModelCast.getItemAtIndexPath(indexPath: indexPath)
 		cell.configure(withViewModel: MySkinProblemsTableCellViewModel(withModel: viewModel))
 		
 		return cell

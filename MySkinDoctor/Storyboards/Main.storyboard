@@ -287,7 +287,7 @@
         <!--Add Skin Problem-->
         <scene sceneID="84Q-j2-NXP">
             <objects>
-                <viewController id="f41-gx-bcw" customClass="AddSkinProblemViewController" customModule="MySkinDoctor" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="f41-gx-bcw" customClass="AddSkinProblemsViewController" customModule="MySkinDoctor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ac1-3c-9Dk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -308,7 +308,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3eN-3v-1cP">
-                                <rect key="frame" x="16" y="245" width="343" height="414"/>
+                                <rect key="frame" x="16" y="245" width="343" height="367"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddPhotoTableViewCellId" rowHeight="52" id="Awx-jZ-52b" customClass="AddPhotoTableViewCell" customModule="MySkinDoctor" customModuleProvider="target">
@@ -325,7 +325,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HqT-hk-v3s">
-                                                    <rect key="frame" x="15" y="11" width="32" height="30"/>
+                                                    <rect key="frame" x="15" y="14" width="32" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="32" id="gQ9-Yv-G13"/>
                                                         <constraint firstAttribute="height" constant="30" id="qUR-ry-cwl"/>
@@ -334,11 +334,11 @@
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="HqT-hk-v3s" firstAttribute="top" secondItem="uPU-dR-Qxz" secondAttribute="topMargin" id="2La-Ju-J2x"/>
                                                 <constraint firstItem="StG-BX-xgP" firstAttribute="top" secondItem="uPU-dR-Qxz" secondAttribute="topMargin" constant="4.5" id="Fhp-tm-u6x"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="StG-BX-xgP" secondAttribute="trailing" constant="5" id="g1u-Sb-ra4"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="StG-BX-xgP" secondAttribute="bottom" constant="4.5" id="mFg-sX-PKp"/>
                                                 <constraint firstItem="StG-BX-xgP" firstAttribute="leading" secondItem="HqT-hk-v3s" secondAttribute="trailing" constant="10" id="oeQ-ed-mR3"/>
+                                                <constraint firstItem="HqT-hk-v3s" firstAttribute="centerY" secondItem="StG-BX-xgP" secondAttribute="centerY" constant="3" id="tOs-SM-pI8"/>
                                                 <constraint firstItem="HqT-hk-v3s" firstAttribute="leading" secondItem="uPU-dR-Qxz" secondAttribute="leadingMargin" id="z3Q-os-L9B"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -354,17 +354,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="82.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="08b-F4-bp9" customClass="TitleLabel" customModule="MySkinDoctor" customModuleProvider="target">
-                                                    <rect key="frame" x="90" y="11" width="233" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="wHC-T6-bTj"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location Problem" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sXL-gD-s0G">
-                                                    <rect key="frame" x="90" y="31" width="233" height="21"/>
+                                                    <rect key="frame" x="90" y="16" width="233" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="aPx-NX-nrt"/>
                                                     </constraints>
@@ -373,7 +364,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="description of the issue" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vyp-ZF-FwC" customClass="GrayLabel" customModule="MySkinDoctor" customModuleProvider="target">
-                                                    <rect key="frame" x="90" y="52" width="233" height="20"/>
+                                                    <rect key="frame" x="90" y="40" width="233" height="35"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="Gq4-2v-KYr"/>
                                                     </constraints>
@@ -382,7 +373,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="HcA-r4-ybI">
-                                                    <rect key="frame" x="15" y="11" width="60" height="60"/>
+                                                    <rect key="frame" x="15" y="16" width="60" height="60"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="60" id="jSH-iX-l0Y"/>
                                                         <constraint firstAttribute="height" constant="60" id="wOF-zN-GqD"/>
@@ -390,42 +381,51 @@
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="sXL-gD-s0G" firstAttribute="leading" secondItem="08b-F4-bp9" secondAttribute="leading" id="3bb-HY-vvl"/>
-                                                <constraint firstItem="08b-F4-bp9" firstAttribute="top" secondItem="HcA-r4-ybI" secondAttribute="top" id="Fur-In-FdY"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="sXL-gD-s0G" secondAttribute="trailing" constant="5" id="33c-CV-5t5"/>
+                                                <constraint firstItem="sXL-gD-s0G" firstAttribute="top" secondItem="VB0-Yr-Hd7" secondAttribute="topMargin" constant="5" id="40z-7v-Qd6"/>
                                                 <constraint firstItem="vyp-ZF-FwC" firstAttribute="leading" secondItem="sXL-gD-s0G" secondAttribute="leading" id="KgK-Ef-evd"/>
-                                                <constraint firstItem="vyp-ZF-FwC" firstAttribute="top" secondItem="sXL-gD-s0G" secondAttribute="bottom" id="Lcb-bp-Gmh"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="08b-F4-bp9" secondAttribute="trailing" constant="5" id="Pwq-vb-Lif"/>
-                                                <constraint firstItem="sXL-gD-s0G" firstAttribute="trailing" secondItem="08b-F4-bp9" secondAttribute="trailing" id="QGr-g7-RS0"/>
-                                                <constraint firstItem="vyp-ZF-FwC" firstAttribute="bottom" secondItem="VB0-Yr-Hd7" secondAttribute="bottomMargin" id="Qoj-8Q-UbX"/>
-                                                <constraint firstItem="HcA-r4-ybI" firstAttribute="top" secondItem="VB0-Yr-Hd7" secondAttribute="topMargin" id="T7V-xS-iBr"/>
+                                                <constraint firstItem="vyp-ZF-FwC" firstAttribute="top" secondItem="sXL-gD-s0G" secondAttribute="bottom" constant="3" id="Lcb-bp-Gmh"/>
+                                                <constraint firstItem="vyp-ZF-FwC" firstAttribute="bottom" secondItem="VB0-Yr-Hd7" secondAttribute="bottomMargin" constant="3" id="Qoj-8Q-UbX"/>
                                                 <constraint firstItem="HcA-r4-ybI" firstAttribute="leading" secondItem="VB0-Yr-Hd7" secondAttribute="leadingMargin" id="UIy-Ey-bzc"/>
                                                 <constraint firstItem="vyp-ZF-FwC" firstAttribute="trailing" secondItem="sXL-gD-s0G" secondAttribute="trailing" id="YeC-gc-RCn"/>
-                                                <constraint firstItem="sXL-gD-s0G" firstAttribute="top" secondItem="08b-F4-bp9" secondAttribute="bottom" constant="-1" id="kj2-u3-UFL"/>
-                                                <constraint firstItem="08b-F4-bp9" firstAttribute="leading" secondItem="HcA-r4-ybI" secondAttribute="trailing" constant="15" id="tkI-HL-tmL"/>
+                                                <constraint firstItem="sXL-gD-s0G" firstAttribute="top" secondItem="HcA-r4-ybI" secondAttribute="top" id="frC-hE-0ya"/>
+                                                <constraint firstItem="sXL-gD-s0G" firstAttribute="leading" secondItem="HcA-r4-ybI" secondAttribute="trailing" constant="15" id="lME-QL-raH"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="descriptionLabel" destination="vyp-ZF-FwC" id="ZIM-Sw-jBn"/>
                                             <outlet property="locationLabel" destination="sXL-gD-s0G" id="Idx-qn-taf"/>
-                                            <outlet property="nameLabel" destination="08b-F4-bp9" id="tZe-9p-2uL"/>
                                             <outlet property="problemImageView" destination="HcA-r4-ybI" id="KWr-ff-PIO"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GuK-tn-o5u" customClass="PositiveButton" customModule="MySkinDoctor" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.59346731090000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="p5X-YZ-pnA"/>
+                                </constraints>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="GuK-tn-o5u" firstAttribute="leading" secondItem="JLR-qw-q4B" secondAttribute="leading" id="8Qd-an-nkm"/>
                             <constraint firstItem="2ec-Uw-LqG" firstAttribute="top" secondItem="JLR-qw-q4B" secondAttribute="top" constant="16" id="BcC-xU-Q8x"/>
                             <constraint firstItem="cFX-fS-pLC" firstAttribute="leading" secondItem="2ec-Uw-LqG" secondAttribute="leading" id="JHT-W8-koR"/>
                             <constraint firstItem="2ec-Uw-LqG" firstAttribute="leading" secondItem="JLR-qw-q4B" secondAttribute="leading" constant="16" id="JPm-ki-9Gx"/>
                             <constraint firstItem="3eN-3v-1cP" firstAttribute="trailing" secondItem="cFX-fS-pLC" secondAttribute="trailing" id="K3W-Pc-gQu"/>
                             <constraint firstItem="cFX-fS-pLC" firstAttribute="top" secondItem="2ec-Uw-LqG" secondAttribute="bottom" constant="8" id="Kiz-Aj-EoL"/>
                             <constraint firstItem="3eN-3v-1cP" firstAttribute="top" secondItem="cFX-fS-pLC" secondAttribute="bottom" constant="8" id="Mbw-rg-7oY"/>
+                            <constraint firstAttribute="trailing" secondItem="GuK-tn-o5u" secondAttribute="trailing" id="T4H-Y8-mac"/>
                             <constraint firstItem="cFX-fS-pLC" firstAttribute="trailing" secondItem="2ec-Uw-LqG" secondAttribute="trailing" id="aEj-3a-gAU"/>
                             <constraint firstItem="3eN-3v-1cP" firstAttribute="leading" secondItem="cFX-fS-pLC" secondAttribute="leading" id="c4t-c6-MHk"/>
-                            <constraint firstItem="JLR-qw-q4B" firstAttribute="bottom" secondItem="3eN-3v-1cP" secondAttribute="bottom" constant="8" id="qyI-Z7-1tT"/>
+                            <constraint firstItem="JLR-qw-q4B" firstAttribute="bottom" secondItem="GuK-tn-o5u" secondAttribute="bottom" id="gIs-YN-QZC"/>
                             <constraint firstItem="JLR-qw-q4B" firstAttribute="trailing" secondItem="2ec-Uw-LqG" secondAttribute="trailing" constant="16" id="svO-4T-idf"/>
+                            <constraint firstItem="GuK-tn-o5u" firstAttribute="top" secondItem="3eN-3v-1cP" secondAttribute="bottom" constant="5" id="ub9-rn-tde"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JLR-qw-q4B"/>
                     </view>
@@ -439,6 +439,7 @@
                     <connections>
                         <outlet property="descriptionLabel" destination="2ec-Uw-LqG" id="hqP-et-Wzu"/>
                         <outlet property="descriptionTextView" destination="cFX-fS-pLC" id="LlD-B0-ynE"/>
+                        <outlet property="nextButton" destination="GuK-tn-o5u" id="r7o-Of-AHn"/>
                         <outlet property="tableView" destination="3eN-3v-1cP" id="Nbe-Jc-HgP"/>
                         <segue destination="1TG-zf-x1o" kind="show" identifier="goToSkinProblemPhotoInformationViewController" id="EPG-7e-piZ"/>
                     </connections>
@@ -622,7 +623,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="9EM-kj-1XD"/>
                                 </constraints>
-                                <state key="normal" title="Finish">
+                                <state key="normal" title="Finish and Add Photo">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -657,9 +658,11 @@
                         <outlet property="nextButton" destination="Z5Q-Vx-Ige" id="J41-kj-EPA"/>
                         <outlet property="scrollView" destination="4Ky-qP-VCW" id="I4W-8O-CAl"/>
                         <outlet property="tipLabel" destination="whp-y5-xZN" id="fkz-hc-ge2"/>
+                        <segue destination="RUD-CS-umZ" kind="unwind" identifier="unwindToAddSkinProblemsWithSegue" unwindAction="unwindToAddSkinProblemsWithSegue:" id="2Va-iL-R0D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FiY-vr-wX8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="RUD-CS-umZ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="5544.8000000000002" y="-344.07796101949026"/>
         </scene>

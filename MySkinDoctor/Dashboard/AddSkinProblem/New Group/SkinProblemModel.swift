@@ -31,21 +31,16 @@ class SkinProblemModel : NSObject {
 		}
 	}
 	
-	var name: String?
 	var location: LocationProblemType = LocationProblemType.none
 	var problemImage: UIImage?
 	var problemDescription: String?
-	var date: Date?
-	var isDiagnosed: Bool
 	
-	required init(withName name: String? = "", location: LocationProblemType = LocationProblemType.none, problemDescription: String? = "", problemImage: UIImage?, date: Date? = Date(), isDiagnosed: Bool = false) {
+	required init(location: LocationProblemType = LocationProblemType.none, problemDescription: String? = "", problemImage: UIImage?) {
 		
-		self.name = name
 		self.location = location
 		self.problemImage = problemImage
 		self.problemDescription = problemDescription
-		self.date = date
-		self.isDiagnosed = isDiagnosed
+		
 		
 		super.init()
 	}

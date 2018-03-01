@@ -20,7 +20,6 @@ class SkinProblemLocationViewController: FormViewController {
 	
 	var viewModelCast: SkinProblemLocationViewModel!
 	var locationButtons: [UIButton]!
-	// MARK: Helpers
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -40,13 +39,6 @@ class SkinProblemLocationViewController: FormViewController {
 		
 		self.nextButton.isEnabled = false
 	}
-	
-	func configureLocationButtons() {
-		locationHeadButton.tag = SkinProblemModel.LocationProblemType.head.index
-		locationNeckButton.tag = SkinProblemModel.LocationProblemType.neck.index
-		
-		locationButtons = [locationHeadButton, locationNeckButton]
-	}
 
 	override func initViewModel(viewModel: BaseViewModel) {
 		super.initViewModel(viewModel: viewModel)
@@ -61,19 +53,26 @@ class SkinProblemLocationViewController: FormViewController {
 		
 		viewModelCast.locationProblemUpdated = { [] (locationProblemType) in
 			DispatchQueue.main.async {
+				self.nextButton.isEnabled = true
 				self.selectLocationButton(locationProblemType: locationProblemType)
 				self.locationLabel.text = self.viewModelCast.problemLocationText
-				self.locationNeckButton.isEnabled = true
 			}
 		}
 		
 		viewModelCast.goNextSegue = { [] () in
 			DispatchQueue.main.async {
-				// TODO save model in the DB
-				self.dismiss(animated: true, completion: nil)
-//				self.performSegue(withIdentifier: Segues.goToSkinProblemLocationViewController, sender: nil)
+				self.performSegue(withIdentifier: Segues.unwindToAddSkinProblemsWithSegue, sender: nil)
 			}
 		}
+	}
+	
+	// MARK: Helpers
+		
+	func configureLocationButtons() {
+		locationHeadButton.tag = SkinProblemModel.LocationProblemType.head.index
+		locationNeckButton.tag = SkinProblemModel.LocationProblemType.neck.index
+		
+		locationButtons = [locationHeadButton, locationNeckButton]
 	}
 	
 	func selectLocationButton(locationProblemType: SkinProblemModel.LocationProblemType) {
@@ -95,9 +94,7 @@ class SkinProblemLocationViewController: FormViewController {
 			viewModelCast.locationProblemType = SkinProblemModel.LocationProblemType(rawValue: locationProblemRawValue)!
 		}
 	}
-	
-	// MARK: IBActions
-
+		
 	@IBAction func onNextButtonPressed(_ sender: Any) {
 		viewModelCast.saveModel()
 	}

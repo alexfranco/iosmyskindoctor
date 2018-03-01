@@ -32,6 +32,10 @@
 		784DE13420454968000D4013 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6ADB420442C130050C1A9 /* DateUtils.swift */; };
 		784DE13520454969000D4013 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6ADB420442C130050C1A9 /* DateUtils.swift */; };
 		784DE13620454969000D4013 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6ADB420442C130050C1A9 /* DateUtils.swift */; };
+		788B9370204845C1001605E6 /* SkinProblemsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B936F204845C1001605E6 /* SkinProblemsModel.swift */; };
+		788B9371204848E8001605E6 /* SkinProblemsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B936F204845C1001605E6 /* SkinProblemsModel.swift */; };
+		788B9372204848E8001605E6 /* SkinProblemsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B936F204845C1001605E6 /* SkinProblemsModel.swift */; };
+		788B9373204848E9001605E6 /* SkinProblemsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B936F204845C1001605E6 /* SkinProblemsModel.swift */; };
 		78B9E516203C2B920054CAD3 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B9E515203C2B920054CAD3 /* ForgotPasswordViewController.swift */; };
 		78B9E518203C2C670054CAD3 /* ForgotPasswordResposeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B9E517203C2C670054CAD3 /* ForgotPasswordResposeModel.swift */; };
 		78B9E520203C2E630054CAD3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78B9E522203C2E630054CAD3 /* Localizable.strings */; };
@@ -81,10 +85,10 @@
 		78C205D62045A65C00F8E407 /* SkinProblemTableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C205D42045A65C00F8E407 /* SkinProblemTableCellViewModel.swift */; };
 		78C205D72045A65C00F8E407 /* SkinProblemTableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C205D42045A65C00F8E407 /* SkinProblemTableCellViewModel.swift */; };
 		78C205D82045A65C00F8E407 /* SkinProblemTableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C205D42045A65C00F8E407 /* SkinProblemTableCellViewModel.swift */; };
-		78C205E22045AA9900F8E407 /* AddSkinProblemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C205E12045AA9900F8E407 /* AddSkinProblemViewModel.swift */; };
-		78C205E32045AA9900F8E407 /* AddSkinProblemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C205E12045AA9900F8E407 /* AddSkinProblemViewModel.swift */; };
-		78C205E42045AA9900F8E407 /* AddSkinProblemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C205E12045AA9900F8E407 /* AddSkinProblemViewModel.swift */; };
-		78C205E52045AA9900F8E407 /* AddSkinProblemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C205E12045AA9900F8E407 /* AddSkinProblemViewModel.swift */; };
+		78C205E22045AA9900F8E407 /* AddSkinProblemsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C205E12045AA9900F8E407 /* AddSkinProblemsViewModel.swift */; };
+		78C205E32045AA9900F8E407 /* AddSkinProblemsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C205E12045AA9900F8E407 /* AddSkinProblemsViewModel.swift */; };
+		78C205E42045AA9900F8E407 /* AddSkinProblemsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C205E12045AA9900F8E407 /* AddSkinProblemsViewModel.swift */; };
+		78C205E52045AA9900F8E407 /* AddSkinProblemsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C205E12045AA9900F8E407 /* AddSkinProblemsViewModel.swift */; };
 		78E44AA6203EBE5C0094F3AF /* PasswordStrength.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E44AA5203EBE5C0094F3AF /* PasswordStrength.swift */; };
 		78E44AA7203EBE5C0094F3AF /* PasswordStrength.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E44AA5203EBE5C0094F3AF /* PasswordStrength.swift */; };
 		78E44AA8203EBE5C0094F3AF /* PasswordStrength.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E44AA5203EBE5C0094F3AF /* PasswordStrength.swift */; };
@@ -190,10 +194,10 @@
 		FAD6ADB820445EB20050C1A9 /* AddPhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6ADB620445EB20050C1A9 /* AddPhotoTableViewCell.swift */; };
 		FAD6ADB920445EB20050C1A9 /* AddPhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6ADB620445EB20050C1A9 /* AddPhotoTableViewCell.swift */; };
 		FAD6ADBA20445EB20050C1A9 /* AddPhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6ADB620445EB20050C1A9 /* AddPhotoTableViewCell.swift */; };
-		FAD6ADBC204461050050C1A9 /* AddSkinProblemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6ADBB204461050050C1A9 /* AddSkinProblemViewController.swift */; };
-		FAD6ADBD204461050050C1A9 /* AddSkinProblemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6ADBB204461050050C1A9 /* AddSkinProblemViewController.swift */; };
-		FAD6ADBE204461050050C1A9 /* AddSkinProblemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6ADBB204461050050C1A9 /* AddSkinProblemViewController.swift */; };
-		FAD6ADBF204461050050C1A9 /* AddSkinProblemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6ADBB204461050050C1A9 /* AddSkinProblemViewController.swift */; };
+		FAD6ADBC204461050050C1A9 /* AddSkinProblemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6ADBB204461050050C1A9 /* AddSkinProblemsViewController.swift */; };
+		FAD6ADBD204461050050C1A9 /* AddSkinProblemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6ADBB204461050050C1A9 /* AddSkinProblemsViewController.swift */; };
+		FAD6ADBE204461050050C1A9 /* AddSkinProblemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6ADBB204461050050C1A9 /* AddSkinProblemsViewController.swift */; };
+		FAD6ADBF204461050050C1A9 /* AddSkinProblemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6ADBB204461050050C1A9 /* AddSkinProblemsViewController.swift */; };
 		FAD6ADC120446D310050C1A9 /* AddPhotoTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6ADC020446D310050C1A9 /* AddPhotoTableViewCellViewModel.swift */; };
 		FAD6ADC220446D310050C1A9 /* AddPhotoTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6ADC020446D310050C1A9 /* AddPhotoTableViewCellViewModel.swift */; };
 		FAD6ADC320446D310050C1A9 /* AddPhotoTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6ADC020446D310050C1A9 /* AddPhotoTableViewCellViewModel.swift */; };
@@ -274,6 +278,7 @@
 		7849CC9D203EE15A0030A7B1 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		7849CCA2203EE2030030A7B1 /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 		7849CCA7203EE3E60030A7B1 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		788B936F204845C1001605E6 /* SkinProblemsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinProblemsModel.swift; sourceTree = "<group>"; };
 		78B9E515203C2B920054CAD3 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		78B9E517203C2C670054CAD3 /* ForgotPasswordResposeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordResposeModel.swift; sourceTree = "<group>"; };
 		78B9E521203C2E630054CAD3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -287,7 +292,7 @@
 		78C205CA20459D7D00F8E407 /* UINavigationController+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extentions.swift"; sourceTree = "<group>"; };
 		78C205CF2045A56B00F8E407 /* SkinProblemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinProblemTableViewCell.swift; sourceTree = "<group>"; };
 		78C205D42045A65C00F8E407 /* SkinProblemTableCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinProblemTableCellViewModel.swift; sourceTree = "<group>"; };
-		78C205E12045AA9900F8E407 /* AddSkinProblemViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSkinProblemViewModel.swift; sourceTree = "<group>"; };
+		78C205E12045AA9900F8E407 /* AddSkinProblemsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSkinProblemsViewModel.swift; sourceTree = "<group>"; };
 		78E44AA5203EBE5C0094F3AF /* PasswordStrength.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordStrength.swift; sourceTree = "<group>"; };
 		85B14CEDA9F10AD5CDFAFE54 /* Pods-MySkinDoctorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySkinDoctorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MySkinDoctorTests/Pods-MySkinDoctorTests.release.xcconfig"; sourceTree = "<group>"; };
 		A8E80ED1315E894849856D66 /* Pods-MySkinDoctorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySkinDoctorUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MySkinDoctorUITests/Pods-MySkinDoctorUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -322,7 +327,7 @@
 		FAC1AF102036FCE200547BBC /* RegistrationResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationResponseModel.swift; sourceTree = "<group>"; };
 		FAD6ADB420442C130050C1A9 /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		FAD6ADB620445EB20050C1A9 /* AddPhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoTableViewCell.swift; sourceTree = "<group>"; };
-		FAD6ADBB204461050050C1A9 /* AddSkinProblemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSkinProblemViewController.swift; sourceTree = "<group>"; };
+		FAD6ADBB204461050050C1A9 /* AddSkinProblemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSkinProblemsViewController.swift; sourceTree = "<group>"; };
 		FAD6ADC020446D310050C1A9 /* AddPhotoTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		FADC33322046BF2F0065A7EB /* SkinProblemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinProblemModel.swift; sourceTree = "<group>"; };
 		FADC33382046DA9A0065A7EB /* SkinProblemPhotoInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinProblemPhotoInformationViewController.swift; sourceTree = "<group>"; };
@@ -458,7 +463,7 @@
 				FADC33312046BF160065A7EB /* Models */,
 				78C205DF2045AA5400F8E407 /* Cells */,
 				78C205E02045AA5E00F8E407 /* ViewModels */,
-				FAD6ADBB204461050050C1A9 /* AddSkinProblemViewController.swift */,
+				FAD6ADBB204461050050C1A9 /* AddSkinProblemsViewController.swift */,
 			);
 			path = AddSkinProblem;
 			sourceTree = "<group>";
@@ -475,7 +480,7 @@
 		78C205E02045AA5E00F8E407 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				78C205E12045AA9900F8E407 /* AddSkinProblemViewModel.swift */,
+				78C205E12045AA9900F8E407 /* AddSkinProblemsViewModel.swift */,
 				FAD6ADC020446D310050C1A9 /* AddPhotoTableViewCellViewModel.swift */,
 				78C205D42045A65C00F8E407 /* SkinProblemTableCellViewModel.swift */,
 			);
@@ -603,6 +608,7 @@
 		FADC33312046BF160065A7EB /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				788B936F204845C1001605E6 /* SkinProblemsModel.swift */,
 				FADC33322046BF2F0065A7EB /* SkinProblemModel.swift */,
 			);
 			name = Models;
@@ -1202,15 +1208,16 @@
 			files = (
 				FADC33452046F16C0065A7EB /* SkinProblemPhotoInformationViewModel.swift in Sources */,
 				78B9E530203C4CD70054CAD3 /* RegistrationResponseModel.swift in Sources */,
+				788B9371204848E8001605E6 /* SkinProblemsModel.swift in Sources */,
 				FADC33402046E8C80065A7EB /* FormTextView.swift in Sources */,
 				FA332657204029BD00657C8A /* MySkinProblemsViewModel.swift in Sources */,
 				FADC3350204706E70065A7EB /* SkinProblemLocationViewModel.swift in Sources */,
-				78C205E32045AA9900F8E407 /* AddSkinProblemViewModel.swift in Sources */,
+				78C205E32045AA9900F8E407 /* AddSkinProblemsViewModel.swift in Sources */,
 				FAEC573C203DBEAE00D1A0AE /* LoginViewModel.swift in Sources */,
 				FA33268C204413B500657C8A /* ProfileViewModel.swift in Sources */,
 				FA3326BB20441C8500657C8A /* CustomErrors.swift in Sources */,
 				FA33265C2040336F00657C8A /* PhotoViewController.swift in Sources */,
-				FAD6ADBD204461050050C1A9 /* AddSkinProblemViewController.swift in Sources */,
+				FAD6ADBD204461050050C1A9 /* AddSkinProblemsViewController.swift in Sources */,
 				FA332661204034B300657C8A /* UIImageView+Circular.swift in Sources */,
 				78B9E532203C4CD70054CAD3 /* ApiUtils.swift in Sources */,
 				FA33263B20400FD200657C8A /* DashboardTabViewController.swift in Sources */,
@@ -1269,7 +1276,7 @@
 				FADC333F2046E8C80065A7EB /* FormTextView.swift in Sources */,
 				FA332656204029BD00657C8A /* MySkinProblemsViewModel.swift in Sources */,
 				FADC334F204706E70065A7EB /* SkinProblemLocationViewModel.swift in Sources */,
-				78C205E22045AA9900F8E407 /* AddSkinProblemViewModel.swift in Sources */,
+				78C205E22045AA9900F8E407 /* AddSkinProblemsViewModel.swift in Sources */,
 				FAEC573B203DBEAE00D1A0AE /* LoginViewModel.swift in Sources */,
 				FA33268B204413B500657C8A /* ProfileViewModel.swift in Sources */,
 				FA3326BA20441C8500657C8A /* CustomErrors.swift in Sources */,
@@ -1291,7 +1298,7 @@
 				FAE733CA2034494D00898E65 /* MySkinDoctor.xcdatamodeld in Sources */,
 				7849CCA3203EE2030030A7B1 /* ForgotPasswordViewModel.swift in Sources */,
 				FA9760D6203AFBD200242255 /* LoginResponseModel.swift in Sources */,
-				FAD6ADBC204461050050C1A9 /* AddSkinProblemViewController.swift in Sources */,
+				FAD6ADBC204461050050C1A9 /* AddSkinProblemsViewController.swift in Sources */,
 				FA3326B620441C8500657C8A /* PasswordProgressBarView.swift in Sources */,
 				FA33264020401A8C00657C8A /* MySkinProblemsViewController.swift in Sources */,
 				FA3326B220441C8500657C8A /* PasswordTextField.swift in Sources */,
@@ -1302,6 +1309,7 @@
 				78C205D02045A56B00F8E407 /* SkinProblemTableViewCell.swift in Sources */,
 				FA33268620440EA400657C8A /* PhotoUtils.swift in Sources */,
 				FA3326512040287900657C8A /* BindingViewController.swift in Sources */,
+				788B9370204845C1001605E6 /* SkinProblemsModel.swift in Sources */,
 				FAE733C22034494D00898E65 /* AppDelegate.swift in Sources */,
 				78E44AA6203EBE5C0094F3AF /* PasswordStrength.swift in Sources */,
 				78B9E516203C2B920054CAD3 /* ForgotPasswordViewController.swift in Sources */,
@@ -1345,10 +1353,10 @@
 				FA3326532040287900657C8A /* BindingViewController.swift in Sources */,
 				FA3326C020441C8500657C8A /* FormTextField.swift in Sources */,
 				FAD6ADC320446D310050C1A9 /* AddPhotoTableViewCellViewModel.swift in Sources */,
-				78C205E42045AA9900F8E407 /* AddSkinProblemViewModel.swift in Sources */,
+				78C205E42045AA9900F8E407 /* AddSkinProblemsViewModel.swift in Sources */,
 				7849CCA5203EE2030030A7B1 /* ForgotPasswordViewModel.swift in Sources */,
 				FAC1AF122036FCE200547BBC /* RegistrationResponseModel.swift in Sources */,
-				FAD6ADBE204461050050C1A9 /* AddSkinProblemViewController.swift in Sources */,
+				FAD6ADBE204461050050C1A9 /* AddSkinProblemsViewController.swift in Sources */,
 				FAE733F520344AE200898E65 /* LoginViewController.swift in Sources */,
 				784DE13520454969000D4013 /* DateUtils.swift in Sources */,
 				FADC333B2046DA9A0065A7EB /* SkinProblemPhotoInformationViewController.swift in Sources */,
@@ -1376,6 +1384,7 @@
 				FA9760DA203B0E0A00242255 /* UIViewController+Alerts.swift in Sources */,
 				FA3326742040750700657C8A /* AppStyle.swift in Sources */,
 				FA33268D204413B500657C8A /* ProfileViewModel.swift in Sources */,
+				788B9372204848E8001605E6 /* SkinProblemsModel.swift in Sources */,
 				FAE733DA2034494E00898E65 /* MySkinDoctorTests.swift in Sources */,
 				FA33265D2040336F00657C8A /* PhotoViewController.swift in Sources */,
 			);
@@ -1402,10 +1411,10 @@
 				FA3326542040287900657C8A /* BindingViewController.swift in Sources */,
 				FA3326C120441C8500657C8A /* FormTextField.swift in Sources */,
 				FAD6ADC420446D310050C1A9 /* AddPhotoTableViewCellViewModel.swift in Sources */,
-				78C205E52045AA9900F8E407 /* AddSkinProblemViewModel.swift in Sources */,
+				78C205E52045AA9900F8E407 /* AddSkinProblemsViewModel.swift in Sources */,
 				7849CCA6203EE2030030A7B1 /* ForgotPasswordViewModel.swift in Sources */,
 				FAC1AF132036FCE200547BBC /* RegistrationResponseModel.swift in Sources */,
-				FAD6ADBF204461050050C1A9 /* AddSkinProblemViewController.swift in Sources */,
+				FAD6ADBF204461050050C1A9 /* AddSkinProblemsViewController.swift in Sources */,
 				FAE733F620344AE200898E65 /* LoginViewController.swift in Sources */,
 				784DE13620454969000D4013 /* DateUtils.swift in Sources */,
 				FADC333C2046DA9A0065A7EB /* SkinProblemPhotoInformationViewController.swift in Sources */,
@@ -1433,6 +1442,7 @@
 				FA9760DB203B0E0A00242255 /* UIViewController+Alerts.swift in Sources */,
 				FA3326752040750900657C8A /* AppStyle.swift in Sources */,
 				FA33268E204413B500657C8A /* ProfileViewModel.swift in Sources */,
+				788B9373204848E9001605E6 /* SkinProblemsModel.swift in Sources */,
 				FAE733E52034494E00898E65 /* MySkinDoctorUITests.swift in Sources */,
 				FA33265E2040336F00657C8A /* PhotoViewController.swift in Sources */,
 			);
