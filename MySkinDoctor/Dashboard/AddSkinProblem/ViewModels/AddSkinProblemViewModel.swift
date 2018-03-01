@@ -19,7 +19,7 @@ class AddSkinProblemViewModel: BaseViewModel {
 	
 	override init() {
 		// Generate tests
-		items = [SkinProblemModel(withName: "Face", location: "Feet", problemDescription: "A lot of pain", problemImage: nil, date: Date())]
+		items = [SkinProblemModel(withName: "Face", location: .head, problemDescription: "A lot of pain", problemImage: nil, date: Date())]
 	}
 	
 	func refreshData() {

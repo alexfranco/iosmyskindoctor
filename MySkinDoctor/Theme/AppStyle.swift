@@ -87,6 +87,15 @@ struct AppStyle {
 	static let mySkinTableSectionTextColor = UIColor.white
 	static let mySkinTableSectionTextFont = AppFonts.defaultBoldFont
 	
+	
+	// Skin Problem Location
+	static let locationNavigationBarBackgroundColor = BaseColors.amethyst
+	static let locationSegmentedControlTint = UIColor.white
+	static let locationSegmentedControlSelectedTextColor = BaseColors.amethyst
+	static let locationSegmentedControlUnselectedTextColor = UIColor.white
+	static let locationBackgroundColor = BaseColors.amethyst
+	static let locationTextColor = UIColor.white
+	
 	// Consult TabBar
 	static let consultTabBarTitleColor = AppColors.secondTabColor
 	

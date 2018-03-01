@@ -27,6 +27,8 @@ class SkinProblemPhotoInformationViewController: PhotoViewController {
 		descriptionTextView.placeholder = "Please enter.... TODO"
 		userPhotoImageView.image = (viewModel as! SkinProblemPhotoInformationViewModel).problemImage
 		
+		navigationController?.setBackgroundColorWithoutShadowImage(bgColor: AppStyle.defaultNavigationBarColor, titleColor: AppStyle.defaultNavigationBarTitleColor)
+				
 		delegate = self
 	}
 	
@@ -56,7 +58,7 @@ class SkinProblemPhotoInformationViewController: PhotoViewController {
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == Segues.goToSkinProblemLocationViewController {
-			if let dest = segue.destination as? SkinProblemPhotoInformationViewController {
+			if let dest = segue.destination as? SkinProblemLocationViewController {
 				let viewModelSafe = (viewModel as! SkinProblemPhotoInformationViewModel)
 				dest.initViewModel(viewModel: SkinProblemLocationViewModel(model:  viewModelSafe.model))
 			}

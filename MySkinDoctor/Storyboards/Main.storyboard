@@ -528,20 +528,140 @@
             </objects>
             <point key="canvasLocation" x="4716" y="-349"/>
         </scene>
-        <!--Skin Problem Location View Controller-->
+        <!--Photo Information-->
         <scene sceneID="lpt-hg-yXo">
             <objects>
-                <viewController id="P5v-WP-sTG" customClass="SkinProblemLocationViewController" customModule="MySkinDoctor" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Photo Information" id="P5v-WP-sTG" customClass="SkinProblemLocationViewController" customModule="MySkinDoctor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KNm-Lv-YLK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="bMY-op-PwZ">
+                                <rect key="frame" x="16" y="80" width="343" height="29"/>
+                                <segments>
+                                    <segment title="Front"/>
+                                    <segment title="Back"/>
+                                </segments>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="onfrontBackSegmentedControlValueChanged:" destination="P5v-WP-sTG" eventType="valueChanged" id="VOe-Vc-mng"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please tell us where on the body this photo was taken" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="whp-y5-xZN">
+                                <rect key="frame" x="16" y="128" width="343" height="21"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Ky-qP-VCW">
+                                <rect key="frame" x="16" y="169" width="343" height="438"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JlR-26-RAi">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="439"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bodyFront" translatesAutoresizingMaskIntoConstraints="NO" id="8gM-Ud-eqS">
+                                                <rect key="frame" x="20" y="0.0" width="303" height="376"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Front Lower Right Arm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wgg-xA-Kcj">
+                                                <rect key="frame" x="20" y="418" width="303" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="8gM-Ud-eqS" secondAttribute="trailing" constant="20" id="6SU-lx-g1b"/>
+                                            <constraint firstItem="Wgg-xA-Kcj" firstAttribute="top" secondItem="8gM-Ud-eqS" secondAttribute="bottom" constant="42" id="F68-3d-0RA"/>
+                                            <constraint firstItem="8gM-Ud-eqS" firstAttribute="leading" secondItem="JlR-26-RAi" secondAttribute="leading" constant="20" id="Gdz-Xt-CbJ"/>
+                                            <constraint firstItem="Wgg-xA-Kcj" firstAttribute="leading" secondItem="8gM-Ud-eqS" secondAttribute="leading" id="JOX-BA-Gxd"/>
+                                            <constraint firstItem="8gM-Ud-eqS" firstAttribute="top" secondItem="JlR-26-RAi" secondAttribute="top" id="ONP-bE-JyZ"/>
+                                            <constraint firstItem="Wgg-xA-Kcj" firstAttribute="trailing" secondItem="8gM-Ud-eqS" secondAttribute="trailing" id="ftN-7O-2te"/>
+                                            <constraint firstAttribute="bottom" secondItem="Wgg-xA-Kcj" secondAttribute="bottom" id="lGZ-qf-xjO"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YQ8-4K-8JY">
+                                        <rect key="frame" x="157" y="15" width="28" height="29"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="29" id="J4r-h8-OuJ"/>
+                                            <constraint firstAttribute="width" constant="28" id="f83-as-h1R"/>
+                                        </constraints>
+                                        <state key="normal" image="problemLocationInactive"/>
+                                        <state key="selected" image="problemLocationActive"/>
+                                        <connections>
+                                            <action selector="onLocationPressed:" destination="P5v-WP-sTG" eventType="touchUpInside" id="EZ3-HA-Kbq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WcL-tz-0V0">
+                                        <rect key="frame" x="157" y="101" width="28" height="29"/>
+                                        <state key="normal" image="problemLocationInactive"/>
+                                        <state key="selected" image="problemLocationActive"/>
+                                        <connections>
+                                            <action selector="onLocationPressed:" destination="P5v-WP-sTG" eventType="touchUpInside" id="jMN-4W-5O4"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="JlR-26-RAi" secondAttribute="trailing" id="1Uh-WS-rIa"/>
+                                    <constraint firstItem="YQ8-4K-8JY" firstAttribute="top" secondItem="4Ky-qP-VCW" secondAttribute="top" constant="15" id="3j8-T9-21G"/>
+                                    <constraint firstItem="WcL-tz-0V0" firstAttribute="centerX" secondItem="YQ8-4K-8JY" secondAttribute="centerX" id="VRU-ft-Hj4"/>
+                                    <constraint firstItem="WcL-tz-0V0" firstAttribute="height" secondItem="YQ8-4K-8JY" secondAttribute="height" id="aI5-Pj-OUS"/>
+                                    <constraint firstItem="JlR-26-RAi" firstAttribute="leading" secondItem="4Ky-qP-VCW" secondAttribute="leading" id="acv-cw-n6x"/>
+                                    <constraint firstItem="WcL-tz-0V0" firstAttribute="top" secondItem="YQ8-4K-8JY" secondAttribute="bottom" constant="57" id="ct8-ni-35G"/>
+                                    <constraint firstAttribute="bottom" secondItem="JlR-26-RAi" secondAttribute="bottom" id="g7r-kf-a9s"/>
+                                    <constraint firstItem="YQ8-4K-8JY" firstAttribute="centerX" secondItem="4Ky-qP-VCW" secondAttribute="centerX" id="uo2-QZ-CSw"/>
+                                    <constraint firstItem="WcL-tz-0V0" firstAttribute="width" secondItem="YQ8-4K-8JY" secondAttribute="width" id="vOT-2X-y5J"/>
+                                    <constraint firstItem="JlR-26-RAi" firstAttribute="top" secondItem="4Ky-qP-VCW" secondAttribute="top" id="yPF-WH-W4n"/>
+                                    <constraint firstItem="JlR-26-RAi" firstAttribute="centerX" secondItem="4Ky-qP-VCW" secondAttribute="centerX" id="yzd-ea-Iuk"/>
+                                </constraints>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z5Q-Vx-Ige" customClass="PositiveButton" customModule="MySkinDoctor" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.59346731090000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="9EM-kj-1XD"/>
+                                </constraints>
+                                <state key="normal" title="Finish">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onNextButtonPressed:" destination="P5v-WP-sTG" eventType="touchUpInside" id="Vd2-2Q-Te2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="brF-9P-bCx" firstAttribute="bottom" secondItem="Z5Q-Vx-Ige" secondAttribute="bottom" id="5zo-PI-wWd"/>
+                            <constraint firstItem="brF-9P-bCx" firstAttribute="trailing" secondItem="bMY-op-PwZ" secondAttribute="trailing" constant="16" id="61w-HF-7EB"/>
+                            <constraint firstItem="whp-y5-xZN" firstAttribute="trailing" secondItem="bMY-op-PwZ" secondAttribute="trailing" id="9dL-pn-5fN"/>
+                            <constraint firstItem="4Ky-qP-VCW" firstAttribute="leading" secondItem="whp-y5-xZN" secondAttribute="leading" id="FwJ-u6-J8m"/>
+                            <constraint firstItem="bMY-op-PwZ" firstAttribute="leading" secondItem="brF-9P-bCx" secondAttribute="leading" constant="16" id="L4x-sC-yD6"/>
+                            <constraint firstItem="4Ky-qP-VCW" firstAttribute="top" secondItem="whp-y5-xZN" secondAttribute="bottom" constant="20" id="MQS-Ex-x1B"/>
+                            <constraint firstItem="bMY-op-PwZ" firstAttribute="top" secondItem="brF-9P-bCx" secondAttribute="top" constant="16" id="TKd-7R-j2T"/>
+                            <constraint firstAttribute="trailing" secondItem="Z5Q-Vx-Ige" secondAttribute="trailing" id="Z5J-R5-Gb1"/>
+                            <constraint firstItem="whp-y5-xZN" firstAttribute="leading" secondItem="bMY-op-PwZ" secondAttribute="leading" id="aNM-Fb-ov1"/>
+                            <constraint firstItem="4Ky-qP-VCW" firstAttribute="trailing" secondItem="whp-y5-xZN" secondAttribute="trailing" id="iTr-15-B27"/>
+                            <constraint firstItem="Z5Q-Vx-Ige" firstAttribute="top" secondItem="4Ky-qP-VCW" secondAttribute="bottom" constant="10" id="k5V-Wq-qTP"/>
+                            <constraint firstItem="Z5Q-Vx-Ige" firstAttribute="leading" secondItem="brF-9P-bCx" secondAttribute="leading" id="rvG-kj-woK"/>
+                            <constraint firstItem="whp-y5-xZN" firstAttribute="top" secondItem="bMY-op-PwZ" secondAttribute="bottom" constant="20" id="vHO-WE-AN6"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="brF-9P-bCx"/>
                     </view>
+                    <connections>
+                        <outlet property="bodyImageView" destination="8gM-Ud-eqS" id="qeo-S3-mPR"/>
+                        <outlet property="frontBackSegmentedControl" destination="bMY-op-PwZ" id="OJZ-V4-adw"/>
+                        <outlet property="locationHeadButton" destination="YQ8-4K-8JY" id="zbI-r4-T6I"/>
+                        <outlet property="locationLabel" destination="Wgg-xA-Kcj" id="qQ3-0y-MFP"/>
+                        <outlet property="locationNeckButton" destination="WcL-tz-0V0" id="Uta-0q-WNm"/>
+                        <outlet property="nextButton" destination="Z5Q-Vx-Ige" id="J41-kj-EPA"/>
+                        <outlet property="scrollView" destination="4Ky-qP-VCW" id="I4W-8O-CAl"/>
+                        <outlet property="tipLabel" destination="whp-y5-xZN" id="fkz-hc-ge2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FiY-vr-wX8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5545" y="-344"/>
+            <point key="canvasLocation" x="5544.8000000000002" y="-344.07796101949026"/>
         </scene>
         <!--Dashboard Tab View Controller-->
         <scene sceneID="7jH-Sb-nJj">
@@ -603,10 +723,13 @@
     </scenes>
     <resources>
         <image name="addListItem" width="38" height="38"/>
+        <image name="bodyFront" width="155" height="376"/>
         <image name="consultsActive" width="48" height="32"/>
         <image name="consultsInactive" width="48" height="32"/>
         <image name="diagnosed" width="24" height="24"/>
         <image name="logo" width="246" height="86"/>
+        <image name="problemLocationActive" width="54" height="54"/>
+        <image name="problemLocationInactive" width="28" height="29"/>
         <image name="profileActive" width="48" height="32"/>
         <image name="profileInactive" width="48" height="32"/>
         <image name="settingsIcon" width="20" height="20"/>

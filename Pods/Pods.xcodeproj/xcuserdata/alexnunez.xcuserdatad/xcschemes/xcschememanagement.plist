@@ -95,6 +95,11 @@
 			<key>orderHint</key>
 			<integer>14</integer>
 		</dict>
+		<key>SZTextView.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>17</integer>
+		</dict>
 		<key>TextFieldEffects.xcscheme</key>
 		<dict>
 			<key>isShown</key>

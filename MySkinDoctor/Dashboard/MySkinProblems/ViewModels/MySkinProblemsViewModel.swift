@@ -35,8 +35,8 @@ class MySkinProblemsViewModel: BaseViewModel {
 	override init() {
 		// Generate tests
 		
-		allItems = [SkinProblemModel(withName: "New Skin Problem", location: "Face", problemDescription: "My son has suffered with several rashes spanning over the space of 5 months which come and go....", problemImage: nil, date: Date(), isDiagnosed: true),
-					SkinProblemModel(withName: "Skin Problem", location: "Hand", problemDescription: "My daugher has suffered with several rashes spanning over the space of 10 months which come and go....", problemImage: nil, date: Date(), isDiagnosed: false)]
+		allItems = [SkinProblemModel(withName: "New Skin Problem", location: .head, problemDescription: "My son has suffered with several rashes spanning over the space of 5 months which come and go....", problemImage: nil, date: Date(), isDiagnosed: true),
+					SkinProblemModel(withName: "Skin Problem", location: .neck, problemDescription: "My daugher has suffered with several rashes spanning over the space of 10 months which come and go....", problemImage: nil, date: Date(), isDiagnosed: false)]
 		
 		diagnosedItems = allItems.filter { (model) -> Bool in model.isDiagnosed == true }
 		undiagnosedItems = allItems.filter { (model) -> Bool in model.isDiagnosed == false }
