@@ -10,6 +10,11 @@ import Foundation
 import UIKit
 
 class AddPhotoTableViewCell: UITableViewCell {
+	
 	@IBOutlet weak var addPhotoLabel: UILabel!
 	@IBOutlet weak var addPhotoButton: UIButton!
+	
+	func configure(isFirstPhoto: Bool) {
+		addPhotoLabel.text = isFirstPhoto ? "Add photo" : "Add another photo"
+	}
 }

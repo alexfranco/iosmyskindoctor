@@ -28,6 +28,7 @@ class SkinProblemTableViewCell: UITableViewCell {
 	func configure(withViewModel viewModel: SkinProblemTableCellViewModel) {
 		locationLabel.text = viewModel.location
 		problemImageView.image = viewModel.problemImage
+		problemImageView.contentMode = .scaleAspectFill
 		descriptionLabel.text = viewModel.problemDescription
 	}
 }

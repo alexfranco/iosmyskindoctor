@@ -48,8 +48,8 @@ struct ThemeManager {
 		
 		// TextViews
 		FormTextView.appearance().font = AppStyle.defaultTextFieldFont
-		FormTextView.appearance().textColor = AppStyle.defaultTextFieldTextColor
-		FormTextView.appearance().placeholderTextColor = AppStyle.defaultTextFieldPlaceHolderColor
+		FormTextView.appearance().textColor = AppStyle.defaultTextViewTextColor
+		FormTextView.appearance().placeholderTextColor = AppStyle.defaultTextViewPlaceHolderColor
 		
 		ProfileTextField.appearance().backgroundColor = AppStyle.defaultTextFieldBackgroundColor
 		ProfileTextField.appearance().placeholderColor = AppStyle.defaultTextFieldPlaceHolderColor

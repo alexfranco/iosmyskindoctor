@@ -96,6 +96,11 @@ struct AppStyle {
 	static let locationBackgroundColor = BaseColors.amethyst
 	static let locationTextColor = UIColor.white
 	
+	// Medical History
+	
+	static let medicalHistorySaveViewBackgroundColor = BaseColors.ice
+	static let medicalHistorySaveLabelTextColor = BaseColors.hospitalGreen
+	
 	// Consult TabBar
 	static let consultTabBarTitleColor = AppColors.secondTabColor
 	
@@ -119,6 +124,10 @@ struct AppStyle {
 	
 	static let formTextFieldBorderActiveColor = AppColors.secudaryColor
 	static let formTextFieldBorderInactiveColor = BaseColors.warmGrey
+	
+	// Default TextView
+	static let defaultTextViewTextColor = BaseColors.black
+	static let defaultTextViewPlaceHolderColor = BaseColors.brownishGrey
 	
 
 	// Positive Button

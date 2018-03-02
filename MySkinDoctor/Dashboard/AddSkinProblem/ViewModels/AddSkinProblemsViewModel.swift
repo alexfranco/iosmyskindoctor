@@ -11,21 +11,27 @@ import UIKit
 
 class AddSkinProblemsViewModel: BaseViewModel {
 	
+	enum EditingStyle {
+		case insert(SkinProblemModel, IndexPath)
+		case delete(IndexPath)
+		case none
+	}
+	
+	private(set) var model: SkinProblemsModel
 	var skinProblemDescription = ""
 	
+	// Bind properties
 	var refresh: (()->())?
-	
+	var tableViewStageChanged: ((_ state: EditingStyle)->())?
 	var updateNextButton: ((_ isEnabled: Bool)->())?
-
-	var model: SkinProblemsModel!
 	
 	override init() {
-		super.init()
 		model = SkinProblemsModel()
+		super.init()
 	}
 	
 	func refreshData() {
-		updateNextButton!(self.nextButtonIsEnabled)
+		updateNextButton!(nextButtonIsEnabled)
 		refresh!()
 	}
 
@@ -35,8 +41,28 @@ class AddSkinProblemsViewModel: BaseViewModel {
 		}
 	}
 	
-	func getDataSourceCount(section: Int) -> Int {
+	private(set) var tableViewState: EditingStyle = EditingStyle.none {
+		didSet {
+			
+			switch tableViewState {
+			case let .insert(new, indexPath):
+				model.problems.insert(new, at: indexPath.row)
+			case let .delete(indexPath):
+				model.problems.remove(at: indexPath.row)
+			default:
+				break
+			}
+			
+			tableViewStageChanged!(tableViewState)
+		}
+	}
+	
+	func getDataSourceCount() -> Int {
 		return model.problems.count + 1
+	}
+	
+	func getDataSourceCountWithoutExtraAddPhoto() -> Int {
+		return model.problems.count
 	}
 	
 	func getItemAtIndexPath(indexPath: IndexPath) -> SkinProblemModel {
@@ -52,8 +78,19 @@ class AddSkinProblemsViewModel: BaseViewModel {
 		goNextSegue!()
 	}
 	
-	func addNewModel(model: SkinProblemModel) {
-		self.model.problems.append(model)
-		refreshData()
+	func insertNewModel(model: SkinProblemModel, indexPath: IndexPath) {
+		tableViewState = .insert(model, indexPath)
+		updateNextButton!(nextButtonIsEnabled)
+	}
+	
+	func appendNewModel(model: SkinProblemModel) {
+		let appendToLastIndexPath = IndexPath.init(row: getDataSourceCountWithoutExtraAddPhoto(), section: 0)
+		tableViewState = .insert(model, appendToLastIndexPath)
+		updateNextButton!(nextButtonIsEnabled)
+	}
+	
+	func removeModel(at indexPath: IndexPath) {
+		tableViewState = .delete(indexPath)
+		updateNextButton!(nextButtonIsEnabled)
 	}
 }

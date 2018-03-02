@@ -16,6 +16,7 @@ struct Segues {
 	static let goToMainStoryboardFromSignUp = "goToMainStoryboardFromSignUp"
 	static let goToSkinProblemPhotoInformationViewController = "goToSkinProblemPhotoInformationViewController"
 	static let goToSkinProblemLocationViewController = "goToSkinProblemLocationViewController"
+	static let goToMedicalHistoryViewControler = "goToMedicalHistoryViewControler"
 	static let unwindToAddSkinProblemsWithSegue = "unwindToAddSkinProblemsWithSegue"
 }
 

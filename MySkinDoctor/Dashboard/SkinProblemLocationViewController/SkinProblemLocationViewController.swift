@@ -34,7 +34,8 @@ class SkinProblemLocationViewController: FormViewController {
 		tipLabel.textColor = AppStyle.locationTextColor
 		
 		viewModelCast.isFrontSelected = frontBackSegmentedControl.selectedSegmentIndex == 0
-		
+		locationLabel.text = viewModelCast.problemLocationText
+
 		configureLocationButtons()
 		
 		self.nextButton.isEnabled = false

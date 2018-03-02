@@ -26,15 +26,15 @@ class AddSkinProblemsViewController: BindingViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		title = NSLocalizedString("addskinproblems_main_vc_title", comment: "")
-		
-		descriptionTextView.placeholder = "Please enter.... TODO"
-		
-		configureTableView()
 		photoUtils = PhotoUtils.init(inViewController: self)
 		
-		self.nextButton.isEnabled = false
+		title = NSLocalizedString("addskinproblems_main_vc_title", comment: "")
 		
+		descriptionTextView.placeholder = "Please enter the description of your skin problem, click on Add Photo"
+		
+//		self.nextButton.isEnabled = false
+		
+		configureTableView()
 		initViewModel(viewModel: AddSkinProblemsViewModel())
 	}
 	
@@ -51,6 +51,23 @@ class AddSkinProblemsViewController: BindingViewController {
 		
 		viewModelCast = viewModel as? AddSkinProblemsViewModel
 	
+		viewModelCast.tableViewStageChanged = { [weak self] (tableViewState) in
+			DispatchQueue.main.async {
+				switch tableViewState {
+				case .none:
+					self?.tableView.reloadData()
+				case let .insert(_, indexPath):
+					self?.tableView.beginUpdates()
+					self?.tableView.insertRows(at: [indexPath], with: .automatic)
+					self?.tableView.endUpdates()
+				case let .delete(indexPath):
+					self?.tableView.beginUpdates()
+					self?.tableView.deleteRows(at: [indexPath], with: .automatic)
+					self?.tableView.endUpdates()
+				}
+			}
+		}
+		
 		viewModelCast.updateNextButton = { [weak self] (isEnabled) in
 			DispatchQueue.main.async {
 				self?.nextButton.isEnabled = isEnabled
@@ -60,6 +77,13 @@ class AddSkinProblemsViewController: BindingViewController {
 		viewModelCast.refresh = { [weak self] () in
 			DispatchQueue.main.async {
 				self?.tableView.reloadData()
+			}
+		}
+		
+		viewModelCast.goNextSegue = { [weak self] () in
+			DispatchQueue.main.async {
+				// TODO if the property save medical history for next time is true, it skips this step
+				self?.performSegue(withIdentifier: Segues.goToMedicalHistoryViewControler, sender: nil)
 			}
 		}
 	}
@@ -90,7 +114,7 @@ class AddSkinProblemsViewController: BindingViewController {
 	@IBAction func unwindToAddSkinProblems(segue: UIStoryboardSegue) {
 		if let sourceViewController = segue.source as? SkinProblemLocationViewController {
 			if let viewModel = sourceViewController.viewModelCast {
-				viewModelCast.addNewModel(model: viewModel.model)
+				viewModelCast.appendNewModel(model: viewModel.model)
 			}
 		}
 	}
@@ -105,12 +129,14 @@ extension AddSkinProblemsViewController: UITableViewDelegate, UITableViewDataSou
 	}
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return viewModelCast.getDataSourceCount(section: section)
+		return viewModelCast.getDataSourceCount()
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		if viewModelCast.getDataSourceCount(section: indexPath.section) == indexPath.row + 1 {
-			return tableView.dequeueReusableCell(withIdentifier: CellId.addPhotoTableViewCellId) as! AddPhotoTableViewCell
+		if viewModelCast.getDataSourceCount() == indexPath.row + 1 {
+			let cell = tableView.dequeueReusableCell(withIdentifier: CellId.addPhotoTableViewCellId) as! AddPhotoTableViewCell
+			cell.configure(isFirstPhoto: viewModelCast.getDataSourceCount() == 1)
+			return cell
 		} else {
 			let cell = tableView.dequeueReusableCell(withIdentifier: CellId.skinProblemTableViewCellId) as! SkinProblemTableViewCell
 			let cellViewModel = SkinProblemTableCellViewModel(withModel: viewModelCast.getItemAtIndexPath(indexPath: indexPath))
@@ -122,16 +148,24 @@ extension AddSkinProblemsViewController: UITableViewDelegate, UITableViewDataSou
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		tableView.deselectRow(at: indexPath, animated: true)
 		
-		if viewModelCast.getDataSourceCount(section: indexPath.section) == indexPath.row + 1 {
+		if viewModelCast.getDataSourceCount() == indexPath.row + 1 {
 			// click on add photo
 			photoUtils.showChoosePhoto { (success, image) in
 				if success {
 					self.performSegue(withIdentifier: Segues.goToSkinProblemPhotoInformationViewController, sender: image)
 				}
 			}
-		} else {
-			// click on skin problem, go to see details
 		}
+	}
+	
+	func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+		return viewModelCast.getDataSourceCount() != indexPath.row + 1
+	}
+	
+	func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+		guard editingStyle == .delete else { return }
+		
+		viewModelCast.removeModel(at: indexPath)
 	}
 	
 }
