@@ -19,17 +19,16 @@ class MyConsultTableViewCell: UITableViewCell {
 	override func awakeFromNib() {
 		super.awakeFromNib()
 		
-		timeLabel.backgroundColor = AppStyles.consultTableViewCellTimeBackgroundColor
-		timeLabel.textColor = AppStyles.consultTableViewCellTextColor
+		timeLabel.backgroundColor = AppStyle.consultTableViewCellTimeBackgroundColor
+		timeLabel.textColor = AppStyle.consultTableViewCellTextColor
 	}
 	
 	func configure(withViewModel viewModel: MyConsultTableViewCellViewModel) {
-		nameLabel.text = viewModel.name
-		
-		dateLabel.text = viewModel.date
-		dateLabel.textColor = viewModel.isDiagnosed ? AppStyle.mySkinDiagnosedColor : AppStyle.mySkinUndiagnosedColor
-		
-		statusImageView.image = viewModel.isDiagnosed ? UIImage(named: diagnosedImageName) : UIImage(named: undiagnosedImageName)
-		descriptionLabel.text = viewModel.problemDescription
+		nameLabel.text = viewModel.displayName
+		timeLabel.text = viewModel.time
+		timeLabel.setRounded()
+		profileImageView.image = viewModel.profileImage
+		profileImageView.setRounded()
+		qualificationLabel.text = viewModel.qualification
 	}
 }

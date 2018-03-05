@@ -279,6 +279,10 @@
 		FAF2CECE204D59E40001EEAB /* MyConsultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF2CECC204D59E40001EEAB /* MyConsultsViewModel.swift */; };
 		FAF2CECF204D59E40001EEAB /* MyConsultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF2CECC204D59E40001EEAB /* MyConsultsViewModel.swift */; };
 		FAF2CED0204D59E40001EEAB /* MyConsultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF2CECC204D59E40001EEAB /* MyConsultsViewModel.swift */; };
+		FAF2CED2204D745D0001EEAB /* UILabel+RoundedBorders.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF2CED1204D745D0001EEAB /* UILabel+RoundedBorders.swift */; };
+		FAF2CED3204D7C680001EEAB /* UILabel+RoundedBorders.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF2CED1204D745D0001EEAB /* UILabel+RoundedBorders.swift */; };
+		FAF2CED4204D7C690001EEAB /* UILabel+RoundedBorders.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF2CED1204D745D0001EEAB /* UILabel+RoundedBorders.swift */; };
+		FAF2CED5204D7C690001EEAB /* UILabel+RoundedBorders.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF2CED1204D745D0001EEAB /* UILabel+RoundedBorders.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -396,6 +400,7 @@
 		FAF2CEC2204D56E00001EEAB /* MyConsultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyConsultTableViewCell.swift; sourceTree = "<group>"; };
 		FAF2CEC7204D574F0001EEAB /* MyConsultTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyConsultTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		FAF2CECC204D59E40001EEAB /* MyConsultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyConsultsViewModel.swift; sourceTree = "<group>"; };
+		FAF2CED1204D745D0001EEAB /* UILabel+RoundedBorders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+RoundedBorders.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -639,6 +644,7 @@
 				FA9760D8203B0E0A00242255 /* UIViewController+Alerts.swift */,
 				FA33265F204034B300657C8A /* UIImageView+Circular.swift */,
 				78C205CA20459D7D00F8E407 /* UINavigationController+Extentions.swift */,
+				FAF2CED1204D745D0001EEAB /* UILabel+RoundedBorders.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -1338,6 +1344,7 @@
 				FAD6ADC220446D310050C1A9 /* AddPhotoTableViewCellViewModel.swift in Sources */,
 				FA3326472040220200657C8A /* MySkinProblemsTableCellViewModel.swift in Sources */,
 				7849CC9F203EE15A0030A7B1 /* RegistrationViewModel.swift in Sources */,
+				FAF2CED3204D7C680001EEAB /* UILabel+RoundedBorders.swift in Sources */,
 				78B9E538203C4CD70054CAD3 /* NoBackgroundButton.swift in Sources */,
 				78B9E539203C4CD70054CAD3 /* ProgressBarViewController.swift in Sources */,
 				78B9E53A203C4CD70054CAD3 /* LoginViewController.swift in Sources */,
@@ -1406,6 +1413,7 @@
 				FA3326462040220200657C8A /* MySkinProblemsTableCellViewModel.swift in Sources */,
 				7849CC9E203EE15A0030A7B1 /* RegistrationViewModel.swift in Sources */,
 				78C205CB20459D7D00F8E407 /* UINavigationController+Extentions.swift in Sources */,
+				FAF2CED2204D745D0001EEAB /* UILabel+RoundedBorders.swift in Sources */,
 				780F70262035AABB00D96601 /* NoBackgroundButton.swift in Sources */,
 				FADC3355204D48BA0065A7EB /* SkinProblemThankYouViewController.swift in Sources */,
 				780F70192035885E00D96601 /* ProgressBarViewController.swift in Sources */,
@@ -1473,6 +1481,7 @@
 				FA33268820440EA400657C8A /* PhotoUtils.swift in Sources */,
 				FA3326B020441C8500657C8A /* ProfileTextField.swift in Sources */,
 				FADC334C204706DC0065A7EB /* SkinProblemLocationViewController.swift in Sources */,
+				FAF2CED4204D7C690001EEAB /* UILabel+RoundedBorders.swift in Sources */,
 				FA33264220401A8C00657C8A /* MySkinProblemsViewController.swift in Sources */,
 				FA3326532040287900657C8A /* BindingViewController.swift in Sources */,
 				78FFF03120496E340013240D /* MedicalHistoryViewModel.swift in Sources */,
@@ -1540,6 +1549,7 @@
 				FA33268920440EA400657C8A /* PhotoUtils.swift in Sources */,
 				FA3326B120441C8500657C8A /* ProfileTextField.swift in Sources */,
 				FADC334D204706DC0065A7EB /* SkinProblemLocationViewController.swift in Sources */,
+				FAF2CED5204D7C690001EEAB /* UILabel+RoundedBorders.swift in Sources */,
 				FA33264320401A8C00657C8A /* MySkinProblemsViewController.swift in Sources */,
 				FA3326542040287900657C8A /* BindingViewController.swift in Sources */,
 				78FFF03220496E340013240D /* MedicalHistoryViewModel.swift in Sources */,

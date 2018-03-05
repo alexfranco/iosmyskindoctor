@@ -31,7 +31,10 @@ class MyConsultTableViewCellViewModel: BaseViewModel {
 		let df = DateFormatter()
 		df.dateFormat = dateFormatString
 
-		self.time = df.stringFromDate(model.date)
+		if let date = model.date {
+			self.time = df.string(from: date)
+		}
+	
 		self.qualification = model.qualification
 	}
 }

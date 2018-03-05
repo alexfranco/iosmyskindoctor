@@ -14,25 +14,25 @@ import UIKit
 
 class MyConsultsViewController: BindingViewController {
 	
-	@IBOutlet weak var diagnosesSegmentedControl: UISegmentedControl!
+	@IBOutlet weak var segmentedControl: UISegmentedControl!
 	@IBOutlet weak var tableView: UITableView!
 	
-	var viewModelCast: MySkinProblemsViewModel!
+	var viewModelCast: MyConsultsViewModel!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		title = NSLocalizedString("myskinproblems_main_vc_title", comment: "")
-		
-		diagnosesSegmentedControl.setTitle(NSLocalizedString("myskinproblems_segmented_all", comment: ""), forSegmentAt: MySkinProblemsViewModel.DiagnosesSegmentedEnum.all.rawValue)
-		diagnosesSegmentedControl.setTitle(NSLocalizedString("myskinproblems_segmented_undiagnosed", comment: ""), forSegmentAt: MySkinProblemsViewModel.DiagnosesSegmentedEnum.undiagnosed.rawValue)
-		diagnosesSegmentedControl.setTitle(NSLocalizedString("myskinproblems_segmented_diagnosed", comment: ""), forSegmentAt: MySkinProblemsViewModel.DiagnosesSegmentedEnum.diagnosed.rawValue)
-		
+//		title = NSLocalizedString("myskinproblems_main_vc_title", comment: "")
+//
+//		diagnosesSegmentedControl.setTitle(NSLocalizedString("myskinproblems_segmented_all", comment: ""), forSegmentAt: MySkinProblemsViewModel.DiagnosesSegmentedEnum.all.rawValue)
+//		diagnosesSegmentedControl.setTitle(NSLocalizedString("myskinproblems_segmented_undiagnosed", comment: ""), forSegmentAt: MySkinProblemsViewModel.DiagnosesSegmentedEnum.undiagnosed.rawValue)
+//		diagnosesSegmentedControl.setTitle(NSLocalizedString("myskinproblems_segmented_diagnosed", comment: ""), forSegmentAt: MySkinProblemsViewModel.DiagnosesSegmentedEnum.diagnosed.rawValue)
+//
 		navigationController?.setBackgroundColorWithoutShadowImage(bgColor: AppStyle.defaultNavigationBarColor, titleColor: AppStyle.defaultNavigationBarTitleColor)
 		
 		configureTableView()
 		
-		initViewModel(viewModel: MySkinProblemsViewModel())
+		initViewModel(viewModel: MyConsultsViewModel())
 	}
 	
 	// MARK: Helpers
@@ -40,7 +40,7 @@ class MyConsultsViewController: BindingViewController {
 	override func initViewModel(viewModel: BaseViewModel) {
 		super.initViewModel(viewModel: viewModel)
 		
-		viewModelCast = viewModel as! MySkinProblemsViewModel
+		viewModelCast = viewModel as! MyConsultsViewModel
 		
 		viewModelCast.refresh = { [weak self] () in
 			DispatchQueue.main.async {
@@ -70,8 +70,8 @@ class MyConsultsViewController: BindingViewController {
 	
 	// MARK: IBAction
 	
-	@IBAction func onDiagnosesSegmentedControlValueChanged(_ sender: Any) {
-		viewModelCast.selectedSegmented = MySkinProblemsViewModel.DiagnosesSegmentedEnum(rawValue: self.diagnosesSegmentedControl.selectedSegmentIndex)!
+	@IBAction func onSegmentedControlValueChanged(_ sender: Any) {
+//		viewModelCast.selectedSegmented = MySkinProblemsViewModel.DiagnosesSegmentedEnum(rawValue: self.diagnosesSegmentedControl.selectedSegmentIndex)!
 	}
 	
 	
@@ -115,16 +115,16 @@ extension MyConsultsViewController: UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
 		let headerView = (view as! UITableViewHeaderFooterView)
 		
-		headerView.backgroundView?.backgroundColor = viewModelCast.getHeaderBackgroundColor(section: section)
-		headerView.textLabel?.textColor = AppStyle.mySkinTableSectionTextColor
-		headerView.textLabel?.font = AppStyle.mySkinTableSectionTextFont
+		headerView.backgroundView?.backgroundColor = AppStyle.consultTableViewHeaderBGColor
+		headerView.textLabel?.textColor = AppStyle.consultTableViewCellTextColor
+		headerView.textLabel?.font = AppStyle.consultTableSectionTextFont
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: CellId.mySkinProblemsCellId) as! MySkinProblemsTableViewCell
+		let cell = tableView.dequeueReusableCell(withIdentifier: CellId.myConsultTableViewCellId) as! MyConsultTableViewCell
 		
 		let viewModel = viewModelCast.getItemAtIndexPath(indexPath: indexPath)
-		cell.configure(withViewModel: MySkinProblemsTableCellViewModel(withModel: viewModel))
+		cell.configure(withViewModel: MyConsultTableViewCellViewModel(model: viewModel))
 		
 		return cell
 	}

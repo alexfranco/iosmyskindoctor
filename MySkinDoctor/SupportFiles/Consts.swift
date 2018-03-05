@@ -35,5 +35,6 @@ struct CellId {
 	static let mySkinProblemsCellId = "MySkinProblemsCellId"
 	static let addPhotoTableViewCellId = "AddPhotoTableViewCellId"
 	static let skinProblemTableViewCellId = "SkinProblemTableViewCellId"
+	static let myConsultTableViewCellId = "MyConsultTableViewCellId"
 }
 

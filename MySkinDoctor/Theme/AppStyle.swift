@@ -111,6 +111,7 @@ struct AppStyle {
 	static let consultTableViewHeaderTextcolor = BaseColors.white
 	static let consultTableViewCellTimeBackgroundColor = AppColors.secondTabColor
 	static let consultTableViewCellTextColor = BaseColors.white
+	static let consultTableSectionTextFont = AppFonts.defaultBoldFont
 
 	// MyProfile TabBar	
 	static let profileBarTitleColor = AppColors.thirdTabColor
