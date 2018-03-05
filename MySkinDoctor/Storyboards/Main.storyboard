@@ -19,7 +19,77 @@
                     <view key="view" contentMode="scaleToFill" id="fH3-o4-q3K">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XGW-ax-xgg">
+                                <rect key="frame" x="20" y="132" width="335" height="466"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MySkinProblemsCellId" rowHeight="91" id="Jc6-9d-6e4" customClass="MySkinProblemsTableViewCell" customModule="MySkinDoctor" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="335" height="91"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jc6-9d-6e4" id="VjB-FQ-G0Z">
+                                            <rect key="frame" x="0.0" y="0.0" width="302" height="90.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Skin Problem" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fom-sM-JPa" customClass="TitleLabel" customModule="MySkinDoctor" customModuleProvider="target">
+                                                    <rect key="frame" x="35" y="11" width="239" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="diagnosed" translatesAutoresizingMaskIntoConstraints="NO" id="dRl-6E-2E0">
+                                                    <rect key="frame" x="0.0" y="35.5" width="20" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="IF4-lu-dzE"/>
+                                                        <constraint firstAttribute="width" constant="20" id="M5c-Bb-E7P"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="My son had" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="akv-Mw-POJ" customClass="GrayLabel" customModule="MySkinDoctor" customModuleProvider="target">
+                                                    <rect key="frame" x="35" y="59" width="239" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="dRl-6E-2E0" firstAttribute="centerY" secondItem="VjB-FQ-G0Z" secondAttribute="centerY" id="0Gf-Wa-M1I"/>
+                                                <constraint firstItem="akv-Mw-POJ" firstAttribute="bottom" secondItem="VjB-FQ-G0Z" secondAttribute="bottomMargin" id="2ca-J4-Jan"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Fom-sM-JPa" secondAttribute="trailing" constant="20" id="RgW-75-xPy"/>
+                                                <constraint firstItem="dRl-6E-2E0" firstAttribute="leading" secondItem="VjB-FQ-G0Z" secondAttribute="leading" id="XFb-eM-V4c"/>
+                                                <constraint firstItem="Fom-sM-JPa" firstAttribute="top" secondItem="VjB-FQ-G0Z" secondAttribute="topMargin" id="tHj-N7-GhN"/>
+                                                <constraint firstItem="Fom-sM-JPa" firstAttribute="leading" secondItem="VjB-FQ-G0Z" secondAttribute="leadingMargin" constant="20" id="vIG-Sv-GuW"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="descriptionLabel" destination="akv-Mw-POJ" id="wsL-M2-cHP"/>
+                                            <outlet property="nameLabel" destination="Fom-sM-JPa" id="VBP-UD-9XF"/>
+                                            <outlet property="statusImageView" destination="dRl-6E-2E0" id="00f-gl-fk8"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="8pX-cx-JOp">
+                                <rect key="frame" x="20" y="84" width="335" height="29"/>
+                                <segments>
+                                    <segment title="All"/>
+                                    <segment title="Upcoming"/>
+                                    <segment title="History"/>
+                                </segments>
+                                <connections>
+                                    <action selector="onDiagnosesSegmentedControlValueChanged:" destination="W0a-aH-PFa" eventType="valueChanged" id="6zp-2N-jsV"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="10g-25-XVF" firstAttribute="trailing" secondItem="8pX-cx-JOp" secondAttribute="trailing" constant="20" id="15f-hU-cFL"/>
+                            <constraint firstItem="10g-25-XVF" firstAttribute="trailing" secondItem="XGW-ax-xgg" secondAttribute="trailing" constant="20" id="XFC-WD-6KR"/>
+                            <constraint firstItem="8pX-cx-JOp" firstAttribute="top" secondItem="10g-25-XVF" secondAttribute="top" constant="20" id="dOX-8r-37J"/>
+                            <constraint firstItem="XGW-ax-xgg" firstAttribute="leading" secondItem="10g-25-XVF" secondAttribute="leading" constant="20" id="f7D-Sd-xLX"/>
+                            <constraint firstItem="XGW-ax-xgg" firstAttribute="top" secondItem="8pX-cx-JOp" secondAttribute="bottom" constant="20" id="jMi-9f-FmQ"/>
+                            <constraint firstItem="10g-25-XVF" firstAttribute="bottom" secondItem="XGW-ax-xgg" secondAttribute="bottom" constant="20" id="mUp-lG-2w4"/>
+                            <constraint firstItem="8pX-cx-JOp" firstAttribute="leading" secondItem="10g-25-XVF" secondAttribute="leading" constant="20" id="oAg-B3-PXT"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="10g-25-XVF"/>
                     </view>
                     <navigationItem key="navigationItem" id="aBO-BM-RCc"/>

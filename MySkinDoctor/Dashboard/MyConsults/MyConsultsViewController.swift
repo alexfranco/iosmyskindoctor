@@ -1,15 +1,18 @@
 //
-//  MySkinProblemsViewController.swift
+//  MyConsultsViewController.swift
 //  MySkinDoctor
 //
-//  Created by Alex on 23/02/2018.
+//  Created by Alex on 05/03/2018.
 //  Copyright © 2018 TouchSoft. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class MySkinProblemsViewController: BindingViewController {
+import Foundation
+import UIKit
+
+class MyConsultsViewController: BindingViewController {
 	
 	@IBOutlet weak var diagnosesSegmentedControl: UISegmentedControl!
 	@IBOutlet weak var tableView: UITableView!
@@ -79,7 +82,7 @@ class MySkinProblemsViewController: BindingViewController {
 	
 }
 
-extension MySkinProblemsViewController: UITableViewDelegate, UITableViewDataSource {
+extension MyConsultsViewController: UITableViewDelegate, UITableViewDataSource {
 	
 	// MARK: UITableView
 	
@@ -126,4 +129,3 @@ extension MySkinProblemsViewController: UITableViewDelegate, UITableViewDataSour
 		return cell
 	}
 }
-

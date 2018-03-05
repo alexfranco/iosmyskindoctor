@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class SkinProblemModel : NSObject {
+class SkinProblemModel: NSObject {
 	
 	enum LocationProblemType: Int, CustomStringConvertible {
 		case none
