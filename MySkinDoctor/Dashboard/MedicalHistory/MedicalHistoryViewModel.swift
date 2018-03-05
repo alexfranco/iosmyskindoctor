@@ -27,6 +27,10 @@ class MedicalHistoryViewModel: BaseViewModel {
 		model?.hasMedication = hasMedication
 		model?.hasPastHistoryProblems = hasPastHistoryProblems
 		// TODO saveMedicalHistory
+		
+		let defaults = UserDefaults.standard
+		defaults.set(true, forKey: UserDefaultConsts.isUserLoggedIn)
+		
 		goNextSegue!()
 	}
 }

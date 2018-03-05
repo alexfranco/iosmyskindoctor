@@ -7,7 +7,6 @@
 //
 
 import Foundation
-
 struct Consts {
 }
 
@@ -17,7 +16,10 @@ struct Segues {
 	static let goToSkinProblemPhotoInformationViewController = "goToSkinProblemPhotoInformationViewController"
 	static let goToSkinProblemLocationViewController = "goToSkinProblemLocationViewController"
 	static let goToMedicalHistoryViewControler = "goToMedicalHistoryViewControler"
+	static let goToSkinProblemThankYouViewControllerFromMedicalHistory = "goToSkinProblemThankYouViewControllerFromMedicalHistory"
+	static let goToSkinProblemThankYouViewControllerFromAddSkinProblem = "goToSkinProblemThankYouViewControllerFromAddSkinProblem"
 	static let unwindToAddSkinProblemsWithSegue = "unwindToAddSkinProblemsWithSegue"
+	
 }
 
 struct Storyboard {
@@ -26,7 +28,7 @@ struct Storyboard {
 }
 
 struct UserDefaultConsts {
-	static let isUserLoggedIn = "isUserLoggedIn"
+	static let isUserLoggedIn = "isUserLoggedIn"	
 }
 
 struct CellId {

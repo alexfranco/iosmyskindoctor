@@ -43,7 +43,7 @@ class MedicalHistoryViewControler: FormViewController {
 		
 		initViewModel(viewModel: MedicalHistoryViewModel())
 	}
-	
+		
 	override func initViewModel(viewModel: BaseViewModel) {
 		super.initViewModel(viewModel: viewModel)
 		
@@ -51,7 +51,7 @@ class MedicalHistoryViewControler: FormViewController {
 		
 		viewModelCast.goNextSegue = { [] () in
 			DispatchQueue.main.async {
-				//self.performSegue(withIdentifier: Segues.unwindToAddSkinProblemsWithSegue, sender: nil)
+				self.performSegue(withIdentifier: Segues.goToSkinProblemThankYouViewControllerFromMedicalHistory, sender: nil)
 			}
 		}
 	}

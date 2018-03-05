@@ -84,6 +84,7 @@ class AddSkinProblemsViewController: BindingViewController {
 			DispatchQueue.main.async {
 				// TODO if the property save medical history for next time is true, it skips this step
 				self?.performSegue(withIdentifier: Segues.goToMedicalHistoryViewControler, sender: nil)
+//				self?.performSegue(withIdentifier: Segues.goToSkinProblemThankYouViewControllerFromAddSkinProblem, sender: nil)
 			}
 		}
 	}

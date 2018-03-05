@@ -101,6 +101,9 @@ struct AppStyle {
 	static let medicalHistorySaveViewBackgroundColor = BaseColors.ice
 	static let medicalHistorySaveLabelTextColor = BaseColors.hospitalGreen
 	
+	static let thankYouBackground = BaseColors.hospitalGreen
+	static let thankYouTextColor = BaseColors.white
+	
 	// Consult TabBar
 	static let consultTabBarTitleColor = AppColors.secondTabColor
 	
