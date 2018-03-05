@@ -27,8 +27,16 @@ class MyConsultTableViewCell: UITableViewCell {
 		nameLabel.text = viewModel.displayName
 		timeLabel.text = viewModel.time
 		timeLabel.setRounded()
-		profileImageView.image = viewModel.profileImage
+		profileImageView.image = viewModel.profileImage == nil ? UIImage(named: "logo")! : viewModel.profileImage!
 		profileImageView.setRounded()
 		qualificationLabel.text = viewModel.qualification
+		
+		if viewModel.isInThePast {
+			timeLabel.backgroundColor = AppStyle.consultTableViewCellTimeBackgroundColorDisabled
+			timeLabel.textColor = AppStyle.consultTableViewCellTextColorDisabled
+		} else {
+			timeLabel.backgroundColor = AppStyle.consultTableViewCellTimeBackgroundColor
+			timeLabel.textColor = AppStyle.consultTableViewCellTextColor
+		}
 	}
 }

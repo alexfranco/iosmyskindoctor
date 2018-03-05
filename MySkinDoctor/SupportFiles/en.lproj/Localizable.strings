@@ -45,4 +45,9 @@
 "addskinproblems_main_vc_title" = "Add Skin Problem";
 "skinproblem_main_vc_title" = "Photo Information";
 
+"myconsults_main_vc_title" = "My Skin Problems";
+
+"myconsults_segmented_all" = "All";
+"myconsults_segmented_upcoming" = "Upcoming";
+"myconsults_segmented_history" = "History";
 

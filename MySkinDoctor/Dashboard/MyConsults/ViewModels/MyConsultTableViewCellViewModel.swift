@@ -17,6 +17,8 @@ class MyConsultTableViewCellViewModel: BaseViewModel {
 	var qualification: String?
 	var dateFormatString = "HH:ss"
 	
+	var isInThePast = false
+	
 	required init(model: ConsultModel) {
 		super.init()
 		self.model = model
@@ -30,12 +32,12 @@ class MyConsultTableViewCellViewModel: BaseViewModel {
 
 		let df = DateFormatter()
 		df.dateFormat = dateFormatString
-
-		if let date = model.date {
-			self.time = df.string(from: date)
-		}
 	
-		self.qualification = model.qualification
+		self.time = df.string(from: model.date)
+		qualification = model.qualification
+		
+		isInThePast = model.date < Date()
 	}
+	
 }
 

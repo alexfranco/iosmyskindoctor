@@ -29,9 +29,6 @@
 		7849CCA9203EE3E60030A7B1 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7849CCA7203EE3E60030A7B1 /* BaseViewModel.swift */; };
 		7849CCAA203EE3E60030A7B1 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7849CCA7203EE3E60030A7B1 /* BaseViewModel.swift */; };
 		7849CCAB203EE3E60030A7B1 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7849CCA7203EE3E60030A7B1 /* BaseViewModel.swift */; };
-		784DE13420454968000D4013 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6ADB420442C130050C1A9 /* DateUtils.swift */; };
-		784DE13520454969000D4013 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6ADB420442C130050C1A9 /* DateUtils.swift */; };
-		784DE13620454969000D4013 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6ADB420442C130050C1A9 /* DateUtils.swift */; };
 		788B9370204845C1001605E6 /* SkinProblemsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B936F204845C1001605E6 /* SkinProblemsModel.swift */; };
 		788B9371204848E8001605E6 /* SkinProblemsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B936F204845C1001605E6 /* SkinProblemsModel.swift */; };
 		788B9372204848E8001605E6 /* SkinProblemsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B936F204845C1001605E6 /* SkinProblemsModel.swift */; };
@@ -187,6 +184,10 @@
 		FA3326CB20441C8500657C8A /* GrayLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3326AD20441C8500657C8A /* GrayLabel.swift */; };
 		FA3326CC20441C8500657C8A /* GrayLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3326AD20441C8500657C8A /* GrayLabel.swift */; };
 		FA3326CD20441C8500657C8A /* GrayLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3326AD20441C8500657C8A /* GrayLabel.swift */; };
+		FA6130C0204D9A0600731495 /* Date+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6130BF204D9A0600731495 /* Date+Extentions.swift */; };
+		FA6130C1204D9A0600731495 /* Date+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6130BF204D9A0600731495 /* Date+Extentions.swift */; };
+		FA6130C2204D9A0600731495 /* Date+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6130BF204D9A0600731495 /* Date+Extentions.swift */; };
+		FA6130C3204D9A0600731495 /* Date+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6130BF204D9A0600731495 /* Date+Extentions.swift */; };
 		FA9760D6203AFBD200242255 /* LoginResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9760D5203AFBD200242255 /* LoginResponseModel.swift */; };
 		FA9760D9203B0E0A00242255 /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9760D8203B0E0A00242255 /* UIViewController+Alerts.swift */; };
 		FA9760DA203B0E0A00242255 /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9760D8203B0E0A00242255 /* UIViewController+Alerts.swift */; };
@@ -201,7 +202,6 @@
 		FAC1AF112036FCE200547BBC /* RegistrationResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC1AF102036FCE200547BBC /* RegistrationResponseModel.swift */; };
 		FAC1AF122036FCE200547BBC /* RegistrationResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC1AF102036FCE200547BBC /* RegistrationResponseModel.swift */; };
 		FAC1AF132036FCE200547BBC /* RegistrationResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC1AF102036FCE200547BBC /* RegistrationResponseModel.swift */; };
-		FAD6ADB520442C130050C1A9 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6ADB420442C130050C1A9 /* DateUtils.swift */; };
 		FAD6ADB720445EB20050C1A9 /* AddPhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6ADB620445EB20050C1A9 /* AddPhotoTableViewCell.swift */; };
 		FAD6ADB820445EB20050C1A9 /* AddPhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6ADB620445EB20050C1A9 /* AddPhotoTableViewCell.swift */; };
 		FAD6ADB920445EB20050C1A9 /* AddPhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6ADB620445EB20050C1A9 /* AddPhotoTableViewCell.swift */; };
@@ -362,13 +362,13 @@
 		FA3326AB20441C8500657C8A /* BoldLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoldLabel.swift; sourceTree = "<group>"; };
 		FA3326AC20441C8500657C8A /* TitleLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleLabel.swift; sourceTree = "<group>"; };
 		FA3326AD20441C8500657C8A /* GrayLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrayLabel.swift; sourceTree = "<group>"; };
+		FA6130BF204D9A0600731495 /* Date+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extentions.swift"; sourceTree = "<group>"; };
 		FA9760D5203AFBD200242255 /* LoginResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseModel.swift; sourceTree = "<group>"; };
 		FA9760D8203B0E0A00242255 /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
 		FA9760DC203B0EDC00242255 /* BaseResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponseModel.swift; sourceTree = "<group>"; };
 		FA9760E2203B29D600242255 /* Validations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validations.swift; sourceTree = "<group>"; };
 		FAC1AF0D2036F46F00547BBC /* ApiUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiUtils.swift; sourceTree = "<group>"; };
 		FAC1AF102036FCE200547BBC /* RegistrationResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationResponseModel.swift; sourceTree = "<group>"; };
-		FAD6ADB420442C130050C1A9 /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		FAD6ADB620445EB20050C1A9 /* AddPhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoTableViewCell.swift; sourceTree = "<group>"; };
 		FAD6ADBB204461050050C1A9 /* AddSkinProblemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSkinProblemsViewController.swift; sourceTree = "<group>"; };
 		FAD6ADC020446D310050C1A9 /* AddPhotoTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoTableViewCellViewModel.swift; sourceTree = "<group>"; };
@@ -481,7 +481,6 @@
 				FA9760E2203B29D600242255 /* Validations.swift */,
 				78E44AA5203EBE5C0094F3AF /* PasswordStrength.swift */,
 				FA33268520440EA400657C8A /* PhotoUtils.swift */,
-				FAD6ADB420442C130050C1A9 /* DateUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -645,6 +644,7 @@
 				FA33265F204034B300657C8A /* UIImageView+Circular.swift */,
 				78C205CA20459D7D00F8E407 /* UINavigationController+Extentions.swift */,
 				FAF2CED1204D745D0001EEAB /* UILabel+RoundedBorders.swift */,
+				FA6130BF204D9A0600731495 /* Date+Extentions.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -1337,7 +1337,6 @@
 				FA3326BF20441C8500657C8A /* FormTextField.swift in Sources */,
 				78B9E535203C4CD70054CAD3 /* Validations.swift in Sources */,
 				78B9E536203C4CD70054CAD3 /* ForgotPasswordResposeModel.swift in Sources */,
-				784DE13420454968000D4013 /* DateUtils.swift in Sources */,
 				78C205CC20459D7D00F8E407 /* UINavigationController+Extentions.swift in Sources */,
 				FADC3356204D48BA0065A7EB /* SkinProblemThankYouViewController.swift in Sources */,
 				FAD6ADB820445EB20050C1A9 /* AddPhotoTableViewCell.swift in Sources */,
@@ -1378,6 +1377,7 @@
 				FAF2CEC9204D574F0001EEAB /* MyConsultTableViewCellViewModel.swift in Sources */,
 				FA3326672040351500657C8A /* ProfileViewController.swift in Sources */,
 				FADC33342046BF2F0065A7EB /* SkinProblemModel.swift in Sources */,
+				FA6130C1204D9A0600731495 /* Date+Extentions.swift in Sources */,
 				FA3326CB20441C8500657C8A /* GrayLabel.swift in Sources */,
 				FA3326C720441C8500657C8A /* TitleLabel.swift in Sources */,
 				78B9E543203C4CD70054CAD3 /* UIViewController+Alerts.swift in Sources */,
@@ -1440,7 +1440,6 @@
 				78FFF02F20496E340013240D /* MedicalHistoryViewModel.swift in Sources */,
 				78B9E516203C2B920054CAD3 /* ForgotPasswordViewController.swift in Sources */,
 				FADC334A204706DC0065A7EB /* SkinProblemLocationViewController.swift in Sources */,
-				FAD6ADB520442C130050C1A9 /* DateUtils.swift in Sources */,
 				FA3326C220441C8500657C8A /* BoldLabel.swift in Sources */,
 				FAD6ADC120446D310050C1A9 /* AddPhotoTableViewCellViewModel.swift in Sources */,
 				FA33264C2040240400657C8A /* MySkinProblemsTableViewCell.swift in Sources */,
@@ -1453,6 +1452,7 @@
 				FAF2CEC8204D574F0001EEAB /* MyConsultTableViewCellViewModel.swift in Sources */,
 				FA3326662040351500657C8A /* ProfileViewController.swift in Sources */,
 				FADC33332046BF2F0065A7EB /* SkinProblemModel.swift in Sources */,
+				FA6130C0204D9A0600731495 /* Date+Extentions.swift in Sources */,
 				FA3326CA20441C8500657C8A /* GrayLabel.swift in Sources */,
 				FA3326C620441C8500657C8A /* TitleLabel.swift in Sources */,
 				FA9760D9203B0E0A00242255 /* UIViewController+Alerts.swift in Sources */,
@@ -1480,6 +1480,7 @@
 				FAF2CEC0204D564C0001EEAB /* ConsultModel.swift in Sources */,
 				FA33268820440EA400657C8A /* PhotoUtils.swift in Sources */,
 				FA3326B020441C8500657C8A /* ProfileTextField.swift in Sources */,
+				FA6130C2204D9A0600731495 /* Date+Extentions.swift in Sources */,
 				FADC334C204706DC0065A7EB /* SkinProblemLocationViewController.swift in Sources */,
 				FAF2CED4204D7C690001EEAB /* UILabel+RoundedBorders.swift in Sources */,
 				FA33264220401A8C00657C8A /* MySkinProblemsViewController.swift in Sources */,
@@ -1492,7 +1493,6 @@
 				FAC1AF122036FCE200547BBC /* RegistrationResponseModel.swift in Sources */,
 				FAD6ADBE204461050050C1A9 /* AddSkinProblemsViewController.swift in Sources */,
 				FAE733F520344AE200898E65 /* LoginViewController.swift in Sources */,
-				784DE13520454969000D4013 /* DateUtils.swift in Sources */,
 				FADC333B2046DA9A0065A7EB /* SkinProblemPhotoInformationViewController.swift in Sources */,
 				78B9E525203C48FC0054CAD3 /* ApiUtils.swift in Sources */,
 				FADC33412046E8C80065A7EB /* FormTextView.swift in Sources */,
@@ -1548,6 +1548,7 @@
 				FAF2CEC1204D564C0001EEAB /* ConsultModel.swift in Sources */,
 				FA33268920440EA400657C8A /* PhotoUtils.swift in Sources */,
 				FA3326B120441C8500657C8A /* ProfileTextField.swift in Sources */,
+				FA6130C3204D9A0600731495 /* Date+Extentions.swift in Sources */,
 				FADC334D204706DC0065A7EB /* SkinProblemLocationViewController.swift in Sources */,
 				FAF2CED5204D7C690001EEAB /* UILabel+RoundedBorders.swift in Sources */,
 				FA33264320401A8C00657C8A /* MySkinProblemsViewController.swift in Sources */,
@@ -1560,7 +1561,6 @@
 				FAC1AF132036FCE200547BBC /* RegistrationResponseModel.swift in Sources */,
 				FAD6ADBF204461050050C1A9 /* AddSkinProblemsViewController.swift in Sources */,
 				FAE733F620344AE200898E65 /* LoginViewController.swift in Sources */,
-				784DE13620454969000D4013 /* DateUtils.swift in Sources */,
 				FADC333C2046DA9A0065A7EB /* SkinProblemPhotoInformationViewController.swift in Sources */,
 				78B9E526203C48FC0054CAD3 /* ApiUtils.swift in Sources */,
 				FADC33422046E8C80065A7EB /* FormTextView.swift in Sources */,

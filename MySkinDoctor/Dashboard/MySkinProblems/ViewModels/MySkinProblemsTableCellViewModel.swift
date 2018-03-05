@@ -31,6 +31,6 @@ class MySkinProblemsTableCellViewModel: NSObject {
 		let dateFormater = DateFormatter()
 		dateFormater.dateFormat = dateFormat
 		
-		return (DateUtils.getOrdinaryDay(date: date) + " " + dateFormater.string(from: date)).uppercased()
+		return (date.ordinal() + " " + dateFormater.string(from: date)).uppercased()
 	}
 }

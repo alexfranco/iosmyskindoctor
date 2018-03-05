@@ -22,12 +22,12 @@ class MyConsultsViewController: BindingViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-//		title = NSLocalizedString("myskinproblems_main_vc_title", comment: "")
-//
-//		diagnosesSegmentedControl.setTitle(NSLocalizedString("myskinproblems_segmented_all", comment: ""), forSegmentAt: MySkinProblemsViewModel.DiagnosesSegmentedEnum.all.rawValue)
-//		diagnosesSegmentedControl.setTitle(NSLocalizedString("myskinproblems_segmented_undiagnosed", comment: ""), forSegmentAt: MySkinProblemsViewModel.DiagnosesSegmentedEnum.undiagnosed.rawValue)
-//		diagnosesSegmentedControl.setTitle(NSLocalizedString("myskinproblems_segmented_diagnosed", comment: ""), forSegmentAt: MySkinProblemsViewModel.DiagnosesSegmentedEnum.diagnosed.rawValue)
-//
+		title = NSLocalizedString("myconsults_main_vc_title", comment: "")
+
+		segmentedControl.setTitle(NSLocalizedString("myconsults_segmented_all", comment: ""), forSegmentAt: MyConsultsViewModel.ConsultSegmentedEnum.all.rawValue)
+		segmentedControl.setTitle(NSLocalizedString("myconsults_segmented_upcoming", comment: ""), forSegmentAt: MyConsultsViewModel.ConsultSegmentedEnum.upcoming.rawValue)
+		segmentedControl.setTitle(NSLocalizedString("myconsults_segmented_history", comment: ""), forSegmentAt: MyConsultsViewModel.ConsultSegmentedEnum.history.rawValue)
+
 		navigationController?.setBackgroundColorWithoutShadowImage(bgColor: AppStyle.defaultNavigationBarColor, titleColor: AppStyle.defaultNavigationBarTitleColor)
 		
 		configureTableView()
@@ -71,13 +71,13 @@ class MyConsultsViewController: BindingViewController {
 	// MARK: IBAction
 	
 	@IBAction func onSegmentedControlValueChanged(_ sender: Any) {
-//		viewModelCast.selectedSegmented = MySkinProblemsViewModel.DiagnosesSegmentedEnum(rawValue: self.diagnosesSegmentedControl.selectedSegmentIndex)!
+		viewModelCast.selectedSegmented = MyConsultsViewModel.ConsultSegmentedEnum(rawValue: self.segmentedControl.selectedSegmentIndex)!
 	}
 	
 	
 	// MARK: Segues
 	
-	@IBAction func unwindToMySkinProblems(segue:UIStoryboardSegue) {
+	@IBAction func unwindToMyConsults(segue:UIStoryboardSegue) {
 	}
 	
 }
@@ -115,8 +115,8 @@ extension MyConsultsViewController: UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
 		let headerView = (view as! UITableViewHeaderFooterView)
 		
-		headerView.backgroundView?.backgroundColor = AppStyle.consultTableViewHeaderBGColor
-		headerView.textLabel?.textColor = AppStyle.consultTableViewCellTextColor
+		headerView.backgroundView?.backgroundColor = viewModelCast.getHeaderBackgroundColor(section: section)
+		headerView.textLabel?.textColor = viewModelCast.getHeaderTextColor(section: section)
 		headerView.textLabel?.font = AppStyle.consultTableSectionTextFont
 	}
 	

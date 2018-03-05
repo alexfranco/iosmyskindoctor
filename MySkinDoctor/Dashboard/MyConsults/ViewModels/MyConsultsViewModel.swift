@@ -19,7 +19,9 @@ class MyConsultsViewModel: BaseViewModel {
 		case history
 	}
 	
-	var sectionsInTable = [String]()
+	var sectionsInTableAll = [String]()
+	var sectionsInTableUpcoming = [String]()
+	var sectionsInTableHistory = [String]()
 	
 	var refresh: (()->())?
 	
@@ -38,27 +40,41 @@ class MyConsultsViewModel: BaseViewModel {
 		dateFormater.dateFormat = "MMMM, yyyy"
 		
 		// Generate tests
-		allItems = [ConsultModel(profileImage: nil, firstName: "Dr Grey", lastName: "Yellow", date: Date(), qualification: "none")]
+		allItems = [ConsultModel(profileImage: nil, firstName: "Dr Yellow", lastName: "Kun", date: Date().adjust(.day, offset: -6), qualification: "Past"),
+					ConsultModel(profileImage: nil, firstName: "Dr Red", lastName: "Sama", date: Date().adjust(.day, offset: 6), qualification: "Upcoming")]
 		
-		createDateSections(models: allItems)
+		allItems.sort { (modelA, modelB) -> Bool in
+			return modelA.date > modelB.date
+		}
+		
+		upcomingItems = allItems.filter { (model) -> Bool in model.date >= Date() }
+		historyItems = allItems.filter { (model) -> Bool in model.date < Date() }
+		
+		sectionsInTableAll = createDateSections(models: allItems)
+		sectionsInTableUpcoming = createDateSections(models: upcomingItems)
+		sectionsInTableHistory = createDateSections(models: historyItems)
 	}
 	
 	func refreshData() {
 		refresh!()
 	}
 	
-	func createDateSections(models: [ConsultModel]) {
+	func createDateSections(models: [ConsultModel]) -> [String] {
+		var sections = [String]()
+
 		for model in models {
-			let dateString = (DateUtils.getOrdinaryDay(date: model.date!) + " " + dateFormater.string(from: model.date!)).uppercased()
+			let dateString = (model.date.ordinal() + " " + dateFormater.string(from: model.date)).uppercased()
 			
 			// create sections NSSet so we can use 'containsObject'
-			let sections: NSSet = NSSet(array: sectionsInTable)
+			let sectionsSet: NSSet = NSSet(array: sections)
 			
 			// if sectionsInTable doesn't contain the dateString, then add it
-			if !sections.contains(dateString) {
-				sectionsInTable.append(dateString)
+			if !sectionsSet.contains(dateString) {
+				sections.append(dateString)
 			}
 		}
+		
+		return sections
 	}
 	
 	func getSectionItems(section: Int) -> [ConsultModel] {
@@ -66,10 +82,10 @@ class MyConsultsViewModel: BaseViewModel {
 		
 		// loop through the testArray to get the items for this sections's date
 		for model in allItems {
-			let dateString = (DateUtils.getOrdinaryDay(date: model.date!) + " " + dateFormater.string(from: model.date!)).uppercased()
+			let dateString = (model.date.ordinal() + " " + dateFormater.string(from: model.date)).uppercased()
 
 			// if the item's date equals the section's date then add it
-			if dateString == sectionsInTable[section] {
+			if dateString == getSectionsInTable(consultSegmentedEnum: selectedSegmented) [section] {
 				sectionItems.append(model)
 			}
 		}
@@ -77,12 +93,23 @@ class MyConsultsViewModel: BaseViewModel {
 		return sectionItems
 	}
 	
+	func getSectionsInTable(consultSegmentedEnum: ConsultSegmentedEnum) -> [String] {
+		switch consultSegmentedEnum {
+		case .all:
+			return sectionsInTableAll
+		case .upcoming:
+			return sectionsInTableUpcoming
+		case .history:
+			return sectionsInTableHistory
+		}
+	}
+	
 	func getNumberOfSections() -> Int {
-		return sectionsInTable.count
+		return getSectionsInTable(consultSegmentedEnum: selectedSegmented).count
 	}
 	
 	func getSectionTitle(section: Int) -> String {
-		return sectionsInTable[section]
+		return  getSectionsInTable(consultSegmentedEnum: selectedSegmented)[section]
 	}
 	
 	func getDataSourceCount(section: Int) -> Int {
@@ -93,5 +120,13 @@ class MyConsultsViewModel: BaseViewModel {
 		var models = getSectionItems(section: indexPath.section)
 		return models[indexPath.row]
 	}
+	
+	func getHeaderBackgroundColor(section: Int) -> UIColor {
+		return (getSectionItems(section: section).first?.date)! > Date() ? AppStyle.consultTableViewHeaderBGColor : AppStyle.consultTableViewHeaderBGColorDisabled
+	}
+	
+	func getHeaderTextColor(section: Int) -> UIColor {
+		return (getSectionItems(section: section).first?.date)! > Date() ? AppStyle.consultTableViewHeaderTextColor : AppStyle.consultTableViewHeaderTextColorDisabled
+	}
+	
 }
-

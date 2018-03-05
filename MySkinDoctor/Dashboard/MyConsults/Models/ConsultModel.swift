@@ -13,10 +13,10 @@ class ConsultModel: NSObject {
 	var profileImage: UIImage?
 	var firstName: String?
 	var lastName: String?
-	var date: Date?
+	var date: Date!
 	var qualification: String?
 	
-	required init(profileImage: UIImage?, firstName: String?, lastName: String?, date: Date?, qualification: String?) {
+	required init(profileImage: UIImage?, firstName: String?, lastName: String?, date: Date? = Date(), qualification: String?) {
 		super.init()
 		self.profileImage = profileImage
 		self.firstName = firstName
