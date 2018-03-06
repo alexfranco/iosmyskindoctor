@@ -41,6 +41,18 @@
 		788C320E204E813E0078A983 /* BookAConsultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788C320C204E813E0078A983 /* BookAConsultViewController.swift */; };
 		788C320F204E813E0078A983 /* BookAConsultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788C320C204E813E0078A983 /* BookAConsultViewController.swift */; };
 		788C3210204E813E0078A983 /* BookAConsultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788C320C204E813E0078A983 /* BookAConsultViewController.swift */; };
+		788C3213204E88D00078A983 /* BookAConsultCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788C3212204E88D00078A983 /* BookAConsultCalendarViewController.swift */; };
+		788C3214204E88D00078A983 /* BookAConsultCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788C3212204E88D00078A983 /* BookAConsultCalendarViewController.swift */; };
+		788C3215204E88D00078A983 /* BookAConsultCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788C3212204E88D00078A983 /* BookAConsultCalendarViewController.swift */; };
+		788C3216204E88D00078A983 /* BookAConsultCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788C3212204E88D00078A983 /* BookAConsultCalendarViewController.swift */; };
+		788C3218204EB63B0078A983 /* UILabel+Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788C3217204EB63B0078A983 /* UILabel+Padding.swift */; };
+		788C3219204EB63B0078A983 /* UILabel+Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788C3217204EB63B0078A983 /* UILabel+Padding.swift */; };
+		788C321A204EB63B0078A983 /* UILabel+Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788C3217204EB63B0078A983 /* UILabel+Padding.swift */; };
+		788C321B204EB63B0078A983 /* UILabel+Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788C3217204EB63B0078A983 /* UILabel+Padding.swift */; };
+		788C321D204EF0400078A983 /* BookingAConsultCalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788C321C204EF0400078A983 /* BookingAConsultCalendarViewModel.swift */; };
+		788C321E204EF0400078A983 /* BookingAConsultCalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788C321C204EF0400078A983 /* BookingAConsultCalendarViewModel.swift */; };
+		788C321F204EF0400078A983 /* BookingAConsultCalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788C321C204EF0400078A983 /* BookingAConsultCalendarViewModel.swift */; };
+		788C3220204EF0400078A983 /* BookingAConsultCalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788C321C204EF0400078A983 /* BookingAConsultCalendarViewModel.swift */; };
 		78B9E516203C2B920054CAD3 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B9E515203C2B920054CAD3 /* ForgotPasswordViewController.swift */; };
 		78B9E518203C2C670054CAD3 /* ForgotPasswordResposeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B9E517203C2C670054CAD3 /* ForgotPasswordResposeModel.swift */; };
 		78B9E520203C2E630054CAD3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78B9E522203C2E630054CAD3 /* Localizable.strings */; };
@@ -329,6 +341,9 @@
 		788B936F204845C1001605E6 /* SkinProblemsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinProblemsModel.swift; sourceTree = "<group>"; };
 		788C3206204E7D680078A983 /* MySkinProblems.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MySkinProblems.storyboard; sourceTree = "<group>"; };
 		788C320C204E813E0078A983 /* BookAConsultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookAConsultViewController.swift; sourceTree = "<group>"; };
+		788C3212204E88D00078A983 /* BookAConsultCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookAConsultCalendarViewController.swift; sourceTree = "<group>"; };
+		788C3217204EB63B0078A983 /* UILabel+Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Padding.swift"; sourceTree = "<group>"; };
+		788C321C204EF0400078A983 /* BookingAConsultCalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingAConsultCalendarViewModel.swift; sourceTree = "<group>"; };
 		78B9E515203C2B920054CAD3 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		78B9E517203C2C670054CAD3 /* ForgotPasswordResposeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordResposeModel.swift; sourceTree = "<group>"; };
 		78B9E521203C2E630054CAD3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -338,7 +353,7 @@
 		78B9E554203C4CD70054CAD3 /* MySkinDoctorLive.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = MySkinDoctorLive.plist; path = /Users/alexnunez/iosmyskindoctor/MySkinDoctor/MySkinDoctorLive.plist; sourceTree = "<absolute>"; };
 		78B9E555203C4CED0054CAD3 /* MySkinDoctor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MySkinDoctor.entitlements; sourceTree = "<group>"; };
 		78B9E556203C4CF30054CAD3 /* MySkinDoctorLive.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MySkinDoctorLive.entitlements; sourceTree = "<group>"; };
-		78B9E557203C4ED70054CAD3 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
+		78B9E557203C4ED70054CAD3 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		78C205CA20459D7D00F8E407 /* UINavigationController+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extentions.swift"; sourceTree = "<group>"; };
 		78C205CF2045A56B00F8E407 /* SkinProblemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinProblemTableViewCell.swift; sourceTree = "<group>"; };
 		78C205D42045A65C00F8E407 /* SkinProblemTableCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinProblemTableCellViewModel.swift; sourceTree = "<group>"; };
@@ -480,6 +495,15 @@
 			path = BookAConsult;
 			sourceTree = "<group>";
 		};
+		788C3211204E88A00078A983 /* BookAConsultCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				788C321C204EF0400078A983 /* BookingAConsultCalendarViewModel.swift */,
+				788C3212204E88D00078A983 /* BookAConsultCalendarViewController.swift */,
+			);
+			path = BookAConsultCalendar;
+			sourceTree = "<group>";
+		};
 		78B9E51B203C2D600054CAD3 /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -592,6 +616,7 @@
 				FADC3353204D487A0065A7EB /* SkinProblemThankYou */,
 				FAF2CEB4204D55220001EEAB /* MyConsults */,
 				788C320B204E81260078A983 /* BookAConsult */,
+				788C3211204E88A00078A983 /* BookAConsultCalendar */,
 				FA3326642040350400657C8A /* Profile */,
 			);
 			path = Dashboard;
@@ -665,6 +690,7 @@
 				78C205CA20459D7D00F8E407 /* UINavigationController+Extentions.swift */,
 				FAF2CED1204D745D0001EEAB /* UILabel+RoundedBorders.swift */,
 				FA6130BF204D9A0600731495 /* Date+Extentions.swift */,
+				788C3217204EB63B0078A983 /* UILabel+Padding.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -1151,6 +1177,7 @@
 				"${BUILT_PRODUCTS_DIR}/ActionSheetPicker-3.0/ActionSheetPicker_3_0.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/BSKeyboardControls/BSKeyboardControls.framework",
+				"${BUILT_PRODUCTS_DIR}/CVCalendar/CVCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/JSONModel/JSONModel.framework",
@@ -1166,6 +1193,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ActionSheetPicker_3_0.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BSKeyboardControls.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CVCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSONModel.framework",
@@ -1206,6 +1234,7 @@
 				"${BUILT_PRODUCTS_DIR}/ActionSheetPicker-3.0/ActionSheetPicker_3_0.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/BSKeyboardControls/BSKeyboardControls.framework",
+				"${BUILT_PRODUCTS_DIR}/CVCalendar/CVCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/JSONModel/JSONModel.framework",
@@ -1221,6 +1250,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ActionSheetPicker_3_0.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BSKeyboardControls.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CVCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSONModel.framework",
@@ -1261,6 +1291,7 @@
 				"${BUILT_PRODUCTS_DIR}/ActionSheetPicker-3.0/ActionSheetPicker_3_0.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/BSKeyboardControls/BSKeyboardControls.framework",
+				"${BUILT_PRODUCTS_DIR}/CVCalendar/CVCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/JSONModel/JSONModel.framework",
@@ -1276,6 +1307,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ActionSheetPicker_3_0.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BSKeyboardControls.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CVCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSONModel.framework",
@@ -1301,6 +1333,7 @@
 				"${BUILT_PRODUCTS_DIR}/ActionSheetPicker-3.0/ActionSheetPicker_3_0.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/BSKeyboardControls/BSKeyboardControls.framework",
+				"${BUILT_PRODUCTS_DIR}/CVCalendar/CVCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/JSONModel/JSONModel.framework",
@@ -1316,6 +1349,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ActionSheetPicker_3_0.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BSKeyboardControls.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CVCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSONModel.framework",
@@ -1354,6 +1388,8 @@
 				FA33265C2040336F00657C8A /* PhotoViewController.swift in Sources */,
 				FAD6ADBD204461050050C1A9 /* AddSkinProblemsViewController.swift in Sources */,
 				FA332661204034B300657C8A /* UIImageView+Circular.swift in Sources */,
+				788C3214204E88D00078A983 /* BookAConsultCalendarViewController.swift in Sources */,
+				788C321E204EF0400078A983 /* BookingAConsultCalendarViewModel.swift in Sources */,
 				78B9E532203C4CD70054CAD3 /* ApiUtils.swift in Sources */,
 				FA33263B20400FD200657C8A /* DashboardTabViewController.swift in Sources */,
 				78B9E533203C4CD70054CAD3 /* PositiveButton.swift in Sources */,
@@ -1377,6 +1413,7 @@
 				78B9E53C203C4CD70054CAD3 /* LoginResponseModel.swift in Sources */,
 				78C205D62045A65C00F8E407 /* SkinProblemTableCellViewModel.swift in Sources */,
 				FA3326B720441C8500657C8A /* PasswordProgressBarView.swift in Sources */,
+				788C3219204EB63B0078A983 /* UILabel+Padding.swift in Sources */,
 				FA33264120401A8C00657C8A /* MySkinProblemsViewController.swift in Sources */,
 				FA3326B320441C8500657C8A /* PasswordTextField.swift in Sources */,
 				78C205D12045A56B00F8E407 /* SkinProblemTableViewCell.swift in Sources */,
@@ -1430,6 +1467,8 @@
 				FA332660204034B300657C8A /* UIImageView+Circular.swift in Sources */,
 				FAC1AF0E2036F46F00547BBC /* ApiUtils.swift in Sources */,
 				FA33263A20400FD200657C8A /* DashboardTabViewController.swift in Sources */,
+				788C3213204E88D00078A983 /* BookAConsultCalendarViewController.swift in Sources */,
+				788C321D204EF0400078A983 /* BookingAConsultCalendarViewModel.swift in Sources */,
 				780F70242035A63700D96601 /* PositiveButton.swift in Sources */,
 				780F7017203587CB00D96601 /* FormViewController.swift in Sources */,
 				FA3326BE20441C8500657C8A /* FormTextField.swift in Sources */,
@@ -1453,6 +1492,7 @@
 				78FFF03420496F370013240D /* MedicalHistoryModel.swift in Sources */,
 				78C205D52045A65C00F8E407 /* SkinProblemTableCellViewModel.swift in Sources */,
 				7849CCA8203EE3E60030A7B1 /* BaseViewModel.swift in Sources */,
+				788C3218204EB63B0078A983 /* UILabel+Padding.swift in Sources */,
 				780F70222035A1B400D96601 /* ThemeManager.swift in Sources */,
 				FA3326AE20441C8500657C8A /* ProfileTextField.swift in Sources */,
 				78C205D02045A56B00F8E407 /* SkinProblemTableViewCell.swift in Sources */,
@@ -1506,6 +1546,7 @@
 				FAF2CEC0204D564C0001EEAB /* ConsultModel.swift in Sources */,
 				FA33268820440EA400657C8A /* PhotoUtils.swift in Sources */,
 				FA3326B020441C8500657C8A /* ProfileTextField.swift in Sources */,
+				788C321A204EB63B0078A983 /* UILabel+Padding.swift in Sources */,
 				FA6130C2204D9A0600731495 /* Date+Extentions.swift in Sources */,
 				FADC334C204706DC0065A7EB /* SkinProblemLocationViewController.swift in Sources */,
 				788C320F204E813E0078A983 /* BookAConsultViewController.swift in Sources */,
@@ -1527,6 +1568,7 @@
 				FA3326CC20441C8500657C8A /* GrayLabel.swift in Sources */,
 				78C205CD20459D7D00F8E407 /* UINavigationController+Extentions.swift in Sources */,
 				FA9760E4203B29D600242255 /* Validations.swift in Sources */,
+				788C3215204E88D00078A983 /* BookAConsultCalendarViewController.swift in Sources */,
 				FA3326C820441C8500657C8A /* TitleLabel.swift in Sources */,
 				FAEC573D203DBEAE00D1A0AE /* LoginViewModel.swift in Sources */,
 				FA33264E2040240400657C8A /* MySkinProblemsTableViewCell.swift in Sources */,
@@ -1534,6 +1576,7 @@
 				FA3326B820441C8500657C8A /* PasswordProgressBarView.swift in Sources */,
 				FA3326682040351500657C8A /* ProfileViewController.swift in Sources */,
 				FADC33352046BF2F0065A7EB /* SkinProblemModel.swift in Sources */,
+				788C321F204EF0400078A983 /* BookingAConsultCalendarViewModel.swift in Sources */,
 				FA33263C20400FD200657C8A /* DashboardTabViewController.swift in Sources */,
 				7849CCAA203EE3E60030A7B1 /* BaseViewModel.swift in Sources */,
 				FA3326B420441C8500657C8A /* PasswordTextField.swift in Sources */,
@@ -1575,6 +1618,7 @@
 				FAF2CEC1204D564C0001EEAB /* ConsultModel.swift in Sources */,
 				FA33268920440EA400657C8A /* PhotoUtils.swift in Sources */,
 				FA3326B120441C8500657C8A /* ProfileTextField.swift in Sources */,
+				788C321B204EB63B0078A983 /* UILabel+Padding.swift in Sources */,
 				FA6130C3204D9A0600731495 /* Date+Extentions.swift in Sources */,
 				FADC334D204706DC0065A7EB /* SkinProblemLocationViewController.swift in Sources */,
 				788C3210204E813E0078A983 /* BookAConsultViewController.swift in Sources */,
@@ -1596,6 +1640,7 @@
 				FA3326CD20441C8500657C8A /* GrayLabel.swift in Sources */,
 				78C205CE20459D7D00F8E407 /* UINavigationController+Extentions.swift in Sources */,
 				FA9760E5203B29D600242255 /* Validations.swift in Sources */,
+				788C3216204E88D00078A983 /* BookAConsultCalendarViewController.swift in Sources */,
 				FA3326C920441C8500657C8A /* TitleLabel.swift in Sources */,
 				FAEC573E203DBEAE00D1A0AE /* LoginViewModel.swift in Sources */,
 				FA33264F2040240400657C8A /* MySkinProblemsTableViewCell.swift in Sources */,
@@ -1603,6 +1648,7 @@
 				FA3326B920441C8500657C8A /* PasswordProgressBarView.swift in Sources */,
 				FA3326692040351500657C8A /* ProfileViewController.swift in Sources */,
 				FADC33362046BF2F0065A7EB /* SkinProblemModel.swift in Sources */,
+				788C3220204EF0400078A983 /* BookingAConsultCalendarViewModel.swift in Sources */,
 				FA33263D20400FD200657C8A /* DashboardTabViewController.swift in Sources */,
 				7849CCAB203EE3E60030A7B1 /* BaseViewModel.swift in Sources */,
 				FA3326B520441C8500657C8A /* PasswordTextField.swift in Sources */,

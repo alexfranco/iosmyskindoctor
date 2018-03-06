@@ -117,6 +117,25 @@ struct AppStyle {
 	static let consultTableViewCellTextColor = BaseColors.white
 	static let consultTableViewCellTextColorDisabled = UIColor.black
 	static let consultTableSectionTextFont = AppFonts.defaultBoldFont
+	
+	static let consultNextButtonBackgroundColor = AppColors.secondTabColor
+
+	// Calendar
+	
+	static let consultCalendarFont = AppFonts.defaultFont
+	
+	static let consultCalendarHeaderBackgroundColor = AppColors.secondTabColor
+	static let consultCalendarHeaderTextColor = UIColor.white
+	
+	static let consultCalendarPresentBackgroundColor = AppColors.primaryColor
+	static let consultCalendarPresentTextColor = UIColor.black
+	
+	static let consultCalendarDayBackgroundColor = UIColor.clear
+	static let consultCalendarDayTextColor = UIColor.black
+	
+	static let consultCalendarSelectedDayBackgroundColor = AppColors.primaryColor
+	static let consultCalendarSelectedDayTextColor = UIColor.white
+	
 
 	// MyProfile TabBar	
 	static let profileBarTitleColor = AppColors.thirdTabColor

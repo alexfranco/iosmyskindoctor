@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0920"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6D3CA55689393E7DB5A5DBDEA74101AB"
+               BlueprintIdentifier = "4DC8FCB1302A0C2490C6B97AD6F47E68"
                BuildableName = "Pods_MySkinDoctorUITests.framework"
                BlueprintName = "Pods-MySkinDoctorUITests"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6D3CA55689393E7DB5A5DBDEA74101AB"
+            BlueprintIdentifier = "4DC8FCB1302A0C2490C6B97AD6F47E68"
             BuildableName = "Pods_MySkinDoctorUITests.framework"
             BlueprintName = "Pods-MySkinDoctorUITests"
             ReferencedContainer = "container:Pods.xcodeproj">

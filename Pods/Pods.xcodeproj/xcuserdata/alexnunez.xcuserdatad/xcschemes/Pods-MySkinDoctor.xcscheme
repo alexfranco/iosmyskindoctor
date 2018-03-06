@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0920"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F5485D1BB70D033B1F76D8B95C874A9C"
+               BlueprintIdentifier = "C6C1DA694AAB97A15EC1757C760C3D34"
                BuildableName = "Pods_MySkinDoctor.framework"
                BlueprintName = "Pods-MySkinDoctor"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F5485D1BB70D033B1F76D8B95C874A9C"
+            BlueprintIdentifier = "C6C1DA694AAB97A15EC1757C760C3D34"
             BuildableName = "Pods_MySkinDoctor.framework"
             BlueprintName = "Pods-MySkinDoctor"
             ReferencedContainer = "container:Pods.xcodeproj">

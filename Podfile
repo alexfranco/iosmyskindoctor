@@ -15,6 +15,7 @@ pod 'IQKeyboardManagerSwift'
 pod 'ObjectMapper'
 pod 'LRTextField'
 pod 'SZTextView'
+pod 'CVCalendar', '~> 1.6'
 
 end
 

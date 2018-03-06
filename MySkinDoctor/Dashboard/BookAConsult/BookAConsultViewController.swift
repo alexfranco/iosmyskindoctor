@@ -21,6 +21,7 @@ class BookAConsultViewController: BindingViewController {
 		
 		preBookingInfoLabel.text = NSLocalizedString("bookaconsult_prebooking", comment: "")
 		doctorResponseLabel.text = NSLocalizedString("bookaconsult_doctor_response", comment: "")
+		nextButton.backgroundColor = AppStyle.consultNextButtonBackgroundColor
 		
 		navigationController?.setBackgroundColorWithoutShadowImage(bgColor: AppStyle.defaultNavigationBarColor, titleColor: AppStyle.defaultNavigationBarTitleColor)
 	}
