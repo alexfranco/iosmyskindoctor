@@ -33,6 +33,14 @@
 		788B9371204848E8001605E6 /* SkinProblemsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B936F204845C1001605E6 /* SkinProblemsModel.swift */; };
 		788B9372204848E8001605E6 /* SkinProblemsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B936F204845C1001605E6 /* SkinProblemsModel.swift */; };
 		788B9373204848E9001605E6 /* SkinProblemsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B936F204845C1001605E6 /* SkinProblemsModel.swift */; };
+		788C3207204E7D680078A983 /* MySkinProblems.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 788C3206204E7D680078A983 /* MySkinProblems.storyboard */; };
+		788C3208204E7D680078A983 /* MySkinProblems.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 788C3206204E7D680078A983 /* MySkinProblems.storyboard */; };
+		788C3209204E7D680078A983 /* MySkinProblems.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 788C3206204E7D680078A983 /* MySkinProblems.storyboard */; };
+		788C320A204E7D680078A983 /* MySkinProblems.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 788C3206204E7D680078A983 /* MySkinProblems.storyboard */; };
+		788C320D204E813E0078A983 /* BookAConsultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788C320C204E813E0078A983 /* BookAConsultViewController.swift */; };
+		788C320E204E813E0078A983 /* BookAConsultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788C320C204E813E0078A983 /* BookAConsultViewController.swift */; };
+		788C320F204E813E0078A983 /* BookAConsultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788C320C204E813E0078A983 /* BookAConsultViewController.swift */; };
+		788C3210204E813E0078A983 /* BookAConsultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788C320C204E813E0078A983 /* BookAConsultViewController.swift */; };
 		78B9E516203C2B920054CAD3 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B9E515203C2B920054CAD3 /* ForgotPasswordViewController.swift */; };
 		78B9E518203C2C670054CAD3 /* ForgotPasswordResposeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B9E517203C2C670054CAD3 /* ForgotPasswordResposeModel.swift */; };
 		78B9E520203C2E630054CAD3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78B9E522203C2E630054CAD3 /* Localizable.strings */; };
@@ -319,6 +327,8 @@
 		7849CCA2203EE2030030A7B1 /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 		7849CCA7203EE3E60030A7B1 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		788B936F204845C1001605E6 /* SkinProblemsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinProblemsModel.swift; sourceTree = "<group>"; };
+		788C3206204E7D680078A983 /* MySkinProblems.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MySkinProblems.storyboard; sourceTree = "<group>"; };
+		788C320C204E813E0078A983 /* BookAConsultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookAConsultViewController.swift; sourceTree = "<group>"; };
 		78B9E515203C2B920054CAD3 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		78B9E517203C2C670054CAD3 /* ForgotPasswordResposeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordResposeModel.swift; sourceTree = "<group>"; };
 		78B9E521203C2E630054CAD3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -462,6 +472,14 @@
 			path = Theme;
 			sourceTree = "<group>";
 		};
+		788C320B204E81260078A983 /* BookAConsult */ = {
+			isa = PBXGroup;
+			children = (
+				788C320C204E813E0078A983 /* BookAConsultViewController.swift */,
+			);
+			path = BookAConsult;
+			sourceTree = "<group>";
+		};
 		78B9E51B203C2D600054CAD3 /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -491,6 +509,7 @@
 				FAE733CD2034494D00898E65 /* LaunchScreen.storyboard */,
 				FAE733C52034494D00898E65 /* Login.storyboard */,
 				78B9E527203C4A920054CAD3 /* Main.storyboard */,
+				788C3206204E7D680078A983 /* MySkinProblems.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -572,6 +591,7 @@
 				78FFF02820496E000013240D /* MedicalHistory */,
 				FADC3353204D487A0065A7EB /* SkinProblemThankYou */,
 				FAF2CEB4204D55220001EEAB /* MyConsults */,
+				788C320B204E81260078A983 /* BookAConsult */,
 				FA3326642040350400657C8A /* Profile */,
 			);
 			path = Dashboard;
@@ -978,6 +998,7 @@
 				78B9E548203C4CD70054CAD3 /* Localizable.strings in Resources */,
 				78B9E549203C4CD70054CAD3 /* LaunchScreen.storyboard in Resources */,
 				78B9E54A203C4CD70054CAD3 /* Assets.xcassets in Resources */,
+				788C3208204E7D680078A983 /* MySkinProblems.storyboard in Resources */,
 				78B9E54B203C4CD70054CAD3 /* Main.storyboard in Resources */,
 				78B9E54D203C4CD70054CAD3 /* Login.storyboard in Resources */,
 			);
@@ -991,6 +1012,7 @@
 				78B9E520203C2E630054CAD3 /* Localizable.strings in Resources */,
 				FAE733CF2034494D00898E65 /* LaunchScreen.storyboard in Resources */,
 				FAE733CC2034494D00898E65 /* Assets.xcassets in Resources */,
+				788C3207204E7D680078A983 /* MySkinProblems.storyboard in Resources */,
 				78B9E528203C4A920054CAD3 /* Main.storyboard in Resources */,
 				FAE733C72034494D00898E65 /* Login.storyboard in Resources */,
 			);
@@ -1001,6 +1023,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78C205C820459BD500F8E407 /* Assets.xcassets in Resources */,
+				788C3209204E7D680078A983 /* MySkinProblems.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1009,6 +1032,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78C205C920459BD500F8E407 /* Assets.xcassets in Resources */,
+				788C320A204E7D680078A983 /* MySkinProblems.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1365,6 +1389,7 @@
 				FA3326522040287900657C8A /* BindingViewController.swift in Sources */,
 				FADC334B204706DC0065A7EB /* SkinProblemLocationViewController.swift in Sources */,
 				78B9E53E203C4CD70054CAD3 /* AppDelegate.swift in Sources */,
+				788C320E204E813E0078A983 /* BookAConsultViewController.swift in Sources */,
 				78E44AA7203EBE5C0094F3AF /* PasswordStrength.swift in Sources */,
 				78B9E53F203C4CD70054CAD3 /* ForgotPasswordViewController.swift in Sources */,
 				FA3326C320441C8500657C8A /* BoldLabel.swift in Sources */,
@@ -1440,6 +1465,7 @@
 				78FFF02F20496E340013240D /* MedicalHistoryViewModel.swift in Sources */,
 				78B9E516203C2B920054CAD3 /* ForgotPasswordViewController.swift in Sources */,
 				FADC334A204706DC0065A7EB /* SkinProblemLocationViewController.swift in Sources */,
+				788C320D204E813E0078A983 /* BookAConsultViewController.swift in Sources */,
 				FA3326C220441C8500657C8A /* BoldLabel.swift in Sources */,
 				FAD6ADC120446D310050C1A9 /* AddPhotoTableViewCellViewModel.swift in Sources */,
 				FA33264C2040240400657C8A /* MySkinProblemsTableViewCell.swift in Sources */,
@@ -1482,6 +1508,7 @@
 				FA3326B020441C8500657C8A /* ProfileTextField.swift in Sources */,
 				FA6130C2204D9A0600731495 /* Date+Extentions.swift in Sources */,
 				FADC334C204706DC0065A7EB /* SkinProblemLocationViewController.swift in Sources */,
+				788C320F204E813E0078A983 /* BookAConsultViewController.swift in Sources */,
 				FAF2CED4204D7C690001EEAB /* UILabel+RoundedBorders.swift in Sources */,
 				FA33264220401A8C00657C8A /* MySkinProblemsViewController.swift in Sources */,
 				FA3326532040287900657C8A /* BindingViewController.swift in Sources */,
@@ -1550,6 +1577,7 @@
 				FA3326B120441C8500657C8A /* ProfileTextField.swift in Sources */,
 				FA6130C3204D9A0600731495 /* Date+Extentions.swift in Sources */,
 				FADC334D204706DC0065A7EB /* SkinProblemLocationViewController.swift in Sources */,
+				788C3210204E813E0078A983 /* BookAConsultViewController.swift in Sources */,
 				FAF2CED5204D7C690001EEAB /* UILabel+RoundedBorders.swift in Sources */,
 				FA33264320401A8C00657C8A /* MySkinProblemsViewController.swift in Sources */,
 				FA3326542040287900657C8A /* BindingViewController.swift in Sources */,

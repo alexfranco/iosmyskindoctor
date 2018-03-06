@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -51,8 +50,9 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="09:30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G4q-jI-ZLD" customClass="BoldLabel" customModule="MySkinDoctor" customModuleProvider="target">
-                                                    <rect key="frame" x="265" y="35" width="60" height="21"/>
+                                                    <rect key="frame" x="265" y="30.5" width="60" height="30"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="JFF-do-cGI"/>
                                                         <constraint firstAttribute="width" constant="60" id="t3X-tP-zrE"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -108,7 +108,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="10g-25-XVF"/>
                     </view>
-                    <navigationItem key="navigationItem" title="MyConsults" id="aBO-BM-RCc"/>
+                    <navigationItem key="navigationItem" title="MyConsults" id="aBO-BM-RCc">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="5v8-dc-ZCe">
+                            <connections>
+                                <segue destination="be3-OD-e8S" kind="presentation" id="jTz-TK-49U"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="segmentedControl" destination="8pX-cx-JOp" id="ll9-yX-QEX"/>
                         <outlet property="tableView" destination="XGW-ax-xgg" id="Mol-nf-n38"/>
@@ -343,9 +349,9 @@
                         <viewLayoutGuide key="safeArea" id="bTZ-aN-6Si"/>
                     </view>
                     <navigationItem key="navigationItem" title="My Skin Problems" id="tMc-nG-4fS">
-                        <barButtonItem key="rightBarButtonItem" title="+" id="BN8-UV-ogH">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="BN8-UV-ogH">
                             <connections>
-                                <segue destination="c55-BF-a6w" kind="presentation" id="YTy-qv-7fR"/>
+                                <segue destination="cBF-ue-roU" kind="presentation" id="YTy-qv-7fR"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -359,618 +365,81 @@
             <point key="canvasLocation" x="2052" y="-349.47526236881561"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="9fr-8K-OU6">
+        <scene sceneID="JIV-Pw-R3b">
             <objects>
-                <navigationController id="c55-BF-a6w" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nTb-jp-SVP">
+                <navigationController storyboardIdentifier="BookAConsultNavigationBar" id="be3-OD-e8S" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LUZ-g6-nr4">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="f41-gx-bcw" kind="relationship" relationship="rootViewController" id="pmD-Yf-zjA"/>
+                        <segue destination="w4S-Oi-ilu" kind="relationship" relationship="rootViewController" id="YjC-83-lBf"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QZO-Zw-d1C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Me-JZ-l9N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3049" y="-349"/>
+            <point key="canvasLocation" x="3049" y="398"/>
         </scene>
-        <!--Add Skin Problem-->
-        <scene sceneID="84Q-j2-NXP">
+        <!--Book a Consult-->
+        <scene sceneID="1ER-l8-ySr">
             <objects>
-                <viewController id="f41-gx-bcw" customClass="AddSkinProblemsViewController" customModule="MySkinDoctor" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ac1-3c-9Dk">
+                <viewController id="w4S-Oi-ilu" customClass="BookAConsultViewController" customModule="MySkinDoctor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="enW-bP-Tk7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ec-Uw-LqG" customClass="GrayLabel" customModule="MySkinDoctor" customModuleProvider="target">
-                                <rect key="frame" x="16" y="80" width="343" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TBg-av-ehU" customClass="PositiveButton" customModule="MySkinDoctor" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="dk7-v0-3Sh"/>
+                                </constraints>
+                                <state key="normal" title="Get Started"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pre-booking information..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BcB-Dm-2GE" customClass="TitleLabel" customModule="MySkinDoctor" customModuleProvider="target">
+                                <rect key="frame" x="20" y="124" width="335" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cFX-fS-pLC" customClass="FormTextView" customModule="MySkinDoctor" customModuleProvider="target">
-                                <rect key="frame" x="16" y="109" width="343" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="cFX-fS-pLC" secondAttribute="height" multiplier="343:128" id="7CF-9j-D0O"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3eN-3v-1cP">
-                                <rect key="frame" x="16" y="245" width="343" height="367"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddPhotoTableViewCellId" rowHeight="52" id="Awx-jZ-52b" customClass="AddPhotoTableViewCell" customModule="MySkinDoctor" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="52"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Awx-jZ-52b" id="uPU-dR-Qxz">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="51.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Photo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="StG-BX-xgP" customClass="BoldLabel" customModule="MySkinDoctor" customModuleProvider="target">
-                                                    <rect key="frame" x="57" y="15.5" width="266" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HqT-hk-v3s">
-                                                    <rect key="frame" x="15" y="14" width="32" height="30"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="32" id="gQ9-Yv-G13"/>
-                                                        <constraint firstAttribute="height" constant="30" id="qUR-ry-cwl"/>
-                                                    </constraints>
-                                                    <state key="normal" image="addListItem"/>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="StG-BX-xgP" firstAttribute="top" secondItem="uPU-dR-Qxz" secondAttribute="topMargin" constant="4.5" id="Fhp-tm-u6x"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="StG-BX-xgP" secondAttribute="trailing" constant="5" id="g1u-Sb-ra4"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="StG-BX-xgP" secondAttribute="bottom" constant="4.5" id="mFg-sX-PKp"/>
-                                                <constraint firstItem="StG-BX-xgP" firstAttribute="leading" secondItem="HqT-hk-v3s" secondAttribute="trailing" constant="10" id="oeQ-ed-mR3"/>
-                                                <constraint firstItem="HqT-hk-v3s" firstAttribute="centerY" secondItem="StG-BX-xgP" secondAttribute="centerY" constant="3" id="tOs-SM-pI8"/>
-                                                <constraint firstItem="HqT-hk-v3s" firstAttribute="leading" secondItem="uPU-dR-Qxz" secondAttribute="leadingMargin" id="z3Q-os-L9B"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="addPhotoButton" destination="HqT-hk-v3s" id="gkL-8A-PjP"/>
-                                            <outlet property="addPhotoLabel" destination="StG-BX-xgP" id="vkX-v2-PiC"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SkinProblemTableViewCellId" rowHeight="83" id="7lc-ZZ-NIV" customClass="SkinProblemTableViewCell" customModule="MySkinDoctor" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="80" width="343" height="83"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7lc-ZZ-NIV" id="VB0-Yr-Hd7">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="82.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location Problem" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sXL-gD-s0G">
-                                                    <rect key="frame" x="90" y="16" width="233" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="ADz-YW-5Uh"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="description of the issue" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vyp-ZF-FwC" customClass="GrayLabel" customModule="MySkinDoctor" customModuleProvider="target">
-                                                    <rect key="frame" x="90" y="40" width="233" height="35"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="ESC-Jn-fNf"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="HcA-r4-ybI">
-                                                    <rect key="frame" x="15" y="16" width="60" height="60"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="60" id="cgq-Qh-iWh"/>
-                                                        <constraint firstAttribute="width" constant="60" id="uOA-CG-C3x"/>
-                                                    </constraints>
-                                                </imageView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="vyp-ZF-FwC" firstAttribute="leading" secondItem="sXL-gD-s0G" secondAttribute="leading" id="74p-nT-pfW"/>
-                                                <constraint firstItem="sXL-gD-s0G" firstAttribute="top" secondItem="VB0-Yr-Hd7" secondAttribute="topMargin" constant="5" id="BDs-2Z-KnM"/>
-                                                <constraint firstItem="vyp-ZF-FwC" firstAttribute="trailing" secondItem="sXL-gD-s0G" secondAttribute="trailing" id="ITg-T2-DeE"/>
-                                                <constraint firstItem="vyp-ZF-FwC" firstAttribute="top" secondItem="sXL-gD-s0G" secondAttribute="bottom" constant="3" id="L3J-gF-8ej"/>
-                                                <constraint firstItem="HcA-r4-ybI" firstAttribute="top" secondItem="sXL-gD-s0G" secondAttribute="top" id="L6X-4b-1IP"/>
-                                                <constraint firstItem="sXL-gD-s0G" firstAttribute="leading" secondItem="HcA-r4-ybI" secondAttribute="trailing" constant="15" id="MrM-7O-UrK"/>
-                                                <constraint firstItem="HcA-r4-ybI" firstAttribute="leading" secondItem="VB0-Yr-Hd7" secondAttribute="leading" constant="15" id="c9D-m2-Dwm"/>
-                                                <constraint firstAttribute="bottom" secondItem="vyp-ZF-FwC" secondAttribute="bottom" constant="7.5" id="fue-pN-zXT"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="sXL-gD-s0G" secondAttribute="trailing" constant="5" id="vW8-7X-je4"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="descriptionLabel" destination="vyp-ZF-FwC" id="ZIM-Sw-jBn"/>
-                                            <outlet property="locationLabel" destination="sXL-gD-s0G" id="Idx-qn-taf"/>
-                                            <outlet property="problemImageView" destination="HcA-r4-ybI" id="KWr-ff-PIO"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GuK-tn-o5u" customClass="PositiveButton" customModule="MySkinDoctor" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
-                                <color key="backgroundColor" red="0.0" green="0.59346731090000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="p5X-YZ-pnA"/>
-                                </constraints>
-                                <state key="normal" title="Next">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Zy8-um-I04" kind="show" identifier="goToMedicalHistoryViewControler" id="VUU-gu-xKA"/>
-                                </connections>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A doctor will respond whitin 72 hours working with:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ax4-1A-LTT">
+                                <rect key="frame" x="40" y="165" width="295" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="GuK-tn-o5u" firstAttribute="leading" secondItem="JLR-qw-q4B" secondAttribute="leading" id="8Qd-an-nkm"/>
-                            <constraint firstItem="2ec-Uw-LqG" firstAttribute="top" secondItem="JLR-qw-q4B" secondAttribute="top" constant="16" id="BcC-xU-Q8x"/>
-                            <constraint firstItem="cFX-fS-pLC" firstAttribute="leading" secondItem="2ec-Uw-LqG" secondAttribute="leading" id="JHT-W8-koR"/>
-                            <constraint firstItem="2ec-Uw-LqG" firstAttribute="leading" secondItem="JLR-qw-q4B" secondAttribute="leading" constant="16" id="JPm-ki-9Gx"/>
-                            <constraint firstItem="3eN-3v-1cP" firstAttribute="trailing" secondItem="cFX-fS-pLC" secondAttribute="trailing" id="K3W-Pc-gQu"/>
-                            <constraint firstItem="cFX-fS-pLC" firstAttribute="top" secondItem="2ec-Uw-LqG" secondAttribute="bottom" constant="8" id="Kiz-Aj-EoL"/>
-                            <constraint firstItem="3eN-3v-1cP" firstAttribute="top" secondItem="cFX-fS-pLC" secondAttribute="bottom" constant="8" id="Mbw-rg-7oY"/>
-                            <constraint firstAttribute="trailing" secondItem="GuK-tn-o5u" secondAttribute="trailing" id="T4H-Y8-mac"/>
-                            <constraint firstItem="cFX-fS-pLC" firstAttribute="trailing" secondItem="2ec-Uw-LqG" secondAttribute="trailing" id="aEj-3a-gAU"/>
-                            <constraint firstItem="3eN-3v-1cP" firstAttribute="leading" secondItem="cFX-fS-pLC" secondAttribute="leading" id="c4t-c6-MHk"/>
-                            <constraint firstItem="JLR-qw-q4B" firstAttribute="bottom" secondItem="GuK-tn-o5u" secondAttribute="bottom" id="gIs-YN-QZC"/>
-                            <constraint firstItem="JLR-qw-q4B" firstAttribute="trailing" secondItem="2ec-Uw-LqG" secondAttribute="trailing" constant="16" id="svO-4T-idf"/>
-                            <constraint firstItem="GuK-tn-o5u" firstAttribute="top" secondItem="3eN-3v-1cP" secondAttribute="bottom" constant="5" id="ub9-rn-tde"/>
+                            <constraint firstItem="BcB-Dm-2GE" firstAttribute="leading" secondItem="xzp-kD-jk6" secondAttribute="leading" constant="20" id="40m-Kl-xfj"/>
+                            <constraint firstItem="TBg-av-ehU" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ax4-1A-LTT" secondAttribute="bottom" constant="20" id="9UR-A3-tj3"/>
+                            <constraint firstItem="xzp-kD-jk6" firstAttribute="trailing" secondItem="ax4-1A-LTT" secondAttribute="trailing" constant="40" id="ANL-rc-lWS"/>
+                            <constraint firstItem="xzp-kD-jk6" firstAttribute="trailing" secondItem="BcB-Dm-2GE" secondAttribute="trailing" constant="20" id="IWD-Tk-Kqg"/>
+                            <constraint firstItem="TBg-av-ehU" firstAttribute="bottom" secondItem="xzp-kD-jk6" secondAttribute="bottom" id="UgD-YM-hwP"/>
+                            <constraint firstItem="TBg-av-ehU" firstAttribute="trailing" secondItem="xzp-kD-jk6" secondAttribute="trailing" id="ZBB-51-ppd"/>
+                            <constraint firstItem="ax4-1A-LTT" firstAttribute="leading" secondItem="xzp-kD-jk6" secondAttribute="leading" constant="40" id="gqW-Uj-8aE"/>
+                            <constraint firstItem="BcB-Dm-2GE" firstAttribute="top" secondItem="xzp-kD-jk6" secondAttribute="top" constant="60" id="nI3-Os-5Ww"/>
+                            <constraint firstItem="TBg-av-ehU" firstAttribute="leading" secondItem="xzp-kD-jk6" secondAttribute="leading" id="omo-pM-JAq"/>
+                            <constraint firstItem="ax4-1A-LTT" firstAttribute="top" secondItem="BcB-Dm-2GE" secondAttribute="bottom" constant="20" id="wxP-1W-BZ5"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="JLR-qw-q4B"/>
+                        <viewLayoutGuide key="safeArea" id="xzp-kD-jk6"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Add Skin Problem" id="NUF-aZ-1SJ">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="1YS-up-kpt">
+                    <navigationItem key="navigationItem" title="Book a Consult" id="4xa-0i-j01">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="tCC-Th-9DG">
                             <connections>
-                                <segue destination="Ci2-62-R0l" kind="unwind" unwindAction="unwindToMySkinProblemsWithSegue:" id="7Y9-IE-slG"/>
+                                <segue destination="5U4-RR-WJ5" kind="unwind" unwindAction="unwindToMyConsultsWithSegue:" id="u8D-h8-iCZ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="descriptionLabel" destination="2ec-Uw-LqG" id="hqP-et-Wzu"/>
-                        <outlet property="descriptionTextView" destination="cFX-fS-pLC" id="LlD-B0-ynE"/>
-                        <outlet property="nextButton" destination="GuK-tn-o5u" id="r7o-Of-AHn"/>
-                        <outlet property="tableView" destination="3eN-3v-1cP" id="Nbe-Jc-HgP"/>
-                        <segue destination="1TG-zf-x1o" kind="show" identifier="goToSkinProblemPhotoInformationViewController" id="EPG-7e-piZ"/>
-                        <segue destination="603-Ci-voC" kind="show" identifier="goToSkinProblemThankYouViewControllerFromAddSkinProblem" id="eI1-SU-qqT"/>
+                        <outlet property="cancelButton" destination="tCC-Th-9DG" id="49I-N0-KNi"/>
+                        <outlet property="doctorResponseLabel" destination="ax4-1A-LTT" id="hjS-U6-B8C"/>
+                        <outlet property="preBookingInfoLabel" destination="BcB-Dm-2GE" id="4hT-X6-rYP"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TuK-KX-khk" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="Ci2-62-R0l" userLabel="Exit" sceneMemberID="exit"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tpg-gj-PVB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="5U4-RR-WJ5" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3941.5999999999999" y="-349.47526236881561"/>
-        </scene>
-        <!--Medical History View Controler-->
-        <scene sceneID="bpY-pO-yS3">
-            <objects>
-                <viewController id="Zy8-um-I04" customClass="MedicalHistoryViewControler" customModule="MySkinDoctor" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="LOU-nr-yA0">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do you have any health problems?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHR-Fc-zpW" customClass="GrayLabel" customModule="MySkinDoctor" customModuleProvider="target">
-                                <rect key="frame" x="16" y="83" width="262" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cE9-5Q-rMq">
-                                <rect key="frame" x="310" y="78" width="51" height="31"/>
-                                <connections>
-                                    <action selector="onHasHealthProblemsSwitchValueChanged:" destination="Zy8-um-I04" eventType="valueChanged" id="Ihq-gp-rDg"/>
-                                </connections>
-                            </switch>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="69u-QE-xcf" customClass="FormTextView" customModule="MySkinDoctor" customModuleProvider="target">
-                                <rect key="frame" x="16" y="117" width="343" height="106"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="69u-QE-xcf" secondAttribute="height" multiplier="343:106" id="J6M-k4-qA7"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do you take any medication?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jsq-in-rse" customClass="GrayLabel" customModule="MySkinDoctor" customModuleProvider="target">
-                                <rect key="frame" x="16" y="238" width="219.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wH4-2T-Alc">
-                                <rect key="frame" x="310" y="233" width="51" height="31"/>
-                                <connections>
-                                    <action selector="onHasMedicationSwitchValueChanged:" destination="Zy8-um-I04" eventType="valueChanged" id="eAz-rq-fsG"/>
-                                </connections>
-                            </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Do you have past history of skin disease, skin cancer or allergies?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lXM-AN-CFM" customClass="GrayLabel" customModule="MySkinDoctor" customModuleProvider="target">
-                                <rect key="frame" x="16" y="296" width="278" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dVI-Ge-fys">
-                                <rect key="frame" x="310" y="291" width="51" height="31"/>
-                                <connections>
-                                    <action selector="onHasPastHistoryProblemsSwitchValueChanged:" destination="Zy8-um-I04" eventType="valueChanged" id="u1m-5f-ouU"/>
-                                </connections>
-                            </switch>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QyO-lC-Yxg" customClass="PositiveButton" customModule="MySkinDoctor" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
-                                <color key="backgroundColor" red="0.0" green="0.59346731090000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="vuc-U3-zqP"/>
-                                </constraints>
-                                <state key="normal" title="Finish and Submit Notes">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="onNextButtonPressed:" destination="Zy8-um-I04" eventType="touchUpInside" id="xX9-DT-1lx"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B0w-uT-3cD">
-                                <rect key="frame" x="0.0" y="547" width="375" height="70"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Save my medical history for next time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TeZ-qy-F9k">
-                                        <rect key="frame" x="16" y="25" width="278" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nk6-gc-DuI">
-                                        <rect key="frame" x="310" y="19" width="51" height="31"/>
-                                        <connections>
-                                            <action selector="onSaveMedicalHistorySwitchValueChanged:" destination="Zy8-um-I04" eventType="valueChanged" id="FAP-xe-TQ1"/>
-                                        </connections>
-                                    </switch>
-                                </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="8Vd-nY-tI8"/>
-                                    <constraint firstItem="Nk6-gc-DuI" firstAttribute="centerY" secondItem="B0w-uT-3cD" secondAttribute="centerY" id="HBW-lx-uLd"/>
-                                    <constraint firstItem="TeZ-qy-F9k" firstAttribute="centerY" secondItem="B0w-uT-3cD" secondAttribute="centerY" id="IAj-jq-0if"/>
-                                    <constraint firstAttribute="trailing" secondItem="Nk6-gc-DuI" secondAttribute="trailing" constant="16" id="O8A-B0-Soi"/>
-                                    <constraint firstItem="TeZ-qy-F9k" firstAttribute="leading" secondItem="B0w-uT-3cD" secondAttribute="leading" constant="16" id="s5p-Pi-LD6"/>
-                                    <constraint firstItem="Nk6-gc-DuI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="TeZ-qy-F9k" secondAttribute="trailing" constant="16" id="xkC-9g-lIS"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="Jsq-in-rse" firstAttribute="leading" secondItem="AHR-Fc-zpW" secondAttribute="leading" id="22J-zQ-4ZH"/>
-                            <constraint firstItem="dVI-Ge-fys" firstAttribute="trailing" secondItem="wH4-2T-Alc" secondAttribute="trailing" id="5iA-GT-iKJ"/>
-                            <constraint firstItem="wH4-2T-Alc" firstAttribute="centerY" secondItem="Jsq-in-rse" secondAttribute="centerY" id="8N5-we-CZl"/>
-                            <constraint firstItem="wH4-2T-Alc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Jsq-in-rse" secondAttribute="trailing" constant="16" id="9dr-zH-hYV"/>
-                            <constraint firstItem="QyO-lC-Yxg" firstAttribute="top" secondItem="B0w-uT-3cD" secondAttribute="bottom" id="A85-Sk-Cxk"/>
-                            <constraint firstItem="69u-QE-xcf" firstAttribute="top" secondItem="cE9-5Q-rMq" secondAttribute="bottom" constant="8" id="CsT-7z-OWi"/>
-                            <constraint firstItem="ngh-73-WGC" firstAttribute="trailing" secondItem="cE9-5Q-rMq" secondAttribute="trailing" constant="16" id="CxE-vM-Arj"/>
-                            <constraint firstItem="dVI-Ge-fys" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="lXM-AN-CFM" secondAttribute="trailing" constant="16" id="E6U-si-MX8"/>
-                            <constraint firstItem="lXM-AN-CFM" firstAttribute="top" secondItem="Jsq-in-rse" secondAttribute="bottom" constant="37" id="HFA-Jv-zGy"/>
-                            <constraint firstItem="AHR-Fc-zpW" firstAttribute="leading" secondItem="ngh-73-WGC" secondAttribute="leading" constant="16" id="LSh-8s-ZPB"/>
-                            <constraint firstItem="ngh-73-WGC" firstAttribute="trailing" secondItem="B0w-uT-3cD" secondAttribute="trailing" id="MCd-GQ-Nkk"/>
-                            <constraint firstItem="lXM-AN-CFM" firstAttribute="leading" secondItem="Jsq-in-rse" secondAttribute="leading" id="P1o-SI-4uK"/>
-                            <constraint firstItem="69u-QE-xcf" firstAttribute="leading" secondItem="AHR-Fc-zpW" secondAttribute="leading" id="Piq-9F-O4Y"/>
-                            <constraint firstItem="QyO-lC-Yxg" firstAttribute="leading" secondItem="ngh-73-WGC" secondAttribute="leading" id="Qdd-5N-zV5"/>
-                            <constraint firstItem="wH4-2T-Alc" firstAttribute="trailing" secondItem="cE9-5Q-rMq" secondAttribute="trailing" id="Tmk-Fw-oHa"/>
-                            <constraint firstItem="QyO-lC-Yxg" firstAttribute="bottom" secondItem="ngh-73-WGC" secondAttribute="bottom" id="V8R-lL-MzL"/>
-                            <constraint firstItem="69u-QE-xcf" firstAttribute="trailing" secondItem="cE9-5Q-rMq" secondAttribute="trailing" id="ZMu-PL-BMi"/>
-                            <constraint firstItem="B0w-uT-3cD" firstAttribute="leading" secondItem="ngh-73-WGC" secondAttribute="leading" id="atR-xh-5F9"/>
-                            <constraint firstItem="Jsq-in-rse" firstAttribute="top" secondItem="69u-QE-xcf" secondAttribute="bottom" constant="15" id="eaB-9J-riN"/>
-                            <constraint firstItem="cE9-5Q-rMq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="AHR-Fc-zpW" secondAttribute="trailing" constant="16" id="gkA-LI-550"/>
-                            <constraint firstItem="cE9-5Q-rMq" firstAttribute="centerY" secondItem="AHR-Fc-zpW" secondAttribute="centerY" id="lw1-hm-X4t"/>
-                            <constraint firstItem="QyO-lC-Yxg" firstAttribute="trailing" secondItem="ngh-73-WGC" secondAttribute="trailing" id="o7w-8x-unw"/>
-                            <constraint firstItem="AHR-Fc-zpW" firstAttribute="top" secondItem="ngh-73-WGC" secondAttribute="top" constant="19" id="pjT-sf-zTn"/>
-                            <constraint firstItem="dVI-Ge-fys" firstAttribute="centerY" secondItem="lXM-AN-CFM" secondAttribute="centerY" id="rXT-RK-me9"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="ngh-73-WGC"/>
-                    </view>
-                    <connections>
-                        <outlet property="descriptionTextView" destination="69u-QE-xcf" id="Qz2-Li-DNt"/>
-                        <outlet property="hasHealthProblemsLabel" destination="AHR-Fc-zpW" id="IBk-CF-1MB"/>
-                        <outlet property="hasHealthProblemsSwitch" destination="cE9-5Q-rMq" id="3QI-88-5Im"/>
-                        <outlet property="hasMedicationLabel" destination="Jsq-in-rse" id="LX2-WW-L8v"/>
-                        <outlet property="hasMedicationSwitch" destination="wH4-2T-Alc" id="B3H-Bc-qXM"/>
-                        <outlet property="hasPastHistoryProblemsLabel" destination="lXM-AN-CFM" id="Y6l-f0-YL7"/>
-                        <outlet property="hasPastHistoryProblemsSwitch" destination="dVI-Ge-fys" id="Gde-iO-rch"/>
-                        <outlet property="saveMedicalHistoryLabel" destination="TeZ-qy-F9k" id="IOq-4X-uZq"/>
-                        <outlet property="saveMedicalHistorySwitch" destination="Nk6-gc-DuI" id="ESe-kE-2S5"/>
-                        <outlet property="saveMedicalHistoryView" destination="B0w-uT-3cD" id="zwg-dP-wJI"/>
-                        <segue destination="603-Ci-voC" kind="show" identifier="goToSkinProblemThankYouViewControllerFromMedicalHistory" id="yga-vg-Vcr"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1ZU-E0-oDq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3942" y="448"/>
-        </scene>
-        <!--Skin Problem Thank You View Controller-->
-        <scene sceneID="c3S-lc-ymb">
-            <objects>
-                <viewController id="603-Ci-voC" customClass="SkinProblemThankYouViewController" customModule="MySkinDoctor" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ysY-Pm-7pM">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ahT-hW-dkm">
-                                <rect key="frame" x="11" y="248.5" width="354" height="170"/>
-                                <subviews>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" image="bigWhiteArrow" translatesAutoresizingMaskIntoConstraints="NO" id="Ta4-dY-St7">
-                                        <rect key="frame" x="143" y="0.0" width="68" height="68"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="68" id="Xot-KA-LFO"/>
-                                            <constraint firstAttribute="height" constant="68" id="mjN-HX-ZcQ"/>
-                                        </constraints>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thank you" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dde-LG-zTH">
-                                        <rect key="frame" x="10" y="94" width="334" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You will receive a diagnosis within 72 hours." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u33-fv-RUl">
-                                        <rect key="frame" x="10" y="144" width="334" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="Ta4-dY-St7" firstAttribute="centerX" secondItem="ahT-hW-dkm" secondAttribute="centerX" id="0HD-Ff-Cfs"/>
-                                    <constraint firstItem="Ta4-dY-St7" firstAttribute="top" secondItem="ahT-hW-dkm" secondAttribute="top" id="4zm-C9-OiK"/>
-                                    <constraint firstAttribute="bottom" secondItem="u33-fv-RUl" secondAttribute="bottom" constant="5" id="E0S-vL-x0M"/>
-                                    <constraint firstItem="dde-LG-zTH" firstAttribute="leading" secondItem="ahT-hW-dkm" secondAttribute="leading" constant="10" id="Lqw-Ww-Zu1"/>
-                                    <constraint firstItem="u33-fv-RUl" firstAttribute="top" secondItem="dde-LG-zTH" secondAttribute="bottom" constant="29" id="ZS4-gF-PQH"/>
-                                    <constraint firstItem="dde-LG-zTH" firstAttribute="top" secondItem="Ta4-dY-St7" secondAttribute="bottom" constant="26" id="aba-zO-sxm"/>
-                                    <constraint firstAttribute="trailing" secondItem="dde-LG-zTH" secondAttribute="trailing" constant="10" id="inW-79-bpT"/>
-                                    <constraint firstItem="u33-fv-RUl" firstAttribute="leading" secondItem="dde-LG-zTH" secondAttribute="leading" id="prA-RK-Y32"/>
-                                    <constraint firstItem="u33-fv-RUl" firstAttribute="trailing" secondItem="dde-LG-zTH" secondAttribute="trailing" id="rk3-3t-6Vq"/>
-                                </constraints>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UNa-Gg-kcW">
-                                <rect key="frame" x="168.5" y="627" width="39" height="30"/>
-                                <state key="normal" title="Close"/>
-                                <connections>
-                                    <action selector="onClosebuttonPressed:" destination="603-Ci-voC" eventType="touchUpInside" id="GLF-ux-E5b"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.59346731090000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="ahT-hW-dkm" firstAttribute="centerX" secondItem="ysY-Pm-7pM" secondAttribute="centerX" id="M9k-os-q1T"/>
-                            <constraint firstItem="tSO-wv-JYs" firstAttribute="bottom" secondItem="UNa-Gg-kcW" secondAttribute="bottom" constant="10" id="SeU-7m-m43"/>
-                            <constraint firstItem="UNa-Gg-kcW" firstAttribute="centerX" secondItem="ysY-Pm-7pM" secondAttribute="centerX" id="i3a-Df-JO5"/>
-                            <constraint firstItem="ahT-hW-dkm" firstAttribute="centerY" secondItem="ysY-Pm-7pM" secondAttribute="centerY" id="maq-l6-UGc"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="tSO-wv-JYs"/>
-                    </view>
-                    <connections>
-                        <outlet property="closeButton" destination="UNa-Gg-kcW" id="xNp-rQ-Cqj"/>
-                        <outlet property="diagnosisLabel" destination="u33-fv-RUl" id="BfU-W1-3y9"/>
-                        <outlet property="thankYouLabel" destination="dde-LG-zTH" id="cNc-TP-woh"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vm9-JK-tA1" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4716" y="448"/>
-        </scene>
-        <!--Photo Information-->
-        <scene sceneID="86U-sh-ST9">
-            <objects>
-                <viewController title="Photo Information" id="1TG-zf-x1o" customClass="SkinProblemPhotoInformationViewController" customModule="MySkinDoctor" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="U0O-rZ-mO1">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aYU-Vs-Jbj">
-                                <rect key="frame" x="137" y="84" width="100" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="cDf-YW-t03"/>
-                                    <constraint firstAttribute="width" constant="100" id="jkA-ou-8Bo"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UMt-3G-COQ" customClass="GrayLabel" customModule="MySkinDoctor" customModuleProvider="target">
-                                <rect key="frame" x="40" y="246" width="295" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="v00-9Z-FbJ" customClass="FormTextView" customModule="MySkinDoctor" customModuleProvider="target">
-                                <rect key="frame" x="40" y="275" width="295" height="110"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="v00-9Z-FbJ" secondAttribute="height" multiplier="343:128" id="5B2-uf-D1C"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ey-3M-qWH">
-                                <rect key="frame" x="172" y="200" width="30" height="30"/>
-                                <state key="normal" title="Edit"/>
-                                <connections>
-                                    <action selector="onEditUserProfilePressed:" destination="1TG-zf-x1o" eventType="touchUpInside" id="qRG-fQ-D5U"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XaN-Jm-X9L" customClass="PositiveButton" customModule="MySkinDoctor" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="47P-cO-LqT"/>
-                                </constraints>
-                                <state key="normal" title="Next"/>
-                                <connections>
-                                    <action selector="onNextButtonPressed:" destination="1TG-zf-x1o" eventType="touchUpInside" id="8Pk-IY-oFY"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="8Ey-3M-qWH" firstAttribute="centerX" secondItem="aYU-Vs-Jbj" secondAttribute="centerX" id="6qQ-7J-qf4"/>
-                            <constraint firstAttribute="trailing" secondItem="XaN-Jm-X9L" secondAttribute="trailing" id="7bT-0i-BO1"/>
-                            <constraint firstItem="aYU-Vs-Jbj" firstAttribute="top" secondItem="109-Xq-yup" secondAttribute="top" constant="20" id="Bn4-ZK-Tab"/>
-                            <constraint firstItem="v00-9Z-FbJ" firstAttribute="leading" secondItem="UMt-3G-COQ" secondAttribute="leading" id="Dff-02-mif"/>
-                            <constraint firstItem="109-Xq-yup" firstAttribute="trailing" secondItem="UMt-3G-COQ" secondAttribute="trailing" constant="40" id="LIA-ek-qdu"/>
-                            <constraint firstItem="UMt-3G-COQ" firstAttribute="leading" secondItem="109-Xq-yup" secondAttribute="leading" constant="40" id="ORk-Zl-IND"/>
-                            <constraint firstItem="8Ey-3M-qWH" firstAttribute="top" secondItem="aYU-Vs-Jbj" secondAttribute="bottom" constant="16" id="bu8-P7-jrv"/>
-                            <constraint firstItem="v00-9Z-FbJ" firstAttribute="trailing" secondItem="UMt-3G-COQ" secondAttribute="trailing" id="c3f-gW-RhW"/>
-                            <constraint firstItem="109-Xq-yup" firstAttribute="bottom" secondItem="XaN-Jm-X9L" secondAttribute="bottom" id="dE6-rG-h9b"/>
-                            <constraint firstItem="v00-9Z-FbJ" firstAttribute="width" secondItem="v00-9Z-FbJ" secondAttribute="height" multiplier="343:128" id="itF-03-PNZ"/>
-                            <constraint firstItem="UMt-3G-COQ" firstAttribute="top" secondItem="8Ey-3M-qWH" secondAttribute="bottom" constant="16" id="m9r-Dz-UIa"/>
-                            <constraint firstItem="v00-9Z-FbJ" firstAttribute="top" secondItem="UMt-3G-COQ" secondAttribute="bottom" constant="8" id="puW-Vg-v2e"/>
-                            <constraint firstItem="aYU-Vs-Jbj" firstAttribute="centerX" secondItem="U0O-rZ-mO1" secondAttribute="centerX" id="uHq-pz-mGo"/>
-                            <constraint firstItem="XaN-Jm-X9L" firstAttribute="leading" secondItem="109-Xq-yup" secondAttribute="leading" id="wND-JT-M38"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="109-Xq-yup"/>
-                    </view>
-                    <connections>
-                        <outlet property="descriptionLabel" destination="UMt-3G-COQ" id="0rc-HV-XAO"/>
-                        <outlet property="descriptionTextView" destination="v00-9Z-FbJ" id="Fbk-IO-AKK"/>
-                        <outlet property="editButton" destination="8Ey-3M-qWH" id="Dpx-Ve-5En"/>
-                        <outlet property="nextButton" destination="XaN-Jm-X9L" id="YyZ-eA-oFJ"/>
-                        <outlet property="userPhotoImageView" destination="aYU-Vs-Jbj" id="CS4-TV-mgz"/>
-                        <segue destination="P5v-WP-sTG" kind="show" identifier="goToSkinProblemLocationViewController" id="3wN-cV-UQR"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iyV-f2-194" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4716" y="-349"/>
-        </scene>
-        <!--Photo Information-->
-        <scene sceneID="lpt-hg-yXo">
-            <objects>
-                <viewController title="Photo Information" id="P5v-WP-sTG" customClass="SkinProblemLocationViewController" customModule="MySkinDoctor" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="KNm-Lv-YLK">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="bMY-op-PwZ">
-                                <rect key="frame" x="16" y="69" width="343" height="29"/>
-                                <segments>
-                                    <segment title="Front"/>
-                                    <segment title="Back"/>
-                                </segments>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <action selector="onfrontBackSegmentedControlValueChanged:" destination="P5v-WP-sTG" eventType="valueChanged" id="VOe-Vc-mng"/>
-                                </connections>
-                            </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please tell us where on the body this photo was taken" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="whp-y5-xZN">
-                                <rect key="frame" x="16" y="107" width="343" height="21"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Ky-qP-VCW">
-                                <rect key="frame" x="16" y="138" width="343" height="469"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JlR-26-RAi">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="439"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bodyFront" translatesAutoresizingMaskIntoConstraints="NO" id="8gM-Ud-eqS">
-                                                <rect key="frame" x="20" y="0.0" width="303" height="376"/>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="None" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wgg-xA-Kcj">
-                                                <rect key="frame" x="20" y="418" width="303" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="8gM-Ud-eqS" secondAttribute="trailing" constant="20" id="6SU-lx-g1b"/>
-                                            <constraint firstItem="Wgg-xA-Kcj" firstAttribute="top" secondItem="8gM-Ud-eqS" secondAttribute="bottom" constant="42" id="F68-3d-0RA"/>
-                                            <constraint firstItem="8gM-Ud-eqS" firstAttribute="leading" secondItem="JlR-26-RAi" secondAttribute="leading" constant="20" id="Gdz-Xt-CbJ"/>
-                                            <constraint firstItem="Wgg-xA-Kcj" firstAttribute="leading" secondItem="8gM-Ud-eqS" secondAttribute="leading" id="JOX-BA-Gxd"/>
-                                            <constraint firstItem="8gM-Ud-eqS" firstAttribute="top" secondItem="JlR-26-RAi" secondAttribute="top" id="ONP-bE-JyZ"/>
-                                            <constraint firstItem="Wgg-xA-Kcj" firstAttribute="trailing" secondItem="8gM-Ud-eqS" secondAttribute="trailing" id="ftN-7O-2te"/>
-                                            <constraint firstAttribute="bottom" secondItem="Wgg-xA-Kcj" secondAttribute="bottom" id="lGZ-qf-xjO"/>
-                                        </constraints>
-                                    </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YQ8-4K-8JY">
-                                        <rect key="frame" x="157" y="15" width="28" height="29"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="29" id="J4r-h8-OuJ"/>
-                                            <constraint firstAttribute="width" constant="28" id="f83-as-h1R"/>
-                                        </constraints>
-                                        <state key="normal" image="problemLocationInactive"/>
-                                        <state key="selected" image="problemLocationActive"/>
-                                        <connections>
-                                            <action selector="onLocationPressed:" destination="P5v-WP-sTG" eventType="touchUpInside" id="EZ3-HA-Kbq"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WcL-tz-0V0">
-                                        <rect key="frame" x="157" y="101" width="28" height="29"/>
-                                        <state key="normal" image="problemLocationInactive"/>
-                                        <state key="selected" image="problemLocationActive"/>
-                                        <connections>
-                                            <action selector="onLocationPressed:" destination="P5v-WP-sTG" eventType="touchUpInside" id="jMN-4W-5O4"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="JlR-26-RAi" secondAttribute="trailing" id="1Uh-WS-rIa"/>
-                                    <constraint firstItem="YQ8-4K-8JY" firstAttribute="top" secondItem="4Ky-qP-VCW" secondAttribute="top" constant="15" id="3j8-T9-21G"/>
-                                    <constraint firstItem="WcL-tz-0V0" firstAttribute="centerX" secondItem="YQ8-4K-8JY" secondAttribute="centerX" id="VRU-ft-Hj4"/>
-                                    <constraint firstItem="WcL-tz-0V0" firstAttribute="height" secondItem="YQ8-4K-8JY" secondAttribute="height" id="aI5-Pj-OUS"/>
-                                    <constraint firstItem="JlR-26-RAi" firstAttribute="leading" secondItem="4Ky-qP-VCW" secondAttribute="leading" id="acv-cw-n6x"/>
-                                    <constraint firstItem="WcL-tz-0V0" firstAttribute="top" secondItem="YQ8-4K-8JY" secondAttribute="bottom" constant="57" id="ct8-ni-35G"/>
-                                    <constraint firstAttribute="bottom" secondItem="JlR-26-RAi" secondAttribute="bottom" id="g7r-kf-a9s"/>
-                                    <constraint firstItem="YQ8-4K-8JY" firstAttribute="centerX" secondItem="4Ky-qP-VCW" secondAttribute="centerX" id="uo2-QZ-CSw"/>
-                                    <constraint firstItem="WcL-tz-0V0" firstAttribute="width" secondItem="YQ8-4K-8JY" secondAttribute="width" id="vOT-2X-y5J"/>
-                                    <constraint firstItem="JlR-26-RAi" firstAttribute="top" secondItem="4Ky-qP-VCW" secondAttribute="top" id="yPF-WH-W4n"/>
-                                    <constraint firstItem="JlR-26-RAi" firstAttribute="centerX" secondItem="4Ky-qP-VCW" secondAttribute="centerX" id="yzd-ea-Iuk"/>
-                                </constraints>
-                            </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z5Q-Vx-Ige" customClass="PositiveButton" customModule="MySkinDoctor" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
-                                <color key="backgroundColor" red="0.0" green="0.59346731090000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="9EM-kj-1XD"/>
-                                </constraints>
-                                <state key="normal" title="Finish and Add Photo">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="onNextButtonPressed:" destination="P5v-WP-sTG" eventType="touchUpInside" id="Vd2-2Q-Te2"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="brF-9P-bCx" firstAttribute="bottom" secondItem="Z5Q-Vx-Ige" secondAttribute="bottom" id="5zo-PI-wWd"/>
-                            <constraint firstItem="brF-9P-bCx" firstAttribute="trailing" secondItem="bMY-op-PwZ" secondAttribute="trailing" constant="16" id="61w-HF-7EB"/>
-                            <constraint firstItem="whp-y5-xZN" firstAttribute="trailing" secondItem="bMY-op-PwZ" secondAttribute="trailing" id="9dL-pn-5fN"/>
-                            <constraint firstItem="4Ky-qP-VCW" firstAttribute="leading" secondItem="whp-y5-xZN" secondAttribute="leading" id="FwJ-u6-J8m"/>
-                            <constraint firstItem="bMY-op-PwZ" firstAttribute="leading" secondItem="brF-9P-bCx" secondAttribute="leading" constant="16" id="L4x-sC-yD6"/>
-                            <constraint firstItem="4Ky-qP-VCW" firstAttribute="top" secondItem="whp-y5-xZN" secondAttribute="bottom" constant="10" id="MQS-Ex-x1B"/>
-                            <constraint firstItem="bMY-op-PwZ" firstAttribute="top" secondItem="brF-9P-bCx" secondAttribute="top" constant="5" id="TKd-7R-j2T"/>
-                            <constraint firstAttribute="trailing" secondItem="Z5Q-Vx-Ige" secondAttribute="trailing" id="Z5J-R5-Gb1"/>
-                            <constraint firstItem="whp-y5-xZN" firstAttribute="leading" secondItem="bMY-op-PwZ" secondAttribute="leading" id="aNM-Fb-ov1"/>
-                            <constraint firstItem="4Ky-qP-VCW" firstAttribute="trailing" secondItem="whp-y5-xZN" secondAttribute="trailing" id="iTr-15-B27"/>
-                            <constraint firstItem="Z5Q-Vx-Ige" firstAttribute="top" secondItem="4Ky-qP-VCW" secondAttribute="bottom" constant="10" id="k5V-Wq-qTP"/>
-                            <constraint firstItem="Z5Q-Vx-Ige" firstAttribute="leading" secondItem="brF-9P-bCx" secondAttribute="leading" id="rvG-kj-woK"/>
-                            <constraint firstItem="whp-y5-xZN" firstAttribute="top" secondItem="bMY-op-PwZ" secondAttribute="bottom" constant="10" id="vHO-WE-AN6"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="brF-9P-bCx"/>
-                    </view>
-                    <connections>
-                        <outlet property="bodyImageView" destination="8gM-Ud-eqS" id="qeo-S3-mPR"/>
-                        <outlet property="frontBackSegmentedControl" destination="bMY-op-PwZ" id="OJZ-V4-adw"/>
-                        <outlet property="locationHeadButton" destination="YQ8-4K-8JY" id="zbI-r4-T6I"/>
-                        <outlet property="locationLabel" destination="Wgg-xA-Kcj" id="qQ3-0y-MFP"/>
-                        <outlet property="locationNeckButton" destination="WcL-tz-0V0" id="Uta-0q-WNm"/>
-                        <outlet property="nextButton" destination="Z5Q-Vx-Ige" id="J41-kj-EPA"/>
-                        <outlet property="scrollView" destination="4Ky-qP-VCW" id="I4W-8O-CAl"/>
-                        <outlet property="tipLabel" destination="whp-y5-xZN" id="fkz-hc-ge2"/>
-                        <segue destination="RUD-CS-umZ" kind="unwind" identifier="unwindToAddSkinProblemsWithSegue" unwindAction="unwindToAddSkinProblemsWithSegue:" id="2Va-iL-R0D"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FiY-vr-wX8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="RUD-CS-umZ" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="5544.8000000000002" y="-344.07796101949026"/>
+            <point key="canvasLocation" x="3942" y="397"/>
         </scene>
         <!--Dashboard Tab View Controller-->
         <scene sceneID="7jH-Sb-nJj">
@@ -1029,17 +498,20 @@
             </objects>
             <point key="canvasLocation" x="1204.8" y="398.50074962518744"/>
         </scene>
+        <!--MySkinProblems-->
+        <scene sceneID="xJg-mp-ftd">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MySkinProblems" id="cBF-ue-roU" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M6c-8W-On5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2856" y="-349"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="addListItem" width="38" height="38"/>
-        <image name="bigWhiteArrow" width="24" height="24"/>
-        <image name="bodyFront" width="155" height="376"/>
         <image name="consultsActive" width="48" height="32"/>
         <image name="consultsInactive" width="48" height="32"/>
         <image name="diagnosed" width="24" height="24"/>
         <image name="logo" width="246" height="86"/>
-        <image name="problemLocationActive" width="54" height="54"/>
-        <image name="problemLocationInactive" width="28" height="29"/>
         <image name="profileActive" width="48" height="32"/>
         <image name="profileInactive" width="48" height="32"/>
         <image name="settingsIcon" width="20" height="20"/>
@@ -1047,7 +519,4 @@
         <image name="skinProblemsInactive" width="48" height="32"/>
         <image name="walletIcon" width="24" height="24"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="eI1-SU-qqT"/>
-    </inferredMetricsTieBreakers>
 </document>

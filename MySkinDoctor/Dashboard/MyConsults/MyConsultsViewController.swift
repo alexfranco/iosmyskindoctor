@@ -91,7 +91,7 @@ extension MyConsultsViewController: UITableViewDelegate, UITableViewDataSource {
 		
 		if numOfSections == 0 {
 			let noDataLabel: UILabel     = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
-			noDataLabel.text          = NSLocalizedString("myskinproblems_no_data", comment: "")
+			noDataLabel.text          = NSLocalizedString("myconsults_no_data", comment: "")
 			noDataLabel.textColor     = UIColor.black
 			noDataLabel.textAlignment = .center
 			tableView.backgroundView  = noDataLabel

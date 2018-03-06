@@ -113,9 +113,9 @@ struct AppStyle {
 	static let consultTableViewHeaderTextColorDisabled = BaseColors.warmGreyTwo
 	
 	static let consultTableViewCellTimeBackgroundColor = BaseColors.hospitalGreen
-	static let consultTableViewCellTimeBackgroundColorDisabled = BaseColors.hospitalGreen
+	static let consultTableViewCellTimeBackgroundColorDisabled = UIColor.clear
 	static let consultTableViewCellTextColor = BaseColors.white
-	static let consultTableViewCellTextColorDisabled = BaseColors.white
+	static let consultTableViewCellTextColorDisabled = UIColor.black
 	static let consultTableSectionTextFont = AppFonts.defaultBoldFont
 
 	// MyProfile TabBar	
