@@ -628,7 +628,7 @@
                         <outlet property="nextButton" destination="HZF-00-ROA" id="U0I-fB-2Le"/>
                         <outlet property="scrollView" destination="F59-QG-aZ6" id="lEp-gh-gkx"/>
                         <outlet property="tipLabel" destination="Wze-0b-5kL" id="zLF-Eu-7ig"/>
-                        <segue destination="Gdy-52-Gol" kind="unwind" identifier="unwindToAddSkinProblemsWithSegue" unwindAction="unwindToAddSkinProblemsWithSegue:" id="TVx-qR-3ey"/>
+                        <segue destination="Gdy-52-Gol" kind="unwind" identifier="unwindToAddSkinProblems" unwindAction="unwindToAddSkinProblemsWithSegue:" id="TVx-qR-3ey"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6bo-aF-Uqw" userLabel="First Responder" sceneMemberID="firstResponder"/>

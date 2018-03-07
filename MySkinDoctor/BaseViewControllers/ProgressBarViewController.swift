@@ -14,10 +14,6 @@ class ProgressBarViewController: UIViewController {
 	
 	var hud: MBProgressHUD?
 	
-	override func viewDidLoad() {
-		super.viewDidLoad()
-	}
-	
 	// MARK: MBProgressHUD
 	
 	func showSpinner(_ text: String?) {
@@ -50,5 +46,12 @@ class ProgressBarViewController: UIViewController {
 				spinner.hide(animated: true)
 			}
 		})
+	}
+}
+
+class BaseViewController: UIViewController {
+	override func viewWillDisappear(_ animated: Bool) {
+		let backItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+		navigationItem.backBarButtonItem = backItem
 	}
 }

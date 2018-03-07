@@ -62,7 +62,7 @@ class SkinProblemLocationViewController: FormViewController {
 		
 		viewModelCast.goNextSegue = { [] () in
 			DispatchQueue.main.async {
-				self.performSegue(withIdentifier: Segues.unwindToAddSkinProblemsWithSegue, sender: nil)
+				self.performSegue(withIdentifier: Segues.unwindToAddSkinProblems, sender: nil)
 			}
 		}
 	}

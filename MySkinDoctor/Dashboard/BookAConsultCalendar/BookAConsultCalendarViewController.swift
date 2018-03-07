@@ -45,7 +45,7 @@ class BookAConsultCalendarViewController: BindingViewController {
 		
 		viewModelCast.goNextSegue = { [weak self] () in
 			DispatchQueue.main.async {
-				// TODO
+				self?.performSegue(withIdentifier: Segues.goToConfirmConsult, sender: nil)
 			}
 		}
 	}
@@ -83,10 +83,19 @@ class BookAConsultCalendarViewController: BindingViewController {
 	// MARK: IBActions
 	
 	@IBAction func onNextButtonPressed(_ sender: Any) {
+		viewModelCast.saveModel()
 	}
 	
 	@objc func timeChanged(sender: UIDatePicker) {
 		viewModelCast.selectedDate = viewModelCast.selectedDate.adjust(hour: timePicker.date.component(.hour), minute: timePicker.date.component(.minute), second: timePicker.date.component(.second))
+	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if segue.identifier == Segues.goToConfirmConsult {
+			if let dest = segue.destination as? BookAConsultConfirmViewController, let model = viewModelCast.model {
+				dest.initViewModel(viewModel: BookAConsultConfirmViewModel(model:  model))
+			}
+		}
 	}
 	
 }

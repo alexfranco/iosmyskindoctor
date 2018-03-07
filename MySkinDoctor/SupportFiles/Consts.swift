@@ -18,8 +18,9 @@ struct Segues {
 	static let goToMedicalHistoryViewControler = "goToMedicalHistoryViewControler"
 	static let goToSkinProblemThankYouViewControllerFromMedicalHistory = "goToSkinProblemThankYouViewControllerFromMedicalHistory"
 	static let goToSkinProblemThankYouViewControllerFromAddSkinProblem = "goToSkinProblemThankYouViewControllerFromAddSkinProblem"
-	static let unwindToAddSkinProblemsWithSegue = "unwindToAddSkinProblemsWithSegue"
-	
+	static let goToConfirmConsult = "goToConfirmConsult"
+	static let unwindToAddSkinProblems = "unwindToAddSkinProblems"
+	static let unwindToMyConsults = "unwindToMyConsults"
 }
 
 struct Storyboard {

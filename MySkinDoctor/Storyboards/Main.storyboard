@@ -562,11 +562,107 @@
                         <outlet property="pickADateLabel" destination="xna-gZ-hSZ" id="mao-Zx-hp8"/>
                         <outlet property="pickATimeLabel" destination="0Zy-iG-g6r" id="FfV-f3-zWZ"/>
                         <outlet property="timePicker" destination="O78-bB-aEI" id="HDP-JA-lLb"/>
+                        <segue destination="QcT-TO-s8Z" kind="show" identifier="goToConfirmConsult" id="UGK-yE-Ep9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0fi-Ea-WnH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4772" y="394.45277361319341"/>
+        </scene>
+        <!--Confirm Consult-->
+        <scene sceneID="iZd-nJ-c5j">
+            <objects>
+                <viewController title="Confirm Consult" id="QcT-TO-s8Z" customClass="BookAConsultConfirmViewController" customModule="MySkinDoctor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="F4y-9K-mlE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mCP-cC-nFN" customClass="PositiveButton" customModule="MySkinDoctor" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="13n-hZ-dHo"/>
+                                </constraints>
+                                <state key="normal" title="Confirm &amp; Book"/>
+                                <connections>
+                                    <action selector="onNextButtonPressed:" destination="QcT-TO-s8Z" eventType="touchUpInside" id="AkN-oC-AAH"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="zs2-ji-2dy">
+                                <rect key="frame" x="60" y="243" width="255.5" height="131"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="TZP-Mw-zZD">
+                                        <rect key="frame" x="0.0" y="0.0" width="255.5" height="51"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your appointment date is:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YWw-DJ-JL8" customClass="GrayLabel" customModule="MySkinDoctor" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="255.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q4T-TO-gC3" customClass="TitleLabel" customModule="MySkinDoctor" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="30.5" width="255.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sP8-dB-Zgu">
+                                        <rect key="frame" x="0.0" y="80" width="255.5" height="51"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your chosen appointment time is:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvJ-GV-xBG" customClass="GrayLabel" customModule="MySkinDoctor" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="255.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="14C-L5-yeK" customClass="TitleLabel" customModule="MySkinDoctor" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="30.5" width="255.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dPW-2q-hxg" firstAttribute="trailing" secondItem="mCP-cC-nFN" secondAttribute="trailing" id="KEN-vA-5aQ"/>
+                            <constraint firstItem="zs2-ji-2dy" firstAttribute="centerX" secondItem="F4y-9K-mlE" secondAttribute="centerX" id="OhA-gs-kcJ"/>
+                            <constraint firstItem="zs2-ji-2dy" firstAttribute="centerY" secondItem="F4y-9K-mlE" secondAttribute="centerY" constant="-25" id="YfF-eS-pFz"/>
+                            <constraint firstItem="mCP-cC-nFN" firstAttribute="leading" secondItem="F4y-9K-mlE" secondAttribute="leading" id="cPY-7f-gM8"/>
+                            <constraint firstItem="dPW-2q-hxg" firstAttribute="bottom" secondItem="mCP-cC-nFN" secondAttribute="bottom" id="ipv-ak-Q0q"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dPW-2q-hxg"/>
+                    </view>
+                    <connections>
+                        <outlet property="nextButton" destination="mCP-cC-nFN" id="0Nx-F5-Tqs"/>
+                        <outlet property="yourAppointmentDateLabel" destination="Q4T-TO-gC3" id="ERo-uN-tNw"/>
+                        <outlet property="yourAppointmentDateTitleLabel" destination="YWw-DJ-JL8" id="nr6-5c-MKH"/>
+                        <outlet property="yourAppointmentTimeLabel" destination="14C-L5-yeK" id="UQZ-sV-Pk7"/>
+                        <outlet property="yourAppointmentTimeTitleLabel" destination="gvJ-GV-xBG" id="y0d-ZT-acJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VGZ-kN-scF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5598" y="394"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="zfS-b3-bMc">
+            <objects>
+                <viewController id="2fX-1Q-15S" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BIk-ZK-jhk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="XGw-6h-vcy"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ggX-vZ-ENY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6434" y="396"/>
         </scene>
         <!--Dashboard Tab View Controller-->
         <scene sceneID="7jH-Sb-nJj">

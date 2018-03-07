@@ -137,6 +137,9 @@ struct AppStyle {
 	static let consultCalendarSelectedDayTextColor = UIColor.white
 	
 
+	// Consult Confirm
+	static let consultConfirmHighligthedLabelTextColor = AppColors.secondTabColor
+	
 	// MyProfile TabBar	
 	static let profileBarTitleColor = AppColors.thirdTabColor
 	
