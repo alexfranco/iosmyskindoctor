@@ -224,6 +224,10 @@
 		FA6130D7205023CE00731495 /* BookAConsultThankYouViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6130D5205023CE00731495 /* BookAConsultThankYouViewModel.swift */; };
 		FA6130D8205023CE00731495 /* BookAConsultThankYouViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6130D5205023CE00731495 /* BookAConsultThankYouViewModel.swift */; };
 		FA6130D9205023CE00731495 /* BookAConsultThankYouViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6130D5205023CE00731495 /* BookAConsultThankYouViewModel.swift */; };
+		FA6130DB20503F9500731495 /* BookConsult.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA6130DA20503F9500731495 /* BookConsult.storyboard */; };
+		FA6130DC20503F9500731495 /* BookConsult.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA6130DA20503F9500731495 /* BookConsult.storyboard */; };
+		FA6130DD20503F9600731495 /* BookConsult.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA6130DA20503F9500731495 /* BookConsult.storyboard */; };
+		FA6130DE20503F9600731495 /* BookConsult.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA6130DA20503F9500731495 /* BookConsult.storyboard */; };
 		FA9760D6203AFBD200242255 /* LoginResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9760D5203AFBD200242255 /* LoginResponseModel.swift */; };
 		FA9760D9203B0E0A00242255 /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9760D8203B0E0A00242255 /* UIViewController+Alerts.swift */; };
 		FA9760DA203B0E0A00242255 /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9760D8203B0E0A00242255 /* UIViewController+Alerts.swift */; };
@@ -408,6 +412,7 @@
 		FA6130CA20500DCD00731495 /* BookAConsultConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookAConsultConfirmViewController.swift; sourceTree = "<group>"; };
 		FA6130D02050238E00731495 /* BookAConsultThankYouViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookAConsultThankYouViewController.swift; sourceTree = "<group>"; };
 		FA6130D5205023CE00731495 /* BookAConsultThankYouViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookAConsultThankYouViewModel.swift; sourceTree = "<group>"; };
+		FA6130DA20503F9500731495 /* BookConsult.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BookConsult.storyboard; sourceTree = "<group>"; };
 		FA9760D5203AFBD200242255 /* LoginResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseModel.swift; sourceTree = "<group>"; };
 		FA9760D8203B0E0A00242255 /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
 		FA9760DC203B0EDC00242255 /* BaseResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponseModel.swift; sourceTree = "<group>"; };
@@ -553,6 +558,7 @@
 				FAE733CD2034494D00898E65 /* LaunchScreen.storyboard */,
 				FAE733C52034494D00898E65 /* Login.storyboard */,
 				78B9E527203C4A920054CAD3 /* Main.storyboard */,
+				FA6130DA20503F9500731495 /* BookConsult.storyboard */,
 				788C3206204E7D680078A983 /* MySkinProblems.storyboard */,
 			);
 			path = Storyboards;
@@ -1062,6 +1068,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78B9E548203C4CD70054CAD3 /* Localizable.strings in Resources */,
+				FA6130DC20503F9500731495 /* BookConsult.storyboard in Resources */,
 				78B9E549203C4CD70054CAD3 /* LaunchScreen.storyboard in Resources */,
 				78B9E54A203C4CD70054CAD3 /* Assets.xcassets in Resources */,
 				788C3208204E7D680078A983 /* MySkinProblems.storyboard in Resources */,
@@ -1074,6 +1081,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA6130DB20503F9500731495 /* BookConsult.storyboard in Resources */,
 				78B9E558203C4ED70054CAD3 /* Podfile in Resources */,
 				78B9E520203C2E630054CAD3 /* Localizable.strings in Resources */,
 				FAE733CF2034494D00898E65 /* LaunchScreen.storyboard in Resources */,
@@ -1090,6 +1098,7 @@
 			files = (
 				78C205C820459BD500F8E407 /* Assets.xcassets in Resources */,
 				788C3209204E7D680078A983 /* MySkinProblems.storyboard in Resources */,
+				FA6130DD20503F9600731495 /* BookConsult.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1099,6 +1108,7 @@
 			files = (
 				78C205C920459BD500F8E407 /* Assets.xcassets in Resources */,
 				788C320A204E7D680078A983 /* MySkinProblems.storyboard in Resources */,
+				FA6130DE20503F9600731495 /* BookConsult.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
