@@ -24,8 +24,8 @@ class BookAConsultConfirmViewController: BindingViewController {
 		applyTheme()
 		
 		// default values
-		yourAppointmentDateLabel.text = viewModelCast.dateLabelText()
-		yourAppointmentTimeLabel.text = viewModelCast.timeLabelText()
+		yourAppointmentDateLabel.text = viewModelCast.dateLabelText
+		yourAppointmentTimeLabel.text = viewModelCast.timeLabelText
 	}
 	
 	override func initViewModel(viewModel: BaseViewModel) {
@@ -35,7 +35,7 @@ class BookAConsultConfirmViewController: BindingViewController {
 		
 		viewModelCast.goNextSegue = { [weak self] () in
 			DispatchQueue.main.async {
-				self?.performSegue(withIdentifier: Segues.unwindToAddSkinProblems, sender: nil)
+				self?.performSegue(withIdentifier: Segues.goToThankYouViewController, sender: nil)
 			}
 		}
 	}
@@ -51,5 +51,13 @@ class BookAConsultConfirmViewController: BindingViewController {
 	
 	@IBAction func onNextButtonPressed(_ sender: Any) {
 		viewModelCast.saveModel()
+	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if segue.identifier == Segues.goToThankYouViewController {
+			if let dest = segue.destination as? BookAConsultThankYouViewController, let model = viewModelCast.model {
+				dest.initViewModel(viewModel: BookAConsultThankYouViewModel(model:  model))
+			}
+		}
 	}
 }

@@ -11,6 +11,7 @@ import UIKit
 
 class MyConsultsViewModel: BaseViewModel {
 	
+	
 	var dateFormater = DateFormatter()
 
 	enum ConsultSegmentedEnum: Int {
@@ -23,6 +24,7 @@ class MyConsultsViewModel: BaseViewModel {
 	var sectionsInTableUpcoming = [String]()
 	var sectionsInTableHistory = [String]()
 	
+	// Bind properties
 	var refresh: (()->())?
 	
 	var selectedSegmented = ConsultSegmentedEnum.all {
@@ -43,6 +45,10 @@ class MyConsultsViewModel: BaseViewModel {
 		allItems = [ConsultModel(profileImage: nil, firstName: "Dr Yellow", lastName: "Kun", date: Date().adjust(.day, offset: -6), qualification: "Past"),
 					ConsultModel(profileImage: nil, firstName: "Dr Red", lastName: "Sama", date: Date().adjust(.day, offset: 6), qualification: "Upcoming")]
 		
+		refreshData()
+	}
+	
+	func refreshData() {
 		allItems.sort { (modelA, modelB) -> Bool in
 			return modelA.date > modelB.date
 		}
@@ -53,10 +59,8 @@ class MyConsultsViewModel: BaseViewModel {
 		sectionsInTableAll = createDateSections(models: allItems)
 		sectionsInTableUpcoming = createDateSections(models: upcomingItems)
 		sectionsInTableHistory = createDateSections(models: historyItems)
-	}
-	
-	func refreshData() {
-		refresh!()
+		
+		if refresh != nil { refresh!() }
 	}
 	
 	func createDateSections(models: [ConsultModel]) -> [String] {
@@ -127,6 +131,11 @@ class MyConsultsViewModel: BaseViewModel {
 	
 	func getHeaderTextColor(section: Int) -> UIColor {
 		return (getSectionItems(section: section).first?.date)! > Date() ? AppStyle.consultTableViewHeaderTextColor : AppStyle.consultTableViewHeaderTextColorDisabled
+	}
+	
+	func appendNewModel(model: ConsultModel) {
+		allItems.append(model)
+		refreshData()
 	}
 	
 }

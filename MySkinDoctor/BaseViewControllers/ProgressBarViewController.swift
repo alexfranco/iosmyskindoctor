@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import MBProgressHUD
 
-class ProgressBarViewController: UIViewController {
+class ProgressBarViewController: BaseViewController {
 	
 	var hud: MBProgressHUD?
 	

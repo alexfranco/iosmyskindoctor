@@ -1,5 +1,5 @@
 //
-//  BookingAConsultCalendarViewModel.swift
+//  BookAConsultCalendarViewModel.swift
 //  MySkinDoctor
 //
 //  Created by Alex Núñez on 06/03/2018.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class BookingAConsultCalendarViewModel: BaseViewModel {
+class BookAConsultCalendarViewModel: BaseViewModel {
 	
 	var model: ConsultModel?
 	
@@ -20,10 +20,12 @@ class BookingAConsultCalendarViewModel: BaseViewModel {
 	
 	var selectedDateUpdated: ((_ date: Date)->())?
 	
-	func monthLabelText() -> String {
-		let df = DateFormatter()
-		df.dateFormat = "MMMM YYYY"
-		return selectedDate.ordinal() + " " + df.string(from: selectedDate)
+	var monthLabelText: String {
+		get {
+			let df = DateFormatter()
+			df.dateFormat = "MMMM YYYY"
+			return selectedDate.ordinal() + " " + df.string(from: selectedDate)
+		}
 	}
 	
 	func saveModel() {

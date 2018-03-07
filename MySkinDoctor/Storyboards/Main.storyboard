@@ -643,24 +643,187 @@
                         <outlet property="yourAppointmentDateTitleLabel" destination="YWw-DJ-JL8" id="nr6-5c-MKH"/>
                         <outlet property="yourAppointmentTimeLabel" destination="14C-L5-yeK" id="UQZ-sV-Pk7"/>
                         <outlet property="yourAppointmentTimeTitleLabel" destination="gvJ-GV-xBG" id="y0d-ZT-acJ"/>
+                        <segue destination="2fX-1Q-15S" kind="show" identifier="goToThankYouViewController" id="Xw3-Mc-GJ5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VGZ-kN-scF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5598" y="394"/>
         </scene>
-        <!--View Controller-->
+        <!--BookA Consult Thank You View Controller-->
         <scene sceneID="zfS-b3-bMc">
             <objects>
-                <viewController id="2fX-1Q-15S" sceneMemberID="viewController">
+                <viewController id="2fX-1Q-15S" customClass="BookAConsultThankYouViewController" customModule="MySkinDoctor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BIk-ZK-jhk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kQ5-QA-emD">
+                                <rect key="frame" x="0.0" y="79" width="375" height="140"/>
+                                <subviews>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" image="bigWhiteArrow" translatesAutoresizingMaskIntoConstraints="NO" id="RN2-DF-bbQ">
+                                        <rect key="frame" x="153.5" y="0.0" width="68" height="68"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="68" id="a6r-vL-T0j"/>
+                                            <constraint firstAttribute="height" constant="68" id="y94-0O-rbx"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thank you" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qBL-dx-96C">
+                                        <rect key="frame" x="10" y="74" width="355" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your consultation has been booked" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PHb-G1-yTn">
+                                        <rect key="frame" x="10" y="109" width="355" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="RN2-DF-bbQ" firstAttribute="top" secondItem="kQ5-QA-emD" secondAttribute="top" id="5AS-Bc-EXk"/>
+                                    <constraint firstItem="PHb-G1-yTn" firstAttribute="top" secondItem="qBL-dx-96C" secondAttribute="bottom" constant="14" id="AGr-Br-VG2"/>
+                                    <constraint firstItem="qBL-dx-96C" firstAttribute="leading" secondItem="kQ5-QA-emD" secondAttribute="leading" constant="10" id="FqO-ob-vsZ"/>
+                                    <constraint firstItem="PHb-G1-yTn" firstAttribute="trailing" secondItem="qBL-dx-96C" secondAttribute="trailing" id="GV4-en-vdk"/>
+                                    <constraint firstAttribute="height" constant="140" id="Gj5-uv-LXY"/>
+                                    <constraint firstAttribute="trailing" secondItem="qBL-dx-96C" secondAttribute="trailing" constant="10" id="KA7-ip-iLH"/>
+                                    <constraint firstItem="PHb-G1-yTn" firstAttribute="leading" secondItem="qBL-dx-96C" secondAttribute="leading" id="Lt6-TW-nqI"/>
+                                    <constraint firstItem="RN2-DF-bbQ" firstAttribute="centerX" secondItem="kQ5-QA-emD" secondAttribute="centerX" id="dP7-y8-1DF"/>
+                                    <constraint firstItem="qBL-dx-96C" firstAttribute="top" secondItem="RN2-DF-bbQ" secondAttribute="bottom" constant="6" id="zJr-ST-EVh"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ndi-Vh-RLP">
+                                <rect key="frame" x="0.0" y="239" width="375" height="60"/>
+                                <color key="backgroundColor" red="0.0" green="0.59346731090000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="8TS-zj-Bcr"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t4z-Zc-1aC">
+                                <rect key="frame" x="0.0" y="299" width="375" height="258"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your consultant:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Cc-4w-8Rh" customClass="GrayLabel" customModule="MySkinDoctor" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="50" width="335" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mr. John Smith" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jxc-M2-def" customClass="BoldLabel" customModule="MySkinDoctor" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="77" width="335" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Qualifications" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="91r-we-Fdh">
+                                        <rect key="frame" x="20" y="106" width="335" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Jxc-M2-def" firstAttribute="leading" secondItem="7Cc-4w-8Rh" secondAttribute="leading" id="5PV-ch-fp6"/>
+                                    <constraint firstItem="91r-we-Fdh" firstAttribute="leading" secondItem="Jxc-M2-def" secondAttribute="leading" id="926-Ov-JL3"/>
+                                    <constraint firstAttribute="trailing" secondItem="7Cc-4w-8Rh" secondAttribute="trailing" constant="20" id="QvF-xO-Fut"/>
+                                    <constraint firstItem="7Cc-4w-8Rh" firstAttribute="leading" secondItem="t4z-Zc-1aC" secondAttribute="leading" constant="20" id="Rb8-Yy-hGi"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="VS2-Dc-nmM"/>
+                                    <constraint firstItem="91r-we-Fdh" firstAttribute="trailing" secondItem="Jxc-M2-def" secondAttribute="trailing" id="W8B-Ii-j5x"/>
+                                    <constraint firstItem="Jxc-M2-def" firstAttribute="top" secondItem="7Cc-4w-8Rh" secondAttribute="bottom" constant="6" id="bJg-Fj-lEe"/>
+                                    <constraint firstItem="91r-we-Fdh" firstAttribute="top" secondItem="Jxc-M2-def" secondAttribute="bottom" constant="8" id="iUC-dQ-lg3"/>
+                                    <constraint firstItem="7Cc-4w-8Rh" firstAttribute="top" secondItem="t4z-Zc-1aC" secondAttribute="top" constant="50" id="o3r-8Q-j8T"/>
+                                    <constraint firstItem="Jxc-M2-def" firstAttribute="trailing" secondItem="7Cc-4w-8Rh" secondAttribute="trailing" id="qXc-rt-B40"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ak4-Zz-Maf">
+                                <rect key="frame" x="137" y="243" width="100" height="100"/>
+                                <color key="backgroundColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="3Hb-If-eyy"/>
+                                    <constraint firstAttribute="height" constant="100" id="vOz-8B-eok"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sYH-eX-7bE">
+                                <rect key="frame" x="0.0" y="557" width="375" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your appointment time is:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IRS-eM-0Z0" customClass="GrayLabel" customModule="MySkinDoctor" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="7" width="355" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date &amp; Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kEu-C2-drD" customClass="BoldLabel" customModule="MySkinDoctor" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="34" width="355" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="kEu-C2-drD" secondAttribute="trailing" constant="10" id="1br-Js-Hfc"/>
+                                    <constraint firstItem="IRS-eM-0Z0" firstAttribute="leading" secondItem="sYH-eX-7bE" secondAttribute="leading" constant="10" id="9nN-GR-7U3"/>
+                                    <constraint firstAttribute="trailing" secondItem="IRS-eM-0Z0" secondAttribute="trailing" constant="10" id="Dtq-fc-bMN"/>
+                                    <constraint firstItem="IRS-eM-0Z0" firstAttribute="top" secondItem="sYH-eX-7bE" secondAttribute="top" constant="7" id="adj-yP-Kgq"/>
+                                    <constraint firstItem="kEu-C2-drD" firstAttribute="leading" secondItem="sYH-eX-7bE" secondAttribute="leading" constant="10" id="lYR-47-gQq"/>
+                                    <constraint firstItem="kEu-C2-drD" firstAttribute="top" secondItem="IRS-eM-0Z0" secondAttribute="bottom" constant="6" id="uT0-PZ-mfL"/>
+                                    <constraint firstAttribute="height" constant="60" id="vUN-h2-E7I"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fhw-hi-1mh" customClass="PositiveButton" customModule="MySkinDoctor" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ful-Nm-qbe"/>
+                                </constraints>
+                                <state key="normal" title="OK"/>
+                                <connections>
+                                    <action selector="onNextButtonPressed:" destination="2fX-1Q-15S" eventType="touchUpInside" id="Pl1-be-OUp"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.59346731090000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Ndi-Vh-RLP" firstAttribute="bottom" secondItem="Ak4-Zz-Maf" secondAttribute="bottom" constant="-44" id="HED-GQ-ESN"/>
+                            <constraint firstItem="fhw-hi-1mh" firstAttribute="top" secondItem="sYH-eX-7bE" secondAttribute="bottom" id="KKP-cZ-f9J"/>
+                            <constraint firstItem="Ndi-Vh-RLP" firstAttribute="trailing" secondItem="XGw-6h-vcy" secondAttribute="trailing" id="KMN-Ur-ksE"/>
+                            <constraint firstItem="Ak4-Zz-Maf" firstAttribute="centerX" secondItem="BIk-ZK-jhk" secondAttribute="centerX" id="L3y-jS-gWh"/>
+                            <constraint firstItem="XGw-6h-vcy" firstAttribute="trailing" secondItem="kQ5-QA-emD" secondAttribute="trailing" id="MQI-IA-aWK"/>
+                            <constraint firstItem="Ndi-Vh-RLP" firstAttribute="top" secondItem="kQ5-QA-emD" secondAttribute="bottom" constant="20" id="OzI-fw-QgR"/>
+                            <constraint firstItem="kQ5-QA-emD" firstAttribute="leading" secondItem="BIk-ZK-jhk" secondAttribute="leading" id="PYO-r6-r1B"/>
+                            <constraint firstItem="Ndi-Vh-RLP" firstAttribute="leading" secondItem="XGw-6h-vcy" secondAttribute="leading" id="Q2G-vN-yWe"/>
+                            <constraint firstItem="fhw-hi-1mh" firstAttribute="leading" secondItem="XGw-6h-vcy" secondAttribute="leading" id="XwF-eN-XGp"/>
+                            <constraint firstItem="XGw-6h-vcy" firstAttribute="trailing" secondItem="sYH-eX-7bE" secondAttribute="trailing" id="Ycr-sR-htG"/>
+                            <constraint firstItem="t4z-Zc-1aC" firstAttribute="top" secondItem="Ndi-Vh-RLP" secondAttribute="bottom" id="ZPn-Qd-7TM"/>
+                            <constraint firstAttribute="trailing" secondItem="t4z-Zc-1aC" secondAttribute="trailing" id="bQX-Bv-CFb"/>
+                            <constraint firstItem="kQ5-QA-emD" firstAttribute="top" secondItem="XGw-6h-vcy" secondAttribute="top" constant="15" id="cKX-le-Y1F"/>
+                            <constraint firstItem="fhw-hi-1mh" firstAttribute="bottom" secondItem="XGw-6h-vcy" secondAttribute="bottom" id="e63-yX-85Y"/>
+                            <constraint firstItem="sYH-eX-7bE" firstAttribute="leading" secondItem="XGw-6h-vcy" secondAttribute="leading" id="fLm-ua-y82"/>
+                            <constraint firstItem="sYH-eX-7bE" firstAttribute="top" secondItem="t4z-Zc-1aC" secondAttribute="bottom" id="gr1-vt-Vem"/>
+                            <constraint firstAttribute="trailing" secondItem="fhw-hi-1mh" secondAttribute="trailing" id="ni2-p0-Zjo"/>
+                            <constraint firstItem="t4z-Zc-1aC" firstAttribute="leading" secondItem="BIk-ZK-jhk" secondAttribute="leading" id="oyB-Vd-DVo"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="XGw-6h-vcy"/>
                     </view>
+                    <connections>
+                        <outlet property="appointmentDateLabel" destination="kEu-C2-drD" id="7Zp-Xg-wr3"/>
+                        <outlet property="appointmentTitleLabel" destination="IRS-eM-0Z0" id="Mcv-XF-KBS"/>
+                        <outlet property="appointmentView" destination="sYH-eX-7bE" id="R5v-AZ-nod"/>
+                        <outlet property="consultationBookedLabel" destination="PHb-G1-yTn" id="fWt-FH-GHq"/>
+                        <outlet property="doctorNameLabel" destination="Jxc-M2-def" id="r6a-RZ-l1l"/>
+                        <outlet property="nextButton" destination="fhw-hi-1mh" id="0Sq-wk-7zo"/>
+                        <outlet property="profileHeaderView" destination="Ndi-Vh-RLP" id="Zvw-kA-sQX"/>
+                        <outlet property="profileImageView" destination="Ak4-Zz-Maf" id="Bsv-eT-cF7"/>
+                        <outlet property="profileView" destination="t4z-Zc-1aC" id="N2c-MM-NHI"/>
+                        <outlet property="qualificationsLabel" destination="91r-we-Fdh" id="ptu-g4-0EI"/>
+                        <outlet property="thankYouLabel" destination="qBL-dx-96C" id="i8x-xV-tAy"/>
+                        <segue destination="B4L-5e-5wC" kind="unwind" identifier="unwindToMyConsults" unwindAction="unwindToMyConsultsWithSegue:" id="spB-7e-IC3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ggX-vZ-ENY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="B4L-5e-5wC" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="6434" y="396"/>
         </scene>
@@ -731,6 +894,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bigWhiteArrow" width="24" height="24"/>
         <image name="consultsActive" width="48" height="32"/>
         <image name="consultsInactive" width="48" height="32"/>
         <image name="diagnosed" width="24" height="24"/>

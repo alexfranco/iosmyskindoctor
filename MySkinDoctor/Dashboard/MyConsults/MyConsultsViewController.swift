@@ -78,6 +78,11 @@ class MyConsultsViewController: BindingViewController {
 	// MARK: Segues
 	
 	@IBAction func unwindToMyConsults(segue:UIStoryboardSegue) {
+		if let sourceViewController = segue.source as? BookAConsultThankYouViewController {
+			if let viewModel = sourceViewController.viewModelCast {
+				viewModelCast.appendNewModel(model: viewModel.model)
+			}
+		}
 	}
 	
 }

@@ -49,10 +49,10 @@
 		788C3219204EB63B0078A983 /* UILabel+Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788C3217204EB63B0078A983 /* UILabel+Padding.swift */; };
 		788C321A204EB63B0078A983 /* UILabel+Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788C3217204EB63B0078A983 /* UILabel+Padding.swift */; };
 		788C321B204EB63B0078A983 /* UILabel+Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788C3217204EB63B0078A983 /* UILabel+Padding.swift */; };
-		788C321D204EF0400078A983 /* BookingAConsultCalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788C321C204EF0400078A983 /* BookingAConsultCalendarViewModel.swift */; };
-		788C321E204EF0400078A983 /* BookingAConsultCalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788C321C204EF0400078A983 /* BookingAConsultCalendarViewModel.swift */; };
-		788C321F204EF0400078A983 /* BookingAConsultCalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788C321C204EF0400078A983 /* BookingAConsultCalendarViewModel.swift */; };
-		788C3220204EF0400078A983 /* BookingAConsultCalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788C321C204EF0400078A983 /* BookingAConsultCalendarViewModel.swift */; };
+		788C321D204EF0400078A983 /* BookAConsultCalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788C321C204EF0400078A983 /* BookAConsultCalendarViewModel.swift */; };
+		788C321E204EF0400078A983 /* BookAConsultCalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788C321C204EF0400078A983 /* BookAConsultCalendarViewModel.swift */; };
+		788C321F204EF0400078A983 /* BookAConsultCalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788C321C204EF0400078A983 /* BookAConsultCalendarViewModel.swift */; };
+		788C3220204EF0400078A983 /* BookAConsultCalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788C321C204EF0400078A983 /* BookAConsultCalendarViewModel.swift */; };
 		78B9E516203C2B920054CAD3 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B9E515203C2B920054CAD3 /* ForgotPasswordViewController.swift */; };
 		78B9E518203C2C670054CAD3 /* ForgotPasswordResposeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B9E517203C2C670054CAD3 /* ForgotPasswordResposeModel.swift */; };
 		78B9E520203C2E630054CAD3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78B9E522203C2E630054CAD3 /* Localizable.strings */; };
@@ -216,6 +216,14 @@
 		FA6130CC20500DCD00731495 /* BookAConsultConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6130CA20500DCD00731495 /* BookAConsultConfirmViewController.swift */; };
 		FA6130CD20500DCD00731495 /* BookAConsultConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6130CA20500DCD00731495 /* BookAConsultConfirmViewController.swift */; };
 		FA6130CE20500DCD00731495 /* BookAConsultConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6130CA20500DCD00731495 /* BookAConsultConfirmViewController.swift */; };
+		FA6130D12050238E00731495 /* BookAConsultThankYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6130D02050238E00731495 /* BookAConsultThankYouViewController.swift */; };
+		FA6130D22050238E00731495 /* BookAConsultThankYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6130D02050238E00731495 /* BookAConsultThankYouViewController.swift */; };
+		FA6130D32050238E00731495 /* BookAConsultThankYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6130D02050238E00731495 /* BookAConsultThankYouViewController.swift */; };
+		FA6130D42050238E00731495 /* BookAConsultThankYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6130D02050238E00731495 /* BookAConsultThankYouViewController.swift */; };
+		FA6130D6205023CE00731495 /* BookAConsultThankYouViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6130D5205023CE00731495 /* BookAConsultThankYouViewModel.swift */; };
+		FA6130D7205023CE00731495 /* BookAConsultThankYouViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6130D5205023CE00731495 /* BookAConsultThankYouViewModel.swift */; };
+		FA6130D8205023CE00731495 /* BookAConsultThankYouViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6130D5205023CE00731495 /* BookAConsultThankYouViewModel.swift */; };
+		FA6130D9205023CE00731495 /* BookAConsultThankYouViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6130D5205023CE00731495 /* BookAConsultThankYouViewModel.swift */; };
 		FA9760D6203AFBD200242255 /* LoginResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9760D5203AFBD200242255 /* LoginResponseModel.swift */; };
 		FA9760D9203B0E0A00242255 /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9760D8203B0E0A00242255 /* UIViewController+Alerts.swift */; };
 		FA9760DA203B0E0A00242255 /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9760D8203B0E0A00242255 /* UIViewController+Alerts.swift */; };
@@ -351,7 +359,7 @@
 		788C320C204E813E0078A983 /* BookAConsultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookAConsultViewController.swift; sourceTree = "<group>"; };
 		788C3212204E88D00078A983 /* BookAConsultCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookAConsultCalendarViewController.swift; sourceTree = "<group>"; };
 		788C3217204EB63B0078A983 /* UILabel+Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Padding.swift"; sourceTree = "<group>"; };
-		788C321C204EF0400078A983 /* BookingAConsultCalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingAConsultCalendarViewModel.swift; sourceTree = "<group>"; };
+		788C321C204EF0400078A983 /* BookAConsultCalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookAConsultCalendarViewModel.swift; sourceTree = "<group>"; };
 		78B9E515203C2B920054CAD3 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		78B9E517203C2C670054CAD3 /* ForgotPasswordResposeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordResposeModel.swift; sourceTree = "<group>"; };
 		78B9E521203C2E630054CAD3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -398,6 +406,8 @@
 		FA6130BF204D9A0600731495 /* Date+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extentions.swift"; sourceTree = "<group>"; };
 		FA6130C520500DB700731495 /* BookAConsultConfirmViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookAConsultConfirmViewModel.swift; sourceTree = "<group>"; };
 		FA6130CA20500DCD00731495 /* BookAConsultConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookAConsultConfirmViewController.swift; sourceTree = "<group>"; };
+		FA6130D02050238E00731495 /* BookAConsultThankYouViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookAConsultThankYouViewController.swift; sourceTree = "<group>"; };
+		FA6130D5205023CE00731495 /* BookAConsultThankYouViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookAConsultThankYouViewModel.swift; sourceTree = "<group>"; };
 		FA9760D5203AFBD200242255 /* LoginResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseModel.swift; sourceTree = "<group>"; };
 		FA9760D8203B0E0A00242255 /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
 		FA9760DC203B0EDC00242255 /* BaseResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponseModel.swift; sourceTree = "<group>"; };
@@ -497,21 +507,21 @@
 			path = Theme;
 			sourceTree = "<group>";
 		};
-		788C320B204E81260078A983 /* BookAConsult */ = {
+		788C320B204E81260078A983 /* MyConsultsBook */ = {
 			isa = PBXGroup;
 			children = (
 				788C320C204E813E0078A983 /* BookAConsultViewController.swift */,
 			);
-			path = BookAConsult;
+			path = MyConsultsBook;
 			sourceTree = "<group>";
 		};
-		788C3211204E88A00078A983 /* BookAConsultCalendar */ = {
+		788C3211204E88A00078A983 /* MyConsultsCalendar */ = {
 			isa = PBXGroup;
 			children = (
-				788C321C204EF0400078A983 /* BookingAConsultCalendarViewModel.swift */,
+				788C321C204EF0400078A983 /* BookAConsultCalendarViewModel.swift */,
 				788C3212204E88D00078A983 /* BookAConsultCalendarViewController.swift */,
 			);
-			path = BookAConsultCalendar;
+			path = MyConsultsCalendar;
 			sourceTree = "<group>";
 		};
 		78B9E51B203C2D600054CAD3 /* SupportFiles */ = {
@@ -559,7 +569,7 @@
 			path = BaseViewControllers;
 			sourceTree = "<group>";
 		};
-		78C205DE2045A91800F8E407 /* AddSkinProblem */ = {
+		78C205DE2045A91800F8E407 /* MySkinProblemNew */ = {
 			isa = PBXGroup;
 			children = (
 				FADC33312046BF160065A7EB /* Models */,
@@ -567,7 +577,7 @@
 				78C205E02045AA5E00F8E407 /* ViewModels */,
 				FAD6ADBB204461050050C1A9 /* AddSkinProblemsViewController.swift */,
 			);
-			path = AddSkinProblem;
+			path = MySkinProblemNew;
 			sourceTree = "<group>";
 		};
 		78C205DF2045AA5400F8E407 /* Cells */ = {
@@ -589,14 +599,14 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		78FFF02820496E000013240D /* MedicalHistory */ = {
+		78FFF02820496E000013240D /* MySkinProblemMedicalHistory */ = {
 			isa = PBXGroup;
 			children = (
 				78FFF03320496F370013240D /* MedicalHistoryModel.swift */,
 				78FFF02E20496E340013240D /* MedicalHistoryViewModel.swift */,
 				78FFF02920496E240013240D /* MedicalHistoryViewControler.swift */,
 			);
-			path = MedicalHistory;
+			path = MySkinProblemMedicalHistory;
 			sourceTree = "<group>";
 		};
 		C48825061086BF1E8DD69024 /* Pods */ = {
@@ -619,15 +629,16 @@
 			children = (
 				FA33263920400FD200657C8A /* DashboardTabViewController.swift */,
 				FA33263E20401A7300657C8A /* MySkinProblems */,
-				78C205DE2045A91800F8E407 /* AddSkinProblem */,
-				FADC33372046DA560065A7EB /* SkinProblemPhotoInformation */,
-				FADC3348204706920065A7EB /* SkinProblemLocation */,
-				78FFF02820496E000013240D /* MedicalHistory */,
-				FADC3353204D487A0065A7EB /* SkinProblemThankYou */,
+				78C205DE2045A91800F8E407 /* MySkinProblemNew */,
+				FADC33372046DA560065A7EB /* MySkinProblemPhotoInformation */,
+				FADC3348204706920065A7EB /* MySkinProblemLocation */,
+				78FFF02820496E000013240D /* MySkinProblemMedicalHistory */,
+				FADC3353204D487A0065A7EB /* MySkinProblemThankYou */,
 				FAF2CEB4204D55220001EEAB /* MyConsults */,
-				788C320B204E81260078A983 /* BookAConsult */,
-				788C3211204E88A00078A983 /* BookAConsultCalendar */,
-				FA6130C420500D9500731495 /* BookAConsultConfirm */,
+				788C320B204E81260078A983 /* MyConsultsBook */,
+				788C3211204E88A00078A983 /* MyConsultsCalendar */,
+				FA6130C420500D9500731495 /* MyConsultsConfirmBooking */,
+				FA6130CF2050234100731495 /* MyConsultsThankyou */,
 				FA3326642040350400657C8A /* Profile */,
 			);
 			path = Dashboard;
@@ -693,13 +704,22 @@
 			path = Custom;
 			sourceTree = "<group>";
 		};
-		FA6130C420500D9500731495 /* BookAConsultConfirm */ = {
+		FA6130C420500D9500731495 /* MyConsultsConfirmBooking */ = {
 			isa = PBXGroup;
 			children = (
 				FA6130C520500DB700731495 /* BookAConsultConfirmViewModel.swift */,
 				FA6130CA20500DCD00731495 /* BookAConsultConfirmViewController.swift */,
 			);
-			path = BookAConsultConfirm;
+			path = MyConsultsConfirmBooking;
+			sourceTree = "<group>";
+		};
+		FA6130CF2050234100731495 /* MyConsultsThankyou */ = {
+			isa = PBXGroup;
+			children = (
+				FA6130D5205023CE00731495 /* BookAConsultThankYouViewModel.swift */,
+				FA6130D02050238E00731495 /* BookAConsultThankYouViewController.swift */,
+			);
+			path = MyConsultsThankyou;
 			sourceTree = "<group>";
 		};
 		FA9760D7203B0DF000242255 /* Extentions */ = {
@@ -745,30 +765,30 @@
 			path = "New Group";
 			sourceTree = "<group>";
 		};
-		FADC33372046DA560065A7EB /* SkinProblemPhotoInformation */ = {
+		FADC33372046DA560065A7EB /* MySkinProblemPhotoInformation */ = {
 			isa = PBXGroup;
 			children = (
 				FADC33432046F16C0065A7EB /* SkinProblemPhotoInformationViewModel.swift */,
 				FADC33382046DA9A0065A7EB /* SkinProblemPhotoInformationViewController.swift */,
 			);
-			path = SkinProblemPhotoInformation;
+			path = MySkinProblemPhotoInformation;
 			sourceTree = "<group>";
 		};
-		FADC3348204706920065A7EB /* SkinProblemLocation */ = {
+		FADC3348204706920065A7EB /* MySkinProblemLocation */ = {
 			isa = PBXGroup;
 			children = (
 				FADC334E204706E70065A7EB /* SkinProblemLocationViewModel.swift */,
 				FADC3349204706DC0065A7EB /* SkinProblemLocationViewController.swift */,
 			);
-			path = SkinProblemLocation;
+			path = MySkinProblemLocation;
 			sourceTree = "<group>";
 		};
-		FADC3353204D487A0065A7EB /* SkinProblemThankYou */ = {
+		FADC3353204D487A0065A7EB /* MySkinProblemThankYou */ = {
 			isa = PBXGroup;
 			children = (
 				FADC3354204D48BA0065A7EB /* SkinProblemThankYouViewController.swift */,
 			);
-			path = SkinProblemThankYou;
+			path = MySkinProblemThankYou;
 			sourceTree = "<group>";
 		};
 		FAE733B52034494D00898E65 = {
@@ -1409,7 +1429,8 @@
 				FAD6ADBD204461050050C1A9 /* AddSkinProblemsViewController.swift in Sources */,
 				FA332661204034B300657C8A /* UIImageView+Circular.swift in Sources */,
 				788C3214204E88D00078A983 /* BookAConsultCalendarViewController.swift in Sources */,
-				788C321E204EF0400078A983 /* BookingAConsultCalendarViewModel.swift in Sources */,
+				FA6130D7205023CE00731495 /* BookAConsultThankYouViewModel.swift in Sources */,
+				788C321E204EF0400078A983 /* BookAConsultCalendarViewModel.swift in Sources */,
 				78B9E532203C4CD70054CAD3 /* ApiUtils.swift in Sources */,
 				FA6130CC20500DCD00731495 /* BookAConsultConfirmViewController.swift in Sources */,
 				FA33263B20400FD200657C8A /* DashboardTabViewController.swift in Sources */,
@@ -1453,6 +1474,7 @@
 				78B9E53F203C4CD70054CAD3 /* ForgotPasswordViewController.swift in Sources */,
 				FA3326C320441C8500657C8A /* BoldLabel.swift in Sources */,
 				FADC333A2046DA9A0065A7EB /* SkinProblemPhotoInformationViewController.swift in Sources */,
+				FA6130D22050238E00731495 /* BookAConsultThankYouViewController.swift in Sources */,
 				FA33264D2040240400657C8A /* MySkinProblemsTableViewCell.swift in Sources */,
 				78B9E540203C4CD70054CAD3 /* RegistrationViewController.swift in Sources */,
 				78B9E541203C4CD70054CAD3 /* BaseResponseModel.swift in Sources */,
@@ -1490,7 +1512,8 @@
 				FAC1AF0E2036F46F00547BBC /* ApiUtils.swift in Sources */,
 				FA33263A20400FD200657C8A /* DashboardTabViewController.swift in Sources */,
 				788C3213204E88D00078A983 /* BookAConsultCalendarViewController.swift in Sources */,
-				788C321D204EF0400078A983 /* BookingAConsultCalendarViewModel.swift in Sources */,
+				FA6130D6205023CE00731495 /* BookAConsultThankYouViewModel.swift in Sources */,
+				788C321D204EF0400078A983 /* BookAConsultCalendarViewModel.swift in Sources */,
 				780F70242035A63700D96601 /* PositiveButton.swift in Sources */,
 				FA6130CB20500DCD00731495 /* BookAConsultConfirmViewController.swift in Sources */,
 				780F7017203587CB00D96601 /* FormViewController.swift in Sources */,
@@ -1534,6 +1557,7 @@
 				FAD6ADC120446D310050C1A9 /* AddPhotoTableViewCellViewModel.swift in Sources */,
 				FA33264C2040240400657C8A /* MySkinProblemsTableViewCell.swift in Sources */,
 				FADC33392046DA9A0065A7EB /* SkinProblemPhotoInformationViewController.swift in Sources */,
+				FA6130D12050238E00731495 /* BookAConsultThankYouViewController.swift in Sources */,
 				FAE733F820344B2800898E65 /* RegistrationViewController.swift in Sources */,
 				FA9760DD203B0EDC00242255 /* BaseResponseModel.swift in Sources */,
 				78B9E52A203C4AF20054CAD3 /* Consts.swift in Sources */,
@@ -1575,6 +1599,7 @@
 				788C321A204EB63B0078A983 /* UILabel+Padding.swift in Sources */,
 				FA6130C2204D9A0600731495 /* Date+Extentions.swift in Sources */,
 				FADC334C204706DC0065A7EB /* SkinProblemLocationViewController.swift in Sources */,
+				FA6130D32050238E00731495 /* BookAConsultThankYouViewController.swift in Sources */,
 				788C320F204E813E0078A983 /* BookAConsultViewController.swift in Sources */,
 				FAF2CED4204D7C690001EEAB /* UILabel+RoundedBorders.swift in Sources */,
 				FA33264220401A8C00657C8A /* MySkinProblemsViewController.swift in Sources */,
@@ -1593,6 +1618,7 @@
 				780F701C203592B800D96601 /* ProgressBarViewController.swift in Sources */,
 				FA3326CC20441C8500657C8A /* GrayLabel.swift in Sources */,
 				78C205CD20459D7D00F8E407 /* UINavigationController+Extentions.swift in Sources */,
+				FA6130D8205023CE00731495 /* BookAConsultThankYouViewModel.swift in Sources */,
 				FA9760E4203B29D600242255 /* Validations.swift in Sources */,
 				788C3215204E88D00078A983 /* BookAConsultCalendarViewController.swift in Sources */,
 				FA3326C820441C8500657C8A /* TitleLabel.swift in Sources */,
@@ -1602,7 +1628,7 @@
 				FA3326B820441C8500657C8A /* PasswordProgressBarView.swift in Sources */,
 				FA3326682040351500657C8A /* ProfileViewController.swift in Sources */,
 				FADC33352046BF2F0065A7EB /* SkinProblemModel.swift in Sources */,
-				788C321F204EF0400078A983 /* BookingAConsultCalendarViewModel.swift in Sources */,
+				788C321F204EF0400078A983 /* BookAConsultCalendarViewModel.swift in Sources */,
 				FA33263C20400FD200657C8A /* DashboardTabViewController.swift in Sources */,
 				7849CCAA203EE3E60030A7B1 /* BaseViewModel.swift in Sources */,
 				FA3326B420441C8500657C8A /* PasswordTextField.swift in Sources */,
@@ -1649,6 +1675,7 @@
 				788C321B204EB63B0078A983 /* UILabel+Padding.swift in Sources */,
 				FA6130C3204D9A0600731495 /* Date+Extentions.swift in Sources */,
 				FADC334D204706DC0065A7EB /* SkinProblemLocationViewController.swift in Sources */,
+				FA6130D42050238E00731495 /* BookAConsultThankYouViewController.swift in Sources */,
 				788C3210204E813E0078A983 /* BookAConsultViewController.swift in Sources */,
 				FAF2CED5204D7C690001EEAB /* UILabel+RoundedBorders.swift in Sources */,
 				FA33264320401A8C00657C8A /* MySkinProblemsViewController.swift in Sources */,
@@ -1667,6 +1694,7 @@
 				780F701D203592B900D96601 /* ProgressBarViewController.swift in Sources */,
 				FA3326CD20441C8500657C8A /* GrayLabel.swift in Sources */,
 				78C205CE20459D7D00F8E407 /* UINavigationController+Extentions.swift in Sources */,
+				FA6130D9205023CE00731495 /* BookAConsultThankYouViewModel.swift in Sources */,
 				FA9760E5203B29D600242255 /* Validations.swift in Sources */,
 				788C3216204E88D00078A983 /* BookAConsultCalendarViewController.swift in Sources */,
 				FA3326C920441C8500657C8A /* TitleLabel.swift in Sources */,
@@ -1676,7 +1704,7 @@
 				FA3326B920441C8500657C8A /* PasswordProgressBarView.swift in Sources */,
 				FA3326692040351500657C8A /* ProfileViewController.swift in Sources */,
 				FADC33362046BF2F0065A7EB /* SkinProblemModel.swift in Sources */,
-				788C3220204EF0400078A983 /* BookingAConsultCalendarViewModel.swift in Sources */,
+				788C3220204EF0400078A983 /* BookAConsultCalendarViewModel.swift in Sources */,
 				FA33263D20400FD200657C8A /* DashboardTabViewController.swift in Sources */,
 				7849CCAB203EE3E60030A7B1 /* BaseViewModel.swift in Sources */,
 				FA3326B520441C8500657C8A /* PasswordTextField.swift in Sources */,

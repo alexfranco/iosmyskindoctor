@@ -140,6 +140,13 @@ struct AppStyle {
 	// Consult Confirm
 	static let consultConfirmHighligthedLabelTextColor = AppColors.secondTabColor
 	
+	// Consult ThankYou
+	static let consultThankYouViewBackgroundColor = AppColors.primaryColor
+	static let consultThankYouViewTextColor = UIColor.white
+	static let consultThankYouProfileViewBackgroundColor = UIColor.white
+	static let consultThankYouAppointmentViewBackgroundColor = BaseColors.white
+	static let consultThankYouTextColor = AppColors.secudaryColor
+		
 	// MyProfile TabBar	
 	static let profileBarTitleColor = AppColors.thirdTabColor
 	

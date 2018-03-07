@@ -19,12 +19,12 @@ class BookAConsultCalendarViewController: BindingViewController {
 	@IBOutlet weak var timePicker: UIDatePicker!
 	@IBOutlet weak var monthLabel: UILabel!
 	
-	var viewModelCast: BookingAConsultCalendarViewModel!
+	var viewModelCast: BookAConsultCalendarViewModel!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		initViewModel(viewModel: BookingAConsultCalendarViewModel())
+		initViewModel(viewModel: BookAConsultCalendarViewModel())
 		
 		configureCalendarView()
 		configureTimePicker()
@@ -35,11 +35,11 @@ class BookAConsultCalendarViewController: BindingViewController {
 	override func initViewModel(viewModel: BaseViewModel) {
 		super.initViewModel(viewModel: viewModel)
 		
-		viewModelCast = viewModel as! BookingAConsultCalendarViewModel
+		viewModelCast = viewModel as! BookAConsultCalendarViewModel
 		
 		viewModelCast.selectedDateUpdated = { [weak self] (date) in
 			DispatchQueue.main.async {
-				self?.monthLabel.text = self?.viewModelCast.monthLabelText()
+				self?.monthLabel.text = self?.viewModelCast.monthLabelText
 			}
 		}
 		

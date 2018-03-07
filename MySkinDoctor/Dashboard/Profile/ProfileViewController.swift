@@ -49,7 +49,7 @@ class ProfileViewController: FormViewController {
 		//ToolBar
 		let toolbar = UIToolbar();
 		toolbar.sizeToFit()
-		let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(donedatePicker));
+		let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(dobPicker));
 		let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
 		let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker));
 		
@@ -59,7 +59,7 @@ class ProfileViewController: FormViewController {
 		dobTextField.inputView = datePicker
 	}
 	
-	@objc func donedatePicker() {
+	@objc func dobPicker() {
 		let formatter = DateFormatter()
 		formatter.dateFormat = "dd/MM/yyyy"
 		dobTextField.text = formatter.string(from: datePicker.date)
