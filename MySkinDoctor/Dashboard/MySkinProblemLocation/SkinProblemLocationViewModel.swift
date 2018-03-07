@@ -46,7 +46,7 @@ class SkinProblemLocationViewModel: BaseViewModel {
 	}
 	
 	func saveModel() {
-		model.location = locationProblemType
+		model.location = locationProblemType		
 		goNextSegue!()
 	}
 	

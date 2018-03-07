@@ -35,11 +35,11 @@ class MySkinProblemsViewModel: BaseViewModel {
 	override init() {
 		// Generate tests
 		
-		allItems = [SkinProblemsModel(date: Date(), isDiagnosed: true, skinProblemDescription: "problem 1"),
-									  SkinProblemsModel(date: Date(), isDiagnosed: false, skinProblemDescription: "problem2")]
+		allItems = [SkinProblemsModel(date: Date(), diagnoseStatus: .diagnosed, skinProblemDescription: "problem 1"),
+									  SkinProblemsModel(date: Date(), diagnoseStatus: .noDiagnosed, skinProblemDescription: "problem2")]
 
-		diagnosedItems = allItems.filter { (model) -> Bool in model.isDiagnosed == true }
-		undiagnosedItems = allItems.filter { (model) -> Bool in model.isDiagnosed == false }
+		diagnosedItems = allItems.filter { (model) -> Bool in model.diagnoseStatus == .diagnosed }
+		undiagnosedItems = allItems.filter { (model) -> Bool in model.diagnoseStatus != .diagnosed }
 	}
 	
 	func refreshData() {

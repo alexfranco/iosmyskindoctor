@@ -11,8 +11,15 @@ import UIKit
 
 class SkinProblemsModel : NSObject {
 	
+	enum DiagnoseStatus: Int {
+		case none
+		case noDiagnosed
+		case diagnosed
+	}
+	
 	var date: Date
-	var isDiagnosed: Bool = false
+	var isSubmitted: Bool = false
+	var diagnoseStatus: DiagnoseStatus = DiagnoseStatus.none
 	var skinProblemDescription: String = ""
 	var problems: [SkinProblemModel] = []
 	
@@ -21,11 +28,11 @@ class SkinProblemsModel : NSObject {
 		super.init()
 	}
 	
-	convenience init(date: Date? = Date(), isDiagnosed: Bool = false, skinProblemDescription: String = "") {
+	convenience init(date: Date? = Date(), diagnoseStatus: DiagnoseStatus = DiagnoseStatus.none, skinProblemDescription: String = "") {
 		self.init()
 		
 		self.date = date!
-		self.isDiagnosed = isDiagnosed
+		self.diagnoseStatus = diagnoseStatus
 		self.skinProblemDescription = skinProblemDescription
 	}
 }

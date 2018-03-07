@@ -24,6 +24,13 @@ class AddSkinProblemsViewModel: BaseViewModel {
 	var refresh: (()->())?
 	var tableViewStageChanged: ((_ state: EditingStyle)->())?
 	var updateNextButton: ((_ isEnabled: Bool)->())?
+	var diagnosedStatusChanged: ((_ state: SkinProblemsModel.DiagnoseStatus)->())?
+	
+	var diagnoseStatus: SkinProblemsModel.DiagnoseStatus {
+		get {
+			return model.diagnoseStatus
+		}
+	}
 	
 	override init() {
 		model = SkinProblemsModel()
@@ -75,6 +82,7 @@ class AddSkinProblemsViewModel: BaseViewModel {
 	
 	func saveModel() {
 		model.skinProblemDescription = skinProblemDescription
+		model.diagnoseStatus = .noDiagnosed
 		goNextSegue!()
 	}
 	

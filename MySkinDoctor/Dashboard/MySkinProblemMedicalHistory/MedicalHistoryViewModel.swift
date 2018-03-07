@@ -25,7 +25,7 @@ class MedicalHistoryViewModel: BaseViewModel {
 		model?.hasHealthProblems = hasHealthProblems
 		model?.healthProblemDescription = healthProblemDescription
 		model?.hasMedication = hasMedication
-		model?.hasPastHistoryProblems = hasPastHistoryProblems
+		model?.hasPastHistoryProblems = hasPastHistoryProblems		
 		// TODO saveMedicalHistory
 		
 		let defaults = UserDefaults.standard

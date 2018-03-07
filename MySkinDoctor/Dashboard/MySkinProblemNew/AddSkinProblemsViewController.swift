@@ -11,6 +11,11 @@ import UIKit
 
 class AddSkinProblemsViewController: BindingViewController {
 	
+	@IBOutlet weak var undiagnosedStatusView: UIView!
+	@IBOutlet weak var undiagnosedImageView: UIImageView!
+	@IBOutlet weak var undiagnosedViewHeight: NSLayoutConstraint!
+	@IBOutlet weak var undiagnosedInfoLabel: UILabel!
+	
 	@IBOutlet weak var tableView: UITableView!
 	@IBOutlet weak var descriptionLabel: GrayLabel!
 	
@@ -22,6 +27,7 @@ class AddSkinProblemsViewController: BindingViewController {
 	
 	var photoUtils: PhotoUtils!
 	var viewModelCast: AddSkinProblemsViewModel!
+	
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -51,6 +57,19 @@ class AddSkinProblemsViewController: BindingViewController {
 		
 		viewModelCast = viewModel as? AddSkinProblemsViewModel
 	
+		viewModelCast.diagnosedStatusChanged = { [weak self] (status) in
+			DispatchQueue.main.async {
+				switch status {
+				case .none:
+					self?.undiagnosedViewHeight.constant = 0
+				case .noDiagnosed:
+					self?.undiagnosedViewHeight.constant = 80
+				case .diagnosed:
+					self?.undiagnosedViewHeight.constant = 0
+				}
+			}
+		}
+		
 		viewModelCast.tableViewStageChanged = { [weak self] (tableViewState) in
 			DispatchQueue.main.async {
 				switch tableViewState {
@@ -114,7 +133,7 @@ class AddSkinProblemsViewController: BindingViewController {
 	
 	@IBAction func unwindToAddSkinProblems(segue: UIStoryboardSegue) {
 		if let sourceViewController = segue.source as? SkinProblemLocationViewController {
-			if let viewModel = sourceViewController.viewModelCast {
+			if let viewModel = sourceViewController.viewModelCast {				
 				viewModelCast.appendNewModel(model: viewModel.model)
 			}
 		}
