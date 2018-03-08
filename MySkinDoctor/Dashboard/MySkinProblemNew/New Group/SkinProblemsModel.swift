@@ -9,13 +9,13 @@
 import Foundation
 import UIKit
 
-class SkinProblemsModel : NSObject {
+class SkinProblemsModel: NSObject {
 	
 	var date: Date
 	var isSubmitted: Bool = false
 	var skinProblemDescription: String = ""
 	var problems: [SkinProblemModel] = []
-	
+	var medicalHiostry = MedicalHistoryModel()
 	var diagnose: Diagnose!
 	
 	var isDiagnosed: Bool {
@@ -38,7 +38,7 @@ class SkinProblemsModel : NSObject {
 	}
 }
 
-class Diagnose : NSObject {
+class Diagnose: NSObject {
 	enum DiagnoseStatus: Int {
 		case none
 		case noDiagnosed
@@ -49,14 +49,35 @@ class Diagnose : NSObject {
 	var diagnoseDate: Date?
 	var diagnosedBy: Doctor?
 	var diagnoseStatus: DiagnoseStatus = DiagnoseStatus.none
+	var notes: String?
+	var summary: String?
+	var treatment: String?
+	var patientInformation: String?
+	var comments: String?
+	var attachments = [Attachments]()
 }
 
-class Doctor : NSObject {
+class Doctor: NSObject {
 	var firstName: String?
 	var lastName: String?
+	var profileImage: UIImage?
+	var qualifications: String?
 	
 	required init(firstName: String, lastName: String) {
 		self.firstName = firstName
 		self.lastName = lastName
+		super.init()
+	}
+}
+
+class Attachments: NSObject {
+	var filename: String?
+	var icon: UIImageView?
+	var localFilePath: String?
+	var url: String
+	
+	required init(url: String) {
+		self.url = url
+		super.init()
 	}
 }

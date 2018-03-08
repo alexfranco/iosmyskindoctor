@@ -22,6 +22,7 @@ struct Segues {
 	static let goToSkinProblemThankYouViewControllerFromAddSkinProblem = "goToSkinProblemThankYouViewControllerFromAddSkinProblem"
 	static let goToConfirmConsult = "goToConfirmConsult"
 	static let goToThankYouViewController = "goToThankYouViewController"
+	static let goToDiagnose = "goToDiagnose"
 	
 	static let unwindToAddSkinProblems = "unwindToAddSkinProblems"
 	static let unwindToMyConsults = "unwindToMyConsults"

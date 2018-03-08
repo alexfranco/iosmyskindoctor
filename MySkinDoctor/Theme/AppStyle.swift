@@ -102,6 +102,13 @@ struct AppStyle {
 	static let locationBackgroundColor = BaseColors.amethyst
 	static let locationTextColor = UIColor.white
 	
+	// Skin Problem Diagnose
+	static let diagnoseViewBackgroundColor = BaseColors.hospitalGreen
+	static let diagnoseUpdateRequestViewBackgroundColor = BaseColors.orangeish
+	static let diagnoseViewTextColor = UIColor.white
+	static let diagnoseTitleColor = AppColors.secondTabColor
+	static let diagnoseNextButtonColor = AppColors.secondTabColor
+	
 	// Medical History
 	
 	static let medicalHistorySaveViewBackgroundColor = BaseColors.ice
@@ -152,6 +159,7 @@ struct AppStyle {
 	static let consultThankYouProfileViewBackgroundColor = UIColor.white
 	static let consultThankYouAppointmentViewBackgroundColor = BaseColors.white
 	static let consultThankYouTextColor = AppColors.secudaryColor
+	
 		
 	// MyProfile TabBar	
 	static let profileBarTitleColor = AppColors.thirdTabColor

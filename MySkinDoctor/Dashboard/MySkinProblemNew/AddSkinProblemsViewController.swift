@@ -174,6 +174,10 @@ class AddSkinProblemsViewController: BindingViewController {
 				let skinProblem = SkinProblemModel(problemImage: image) // create new skin problem with the image attached
 				dest.initViewModel(viewModel: SkinProblemPhotoInformationViewModel(model:  skinProblem))
 			}
+		} else if segue.identifier == Segues.goToDiagnose {
+			if let dest = segue.destination as? MySkinProblemDiagnoseViewController {
+				dest.initViewModel(viewModel: MySkinProblemDiagnoseViewModel(model:  viewModelCast.model))
+			}
 		}
 	}
 	
