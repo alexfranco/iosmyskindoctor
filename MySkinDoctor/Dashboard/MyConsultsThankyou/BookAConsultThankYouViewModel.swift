@@ -48,9 +48,7 @@ class BookAConsultThankYouViewModel: BaseViewModel {
 	
 	
 	func dateText() -> String {
-		let df = DateFormatter()
-		df.dateFormat = "MMMM YYYY"
-		return model.date.ordinal() + " " + df.string(from: model.date)
+		return model.date.ordinalMonthAndYear()
 	}
 		
 	func timeText() -> String {

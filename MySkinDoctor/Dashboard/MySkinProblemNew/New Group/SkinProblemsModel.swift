@@ -11,28 +11,47 @@ import UIKit
 
 class SkinProblemsModel : NSObject {
 	
+	var date: Date
+	var isSubmitted: Bool = false
+	var skinProblemDescription: String = ""
+	var problems: [SkinProblemModel] = []
+	
+	var diagnose: Diagnose!
+	
+	override init() {
+		date = Date()
+		diagnose = Diagnose()
+		super.init()
+	}
+	
+	convenience init(date: Date? = Date(), diagnoseStatus: Diagnose.DiagnoseStatus = .none, skinProblemDescription: String = "") {
+		self.init()
+		
+		self.date = date!
+		self.diagnose = Diagnose()
+		self.diagnose.diagnoseStatus = diagnoseStatus
+		self.skinProblemDescription = skinProblemDescription
+	}
+}
+
+class Diagnose : NSObject {
 	enum DiagnoseStatus: Int {
 		case none
 		case noDiagnosed
 		case diagnosed
 	}
 	
-	var date: Date
-	var isSubmitted: Bool = false
+	var diagnoseDate: Date?
+	var diagnosedBy: Doctor?
 	var diagnoseStatus: DiagnoseStatus = DiagnoseStatus.none
-	var skinProblemDescription: String = ""
-	var problems: [SkinProblemModel] = []
+}
+
+class Doctor : NSObject {
+	var firstName: String?
+	var lastName: String?
 	
-	override init() {
-		date = Date()
-		super.init()
-	}
-	
-	convenience init(date: Date? = Date(), diagnoseStatus: DiagnoseStatus = DiagnoseStatus.none, skinProblemDescription: String = "") {
-		self.init()
-		
-		self.date = date!
-		self.diagnoseStatus = diagnoseStatus
-		self.skinProblemDescription = skinProblemDescription
+	required init(firstName: String, lastName: String) {
+		self.firstName = firstName
+		self.lastName = lastName
 	}
 }

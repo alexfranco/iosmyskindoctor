@@ -186,6 +186,47 @@
                                     <constraint firstAttribute="trailing" secondItem="hLt-Tr-bnJ" secondAttribute="trailing" constant="20" id="wwz-cS-emQ"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dkG-ae-gfJ" userLabel="diagnosedStatusView">
+                                <rect key="frame" x="0.0" y="64" width="375" height="80"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bigWhiteArrow" translatesAutoresizingMaskIntoConstraints="NO" id="RXo-G1-fVM">
+                                        <rect key="frame" x="20" y="25" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="Dff-NR-g3g"/>
+                                            <constraint firstAttribute="height" constant="30" id="Yyi-FN-5oz"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dr Jones diagnosed your skin condition on 4th" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ioi-44-toB">
+                                        <rect key="frame" x="70" y="30" width="231" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p2R-g7-OVO">
+                                        <rect key="frame" x="321" y="25" width="34" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="34" id="uE7-fw-TBm"/>
+                                        </constraints>
+                                        <state key="normal" title="View">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onViewDiagnosePressed:" destination="lc7-mY-wck" eventType="touchUpInside" id="0Ba-5f-qps"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.59346731090000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="p2R-g7-OVO" firstAttribute="centerY" secondItem="RXo-G1-fVM" secondAttribute="centerY" id="92e-sH-F5p"/>
+                                    <constraint firstItem="Ioi-44-toB" firstAttribute="centerY" secondItem="RXo-G1-fVM" secondAttribute="centerY" id="9Zo-w4-kqM"/>
+                                    <constraint firstItem="Ioi-44-toB" firstAttribute="leading" secondItem="RXo-G1-fVM" secondAttribute="trailing" constant="20" id="WID-Cs-wu0"/>
+                                    <constraint firstItem="RXo-G1-fVM" firstAttribute="leading" secondItem="dkG-ae-gfJ" secondAttribute="leading" constant="20" id="hs1-YN-84o"/>
+                                    <constraint firstItem="p2R-g7-OVO" firstAttribute="leading" secondItem="Ioi-44-toB" secondAttribute="trailing" constant="20" id="ql6-Kj-pLs"/>
+                                    <constraint firstAttribute="height" constant="80" id="qqk-eJ-rvi"/>
+                                    <constraint firstItem="RXo-G1-fVM" firstAttribute="centerY" secondItem="dkG-ae-gfJ" secondAttribute="centerY" id="uFr-4f-Owp"/>
+                                    <constraint firstAttribute="trailing" secondItem="p2R-g7-OVO" secondAttribute="trailing" constant="20" id="vG6-r2-eJY"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -196,14 +237,17 @@
                             <constraint firstItem="w97-yk-cXx" firstAttribute="leading" secondItem="0UE-2k-yMl" secondAttribute="leading" id="H6Y-h2-KXC"/>
                             <constraint firstItem="7xK-My-oEd" firstAttribute="leading" secondItem="w97-yk-cXx" secondAttribute="leading" id="HgA-Xp-6aO"/>
                             <constraint firstItem="0UE-2k-yMl" firstAttribute="leading" secondItem="xcn-rc-Fmg" secondAttribute="leading" constant="16" id="ObG-T6-rnY"/>
+                            <constraint firstItem="0UE-2k-yMl" firstAttribute="top" secondItem="xcn-rc-Fmg" secondAttribute="top" constant="85" id="SP8-Pv-Evf"/>
+                            <constraint firstItem="dkG-ae-gfJ" firstAttribute="trailing" secondItem="va9-JA-Q50" secondAttribute="trailing" id="SjZ-Pp-Y0m"/>
                             <constraint firstItem="7xK-My-oEd" firstAttribute="trailing" secondItem="w97-yk-cXx" secondAttribute="trailing" id="Uqd-14-Bto"/>
                             <constraint firstItem="BCr-RC-Q7J" firstAttribute="leading" secondItem="xcn-rc-Fmg" secondAttribute="leading" id="aIV-k1-ol4"/>
                             <constraint firstItem="w97-yk-cXx" firstAttribute="top" secondItem="0UE-2k-yMl" secondAttribute="bottom" constant="8" id="cux-WG-Icg"/>
                             <constraint firstAttribute="trailing" secondItem="BCr-RC-Q7J" secondAttribute="trailing" id="edp-5Q-QnX"/>
                             <constraint firstItem="7xK-My-oEd" firstAttribute="top" secondItem="w97-yk-cXx" secondAttribute="bottom" constant="8" id="eyi-Kb-b1t"/>
-                            <constraint firstItem="0UE-2k-yMl" firstAttribute="top" secondItem="va9-JA-Q50" secondAttribute="bottom" constant="5" id="gSU-un-yaZ"/>
+                            <constraint firstItem="dkG-ae-gfJ" firstAttribute="top" secondItem="va9-JA-Q50" secondAttribute="top" id="l4r-wd-jL4"/>
                             <constraint firstItem="w97-yk-cXx" firstAttribute="trailing" secondItem="0UE-2k-yMl" secondAttribute="trailing" id="lYn-Ml-mZb"/>
                             <constraint firstItem="xcn-rc-Fmg" firstAttribute="trailing" secondItem="0UE-2k-yMl" secondAttribute="trailing" constant="16" id="sd4-by-SLN"/>
+                            <constraint firstItem="dkG-ae-gfJ" firstAttribute="leading" secondItem="va9-JA-Q50" secondAttribute="leading" id="ujS-wF-fn8"/>
                             <constraint firstItem="BCr-RC-Q7J" firstAttribute="top" secondItem="7xK-My-oEd" secondAttribute="bottom" constant="5" id="v6U-uV-Rnp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xcn-rc-Fmg"/>
@@ -217,7 +261,13 @@
                     </navigationItem>
                     <connections>
                         <outlet property="descriptionLabel" destination="0UE-2k-yMl" id="y7X-8A-DEc"/>
+                        <outlet property="descriptionLabelTop" destination="SP8-Pv-Evf" id="KqO-sb-B1V"/>
                         <outlet property="descriptionTextView" destination="w97-yk-cXx" id="kuV-fP-mYJ"/>
+                        <outlet property="diagnosedImageView" destination="RXo-G1-fVM" id="muN-1k-L14"/>
+                        <outlet property="diagnosedInfoLabel" destination="Ioi-44-toB" id="Fcu-mo-Har"/>
+                        <outlet property="diagnosedStatusView" destination="dkG-ae-gfJ" id="ZLO-dx-FsT"/>
+                        <outlet property="diagnosedViewButton" destination="p2R-g7-OVO" id="ill-le-gbw"/>
+                        <outlet property="diagnosedViewHeight" destination="qqk-eJ-rvi" id="SsF-eH-6vc"/>
                         <outlet property="nextButton" destination="BCr-RC-Q7J" id="nvP-9N-8wb"/>
                         <outlet property="tableView" destination="7xK-My-oEd" id="UOx-WC-OJg"/>
                         <outlet property="undiagnosedImageView" destination="0aR-Tn-XYB" id="nbg-ee-HGT"/>

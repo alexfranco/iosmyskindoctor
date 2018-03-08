@@ -38,12 +38,14 @@ class MySkinProblemsViewModel: BaseViewModel {
 		allItems = [SkinProblemsModel(date: Date(), diagnoseStatus: .diagnosed, skinProblemDescription: "problem 1"),
 									  SkinProblemsModel(date: Date(), diagnoseStatus: .noDiagnosed, skinProblemDescription: "problem2")]
 
+		allItems.first?.diagnose.diagnosedBy = Doctor(firstName: "Dr Jones", lastName: "Pepito")
+		allItems.first?.diagnose.diagnoseDate = Date().adjust(.day, offset: -5)
 		allItems.first?.problems = [SkinProblemModel(location: SkinProblemModel.LocationProblemType.head, problemDescription: "Pain there", problemImage: nil)]
 		
 		allItems.last?.problems = [SkinProblemModel(location: SkinProblemModel.LocationProblemType.neck, problemDescription: "Pain there", problemImage: nil)]
 		
-		diagnosedItems = allItems.filter { (model) -> Bool in model.diagnoseStatus == .diagnosed }
-		undiagnosedItems = allItems.filter { (model) -> Bool in model.diagnoseStatus != .diagnosed }
+		diagnosedItems = allItems.filter { (model) -> Bool in model.diagnose.diagnoseStatus == .diagnosed }
+		undiagnosedItems = allItems.filter { (model) -> Bool in model.diagnose.diagnoseStatus != .diagnosed }
 	}
 	
 	func refreshData() {

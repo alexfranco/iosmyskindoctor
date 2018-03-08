@@ -11,9 +11,6 @@ import UIKit
 
 class MyConsultsViewModel: BaseViewModel {
 	
-	
-	var dateFormater = DateFormatter()
-
 	enum ConsultSegmentedEnum: Int {
 		case all
 		case upcoming
@@ -39,7 +36,6 @@ class MyConsultsViewModel: BaseViewModel {
 	
 	override init() {
 		super.init()
-		dateFormater.dateFormat = "MMMM, yyyy"
 		
 		// Generate tests
 		allItems = [ConsultModel(profileImage: nil, firstName: "Dr Yellow", lastName: "Kun", date: Date().adjust(.day, offset: -6), qualification: "Past"),
@@ -67,7 +63,7 @@ class MyConsultsViewModel: BaseViewModel {
 		var sections = [String]()
 
 		for model in models {
-			let dateString = (model.date.ordinal() + " " + dateFormater.string(from: model.date)).uppercased()
+			let dateString = model.date.ordinalMonthAndYear().uppercased()
 			
 			// create sections NSSet so we can use 'containsObject'
 			let sectionsSet: NSSet = NSSet(array: sections)
@@ -86,7 +82,7 @@ class MyConsultsViewModel: BaseViewModel {
 		
 		// loop through the testArray to get the items for this sections's date
 		for model in allItems {
-			let dateString = (model.date.ordinal() + " " + dateFormater.string(from: model.date)).uppercased()
+			let dateString = model.date.ordinalMonthAndYear().uppercased()
 
 			// if the item's date equals the section's date then add it
 			if dateString == getSectionsInTable(consultSegmentedEnum: selectedSegmented) [section] {

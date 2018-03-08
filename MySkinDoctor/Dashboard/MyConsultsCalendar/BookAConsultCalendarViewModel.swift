@@ -22,9 +22,7 @@ class BookAConsultCalendarViewModel: BaseViewModel {
 	
 	var monthLabelText: String {
 		get {
-			let df = DateFormatter()
-			df.dateFormat = "MMMM YYYY"
-			return selectedDate.ordinal() + " " + df.string(from: selectedDate)
+			return selectedDate.ordinalMonthAndYear()
 		}
 	}
 	

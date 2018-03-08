@@ -35,6 +35,13 @@ extension Date {
 		return day
 	}
 	
+	func ordinalMonthAndYear() -> String {
+		// Formater
+		let dateFormater = DateFormatter()
+		dateFormater.dateFormat = "MMMM, yyyy"
+		return self.ordinal() + " " + dateFormater.string(from: self)
+	}
+	
 	func adjust(_ component:DateComponentType, offset:Int) -> Date {
 		var dateComp = DateComponents()
 		switch component {

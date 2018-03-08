@@ -11,8 +11,6 @@ import UIKit
 
 class MySkinProblemsTableCellViewModel: NSObject {
 	
-	static let dateFormat = "MMMM, yyyy"
-	
 	var name: String!
 	var date: String!
 	var isDiagnosed: Bool!
@@ -22,17 +20,13 @@ class MySkinProblemsTableCellViewModel: NSObject {
 	required init(withModel model: SkinProblemsModel) {
 		self.model = model
 		self.date = MySkinProblemsTableCellViewModel.getDateFormatted(date: model.date)
-		self.isDiagnosed = model.diagnoseStatus == .diagnosed
+		self.isDiagnosed = model.diagnose.diagnoseStatus == .diagnosed
 		self.problemDescription = model.skinProblemDescription
 		
 		super.init()
 	}
 	
 	static func getDateFormatted(date: Date) -> String {
-		// Formater
-		let dateFormater = DateFormatter()
-		dateFormater.dateFormat = dateFormat
-		
-		return (date.ordinal() + " " + dateFormater.string(from: date)).uppercased()
+		return date.ordinalMonthAndYear()
 	}
 }

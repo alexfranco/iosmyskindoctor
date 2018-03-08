@@ -28,9 +28,9 @@ class AddSkinProblemsViewModel: BaseViewModel {
 		}
 	}
 	
-	var diagnoseStatus: SkinProblemsModel.DiagnoseStatus {
+	var diagnoseStatus: Diagnose.DiagnoseStatus {
 		get {
-			return model.diagnoseStatus
+			return model.diagnose.diagnoseStatus
 		}
 	}
 	
@@ -69,6 +69,21 @@ class AddSkinProblemsViewModel: BaseViewModel {
 		}
 	}
 	
+	var diagnoseInfoText: String {
+		get {
+			if let diagnose = model.diagnose,
+				let diagnoseDate = diagnose.diagnoseDate,
+				let doctor = diagnose.diagnosedBy,
+				let doctorFirstName = doctor.firstName,
+				let doctorLastName = doctor.lastName {
+				
+				return String.init(format: "%@ %@ diagnosed your skin condition on %@", doctorFirstName, doctorLastName, diagnoseDate.ordinalMonthAndYear())
+			} else {
+				return "-"
+			}
+		}
+	}
+	
 	// MARK Init
 	
 	override init() {
@@ -78,6 +93,7 @@ class AddSkinProblemsViewModel: BaseViewModel {
 	
 	init (model: SkinProblemsModel){
 		self.model = model
+		self.skinProblemDescription = self.model.skinProblemDescription		
 		super.init()
 	}
 	
@@ -85,7 +101,7 @@ class AddSkinProblemsViewModel: BaseViewModel {
 	var refresh: (()->())?
 	var tableViewStageChanged: ((_ state: EditingStyle)->())?
 	var updateNextButton: ((_ isEnabled: Bool)->())?
-	var diagnosedStatusChanged: ((_ state: SkinProblemsModel.DiagnoseStatus)->())?
+	var diagnosedStatusChanged: ((_ state: Diagnose.DiagnoseStatus)->())?
 	
 	// MARK Helpers
 	
@@ -135,7 +151,7 @@ class AddSkinProblemsViewModel: BaseViewModel {
 	
 	func saveModel() {
 		model.skinProblemDescription = skinProblemDescription
-		model.diagnoseStatus = .noDiagnosed
+		model.diagnose.diagnoseStatus = .noDiagnosed
 		goNextSegue!()
 	}
 	

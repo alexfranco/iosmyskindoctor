@@ -19,9 +19,7 @@ class BookAConsultConfirmViewModel: BaseViewModel {
 	
 	var dateLabelText: String {
 		get {
-			let df = DateFormatter()
-			df.dateFormat = "MMMM YYYY"
-			return model.date.ordinal() + " " + df.string(from: model.date)
+			return model.date.ordinalMonthAndYear()
 		}
 	}
 	

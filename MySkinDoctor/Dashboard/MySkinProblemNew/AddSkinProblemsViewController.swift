@@ -23,7 +23,9 @@ class AddSkinProblemsViewController: BindingViewController {
 	@IBOutlet weak var diagnosedViewButton: UIButton!
 	
 	@IBOutlet weak var tableView: UITableView!
+	
 	@IBOutlet weak var descriptionLabel: GrayLabel!
+	@IBOutlet weak var descriptionLabelTop: NSLayoutConstraint!
 	
 	@IBOutlet weak var descriptionTextView: FormTextView! {
 		didSet {
@@ -31,10 +33,11 @@ class AddSkinProblemsViewController: BindingViewController {
 		}
 	}
 	
-	let diagnosedViewHeightDefault = CGFloat(80)
-	
 	var photoUtils: PhotoUtils!
 	var viewModelCast: AddSkinProblemsViewModel!
+	
+	let diagnosedViewHeightDefault = CGFloat(80)
+	let descriptionLabelTopDefault = CGFloat(5)
 	
 	override func initViewModel(viewModel: BaseViewModel) {
 		super.initViewModel(viewModel: viewModel)
@@ -118,9 +121,9 @@ class AddSkinProblemsViewController: BindingViewController {
 	func configureDiagnoseView() {
 		undiagnosedStatusView.backgroundColor = AppStyle.addSkinProblemUndiagnosedViewBackground
 		undiagnosedInfoLabel.textColor = AppStyle.addSkinProblemUndiagnosedTextColor
-//		diagnosedStatusView.backgroundColor = AppStyle.addSkinProblemUndiagnosedViewBackground
-//		diagnosedInfoLabel.textColor = AppStyle.addSkinProblemDiagnosedTextColor
-//		diagnosedViewButton.setTitleColor(AppStyle.addSkinProblemDiagnosedTextColor, for: .normal)
+		diagnosedStatusView.backgroundColor = AppStyle.addSkinProblemDiagnosedViewBackground
+		diagnosedInfoLabel.textColor = AppStyle.addSkinProblemDiagnosedTextColor
+		diagnosedViewButton.setTitleColor(AppStyle.addSkinProblemDiagnosedTextColor, for: .normal)
 	}
 	
 	func reloadUI() {
@@ -129,6 +132,7 @@ class AddSkinProblemsViewController: BindingViewController {
 		
 		descriptionTextView.isEditable = viewModelCast.isEditEnabled
 		descriptionTextView.text = viewModelCast.skinProblemDescription
+		diagnosedInfoLabel.text = viewModelCast.diagnoseInfoText
 		
 		// if we are in no edit mode, we don't need to show the place holder here.
 		if !viewModelCast.isEditEnabled {
@@ -141,15 +145,24 @@ class AddSkinProblemsViewController: BindingViewController {
 		tableView.reloadData()
 	}
 	
-	func showHideDiagnoseViews(diagnoseStatus: SkinProblemsModel.DiagnoseStatus) {
+	func showHideDiagnoseViews(diagnoseStatus: Diagnose.DiagnoseStatus) {
 		undiagnosedViewHeight.constant = diagnoseStatus == .noDiagnosed ? diagnosedViewHeightDefault : 0
 		undiagnosedImageView.isHidden = diagnoseStatus != .noDiagnosed
 		undiagnosedInfoLabel.isHidden = diagnoseStatus != .noDiagnosed
-//		diagnosedViewHeight.constant = diagnoseStatus == .diagnosed ?  diagnosedViewHeightDefault : 0
+		
+		diagnosedViewHeight.constant = diagnoseStatus == .diagnosed ? diagnosedViewHeightDefault : 0
+		diagnosedImageView.isHidden = diagnoseStatus != .diagnosed
+		diagnosedInfoLabel.isHidden = diagnoseStatus != .diagnosed
+		diagnosedViewButton.isHidden = diagnoseStatus != .diagnosed
+		
+		descriptionLabelTop.constant = diagnoseStatus == .none ? descriptionLabelTopDefault : descriptionLabelTopDefault + diagnosedViewHeightDefault
 	}
 	
 	@IBAction func onNextButtonPressed(_ sender: Any) {
 		viewModelCast.saveModel()
+	}
+	
+	@IBAction func onViewDiagnosePressed(_ sender: Any) {
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
