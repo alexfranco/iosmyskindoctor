@@ -34,6 +34,12 @@ class AddSkinProblemsViewModel: BaseViewModel {
 		}
 	}
 	
+	var isDiagnosed: Bool {
+		get {
+			return model.isDiagnosed
+		}
+	}
+	
 	var navigationTitle: String {
 		get {
 			switch diagnoseStatus {
@@ -43,6 +49,23 @@ class AddSkinProblemsViewModel: BaseViewModel {
 				return NSLocalizedString("addskinproblems_main_vc_title_nodiagnosed", comment: "")
 			case .diagnosed:
 				return NSLocalizedString("addskinproblems_main_vc_title_diagnosed", comment: "")
+			case .diagnosedUpdateRequest:
+				return NSLocalizedString("addskinproblems_main_vc_title_diagnosed_update_request", comment: "")
+			}
+		}
+	}
+	
+	var infoViewBackground: UIColor {
+		get {
+			switch diagnoseStatus {
+			case .none:
+				return UIColor.white
+			case .noDiagnosed:
+				return AppStyle.addSkinProblemUndiagnosedViewBackground
+			case .diagnosed:
+				return AppStyle.addSkinProblemDiagnosedViewBackground
+			case .diagnosedUpdateRequest:
+				return AppStyle.addSkinProblemDiagnosedUpdateRequestViewBackground
 			}
 		}
 	}
@@ -71,15 +94,15 @@ class AddSkinProblemsViewModel: BaseViewModel {
 	
 	var diagnoseInfoText: String {
 		get {
-			if let diagnose = model.diagnose,
-				let diagnoseDate = diagnose.diagnoseDate,
-				let doctor = diagnose.diagnosedBy,
-				let doctorFirstName = doctor.firstName,
-				let doctorLastName = doctor.lastName {
-				
-				return String.init(format: "%@ %@ diagnosed your skin condition on %@", doctorFirstName, doctorLastName, diagnoseDate.ordinalMonthAndYear())
-			} else {
+			switch diagnoseStatus {
+			case .none:
 				return "-"
+			case .noDiagnosed:
+				return generateNodiagnosedInfoText()
+			case .diagnosed:
+				return generateDiagnosedInfoText()
+			case .diagnosedUpdateRequest:
+				return generateDiagnosedUpdateRequestInfoText()
 			}
 		}
 	}
@@ -148,7 +171,36 @@ class AddSkinProblemsViewModel: BaseViewModel {
 			return false
 		}
 	}
+
+	private func generateNodiagnosedInfoText() -> String {
+		return "Your skin problem is currently been reviewed by a consultant. Please check back later for diagnosis."
+	}
+
+	private func generateDiagnosedInfoText() -> String {
+		if let diagnose = model.diagnose,
+			let diagnoseDate = diagnose.diagnoseDate,
+			let doctor = diagnose.diagnosedBy,
+			let doctorFirstName = doctor.firstName,
+			let doctorLastName = doctor.lastName {
+			
+			return String.init(format: "%@ %@ diagnosed your skin condition on %@.", doctorFirstName, doctorLastName, diagnoseDate.ordinalMonthAndYear())
+		} else {
+			return "-"
+		}
+	}
 	
+	private func generateDiagnosedUpdateRequestInfoText() -> String {
+		if let diagnose = model.diagnose,
+			let doctor = diagnose.diagnosedBy,
+			let doctorFirstName = doctor.firstName,
+			let doctorLastName = doctor.lastName {
+			
+			return String.init(format: "%@ %@ has requested more information from you.", doctorFirstName, doctorLastName)
+		} else {
+			return "-"
+		}
+	}
+
 	func saveModel() {
 		model.skinProblemDescription = skinProblemDescription
 		model.diagnose.diagnoseStatus = .noDiagnosed
@@ -170,4 +222,5 @@ class AddSkinProblemsViewModel: BaseViewModel {
 		tableViewState = .delete(indexPath)
 		updateNextButton!(nextButtonIsEnabled)
 	}
+
 }

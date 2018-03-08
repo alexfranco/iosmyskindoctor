@@ -36,7 +36,8 @@ class MySkinProblemsViewModel: BaseViewModel {
 		// Generate tests
 		
 		allItems = [SkinProblemsModel(date: Date(), diagnoseStatus: .diagnosed, skinProblemDescription: "problem 1"),
-									  SkinProblemsModel(date: Date(), diagnoseStatus: .noDiagnosed, skinProblemDescription: "problem2")]
+					SkinProblemsModel(date: Date(), diagnoseStatus: .noDiagnosed, skinProblemDescription: "problem2"),
+					SkinProblemsModel(date: Date(), diagnoseStatus: .diagnosedUpdateRequest, skinProblemDescription: "problem 3")]
 
 		allItems.first?.diagnose.diagnosedBy = Doctor(firstName: "Dr Jones", lastName: "Pepito")
 		allItems.first?.diagnose.diagnoseDate = Date().adjust(.day, offset: -5)
@@ -44,12 +45,15 @@ class MySkinProblemsViewModel: BaseViewModel {
 		
 		allItems.last?.problems = [SkinProblemModel(location: SkinProblemModel.LocationProblemType.neck, problemDescription: "Pain there", problemImage: nil)]
 		
-		diagnosedItems = allItems.filter { (model) -> Bool in model.diagnose.diagnoseStatus == .diagnosed }
-		undiagnosedItems = allItems.filter { (model) -> Bool in model.diagnose.diagnoseStatus != .diagnosed }
+		allItems.last?.diagnose.diagnosedBy = Doctor(firstName: "Dr Amor", lastName: "love")
+		allItems.last?.diagnose.diagnoseDate = Date().adjust(.day, offset: -10)
+		allItems.last?.problems = [SkinProblemModel(location: SkinProblemModel.LocationProblemType.neck, problemDescription: "Pain there", problemImage: nil)]
+		
+		diagnosedItems = allItems.filter { (model) -> Bool in model.isDiagnosed }
+		undiagnosedItems = allItems.filter { (model) -> Bool in !model.isDiagnosed }
 	}
 	
 	func refreshData() {
-		// TODO
 		refresh!()
 	}
 	

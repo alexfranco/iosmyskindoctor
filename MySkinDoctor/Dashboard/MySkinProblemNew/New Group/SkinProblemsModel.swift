@@ -18,6 +18,10 @@ class SkinProblemsModel : NSObject {
 	
 	var diagnose: Diagnose!
 	
+	var isDiagnosed: Bool {
+		return diagnose.diagnoseStatus == .diagnosed || diagnose.diagnoseStatus == .diagnosedUpdateRequest
+	}
+	
 	override init() {
 		date = Date()
 		diagnose = Diagnose()
@@ -39,6 +43,7 @@ class Diagnose : NSObject {
 		case none
 		case noDiagnosed
 		case diagnosed
+		case diagnosedUpdateRequest
 	}
 	
 	var diagnoseDate: Date?

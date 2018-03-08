@@ -89,10 +89,10 @@ struct AppStyle {
 	
 	// Add Skin Problem
 	
+	static let addSkinProblemInfoViewTextColor = UIColor.white
 	static let addSkinProblemUndiagnosedViewBackground = BaseColors.amethyst
-	static let addSkinProblemUndiagnosedTextColor = UIColor.white
-	static let addSkinProblemDiagnosedViewBackground = AppColors.primaryColor
-	static let addSkinProblemDiagnosedTextColor = UIColor.white
+	static let addSkinProblemDiagnosedViewBackground = BaseColors.hospitalGreen
+	static let addSkinProblemDiagnosedUpdateRequestViewBackground = BaseColors.orangeish
 	
 	// Skin Problem Location
 	static let locationNavigationBarBackgroundColor = BaseColors.amethyst

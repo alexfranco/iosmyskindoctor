@@ -45,6 +45,7 @@
 "addskinproblems_main_vc_title_none" = "Add Skin Problem";
 "addskinproblems_main_vc_title_nodiagnosed" = "Skin Problem - Submitted";
 "addskinproblems_main_vc_title_diagnosed" = "Skin Problem - Diagnosed";
+"addskinproblems_main_vc_title_diagnosed_update_request" = "Skin Problem - Info Request";
 
 "skinproblem_main_vc_title" = "Photo Information";
 

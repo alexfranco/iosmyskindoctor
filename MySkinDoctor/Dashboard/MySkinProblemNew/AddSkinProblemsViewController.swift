@@ -46,7 +46,8 @@ class AddSkinProblemsViewController: BindingViewController {
 		
 		viewModelCast.diagnosedStatusChanged = { [weak self] (status) in
 			DispatchQueue.main.async {
-				self?.showHideDiagnoseViews(diagnoseStatus: status)
+				self?.reloadUI()
+				self?.showHideDiagnoseViews()
 			}
 		}
 		
@@ -119,11 +120,12 @@ class AddSkinProblemsViewController: BindingViewController {
 	}
 	
 	func configureDiagnoseView() {
-		undiagnosedStatusView.backgroundColor = AppStyle.addSkinProblemUndiagnosedViewBackground
-		undiagnosedInfoLabel.textColor = AppStyle.addSkinProblemUndiagnosedTextColor
-		diagnosedStatusView.backgroundColor = AppStyle.addSkinProblemDiagnosedViewBackground
-		diagnosedInfoLabel.textColor = AppStyle.addSkinProblemDiagnosedTextColor
-		diagnosedViewButton.setTitleColor(AppStyle.addSkinProblemDiagnosedTextColor, for: .normal)
+		undiagnosedStatusView.backgroundColor = viewModelCast.infoViewBackground
+		undiagnosedInfoLabel.textColor = AppStyle.addSkinProblemInfoViewTextColor
+		
+		diagnosedStatusView.backgroundColor = viewModelCast.infoViewBackground
+		diagnosedInfoLabel.textColor = AppStyle.addSkinProblemInfoViewTextColor
+		diagnosedViewButton.setTitleColor(AppStyle.addSkinProblemInfoViewTextColor, for: .normal)
 	}
 	
 	func reloadUI() {
@@ -132,6 +134,7 @@ class AddSkinProblemsViewController: BindingViewController {
 		
 		descriptionTextView.isEditable = viewModelCast.isEditEnabled
 		descriptionTextView.text = viewModelCast.skinProblemDescription
+		undiagnosedInfoLabel.text = viewModelCast.diagnoseInfoText
 		diagnosedInfoLabel.text = viewModelCast.diagnoseInfoText
 		
 		// if we are in no edit mode, we don't need to show the place holder here.
@@ -139,23 +142,23 @@ class AddSkinProblemsViewController: BindingViewController {
 			descriptionTextView.placeholder = ""
 		}
 		
-		showHideDiagnoseViews(diagnoseStatus: viewModelCast.diagnoseStatus)
+		showHideDiagnoseViews()
 		nextButton.isHidden = !viewModelCast.isEditEnabled
 		
 		tableView.reloadData()
 	}
 	
-	func showHideDiagnoseViews(diagnoseStatus: Diagnose.DiagnoseStatus) {
-		undiagnosedViewHeight.constant = diagnoseStatus == .noDiagnosed ? diagnosedViewHeightDefault : 0
-		undiagnosedImageView.isHidden = diagnoseStatus != .noDiagnosed
-		undiagnosedInfoLabel.isHidden = diagnoseStatus != .noDiagnosed
+	func showHideDiagnoseViews() {
+		descriptionLabelTop.constant = viewModelCast.diagnoseStatus == .none ? descriptionLabelTopDefault : descriptionLabelTopDefault + diagnosedViewHeightDefault
 		
-		diagnosedViewHeight.constant = diagnoseStatus == .diagnosed ? diagnosedViewHeightDefault : 0
-		diagnosedImageView.isHidden = diagnoseStatus != .diagnosed
-		diagnosedInfoLabel.isHidden = diagnoseStatus != .diagnosed
-		diagnosedViewButton.isHidden = diagnoseStatus != .diagnosed
+		undiagnosedViewHeight.constant = viewModelCast.diagnoseStatus == .noDiagnosed ? diagnosedViewHeightDefault : 0
+		undiagnosedImageView.isHidden = viewModelCast.diagnoseStatus != .noDiagnosed
+		undiagnosedInfoLabel.isHidden = viewModelCast.diagnoseStatus != .noDiagnosed
 		
-		descriptionLabelTop.constant = diagnoseStatus == .none ? descriptionLabelTopDefault : descriptionLabelTopDefault + diagnosedViewHeightDefault
+		diagnosedViewHeight.constant = viewModelCast.isDiagnosed ? diagnosedViewHeightDefault : 0
+		diagnosedImageView.isHidden = !viewModelCast.isDiagnosed
+		diagnosedInfoLabel.isHidden = !viewModelCast.isDiagnosed
+		diagnosedViewButton.isHidden = !viewModelCast.isDiagnosed
 	}
 	
 	@IBAction func onNextButtonPressed(_ sender: Any) {
