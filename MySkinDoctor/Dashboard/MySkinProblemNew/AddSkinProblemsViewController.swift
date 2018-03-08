@@ -126,8 +126,15 @@ class AddSkinProblemsViewController: BindingViewController {
 	func reloadUI() {
 		// fill in values
 		title = viewModelCast.navigationTitle
-		descriptionLabel.isEnabled = viewModelCast.isEditEnabled
-		descriptionLabel.text = viewModelCast.skinProblemDescription
+		
+		descriptionTextView.isEditable = viewModelCast.isEditEnabled
+		descriptionTextView.text = viewModelCast.skinProblemDescription
+		
+		// if we are in no edit mode, we don't need to show the place holder here.
+		if !viewModelCast.isEditEnabled {
+			descriptionTextView.placeholder = ""
+		}
+		
 		showHideDiagnoseViews(diagnoseStatus: viewModelCast.diagnoseStatus)
 		nextButton.isHidden = !viewModelCast.isEditEnabled
 		
