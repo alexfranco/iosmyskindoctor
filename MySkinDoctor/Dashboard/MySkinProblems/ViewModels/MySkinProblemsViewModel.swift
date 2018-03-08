@@ -38,6 +38,10 @@ class MySkinProblemsViewModel: BaseViewModel {
 		allItems = [SkinProblemsModel(date: Date(), diagnoseStatus: .diagnosed, skinProblemDescription: "problem 1"),
 									  SkinProblemsModel(date: Date(), diagnoseStatus: .noDiagnosed, skinProblemDescription: "problem2")]
 
+		allItems.first?.problems = [SkinProblemModel(location: SkinProblemModel.LocationProblemType.head, problemDescription: "Pain there", problemImage: nil)]
+		
+		allItems.last?.problems = [SkinProblemModel(location: SkinProblemModel.LocationProblemType.neck, problemDescription: "Pain there", problemImage: nil)]
+		
 		diagnosedItems = allItems.filter { (model) -> Bool in model.diagnoseStatus == .diagnosed }
 		undiagnosedItems = allItems.filter { (model) -> Bool in model.diagnoseStatus != .diagnosed }
 	}

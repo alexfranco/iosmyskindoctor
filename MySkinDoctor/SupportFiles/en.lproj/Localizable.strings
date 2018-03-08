@@ -42,7 +42,10 @@
 "myskinproblems_segmented_undiagnosed" = "Undiagnosed";
 "myskinproblems_segmented_diagnosed" = "Diagnosed";
 
-"addskinproblems_main_vc_title" = "Add Skin Problem";
+"addskinproblems_main_vc_title_none" = "Add Skin Problem";
+"addskinproblems_main_vc_title_nodiagnosed" = "Skin Problem - Submitted";
+"addskinproblems_main_vc_title_diagnosed" = "Skin Problem - Diagnosed";
+
 "skinproblem_main_vc_title" = "Photo Information";
 
 "myconsults_main_vc_title" = "My Consults";

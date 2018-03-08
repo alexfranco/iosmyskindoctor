@@ -351,7 +351,7 @@
                     <navigationItem key="navigationItem" title="My Skin Problems" id="tMc-nG-4fS">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="BN8-UV-ogH">
                             <connections>
-                                <segue destination="cBF-ue-roU" kind="presentation" id="YTy-qv-7fR"/>
+                                <segue destination="cBF-ue-roU" kind="presentation" identifier="goToAddSkinProblem" id="YTy-qv-7fR"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

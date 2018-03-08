@@ -17,14 +17,16 @@ class AddSkinProblemsViewModel: BaseViewModel {
 		case none
 	}
 	
+	// Variables
+	
 	private(set) var model: SkinProblemsModel
 	var skinProblemDescription = ""
 	
-	// Bind properties
-	var refresh: (()->())?
-	var tableViewStageChanged: ((_ state: EditingStyle)->())?
-	var updateNextButton: ((_ isEnabled: Bool)->())?
-	var diagnosedStatusChanged: ((_ state: SkinProblemsModel.DiagnoseStatus)->())?
+	var isEditEnabled: Bool {
+		get {
+			return diagnoseStatus == .none
+		}
+	}
 	
 	var diagnoseStatus: SkinProblemsModel.DiagnoseStatus {
 		get {
@@ -32,16 +34,19 @@ class AddSkinProblemsViewModel: BaseViewModel {
 		}
 	}
 	
-	override init() {
-		model = SkinProblemsModel()
-		super.init()
+	var navigationTitle: String {
+		get {
+			switch diagnoseStatus {
+			case .none:
+				return NSLocalizedString("addskinproblems_main_vc_title_none", comment: "")
+			case .noDiagnosed:
+				return NSLocalizedString("addskinproblems_main_vc_title_nodiagnosed", comment: "")
+			case .diagnosed:
+				return NSLocalizedString("addskinproblems_main_vc_title_diagnosed", comment: "")
+			}
+		}
 	}
 	
-	func refreshData() {
-		updateNextButton!(nextButtonIsEnabled)
-		refresh!()
-	}
-
 	var nextButtonIsEnabled: Bool {
 		get {
 			return self.model.problems.count > 0
@@ -64,8 +69,39 @@ class AddSkinProblemsViewModel: BaseViewModel {
 		}
 	}
 	
+	// MARK Init
+	
+	override init() {
+		model = SkinProblemsModel()
+		super.init()
+	}
+	
+	init (model: SkinProblemsModel){
+		self.model = model
+		super.init()
+	}
+	
+	// Bind properties
+	var refresh: (()->())?
+	var tableViewStageChanged: ((_ state: EditingStyle)->())?
+	var updateNextButton: ((_ isEnabled: Bool)->())?
+	var diagnosedStatusChanged: ((_ state: SkinProblemsModel.DiagnoseStatus)->())?
+	
+	// MARK Helpers
+	
+	func refreshData() {
+		updateNextButton!(nextButtonIsEnabled)
+		refresh!()
+	}
+
 	func getDataSourceCount() -> Int {
-		return model.problems.count + 1
+		var count = model.problems.count
+		
+		if isEditEnabled {
+			count += 1
+		}
+		
+		return count
 	}
 	
 	func getDataSourceCountWithoutExtraAddPhoto() -> Int {
@@ -78,6 +114,23 @@ class AddSkinProblemsViewModel: BaseViewModel {
 	
 	func getNumberOfSections() -> Int {
 		return 1
+	}
+	
+	func canEditRow(indexPath: IndexPath) -> Bool {
+		if isEditEnabled {
+			return isAddPhotoRow(indexPath: indexPath)
+		} else {
+			return false
+		}
+	}
+	
+	
+	func isAddPhotoRow(indexPath: IndexPath) -> Bool {
+		if isEditEnabled {
+			return getDataSourceCount() == indexPath.row + 1
+		} else {
+			return false
+		}
 	}
 	
 	func saveModel() {

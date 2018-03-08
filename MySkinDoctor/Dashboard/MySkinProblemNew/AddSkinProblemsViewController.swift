@@ -16,6 +16,12 @@ class AddSkinProblemsViewController: BindingViewController {
 	@IBOutlet weak var undiagnosedViewHeight: NSLayoutConstraint!
 	@IBOutlet weak var undiagnosedInfoLabel: UILabel!
 	
+	@IBOutlet weak var diagnosedStatusView: UIView!
+	@IBOutlet weak var diagnosedImageView: UIImageView!
+	@IBOutlet weak var diagnosedViewHeight: NSLayoutConstraint!
+	@IBOutlet weak var diagnosedInfoLabel: UILabel!
+	@IBOutlet weak var diagnosedViewButton: UIButton!
+	
 	@IBOutlet weak var tableView: UITableView!
 	@IBOutlet weak var descriptionLabel: GrayLabel!
 	
@@ -25,48 +31,19 @@ class AddSkinProblemsViewController: BindingViewController {
 		}
 	}
 	
+	let diagnosedViewHeightDefault = CGFloat(80)
+	
 	var photoUtils: PhotoUtils!
 	var viewModelCast: AddSkinProblemsViewModel!
-	
-	
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		
-		photoUtils = PhotoUtils.init(inViewController: self)
-		
-		title = NSLocalizedString("addskinproblems_main_vc_title", comment: "")
-		
-		descriptionTextView.placeholder = "Please enter the description of your skin problem, click on Add Photo"
-		
-//		self.nextButton.isEnabled = false
-		
-		configureTableView()
-		initViewModel(viewModel: AddSkinProblemsViewModel())
-	}
-	
-	
-	override func viewWillAppear(_ animated: Bool) {
-		super.viewWillAppear(animated)
-		navigationController?.setBackgroundColorWithoutShadowImage(bgColor: AppStyle.defaultNavigationBarColor, titleColor: AppStyle.defaultNavigationBarTitleColor)
-	}
-	
-	// MARK: Helpers
 	
 	override func initViewModel(viewModel: BaseViewModel) {
 		super.initViewModel(viewModel: viewModel)
 		
 		viewModelCast = viewModel as? AddSkinProblemsViewModel
-	
+		
 		viewModelCast.diagnosedStatusChanged = { [weak self] (status) in
 			DispatchQueue.main.async {
-				switch status {
-				case .none:
-					self?.undiagnosedViewHeight.constant = 0
-				case .noDiagnosed:
-					self?.undiagnosedViewHeight.constant = 80
-				case .diagnosed:
-					self?.undiagnosedViewHeight.constant = 0
-				}
+				self?.showHideDiagnoseViews(diagnoseStatus: status)
 			}
 		}
 		
@@ -103,10 +80,32 @@ class AddSkinProblemsViewController: BindingViewController {
 			DispatchQueue.main.async {
 				// TODO if the property save medical history for next time is true, it skips this step
 				self?.performSegue(withIdentifier: Segues.goToMedicalHistoryViewControler, sender: nil)
-//				self?.performSegue(withIdentifier: Segues.goToSkinProblemThankYouViewControllerFromAddSkinProblem, sender: nil)
+				//				self?.performSegue(withIdentifier: Segues.goToSkinProblemThankYouViewControllerFromAddSkinProblem, sender: nil)
 			}
 		}
 	}
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		
+		photoUtils = PhotoUtils.init(inViewController: self)
+		
+		descriptionTextView.placeholder = "Please enter the description of your skin problem, click on Add Photo"
+		
+		nextButton.isEnabled = false
+		
+		configureTableView()
+		configureDiagnoseView()
+
+		reloadUI()
+	}
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		navigationController?.setBackgroundColorWithoutShadowImage(bgColor: AppStyle.defaultNavigationBarColor, titleColor: AppStyle.defaultNavigationBarTitleColor)
+	}
+	
+	// MARK: Helpers
 	
 	func configureTableView() {
 		tableView.dataSource = self
@@ -114,6 +113,32 @@ class AddSkinProblemsViewController: BindingViewController {
 		
 		tableView.estimatedRowHeight = 80.0
 		tableView.rowHeight = UITableViewAutomaticDimension
+	}
+	
+	func configureDiagnoseView() {
+		undiagnosedStatusView.backgroundColor = AppStyle.addSkinProblemUndiagnosedViewBackground
+		undiagnosedInfoLabel.textColor = AppStyle.addSkinProblemUndiagnosedTextColor
+//		diagnosedStatusView.backgroundColor = AppStyle.addSkinProblemUndiagnosedViewBackground
+//		diagnosedInfoLabel.textColor = AppStyle.addSkinProblemDiagnosedTextColor
+//		diagnosedViewButton.setTitleColor(AppStyle.addSkinProblemDiagnosedTextColor, for: .normal)
+	}
+	
+	func reloadUI() {
+		// fill in values
+		title = viewModelCast.navigationTitle
+		descriptionLabel.isEnabled = viewModelCast.isEditEnabled
+		descriptionLabel.text = viewModelCast.skinProblemDescription
+		showHideDiagnoseViews(diagnoseStatus: viewModelCast.diagnoseStatus)
+		nextButton.isHidden = !viewModelCast.isEditEnabled
+		
+		tableView.reloadData()
+	}
+	
+	func showHideDiagnoseViews(diagnoseStatus: SkinProblemsModel.DiagnoseStatus) {
+		undiagnosedViewHeight.constant = diagnoseStatus == .noDiagnosed ? diagnosedViewHeightDefault : 0
+		undiagnosedImageView.isHidden = diagnoseStatus != .noDiagnosed
+		undiagnosedInfoLabel.isHidden = diagnoseStatus != .noDiagnosed
+//		diagnosedViewHeight.constant = diagnoseStatus == .diagnosed ?  diagnosedViewHeightDefault : 0
 	}
 	
 	@IBAction func onNextButtonPressed(_ sender: Any) {
@@ -153,7 +178,7 @@ extension AddSkinProblemsViewController: UITableViewDelegate, UITableViewDataSou
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		if viewModelCast.getDataSourceCount() == indexPath.row + 1 {
+		if viewModelCast.isAddPhotoRow(indexPath: indexPath) {
 			let cell = tableView.dequeueReusableCell(withIdentifier: CellId.addPhotoTableViewCellId) as! AddPhotoTableViewCell
 			cell.configure(isFirstPhoto: viewModelCast.getDataSourceCount() == 1)
 			return cell
@@ -168,7 +193,7 @@ extension AddSkinProblemsViewController: UITableViewDelegate, UITableViewDataSou
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		tableView.deselectRow(at: indexPath, animated: true)
 		
-		if viewModelCast.getDataSourceCount() == indexPath.row + 1 {
+		if viewModelCast.isAddPhotoRow(indexPath: indexPath) {
 			// click on add photo
 			photoUtils.showChoosePhoto { (success, image) in
 				if success {
@@ -179,14 +204,12 @@ extension AddSkinProblemsViewController: UITableViewDelegate, UITableViewDataSou
 	}
 	
 	func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-		return viewModelCast.getDataSourceCount() != indexPath.row + 1
+		return viewModelCast.canEditRow(indexPath: indexPath)
 	}
 	
 	func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
 		guard editingStyle == .delete else { return }
-		
 		viewModelCast.removeModel(at: indexPath)
 	}
-	
 }
 

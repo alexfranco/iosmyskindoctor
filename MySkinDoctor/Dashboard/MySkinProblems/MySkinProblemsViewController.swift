@@ -71,12 +71,20 @@ class MySkinProblemsViewController: BindingViewController {
 		viewModelCast.selectedSegmented = MySkinProblemsViewModel.DiagnosesSegmentedEnum(rawValue: self.diagnosesSegmentedControl.selectedSegmentIndex)!
 	}
 	
-	
 	// MARK: Segues
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if let nvc = segue.destination as? UINavigationController, let vc = nvc.viewControllers.first as? AddSkinProblemsViewController {
+			if let skinsProblem = sender as? SkinProblemsModel {
+				vc.initViewModel(viewModel: AddSkinProblemsViewModel(model: skinsProblem))
+			} else {
+				vc.initViewModel(viewModel: AddSkinProblemsViewModel())
+			}
+		}
+	}
 	
 	@IBAction func unwindToMySkinProblems(segue:UIStoryboardSegue) {
 	}
-	
 }
 
 extension MySkinProblemsViewController: UITableViewDelegate, UITableViewDataSource {
@@ -125,5 +133,13 @@ extension MySkinProblemsViewController: UITableViewDelegate, UITableViewDataSour
 		
 		return cell
 	}
+	
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		tableView.deselectRow(at: indexPath, animated: true)
+		
+		let viewModel = viewModelCast.getItemAtIndexPath(indexPath: indexPath)
+		self.performSegue(withIdentifier: Segues.goToAddSkinProblem, sender: viewModel)
+	}
+	
 }
 

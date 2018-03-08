@@ -87,6 +87,12 @@ struct AppStyle {
 	static let mySkinTableSectionTextColor = UIColor.white
 	static let mySkinTableSectionTextFont = AppFonts.defaultBoldFont
 	
+	// Add Skin Problem
+	
+	static let addSkinProblemUndiagnosedViewBackground = BaseColors.amethyst
+	static let addSkinProblemUndiagnosedTextColor = UIColor.white
+	static let addSkinProblemDiagnosedViewBackground = AppColors.primaryColor
+	static let addSkinProblemDiagnosedTextColor = UIColor.white
 	
 	// Skin Problem Location
 	static let locationNavigationBarBackgroundColor = BaseColors.amethyst

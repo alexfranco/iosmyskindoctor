@@ -13,6 +13,8 @@ struct Consts {
 struct Segues {
 	static let goToMainStoryboardFromLogin = "goToMainStoryboardFromLogin"
 	static let goToMainStoryboardFromSignUp = "goToMainStoryboardFromSignUp"
+	
+	static let goToAddSkinProblem = "goToAddSkinProblem"
 	static let goToSkinProblemPhotoInformationViewController = "goToSkinProblemPhotoInformationViewController"
 	static let goToSkinProblemLocationViewController = "goToSkinProblemLocationViewController"
 	static let goToMedicalHistoryViewControler = "goToMedicalHistoryViewControler"
@@ -20,6 +22,7 @@ struct Segues {
 	static let goToSkinProblemThankYouViewControllerFromAddSkinProblem = "goToSkinProblemThankYouViewControllerFromAddSkinProblem"
 	static let goToConfirmConsult = "goToConfirmConsult"
 	static let goToThankYouViewController = "goToThankYouViewController"
+	
 	static let unwindToAddSkinProblems = "unwindToAddSkinProblems"
 	static let unwindToMyConsults = "unwindToMyConsults"
 }
