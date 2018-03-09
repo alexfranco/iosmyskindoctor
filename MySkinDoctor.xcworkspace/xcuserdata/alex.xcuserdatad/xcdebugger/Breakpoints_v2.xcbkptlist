@@ -74,7 +74,7 @@
                   moduleName = "MySkinDoctorLive"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/alex/MySkinDoctor/MySkinDoctor/Web/ApiUtils.swift"
-                  timestampString = "542303828.275231"
+                  timestampString = "542304030.091396"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "83"
@@ -89,7 +89,7 @@
                   moduleName = "MySkinDoctorLive"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/alex/MySkinDoctor/MySkinDoctor/Web/ApiUtils.swift"
-                  timestampString = "542303828.279353"
+                  timestampString = "542304030.096333"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "84"
@@ -113,22 +113,6 @@
             endingLineNumber = "36"
             landmarkName = "errorMessage"
             landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MySkinDoctor/Dashboard/MySkinProblemDiagnosis/MySkinProblemDiagnoseUpdateRequest/MySkinProblemDiagnoseUpdateRequestViewController.swift"
-            timestampString = "542301775.317423"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
-            landmarkName = "tableView(_:numberOfRowsInSection:)"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

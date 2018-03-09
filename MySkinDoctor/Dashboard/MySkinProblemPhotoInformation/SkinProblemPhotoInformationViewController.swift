@@ -25,10 +25,12 @@ class SkinProblemPhotoInformationViewController: PhotoViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		descriptionTextView.placeholder = "Please enter here a description of your problem"
-		userPhotoImageView.image = (viewModel as! SkinProblemPhotoInformationViewModel).problemImage
-		
 		delegate = self
+		
+		descriptionTextView.placeholder = "Please enter here a description of your problem"
+		userPhotoImageView.image = viewModelCast.problemImage
+		
+		editButton.setTitleColor(AppStyle.addSkinPhotoEditTextColor, for: .normal)
 	}
 	
 	override func viewDidAppear(_ animated: Bool) {

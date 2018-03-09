@@ -104,10 +104,10 @@ class AddSkinProblemsViewController: BindingViewController {
 		reloadUI()
 	}
 	
-	override func viewWillAppear(_ animated: Bool) {
-		super.viewWillAppear(animated)
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
 		navigationController?.setBackgroundColorWithoutShadowImage(bgColor: AppStyle.defaultNavigationBarColor, titleColor: AppStyle.defaultNavigationBarTitleColor)
-		title = "Add Skin Problem"
+		navigationController?.title = NSLocalizedString("Add Skin Problem", comment: "")
 	}
 	
 	// MARK: Helpers

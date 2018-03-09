@@ -41,6 +41,7 @@ struct AppColors {
 }
 
 struct AppFonts {
+	static let smallFont = UIFont(name: defaultFontName, size: AppFontSizes.smallTextSize)
 	static let defaultFont = UIFont(name: defaultFontName, size: AppFontSizes.defaultTextSize)
 	static let mediumFont = UIFont(name: defaultFontName, size: AppFontSizes.mediumTextSize)
 	static let bigFont = UIFont(name: defaultFontName, size: AppFontSizes.mediumTextSize)
@@ -54,6 +55,7 @@ struct AppFonts {
 
 private struct AppFontSizes {
 	static let defaultTextSize: CGFloat = 12.0
+	static let smallTextSize: CGFloat = 10.0
 	static let mediumTextSize: CGFloat = 14.0
 	static let bigTextSize: CGFloat = 16.0
 	static let veryBigTextSize: CGFloat = 18.0
@@ -94,6 +96,10 @@ struct AppStyle {
 	static let addSkinProblemDiagnosedViewBackground = BaseColors.hospitalGreen
 	static let addSkinProblemDiagnosedUpdateRequestViewBackground = BaseColors.orangeish
 	static let addSkinProblemDiagnosedFollowUpViewBackground = BaseColors.orangeish
+	
+	// Add Skin Photo
+	
+	static let addSkinPhotoEditTextColor = AppColors.secudaryColor
 	
 	// Skin Problem Location
 	static let locationNavigationBarBackgroundColor = BaseColors.amethyst

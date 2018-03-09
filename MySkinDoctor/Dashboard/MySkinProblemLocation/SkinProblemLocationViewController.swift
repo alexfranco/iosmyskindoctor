@@ -11,12 +11,25 @@ import UIKit
 
 class SkinProblemLocationViewController: FormViewController {
 	
-	@IBOutlet weak var frontBackSegmentedControl: UISegmentedControl!
 	@IBOutlet weak var tipLabel: UILabel!
 	@IBOutlet weak var locationLabel: UILabel!
 	@IBOutlet weak var bodyImageView: UIImageView!
 	@IBOutlet weak var locationHeadButton: UIButton!
 	@IBOutlet weak var locationNeckButton: UIButton!
+	@IBOutlet weak var locationChestButton: UIButton!
+	@IBOutlet weak var locationBellyButton: UIButton!
+	@IBOutlet weak var locationUpperArmLeftButton: UIButton!
+	@IBOutlet weak var locationUpperArmRightButton: UIButton!
+	@IBOutlet weak var locationLowerArmLeftButton: UIButton!
+	@IBOutlet weak var locationPelvisButton: UIButton!
+	@IBOutlet weak var locationUpperLegLeftButton: UIButton!
+	@IBOutlet weak var locationUpperLegRightButton: UIButton!
+	@IBOutlet weak var locationLowerLegLeftButton: UIButton!
+	@IBOutlet weak var locationLowerLegRightButton: UIButton!
+	@IBOutlet weak var locationFootLeftButton: UIButton!
+	@IBOutlet weak var locationFootRightButton: UIButton!
+	@IBOutlet weak var bodyLeftButton: UIButton!
+	@IBOutlet weak var bodyRightButton: UIButton!
 	
 	var viewModelCast: SkinProblemLocationViewModel!
 	var locationButtons: [UIButton]!
@@ -27,13 +40,10 @@ class SkinProblemLocationViewController: FormViewController {
 		navigationController?.setBackgroundColorWithoutShadowImage(bgColor: AppStyle.locationNavigationBarBackgroundColor, titleColor: AppStyle.locationTextColor)
 		
 		view.backgroundColor = AppStyle.locationBackgroundColor
-		frontBackSegmentedControl.tintColor = AppStyle.locationSegmentedControlTint
-		frontBackSegmentedControl.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: AppStyle.locationSegmentedControlUnselectedTextColor], for: .normal)
-		frontBackSegmentedControl.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: AppStyle.locationSegmentedControlSelectedTextColor], for: .selected)
 		locationLabel.textColor = AppStyle.locationTextColor
 		tipLabel.textColor = AppStyle.locationTextColor
 		
-		viewModelCast.isFrontSelected = frontBackSegmentedControl.selectedSegmentIndex == 0
+		viewModelCast.isFrontSelected = true
 		locationLabel.text = viewModelCast.problemLocationText
 
 		configureLocationButtons()
@@ -84,8 +94,12 @@ class SkinProblemLocationViewController: FormViewController {
 	
 	// MARK: IBActions
 	
-	@IBAction func onfrontBackSegmentedControlValueChanged(_ sender: Any) {
-		viewModelCast.isFrontSelected = frontBackSegmentedControl.selectedSegmentIndex == 0
+	@IBAction func onBodyLeftButtonPressed(_ sender: Any) {
+		viewModelCast.isFrontSelected = true
+	}
+	
+	@IBAction func onBodyRightButtonPressed(_ sender: Any) {
+		viewModelCast.isFrontSelected = false
 	}
 	
 	@IBAction func onLocationPressed(_ sender: Any) {
