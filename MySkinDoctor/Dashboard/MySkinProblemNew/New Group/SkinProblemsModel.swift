@@ -19,7 +19,7 @@ class SkinProblemsModel: NSObject {
 	var diagnose: Diagnose!
 	
 	var isDiagnosed: Bool {
-		return diagnose.diagnoseStatus == .diagnosed || diagnose.diagnoseStatus == .diagnosedUpdateRequest
+		return diagnose.diagnoseStatus == .noFutherCommunicationRequired ||  diagnose.diagnoseStatus == .bookConsultationRequest
 	}
 	
 	override init() {
@@ -39,22 +39,50 @@ class SkinProblemsModel: NSObject {
 }
 
 class Diagnose: NSObject {
-	enum DiagnoseStatus: Int {
+	enum DiagnoseStatus: Int, CustomStringConvertible {
 		case none
-		case noDiagnosed
-		case diagnosed
-		case diagnosedUpdateRequest
+		case pending
+		case noFutherCommunicationRequired
+		case bookConsultationRequest
+		
+		var index: Int {
+			return rawValue
+		}
+		
+		var description: String {
+			switch self {
+			case .none:
+				return "None"
+			case .pending:
+				return "Pending"
+			case .bookConsultationRequest:
+				return "Consultation Request"
+			case .noFutherCommunicationRequired:
+				return "Futher comunication Required"
+			}
+		}
 	}
 	
 	var diagnoseDate: Date?
 	var diagnosedBy: Doctor?
 	var diagnoseStatus: DiagnoseStatus = DiagnoseStatus.none
-	var notes: String?
 	var summary: String?
 	var treatment: String?
 	var patientInformation: String?
 	var comments: String?
 	var attachments = [Attachments]()
+	var doctorNotes = [DoctorNote]()
+}
+
+class DoctorNote: NSObject {
+	var date: Date
+	var note: String
+	
+	required init(date: Date!, note: String!) {
+		self.date = date
+		self.note = note
+		super.init()
+	}
 }
 
 class Doctor: NSObject {

@@ -35,18 +35,26 @@ class MySkinProblemsViewModel: BaseViewModel {
 	override init() {
 		// Generate tests
 		
-		allItems = [SkinProblemsModel(date: Date(), diagnoseStatus: .diagnosed, skinProblemDescription: "problem 1"),
-					SkinProblemsModel(date: Date(), diagnoseStatus: .noDiagnosed, skinProblemDescription: "problem2"),
-					SkinProblemsModel(date: Date(), diagnoseStatus: .diagnosedUpdateRequest, skinProblemDescription: "problem 3")]
+		allItems = [SkinProblemsModel(date: Date(), diagnoseStatus: .noFutherCommunicationRequired, skinProblemDescription: "problem 1"),
+					SkinProblemsModel(date: Date(), diagnoseStatus: .pending, skinProblemDescription: "problem2"),
+					SkinProblemsModel(date: Date(), diagnoseStatus: .bookConsultationRequest, skinProblemDescription: "problem 3")]
 
 		allItems.first?.diagnose.diagnosedBy = Doctor(firstName: "Dr Jones", lastName: "Pepito")
 		allItems.first?.diagnose.diagnoseDate = Date().adjust(.day, offset: -5)
+		allItems.first?.diagnose.diagnosedBy?.qualifications = "A lot of them"
+		allItems.first?.diagnose.summary = "My summary"
+		allItems.first?.diagnose.treatment = "My treatment"
+		allItems.first?.diagnose.patientInformation = "My patinet info"
+		allItems.first?.diagnose.comments = "My comments"
 		allItems.first?.problems = [SkinProblemModel(location: SkinProblemModel.LocationProblemType.head, problemDescription: "Pain there", problemImage: nil)]
 		
 		allItems.last?.problems = [SkinProblemModel(location: SkinProblemModel.LocationProblemType.neck, problemDescription: "Pain there", problemImage: nil)]
 		
 		allItems.last?.diagnose.diagnosedBy = Doctor(firstName: "Dr Amor", lastName: "love")
+		allItems.last?.diagnose.diagnosedBy?.qualifications = "A lot of them"
 		allItems.last?.diagnose.diagnoseDate = Date().adjust(.day, offset: -10)
+		allItems.last?.diagnose.doctorNotes = [DoctorNote(date: Date(), note: "my first note"),
+											   DoctorNote(date: Date().adjust(.day, offset: -10), note: "my first 2")]
 		allItems.last?.problems = [SkinProblemModel(location: SkinProblemModel.LocationProblemType.neck, problemDescription: "Pain there", problemImage: nil)]
 		
 		diagnosedItems = allItems.filter { (model) -> Bool in model.isDiagnosed }

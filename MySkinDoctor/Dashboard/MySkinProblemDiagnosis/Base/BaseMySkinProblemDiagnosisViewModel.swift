@@ -1,36 +1,55 @@
 //
-//  MySkinProblemDiagnoseViewModel.swift
+//  BaseMySkinProblemDiagnosisViewModel.swift
 //  MySkinDoctor
 //
-//  Created by Alex Núñez on 08/03/2018.
+//  Created by Alex on 09/03/2018.
 //  Copyright © 2018 TouchSoft. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class MySkinProblemDiagnoseViewModel: BaseViewModel {
+class BaseMySkinProblemDiagnosisViewModel: BaseViewModel {
 	
 	var model: SkinProblemsModel!
+	
+	var diagnoseStatus: Diagnose.DiagnoseStatus {
+		get {
+			return model.diagnose.diagnoseStatus
+		}
+	}
+	
+	var shouldShowNextButton: Bool {
+		return model.diagnose.diagnoseStatus == .bookConsultationRequest
+	}
 	
 	var viewBackgroundColor: UIColor {
 		get {
 			switch diagnoseStatus {
 			case .none:
 				return UIColor.white
-			case .noDiagnosed:
+			case .pending:
 				return UIColor.white
-			case .diagnosed:
+			case .noFutherCommunicationRequired:
 				return AppStyle.diagnoseViewBackgroundColor
-			case .diagnosedUpdateRequest:
+			case .bookConsultationRequest:
 				return AppStyle.diagnoseUpdateRequestViewBackgroundColor
 			}
 		}
 	}
 	
-	var diagnoseStatus: Diagnose.DiagnoseStatus {
+	var navigationTitle: String {
 		get {
-			return model.diagnose.diagnoseStatus
+			switch diagnoseStatus {
+			case .none:
+				return ""
+			case .pending:
+			   return ""
+			case .noFutherCommunicationRequired:
+				return "Diagnosis"
+			case .bookConsultationRequest:
+				return "Diagnosis Update"
+			}
 		}
 	}
 	
@@ -60,7 +79,7 @@ class MySkinProblemDiagnoseViewModel: BaseViewModel {
 				return "-"
 			}
 			
-			return qualifications
+			return qualifications.uppercased()
 		}
 	}
 	
@@ -75,12 +94,11 @@ class MySkinProblemDiagnoseViewModel: BaseViewModel {
 		self.model = model
 	}
 	
-	
-	func dateText() -> String {
+	private func dateText() -> String {
 		return model.date.ordinalMonthAndYear()
 	}
 	
-	func timeText() -> String {
+	private func timeText() -> String {
 		let df = DateFormatter()
 		df.dateFormat = "HH.ss a"
 		df.amSymbol = "am"

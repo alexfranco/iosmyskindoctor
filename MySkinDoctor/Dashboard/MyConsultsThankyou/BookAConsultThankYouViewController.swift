@@ -67,6 +67,6 @@ class BookAConsultThankYouViewController: BindingViewController {
 	// MARK: IBActions
 	
 	@IBAction func onNextButtonPressed(_ sender: Any) {
-		performSegue(withIdentifier: Segues.unwindToMyConsults, sender: nil)
+		dismiss(animated: true, completion: nil)
 	}
 }

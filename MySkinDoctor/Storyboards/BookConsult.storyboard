@@ -73,11 +73,7 @@
                         <viewLayoutGuide key="safeArea" id="xzp-kD-jk6"/>
                     </view>
                     <navigationItem key="navigationItem" title="Book a Consult" id="4xa-0i-j01">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="tCC-Th-9DG">
-                            <connections>
-                                <segue destination="5U4-RR-WJ5" kind="unwind" unwindAction="unwindToMyConsultsWithSegue:" id="u8D-h8-iCZ"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="tCC-Th-9DG"/>
                     </navigationItem>
                     <connections>
                         <outlet property="cancelButton" destination="tCC-Th-9DG" id="49I-N0-KNi"/>
@@ -87,7 +83,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tpg-gj-PVB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="5U4-RR-WJ5" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3942" y="397"/>
         </scene>
@@ -465,11 +460,9 @@
                         <outlet property="profileView" destination="t4z-Zc-1aC" id="N2c-MM-NHI"/>
                         <outlet property="qualificationsLabel" destination="91r-we-Fdh" id="ptu-g4-0EI"/>
                         <outlet property="thankYouLabel" destination="qBL-dx-96C" id="i8x-xV-tAy"/>
-                        <segue destination="B4L-5e-5wC" kind="unwind" identifier="unwindToMyConsults" unwindAction="unwindToMyConsultsWithSegue:" id="spB-7e-IC3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ggX-vZ-ENY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="B4L-5e-5wC" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="6434" y="396"/>
         </scene>

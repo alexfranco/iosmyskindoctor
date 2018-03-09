@@ -35,6 +35,11 @@ class MyConsultsViewController: BindingViewController {
 		initViewModel(viewModel: MyConsultsViewModel())
 	}
 	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		viewModelCast.refreshData()
+	}
+	
 	// MARK: Helpers
 	
 	override func initViewModel(viewModel: BaseViewModel) {
@@ -77,6 +82,7 @@ class MyConsultsViewController: BindingViewController {
 	
 	// MARK: Segues
 	
+	/*
 	@IBAction func unwindToMyConsults(segue:UIStoryboardSegue) {
 		if let sourceViewController = segue.source as? BookAConsultThankYouViewController {
 			if let viewModel = sourceViewController.viewModelCast {
@@ -84,6 +90,7 @@ class MyConsultsViewController: BindingViewController {
 			}
 		}
 	}
+	*/
 	
 }
 

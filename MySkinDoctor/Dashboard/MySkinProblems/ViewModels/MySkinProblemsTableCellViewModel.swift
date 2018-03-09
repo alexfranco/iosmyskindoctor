@@ -19,6 +19,7 @@ class MySkinProblemsTableCellViewModel: NSObject {
 	
 	required init(withModel model: SkinProblemsModel) {
 		self.model = model
+		self.name = model.diagnose.diagnoseStatus.description
 		self.date = MySkinProblemsTableCellViewModel.getDateFormatted(date: model.date)
 		self.isDiagnosed = model.isDiagnosed
 		self.problemDescription = model.skinProblemDescription

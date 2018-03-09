@@ -45,11 +45,11 @@ class AddSkinProblemsViewModel: BaseViewModel {
 			switch diagnoseStatus {
 			case .none:
 				return NSLocalizedString("addskinproblems_main_vc_title_none", comment: "")
-			case .noDiagnosed:
+			case .pending:
 				return NSLocalizedString("addskinproblems_main_vc_title_nodiagnosed", comment: "")
-			case .diagnosed:
+			case .noFutherCommunicationRequired:
 				return NSLocalizedString("addskinproblems_main_vc_title_diagnosed", comment: "")
-			case .diagnosedUpdateRequest:
+			case .bookConsultationRequest:
 				return NSLocalizedString("addskinproblems_main_vc_title_diagnosed_update_request", comment: "")
 			}
 		}
@@ -60,11 +60,11 @@ class AddSkinProblemsViewModel: BaseViewModel {
 			switch diagnoseStatus {
 			case .none:
 				return UIColor.white
-			case .noDiagnosed:
+			case .pending:
 				return AppStyle.addSkinProblemUndiagnosedViewBackground
-			case .diagnosed:
+			case .noFutherCommunicationRequired:
 				return AppStyle.addSkinProblemDiagnosedViewBackground
-			case .diagnosedUpdateRequest:
+			case .bookConsultationRequest:
 				return AppStyle.addSkinProblemDiagnosedUpdateRequestViewBackground
 			}
 		}
@@ -97,12 +97,27 @@ class AddSkinProblemsViewModel: BaseViewModel {
 			switch diagnoseStatus {
 			case .none:
 				return "-"
-			case .noDiagnosed:
+			case .pending:
 				return generateNodiagnosedInfoText()
-			case .diagnosed:
+			case .noFutherCommunicationRequired:
 				return generateDiagnosedInfoText()
-			case .diagnosedUpdateRequest:
+			case .bookConsultationRequest:
 				return generateDiagnosedUpdateRequestInfoText()
+			}
+		}
+	}
+	
+	var nextSegue: String {
+		get {
+			switch diagnoseStatus {
+			case .none:
+				return ""
+			case .pending:
+				return ""
+			case .noFutherCommunicationRequired:
+				return Segues.goToDiagnosis
+			case .bookConsultationRequest:
+				return Segues.goToMySkinProblemDiagnoseUpdateRequest
 			}
 		}
 	}
@@ -200,10 +215,22 @@ class AddSkinProblemsViewModel: BaseViewModel {
 			return "-"
 		}
 	}
+	
+	private func generateDiagnosedFollowUpRequestInfoText() -> String {
+		if let diagnose = model.diagnose,
+			let doctor = diagnose.diagnosedBy,
+			let doctorFirstName = doctor.firstName,
+			let doctorLastName = doctor.lastName {
+			
+			return String.init(format: "%@ %@ has requested a follow up from you.", doctorFirstName, doctorLastName)
+		} else {
+			return "-"
+		}
+	}
 
 	func saveModel() {
 		model.skinProblemDescription = skinProblemDescription
-		model.diagnose.diagnoseStatus = .noDiagnosed
+		model.diagnose.diagnoseStatus = .pending
 		goNextSegue!()
 	}
 	

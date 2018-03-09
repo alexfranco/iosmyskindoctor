@@ -28,15 +28,15 @@ class SkinProblemPhotoInformationViewController: PhotoViewController {
 		descriptionTextView.placeholder = "Please enter here a description of your problem"
 		userPhotoImageView.image = (viewModel as! SkinProblemPhotoInformationViewModel).problemImage
 		
-		navigationController?.setBackgroundColorWithoutShadowImage(bgColor: AppStyle.defaultNavigationBarColor, titleColor: AppStyle.defaultNavigationBarTitleColor)
-				
 		delegate = self
 	}
 	
-	override func viewWillAppear(_ animated: Bool) {
-		title = NSLocalizedString("skinproblem_main_vc_title", comment: "")
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		navigationController?.setBackgroundColorWithoutShadowImage(bgColor: AppStyle.defaultNavigationBarColor, titleColor: AppStyle.defaultNavigationBarTitleColor)
+		navigationController?.title = NSLocalizedString("skinproblem_main_vc_title", comment: "")
 	}
-	
+
 	// MARK: Helpers
 	
 	override func initViewModel(viewModel: BaseViewModel) {

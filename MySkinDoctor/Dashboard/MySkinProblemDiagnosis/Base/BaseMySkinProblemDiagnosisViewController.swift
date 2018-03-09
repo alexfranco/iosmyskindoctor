@@ -1,15 +1,15 @@
 //
-//  MySkinProblemDiagnoseViewController.swift
+//  BaseMySkinProblemDiagnosisViewController.swift
 //  MySkinDoctor
 //
-//  Created by Alex Núñez on 08/03/2018.
+//  Created by Alex on 09/03/2018.
 //  Copyright © 2018 TouchSoft. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class MySkinProblemDiagnoseViewController: BindingViewController {
+class BaseMySkinProblemDiagnosisViewController: BindingViewController {
 	
 	@IBOutlet weak var profileImageView: UIImageView!
 	@IBOutlet weak var doctorNameLabel: UILabel!
@@ -17,25 +17,29 @@ class MySkinProblemDiagnoseViewController: BindingViewController {
 	@IBOutlet weak var profileHeaderView: UIView!
 	@IBOutlet weak var profileView: UIView!
 	
-	var viewModelCast: MySkinProblemDiagnoseViewModel!
+	private var viewModelCast: BaseMySkinProblemDiagnosisViewModel!
 	
 	override func initViewModel(viewModel: BaseViewModel) {
 		super.initViewModel(viewModel: viewModel)
 		
-		viewModelCast = viewModel as! MySkinProblemDiagnoseViewModel
+		viewModelCast = viewModel as! BaseMySkinProblemDiagnosisViewModel
 	}
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		applyTheme()
-		
+		title = viewModelCast.navigationTitle
+
 		profileImageView.image = viewModelCast.profileImage
 		profileImageView?.setRounded()
 		profileImageView.setWhiteBorder()
 		
 		doctorNameLabel.text = viewModelCast.doctorNameText
 		qualificationsLabel.text = viewModelCast.qualificationsText
+		
+		nextButton.isHidden = !viewModelCast.shouldShowNextButton
+
+		applyTheme()
 	}
 	
 	func applyTheme() {
@@ -45,14 +49,14 @@ class MySkinProblemDiagnoseViewController: BindingViewController {
 		
 		view.backgroundColor = viewModelCast.viewBackgroundColor
 		profileHeaderView.backgroundColor = viewModelCast.viewBackgroundColor
-		
+			
 		doctorNameLabel.textColor = AppStyle.diagnoseTitleColor
 	}
 	
 	// MARK: IBActions
 	
 	@IBAction func onNextButtonPressed(_ sender: Any) {
-		//performSegue(withIdentifier: Segues.unwindToMyConsults, sender: nil)
+		dismiss(animated: true, completion: nil)
 	}
 }
 

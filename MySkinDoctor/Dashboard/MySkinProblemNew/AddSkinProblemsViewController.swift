@@ -107,6 +107,7 @@ class AddSkinProblemsViewController: BindingViewController {
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		navigationController?.setBackgroundColorWithoutShadowImage(bgColor: AppStyle.defaultNavigationBarColor, titleColor: AppStyle.defaultNavigationBarTitleColor)
+		title = "Add Skin Problem"
 	}
 	
 	// MARK: Helpers
@@ -151,9 +152,9 @@ class AddSkinProblemsViewController: BindingViewController {
 	func showHideDiagnoseViews() {
 		descriptionLabelTop.constant = viewModelCast.diagnoseStatus == .none ? descriptionLabelTopDefault : descriptionLabelTopDefault + diagnosedViewHeightDefault
 		
-		undiagnosedViewHeight.constant = viewModelCast.diagnoseStatus == .noDiagnosed ? diagnosedViewHeightDefault : 0
-		undiagnosedImageView.isHidden = viewModelCast.diagnoseStatus != .noDiagnosed
-		undiagnosedInfoLabel.isHidden = viewModelCast.diagnoseStatus != .noDiagnosed
+		undiagnosedViewHeight.constant = viewModelCast.diagnoseStatus == .pending ? diagnosedViewHeightDefault : 0
+		undiagnosedImageView.isHidden = viewModelCast.diagnoseStatus != .pending
+		undiagnosedInfoLabel.isHidden = viewModelCast.diagnoseStatus != .pending
 		
 		diagnosedViewHeight.constant = viewModelCast.isDiagnosed ? diagnosedViewHeightDefault : 0
 		diagnosedImageView.isHidden = !viewModelCast.isDiagnosed
@@ -166,6 +167,7 @@ class AddSkinProblemsViewController: BindingViewController {
 	}
 	
 	@IBAction func onViewDiagnosePressed(_ sender: Any) {
+		self.performSegue(withIdentifier: viewModelCast.nextSegue, sender: nil)
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -174,9 +176,13 @@ class AddSkinProblemsViewController: BindingViewController {
 				let skinProblem = SkinProblemModel(problemImage: image) // create new skin problem with the image attached
 				dest.initViewModel(viewModel: SkinProblemPhotoInformationViewModel(model:  skinProblem))
 			}
-		} else if segue.identifier == Segues.goToDiagnose {
-			if let dest = segue.destination as? MySkinProblemDiagnoseViewController {
-				dest.initViewModel(viewModel: MySkinProblemDiagnoseViewModel(model:  viewModelCast.model))
+		} else if segue.identifier == Segues.goToDiagnosis {
+			if let dest = segue.destination as? MySkinProblemDiagnosisViewController {
+				dest.initViewModel(viewModel: MySkinProblemDiagnosisViewModel(model:  viewModelCast.model))
+			}
+		} else if segue.identifier == Segues.goToMySkinProblemDiagnoseUpdateRequest {
+			if let dest = segue.destination as? MySkinProblemDiagnoseUpdateRequestViewController {
+				dest.initViewModel(viewModel: MySkinProblemDiagnoseUpdateRequestViewModel(model:  viewModelCast.model))
 			}
 		}
 	}
@@ -211,7 +217,7 @@ extension AddSkinProblemsViewController: UITableViewDelegate, UITableViewDataSou
 			return cell
 		} else {
 			let cell = tableView.dequeueReusableCell(withIdentifier: CellId.skinProblemTableViewCellId) as! SkinProblemTableViewCell
-			let cellViewModel = SkinProblemTableCellViewModel(withModel: viewModelCast.getItemAtIndexPath(indexPath: indexPath))
+			let cellViewModel = SkinProblemTableCellViewModel(withModel: viewModelCast.getItemAtIndexPath(indexPath: indexPath), index: indexPath.row)
 			cell.configure(withViewModel: cellViewModel)
 			return cell
 		}

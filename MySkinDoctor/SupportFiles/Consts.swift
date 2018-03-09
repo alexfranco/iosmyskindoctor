@@ -22,10 +22,11 @@ struct Segues {
 	static let goToSkinProblemThankYouViewControllerFromAddSkinProblem = "goToSkinProblemThankYouViewControllerFromAddSkinProblem"
 	static let goToConfirmConsult = "goToConfirmConsult"
 	static let goToThankYouViewController = "goToThankYouViewController"
-	static let goToDiagnose = "goToDiagnose"
+	static let goToDiagnosis = "goToDiagnosis"
+	static let goToDiagnosisUpdateRequest = "goToDiagnosisUpdateRequest"
+	static let goToMySkinProblemDiagnoseUpdateRequest = "goToMySkinProblemDiagnoseUpdateRequest"
 	
 	static let unwindToAddSkinProblems = "unwindToAddSkinProblems"
-	static let unwindToMyConsults = "unwindToMyConsults"
 }
 
 struct Storyboard {
@@ -42,5 +43,6 @@ struct CellId {
 	static let addPhotoTableViewCellId = "AddPhotoTableViewCellId"
 	static let skinProblemTableViewCellId = "SkinProblemTableViewCellId"
 	static let myConsultTableViewCellId = "MyConsultTableViewCellId"
+	static let updateRequestCellId = "UpdateRequestCellId"
 }
 

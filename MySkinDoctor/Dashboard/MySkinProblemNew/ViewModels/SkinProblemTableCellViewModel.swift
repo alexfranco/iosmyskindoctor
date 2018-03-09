@@ -16,8 +16,8 @@ class SkinProblemTableCellViewModel : NSObject {
 	var problemDescription: String!
 	var problemImage: UIImage
 		
-	required init(withModel model: SkinProblemModel) {
-		self.name = "TODO"
+	required init(withModel model: SkinProblemModel, index: Int) {
+		self.name = String.init(format: "Photo %d", index + 1)
 		self.location = model.location.description
 		self.problemImage = model.problemImage == nil ? UIImage(named: "logo")! : model.problemImage! // TODO change it to a default image
 		self.problemDescription = model.problemDescription
