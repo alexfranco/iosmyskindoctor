@@ -18,6 +18,58 @@ class ProfileViewController: FormViewController {
 	
 	@IBOutlet weak var personalDetailsSectionLabel: BoldLabel!
 	@IBOutlet weak var dobTextField: ProfileTextField!
+	
+	@IBOutlet weak var phoneTextField: ProfileTextField!  {
+		didSet {
+			phoneTextField.bind { self.viewModelCast.phone = $0 }
+		}
+	}
+	@IBOutlet weak var emailTextField: ProfileTextField! {
+		didSet {
+			emailTextField.bind { self.viewModelCast.email = $0 }
+		}
+	}
+	@IBOutlet weak var changePasswordButton: UIButton!
+	
+	@IBOutlet weak var contactDetailsSectionLabel: BoldLabel!
+	@IBOutlet weak var address1TextField: ProfileTextField!  {
+		didSet {
+			address1TextField.bind { self.viewModelCast.addressLine1 = $0 }
+		}
+	}
+	@IBOutlet weak var address2TextField: ProfileTextField!  {
+		didSet {
+			address2TextField.bind { self.viewModelCast.addressLine2 = $0 }
+		}
+	}
+	@IBOutlet weak var townTextField: ProfileTextField!  {
+		didSet {
+			townTextField.bind { self.viewModelCast.town = $0 }
+		}
+	}
+	@IBOutlet weak var postcodeTextField: ProfileTextField!  {
+		didSet {
+			postcodeTextField.bind { self.viewModelCast.postcode = $0 }
+		}
+	}
+	
+	@IBOutlet weak var gpInformationSectionLabel: BoldLabel!
+	@IBOutlet weak var gpNameTextField: ProfileTextField!  {
+		didSet {
+			gpNameTextField.bind { self.viewModelCast.gpName = $0 }
+		}
+	}
+	@IBOutlet weak var gpAccessCodeTextField: ProfileTextField!  {
+		didSet {
+			gpAccessCodeTextField.bind { self.viewModelCast.gpAccessCode = $0 }
+		}
+	}
+	@IBOutlet weak var permisionTitleLabel: UILabel!
+	@IBOutlet weak var permisionSwitch: UISwitch!
+	@IBOutlet weak var permisionDetailsLabel: UILabel!
+	
+	var viewModelCast: ProfileViewModel!
+	
 	let datePicker = UIDatePicker()
 	
 	override func viewDidLoad() {
@@ -37,9 +89,38 @@ class ProfileViewController: FormViewController {
 		
 		navigationController?.setBackgroundColorWithoutShadowImage(bgColor: AppStyle.profileNavigationBarColor, titleColor: AppStyle.profileNavigationBarTitleColor)
 		
-		registerForKeyboardReturnKey([dobTextField])
+		registerForKeyboardReturnKey([dobTextField,
+									  phoneTextField,
+									  emailTextField,
+									  address1TextField,
+									  address2TextField,
+									  townTextField,
+									  postcodeTextField,
+									  gpNameTextField,
+									  gpAccessCodeTextField])
 		
 		initViewModel(viewModel: ProfileViewModel())
+	}
+	
+	// MARK: Bindings
+	
+	override func initViewModel(viewModel: BaseViewModel) {
+		super.initViewModel(viewModel: viewModel)
+		
+		viewModelCast = (viewModel as! ProfileViewModel)
+		
+		viewModelCast.dobUpdated = { [weak self] (date) in
+			DispatchQueue.main.async {
+				self?.dobTextField.text = date
+			}
+		}
+		
+		viewModelCast.emailValidationStatus = { [weak self] () in
+			DispatchQueue.main.async {
+				self?.emailTextField.errorMessage = self?.viewModelCast.emailErrorMessage
+				self?.emailTextField.becomeFirstResponder()
+			}
+		}
 	}
 	
 	func showDatePicker() {
@@ -47,27 +128,25 @@ class ProfileViewController: FormViewController {
 		datePicker.datePickerMode = .date
 		
 		//ToolBar
-		let toolbar = UIToolbar();
+		let toolbar = UIToolbar()
 		toolbar.sizeToFit()
-		let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(dobPicker));
+		let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker))
+		let setButton = UIBarButtonItem(title: "Set", style: .plain, target: self, action: #selector(dobPicker))
 		let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
-		let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker));
 		
-		toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
+		toolbar.setItems([cancelButton, spaceButton, setButton], animated: false)
 		
 		dobTextField.inputAccessoryView = toolbar
 		dobTextField.inputView = datePicker
 	}
 	
 	@objc func dobPicker() {
-		let formatter = DateFormatter()
-		formatter.dateFormat = "dd/MM/yyyy"
-		dobTextField.text = formatter.string(from: datePicker.date)
-		self.view.endEditing(true)
+		viewModelCast.dob = datePicker.date
+		view.endEditing(true)
 	}
 	
 	@objc func cancelDatePicker() {
-		self.view.endEditing(true)
+		view.endEditing(true)
 	}
 	
 	// MARK: UITextFieldDelegate
@@ -78,6 +157,13 @@ class ProfileViewController: FormViewController {
 		if textField == dobTextField {
 			showDatePicker()
 		}
+	}
+	
+	@IBAction func onChangePasswordButton(_ sender: Any) {
+	}
+	
+	@IBAction func onPermissionValueChanged(_ sender: Any) {
+		viewModelCast.isPermisionEnabled = permisionSwitch.isOn
 	}
 }
 
