@@ -64,6 +64,18 @@ class ProfileViewController: FormViewController {
 			gpAccessCodeTextField.bind { self.viewModelCast.gpAccessCode = $0 }
 		}
 	}
+	
+	@IBOutlet weak var gpAddressLineTextField: ProfileTextField!  {
+		didSet {
+			gpAddressLineTextField.bind { self.viewModelCast.gpAddressLine = $0 }
+		}
+	}
+	
+	@IBOutlet weak var gpPostcodeTextField: ProfileTextField!  {
+		didSet {
+			gpPostcodeTextField.bind { self.viewModelCast.gpPostcode = $0 }
+		}
+	}
 	@IBOutlet weak var permisionTitleLabel: UILabel!
 	@IBOutlet weak var permisionSwitch: UISwitch!
 	@IBOutlet weak var permisionDetailsLabel: UILabel!
@@ -97,9 +109,12 @@ class ProfileViewController: FormViewController {
 									  townTextField,
 									  postcodeTextField,
 									  gpNameTextField,
-									  gpAccessCodeTextField])
+									  gpAccessCodeTextField,
+									  gpAddressLineTextField,
+									  gpPostcodeTextField])
 		
 		initViewModel(viewModel: ProfileViewModel())
+		refreshFields()
 	}
 	
 	// MARK: Bindings
@@ -121,6 +136,11 @@ class ProfileViewController: FormViewController {
 				self?.emailTextField.becomeFirstResponder()
 			}
 		}
+	}
+	
+	override func viewWillDisappear(_ animated: Bool) {
+		super.viewWillDisappear(animated)
+		viewModelCast.saveModel()
 	}
 	
 	func showDatePicker() {
@@ -149,14 +169,19 @@ class ProfileViewController: FormViewController {
 		view.endEditing(true)
 	}
 	
-	// MARK: UITextFieldDelegate
-	
-	override func textFieldDidBeginEditing(_ textField: UITextField) {
-		super.textFieldDidBeginEditing(textField)
-		
-		if textField == dobTextField {
-			showDatePicker()
-		}
+	func refreshFields() {
+		dobTextField.text = viewModelCast.dobDisplayText
+		phoneTextField.text = viewModelCast.phone
+		emailTextField.text = viewModelCast.email
+		address1TextField.text = viewModelCast.addressLine1
+		address2TextField.text = viewModelCast.addressLine2
+		townTextField.text = viewModelCast.town
+		postcodeTextField.text = viewModelCast.postcode
+		gpNameTextField.text = viewModelCast.gpName
+		gpAccessCodeTextField.text = viewModelCast.gpAccessCode
+		gpAddressLineTextField.text = viewModelCast.gpAddressLine
+		gpPostcodeTextField.text = viewModelCast.gpPostcode
+		permisionSwitch.isOn = viewModelCast.isPermisionEnabled
 	}
 	
 	@IBAction func onChangePasswordButton(_ sender: Any) {

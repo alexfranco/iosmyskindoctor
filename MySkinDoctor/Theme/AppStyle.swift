@@ -208,8 +208,8 @@ struct AppStyle {
 	
 	// Wizard
 	
-	static let wizardNHSButtonColor = BaseColors.hospitalGreen
-	static let wizardSelfPayButtonColor = BaseColors.skyBlue
+	static let wizardNHSButtonColor = BaseColors.skyBlue 
+	static let wizardSelfPayButtonColor = BaseColors.hospitalGreen
 }
 
 

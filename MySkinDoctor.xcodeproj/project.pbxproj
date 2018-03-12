@@ -144,6 +144,16 @@
 		FA6E8F602056BFDA001F6E16 /* SetupWizard2ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E8F5E2056BFDA001F6E16 /* SetupWizard2ViewModel.swift */; };
 		FA6E8F622056C239001F6E16 /* UIButton+Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E8F612056C239001F6E16 /* UIButton+Border.swift */; };
 		FA6E8F632056C239001F6E16 /* UIButton+Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E8F612056C239001F6E16 /* UIButton+Border.swift */; };
+		FA6E8F672056CC8E001F6E16 /* Profile+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E8F652056CC8E001F6E16 /* Profile+CoreDataClass.swift */; };
+		FA6E8F682056CC8E001F6E16 /* Profile+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E8F652056CC8E001F6E16 /* Profile+CoreDataClass.swift */; };
+		FA6E8F692056CC8E001F6E16 /* Profile+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E8F662056CC8E001F6E16 /* Profile+CoreDataProperties.swift */; };
+		FA6E8F6A2056CC8E001F6E16 /* Profile+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E8F662056CC8E001F6E16 /* Profile+CoreDataProperties.swift */; };
+		FA6E8F6C2056CCB6001F6E16 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA6E8F6B2056CCB6001F6E16 /* CoreData.framework */; };
+		FA6E8F6D2056CCBF001F6E16 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA6E8F6B2056CCB6001F6E16 /* CoreData.framework */; };
+		FA6E8F6F2056CE87001F6E16 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E8F6E2056CE87001F6E16 /* DataController.swift */; };
+		FA6E8F702056CE87001F6E16 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E8F6E2056CE87001F6E16 /* DataController.swift */; };
+		FA6E8FAF2056D66C001F6E16 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E8FAE2056D66C001F6E16 /* CoreDataStack.swift */; };
+		FA6E8FB02056D66C001F6E16 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E8FAE2056D66C001F6E16 /* CoreDataStack.swift */; };
 		FA7F713A20529181006B1EFF /* BaseMySkinProblemDiagnosisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7F713920529181006B1EFF /* BaseMySkinProblemDiagnosisViewController.swift */; };
 		FA7F713C20529250006B1EFF /* BaseMySkinProblemDiagnosisViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7F713B20529250006B1EFF /* BaseMySkinProblemDiagnosisViewModel.swift */; };
 		FA7F713D20529250006B1EFF /* BaseMySkinProblemDiagnosisViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7F713B20529250006B1EFF /* BaseMySkinProblemDiagnosisViewModel.swift */; };
@@ -289,6 +299,11 @@
 		FA6E8F5B2056BFC3001F6E16 /* SetupWizard2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupWizard2ViewController.swift; sourceTree = "<group>"; };
 		FA6E8F5E2056BFDA001F6E16 /* SetupWizard2ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupWizard2ViewModel.swift; sourceTree = "<group>"; };
 		FA6E8F612056C239001F6E16 /* UIButton+Border.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Border.swift"; sourceTree = "<group>"; };
+		FA6E8F652056CC8E001F6E16 /* Profile+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FA6E8F662056CC8E001F6E16 /* Profile+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FA6E8F6B2056CCB6001F6E16 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		FA6E8F6E2056CE87001F6E16 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		FA6E8FAE2056D66C001F6E16 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		FA7F713920529181006B1EFF /* BaseMySkinProblemDiagnosisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMySkinProblemDiagnosisViewController.swift; sourceTree = "<group>"; };
 		FA7F713B20529250006B1EFF /* BaseMySkinProblemDiagnosisViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMySkinProblemDiagnosisViewModel.swift; sourceTree = "<group>"; };
 		FA9760D5203AFBD200242255 /* LoginResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseModel.swift; sourceTree = "<group>"; };
@@ -341,6 +356,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA6E8F6D2056CCBF001F6E16 /* CoreData.framework in Frameworks */,
 				78B9E546203C4CD70054CAD3 /* Pods_MySkinDoctor.framework in Frameworks */,
 				D75D874EF6F3C1F821CF13C0 /* Pods_MySkinDoctorLive.framework in Frameworks */,
 			);
@@ -350,6 +366,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA6E8F6C2056CCB6001F6E16 /* CoreData.framework in Frameworks */,
 				BACDC2609AC77EBE02475BED /* Pods_MySkinDoctor.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -360,6 +377,7 @@
 		6C7CC2BD03758D6ACE1BAADC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FA6E8F6B2056CCB6001F6E16 /* CoreData.framework */,
 				01583D02E29AF032A253E558 /* Pods_MySkinDoctor.framework */,
 				2E2D019D11880DC312A040CC /* Pods_MySkinDoctorTests.framework */,
 				E0C3C2F56ED18563B887D4D9 /* Pods_MySkinDoctorUITests.framework */,
@@ -405,6 +423,7 @@
 				FAE733C82034494D00898E65 /* MySkinDoctor.xcdatamodeld */,
 				78B9E522203C2E630054CAD3 /* Localizable.strings */,
 				78B9E529203C4AF20054CAD3 /* Consts.swift */,
+				FA6E8FAE2056D66C001F6E16 /* CoreDataStack.swift */,
 			);
 			path = SupportFiles;
 			sourceTree = "<group>";
@@ -415,6 +434,7 @@
 				FA9760E2203B29D600242255 /* Validations.swift */,
 				78E44AA5203EBE5C0094F3AF /* PasswordStrength.swift */,
 				FA33268520440EA400657C8A /* PhotoUtils.swift */,
+				FA6E8F6E2056CE87001F6E16 /* DataController.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -598,6 +618,15 @@
 			path = MyConsultsThankyou;
 			sourceTree = "<group>";
 		};
+		FA6E8F642056CC64001F6E16 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FA6E8F652056CC8E001F6E16 /* Profile+CoreDataClass.swift */,
+				FA6E8F662056CC8E001F6E16 /* Profile+CoreDataProperties.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		FA9760D7203B0DF000242255 /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
@@ -739,6 +768,7 @@
 				78B9E556203C4CF30054CAD3 /* MySkinDoctorLive.entitlements */,
 				FAE733D02034494D00898E65 /* MySkinDoctor.plist */,
 				78B9E554203C4CD70054CAD3 /* MySkinDoctorLive.plist */,
+				FA6E8F642056CC64001F6E16 /* Models */,
 				78B9E51F203C2DBD0054CAD3 /* BaseViewControllers */,
 				FA3326A520441C8500657C8A /* Custom */,
 				FA9760D7203B0DF000242255 /* Extentions */,
@@ -1113,6 +1143,7 @@
 			files = (
 				FADC33452046F16C0065A7EB /* SkinProblemPhotoInformationViewModel.swift in Sources */,
 				FAF2CEB7204D55850001EEAB /* MyConsultsViewController.swift in Sources */,
+				FA6E8F6A2056CC8E001F6E16 /* Profile+CoreDataProperties.swift in Sources */,
 				78B9E530203C4CD70054CAD3 /* RegistrationResponseModel.swift in Sources */,
 				78DBCE502051741500C0D4B5 /* MySkinProblemDiagnosisViewController.swift in Sources */,
 				788B9371204848E8001605E6 /* SkinProblemsModel.swift in Sources */,
@@ -1133,6 +1164,7 @@
 				FAD6ADBD204461050050C1A9 /* AddSkinProblemsViewController.swift in Sources */,
 				FA332661204034B300657C8A /* UIImageView+Circular.swift in Sources */,
 				788C3214204E88D00078A983 /* BookAConsultCalendarViewController.swift in Sources */,
+				FA6E8F682056CC8E001F6E16 /* Profile+CoreDataClass.swift in Sources */,
 				FA6130D7205023CE00731495 /* BookAConsultThankYouViewModel.swift in Sources */,
 				788C321E204EF0400078A983 /* BookAConsultCalendarViewModel.swift in Sources */,
 				78B9E532203C4CD70054CAD3 /* ApiUtils.swift in Sources */,
@@ -1148,6 +1180,7 @@
 				FADC3356204D48BA0065A7EB /* SkinProblemThankYouViewController.swift in Sources */,
 				FAD6ADB820445EB20050C1A9 /* AddPhotoTableViewCell.swift in Sources */,
 				FAD6ADC220446D310050C1A9 /* AddPhotoTableViewCellViewModel.swift in Sources */,
+				FA6E8FB02056D66C001F6E16 /* CoreDataStack.swift in Sources */,
 				FA3326472040220200657C8A /* MySkinProblemsTableCellViewModel.swift in Sources */,
 				FA6130C720500DB800731495 /* BookAConsultConfirmViewModel.swift in Sources */,
 				7849CC9F203EE15A0030A7B1 /* RegistrationViewModel.swift in Sources */,
@@ -1193,6 +1226,7 @@
 				FA33264D2040240400657C8A /* MySkinProblemsTableViewCell.swift in Sources */,
 				78B9E540203C4CD70054CAD3 /* RegistrationViewController.swift in Sources */,
 				78B9E541203C4CD70054CAD3 /* BaseResponseModel.swift in Sources */,
+				FA6E8F702056CE87001F6E16 /* DataController.swift in Sources */,
 				78FFF02B20496E240013240D /* MedicalHistoryViewControler.swift in Sources */,
 				78B9E542203C4CD70054CAD3 /* Consts.swift in Sources */,
 				FAF2CEC9204D574F0001EEAB /* MyConsultTableViewCellViewModel.swift in Sources */,
@@ -1212,6 +1246,7 @@
 			files = (
 				FADC33442046F16C0065A7EB /* SkinProblemPhotoInformationViewModel.swift in Sources */,
 				FAF2CEB6204D55850001EEAB /* MyConsultsViewController.swift in Sources */,
+				FA6E8F692056CC8E001F6E16 /* Profile+CoreDataProperties.swift in Sources */,
 				FAC1AF112036FCE200547BBC /* RegistrationResponseModel.swift in Sources */,
 				78DBCE4F2051741500C0D4B5 /* MySkinProblemDiagnosisViewController.swift in Sources */,
 				FADC333F2046E8C80065A7EB /* FormTextView.swift in Sources */,
@@ -1232,6 +1267,7 @@
 				FAC1AF0E2036F46F00547BBC /* ApiUtils.swift in Sources */,
 				FA33263A20400FD200657C8A /* DashboardTabViewController.swift in Sources */,
 				788C3213204E88D00078A983 /* BookAConsultCalendarViewController.swift in Sources */,
+				FA6E8F672056CC8E001F6E16 /* Profile+CoreDataClass.swift in Sources */,
 				FA6130D6205023CE00731495 /* BookAConsultThankYouViewModel.swift in Sources */,
 				788C321D204EF0400078A983 /* BookAConsultCalendarViewModel.swift in Sources */,
 				780F70242035A63700D96601 /* PositiveButton.swift in Sources */,
@@ -1247,6 +1283,7 @@
 				78C205CB20459D7D00F8E407 /* UINavigationController+Extentions.swift in Sources */,
 				FAF2CED2204D745D0001EEAB /* UILabel+RoundedBorders.swift in Sources */,
 				780F70262035AABB00D96601 /* NoBackgroundButton.swift in Sources */,
+				FA6E8FAF2056D66C001F6E16 /* CoreDataStack.swift in Sources */,
 				FADC3355204D48BA0065A7EB /* SkinProblemThankYouViewController.swift in Sources */,
 				780F70192035885E00D96601 /* ProgressBarViewController.swift in Sources */,
 				FA6130C620500DB700731495 /* BookAConsultConfirmViewModel.swift in Sources */,
@@ -1292,6 +1329,7 @@
 				FAE733F820344B2800898E65 /* RegistrationViewController.swift in Sources */,
 				FA9760DD203B0EDC00242255 /* BaseResponseModel.swift in Sources */,
 				78B9E52A203C4AF20054CAD3 /* Consts.swift in Sources */,
+				FA6E8F6F2056CE87001F6E16 /* DataController.swift in Sources */,
 				78FFF02A20496E240013240D /* MedicalHistoryViewControler.swift in Sources */,
 				FAD6ADB720445EB20050C1A9 /* AddPhotoTableViewCell.swift in Sources */,
 				FAF2CEC8204D574F0001EEAB /* MyConsultTableViewCellViewModel.swift in Sources */,

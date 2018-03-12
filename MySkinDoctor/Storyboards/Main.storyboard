@@ -297,7 +297,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="GP Access Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7CK-hX-Qkt" customClass="ProfileTextField" customModule="MySkinDoctor" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="GP Address Line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7CK-hX-Qkt" customClass="ProfileTextField" customModule="MySkinDoctor" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="590" width="335" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="Cmx-JV-VjE"/>
@@ -306,7 +306,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="GP Access Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lbJ-ot-1ym" customClass="ProfileTextField" customModule="MySkinDoctor" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="GP Postcode" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lbJ-ot-1ym" customClass="ProfileTextField" customModule="MySkinDoctor" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="640" width="335" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="ovB-JU-XT1"/>
@@ -415,8 +415,10 @@
                         <outlet property="emailLabel" destination="YXW-J2-Htj" id="ulZ-si-qrB"/>
                         <outlet property="emailTextField" destination="0tt-8Q-955" id="oOa-2F-kSR"/>
                         <outlet property="gpAccessCodeTextField" destination="woI-UJ-7r9" id="POj-hB-CeO"/>
+                        <outlet property="gpAddressLineTextField" destination="7CK-hX-Qkt" id="Umd-cy-9Ie"/>
                         <outlet property="gpInformationSectionLabel" destination="TFY-JO-cOm" id="6Ln-7S-ouq"/>
                         <outlet property="gpNameTextField" destination="ccm-Ib-i9a" id="Ik3-YI-0lc"/>
+                        <outlet property="gpPostcodeTextField" destination="lbJ-ot-1ym" id="M3M-Po-pBQ"/>
                         <outlet property="nameLabel" destination="Sb0-1z-y8v" id="FwZ-xd-yrf"/>
                         <outlet property="permisionDetailsLabel" destination="mlN-Ra-CRM" id="ZaK-SM-MPJ"/>
                         <outlet property="permisionSwitch" destination="nn7-5i-AD1" id="Sm3-Dq-QIx"/>

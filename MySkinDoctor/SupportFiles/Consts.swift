@@ -51,3 +51,6 @@ struct CellId {
 	static let updateRequestCellId = "UpdateRequestCellId"
 }
 
+struct CoreData {
+	static let dataBaseName = "MySkinDoctor"
+}
