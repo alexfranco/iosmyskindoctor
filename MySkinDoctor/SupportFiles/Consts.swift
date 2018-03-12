@@ -14,6 +14,10 @@ struct Segues {
 	static let goToMainStoryboardFromLogin = "goToMainStoryboardFromLogin"
 	static let goToMainStoryboardFromSignUp = "goToMainStoryboardFromSignUp"
 	
+	static let goToSetupWizard = "goToSetupWizard"
+	static let goToSetupWizard2 = "goToSetupWizard2"
+	static let goToSetupWizard3 = "goToSetupWizard3"
+	
 	static let goToAddSkinProblem = "goToAddSkinProblem"
 	static let goToSkinProblemPhotoInformationViewController = "goToSkinProblemPhotoInformationViewController"
 	static let goToSkinProblemLocationViewController = "goToSkinProblemLocationViewController"

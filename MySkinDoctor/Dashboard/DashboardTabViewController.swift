@@ -32,7 +32,9 @@ class DashboardTabViewController: UITabBarController {
 
 		self.tabBar.items?[mySkinTab].selectedImage = UIImage(named: "skinProblemsActive")?.withRenderingMode(.alwaysOriginal)
 		self.tabBar.items?[consultTab].selectedImage = UIImage(named: "consultsActive")?.withRenderingMode(.alwaysOriginal)
-		self.tabBar.items?[myProfileTab].selectedImage = UIImage(named: "profileActive")?.withRenderingMode(.alwaysOriginal)
+		self.tabBar.items?[myProfileTab].selectedImage = UIImage(named: "profileActive")?.withRenderingMode(.alwaysOriginal)		
 	}
+	
+	
 }
 

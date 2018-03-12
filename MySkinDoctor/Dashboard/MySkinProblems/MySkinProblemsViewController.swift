@@ -30,6 +30,8 @@ class MySkinProblemsViewController: BindingViewController {
 		configureTableView()
 		
 		initViewModel(viewModel: MySkinProblemsViewModel())
+		
+//		self.performSegue(withIdentifier: Segues.goToSetupWizard, sender: nil)
 	}
 	
 	// MARK: Helpers

@@ -177,7 +177,7 @@
                                 <rect key="frame" x="20" y="261" width="335" height="870"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="smb-gV-iDV">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="750.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="850.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Personal Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a55-hi-Oy6" customClass="BoldLabel" customModule="MySkinDoctor" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
@@ -297,8 +297,26 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="GP Access Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7CK-hX-Qkt" customClass="ProfileTextField" customModule="MySkinDoctor" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="590" width="335" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="Cmx-JV-VjE"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="GP Access Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lbJ-ot-1ym" customClass="ProfileTextField" customModule="MySkinDoctor" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="640" width="335" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="ovB-JU-XT1"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A5p-5V-Fpi">
-                                                <rect key="frame" x="0.0" y="590" width="335" height="160.5"/>
+                                                <rect key="frame" x="0.0" y="690" width="335" height="160.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Permission to contact your GP?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dHL-eo-BLh">
                                                         <rect key="frame" x="5" y="15" width="268" height="20.5"/>
@@ -519,6 +537,7 @@
                     <connections>
                         <outlet property="diagnosesSegmentedControl" destination="2J3-7M-MPX" id="m5J-Zr-Dsr"/>
                         <outlet property="tableView" destination="yvV-Yd-xT0" id="dE6-st-dcL"/>
+                        <segue destination="naV-7b-nbt" kind="presentation" identifier="goToSetupWizard" id="5CL-Ih-pGL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wde-Be-GlX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -597,6 +616,416 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="66i-9c-yRk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3049" y="398"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wxh-xY-23Y">
+            <objects>
+                <navigationController id="naV-7b-nbt" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JeQ-SN-Pgk">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="iAf-KM-xut" kind="relationship" relationship="rootViewController" id="5RW-Vo-haq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YxX-Rt-Ai8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1204" y="2481"/>
+        </scene>
+        <!--Setup Wizard1 View Controller-->
+        <scene sceneID="sDx-03-qcD">
+            <objects>
+                <viewController id="iAf-KM-xut" customClass="SetupWizard1ViewController" customModule="MySkinDoctor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bHg-jS-f9v">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mac-am-A19">
+                                <rect key="frame" x="0.0" y="20" width="375" height="577"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ans-Nb-BFy">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="402"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Personal Details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O3Z-G2-GZU" customClass="TitleLabel" customModule="MySkinDoctor" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="40" width="335" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Syc-aE-oJA" customClass="FormTextField" customModule="MySkinDoctor" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="91" width="335" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="AgE-zI-uyM"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BCF-WZ-jPx" customClass="FormTextField" customModule="MySkinDoctor" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="146" width="335" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="KNd-EM-fC3"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date of Birth" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7oJ-ae-aAc" customClass="FormTextField" customModule="MySkinDoctor" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="201" width="335" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="hO0-eg-OiL"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mobile Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rqb-P8-01G" customClass="FormTextField" customModule="MySkinDoctor" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="256" width="335" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="bA4-Fh-Tbs"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Postcode" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y5z-5h-hSN" customClass="FormTextField" customModule="MySkinDoctor" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="311" width="335" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="dvU-pF-I2e"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We will never share any of your personal details" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="36N-49-evP">
+                                                <rect key="frame" x="20" y="366" width="335" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="O3Z-G2-GZU" secondAttribute="trailing" constant="20" id="00X-FL-yEM"/>
+                                            <constraint firstItem="36N-49-evP" firstAttribute="top" secondItem="Y5z-5h-hSN" secondAttribute="bottom" constant="15" id="5bZ-rD-B2i"/>
+                                            <constraint firstItem="BCF-WZ-jPx" firstAttribute="leading" secondItem="Syc-aE-oJA" secondAttribute="leading" id="9Pt-uo-2DJ"/>
+                                            <constraint firstItem="36N-49-evP" firstAttribute="trailing" secondItem="Y5z-5h-hSN" secondAttribute="trailing" id="D9G-Qq-zvr"/>
+                                            <constraint firstItem="Syc-aE-oJA" firstAttribute="top" secondItem="O3Z-G2-GZU" secondAttribute="bottom" constant="30" id="DdO-bA-LFU"/>
+                                            <constraint firstItem="36N-49-evP" firstAttribute="leading" secondItem="Y5z-5h-hSN" secondAttribute="leading" id="HJ4-nH-lvh"/>
+                                            <constraint firstItem="BCF-WZ-jPx" firstAttribute="top" secondItem="Syc-aE-oJA" secondAttribute="bottom" constant="15" id="I3s-6l-VJ2"/>
+                                            <constraint firstItem="Y5z-5h-hSN" firstAttribute="trailing" secondItem="Rqb-P8-01G" secondAttribute="trailing" id="IO6-YL-B8O"/>
+                                            <constraint firstItem="Y5z-5h-hSN" firstAttribute="top" secondItem="Rqb-P8-01G" secondAttribute="bottom" constant="15" id="OY0-Su-Crz"/>
+                                            <constraint firstItem="Syc-aE-oJA" firstAttribute="leading" secondItem="Ans-Nb-BFy" secondAttribute="leading" constant="20" id="Qkr-NC-uHH"/>
+                                            <constraint firstItem="Y5z-5h-hSN" firstAttribute="leading" secondItem="Rqb-P8-01G" secondAttribute="leading" id="RWS-Wb-FiR"/>
+                                            <constraint firstItem="BCF-WZ-jPx" firstAttribute="trailing" secondItem="Syc-aE-oJA" secondAttribute="trailing" id="SVK-kc-gpq"/>
+                                            <constraint firstItem="Rqb-P8-01G" firstAttribute="trailing" secondItem="7oJ-ae-aAc" secondAttribute="trailing" id="SpR-1U-ceS"/>
+                                            <constraint firstItem="Rqb-P8-01G" firstAttribute="leading" secondItem="7oJ-ae-aAc" secondAttribute="leading" id="SzH-f8-1TW"/>
+                                            <constraint firstItem="7oJ-ae-aAc" firstAttribute="leading" secondItem="BCF-WZ-jPx" secondAttribute="leading" id="bWI-d5-etd"/>
+                                            <constraint firstItem="O3Z-G2-GZU" firstAttribute="top" secondItem="Ans-Nb-BFy" secondAttribute="top" constant="40" id="d1g-vi-NY6"/>
+                                            <constraint firstItem="O3Z-G2-GZU" firstAttribute="centerX" secondItem="Ans-Nb-BFy" secondAttribute="centerX" id="d1i-3c-glR"/>
+                                            <constraint firstAttribute="trailing" secondItem="Syc-aE-oJA" secondAttribute="trailing" constant="20" id="eRt-4b-jFk"/>
+                                            <constraint firstItem="Rqb-P8-01G" firstAttribute="top" secondItem="7oJ-ae-aAc" secondAttribute="bottom" constant="15" id="kAQ-me-c2e"/>
+                                            <constraint firstItem="7oJ-ae-aAc" firstAttribute="trailing" secondItem="BCF-WZ-jPx" secondAttribute="trailing" id="l7B-MK-D69"/>
+                                            <constraint firstAttribute="bottom" secondItem="36N-49-evP" secondAttribute="bottom" constant="15" id="pGb-Yh-DnL"/>
+                                            <constraint firstItem="7oJ-ae-aAc" firstAttribute="top" secondItem="BCF-WZ-jPx" secondAttribute="bottom" constant="15" id="zsh-x4-4II"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Ans-Nb-BFy" firstAttribute="centerX" secondItem="Mac-am-A19" secondAttribute="centerX" id="Ddi-Cx-hrV"/>
+                                    <constraint firstItem="Ans-Nb-BFy" firstAttribute="top" secondItem="Mac-am-A19" secondAttribute="top" id="VEc-fz-Wp9"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ans-Nb-BFy" secondAttribute="trailing" id="ce5-fC-p2w"/>
+                                    <constraint firstItem="Ans-Nb-BFy" firstAttribute="leading" secondItem="Mac-am-A19" secondAttribute="leading" id="fcH-Pr-2pa"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ans-Nb-BFy" secondAttribute="bottom" id="rGx-sJ-5Zi"/>
+                                </constraints>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c9d-8B-EoI" customClass="PositiveButton" customModule="MySkinDoctor" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.59346731090000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="VAb-KO-3cf"/>
+                                </constraints>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onNextButtonPressed:" destination="iAf-KM-xut" eventType="touchUpInside" id="3EL-zX-pM4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="c9d-8B-EoI" firstAttribute="leading" secondItem="bHg-jS-f9v" secondAttribute="leading" id="7K9-AH-Vyr"/>
+                            <constraint firstItem="Mac-am-A19" firstAttribute="top" secondItem="NwG-cU-TZX" secondAttribute="top" id="G0i-qN-wd0"/>
+                            <constraint firstItem="Mac-am-A19" firstAttribute="leading" secondItem="NwG-cU-TZX" secondAttribute="leading" id="fBM-rf-Iqn"/>
+                            <constraint firstItem="NwG-cU-TZX" firstAttribute="trailing" secondItem="Mac-am-A19" secondAttribute="trailing" id="fwp-h5-aPX"/>
+                            <constraint firstItem="NwG-cU-TZX" firstAttribute="bottom" secondItem="c9d-8B-EoI" secondAttribute="bottom" id="vjo-mh-61x"/>
+                            <constraint firstItem="NwG-cU-TZX" firstAttribute="trailing" secondItem="c9d-8B-EoI" secondAttribute="trailing" id="xDf-Ig-Li5"/>
+                            <constraint firstItem="c9d-8B-EoI" firstAttribute="top" secondItem="Mac-am-A19" secondAttribute="bottom" constant="20" id="xiy-eh-0NS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="NwG-cU-TZX"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="PFn-z5-vrb"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="dobTextField" destination="7oJ-ae-aAc" id="uU4-c6-Tzl"/>
+                        <outlet property="firstNameTextField" destination="Syc-aE-oJA" id="yVg-1m-aYh"/>
+                        <outlet property="lastNameTextField" destination="BCF-WZ-jPx" id="AWC-Zx-gc6"/>
+                        <outlet property="neverShareLabel" destination="36N-49-evP" id="els-fr-7B7"/>
+                        <outlet property="nextButton" destination="c9d-8B-EoI" id="oyN-9V-y1J"/>
+                        <outlet property="personalDetailsTitleLabel" destination="O3Z-G2-GZU" id="4EJ-yc-91y"/>
+                        <outlet property="phoneTextField" destination="Rqb-P8-01G" id="4DA-qQ-SYn"/>
+                        <outlet property="postcodeTextField" destination="Y5z-5h-hSN" id="uRT-IM-OMq"/>
+                        <outlet property="scrollView" destination="Mac-am-A19" id="J9p-sa-f23"/>
+                        <segue destination="LGl-rs-sCp" kind="show" identifier="goToSetupWizard2" id="PJh-xt-N45"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EVX-x1-NZg" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2052" y="2481"/>
+        </scene>
+        <!--Setup Wizard2 View Controller-->
+        <scene sceneID="cNL-Aa-erc">
+            <objects>
+                <viewController id="LGl-rs-sCp" customClass="SetupWizard2ViewController" customModule="MySkinDoctor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="D0b-Ga-SOy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DL7-0r-dJ4">
+                                <rect key="frame" x="47.5" y="181" width="280" height="90"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Szq-H1-e6g">
+                                        <rect key="frame" x="20" y="20" width="100" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="FOV-bF-C8U"/>
+                                            <constraint firstAttribute="height" constant="50" id="yae-QY-OLP"/>
+                                        </constraints>
+                                        <state key="normal" title="NHS"/>
+                                        <connections>
+                                            <action selector="onNHSButtonPressed:" destination="LGl-rs-sCp" eventType="touchUpInside" id="1UM-PV-rXx"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aSF-LR-uQz">
+                                        <rect key="frame" x="160" y="20" width="100" height="50"/>
+                                        <state key="normal" title="Self-Pay"/>
+                                        <connections>
+                                            <action selector="onSelfPayButtonPressed:" destination="LGl-rs-sCp" eventType="touchUpInside" id="YHX-O1-pC3"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="aSF-LR-uQz" secondAttribute="trailing" constant="20" id="KQK-ke-myQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="Szq-H1-e6g" secondAttribute="bottom" constant="20" id="KZ0-hU-WDQ"/>
+                                    <constraint firstItem="aSF-LR-uQz" firstAttribute="centerY" secondItem="Szq-H1-e6g" secondAttribute="centerY" id="Mgf-bq-6Xg"/>
+                                    <constraint firstItem="aSF-LR-uQz" firstAttribute="width" secondItem="Szq-H1-e6g" secondAttribute="width" id="Qag-cT-CN7"/>
+                                    <constraint firstItem="aSF-LR-uQz" firstAttribute="height" secondItem="Szq-H1-e6g" secondAttribute="height" id="Vb3-3a-vxH"/>
+                                    <constraint firstItem="Szq-H1-e6g" firstAttribute="top" secondItem="DL7-0r-dJ4" secondAttribute="top" constant="20" id="Yw3-hK-moS"/>
+                                    <constraint firstItem="Szq-H1-e6g" firstAttribute="leading" secondItem="DL7-0r-dJ4" secondAttribute="leading" constant="20" id="hJn-Kz-UG9"/>
+                                    <constraint firstItem="aSF-LR-uQz" firstAttribute="leading" secondItem="Szq-H1-e6g" secondAttribute="trailing" constant="40" id="sGw-Yo-rC8"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Would you like to use this app for NHS Consultations, or Self-Pay Consultations?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XdZ-ze-Iyq">
+                                <rect key="frame" x="20" y="120" width="335" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="jGk-OZ-LNQ" firstAttribute="trailing" secondItem="XdZ-ze-Iyq" secondAttribute="trailing" constant="20" id="A3Z-LY-wDu"/>
+                            <constraint firstItem="XdZ-ze-Iyq" firstAttribute="leading" secondItem="jGk-OZ-LNQ" secondAttribute="leading" constant="20" id="Rvf-4e-1Wf"/>
+                            <constraint firstItem="DL7-0r-dJ4" firstAttribute="top" secondItem="XdZ-ze-Iyq" secondAttribute="bottom" constant="40" id="YHT-PA-O86"/>
+                            <constraint firstItem="DL7-0r-dJ4" firstAttribute="centerX" secondItem="D0b-Ga-SOy" secondAttribute="centerX" id="p19-vF-r1p"/>
+                            <constraint firstItem="XdZ-ze-Iyq" firstAttribute="top" secondItem="jGk-OZ-LNQ" secondAttribute="top" constant="100" id="prG-0a-rfg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jGk-OZ-LNQ"/>
+                    </view>
+                    <connections>
+                        <outlet property="nhsButton" destination="Szq-H1-e6g" id="MGn-V8-YWQ"/>
+                        <outlet property="selfPayButton" destination="aSF-LR-uQz" id="yFd-Qy-ICt"/>
+                        <segue destination="aDm-ge-HW2" kind="show" identifier="goToSetupWizard3" id="DLS-nK-cZS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HQg-Z9-j2T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2918" y="2481"/>
+        </scene>
+        <!--Setup Wizard3 View Controller-->
+        <scene sceneID="AV2-ND-woP">
+            <objects>
+                <viewController id="aDm-ge-HW2" customClass="SetupWizard3ViewController" customModule="MySkinDoctor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PIL-bk-1k5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="clk-ZW-NAN">
+                                <rect key="frame" x="0.0" y="20" width="375" height="577"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aMe-kd-Pmg">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="476.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your GP Information" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecW-8I-IiT" customClass="TitleLabel" customModule="MySkinDoctor" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="40" width="335" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="GP Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eqa-q2-Ly5" customClass="FormTextField" customModule="MySkinDoctor" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="91" width="335" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="7xq-YQ-hE0"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="GP Access Code/Follow Up Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zwE-3w-DdJ" customClass="FormTextField" customModule="MySkinDoctor" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="146" width="335" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="2Dr-rX-IhG"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="GP Address Line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TUa-i8-xV5" customClass="FormTextField" customModule="MySkinDoctor" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="201" width="335" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="05o-Cl-oUK"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="GP Postcode" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m8W-c7-A3E" customClass="FormTextField" customModule="MySkinDoctor" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="256" width="335" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="fy5-bo-BSY"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
+                                            </textField>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ydL-uR-gv0">
+                                                <rect key="frame" x="10" y="306" width="355" height="160.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Permission to contact your GP?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ouD-dz-WTu">
+                                                        <rect key="frame" x="5" y="15" width="288" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zaR-i1-fgs" customClass="GrayLabel" customModule="MySkinDoctor" customModuleProvider="target">
+                                                        <rect key="frame" x="5" y="51" width="340" height="101.5"/>
+                                                        <string key="text">When you give us permission to contact your GP, we can share inforamtion about a diagnosis. This is especially handy for private consultations and helps keep all your important records in one place.</string>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ISv-9j-OqF">
+                                                        <rect key="frame" x="298" y="10" width="49" height="31"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="47" id="R8x-mS-gnX"/>
+                                                        </constraints>
+                                                        <connections>
+                                                            <action selector="onPermissionValueChanged:" destination="aDm-ge-HW2" eventType="valueChanged" id="0f0-IM-hh0"/>
+                                                            <action selector="onPermissionValueChanged:" destination="WfN-R1-QQK" eventType="valueChanged" id="eD1-Dc-3fw"/>
+                                                        </connections>
+                                                    </switch>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="ISv-9j-OqF" firstAttribute="leading" secondItem="ouD-dz-WTu" secondAttribute="trailing" constant="5" id="2oN-ig-38A"/>
+                                                    <constraint firstItem="ISv-9j-OqF" firstAttribute="centerY" secondItem="ouD-dz-WTu" secondAttribute="centerY" id="EMt-dg-hyz"/>
+                                                    <constraint firstAttribute="trailing" secondItem="ISv-9j-OqF" secondAttribute="trailing" constant="10" id="Sfz-Z9-x3f"/>
+                                                    <constraint firstItem="ouD-dz-WTu" firstAttribute="top" secondItem="ydL-uR-gv0" secondAttribute="top" constant="15" id="Tx4-cm-OOS"/>
+                                                    <constraint firstItem="ouD-dz-WTu" firstAttribute="leading" secondItem="ydL-uR-gv0" secondAttribute="leading" constant="5" id="alm-W3-h7G"/>
+                                                    <constraint firstItem="zaR-i1-fgs" firstAttribute="top" secondItem="ouD-dz-WTu" secondAttribute="bottom" constant="15.5" id="ami-bv-68U"/>
+                                                    <constraint firstItem="zaR-i1-fgs" firstAttribute="leading" secondItem="ouD-dz-WTu" secondAttribute="leading" id="b3w-A9-jbf"/>
+                                                    <constraint firstAttribute="bottom" secondItem="zaR-i1-fgs" secondAttribute="bottom" constant="8" id="hoi-Dx-dZG"/>
+                                                    <constraint firstItem="zaR-i1-fgs" firstAttribute="trailing" secondItem="ISv-9j-OqF" secondAttribute="trailing" id="yZ2-Io-w6R"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="TUa-i8-xV5" firstAttribute="leading" secondItem="zwE-3w-DdJ" secondAttribute="leading" id="0Ko-wq-3db"/>
+                                            <constraint firstItem="TUa-i8-xV5" firstAttribute="trailing" secondItem="zwE-3w-DdJ" secondAttribute="trailing" id="0yP-ji-QJZ"/>
+                                            <constraint firstItem="eqa-q2-Ly5" firstAttribute="leading" secondItem="aMe-kd-Pmg" secondAttribute="leading" constant="20" id="2RV-Hj-hrd"/>
+                                            <constraint firstAttribute="bottom" secondItem="ydL-uR-gv0" secondAttribute="bottom" constant="10" id="A3l-0i-l5w"/>
+                                            <constraint firstItem="m8W-c7-A3E" firstAttribute="leading" secondItem="TUa-i8-xV5" secondAttribute="leading" id="D1Y-za-NSL"/>
+                                            <constraint firstAttribute="trailing" secondItem="ecW-8I-IiT" secondAttribute="trailing" constant="20" id="Ibc-CB-D32"/>
+                                            <constraint firstItem="TUa-i8-xV5" firstAttribute="top" secondItem="zwE-3w-DdJ" secondAttribute="bottom" constant="15" id="IgO-fG-y4Y"/>
+                                            <constraint firstItem="ecW-8I-IiT" firstAttribute="centerX" secondItem="aMe-kd-Pmg" secondAttribute="centerX" id="Ixe-pH-ULr"/>
+                                            <constraint firstAttribute="trailing" secondItem="ydL-uR-gv0" secondAttribute="trailing" constant="10" id="L1E-2O-kfS"/>
+                                            <constraint firstItem="ydL-uR-gv0" firstAttribute="top" secondItem="m8W-c7-A3E" secondAttribute="bottom" constant="10" id="WMx-h9-ypL"/>
+                                            <constraint firstItem="m8W-c7-A3E" firstAttribute="trailing" secondItem="TUa-i8-xV5" secondAttribute="trailing" id="aSS-la-QPu"/>
+                                            <constraint firstAttribute="trailing" secondItem="eqa-q2-Ly5" secondAttribute="trailing" constant="20" id="iBr-gL-fQM"/>
+                                            <constraint firstItem="zwE-3w-DdJ" firstAttribute="top" secondItem="eqa-q2-Ly5" secondAttribute="bottom" constant="15" id="jzZ-Vr-oMd"/>
+                                            <constraint firstItem="ecW-8I-IiT" firstAttribute="top" secondItem="aMe-kd-Pmg" secondAttribute="top" constant="40" id="lmn-Hf-I5W"/>
+                                            <constraint firstItem="m8W-c7-A3E" firstAttribute="top" secondItem="TUa-i8-xV5" secondAttribute="bottom" constant="15" id="pYF-TG-lIs"/>
+                                            <constraint firstItem="zwE-3w-DdJ" firstAttribute="trailing" secondItem="eqa-q2-Ly5" secondAttribute="trailing" id="qJb-2X-IdY"/>
+                                            <constraint firstItem="eqa-q2-Ly5" firstAttribute="top" secondItem="ecW-8I-IiT" secondAttribute="bottom" constant="30" id="rFg-yZ-avQ"/>
+                                            <constraint firstItem="zwE-3w-DdJ" firstAttribute="leading" secondItem="eqa-q2-Ly5" secondAttribute="leading" id="viT-II-XFP"/>
+                                            <constraint firstItem="ydL-uR-gv0" firstAttribute="leading" secondItem="aMe-kd-Pmg" secondAttribute="leading" constant="10" id="xda-5L-EJP"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="aMe-kd-Pmg" secondAttribute="trailing" id="5q9-zm-fyN"/>
+                                    <constraint firstItem="aMe-kd-Pmg" firstAttribute="top" secondItem="clk-ZW-NAN" secondAttribute="top" id="9sT-Fq-LX0"/>
+                                    <constraint firstItem="aMe-kd-Pmg" firstAttribute="leading" secondItem="clk-ZW-NAN" secondAttribute="leading" id="nd5-HQ-sB0"/>
+                                    <constraint firstAttribute="bottom" secondItem="aMe-kd-Pmg" secondAttribute="bottom" id="nzC-W2-KhF"/>
+                                    <constraint firstItem="aMe-kd-Pmg" firstAttribute="centerX" secondItem="clk-ZW-NAN" secondAttribute="centerX" id="pQX-T7-NZo"/>
+                                </constraints>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YjS-nW-eK7" customClass="PositiveButton" customModule="MySkinDoctor" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.59346731090000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Fhp-Qp-siX"/>
+                                </constraints>
+                                <state key="normal" title="Finish">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onNextButtonPressed:" destination="aDm-ge-HW2" eventType="touchUpInside" id="ybC-yo-Gv9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="a1U-MY-anM" firstAttribute="trailing" secondItem="clk-ZW-NAN" secondAttribute="trailing" id="3pp-Ml-6tV"/>
+                            <constraint firstItem="YjS-nW-eK7" firstAttribute="top" secondItem="clk-ZW-NAN" secondAttribute="bottom" constant="20" id="D3Z-kx-wcp"/>
+                            <constraint firstItem="clk-ZW-NAN" firstAttribute="top" secondItem="a1U-MY-anM" secondAttribute="top" id="Op3-zz-jZt"/>
+                            <constraint firstItem="a1U-MY-anM" firstAttribute="trailing" secondItem="YjS-nW-eK7" secondAttribute="trailing" id="WP9-n1-51x"/>
+                            <constraint firstItem="YjS-nW-eK7" firstAttribute="leading" secondItem="PIL-bk-1k5" secondAttribute="leading" id="dXH-iu-cKI"/>
+                            <constraint firstItem="a1U-MY-anM" firstAttribute="bottom" secondItem="YjS-nW-eK7" secondAttribute="bottom" id="fbI-fD-2LN"/>
+                            <constraint firstItem="clk-ZW-NAN" firstAttribute="leading" secondItem="a1U-MY-anM" secondAttribute="leading" id="pX4-j1-Z4M"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="a1U-MY-anM"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="YQA-Kk-NYc"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="gpAccessCodeTextField" destination="zwE-3w-DdJ" id="G6j-Fr-yve"/>
+                        <outlet property="gpAddressLineTextField" destination="TUa-i8-xV5" id="9Pe-2z-p56"/>
+                        <outlet property="gpNameTextField" destination="eqa-q2-Ly5" id="RYU-Gv-baX"/>
+                        <outlet property="gpPostcodeTextField" destination="m8W-c7-A3E" id="Uft-cD-GfJ"/>
+                        <outlet property="nextButton" destination="YjS-nW-eK7" id="VZ0-O4-7qN"/>
+                        <outlet property="permisionDetailLabel" destination="zaR-i1-fgs" id="TTp-fR-vCk"/>
+                        <outlet property="permisionSwitch" destination="ISv-9j-OqF" id="8oF-75-HEv"/>
+                        <outlet property="permisionTitleLabel" destination="ouD-dz-WTu" id="24r-nO-a6M"/>
+                        <outlet property="scrollView" destination="clk-ZW-NAN" id="qt6-QL-DZK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fCU-wm-PvK" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3956" y="2481"/>
         </scene>
     </scenes>
     <resources>

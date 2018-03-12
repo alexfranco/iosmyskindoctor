@@ -205,6 +205,11 @@ struct AppStyle {
 	static let noBackgroundButtonBackgroundColor = UIColor.clear
 	static let noBackgroundButtonTextColor = UIColor.black
 	static let noBackgroundButtonFont = AppFonts.defaultFont
+	
+	// Wizard
+	
+	static let wizardNHSButtonColor = BaseColors.hospitalGreen
+	static let wizardSelfPayButtonColor = BaseColors.skyBlue
 }
 
 
