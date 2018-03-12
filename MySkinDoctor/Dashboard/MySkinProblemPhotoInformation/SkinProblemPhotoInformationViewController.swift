@@ -13,8 +13,11 @@ class SkinProblemPhotoInformationViewController: PhotoViewController {
 
 	var viewModelCast : SkinProblemPhotoInformationViewModel!
 	
-	@IBOutlet weak var descriptionLabel: GrayLabel!
 	@IBOutlet weak var editButton: UIButton!
+	@IBOutlet weak var skinBodyOptionButton: UIButton!
+	@IBOutlet weak var documentOptionButton: UIButton!
+	@IBOutlet weak var skinBodyInfoLabel: UILabel!
+	@IBOutlet weak var documentInfoLabel: UILabel!
 	
 	@IBOutlet weak var descriptionTextView: FormTextView! {
 		didSet {
@@ -31,6 +34,12 @@ class SkinProblemPhotoInformationViewController: PhotoViewController {
 		userPhotoImageView.image = viewModelCast.problemImage
 		
 		editButton.setTitleColor(AppStyle.addSkinPhotoEditTextColor, for: .normal)
+		
+		skinBodyOptionButton.backgroundColor = AppStyle.addSkinPhotoBodyButtonBackgroundColor
+		documentOptionButton.backgroundColor = AppStyle.addSkinPhotoDocumentButtonBackgroundColor
+		
+		skinBodyOptionButton.setRounded()
+		documentOptionButton.setRounded()
 	}
 	
 	override func viewDidAppear(_ animated: Bool) {
@@ -46,9 +55,15 @@ class SkinProblemPhotoInformationViewController: PhotoViewController {
 		
 		viewModelCast = viewModel as? SkinProblemPhotoInformationViewModel
 		
-		viewModelCast.goNextSegue = { [] () in
+		viewModelCast.goPhotoLocation = { [] () in
 			DispatchQueue.main.async {
 				self.performSegue(withIdentifier: Segues.goToSkinProblemLocationViewController, sender: nil)
+			}
+		}
+		
+		viewModelCast.unwind = { [] () in
+			DispatchQueue.main.async {
+				self.performSegue(withIdentifier: Segues.unwindToAddSkinProblemsFromPhoto, sender: nil)
 			}
 		}
 	}
@@ -59,8 +74,12 @@ class SkinProblemPhotoInformationViewController: PhotoViewController {
 		tapUserPhoto(nil)
 	}
 	
-	@IBAction func onNextButtonPressed(_ sender: Any) {
-		viewModelCast.saveModel()
+	@IBAction func onBodyOptionPressed(_ sender: Any) {
+		viewModelCast.saveModel(attachmentType: .photo)
+	}
+	
+	@IBAction func onDocumentOptionPressed(_ sender: Any) {
+		viewModelCast.saveModel(attachmentType: .document)
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

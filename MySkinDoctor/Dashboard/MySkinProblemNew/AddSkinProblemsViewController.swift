@@ -196,6 +196,15 @@ class AddSkinProblemsViewController: BindingViewController {
 			}
 		}
 	}
+	
+	@IBAction func unwindToAddSkinProblemsFromPhoto(segue: UIStoryboardSegue) {
+		if let sourceViewController = segue.source as? SkinProblemPhotoInformationViewController {
+			if let viewModel = sourceViewController.viewModelCast {
+				viewModelCast.appendNewModel(model: viewModel.model)
+			}
+		}
+	}
+	
 }
 
 extension AddSkinProblemsViewController: UITableViewDelegate, UITableViewDataSource {

@@ -37,7 +37,11 @@ class SkinProblemLocationViewModel: BaseViewModel {
 	
 	var problemLocationText: String! {
 		get {
-			return String.init(format: "%@ %@", isFrontSelected ? "Front": "Back", locationProblemType.description)
+			if locationProblemType == .none {
+				return "None"
+			} else {
+				return String.init(format: "%@ %@", isFrontSelected ? "Front": "Back", locationProblemType.description)
+			}
 		}
 	}
 	

@@ -10,10 +10,12 @@ import Foundation
 import UIKit
 
 class SkinProblemPhotoInformationViewModel: BaseViewModel {
-	
 	var model: SkinProblemModel!
 	var problemDescription: String!
 	var problemImage: UIImage!
+	
+	var goPhotoLocation: (()->())?
+	var unwind: (()->())?
 	
 	required init(model: SkinProblemModel) {
 		self.model = model
@@ -21,10 +23,16 @@ class SkinProblemPhotoInformationViewModel: BaseViewModel {
 		self.problemImage = model.problemImage == nil ? UIImage(named: "logo")! : model.problemImage! // TODO change it to a default image
 	}
 	
-	func saveModel() {
+	func saveModel(attachmentType: SkinProblemModel.AttachmentType) {
+		model.attachmentType = attachmentType
 		model.problemDescription = problemDescription
 		model.problemImage = problemImage
-		goNextSegue!()
+		
+		if attachmentType == .photo {
+			goPhotoLocation!()
+		} else {
+			unwind!()
+		}
 	}
 	
 }

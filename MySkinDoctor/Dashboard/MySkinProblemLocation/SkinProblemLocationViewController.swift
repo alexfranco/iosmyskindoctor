@@ -21,6 +21,7 @@ class SkinProblemLocationViewController: FormViewController {
 	@IBOutlet weak var locationUpperArmLeftButton: UIButton!
 	@IBOutlet weak var locationUpperArmRightButton: UIButton!
 	@IBOutlet weak var locationLowerArmLeftButton: UIButton!
+	@IBOutlet weak var locationLowerArmRightButton: UIButton!
 	@IBOutlet weak var locationPelvisButton: UIButton!
 	@IBOutlet weak var locationUpperLegLeftButton: UIButton!
 	@IBOutlet weak var locationUpperLegRightButton: UIButton!
@@ -77,24 +78,51 @@ class SkinProblemLocationViewController: FormViewController {
 		}
 	}
 	
-	// MARK: Helpers
-		
-	func configureLocationButtons() {
-		locationHeadButton.tag = SkinProblemModel.LocationProblemType.head.index
-		locationNeckButton.tag = SkinProblemModel.LocationProblemType.neck.index
-		
-		locationButtons = [locationHeadButton, locationNeckButton]
-	}
-	
 	func selectLocationButton(locationProblemType: SkinProblemModel.LocationProblemType) {
 		for button in locationButtons {
 			button.isSelected = button.tag == locationProblemType.index
 		}
 	}
+
 	
-	// MARK: IBActions
+	// MARK: Helpers
+		
+	func configureLocationButtons() {
+		locationHeadButton.tag = SkinProblemModel.LocationProblemType.head.index
+		locationNeckButton.tag = SkinProblemModel.LocationProblemType.neck.index
+		locationChestButton.tag = SkinProblemModel.LocationProblemType.chest.index
+		locationBellyButton.tag = SkinProblemModel.LocationProblemType.belly.index
+		locationUpperArmLeftButton.tag = SkinProblemModel.LocationProblemType.upperArmLeft.index
+		locationUpperArmRightButton.tag = SkinProblemModel.LocationProblemType.upperArmRight.index
+		locationLowerArmLeftButton.tag = SkinProblemModel.LocationProblemType.lowerArmLeft.index
+		locationLowerArmRightButton.tag = SkinProblemModel.LocationProblemType.lowerArmRight.index
+		
+		locationPelvisButton.tag = SkinProblemModel.LocationProblemType.pelvis.index
+		locationUpperLegLeftButton.tag = SkinProblemModel.LocationProblemType.upperLegLeft.index
+		locationUpperLegRightButton.tag = SkinProblemModel.LocationProblemType.upperLegRight.index
+		locationLowerLegLeftButton.tag = SkinProblemModel.LocationProblemType.lowerLegLeft.index
+		locationLowerLegRightButton.tag = SkinProblemModel.LocationProblemType.lowerLegRight.index
+		locationFootLeftButton.tag = SkinProblemModel.LocationProblemType.footLeft.index
+		locationFootRightButton.tag = SkinProblemModel.LocationProblemType.footRight.index
+		
+		locationButtons = [locationHeadButton,
+						   locationNeckButton,
+						   locationChestButton,
+						   locationBellyButton,
+						   locationUpperArmLeftButton,
+						   locationUpperArmRightButton,
+						   locationLowerArmLeftButton,
+						   locationLowerArmRightButton,
+						   locationPelvisButton,
+						   locationUpperLegLeftButton,
+						   locationUpperLegRightButton,
+						   locationLowerLegLeftButton,
+						   locationLowerLegRightButton,
+						   locationFootLeftButton,
+						   locationFootRightButton]
+	}
 	
-	@IBAction func onBodyLeftButtonPressed(_ sender: Any) {
+	@IBAction func onBodyLrftButtonPressed(_ sender: Any) {
 		viewModelCast.isFrontSelected = true
 	}
 	

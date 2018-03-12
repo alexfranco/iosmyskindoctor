@@ -100,6 +100,8 @@ struct AppStyle {
 	// Add Skin Photo
 	
 	static let addSkinPhotoEditTextColor = AppColors.secudaryColor
+	static let addSkinPhotoBodyButtonBackgroundColor = BaseColors.amethyst
+	static let addSkinPhotoDocumentButtonBackgroundColor = BaseColors.skyBlue
 	
 	// Skin Problem Location
 	static let locationNavigationBarBackgroundColor = BaseColors.amethyst
