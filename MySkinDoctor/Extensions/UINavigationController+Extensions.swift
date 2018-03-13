@@ -1,5 +1,5 @@
 //
-//  UINavigationController+Extentions.swift
+//  UINavigationController+Extensions.swift
 //  MySkinDoctor
 //
 //  Created by Alex Núñez on 27/02/2018.

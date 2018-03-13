@@ -28,37 +28,18 @@ class MySkinProblemsViewModel: BaseViewModel {
 		}
 	}
 	
-	var allItems = [SkinProblemsModel]()
-	var undiagnosedItems = [SkinProblemsModel]()
-	var diagnosedItems = [SkinProblemsModel]()
+	var allItems = [SkinProblems]()
+	var undiagnosedItems = [SkinProblems]()
+	var diagnosedItems = [SkinProblems]()
 
 	override init() {
 		// Generate tests
 		
-		allItems = [SkinProblemsModel(date: Date(), diagnoseStatus: .noFutherCommunicationRequired, skinProblemDescription: "problem 1"),
-					SkinProblemsModel(date: Date(), diagnoseStatus: .pending, skinProblemDescription: "problem2"),
-					SkinProblemsModel(date: Date(), diagnoseStatus: .bookConsultationRequest, skinProblemDescription: "problem 3")]
-
-		allItems.first?.diagnose.diagnosedBy = Doctor(firstName: "Dr Jones", lastName: "Pepito")
-		allItems.first?.diagnose.diagnoseDate = Date().adjust(.day, offset: -5)
-		allItems.first?.diagnose.diagnosedBy?.qualifications = "A lot of them"
-		allItems.first?.diagnose.summary = "My summary"
-		allItems.first?.diagnose.treatment = "My treatment"
-		allItems.first?.diagnose.patientInformation = "My patinet info"
-		allItems.first?.diagnose.comments = "My comments"
-		allItems.first?.problems = [SkinProblemModel(location: SkinProblemModel.LocationProblemType.head, problemDescription: "Pain there", problemImage: nil)]
-		
-		allItems.last?.problems = [SkinProblemModel(location: SkinProblemModel.LocationProblemType.neck, problemDescription: "Pain there", problemImage: nil)]
-		
-		allItems.last?.diagnose.diagnosedBy = Doctor(firstName: "Dr Amor", lastName: "love")
-		allItems.last?.diagnose.diagnosedBy?.qualifications = "A lot of them"
-		allItems.last?.diagnose.diagnoseDate = Date().adjust(.day, offset: -10)
-		allItems.last?.diagnose.doctorNotes = [DoctorNote(date: Date(), note: "my first note"),
-											   DoctorNote(date: Date().adjust(.day, offset: -10), note: "my first 2")]
-		allItems.last?.problems = [SkinProblemModel(location: SkinProblemModel.LocationProblemType.neck, problemDescription: "Pain there", problemImage: nil)]
-		
-		diagnosedItems = allItems.filter { (model) -> Bool in model.isDiagnosed }
-		undiagnosedItems = allItems.filter { (model) -> Bool in !model.isDiagnosed }
+		if let results = DataController.fetchAll(type: SkinProblems.self) {
+			allItems = results
+			diagnosedItems = allItems.filter { (model) -> Bool in model.isDiagnosed }
+			undiagnosedItems = allItems.filter { (model) -> Bool in !model.isDiagnosed }
+		}
 	}
 	
 	func refreshData() {
@@ -102,7 +83,7 @@ class MySkinProblemsViewModel: BaseViewModel {
 		}
 	}
 	
-	func getItemAtIndexPath(indexPath: IndexPath) -> SkinProblemsModel {
+	func getItemAtIndexPath(indexPath: IndexPath) -> SkinProblems {
 		switch selectedSegmented {
 		case .all:
 			return indexPath.section == MySkinProblemsViewModel.undiagnosedSection ? undiagnosedItems[indexPath.row] : diagnosedItems[indexPath.row]

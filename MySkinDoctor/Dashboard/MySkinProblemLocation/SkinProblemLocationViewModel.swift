@@ -14,9 +14,9 @@ class SkinProblemLocationViewModel: BaseViewModel {
 	static let bodyFrontImage = UIImage(named: "bodyFront")!
 	static let bodyBackImage = UIImage(named: "bodyBack")!
 	
-	var model: SkinProblemModel
+	var model: SkinProblemAttachment
 	
-	var locationProblemUpdated: ((_ locationProblemType: SkinProblemModel.LocationProblemType)->())?
+	var locationProblemUpdated: ((_ locationProblemType: SkinProblemAttachment.LocationProblemType)->())?
 	var bodyImageChanged: ((_ isFrontSelected: Bool, _ bodyImage: UIImage)->())?
 	
 	var isFrontSelected: Bool = true {
@@ -25,7 +25,7 @@ class SkinProblemLocationViewModel: BaseViewModel {
 		}
 	}
 	
-	var locationProblemType:  SkinProblemModel.LocationProblemType = .none {
+	var locationProblemType:  SkinProblemAttachment.LocationProblemType = .none {
 		didSet {
 			self.locationProblemUpdated?(locationProblemType)
 		}
@@ -45,12 +45,12 @@ class SkinProblemLocationViewModel: BaseViewModel {
 		}
 	}
 	
-	required init(model: SkinProblemModel) {
+	required init(model: SkinProblemAttachment) {
 		self.model = model
 	}
 	
 	func saveModel() {
-		model.location = locationProblemType		
+		model.locationType = locationProblemType		
 		goNextSegue!()
 	}
 	

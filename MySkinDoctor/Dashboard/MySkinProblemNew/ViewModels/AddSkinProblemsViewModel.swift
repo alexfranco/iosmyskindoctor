@@ -12,14 +12,14 @@ import UIKit
 class AddSkinProblemsViewModel: BaseViewModel {
 	
 	enum EditingStyle {
-		case insert(SkinProblemModel, IndexPath)
+		case insert(SkinProblemAttachment, IndexPath)
 		case delete(IndexPath)
 		case none
 	}
 	
 	// Variables
 	
-	private(set) var model: SkinProblemsModel
+	private(set) var model: SkinProblems
 	var skinProblemDescription = ""
 	
 	var isEditEnabled: Bool {
@@ -30,7 +30,11 @@ class AddSkinProblemsViewModel: BaseViewModel {
 	
 	var diagnoseStatus: Diagnose.DiagnoseStatus {
 		get {
-			return model.diagnose.diagnoseStatus
+			guard let diagnose = model.diagnose else {
+				return Diagnose.DiagnoseStatus.none
+			}
+			
+			return diagnose.diagnoseStatus
 		}
 	}
 	
@@ -72,7 +76,11 @@ class AddSkinProblemsViewModel: BaseViewModel {
 	
 	var nextButtonIsEnabled: Bool {
 		get {
-			return self.model.problems.count > 0
+			guard let attachments = model.attachments else {
+				return true
+			}
+			
+			return attachments.count > 0
 		}
 	}
 	
@@ -80,10 +88,13 @@ class AddSkinProblemsViewModel: BaseViewModel {
 		didSet {
 			
 			switch tableViewState {
-			case let .insert(new, indexPath):
-				model.problems.insert(new, at: indexPath.row)
+			case let .insert(new, _):
+				let skinProblemAttachment = new
+				self.model.addToAttachments(skinProblemAttachment)
 			case let .delete(indexPath):
-				model.problems.remove(at: indexPath.row)
+				if let attachment = self.model.attachments?.allObjects[indexPath.row] {
+					self.model.removeFromAttachments(attachment as! SkinProblemAttachment)
+				}
 			default:
 				break
 			}
@@ -125,13 +136,13 @@ class AddSkinProblemsViewModel: BaseViewModel {
 	// MARK Init
 	
 	override init() {
-		model = SkinProblemsModel()
+		model = DataController.createNew(type: SkinProblems.self)
 		super.init()
 	}
 	
-	init (model: SkinProblemsModel){
+	init (model: SkinProblems){
 		self.model = model
-		self.skinProblemDescription = self.model.skinProblemDescription		
+		self.skinProblemDescription = self.model.skinProblemDescription	?? "-"
 		super.init()
 	}
 	
@@ -149,7 +160,11 @@ class AddSkinProblemsViewModel: BaseViewModel {
 	}
 
 	func getDataSourceCount() -> Int {
-		var count = model.problems.count
+		guard let attachments = model.attachments else {
+			return 0
+		}
+
+		var count = attachments.count
 		
 		if isEditEnabled {
 			count += 1
@@ -159,11 +174,15 @@ class AddSkinProblemsViewModel: BaseViewModel {
 	}
 	
 	func getDataSourceCountWithoutExtraAddPhoto() -> Int {
-		return model.problems.count
+		guard let attachments = model.attachments else {
+			return 0
+		}
+		
+		return attachments.count
 	}
 	
-	func getItemAtIndexPath(indexPath: IndexPath) -> SkinProblemModel {
-		return model.problems[indexPath.row]
+	func getItemAtIndexPath(indexPath: IndexPath) -> SkinProblemAttachment {
+		return model.attachments?.allObjects[indexPath.row] as! SkinProblemAttachment
 	}
 	
 	func getNumberOfSections() -> Int {
@@ -193,10 +212,10 @@ class AddSkinProblemsViewModel: BaseViewModel {
 
 	private func generateDiagnosedInfoText() -> String {
 		if let diagnose = model.diagnose,
-			let diagnoseDate = diagnose.diagnoseDate,
-			let doctor = diagnose.diagnosedBy,
+			let doctor = diagnose.doctor,
 			let doctorFirstName = doctor.firstName,
 			let doctorLastName = doctor.lastName {
+			let diagnoseDate = diagnose.diagnoseDate! as Date
 			
 			return String.init(format: "%@ %@ diagnosed your skin condition on %@.", doctorFirstName, doctorLastName, diagnoseDate.ordinalMonthAndYear())
 		} else {
@@ -206,7 +225,7 @@ class AddSkinProblemsViewModel: BaseViewModel {
 	
 	private func generateDiagnosedUpdateRequestInfoText() -> String {
 		if let diagnose = model.diagnose,
-			let doctor = diagnose.diagnosedBy,
+			let doctor = diagnose.doctor,
 			let doctorFirstName = doctor.firstName,
 			let doctorLastName = doctor.lastName {
 			
@@ -218,7 +237,7 @@ class AddSkinProblemsViewModel: BaseViewModel {
 	
 	private func generateDiagnosedFollowUpRequestInfoText() -> String {
 		if let diagnose = model.diagnose,
-			let doctor = diagnose.diagnosedBy,
+			let doctor = diagnose.doctor,
 			let doctorFirstName = doctor.firstName,
 			let doctorLastName = doctor.lastName {
 			
@@ -230,16 +249,17 @@ class AddSkinProblemsViewModel: BaseViewModel {
 
 	func saveModel() {
 		model.skinProblemDescription = skinProblemDescription
-		model.diagnose.diagnoseStatus = .pending
+		model.diagnose = DataController.createNew(type: Diagnose.self)
+		model.diagnose?.diagnoseStatus = .pending
 		goNextSegue!()
 	}
 	
-	func insertNewModel(model: SkinProblemModel, indexPath: IndexPath) {
+	func insertNewModel(model: SkinProblemAttachment, indexPath: IndexPath) {
 		tableViewState = .insert(model, indexPath)
 		updateNextButton!(nextButtonIsEnabled)
 	}
 	
-	func appendNewModel(model: SkinProblemModel) {
+	func appendNewModel(model: SkinProblemAttachment) {
 		let appendToLastIndexPath = IndexPath.init(row: getDataSourceCountWithoutExtraAddPhoto(), section: 0)
 		tableViewState = .insert(model, appendToLastIndexPath)
 		updateNextButton!(nextButtonIsEnabled)

@@ -11,6 +11,8 @@ import UIKit
 
 class ProfileViewModel: BaseViewModel {
 	
+	var profile: Profile!
+	
 	var email = ""
 	
 	var emailValidationStatus: (()->())?
@@ -76,31 +78,29 @@ class ProfileViewModel: BaseViewModel {
 	override init() {
 		super.init()
 		
-		let profile = DataController.createUniqueObject(type: Profile.self)
+		profile = DataController.createUniqueEntity(type: Profile.self)
 		
-		if let profileSafe = profile {
-			email = profileSafe.email ?? ""
-			phone = profileSafe.phone ?? ""
-			
-			if let dobSafe = profileSafe.dob {
-				dob = dobSafe as Date
-			}
-			
-			addressLine1 = profileSafe.addressLine1 ?? ""
-			addressLine2 = profileSafe.addressLine2 ?? ""
-			town = profileSafe.town ?? ""
-			postcode = profileSafe.postcode ?? ""
-			gpName = profileSafe.gpName ?? ""
-			gpAccessCode = profileSafe.gpAccessCode ?? ""
-			gpAddressLine = profileSafe.gpAddressLine ?? ""
-			gpPostcode = profileSafe.gpPostcode ?? ""
-			isPermisionEnabled = profileSafe.isPermisionEnabled
-			
-			if let profileImageSafe = profileSafe.profileImage as? UIImage {
-				profileImage = profileImageSafe
-			} else {
-				profileImage = UIImage(named: "logo")!
-			}
+		email = profile.email ?? ""
+		phone = profile.phone ?? ""
+		
+		if let dobSafe = profile.dob {
+			dob = dobSafe as Date
+		}
+		
+		addressLine1 = profile.addressLine1 ?? ""
+		addressLine2 = profile.addressLine2 ?? ""
+		town = profile.town ?? ""
+		postcode = profile.postcode ?? ""
+		gpName = profile.gpName ?? ""
+		gpAccessCode = profile.gpAccessCode ?? ""
+		gpAddressLine = profile.gpAddressLine ?? ""
+		gpPostcode = profile.gpPostcode ?? ""
+		isPermisionEnabled = profile.isPermisionEnabled
+		
+		if let profileImageSafe = profile.profileImage as? UIImage {
+			profileImage = profileImageSafe
+		} else {
+			profileImage = UIImage(named: "logo")!
 		}
 	}
 	
@@ -110,29 +110,24 @@ class ProfileViewModel: BaseViewModel {
 			return
 		}
 		
-		let profile = DataController.createUniqueObject(type: Profile.self)
+		profile.email = email
+		profile.phone = phone
 		
-		if let profileSafe = profile {
-			profileSafe.email = email
-			profileSafe.phone = phone
-			
-			if let dobSafe = dob as NSDate? {
-				profileSafe.dob = dobSafe
-			}
-			
-			profileSafe.addressLine1 = addressLine1
-			profileSafe.addressLine2 = addressLine2
-			profileSafe.town = town
-			profileSafe.postcode = postcode
-			profileSafe.gpName = gpName
-			profileSafe.gpAccessCode = gpAccessCode
-			profileSafe.gpAddressLine = gpAddressLine
-			profileSafe.gpPostcode = gpPostcode
-			profileSafe.isPermisionEnabled = isPermisionEnabled
-			profileSafe.profileImage = profileImage
-			
-			CoreDataStack.saveContext()
+		if let dobSafe = dob as NSDate? {
+			profile.dob = dobSafe
 		}
 		
+		profile.addressLine1 = addressLine1
+		profile.addressLine2 = addressLine2
+		profile.town = town
+		profile.postcode = postcode
+		profile.gpName = gpName
+		profile.gpAccessCode = gpAccessCode
+		profile.gpAddressLine = gpAddressLine
+		profile.gpPostcode = gpPostcode
+		profile.isPermisionEnabled = isPermisionEnabled
+		profile.profileImage = profileImage
+		
+		DataController.saveEntity(managedObject: profile)
 	}
 }

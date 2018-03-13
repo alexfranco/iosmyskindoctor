@@ -11,18 +11,18 @@ import UIKit
 
 class MySkinProblemDiagnosisViewModel: BaseMySkinProblemDiagnosisViewModel {
 	var diagnosis: String {
-		return self.model.diagnose.summary ?? "-"
+		return self.model.diagnose!.summary ?? "-"
 	}
 	
 	var treatment: String {
-		return self.model.diagnose.treatment ?? "-"
+		return self.model.diagnose!.treatment ?? "-"
 	}
 	
 	var patientInformation: String {
-		return self.model.diagnose.patientInformation ?? "-"
+		return self.model.diagnose!.patientInformation ?? "-"
 	}
 	
 	var comments: String {
-		return self.model.diagnose.comments ?? "-"
+		return self.model.diagnose!.comments ?? "-"
 	}
 }

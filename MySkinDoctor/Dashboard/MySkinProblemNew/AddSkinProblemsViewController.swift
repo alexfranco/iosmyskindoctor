@@ -172,8 +172,9 @@ class AddSkinProblemsViewController: BindingViewController {
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == Segues.goToSkinProblemPhotoInformationViewController {
-			if let dest = segue.destination as? SkinProblemPhotoInformationViewController, let image = sender as? UIImage {
-				let skinProblem = SkinProblemModel(problemImage: image) // create new skin problem with the image attached
+		if let dest = segue.destination as? SkinProblemPhotoInformationViewController, let image = sender as? UIImage {
+				let skinProblem = DataController.createNew(type: SkinProblemAttachment.self)
+				skinProblem.problemImage = image
 				dest.initViewModel(viewModel: SkinProblemPhotoInformationViewModel(model:  skinProblem))
 			}
 		} else if segue.identifier == Segues.goToDiagnosis {

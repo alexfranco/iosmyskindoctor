@@ -11,16 +11,24 @@ import UIKit
 
 class BaseMySkinProblemDiagnosisViewModel: BaseViewModel {
 	
-	var model: SkinProblemsModel!
+	var model: SkinProblems!
 	
 	var diagnoseStatus: Diagnose.DiagnoseStatus {
 		get {
-			return model.diagnose.diagnoseStatus
+			guard let diagnose = model.diagnose else {
+				return Diagnose.DiagnoseStatus.none
+			}
+			
+			return diagnose.diagnoseStatus
 		}
 	}
 	
 	var shouldShowNextButton: Bool {
-		return model.diagnose.diagnoseStatus == .bookConsultationRequest
+		guard let diagnose = model.diagnose else {
+			return false
+		}
+		
+		return diagnose.diagnoseStatus == .bookConsultationRequest
 	}
 	
 	var viewBackgroundColor: UIColor {
@@ -55,7 +63,7 @@ class BaseMySkinProblemDiagnosisViewModel: BaseViewModel {
 	
 	var doctorNameText: String {
 		get {
-			if let diagnosedBy = model.diagnose.diagnosedBy, let firstName = diagnosedBy.firstName, let lastName = diagnosedBy.lastName {
+			if let diagnose = model.diagnose, let diagnosedBy = diagnose.doctor, let firstName = diagnosedBy.firstName, let lastName = diagnosedBy.lastName {
 				return firstName + " " + lastName
 			} else {
 				return  "-"
@@ -65,17 +73,17 @@ class BaseMySkinProblemDiagnosisViewModel: BaseViewModel {
 	
 	var profileImage: UIImage {
 		get {
-			guard let diagnosedBy = model.diagnose.diagnosedBy, let profileImage = diagnosedBy.profileImage else {
+			guard let diagnose = model.diagnose, let diagnosedBy = diagnose.doctor, let profilePicture = diagnosedBy.profilePicture else {
 				return UIImage(named: "logo")!
 			}
 			
-			return profileImage
+			return profilePicture as! UIImage
 		}
 	}
 	
 	var qualificationsText: String {
 		get {
-			guard let diagnosedBy = model.diagnose.diagnosedBy, let qualifications = diagnosedBy.qualifications else {
+			guard let diagnose = model.diagnose, let diagnosedBy = diagnose.doctor, let qualifications = diagnosedBy.qualifications else {
 				return "-"
 			}
 			
@@ -89,13 +97,13 @@ class BaseMySkinProblemDiagnosisViewModel: BaseViewModel {
 		}
 	}
 	
-	required init(model: SkinProblemsModel) {
+	required init(model: SkinProblems) {
 		super.init()
 		self.model = model
 	}
 	
 	private func dateText() -> String {
-		return model.date.ordinalMonthAndYear()
+		return (model.date! as Date).ordinalMonthAndYear()
 	}
 	
 	private func timeText() -> String {
@@ -103,7 +111,7 @@ class BaseMySkinProblemDiagnosisViewModel: BaseViewModel {
 		df.dateFormat = "HH.ss a"
 		df.amSymbol = "am"
 		df.pmSymbol = "pm"
-		return df.string(from: model.date)
+		return df.string(from: (model.date! as Date))
 	}
 	
 }

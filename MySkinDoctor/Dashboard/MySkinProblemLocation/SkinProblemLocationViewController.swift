@@ -78,7 +78,7 @@ class SkinProblemLocationViewController: FormViewController {
 		}
 	}
 	
-	func selectLocationButton(locationProblemType: SkinProblemModel.LocationProblemType) {
+	func selectLocationButton(locationProblemType: SkinProblemAttachment.LocationProblemType) {
 		for button in locationButtons {
 			button.isSelected = button.tag == locationProblemType.index
 		}
@@ -88,22 +88,22 @@ class SkinProblemLocationViewController: FormViewController {
 	// MARK: Helpers
 		
 	func configureLocationButtons() {
-		locationHeadButton.tag = SkinProblemModel.LocationProblemType.head.index
-		locationNeckButton.tag = SkinProblemModel.LocationProblemType.neck.index
-		locationChestButton.tag = SkinProblemModel.LocationProblemType.chest.index
-		locationBellyButton.tag = SkinProblemModel.LocationProblemType.belly.index
-		locationUpperArmLeftButton.tag = SkinProblemModel.LocationProblemType.upperArmLeft.index
-		locationUpperArmRightButton.tag = SkinProblemModel.LocationProblemType.upperArmRight.index
-		locationLowerArmLeftButton.tag = SkinProblemModel.LocationProblemType.lowerArmLeft.index
-		locationLowerArmRightButton.tag = SkinProblemModel.LocationProblemType.lowerArmRight.index
+		locationHeadButton.tag = SkinProblemAttachment.LocationProblemType.head.index
+		locationNeckButton.tag = SkinProblemAttachment.LocationProblemType.neck.index
+		locationChestButton.tag = SkinProblemAttachment.LocationProblemType.chest.index
+		locationBellyButton.tag = SkinProblemAttachment.LocationProblemType.belly.index
+		locationUpperArmLeftButton.tag = SkinProblemAttachment.LocationProblemType.upperArmLeft.index
+		locationUpperArmRightButton.tag = SkinProblemAttachment.LocationProblemType.upperArmRight.index
+		locationLowerArmLeftButton.tag = SkinProblemAttachment.LocationProblemType.lowerArmLeft.index
+		locationLowerArmRightButton.tag = SkinProblemAttachment.LocationProblemType.lowerArmRight.index
 		
-		locationPelvisButton.tag = SkinProblemModel.LocationProblemType.pelvis.index
-		locationUpperLegLeftButton.tag = SkinProblemModel.LocationProblemType.upperLegLeft.index
-		locationUpperLegRightButton.tag = SkinProblemModel.LocationProblemType.upperLegRight.index
-		locationLowerLegLeftButton.tag = SkinProblemModel.LocationProblemType.lowerLegLeft.index
-		locationLowerLegRightButton.tag = SkinProblemModel.LocationProblemType.lowerLegRight.index
-		locationFootLeftButton.tag = SkinProblemModel.LocationProblemType.footLeft.index
-		locationFootRightButton.tag = SkinProblemModel.LocationProblemType.footRight.index
+		locationPelvisButton.tag = SkinProblemAttachment.LocationProblemType.pelvis.index
+		locationUpperLegLeftButton.tag = SkinProblemAttachment.LocationProblemType.upperLegLeft.index
+		locationUpperLegRightButton.tag = SkinProblemAttachment.LocationProblemType.upperLegRight.index
+		locationLowerLegLeftButton.tag = SkinProblemAttachment.LocationProblemType.lowerLegLeft.index
+		locationLowerLegRightButton.tag = SkinProblemAttachment.LocationProblemType.lowerLegRight.index
+		locationFootLeftButton.tag = SkinProblemAttachment.LocationProblemType.footLeft.index
+		locationFootRightButton.tag = SkinProblemAttachment.LocationProblemType.footRight.index
 		
 		locationButtons = [locationHeadButton,
 						   locationNeckButton,
@@ -134,7 +134,7 @@ class SkinProblemLocationViewController: FormViewController {
 		if let button = sender as? UIButton {
 			button.isSelected = true
 			let locationProblemRawValue = button.tag
-			viewModelCast.locationProblemType = SkinProblemModel.LocationProblemType(rawValue: locationProblemRawValue)!
+			viewModelCast.locationProblemType = SkinProblemAttachment.LocationProblemType(rawValue: locationProblemRawValue)!
 		}
 	}
 		

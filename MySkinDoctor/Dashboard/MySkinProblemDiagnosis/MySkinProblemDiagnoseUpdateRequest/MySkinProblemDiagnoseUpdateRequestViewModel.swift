@@ -12,10 +12,13 @@ import UIKit
 class MySkinProblemDiagnoseUpdateRequestViewModel: BaseMySkinProblemDiagnosisViewModel {
 	
 	func getDataSourceCount() -> Int {
-		return model.diagnose.doctorNotes.count
+		guard let diagnose = model.diagnose, let doctorNotes = diagnose.doctorNotes else {
+			return 0
+		}
+		return doctorNotes.count
 	}
 	
-	func getItemAtIndexPath(indexPath: IndexPath) -> DoctorNote {
-		return model.diagnose.doctorNotes[indexPath.row]
+	func getItemAtIndexPath(indexPath: IndexPath) -> DoctorNotes {
+		return model.diagnose!.doctorNotes?.allObjects[indexPath.row] as! DoctorNotes
 	}
 }

@@ -1,5 +1,5 @@
 //
-//  Date+Extentions.swift
+//  Date+Extensions.swift
 //  MySkinDoctor
 //
 //  Created by Alex on 05/03/2018.

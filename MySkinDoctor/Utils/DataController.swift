@@ -12,13 +12,23 @@ import UIKit
 
 class DataController {
 	
-	static func createNew<T: NSManagedObject>(type: T.Type) -> T? {
+	// Creates a temporal entity
+	static private func disconnectedEntity<T: NSManagedObject>(type: T.Type) -> T {
 		let entityName = String(describing: type)
 		let entity = NSEntityDescription.entity(forEntityName: entityName, in:  CoreDataStack.managedObjectContext)
-		return NSManagedObject(entity: entity!, insertInto: CoreDataStack.managedObjectContext) as? T
+		return NSManagedObject(entity: entity!, insertInto: nil) as! T
 	}
 	
-	static func createUniqueObject<T: NSManagedObject>(type: T.Type) -> T? {
+	// Inserts the entitty into our currenct to context
+	static private func addEntityToCurrentContext(managedObject: NSManagedObject) {
+		CoreDataStack.managedObjectContext.insert(managedObject)
+	}
+	
+	static func createNew<T: NSManagedObject>(type: T.Type) -> T {
+		return disconnectedEntity(type: type)
+	}
+	
+	static func createUniqueEntity<T: NSManagedObject>(type: T.Type) -> T {
 		let result = fetchAll(type: type)
 			
 		if let resultSafe = result, let first = resultSafe.first {
@@ -42,5 +52,20 @@ class DataController {
 		}
 		
 		return nil
+	}
+	
+	static func getManagedObject(managedObjectId: NSManagedObjectID) -> NSManagedObject {
+		return CoreDataStack.managedObjectContext.object(with: managedObjectId)
+	}
+	
+	static func saveEntity(managedObject: NSManagedObject) {
+		do {
+			if managedObject.managedObjectContext == nil {
+				addEntityToCurrentContext(managedObject: managedObject)
+			}
+			try CoreDataStack.managedObjectContext.save()
+		} catch {
+			print("saveEntity")
+		}
 	}
 }

@@ -15,16 +15,20 @@ class MySkinProblemsTableCellViewModel: NSObject {
 	var date: String!
 	var isDiagnosed: Bool!
 	var problemDescription: String!
-	var model: SkinProblemsModel!
+	var model: SkinProblems!
 	
-	required init(withModel model: SkinProblemsModel) {
-		self.model = model
-		self.name = model.diagnose.diagnoseStatus.description
-		self.date = MySkinProblemsTableCellViewModel.getDateFormatted(date: model.date)
-		self.isDiagnosed = model.isDiagnosed
-		self.problemDescription = model.skinProblemDescription
-		
+	required init(withModel model: SkinProblems) {
 		super.init()
+		self.model = model
+		
+		guard let diagnose = model.diagnose else {
+			return
+		}
+		
+		self.name = diagnose.diagnoseStatus.description
+		self.date = MySkinProblemsTableCellViewModel.getDateFormatted(date: model.date! as Date)
+		self.isDiagnosed = model.isDiagnosed
+		self.problemDescription = model.skinProblemDescription				
 	}
 	
 	static func getDateFormatted(date: Date) -> String {
