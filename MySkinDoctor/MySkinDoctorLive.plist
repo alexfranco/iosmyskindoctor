@@ -39,5 +39,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>You can take picture of your skin problems.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>You can select pictures to attach to your skin problems.</string>
 </dict>
 </plist>

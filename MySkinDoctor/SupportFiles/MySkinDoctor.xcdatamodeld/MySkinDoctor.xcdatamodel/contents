@@ -10,8 +10,8 @@
         <attribute name="gpAddressLine" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="gpName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="gpPostcode" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="isNHS" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="isPermisionEnabled" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="isNHS" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="isPermisionEnabled" optional="YES" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="postcode" optional="YES" attributeType="String" syncable="YES"/>

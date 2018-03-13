@@ -124,6 +124,13 @@ class ProfileViewController: FormViewController {
 		
 		viewModelCast = (viewModel as! ProfileViewModel)
 		
+		viewModelCast.profileImageUpdated = { [weak self] (image) in
+			DispatchQueue.main.async {
+				self?.userPhotoImageView.contentMode = .scaleAspectFill
+				self?.userPhotoImageView.image = image
+			}
+		}
+		
 		viewModelCast.dobUpdated = { [weak self] (date) in
 			DispatchQueue.main.async {
 				self?.dobTextField.text = date
@@ -143,6 +150,16 @@ class ProfileViewController: FormViewController {
 		viewModelCast.saveModel()
 	}
 	
+	// MARK: UITextFieldDelegate
+	
+	override func textFieldDidBeginEditing(_ textField: UITextField) {
+		super.textFieldDidBeginEditing(textField)
+		
+		if textField == dobTextField {
+			showDatePicker()
+		}
+	}
+		
 	func showDatePicker() {
 		//Formate Date
 		datePicker.datePickerMode = .date
@@ -197,8 +214,9 @@ extension ProfileViewController: UIGestureRecognizerDelegate {
 	@objc func tapUserPhoto(_ sender: UITapGestureRecognizer) {
 		let photoUtils = PhotoUtils(inViewController: self)
 		photoUtils.showChoosePhoto { (success, image) in
-			self.userPhotoImageView.contentMode = .scaleAspectFill
-			self.userPhotoImageView.image = image
+			if success {
+				self.viewModelCast.profileImage = image!
+			}
 		}
 	}
 }

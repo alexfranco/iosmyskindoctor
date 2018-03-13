@@ -73,6 +73,7 @@ class PhotoUtils: NSObject, UIGestureRecognizerDelegate, UIImagePickerController
 	}
 	
 	func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+		picker.dismiss(animated:true, completion: nil)
 		print("Cancel")
 		completionHandler!(false, nil)
 	}

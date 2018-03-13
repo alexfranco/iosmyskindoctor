@@ -28,9 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 			self.window?.rootViewController = initialVC
 			self.window?.makeKeyAndVisible()
 		}
-		
-		CoreDataStack.init()
-		
+				
 		return true
 	}
 

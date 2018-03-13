@@ -7,10 +7,20 @@
 //
 
 import Foundation
+import UIKit
 
 class ProfileViewModel: BaseViewModel {
 	
 	var email = ""
+	
+	var emailValidationStatus: (()->())?
+	
+	var emailErrorMessage: String = "" {
+		didSet {
+			self.emailValidationStatus?()
+		}
+	}
+	
 	var phone = ""
 	
 	var dob: Date? {
@@ -41,28 +51,30 @@ class ProfileViewModel: BaseViewModel {
 	var gpPostcode = ""
 	var isPermisionEnabled = true
 	
-	var emailValidationStatus: (()->())?
-	
-	var emailErrorMessage: String = "" {
+	var profileImage: UIImage = UIImage(named: "logo")! {
 		didSet {
-			self.emailValidationStatus?()
+			profileImageUpdated!(profileImage)
 		}
 	}
 	
+	var profileImageUpdated: ((_ image: UIImage)->())?
+	
+
 	override func validateForm() -> Bool {
 		var isValid = true
 		
-		if Validations.isValidEmail(testStr: email) {
-			emailErrorMessage = ""
-		} else {
-			emailErrorMessage = NSLocalizedString("error_email_not_valid", comment: "")
-			isValid = false
-		}
+//		if Validations.isValidEmail(testStr: email) {
+//			emailErrorMessage = ""
+//		} else {
+//			emailErrorMessage = NSLocalizedString("error_email_not_valid", comment: "")
+//			isValid = false
+//		}
 		
 		return isValid
 	}
 	
 	override init() {
+		super.init()
 		
 		let profile = DataController.createUniqueObject(type: Profile.self)
 		
@@ -74,18 +86,22 @@ class ProfileViewModel: BaseViewModel {
 				dob = dobSafe as Date
 			}
 			
-			addressLine1 = profile?.addressLine1 ?? ""
-			addressLine2 = profile?.addressLine2 ?? ""
-			town = profile?.town ?? ""
-			postcode = profile?.postcode ?? ""
-			gpName = profile?.gpName ?? ""
-			gpAccessCode = profile?.gpAccessCode ?? ""
-			gpAddressLine = profile?.gpAddressLine ?? ""
-			gpPostcode = profile?.gpPostcode ?? ""
-			isPermisionEnabled = profile?.isPermisionEnabled ?? true
-		}
+			addressLine1 = profileSafe.addressLine1 ?? ""
+			addressLine2 = profileSafe.addressLine2 ?? ""
+			town = profileSafe.town ?? ""
+			postcode = profileSafe.postcode ?? ""
+			gpName = profileSafe.gpName ?? ""
+			gpAccessCode = profileSafe.gpAccessCode ?? ""
+			gpAddressLine = profileSafe.gpAddressLine ?? ""
+			gpPostcode = profileSafe.gpPostcode ?? ""
+			isPermisionEnabled = profileSafe.isPermisionEnabled
 			
-		super.init()
+			if let profileImageSafe = profileSafe.profileImage as? UIImage {
+				profileImage = profileImageSafe
+			} else {
+				profileImage = UIImage(named: "logo")!
+			}
+		}
 	}
 	
 	func saveModel() {
@@ -113,6 +129,7 @@ class ProfileViewModel: BaseViewModel {
 			profileSafe.gpAddressLine = gpAddressLine
 			profileSafe.gpPostcode = gpPostcode
 			profileSafe.isPermisionEnabled = isPermisionEnabled
+			profileSafe.profileImage = profileImage
 			
 			CoreDataStack.saveContext()
 		}
