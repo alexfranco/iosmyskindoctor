@@ -34,13 +34,23 @@ class AddSkinProblemsViewModel: BaseViewModel {
 				return Diagnose.DiagnoseStatus.none
 			}
 			
-			return diagnose.diagnoseStatus
+			return diagnose.diagnoseStatusEnum
 		}
 	}
 	
 	var isDiagnosed: Bool {
 		get {
 			return model.isDiagnosed
+		}
+	}
+	
+	var hasMedicalHistory: Bool {
+		get {
+			if let medicalHistory = DataController.fetchAll(type: MedicalHistory.self), let first = medicalHistory.first {
+				return first.saveMedicalHistory
+			} else {
+				return false
+			}			
 		}
 	}
 	
@@ -118,7 +128,7 @@ class AddSkinProblemsViewModel: BaseViewModel {
 		}
 	}
 	
-	var nextSegue: String {
+	var diagnoseNextSegue: String {
 		get {
 			switch diagnoseStatus {
 			case .none:
@@ -130,6 +140,12 @@ class AddSkinProblemsViewModel: BaseViewModel {
 			case .bookConsultationRequest:
 				return Segues.goToMySkinProblemDiagnoseUpdateRequest
 			}
+		}
+	}
+	
+	var nextSegue: String! {
+		get {
+			return hasMedicalHistory ? Segues.goToSkinProblemThankYouViewControllerFromAddSkinProblem : Segues.goToMedicalHistoryViewControler
 		}
 	}
 	
@@ -250,7 +266,8 @@ class AddSkinProblemsViewModel: BaseViewModel {
 	func saveModel() {
 		model.skinProblemDescription = skinProblemDescription
 		model.diagnose = DataController.createNew(type: Diagnose.self)
-		model.diagnose?.diagnoseStatus = .pending
+		model.diagnose?.diagnoseStatusEnum = .pending
+		DataController.saveEntity(managedObject: model)
 		goNextSegue!()
 	}
 	

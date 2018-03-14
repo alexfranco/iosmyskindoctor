@@ -37,7 +37,7 @@ class ApiUtils {
 		case login = "/api/accounts/login/"
 		case register = "/api/accounts/register"
 		case forgottenPassword = "/api/accounts/password/reset/"
-		case userProfile = "/api/ttul-profiles/user/"
+		case userProfile = "/api/msd-profiles/user/"
 		case changePassword = "/api/accounts/password/change/"
 	}
 	

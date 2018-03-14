@@ -82,9 +82,7 @@ class AddSkinProblemsViewController: BindingViewController {
 		
 		viewModelCast.goNextSegue = { [weak self] () in
 			DispatchQueue.main.async {
-				// TODO if the property save medical history for next time is true, it skips this step
-				self?.performSegue(withIdentifier: Segues.goToMedicalHistoryViewControler, sender: nil)
-				//				self?.performSegue(withIdentifier: Segues.goToSkinProblemThankYouViewControllerFromAddSkinProblem, sender: nil)
+				self?.performSegue(withIdentifier: (self?.viewModelCast.nextSegue)!, sender: nil)
 			}
 		}
 	}
@@ -167,7 +165,7 @@ class AddSkinProblemsViewController: BindingViewController {
 	}
 	
 	@IBAction func onViewDiagnosePressed(_ sender: Any) {
-		self.performSegue(withIdentifier: viewModelCast.nextSegue, sender: nil)
+		self.performSegue(withIdentifier: viewModelCast.diagnoseNextSegue, sender: nil)
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

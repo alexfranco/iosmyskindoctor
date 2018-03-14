@@ -24,7 +24,7 @@ class SkinProblemPhotoInformationViewModel: BaseViewModel {
 	}
 	
 	func saveModel(attachmentType: SkinProblemAttachment.AttachmentType) {
-		model.attachmentType = attachmentType
+		model.attachmentTypeEnum = attachmentType
 		model.problemDescription = problemDescription
 		model.problemImage = problemImage
 		

@@ -10,13 +10,13 @@ import Foundation
 import CoreData
 
 extension Diagnose {
-	@objc enum DiagnoseStatus: Int, CustomStringConvertible {
+	enum DiagnoseStatus: Int16, CustomStringConvertible {
 		case none
 		case pending
 		case noFutherCommunicationRequired
 		case bookConsultationRequest
 
-		var index: Int {
+		var index: Int16 {
 			return rawValue
 		}
 
@@ -34,7 +34,10 @@ extension Diagnose {
 		}
 	}
 	
-	@NSManaged var diagnoseStatus: DiagnoseStatus
+	var diagnoseStatusEnum: DiagnoseStatus {
+		get { return DiagnoseStatus(rawValue: self.diagnoseStatus )! }
+		set { self.diagnoseStatus = Int16(newValue.rawValue) }
+	}
 	
 }
 

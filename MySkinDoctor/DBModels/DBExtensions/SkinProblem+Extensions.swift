@@ -11,12 +11,12 @@ import CoreData
 
 extension SkinProblemAttachment {
 	
-	@objc enum AttachmentType: Int {
+	enum AttachmentType: Int {
 		case photo
 		case document
 	}
 	
-	@objc enum LocationProblemType: Int, CustomStringConvertible {
+	enum LocationProblemType: Int, CustomStringConvertible {
 		case none
 		case head
 		case neck
@@ -77,6 +77,13 @@ extension SkinProblemAttachment {
 		}
 	}
 	
-	@NSManaged var attachmentType: AttachmentType
-	@NSManaged var locationType: LocationProblemType
+	var attachmentTypeEnum: AttachmentType {
+		get { return AttachmentType(rawValue: Int(self.attachmentType)) ?? .photo }
+		set { self.attachmentType = Int16(newValue.rawValue) }
+	}
+
+	var locationTypeEnum: LocationProblemType {
+		get { return LocationProblemType(rawValue: Int(self.locationType)) ?? .none }
+		set { self.locationType = Int16(newValue.rawValue) }
+	}
 }

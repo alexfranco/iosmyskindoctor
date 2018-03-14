@@ -25,7 +25,10 @@ class DataController {
 	}
 	
 	static func createNew<T: NSManagedObject>(type: T.Type) -> T {
-		return disconnectedEntity(type: type)
+		let entityName = String(describing: type)
+		let entity = NSEntityDescription.entity(forEntityName: entityName, in:  CoreDataStack.managedObjectContext)
+		return NSManagedObject(entity: entity!, insertInto: CoreDataStack.managedObjectContext) as! T
+//		return disconnectedEntity(type: type)
 	}
 	
 	static func createUniqueEntity<T: NSManagedObject>(type: T.Type) -> T {
@@ -64,8 +67,8 @@ class DataController {
 				addEntityToCurrentContext(managedObject: managedObject)
 			}
 			try CoreDataStack.managedObjectContext.save()
-		} catch {
-			print("saveEntity")
+		} catch let error {
+			print("saveEntity error \(error.localizedDescription)")
 		}
 	}
 }

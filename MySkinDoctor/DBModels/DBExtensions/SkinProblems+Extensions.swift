@@ -16,6 +16,6 @@ extension SkinProblems {
 			return false
 		}
 		
-		return diagnoseSafe.diagnoseStatus == .noFutherCommunicationRequired ||  diagnoseSafe.diagnoseStatus == .bookConsultationRequest
+		return diagnoseSafe.diagnoseStatusEnum == .noFutherCommunicationRequired ||  diagnoseSafe.diagnoseStatusEnum == .bookConsultationRequest
 	}
 }

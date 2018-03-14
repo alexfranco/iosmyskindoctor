@@ -28,7 +28,7 @@ class MySkinProblemsTableCellViewModel: NSObject {
 		self.name = diagnose.diagnoseStatus.description
 		self.date = MySkinProblemsTableCellViewModel.getDateFormatted(date: model.date! as Date)
 		self.isDiagnosed = model.isDiagnosed
-		self.problemDescription = model.skinProblemDescription				
+		self.problemDescription = model.skinProblemDescription ?? "-"
 	}
 	
 	static func getDateFormatted(date: Date) -> String {

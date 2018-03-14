@@ -59,8 +59,6 @@
 		7849CCA4203EE2030030A7B1 /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7849CCA2203EE2030030A7B1 /* ForgotPasswordViewModel.swift */; };
 		7849CCA8203EE3E60030A7B1 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7849CCA7203EE3E60030A7B1 /* BaseViewModel.swift */; };
 		7849CCA9203EE3E60030A7B1 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7849CCA7203EE3E60030A7B1 /* BaseViewModel.swift */; };
-		788B9370204845C1001605E6 /* SkinProblemsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B936F204845C1001605E6 /* SkinProblemsModel.swift */; };
-		788B9371204848E8001605E6 /* SkinProblemsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B936F204845C1001605E6 /* SkinProblemsModel.swift */; };
 		788C3207204E7D680078A983 /* MySkinProblems.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 788C3206204E7D680078A983 /* MySkinProblems.storyboard */; };
 		788C3208204E7D680078A983 /* MySkinProblems.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 788C3206204E7D680078A983 /* MySkinProblems.storyboard */; };
 		788C320D204E813E0078A983 /* BookAConsultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788C320C204E813E0078A983 /* BookAConsultViewController.swift */; };
@@ -120,8 +118,6 @@
 		78FFF02B20496E240013240D /* MedicalHistoryViewControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FFF02920496E240013240D /* MedicalHistoryViewControler.swift */; };
 		78FFF02F20496E340013240D /* MedicalHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FFF02E20496E340013240D /* MedicalHistoryViewModel.swift */; };
 		78FFF03020496E340013240D /* MedicalHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FFF02E20496E340013240D /* MedicalHistoryViewModel.swift */; };
-		78FFF03420496F370013240D /* MedicalHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FFF03320496F370013240D /* MedicalHistoryModel.swift */; };
-		78FFF03520496F370013240D /* MedicalHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FFF03320496F370013240D /* MedicalHistoryModel.swift */; };
 		BACDC2609AC77EBE02475BED /* Pods_MySkinDoctor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01583D02E29AF032A253E558 /* Pods_MySkinDoctor.framework */; };
 		D75D874EF6F3C1F821CF13C0 /* Pods_MySkinDoctorLive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E880F85E25D18BC10BE7217F /* Pods_MySkinDoctorLive.framework */; };
 		FA33263A20400FD200657C8A /* DashboardTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA33263920400FD200657C8A /* DashboardTabViewController.swift */; };
@@ -222,8 +218,6 @@
 		FAD6ADBD204461050050C1A9 /* AddSkinProblemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6ADBB204461050050C1A9 /* AddSkinProblemsViewController.swift */; };
 		FAD6ADC120446D310050C1A9 /* AddPhotoTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6ADC020446D310050C1A9 /* AddPhotoTableViewCellViewModel.swift */; };
 		FAD6ADC220446D310050C1A9 /* AddPhotoTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6ADC020446D310050C1A9 /* AddPhotoTableViewCellViewModel.swift */; };
-		FADC33332046BF2F0065A7EB /* SkinProblemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC33322046BF2F0065A7EB /* SkinProblemModel.swift */; };
-		FADC33342046BF2F0065A7EB /* SkinProblemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC33322046BF2F0065A7EB /* SkinProblemModel.swift */; };
 		FADC33392046DA9A0065A7EB /* SkinProblemPhotoInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC33382046DA9A0065A7EB /* SkinProblemPhotoInformationViewController.swift */; };
 		FADC333A2046DA9A0065A7EB /* SkinProblemPhotoInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC33382046DA9A0065A7EB /* SkinProblemPhotoInformationViewController.swift */; };
 		FADC333F2046E8C80065A7EB /* FormTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC333E2046E8C80065A7EB /* FormTextView.swift */; };
@@ -294,7 +288,6 @@
 		7849CC9D203EE15A0030A7B1 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		7849CCA2203EE2030030A7B1 /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 		7849CCA7203EE3E60030A7B1 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
-		788B936F204845C1001605E6 /* SkinProblemsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinProblemsModel.swift; sourceTree = "<group>"; };
 		788C3206204E7D680078A983 /* MySkinProblems.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MySkinProblems.storyboard; sourceTree = "<group>"; };
 		788C320C204E813E0078A983 /* BookAConsultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookAConsultViewController.swift; sourceTree = "<group>"; };
 		788C3212204E88D00078A983 /* BookAConsultCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookAConsultCalendarViewController.swift; sourceTree = "<group>"; };
@@ -319,7 +312,6 @@
 		78E44AA5203EBE5C0094F3AF /* PasswordStrength.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordStrength.swift; sourceTree = "<group>"; };
 		78FFF02920496E240013240D /* MedicalHistoryViewControler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalHistoryViewControler.swift; sourceTree = "<group>"; };
 		78FFF02E20496E340013240D /* MedicalHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalHistoryViewModel.swift; sourceTree = "<group>"; };
-		78FFF03320496F370013240D /* MedicalHistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalHistoryModel.swift; sourceTree = "<group>"; };
 		85B14CEDA9F10AD5CDFAFE54 /* Pods-MySkinDoctorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySkinDoctorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MySkinDoctorTests/Pods-MySkinDoctorTests.release.xcconfig"; sourceTree = "<group>"; };
 		A8E80ED1315E894849856D66 /* Pods-MySkinDoctorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySkinDoctorUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MySkinDoctorUITests/Pods-MySkinDoctorUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B7FBD70382F1461742FB7DCB /* Pods-MySkinDoctorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySkinDoctorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MySkinDoctorTests/Pods-MySkinDoctorTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -379,7 +371,6 @@
 		FAD6ADB620445EB20050C1A9 /* AddPhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoTableViewCell.swift; sourceTree = "<group>"; };
 		FAD6ADBB204461050050C1A9 /* AddSkinProblemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSkinProblemsViewController.swift; sourceTree = "<group>"; };
 		FAD6ADC020446D310050C1A9 /* AddPhotoTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoTableViewCellViewModel.swift; sourceTree = "<group>"; };
-		FADC33322046BF2F0065A7EB /* SkinProblemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinProblemModel.swift; sourceTree = "<group>"; };
 		FADC33382046DA9A0065A7EB /* SkinProblemPhotoInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinProblemPhotoInformationViewController.swift; sourceTree = "<group>"; };
 		FADC333E2046E8C80065A7EB /* FormTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextView.swift; sourceTree = "<group>"; };
 		FADC33432046F16C0065A7EB /* SkinProblemPhotoInformationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinProblemPhotoInformationViewModel.swift; sourceTree = "<group>"; };
@@ -532,7 +523,6 @@
 		78C205DE2045A91800F8E407 /* MySkinProblemNew */ = {
 			isa = PBXGroup;
 			children = (
-				FADC33312046BF160065A7EB /* Models */,
 				78C205DF2045AA5400F8E407 /* Cells */,
 				78C205E02045AA5E00F8E407 /* ViewModels */,
 				FAD6ADBB204461050050C1A9 /* AddSkinProblemsViewController.swift */,
@@ -572,7 +562,6 @@
 		78FFF02820496E000013240D /* MySkinProblemMedicalHistory */ = {
 			isa = PBXGroup;
 			children = (
-				78FFF03320496F370013240D /* MedicalHistoryModel.swift */,
 				78FFF02E20496E340013240D /* MedicalHistoryViewModel.swift */,
 				78FFF02920496E240013240D /* MedicalHistoryViewControler.swift */,
 			);
@@ -786,16 +775,6 @@
 				78B9E517203C2C670054CAD3 /* ForgotPasswordResposeModel.swift */,
 			);
 			path = APIModels;
-			sourceTree = "<group>";
-		};
-		FADC33312046BF160065A7EB /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				788B936F204845C1001605E6 /* SkinProblemsModel.swift */,
-				FADC33322046BF2F0065A7EB /* SkinProblemModel.swift */,
-			);
-			name = Models;
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 		FADC33372046DA560065A7EB /* MySkinProblemPhotoInformation */ = {
@@ -1231,7 +1210,6 @@
 				78B9E530203C4CD70054CAD3 /* RegistrationResponseModel.swift in Sources */,
 				78264732205800FB00F79FB7 /* SkinProblemAttachment+CoreDataClass.swift in Sources */,
 				78DBCE502051741500C0D4B5 /* MySkinProblemDiagnosisViewController.swift in Sources */,
-				788B9371204848E8001605E6 /* SkinProblemsModel.swift in Sources */,
 				FADC33402046E8C80065A7EB /* FormTextView.swift in Sources */,
 				78264731205800FB00F79FB7 /* Diagnose+CoreDataProperties.swift in Sources */,
 				FA332657204029BD00657C8A /* MySkinProblemsViewModel.swift in Sources */,
@@ -1288,7 +1266,6 @@
 				78264739205800FB00F79FB7 /* MedicalHistory+CoreDataProperties.swift in Sources */,
 				FA7F713D20529250006B1EFF /* BaseMySkinProblemDiagnosisViewModel.swift in Sources */,
 				7849CCA4203EE2030030A7B1 /* ForgotPasswordViewModel.swift in Sources */,
-				78FFF03520496F370013240D /* MedicalHistoryModel.swift in Sources */,
 				FAAE62862056915100823BFE /* UIButton+Circular.swift in Sources */,
 				78264735205800FB00F79FB7 /* Consultation+CoreDataProperties.swift in Sources */,
 				78B9E53C203C4CD70054CAD3 /* LoginResponseModel.swift in Sources */,
@@ -1332,7 +1309,6 @@
 				78B9E542203C4CD70054CAD3 /* Consts.swift in Sources */,
 				FAF2CEC9204D574F0001EEAB /* MyConsultTableViewCellViewModel.swift in Sources */,
 				FA3326672040351500657C8A /* ProfileViewController.swift in Sources */,
-				FADC33342046BF2F0065A7EB /* SkinProblemModel.swift in Sources */,
 				78264738205800FB00F79FB7 /* MedicalHistory+CoreDataClass.swift in Sources */,
 				FA6130C1204D9A0600731495 /* Date+Extensions.swift in Sources */,
 				FA3326CB20441C8500657C8A /* GrayLabel.swift in Sources */,
@@ -1413,7 +1389,6 @@
 				782647102057D49E00F79FB7 /* Doctor+CoreDataClass.swift in Sources */,
 				782647132057D49E00F79FB7 /* MedicalHistory+CoreDataProperties.swift in Sources */,
 				FA3326B220441C8500657C8A /* PasswordTextField.swift in Sources */,
-				78FFF03420496F370013240D /* MedicalHistoryModel.swift in Sources */,
 				7826473F2058016B00F79FB7 /* SkinProblem+Extensions.swift in Sources */,
 				FA6E8F5F2056BFDA001F6E16 /* SetupWizard2ViewModel.swift in Sources */,
 				782647052057D49E00F79FB7 /* DoctorNotes+CoreDataProperties.swift in Sources */,
@@ -1433,7 +1408,6 @@
 				78DBCE542051742700C0D4B5 /* MySkinProblemDiagnosisViewModel.swift in Sources */,
 				FA3326512040287900657C8A /* BindingViewController.swift in Sources */,
 				782647062057D49E00F79FB7 /* DiagnoseAttachments+CoreDataClass.swift in Sources */,
-				788B9370204845C1001605E6 /* SkinProblemsModel.swift in Sources */,
 				FAAE628C2056A7C800823BFE /* SetupWizard1ViewModel.swift in Sources */,
 				FAE733C22034494D00898E65 /* AppDelegate.swift in Sources */,
 				78E44AA6203EBE5C0094F3AF /* PasswordStrength.swift in Sources */,
@@ -1456,7 +1430,6 @@
 				FAD6ADB720445EB20050C1A9 /* AddPhotoTableViewCell.swift in Sources */,
 				FAF2CEC8204D574F0001EEAB /* MyConsultTableViewCellViewModel.swift in Sources */,
 				FA3326662040351500657C8A /* ProfileViewController.swift in Sources */,
-				FADC33332046BF2F0065A7EB /* SkinProblemModel.swift in Sources */,
 				FA6130C0204D9A0600731495 /* Date+Extensions.swift in Sources */,
 				FA3326CA20441C8500657C8A /* GrayLabel.swift in Sources */,
 				FA3326C620441C8500657C8A /* TitleLabel.swift in Sources */,

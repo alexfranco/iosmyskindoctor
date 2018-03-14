@@ -33,8 +33,11 @@ class MySkinProblemsViewModel: BaseViewModel {
 	var diagnosedItems = [SkinProblems]()
 
 	override init() {
-		// Generate tests
-		
+		super.init()
+		self.fetchData()
+	}
+	
+	func fetchData() {
 		if let results = DataController.fetchAll(type: SkinProblems.self) {
 			allItems = results
 			diagnosedItems = allItems.filter { (model) -> Bool in model.isDiagnosed }
@@ -43,6 +46,7 @@ class MySkinProblemsViewModel: BaseViewModel {
 	}
 	
 	func refreshData() {
+		fetchData()
 		refresh!()
 	}
 	

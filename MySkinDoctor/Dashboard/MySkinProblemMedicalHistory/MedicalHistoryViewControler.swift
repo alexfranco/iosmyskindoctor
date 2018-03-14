@@ -41,6 +41,11 @@ class MedicalHistoryViewControler: FormViewController {
 		
 		navigationController?.setBackgroundColorWithoutShadowImage(bgColor: AppStyle.defaultNavigationBarColor, titleColor: AppStyle.defaultNavigationBarTitleColor)
 		
+		hasHealthProblemsSwitch.isOn = false
+		hasMedicationSwitch.isOn = false
+		hasPastHistoryProblemsSwitch.isOn = false
+		saveMedicalHistorySwitch.isOn = false
+		
 		initViewModel(viewModel: MedicalHistoryViewModel())
 	}
 		

@@ -50,7 +50,7 @@ class SkinProblemLocationViewModel: BaseViewModel {
 	}
 	
 	func saveModel() {
-		model.locationType = locationProblemType		
+		model.locationTypeEnum = locationProblemType
 		goNextSegue!()
 	}
 	

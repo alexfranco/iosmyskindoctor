@@ -34,6 +34,11 @@ class MySkinProblemsViewController: BindingViewController {
 //		self.performSegue(withIdentifier: Segues.goToSetupWizard, sender: nil)
 	}
 	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		viewModelCast.refreshData()
+	}
+	
 	// MARK: Helpers
 	
 	override func initViewModel(viewModel: BaseViewModel) {

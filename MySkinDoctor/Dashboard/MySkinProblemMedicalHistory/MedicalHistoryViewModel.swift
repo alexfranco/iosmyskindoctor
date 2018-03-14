@@ -11,7 +11,7 @@ import UIKit
 
 class MedicalHistoryViewModel: BaseViewModel {
 	
-	var model: MedicalHistoryModel?
+	var model: MedicalHistory!
 	
 	var hasHealthProblems = false
 	var healthProblemDescription: String = ""
@@ -20,16 +20,14 @@ class MedicalHistoryViewModel: BaseViewModel {
 	var saveMedicalHistory = false
 	
 	func saveModel() {
-		model = MedicalHistoryModel()
+		model = DataController.createUniqueEntity(type: MedicalHistory.self)
 		
-		model?.hasHealthProblems = hasHealthProblems
-		model?.healthProblemDescription = healthProblemDescription
-		model?.hasMedication = hasMedication
-		model?.hasPastHistoryProblems = hasPastHistoryProblems		
-		// TODO saveMedicalHistory
-		
-		let defaults = UserDefaults.standard
-		defaults.set(true, forKey: UserDefaultConsts.isUserLoggedIn)
+		model.hasHealthProblems = hasHealthProblems
+		model.healthProblemDescription = healthProblemDescription
+		model.hasMedication = hasMedication
+		model.hasPastHistoryProblems = hasPastHistoryProblems
+		model.saveMedicalHistory = saveMedicalHistory
+		DataController.saveEntity(managedObject: model)
 		
 		goNextSegue!()
 	}

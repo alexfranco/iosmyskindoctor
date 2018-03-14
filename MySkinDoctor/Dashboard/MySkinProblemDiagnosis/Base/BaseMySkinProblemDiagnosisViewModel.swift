@@ -19,7 +19,7 @@ class BaseMySkinProblemDiagnosisViewModel: BaseViewModel {
 				return Diagnose.DiagnoseStatus.none
 			}
 			
-			return diagnose.diagnoseStatus
+			return diagnose.diagnoseStatusEnum
 		}
 	}
 	
@@ -28,7 +28,7 @@ class BaseMySkinProblemDiagnosisViewModel: BaseViewModel {
 			return false
 		}
 		
-		return diagnose.diagnoseStatus == .bookConsultationRequest
+		return diagnose.diagnoseStatusEnum == .bookConsultationRequest
 	}
 	
 	var viewBackgroundColor: UIColor {
