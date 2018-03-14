@@ -188,6 +188,10 @@
 		FA6E8F702056CE87001F6E16 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E8F6E2056CE87001F6E16 /* DataController.swift */; };
 		FA6E8FAF2056D66C001F6E16 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E8FAE2056D66C001F6E16 /* CoreDataStack.swift */; };
 		FA6E8FB02056D66C001F6E16 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E8FAE2056D66C001F6E16 /* CoreDataStack.swift */; };
+		FA6E8FB320595FB4001F6E16 /* MyConsultDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E8FB220595FB4001F6E16 /* MyConsultDetailsViewController.swift */; };
+		FA6E8FB420595FB4001F6E16 /* MyConsultDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E8FB220595FB4001F6E16 /* MyConsultDetailsViewController.swift */; };
+		FA6E8FB620595FC9001F6E16 /* MyConsultDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E8FB520595FC9001F6E16 /* MyConsultDetailsViewModel.swift */; };
+		FA6E8FB720595FC9001F6E16 /* MyConsultDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E8FB520595FC9001F6E16 /* MyConsultDetailsViewModel.swift */; };
 		FA7F713A20529181006B1EFF /* BaseMySkinProblemDiagnosisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7F713920529181006B1EFF /* BaseMySkinProblemDiagnosisViewController.swift */; };
 		FA7F713C20529250006B1EFF /* BaseMySkinProblemDiagnosisViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7F713B20529250006B1EFF /* BaseMySkinProblemDiagnosisViewModel.swift */; };
 		FA7F713D20529250006B1EFF /* BaseMySkinProblemDiagnosisViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7F713B20529250006B1EFF /* BaseMySkinProblemDiagnosisViewModel.swift */; };
@@ -351,6 +355,8 @@
 		FA6E8F6B2056CCB6001F6E16 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		FA6E8F6E2056CE87001F6E16 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		FA6E8FAE2056D66C001F6E16 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		FA6E8FB220595FB4001F6E16 /* MyConsultDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyConsultDetailsViewController.swift; sourceTree = "<group>"; };
+		FA6E8FB520595FC9001F6E16 /* MyConsultDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyConsultDetailsViewModel.swift; sourceTree = "<group>"; };
 		FA7F713920529181006B1EFF /* BaseMySkinProblemDiagnosisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMySkinProblemDiagnosisViewController.swift; sourceTree = "<group>"; };
 		FA7F713B20529250006B1EFF /* BaseMySkinProblemDiagnosisViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMySkinProblemDiagnosisViewModel.swift; sourceTree = "<group>"; };
 		FA9760D5203AFBD200242255 /* LoginResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseModel.swift; sourceTree = "<group>"; };
@@ -596,6 +602,7 @@
 				788C3211204E88A00078A983 /* MyConsultsCalendar */,
 				FA6130C420500D9500731495 /* MyConsultsConfirmBooking */,
 				FA6130CF2050234100731495 /* MyConsultsThankyou */,
+				FA6E8FB120595F79001F6E16 /* MyConsultDetails */,
 				FA3326642040350400657C8A /* Profile */,
 			);
 			path = Dashboard;
@@ -695,6 +702,15 @@
 				782646F92057D49E00F79FB7 /* SkinProblems+CoreDataProperties.swift */,
 			);
 			path = DBModels;
+			sourceTree = "<group>";
+		};
+		FA6E8FB120595F79001F6E16 /* MyConsultDetails */ = {
+			isa = PBXGroup;
+			children = (
+				FA6E8FB520595FC9001F6E16 /* MyConsultDetailsViewModel.swift */,
+				FA6E8FB220595FB4001F6E16 /* MyConsultDetailsViewController.swift */,
+			);
+			path = MyConsultDetails;
 			sourceTree = "<group>";
 		};
 		FA9760D7203B0DF000242255 /* Extensions */ = {
@@ -1258,6 +1274,7 @@
 				78B9E53C203C4CD70054CAD3 /* LoginResponseModel.swift in Sources */,
 				782647402058016B00F79FB7 /* SkinProblem+Extensions.swift in Sources */,
 				78C205D62045A65C00F8E407 /* SkinProblemTableCellViewModel.swift in Sources */,
+				FA6E8FB420595FB4001F6E16 /* MyConsultDetailsViewController.swift in Sources */,
 				FA6E8F602056BFDA001F6E16 /* SetupWizard2ViewModel.swift in Sources */,
 				FA3326B720441C8500657C8A /* PasswordProgressBarView.swift in Sources */,
 				7826472A205800FB00F79FB7 /* DoctorNotes+CoreDataClass.swift in Sources */,
@@ -1297,6 +1314,7 @@
 				FAF2CEC9204D574F0001EEAB /* MyConsultTableViewCellViewModel.swift in Sources */,
 				FA3326672040351500657C8A /* ProfileViewController.swift in Sources */,
 				78264738205800FB00F79FB7 /* MedicalHistory+CoreDataClass.swift in Sources */,
+				FA6E8FB720595FC9001F6E16 /* MyConsultDetailsViewModel.swift in Sources */,
 				FA6130C1204D9A0600731495 /* Date+Extensions.swift in Sources */,
 				FA3326CB20441C8500657C8A /* GrayLabel.swift in Sources */,
 				FA3326C720441C8500657C8A /* TitleLabel.swift in Sources */,
@@ -1376,6 +1394,7 @@
 				782647132057D49E00F79FB7 /* MedicalHistory+CoreDataProperties.swift in Sources */,
 				FA3326B220441C8500657C8A /* PasswordTextField.swift in Sources */,
 				7826473F2058016B00F79FB7 /* SkinProblem+Extensions.swift in Sources */,
+				FA6E8FB320595FB4001F6E16 /* MyConsultDetailsViewController.swift in Sources */,
 				FA6E8F5F2056BFDA001F6E16 /* SetupWizard2ViewModel.swift in Sources */,
 				782647052057D49E00F79FB7 /* DoctorNotes+CoreDataProperties.swift in Sources */,
 				78C205D52045A65C00F8E407 /* SkinProblemTableCellViewModel.swift in Sources */,
@@ -1415,6 +1434,7 @@
 				78FFF02A20496E240013240D /* MedicalHistoryViewControler.swift in Sources */,
 				FAD6ADB720445EB20050C1A9 /* AddPhotoTableViewCell.swift in Sources */,
 				FAF2CEC8204D574F0001EEAB /* MyConsultTableViewCellViewModel.swift in Sources */,
+				FA6E8FB620595FC9001F6E16 /* MyConsultDetailsViewModel.swift in Sources */,
 				FA3326662040351500657C8A /* ProfileViewController.swift in Sources */,
 				FA6130C0204D9A0600731495 /* Date+Extensions.swift in Sources */,
 				FA3326CA20441C8500657C8A /* GrayLabel.swift in Sources */,

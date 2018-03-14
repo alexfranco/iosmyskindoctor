@@ -8,9 +8,7 @@
 
 import Foundation
 import UIKit
-
-import Foundation
-import UIKit
+import CoreData
 
 class MyConsultsViewController: BindingViewController {
 	
@@ -79,6 +77,13 @@ class MyConsultsViewController: BindingViewController {
 		viewModelCast.selectedSegmented = MyConsultsViewModel.ConsultSegmentedEnum(rawValue: self.segmentedControl.selectedSegmentIndex)!
 	}
 	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if segue.identifier == Segues.goToMyConsultDetails {
+			if let nc = segue.destination as? UINavigationController, let dest = nc.viewControllers.first as? MyConsultDetailsViewController, let objectID = sender as? NSManagedObjectID {
+				dest.initViewModel(viewModel: MyConsultDetailsViewModel(modelId: objectID))
+			}
+		}
+	}
 }
 
 extension MyConsultsViewController: UITableViewDelegate, UITableViewDataSource {
@@ -118,7 +123,7 @@ extension MyConsultsViewController: UITableViewDelegate, UITableViewDataSource {
 		headerView.textLabel?.textColor = viewModelCast.getHeaderTextColor(section: section)
 		headerView.textLabel?.font = AppStyle.consultTableSectionTextFont
 	}
-	
+		
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: CellId.myConsultTableViewCellId) as! MyConsultTableViewCell
 		
@@ -127,4 +132,12 @@ extension MyConsultsViewController: UITableViewDelegate, UITableViewDataSource {
 		
 		return cell
 	}
+	
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		tableView.deselectRow(at: indexPath, animated: true)
+		
+		let viewModel = viewModelCast.getItemAtIndexPath(indexPath: indexPath)
+		performSegue(withIdentifier: Segues.goToMyConsultDetails, sender: viewModel.objectID)
+	}
+
 }

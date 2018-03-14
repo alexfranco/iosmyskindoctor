@@ -20,14 +20,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XGW-ax-xgg">
-                                <rect key="frame" x="20" y="132" width="335" height="466"/>
+                                <rect key="frame" x="0.0" y="132" width="375" height="486"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyConsultTableViewCellId" rowHeight="91" id="Jc6-9d-6e4" customClass="MyConsultTableViewCell" customModule="MySkinDoctor" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="335" height="91"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="91"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jc6-9d-6e4" id="VjB-FQ-G0Z">
-                                            <rect key="frame" x="0.0" y="0.0" width="335" height="90.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="90.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Skin Problem" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fom-sM-JPa" customClass="TitleLabel" customModule="MySkinDoctor" customModuleProvider="target">
@@ -104,11 +104,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="10g-25-XVF" firstAttribute="trailing" secondItem="8pX-cx-JOp" secondAttribute="trailing" constant="20" id="15f-hU-cFL"/>
-                            <constraint firstItem="10g-25-XVF" firstAttribute="trailing" secondItem="XGW-ax-xgg" secondAttribute="trailing" constant="20" id="XFC-WD-6KR"/>
+                            <constraint firstItem="10g-25-XVF" firstAttribute="trailing" secondItem="XGW-ax-xgg" secondAttribute="trailing" id="XFC-WD-6KR"/>
                             <constraint firstItem="8pX-cx-JOp" firstAttribute="top" secondItem="10g-25-XVF" secondAttribute="top" constant="20" id="dOX-8r-37J"/>
-                            <constraint firstItem="XGW-ax-xgg" firstAttribute="leading" secondItem="10g-25-XVF" secondAttribute="leading" constant="20" id="f7D-Sd-xLX"/>
+                            <constraint firstItem="XGW-ax-xgg" firstAttribute="leading" secondItem="10g-25-XVF" secondAttribute="leading" id="f7D-Sd-xLX"/>
                             <constraint firstItem="XGW-ax-xgg" firstAttribute="top" secondItem="8pX-cx-JOp" secondAttribute="bottom" constant="20" id="jMi-9f-FmQ"/>
-                            <constraint firstItem="10g-25-XVF" firstAttribute="bottom" secondItem="XGW-ax-xgg" secondAttribute="bottom" constant="20" id="mUp-lG-2w4"/>
+                            <constraint firstItem="10g-25-XVF" firstAttribute="bottom" secondItem="XGW-ax-xgg" secondAttribute="bottom" id="mUp-lG-2w4"/>
                             <constraint firstItem="8pX-cx-JOp" firstAttribute="leading" secondItem="10g-25-XVF" secondAttribute="leading" constant="20" id="oAg-B3-PXT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="10g-25-XVF"/>
@@ -123,6 +123,7 @@
                     <connections>
                         <outlet property="segmentedControl" destination="8pX-cx-JOp" id="ll9-yX-QEX"/>
                         <outlet property="tableView" destination="XGW-ax-xgg" id="Mol-nf-n38"/>
+                        <segue destination="H33-FP-GZa" kind="presentation" identifier="goToMyConsultDetails" id="Wq3-0u-Q1G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hQp-lU-Baw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -621,13 +622,21 @@
             </objects>
             <point key="canvasLocation" x="2856" y="-349"/>
         </scene>
+        <!--ConsultDetailsNavigationController-->
+        <scene sceneID="5S5-vE-f2d">
+            <objects>
+                <viewControllerPlaceholder storyboardName="BookConsult" referencedIdentifier="ConsultDetailsNavigationController" id="H33-FP-GZa" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gxs-Zs-J0i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3084" y="511"/>
+        </scene>
         <!--BookAConsultNavigationBar-->
         <scene sceneID="baT-4j-aTJ">
             <objects>
                 <viewControllerPlaceholder storyboardIdentifier="BookAConsultNavigationBar" storyboardName="BookConsult" referencedIdentifier="BookAConsultNavigationBar" id="xmv-mi-Ftn" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="66i-9c-yRk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3049" y="398"/>
+            <point key="canvasLocation" x="3033" y="103"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wxh-xY-23Y">

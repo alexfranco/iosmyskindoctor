@@ -60,3 +60,14 @@
 "bookaconsult_prebooking" = "Pre-booking information";
 "bookaconsult_doctor_response" = "A doctor will respond whitin 72 hours with:\n\n- A diagnoses\n\n- A treatmen plan\n\n- Supporting patient advice\n\n\n This will be copied to your GP unless you have withheld permision\n\n\n";
 
+
+"booking_cancel_confirm_title" = "Cancel Appointment";
+"booking_cancel_confirm_message" = "Are you sure you want to cancel this appointment? There is a cancellation fee of %@ credits.";
+
+"booking_cancel_error_title" = "Cancellation Error";
+"booking_cancel_error_message" = "There was a problem cancelling the appointment. Please try again later.";
+
+"booking_cancel_success_title" = "Appointment Cancelled";
+"booking_cancel_success_message" = "Your appointment with %@ has been cancelled.";
+"booking_cancel_success_generic_message" = "Your appointment has been cancelled.";
+

@@ -56,24 +56,6 @@ class DataController {
 		
 		return nil
 	}
-//	
-//	static func fetch<T: NSManagedObject>(type: T.Type, managedObjectId: NSManagedObjectID) -> T? {
-//		let entityName = String(describing: type)
-//		
-//		let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
-//		request.predicate = NSPredicate(format: "SELF = %@", managedObjectId)
-//		
-//		do {
-//			let result = try CoreDataStack.managedObjectContext.fetch(request)
-//			return result as? T
-//			
-//		} catch {
-//			print("fetchAll Failed")
-//		}
-//		
-//		return nil
-//	}
-	
 	
 	static func getManagedObject(managedObjectId: NSManagedObjectID) -> NSManagedObject {
 		return  CoreDataStack.managedObjectContext.object(with: managedObjectId)
@@ -84,6 +66,15 @@ class DataController {
 			if managedObject.managedObjectContext == nil {
 				addEntityToCurrentContext(managedObject: managedObject)
 			}
+			try CoreDataStack.managedObjectContext.save()
+		} catch let error {
+			print("saveEntity error \(error.localizedDescription)")
+		}
+	}
+	
+	static func deleteEntity(managedObject: NSManagedObject) {
+		do {
+			CoreDataStack.managedObjectContext.delete(managedObject)
 			try CoreDataStack.managedObjectContext.save()
 		} catch let error {
 			print("saveEntity error \(error.localizedDescription)")

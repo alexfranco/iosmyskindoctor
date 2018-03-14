@@ -79,7 +79,7 @@ class MyConsultsViewModel: BaseViewModel {
 		var sectionItems = [Consultation]()
 		
 		// loop through the testArray to get the items for this sections's date
-		for model in allItems {
+		for model in getItems(consultSegmentedEnum: selectedSegmented) {
 			let dateString = (model.appointmentDate! as Date).ordinalMonthAndYear().uppercased()
 
 			// if the item's date equals the section's date then add it
@@ -102,12 +102,23 @@ class MyConsultsViewModel: BaseViewModel {
 		}
 	}
 	
+	private func getItems(consultSegmentedEnum: ConsultSegmentedEnum) -> [Consultation] {
+		switch consultSegmentedEnum {
+		case .all:
+			return allItems
+		case .upcoming:
+			return upcomingItems
+		case .history:
+			return historyItems
+		}
+	}
+	
 	func getNumberOfSections() -> Int {
 		return getSectionsInTable(consultSegmentedEnum: selectedSegmented).count
 	}
 	
 	func getSectionTitle(section: Int) -> String {
-		return  getSectionsInTable(consultSegmentedEnum: selectedSegmented)[section]
+		return getSectionsInTable(consultSegmentedEnum: selectedSegmented)[section]
 	}
 	
 	func getDataSourceCount(section: Int) -> Int {
@@ -117,6 +128,16 @@ class MyConsultsViewModel: BaseViewModel {
 	func getItemAtIndexPath(indexPath: IndexPath) -> Consultation {
 		var models = getSectionItems(section: indexPath.section)
 		return models[indexPath.row]
+	}
+	
+	func isBeforeConsultation(indexPath: IndexPath) -> Bool {
+		let model = getItemAtIndexPath(indexPath: indexPath)
+		
+		let now = Date()
+		if let appointmentDate = model.appointmentDate as Date? {
+			return appointmentDate > now
+		}
+		return false
 	}
 	
 	func getHeaderBackgroundColor(section: Int) -> UIColor {

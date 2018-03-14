@@ -29,6 +29,8 @@ struct BaseColors {
 	static var ice: UIColor { return UIColor(red: 239.0 / 255.0, green: 1.0, blue: 242.0 / 255.0, alpha: 1.0) }
 	
 	static var formGrey: UIColor { return UIColor(red: 210.0 / 255.0, green: 210.0 / 255.0, blue: 210.0 / 255.0, alpha: 1.0) }
+	
+	static var tableViewGrey: UIColor { return UIColor(red: 250.0 / 255.0, green: 250.0 / 255.0, blue: 250.0 / 255.0, alpha: 1.0) }
 }
 
 struct AppColors {
@@ -157,7 +159,6 @@ struct AppStyle {
 	
 	static let consultCalendarSelectedDayBackgroundColor = AppColors.primaryColor
 	static let consultCalendarSelectedDayTextColor = UIColor.white
-	
 
 	// Consult Confirm
 	static let consultConfirmHighligthedLabelTextColor = AppColors.secondTabColor
@@ -169,7 +170,10 @@ struct AppStyle {
 	static let consultThankYouAppointmentViewBackgroundColor = BaseColors.white
 	static let consultThankYouTextColor = AppColors.secudaryColor
 	
-		
+	// MyConsultTableViewCellView
+	static let myConsultTableViewCellUpcomingBackground = UIColor.white
+	static let myConsultTableViewCellHistoryBackground = BaseColors.tableViewGrey
+	
 	// MyProfile TabBar	
 	static let profileBarTitleColor = AppColors.thirdTabColor
 	

@@ -16,9 +16,9 @@ class MyConsultTableViewCellViewModel: BaseViewModel {
 	var time: String?
 	var qualification: String?
 	var dateFormatString = "HH:ss"
-	
+	var appointmentDate: Date?
 	var isInThePast = false
-	
+
 	required init(model: Consultation) {
 		super.init()
 		self.model = model
@@ -35,7 +35,7 @@ class MyConsultTableViewCellViewModel: BaseViewModel {
 				self.displayName  = "-"
 			}
 			
-			qualification = doctor.qualifications ?? "-"
+			qualification = doctor.qualifications?.uppercased() ?? "-"
 		}
 		
 		if let appointmentDate = model.appointmentDate as Date? {
@@ -43,7 +43,21 @@ class MyConsultTableViewCellViewModel: BaseViewModel {
 			df.dateFormat = dateFormatString
 			self.time = df.string(from: appointmentDate)
 			isInThePast = appointmentDate < Date()
+			
+			self.appointmentDate = appointmentDate
 		}
+	}
+	
+	func tableViewCellBackgroundColor() -> UIColor {
+		return isBeforeConsultation() ? AppStyle.myConsultTableViewCellUpcomingBackground : AppStyle.myConsultTableViewCellHistoryBackground
+	}
+	
+	private func isBeforeConsultation() -> Bool {
+		let now = Date()
+		if let appointmentDate = appointmentDate {
+			return appointmentDate > now
+		}
+		return false
 	}
 	
 }

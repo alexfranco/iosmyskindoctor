@@ -24,6 +24,7 @@ class MyConsultTableViewCell: UITableViewCell {
 	}
 	
 	func configure(withViewModel viewModel: MyConsultTableViewCellViewModel) {
+		contentView.backgroundColor = viewModel.tableViewCellBackgroundColor()
 		nameLabel.text = viewModel.displayName
 		timeLabel.text = viewModel.time
 		timeLabel.setRounded()
