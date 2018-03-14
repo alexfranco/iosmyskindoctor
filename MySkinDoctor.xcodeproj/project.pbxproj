@@ -241,8 +241,6 @@
 		FAEC573C203DBEAE00D1A0AE /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEC573A203DBEAE00D1A0AE /* LoginViewModel.swift */; };
 		FAF2CEB6204D55850001EEAB /* MyConsultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF2CEB5204D55840001EEAB /* MyConsultsViewController.swift */; };
 		FAF2CEB7204D55850001EEAB /* MyConsultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF2CEB5204D55840001EEAB /* MyConsultsViewController.swift */; };
-		FAF2CEBE204D564C0001EEAB /* ConsultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF2CEBD204D564C0001EEAB /* ConsultModel.swift */; };
-		FAF2CEBF204D564C0001EEAB /* ConsultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF2CEBD204D564C0001EEAB /* ConsultModel.swift */; };
 		FAF2CEC3204D56E00001EEAB /* MyConsultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF2CEC2204D56E00001EEAB /* MyConsultTableViewCell.swift */; };
 		FAF2CEC4204D56E00001EEAB /* MyConsultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF2CEC2204D56E00001EEAB /* MyConsultTableViewCell.swift */; };
 		FAF2CEC8204D574F0001EEAB /* MyConsultTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF2CEC7204D574F0001EEAB /* MyConsultTableViewCellViewModel.swift */; };
@@ -392,7 +390,6 @@
 		FAE733F720344B2800898E65 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		FAEC573A203DBEAE00D1A0AE /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		FAF2CEB5204D55840001EEAB /* MyConsultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyConsultsViewController.swift; sourceTree = "<group>"; };
-		FAF2CEBD204D564C0001EEAB /* ConsultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultModel.swift; sourceTree = "<group>"; };
 		FAF2CEC2204D56E00001EEAB /* MyConsultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyConsultTableViewCell.swift; sourceTree = "<group>"; };
 		FAF2CEC7204D574F0001EEAB /* MyConsultTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyConsultTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		FAF2CECC204D59E40001EEAB /* MyConsultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyConsultsViewModel.swift; sourceTree = "<group>"; };
@@ -890,7 +887,6 @@
 		FAF2CEB4204D55220001EEAB /* MyConsults */ = {
 			isa = PBXGroup;
 			children = (
-				FAF2CEBB204D55D30001EEAB /* Models */,
 				FAF2CEBA204D55CC0001EEAB /* Cells */,
 				FAF2CEBC204D55EC0001EEAB /* ViewModels */,
 				FAF2CEB5204D55840001EEAB /* MyConsultsViewController.swift */,
@@ -904,14 +900,6 @@
 				FAF2CEC2204D56E00001EEAB /* MyConsultTableViewCell.swift */,
 			);
 			path = Cells;
-			sourceTree = "<group>";
-		};
-		FAF2CEBB204D55D30001EEAB /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				FAF2CEBD204D564C0001EEAB /* ConsultModel.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		FAF2CEBC204D55EC0001EEAB /* ViewModels */ = {
@@ -1214,7 +1202,6 @@
 				78264731205800FB00F79FB7 /* Diagnose+CoreDataProperties.swift in Sources */,
 				FA332657204029BD00657C8A /* MySkinProblemsViewModel.swift in Sources */,
 				FA6E8F632056C239001F6E16 /* UIButton+Border.swift in Sources */,
-				FAF2CEBF204D564C0001EEAB /* ConsultModel.swift in Sources */,
 				FADC3350204706E70065A7EB /* SkinProblemLocationViewModel.swift in Sources */,
 				FAF2CECE204D59E40001EEAB /* MyConsultsViewModel.swift in Sources */,
 				78C205E32045AA9900F8E407 /* AddSkinProblemsViewModel.swift in Sources */,
@@ -1333,7 +1320,6 @@
 				FA332656204029BD00657C8A /* MySkinProblemsViewModel.swift in Sources */,
 				FADC334F204706E70065A7EB /* SkinProblemLocationViewModel.swift in Sources */,
 				FA6E8F622056C239001F6E16 /* UIButton+Border.swift in Sources */,
-				FAF2CEBE204D564C0001EEAB /* ConsultModel.swift in Sources */,
 				782647122057D49E00F79FB7 /* MedicalHistory+CoreDataClass.swift in Sources */,
 				78C205E22045AA9900F8E407 /* AddSkinProblemsViewModel.swift in Sources */,
 				FAF2CECD204D59E40001EEAB /* MyConsultsViewModel.swift in Sources */,

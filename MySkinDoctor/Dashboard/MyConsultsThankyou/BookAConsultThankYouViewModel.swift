@@ -8,14 +8,15 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 class BookAConsultThankYouViewModel: BaseViewModel {
 	
-	var model: ConsultModel!
+	var model: Consultation!
 	
 	var doctorNameText: String {
 		get {
-			if let firstName = model.firstName, let lastName = model.lastName {
+			if let doctor = model.doctor, let firstName = doctor.firstName, let lastName = doctor.lastName {
 				return firstName + " " + lastName
 			} else {
 				return  "-"
@@ -25,13 +26,17 @@ class BookAConsultThankYouViewModel: BaseViewModel {
 	
 	var profileImage: UIImage {
 		get {
-			return (model.profileImage == nil ? UIImage(named: "logo") : model.profileImage)!
+			if let doctor = model.doctor, let profilePicture = doctor.profilePicture as? UIImage {
+				return profilePicture
+			} else {
+				return UIImage(named: "logo")!
+			}
 		}
 	}
 	
 	var qualificationsText: String {
 		get {
-			return model.qualification == nil ? "-" : model.qualification!
+			return model.doctor!.qualifications ?? "-"
 		}
 	}
 	
@@ -41,14 +46,13 @@ class BookAConsultThankYouViewModel: BaseViewModel {
 		}
 	}
 	
-	required init(model: ConsultModel) {
+	required init(modelId: NSManagedObjectID) {
 		super.init()
-		self.model = model
+		self.model = DataController.getManagedObject(managedObjectId: modelId) as! Consultation
 	}
 	
-	
 	func dateText() -> String {
-		return model.date.ordinalMonthAndYear()
+		return (model.appointmentDate! as Date).ordinalMonthAndYear()
 	}
 		
 	func timeText() -> String {
@@ -56,7 +60,7 @@ class BookAConsultThankYouViewModel: BaseViewModel {
 		df.dateFormat = "HH.ss a"
 		df.amSymbol = "am"
 		df.pmSymbol = "pm"
-		return df.string(from: model.date)
+		return df.string(from: model.appointmentDate! as Date)
 	}
 		
 }

@@ -92,8 +92,8 @@ class BookAConsultCalendarViewController: BindingViewController {
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == Segues.goToConfirmConsult {
-			if let dest = segue.destination as? BookAConsultConfirmViewController, let model = viewModelCast.model {
-				dest.initViewModel(viewModel: BookAConsultConfirmViewModel(model:  model))
+			if let dest = segue.destination as? BookAConsultConfirmViewController {
+				dest.initViewModel(viewModel: BookAConsultConfirmViewModel(selectedDate: viewModelCast.selectedDate))
 			}
 		}
 	}

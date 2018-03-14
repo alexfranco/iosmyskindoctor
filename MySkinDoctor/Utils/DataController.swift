@@ -56,9 +56,27 @@ class DataController {
 		
 		return nil
 	}
+//	
+//	static func fetch<T: NSManagedObject>(type: T.Type, managedObjectId: NSManagedObjectID) -> T? {
+//		let entityName = String(describing: type)
+//		
+//		let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+//		request.predicate = NSPredicate(format: "SELF = %@", managedObjectId)
+//		
+//		do {
+//			let result = try CoreDataStack.managedObjectContext.fetch(request)
+//			return result as? T
+//			
+//		} catch {
+//			print("fetchAll Failed")
+//		}
+//		
+//		return nil
+//	}
+	
 	
 	static func getManagedObject(managedObjectId: NSManagedObjectID) -> NSManagedObject {
-		return CoreDataStack.managedObjectContext.object(with: managedObjectId)
+		return  CoreDataStack.managedObjectContext.object(with: managedObjectId)
 	}
 	
 	static func saveEntity(managedObject: NSManagedObject) {

@@ -23,5 +23,6 @@ extension Doctor {
     @NSManaged public var qualifications: String?
     @NSManaged public var diagnose: Diagnose?
     @NSManaged public var skinProblems: SkinProblems?
+    @NSManaged public var consultation: Consultation?
 
 }

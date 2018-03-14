@@ -19,6 +19,6 @@ extension Consultation {
 
     @NSManaged public var appointmentDate: NSDate?
     @NSManaged public var status: Int16
-    @NSManaged public var doctor: Consultation?
+    @NSManaged public var doctor: Doctor?
 
 }

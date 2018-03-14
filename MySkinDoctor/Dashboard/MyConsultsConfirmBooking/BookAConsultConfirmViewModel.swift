@@ -7,19 +7,21 @@
 //
 
 import Foundation
+import CoreData
 
 class BookAConsultConfirmViewModel: BaseViewModel {
 	
-	var model: ConsultModel!
+	var selectedDate: Date!
+	var modelId: NSManagedObjectID?
 
-	required init(model: ConsultModel) {
+	required init(selectedDate: Date) {
 		super.init()
-		self.model = model
+		self.selectedDate = selectedDate
 	}
 	
 	var dateLabelText: String {
 		get {
-			return model.date.ordinalMonthAndYear()
+			return selectedDate.ordinalMonthAndYear()
 		}
 	}
 	
@@ -29,15 +31,25 @@ class BookAConsultConfirmViewModel: BaseViewModel {
 			df.dateFormat = "HH:ss a"
 			df.amSymbol = "AM"
 			df.pmSymbol = "PM"
-			return df.string(from: model.date)
+			return df.string(from: selectedDate)
 		}
 	}
 	
 	func saveModel() {
-		// TODO web api
-		self.model.firstName = "Dr Jane"
-		self.model.lastName = "Doe"
-		self.model.qualification = "A lot of qualifications"		
+		let consultation = DataController.createNew(type: Consultation.self)
+		consultation.appointmentDate = selectedDate! as NSDate
+		
+		let doctor = DataController.createNew(type: Doctor.self)
+		doctor.firstName = "Dr Jane"
+		doctor.lastName = "Doe"
+		doctor.qualifications = "A lot of qualifications"
+		
+		DataController.saveEntity(managedObject: doctor)
+		consultation.doctor = doctor
+		DataController.saveEntity(managedObject: consultation)
+		
+		modelId = consultation.objectID
+					
 		goNextSegue!()
 	}
 	

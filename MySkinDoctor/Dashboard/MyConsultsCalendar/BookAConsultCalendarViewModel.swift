@@ -10,8 +10,6 @@ import Foundation
 
 class BookAConsultCalendarViewModel: BaseViewModel {
 	
-	var model: ConsultModel?
-	
 	var selectedDate = Date() {
 		didSet {
 			selectedDateUpdated!(selectedDate)
@@ -26,8 +24,7 @@ class BookAConsultCalendarViewModel: BaseViewModel {
 		}
 	}
 	
-	func saveModel() {
-		model = ConsultModel(profileImage: nil, firstName: nil, lastName: nil, date: selectedDate, qualification: nil)
+	func saveModel() {		
 		goNextSegue!()
 	}
 

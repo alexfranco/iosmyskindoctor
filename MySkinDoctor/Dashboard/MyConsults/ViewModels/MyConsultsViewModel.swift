@@ -30,27 +30,25 @@ class MyConsultsViewModel: BaseViewModel {
 		}
 	}
 	
-	var allItems = [ConsultModel]()
-	var upcomingItems = [ConsultModel]()
-	var historyItems = [ConsultModel]()
+	var allItems = [Consultation]()
+	var upcomingItems = [Consultation]()
+	var historyItems = [Consultation]()
 	
 	override init() {
 		super.init()
-		
-		// Generate tests
-		allItems = [ConsultModel(profileImage: nil, firstName: "Dr Yellow", lastName: "Kun", date: Date().adjust(.day, offset: -6), qualification: "Past"),
-					ConsultModel(profileImage: nil, firstName: "Dr Red", lastName: "Sama", date: Date().adjust(.day, offset: 6), qualification: "Upcoming")]
 		
 		refreshData()
 	}
 	
 	func refreshData() {
+		allItems = DataController.fetchAll(type: Consultation.self)!
+		
 		allItems.sort { (modelA, modelB) -> Bool in
-			return modelA.date > modelB.date
+			return modelA.appointmentDate! as Date > modelB.appointmentDate! as Date
 		}
 		
-		upcomingItems = allItems.filter { (model) -> Bool in model.date >= Date() }
-		historyItems = allItems.filter { (model) -> Bool in model.date < Date() }
+		upcomingItems = allItems.filter { (model) -> Bool in (model.appointmentDate! as Date) >= Date() }
+		historyItems = allItems.filter { (model) -> Bool in (model.appointmentDate! as Date) < Date() }
 		
 		sectionsInTableAll = createDateSections(models: allItems)
 		sectionsInTableUpcoming = createDateSections(models: upcomingItems)
@@ -59,11 +57,11 @@ class MyConsultsViewModel: BaseViewModel {
 		if refresh != nil { refresh!() }
 	}
 	
-	func createDateSections(models: [ConsultModel]) -> [String] {
+	func createDateSections(models: [Consultation]) -> [String] {
 		var sections = [String]()
 
 		for model in models {
-			let dateString = model.date.ordinalMonthAndYear().uppercased()
+			let dateString = (model.appointmentDate! as Date).ordinalMonthAndYear().uppercased()
 			
 			// create sections NSSet so we can use 'containsObject'
 			let sectionsSet: NSSet = NSSet(array: sections)
@@ -77,12 +75,12 @@ class MyConsultsViewModel: BaseViewModel {
 		return sections
 	}
 	
-	func getSectionItems(section: Int) -> [ConsultModel] {
-		var sectionItems = [ConsultModel]()
+	func getSectionItems(section: Int) -> [Consultation] {
+		var sectionItems = [Consultation]()
 		
 		// loop through the testArray to get the items for this sections's date
 		for model in allItems {
-			let dateString = model.date.ordinalMonthAndYear().uppercased()
+			let dateString = (model.appointmentDate! as Date).ordinalMonthAndYear().uppercased()
 
 			// if the item's date equals the section's date then add it
 			if dateString == getSectionsInTable(consultSegmentedEnum: selectedSegmented) [section] {
@@ -116,22 +114,17 @@ class MyConsultsViewModel: BaseViewModel {
 		return getSectionItems(section: section).count
 	}
 	
-	func getItemAtIndexPath(indexPath: IndexPath) -> ConsultModel {
+	func getItemAtIndexPath(indexPath: IndexPath) -> Consultation {
 		var models = getSectionItems(section: indexPath.section)
 		return models[indexPath.row]
 	}
 	
 	func getHeaderBackgroundColor(section: Int) -> UIColor {
-		return (getSectionItems(section: section).first?.date)! > Date() ? AppStyle.consultTableViewHeaderBGColor : AppStyle.consultTableViewHeaderBGColorDisabled
+		return (getSectionItems(section: section).first?.appointmentDate)! as Date > Date() ? AppStyle.consultTableViewHeaderBGColor : AppStyle.consultTableViewHeaderBGColorDisabled
 	}
 	
 	func getHeaderTextColor(section: Int) -> UIColor {
-		return (getSectionItems(section: section).first?.date)! > Date() ? AppStyle.consultTableViewHeaderTextColor : AppStyle.consultTableViewHeaderTextColorDisabled
-	}
-	
-	func appendNewModel(model: ConsultModel) {
-		allItems.append(model)
-		refreshData()
+		return (getSectionItems(section: section).first?.appointmentDate)! as Date > Date() ? AppStyle.consultTableViewHeaderTextColor : AppStyle.consultTableViewHeaderTextColorDisabled
 	}
 	
 }

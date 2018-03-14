@@ -55,8 +55,8 @@ class BookAConsultConfirmViewController: BindingViewController {
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == Segues.goToThankYouViewController {
-			if let dest = segue.destination as? BookAConsultThankYouViewController, let model = viewModelCast.model {
-				dest.initViewModel(viewModel: BookAConsultThankYouViewModel(model:  model))
+			if let dest = segue.destination as? BookAConsultThankYouViewController, let modelId = viewModelCast.modelId {
+				dest.initViewModel(viewModel: BookAConsultThankYouViewModel(modelId:  modelId))
 			}
 		}
 	}
