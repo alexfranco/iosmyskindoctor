@@ -13,7 +13,7 @@ class SetupWizard3ViewModel: BaseViewModel {
 	var gpName = ""
 	var gpAccessCode = ""
 	var gpAddressLine = ""
-	var gpPostCode = ""
+	var gpPostcode = ""
 	var isPermisionEnabled = false
 	
 	override init() {		
@@ -21,6 +21,16 @@ class SetupWizard3ViewModel: BaseViewModel {
 	}
 	
 	func saveModel() {
+		let profile = DataController.createUniqueEntity(type: Profile.self)
+		profile.gpName = gpName
+		profile.gpAccessCode = gpAccessCode
+		profile.gpAddressLine = gpAddressLine
+		profile.gpPostcode = gpPostcode
+		profile.isPermisionEnabled = isPermisionEnabled
+		profile.profileFilled = true
+		
+		DataController.saveEntity(managedObject: profile)
+		
 		goNextSegue!()
 	}
 }

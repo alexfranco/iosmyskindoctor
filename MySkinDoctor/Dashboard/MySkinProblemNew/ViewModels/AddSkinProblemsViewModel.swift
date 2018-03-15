@@ -152,7 +152,8 @@ class AddSkinProblemsViewModel: BaseViewModel {
 	// MARK Init
 	
 	override init() {
-		model = DataController.createNew(type: SkinProblems.self)
+		// temporal object
+		model = DataController.disconnectedEntity(type: SkinProblems.self)
 		super.init()
 	}
 	
@@ -264,10 +265,25 @@ class AddSkinProblemsViewModel: BaseViewModel {
 	}
 
 	func saveModel() {
-		model.skinProblemDescription = skinProblemDescription
-		model.diagnose = DataController.createNew(type: Diagnose.self)
-		model.diagnose?.diagnoseStatusEnum = .pending
-		DataController.saveEntity(managedObject: model)
+		
+		let persistentModel = DataController.createNew(type: SkinProblems.self)
+		persistentModel.skinProblemDescription = skinProblemDescription
+		
+		for attachment in (model.attachments?.allObjects)! {
+			let persistentAttachment = DataController.createNew(type: SkinProblemAttachment.self)
+			let attachmentCast = attachment as! SkinProblemAttachment
+			persistentAttachment.attachmentType = attachmentCast.attachmentType
+			persistentAttachment.problemDescription = attachmentCast.problemDescription
+			persistentAttachment.locationType = attachmentCast.locationType
+			persistentAttachment.problemImage = attachmentCast.problemImage
+			persistentModel.addToAttachments(persistentAttachment)
+		}
+		
+		persistentModel.diagnose = DataController.createNew(type: Diagnose.self)
+		persistentModel.diagnose?.diagnoseStatusEnum = .pending
+		
+		DataController.saveEntity(managedObject: persistentModel)
+		
 		goNextSegue!()
 	}
 	

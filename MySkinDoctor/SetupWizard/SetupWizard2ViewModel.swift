@@ -18,6 +18,10 @@ class SetupWizard2ViewModel: BaseViewModel {
 	}
 	
 	func saveModel() {
+		let profile = DataController.createUniqueEntity(type: Profile.self)
+		profile.isNHS = isNHS
+		DataController.saveEntity(managedObject: profile)
+		
 		goNextSegue!()
 	}
 }

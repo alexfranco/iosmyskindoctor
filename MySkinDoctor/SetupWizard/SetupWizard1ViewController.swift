@@ -46,10 +46,7 @@ class SetupWizard1ViewController: FormViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
-		title = "Setup Wizard 1"
-		
-		navigationController?.setBackgroundColorWithoutShadowImage(bgColor: AppStyle.defaultNavigationBarColor, titleColor: AppStyle.defaultNavigationBarTitleColor)
+				navigationController?.setBackgroundColorWithoutShadowImage(bgColor: AppStyle.defaultNavigationBarColor, titleColor: AppStyle.defaultNavigationBarTitleColor)
 		
 		registerForKeyboardReturnKey([firstNameTextField,
 									  lastNameTextField,
@@ -59,6 +56,7 @@ class SetupWizard1ViewController: FormViewController {
 									  ])
 		
 		initViewModel(viewModel: SetupWizard1ViewModel())
+		applyLocalization()
 	}
 	
 	// MARK: Bindings
@@ -80,6 +78,21 @@ class SetupWizard1ViewController: FormViewController {
 		}
 	}
 	
+	func applyLocalization() {
+		title = NSLocalizedString("setup_wizard1_main_vc_title", comment: "")
+		
+		dobTextField.placeholder = NSLocalizedString("date_of_birth", comment: "")
+		phoneTextField.placeholder = NSLocalizedString("mobile_number", comment: "")
+		
+		firstNameTextField.placeholder = NSLocalizedString("first_name", comment: "")
+		lastNameTextField.placeholder = NSLocalizedString("last_name", comment: "")
+		postcodeTextField.placeholder = NSLocalizedString("postcode", comment: "")
+		
+		neverShareLabel.text =  NSLocalizedString("setup_wizard1_will_never_share", comment: "")
+		
+		personalDetailsTitleLabel.text =  NSLocalizedString("setup_wizard1_will_never_share", comment: "")
+	}
+	
 	func showDatePicker() {
 		//Formate Date
 		datePicker.datePickerMode = .date
@@ -87,8 +100,8 @@ class SetupWizard1ViewController: FormViewController {
 		//ToolBar
 		let toolbar = UIToolbar()
 		toolbar.sizeToFit()
-		let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker))
-		let setButton = UIBarButtonItem(title: "Set", style: .plain, target: self, action: #selector(dobPicker))
+		let cancelButton = UIBarButtonItem(title: NSLocalizedString("cancel", comment: ""), style: .plain, target: self, action: #selector(cancelDatePicker))
+		let setButton = UIBarButtonItem(title: NSLocalizedString("set", comment: ""), style: .plain, target: self, action: #selector(dobPicker))
 		let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
 		
 		toolbar.setItems([cancelButton, spaceButton, setButton], animated: false)

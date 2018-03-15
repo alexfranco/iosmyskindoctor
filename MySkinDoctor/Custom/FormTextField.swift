@@ -39,7 +39,7 @@ class FormTextField: LRTextField {
 		didSet {
 			_placeholder = placeholder
 			
-			if originalPlaceholder != nil {
+			if originalPlaceholder == nil {
 				originalPlaceholder = _placeholder
 			}
 		}
@@ -62,13 +62,15 @@ class FormTextField: LRTextField {
 		super.awakeFromNib()
 
 		textColor = BaseColors.warmGrey
-		borderStyle = UITextBorderStyle.roundedRect
+		borderStyle = UITextBorderStyle.line
 		layer.borderWidth = 1
 		layer.borderColor = originalTextFieldBorder.cgColor
 		
 		floatingLabelHeight = 12
 		placeholderActiveColor = originalPlaceholderActiveColor
 		placeholderInactiveColor = originalPlaceholderInactiveColor
+				
+		addLeftPadding()
 	}
 	
 	// MARK: Binding

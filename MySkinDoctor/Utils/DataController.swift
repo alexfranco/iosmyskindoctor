@@ -13,7 +13,7 @@ import UIKit
 class DataController {
 	
 	// Creates a temporal entity
-	static private func disconnectedEntity<T: NSManagedObject>(type: T.Type) -> T {
+	static func disconnectedEntity<T: NSManagedObject>(type: T.Type) -> T {
 		let entityName = String(describing: type)
 		let entity = NSEntityDescription.entity(forEntityName: entityName, in:  CoreDataStack.managedObjectContext)
 		return NSManagedObject(entity: entity!, insertInto: nil) as! T
@@ -28,7 +28,6 @@ class DataController {
 		let entityName = String(describing: type)
 		let entity = NSEntityDescription.entity(forEntityName: entityName, in:  CoreDataStack.managedObjectContext)
 		return NSManagedObject(entity: entity!, insertInto: CoreDataStack.managedObjectContext) as! T
-//		return disconnectedEntity(type: type)
 	}
 	
 	static func createUniqueEntity<T: NSManagedObject>(type: T.Type) -> T {
@@ -57,27 +56,66 @@ class DataController {
 		return nil
 	}
 	
+	static func fetch<T: NSManagedObject>(type: T.Type) -> T? {
+		let entityName = String(describing: type)
+		
+		let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+		
+		do {
+			let result = try CoreDataStack.managedObjectContext.fetch(request)
+			
+			if let first = result.first as? T {
+				return first
+			}		
+			
+		} catch {
+			print("fetch Failed")
+		}
+		
+		return nil
+	}
+	
 	static func getManagedObject(managedObjectId: NSManagedObjectID) -> NSManagedObject {
 		return  CoreDataStack.managedObjectContext.object(with: managedObjectId)
 	}
 	
 	static func saveEntity(managedObject: NSManagedObject) {
 		do {
-			if managedObject.managedObjectContext == nil {
-				addEntityToCurrentContext(managedObject: managedObject)
-			}
-			try CoreDataStack.managedObjectContext.save()
+			try managedObject.managedObjectContext?.save()
 		} catch let error {
 			print("saveEntity error \(error.localizedDescription)")
 		}
 	}
 	
-	static func deleteEntity(managedObject: NSManagedObject) {
-		do {
-			CoreDataStack.managedObjectContext.delete(managedObject)
-			try CoreDataStack.managedObjectContext.save()
-		} catch let error {
-			print("saveEntity error \(error.localizedDescription)")
+	static func deleteEntity<T: NSManagedObject>(type: T.Type) {
+		let moc = CoreDataStack.managedObjectContext
+		let entityName = String(describing: type)
+		let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+		
+		if let results = try? moc.fetch(fetchRequest) {
+			for object in results {
+				moc.delete(object as! NSManagedObject)
+			}
+			CoreDataStack.saveContext()
 		}
+		
+	}
+	
+	static func login(email: String) {
+		let defaults = UserDefaults.standard
+		defaults.set(true, forKey: UserDefaultConsts.isUserLoggedIn)
+	
+		deleteEntity(type: Profile.self)
+		
+		let profile = createUniqueEntity(type: Profile.self)
+		profile.email = email
+		
+		saveEntity(managedObject: profile)
+	}
+	
+	static func logout() {
+		let defaults = UserDefaults.standard
+		defaults.set(false, forKey: UserDefaultConsts.isUserLoggedIn)
+		deleteEntity(type: Profile.self)
 	}
 }

@@ -61,6 +61,7 @@
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="postcode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="profileFilled" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="profileImage" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="town" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="medicalHisttory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MedicalHistory" inverseName="profile" inverseEntity="MedicalHistory" syncable="YES"/>
@@ -86,7 +87,7 @@
         <element name="Doctor" positionX="0" positionY="144" width="128" height="150"/>
         <element name="DoctorNotes" positionX="18" positionY="171" width="128" height="90"/>
         <element name="MedicalHistory" positionX="-27" positionY="126" width="128" height="135"/>
-        <element name="Profile" positionX="-63" positionY="-18" width="128" height="300"/>
+        <element name="Profile" positionX="-63" positionY="-18" width="128" height="315"/>
         <element name="SkinProblemAttachment" positionX="-54" positionY="108" width="128" height="120"/>
         <element name="SkinProblems" positionX="-63" positionY="99" width="128" height="120"/>
     </elements>

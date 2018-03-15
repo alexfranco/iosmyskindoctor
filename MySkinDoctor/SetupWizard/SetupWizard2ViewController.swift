@@ -13,13 +13,12 @@ class SetupWizard2ViewController: FormViewController {
 
 	var viewModelCast: SetupWizard2ViewModel!
 	
+	@IBOutlet weak var nhsOrSelfTitleLabel: UILabel!
 	@IBOutlet weak var nhsButton: UIButton!
 	@IBOutlet weak var selfPayButton: UIButton!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
-		title = "Setup Wizard 2"
 		
 		nhsButton.setTitleColor(AppStyle.wizardNHSButtonColor, for: UIControlState.normal)
 		selfPayButton.setTitleColor(AppStyle.wizardSelfPayButtonColor, for: UIControlState.normal)
@@ -53,5 +52,18 @@ class SetupWizard2ViewController: FormViewController {
 	@IBAction func onSelfPayButtonPressed(_ sender: Any) {
 		viewModelCast.isNHS = false
 		viewModelCast.saveModel()
+	}
+	
+	// MARK: Help
+	
+	func applyLocalization() {
+		title = NSLocalizedString("setup_wizard2_main_vc_title", comment: "")
+		
+		nhsOrSelfTitleLabel.text = NSLocalizedString("setup_wizard2_nhs_or_self_pay_title", comment: "")
+		
+		nhsButton.setTitle(NSLocalizedString("setup_wizard2_nhs", comment: ""), for: .normal)
+		
+		selfPayButton.setTitle(NSLocalizedString("setup_wizard2_self_pay", comment: ""), for: .normal)
+
 	}
 }

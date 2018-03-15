@@ -11,9 +11,11 @@ import UIKit
 
 class MySkinProblemsTableCellViewModel: NSObject {
 	
+	let diagnosedImageName = "diagnosed"
+	let undiagnosedImageName = "undiagnosed"
+	
 	var name: String!
 	var date: String!
-	var isDiagnosed: Bool!
 	var problemDescription: String!
 	var model: SkinProblems!
 	
@@ -25,10 +27,21 @@ class MySkinProblemsTableCellViewModel: NSObject {
 			return
 		}
 		
-		self.name = diagnose.diagnoseStatus.description
+		self.name = diagnose.diagnoseStatusEnum.description
 		self.date = MySkinProblemsTableCellViewModel.getDateFormatted(date: model.date! as Date)
-		self.isDiagnosed = model.isDiagnosed
 		self.problemDescription = model.skinProblemDescription ?? "-"
+	}
+	
+	var diagnoseTextColor: UIColor {
+		return model.isDiagnosed ? AppStyle.mySkinDiagnosedColor : AppStyle.mySkinUndiagnosedColor
+	}
+
+	var tableViewBackground: UIColor {
+		return model.isDiagnosed ? AppStyle.mySkinProblemsDiagnoseTableViewBackground : AppStyle.mySkinProblemsUndiagnoseTableViewBackground
+	}
+
+	var icon : UIImage {
+		return (model.isDiagnosed ? UIImage(named: diagnosedImageName) : UIImage(named: undiagnosedImageName))!
 	}
 	
 	static func getDateFormatted(date: Date) -> String {

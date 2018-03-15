@@ -7,16 +7,44 @@
 */
 
 "no_data_available" = "No data available";
+
+// Common
+"yes" = "Yes";
+"no" = "No";
+"cancel" = "Cancel";
+"set" = "Set";
+"next" = "Next";
+"finish" = "Finish";
+
+// Fields
+
 "email" = "Email";
 "password" = "Password";
+"first_name" = "First Name";
+"last_name" = "Last Name";
+"date_of_birth" = "Date Of Birth";
+"mobile_number" = "Mobile Number";
+"address_line_1" = "Address Line 1";
+"address_line_2" = "Address Line 2";
+"town_city" = "Town/City";
+"postcode" = "Postcode";
+"gp_name" = "GP Name";
+"gp_access_code" = "GP Access Code";
+"gp_address_line" = "GP Address Line";
+"gp_postcode" = "GP Postcode";
 
+// Errors
 "error_email_not_valid" = "The email is invalid";
 "error_password_not_valid" = "Your password must be minimum %d characters long";
+
+// Login
 
 "login_error_generic_title" = "Login Error";
 "login_error_generic_message" = "Unable to log in with provided credentials.";
 "login_error_get_user_profile_failed_message" = "There was an error logging in. Please try again later.";
 "login_error_get_default_category_failed_message" = "There was an error logging in. Please try again later.";
+
+// Registration
 
 "registration_success_title" = "Sign Up";
 "registration_success_message" = "Thanks for signing up to %@. An email has been sent to you, please verify your email address.";
@@ -50,7 +78,7 @@
 "skinproblem_main_vc_title" = "Photo Information";
 
 "myconsults_main_vc_title" = "My Consults";
-"myconsults_no_data" = "You don't have any upcoming consultations. Create a new Skin Problem to continue";
+"myconsults_no_data" = "You don't have any upcoming consultations.\n\n Create a new Skin Problem to continue";
 
 "myconsults_segmented_all" = "All";
 "myconsults_segmented_upcoming" = "Upcoming";
@@ -59,7 +87,6 @@
 "bookaconsult_main_vc_title" = "Book a Consult";
 "bookaconsult_prebooking" = "Pre-booking information";
 "bookaconsult_doctor_response" = "A doctor will respond whitin 72 hours with:\n\n- A diagnoses\n\n- A treatmen plan\n\n- Supporting patient advice\n\n\n This will be copied to your GP unless you have withheld permision\n\n\n";
-
 
 "booking_cancel_confirm_title" = "Cancel Appointment";
 "booking_cancel_confirm_message" = "Are you sure you want to cancel this appointment? There is a cancellation fee of %@ credits.";
@@ -71,3 +98,26 @@
 "booking_cancel_success_message" = "Your appointment with %@ has been cancelled.";
 "booking_cancel_success_generic_message" = "Your appointment has been cancelled.";
 
+"profile_main_vc_title" = "My Profile";
+
+"permisions_switch" = "Permission to contact your GP?";
+"permisions_details" = "When you give us permission to contact your GP, we can share inforamtion about a diagnosis. This is especially handy for private consultations and helps keep all your important records in one place.";
+
+"profile_personal_details" = "Personal Details";
+"profile_personal_change_password" = "Change Password";
+"profile_personal_contact_details" = "Contact Details";
+"profile_personal_gp_information" = "GP Information";
+"profile_personal_logout" = "Logout";
+
+"setup_wizard1_main_vc_title" = "Setup Wizard 1";
+
+"setup_wizard1_your_personal_details" = "Your Personal Details";
+"setup_wizard1_will_never_share" = "We will never share any of your personal details";
+
+"setup_wizard2_main_vc_title" = "Setup Wizard 2";
+
+"setup_wizard2_nhs_or_self_pay_title" = "Would you like to use this app for NHS Consultations, or Self-Pay Consultations?";
+
+"setup_wizard2_nhs" = "NHS";
+"setup_wizard2_self_pay" = "Self-Pay";
+"setup_wizard3_main_vc_title" = "Setup Wizard 3";

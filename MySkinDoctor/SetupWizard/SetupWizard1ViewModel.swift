@@ -42,6 +42,14 @@ class SetupWizard1ViewModel: BaseViewModel {
 			return
 		}
 		
+		let profile = DataController.createUniqueEntity(type: Profile.self)
+		profile.firstName = firstName
+		profile.lastName = lastName
+		profile.dob = dob as NSDate
+		profile.phone = phone
+		profile.postcode = postcode
+		DataController.saveEntity(managedObject: profile)
+		
 		goNextSegue!()
 	}
 }

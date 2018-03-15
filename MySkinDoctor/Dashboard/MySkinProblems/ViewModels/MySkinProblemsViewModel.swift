@@ -28,6 +28,16 @@ class MySkinProblemsViewModel: BaseViewModel {
 		}
 	}
 	
+	var shouldShowSetupWizard: Bool {
+		get {
+			if let profile = DataController.fetch(type: Profile.self) {
+				return !profile.profileFilled
+			}
+				
+			return true
+		}
+	}
+
 	var allItems = [SkinProblems]()
 	var undiagnosedItems = [SkinProblems]()
 	var diagnosedItems = [SkinProblems]()
