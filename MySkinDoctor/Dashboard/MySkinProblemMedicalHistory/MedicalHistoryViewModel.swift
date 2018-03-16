@@ -13,21 +13,54 @@ class MedicalHistoryViewModel: BaseViewModel {
 	
 	var model: MedicalHistory!
 	
-	var hasHealthProblems = false
-	var healthProblemDescription: String = ""
-	var hasMedication = false
-	var hasPastHistoryProblems = false
+	var healthProblems = ""
+	var medication = ""
+	var pastHistoryProblems = ""
+	
+	var hasHealthProblems = false {
+		didSet {
+			healthProblemsViewConstraintUpdate!(hasHealthProblems)
+		}
+	}
+	
+	var hasMedication = false {
+		didSet {
+			medicationViewConstraintUpdate!(hasMedication)
+		}
+	}
+	
+	var hasPastHistoryProblems = false {
+		didSet {
+			pastHistoryProblemsViewConstraintUpdate!(hasPastHistoryProblems)
+		}
+	}
+	
 	var saveMedicalHistory = false
 	
+	var healthProblemsViewConstraintUpdate: ((_ show: Bool)->())?
+	var medicationViewConstraintUpdate: ((_ show: Bool)->())?
+	var pastHistoryProblemsViewConstraintUpdate: ((_ show: Bool)->())?
+	
+	override init() {
+		super.init()
+		saveMedicalHistory = true
+		hasHealthProblems = false
+		hasMedication = false
+		hasPastHistoryProblems = false
+	}
+	
 	func saveModel() {
-		model = DataController.createUniqueEntity(type: MedicalHistory.self)
 		
-		model.hasHealthProblems = hasHealthProblems
-		model.healthProblemDescription = healthProblemDescription
-		model.hasMedication = hasMedication
-		model.hasPastHistoryProblems = hasPastHistoryProblems
-		model.saveMedicalHistory = saveMedicalHistory
-		DataController.saveEntity(managedObject: model)
+		// TOOD API
+		
+		if saveMedicalHistory {
+			model.healthProblems = healthProblems
+			model.medication = medication
+			model.pastHistoryProblems = pastHistoryProblems
+			
+			model = DataController.createUniqueEntity(type: MedicalHistory.self)
+			DataController.saveEntity(managedObject: model)
+		}
 		
 		goNextSegue!()
 	}

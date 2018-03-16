@@ -46,8 +46,8 @@ class AddSkinProblemsViewModel: BaseViewModel {
 	
 	var hasMedicalHistory: Bool {
 		get {
-			if let medicalHistory = DataController.fetchAll(type: MedicalHistory.self), let first = medicalHistory.first {
-				return first.saveMedicalHistory
+			if let medicalHistory = DataController.fetchAll(type: MedicalHistory.self), let _ = medicalHistory.first {
+				return true
 			} else {
 				return false
 			}			

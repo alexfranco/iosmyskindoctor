@@ -2,7 +2,7 @@
 //  MedicalHistory+CoreDataProperties.swift
 //  MySkinDoctor
 //
-//  Created by Alex on 14/03/2018.
+//  Created by Alex on 16/03/2018.
 //  Copyright © 2018 TouchSoft. All rights reserved.
 //
 //
@@ -17,11 +17,9 @@ extension MedicalHistory {
         return NSFetchRequest<MedicalHistory>(entityName: "MedicalHistory")
     }
 
-    @NSManaged public var hasHealthProblems: Bool
-    @NSManaged public var hasMedication: Bool
-    @NSManaged public var hasPastHistoryProblems: Bool
-    @NSManaged public var healthProblemDescription: String?
-    @NSManaged public var saveMedicalHistory: Bool
-    @NSManaged public var profile: Profile?
+    @NSManaged public var healthProblems: String?
+    @NSManaged public var medication: String?
+    @NSManaged public var pastHistoryProblems: String?
+    @NSManaged public var skinProblems: SkinProblems?
 
 }

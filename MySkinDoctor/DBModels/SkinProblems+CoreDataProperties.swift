@@ -2,7 +2,7 @@
 //  SkinProblems+CoreDataProperties.swift
 //  MySkinDoctor
 //
-//  Created by Alex on 14/03/2018.
+//  Created by Alex on 16/03/2018.
 //  Copyright © 2018 TouchSoft. All rights reserved.
 //
 //
@@ -22,6 +22,7 @@ extension SkinProblems {
     @NSManaged public var attachments: NSSet?
     @NSManaged public var diagnose: Diagnose?
     @NSManaged public var doctor: Doctor?
+    @NSManaged public var medicalHistory: MedicalHistory?
 
 }
 

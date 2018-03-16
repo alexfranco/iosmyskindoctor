@@ -78,6 +78,13 @@
 
 "skinproblem_main_vc_title" = "Photo Information";
 
+"medical_history_main_vc_title" = "Medical History";
+"medical_history_enter_health_problems" = "Enter here your health problems";
+"medical_history_enter_medication" = "Enter here your medication";
+"medical_history_enter_past_history_problems" = "Enter here your past history problems";
+"medical_history_save_my_medical_history" = "Save my medical history for next time";
+"medical_history_finish_and_submit" = "Finish and Submit Notes";
+
 "myconsults_main_vc_title" = "My Consults";
 "myconsults_no_data" = "You don't have any upcoming consultations.\n\n Create a new Skin Problem to continue";
 
