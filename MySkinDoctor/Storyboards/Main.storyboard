@@ -460,12 +460,87 @@
                         <outlet property="scrollView" destination="IQu-JN-mZm" id="A5P-vN-wzQ"/>
                         <outlet property="townTextField" destination="U3F-mk-V9Q" id="V4E-ch-uAx"/>
                         <outlet property="userPhotoImageView" destination="hXK-Gf-6Eq" id="y2h-1V-fgQ"/>
+                        <segue destination="1yZ-VW-YGk" kind="show" identifier="goToChangePasswordVC" id="wAF-ok-vuY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ngk-PR-mkY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="3OF-5Q-Fi6" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2052" y="1330"/>
+        </scene>
+        <!--Change Password View Controller-->
+        <scene sceneID="Cwd-ig-sTU">
+            <objects>
+                <viewController id="1yZ-VW-YGk" customClass="ChangePasswordViewController" customModule="MySkinDoctor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yzK-Mk-cDb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="DQH-sH-qd0">
+                                <rect key="frame" x="20" y="84" width="335" height="160"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Old Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jsh-S0-aoL" customClass="PasswordTextField" customModule="MySkinDoctor" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="6C2-Ed-3Et"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="New Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xi8-3d-ygP" customClass="PasswordTextField" customModule="MySkinDoctor" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="60" width="335" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="9xw-QD-z90"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9cI-hc-d3K" customClass="PasswordTextField" customModule="MySkinDoctor" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="120" width="335" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="K02-Q8-QSo"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M2H-mh-BhQ" customClass="PositiveButton" customModule="MySkinDoctor" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="568" width="375" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="5mY-dM-D2h"/>
+                                </constraints>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="onSaveButtonPressed:" destination="1yZ-VW-YGk" eventType="touchUpInside" id="b8K-1v-AXE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="5Kd-7H-Viy" firstAttribute="bottom" secondItem="M2H-mh-BhQ" secondAttribute="bottom" id="FFH-xm-Dv8"/>
+                            <constraint firstItem="M2H-mh-BhQ" firstAttribute="bottom" secondItem="5Kd-7H-Viy" secondAttribute="bottom" id="IIh-yA-HPx"/>
+                            <constraint firstItem="5Kd-7H-Viy" firstAttribute="trailing" secondItem="DQH-sH-qd0" secondAttribute="trailing" constant="20" id="ZD2-aK-CTN"/>
+                            <constraint firstItem="DQH-sH-qd0" firstAttribute="leading" secondItem="5Kd-7H-Viy" secondAttribute="leading" constant="20" id="ZXJ-Fb-VLv"/>
+                            <constraint firstItem="M2H-mh-BhQ" firstAttribute="leading" secondItem="5Kd-7H-Viy" secondAttribute="leading" id="bsP-Mh-FiK"/>
+                            <constraint firstItem="M2H-mh-BhQ" firstAttribute="trailing" secondItem="5Kd-7H-Viy" secondAttribute="trailing" id="cy7-g7-zCo"/>
+                            <constraint firstItem="DQH-sH-qd0" firstAttribute="top" secondItem="5Kd-7H-Viy" secondAttribute="top" constant="20" id="k7r-gZ-jGy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5Kd-7H-Viy"/>
+                    </view>
+                    <connections>
+                        <outlet property="confirmNewPasswordTextField" destination="9cI-hc-d3K" id="BTe-MT-Nv5"/>
+                        <outlet property="newPasswordTextField" destination="Xi8-3d-ygP" id="noP-Sf-v7W"/>
+                        <outlet property="nextButton" destination="M2H-mh-BhQ" id="q3r-wf-GgN"/>
+                        <outlet property="oldPasswordTextField" destination="jsh-S0-aoL" id="Umm-3o-zV9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Ah-aL-cDU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2955" y="1183"/>
         </scene>
         <!--My Skin Problems-->
         <scene sceneID="NEN-1c-aiF">

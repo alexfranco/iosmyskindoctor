@@ -11,6 +11,12 @@ import UIKit
 
 class PasswordTextField: FormTextField {
 	
+	var showPasswordBar = true {
+		didSet {
+			passwordProgressBarView?.isHidden = !showPasswordBar
+		}
+	}
+	
 	var secureTextButton: UIButton?
 	var passwordProgressBarView: PasswordProgressBarView?
 	var showPasswordImage = UIImage(named: "passwordVisibleIcon")
@@ -31,6 +37,8 @@ class PasswordTextField: FormTextField {
 		super.init(frame: frame)
 	}
 	
+	
+	
 	/**
 	Initialize properties and values
 	*/
@@ -42,6 +50,7 @@ class PasswordTextField: FormTextField {
 		keyboardType = .asciiCapable
 		
 		setRightViewIcon(icon: showPasswordImage!)
+		
 		addStrengthView()
 	}
 	

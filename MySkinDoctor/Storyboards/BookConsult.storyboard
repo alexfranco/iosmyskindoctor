@@ -846,7 +846,7 @@
     </scenes>
     <resources>
         <image name="back" width="16" height="16"/>
-        <image name="bigWhiteArrow" width="24" height="24"/>
+        <image name="bigWhiteArrow" width="49" height="37"/>
         <image name="customer-profile" width="16" height="16"/>
         <image name="expert-profile" width="16" height="16"/>
         <image name="ic_videocam_white" width="16" height="16"/>

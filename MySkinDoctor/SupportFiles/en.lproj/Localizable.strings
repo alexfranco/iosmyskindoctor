@@ -36,7 +36,7 @@
 
 // Errors
 "error_email_not_valid" = "The email is invalid";
-"error_password_not_valid" = "Your password must be minimum %d characters long";
+"error_password_not_valid" = "Your password must be minimum %d characters";
 
 // Login
 
@@ -127,3 +127,9 @@
 "setup_wizard3_main_vc_title" = "";
 
 "setup_wizard3_your_gp_information" = "Your GP Information";
+
+"change_password_main_vc_title" = "Change Password";
+"change_password_old_password" = "Old Password";
+"change_password_new_password" = "New Password";
+"change_password_confirm_password" = "Confirm New Password";
+"change_passowrd_new_and_confirm_are_different" = "Your passwords don't match";

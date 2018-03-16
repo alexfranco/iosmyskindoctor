@@ -141,4 +141,13 @@ class ApiUtils {
 		ApiUtils.request(url: url, httpMethod: HTTPMethod.post, params: params, parseToModelType: ForgotPasswordResposeModel.self, accessToken: nil, completionHandler: completionHandler)
 	}
 	
+	static func changePassword(oldPassword: String, newPassword: String, confirmPassowrd: String, completionHandler: @escaping ((_ result: ApiResult) -> Void)) {
+		let url = ApiUtils.getApiUrl(ApiMethod.changePassword, nil)
+		let params: Parameters =	["old_password": oldPassword,
+									 "new_password1": newPassword,
+									 "new_password2": confirmPassowrd]
+		
+		ApiUtils.request(url: url, httpMethod: HTTPMethod.post, params: params, parseToModelType: ChangePasswordResponseModel.self, accessToken: nil, completionHandler: completionHandler)
+	}
+	
 }

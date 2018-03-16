@@ -30,6 +30,7 @@ struct Segues {
 	static let goToDiagnosisUpdateRequest = "goToDiagnosisUpdateRequest"
 	static let goToMySkinProblemDiagnoseUpdateRequest = "goToMySkinProblemDiagnoseUpdateRequest"
 	static let goToMyConsultDetails = "goToMyConsultDetails"
+	static let goToChangePasswordVC = "goToChangePasswordVC"
 	
 	static let unwindToAddSkinProblems = "unwindToAddSkinProblems"
 	static let unwindToAddSkinProblemsFromPhoto = "unwindToAddSkinProblemsFromPhoto"

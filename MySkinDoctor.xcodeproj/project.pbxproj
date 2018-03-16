@@ -220,6 +220,12 @@
 		FAAE628A2056A7B100823BFE /* SetupWizard1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAE62882056A7B100823BFE /* SetupWizard1ViewController.swift */; };
 		FAAE628C2056A7C800823BFE /* SetupWizard1ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAE628B2056A7C800823BFE /* SetupWizard1ViewModel.swift */; };
 		FAAE628D2056A7C800823BFE /* SetupWizard1ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAE628B2056A7C800823BFE /* SetupWizard1ViewModel.swift */; };
+		FABC7A2F205C00F300167FFA /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABC7A2E205C00F300167FFA /* ChangePasswordViewController.swift */; };
+		FABC7A30205C00F300167FFA /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABC7A2E205C00F300167FFA /* ChangePasswordViewController.swift */; };
+		FABC7A32205C010000167FFA /* ChangePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABC7A31205C010000167FFA /* ChangePasswordViewModel.swift */; };
+		FABC7A33205C010000167FFA /* ChangePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABC7A31205C010000167FFA /* ChangePasswordViewModel.swift */; };
+		FABC7A35205C061F00167FFA /* ChangePasswordResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABC7A34205C061F00167FFA /* ChangePasswordResponseModel.swift */; };
+		FABC7A36205C061F00167FFA /* ChangePasswordResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABC7A34205C061F00167FFA /* ChangePasswordResponseModel.swift */; };
 		FAC1AF0E2036F46F00547BBC /* ApiUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC1AF0D2036F46F00547BBC /* ApiUtils.swift */; };
 		FAC1AF112036FCE200547BBC /* RegistrationResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC1AF102036FCE200547BBC /* RegistrationResponseModel.swift */; };
 		FAD6ADB720445EB20050C1A9 /* AddPhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6ADB620445EB20050C1A9 /* AddPhotoTableViewCell.swift */; };
@@ -379,6 +385,9 @@
 		FAAE62842056915100823BFE /* UIButton+Circular.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Circular.swift"; sourceTree = "<group>"; };
 		FAAE62882056A7B100823BFE /* SetupWizard1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupWizard1ViewController.swift; sourceTree = "<group>"; };
 		FAAE628B2056A7C800823BFE /* SetupWizard1ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupWizard1ViewModel.swift; sourceTree = "<group>"; };
+		FABC7A2E205C00F300167FFA /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		FABC7A31205C010000167FFA /* ChangePasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewModel.swift; sourceTree = "<group>"; };
+		FABC7A34205C061F00167FFA /* ChangePasswordResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordResponseModel.swift; sourceTree = "<group>"; };
 		FAC1AF0D2036F46F00547BBC /* ApiUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiUtils.swift; sourceTree = "<group>"; };
 		FAC1AF102036FCE200547BBC /* RegistrationResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationResponseModel.swift; sourceTree = "<group>"; };
 		FAD6ADB620445EB20050C1A9 /* AddPhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoTableViewCell.swift; sourceTree = "<group>"; };
@@ -613,6 +622,7 @@
 				FA6130CF2050234100731495 /* MyConsultsThankyou */,
 				FA6E8FB120595F79001F6E16 /* MyConsultDetails */,
 				FA3326642040350400657C8A /* Profile */,
+				FABC7A2D205C00D200167FFA /* ProfileChangePassword */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -782,6 +792,15 @@
 			path = SetupWizard;
 			sourceTree = "<group>";
 		};
+		FABC7A2D205C00D200167FFA /* ProfileChangePassword */ = {
+			isa = PBXGroup;
+			children = (
+				FABC7A31205C010000167FFA /* ChangePasswordViewModel.swift */,
+				FABC7A2E205C00F300167FFA /* ChangePasswordViewController.swift */,
+			);
+			path = ProfileChangePassword;
+			sourceTree = "<group>";
+		};
 		FAC1AF0C2036F41300547BBC /* Web */ = {
 			isa = PBXGroup;
 			children = (
@@ -798,6 +817,7 @@
 				FAC1AF102036FCE200547BBC /* RegistrationResponseModel.swift */,
 				FA9760D5203AFBD200242255 /* LoginResponseModel.swift */,
 				78B9E517203C2C670054CAD3 /* ForgotPasswordResposeModel.swift */,
+				FABC7A34205C061F00167FFA /* ChangePasswordResponseModel.swift */,
 			);
 			path = APIModels;
 			sourceTree = "<group>";
@@ -1221,6 +1241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7826472C205800FB00F79FB7 /* DiagnoseAttachments+CoreDataClass.swift in Sources */,
+				FABC7A36205C061F00167FFA /* ChangePasswordResponseModel.swift in Sources */,
 				FADC33452046F16C0065A7EB /* SkinProblemPhotoInformationViewModel.swift in Sources */,
 				FAF2CEB7204D55850001EEAB /* MyConsultsViewController.swift in Sources */,
 				78B9E530203C4CD70054CAD3 /* RegistrationResponseModel.swift in Sources */,
@@ -1239,6 +1260,7 @@
 				FAA774FB20529F8100A794FF /* MySkinProblemDiagnoseUpdateRequestViewModel.swift in Sources */,
 				FA33268C204413B500657C8A /* ProfileViewModel.swift in Sources */,
 				78264737205800FB00F79FB7 /* Doctor+CoreDataProperties.swift in Sources */,
+				FABC7A33205C010000167FFA /* ChangePasswordViewModel.swift in Sources */,
 				FA3326BB20441C8500657C8A /* CustomErrors.swift in Sources */,
 				7826473A205800FB00F79FB7 /* Profile+CoreDataClass.swift in Sources */,
 				FA33265C2040336F00657C8A /* PhotoViewController.swift in Sources */,
@@ -1304,6 +1326,7 @@
 				78B9E53D203C4CD70054CAD3 /* ThemeManager.swift in Sources */,
 				FA3326AF20441C8500657C8A /* ProfileTextField.swift in Sources */,
 				FA33268720440EA400657C8A /* PhotoUtils.swift in Sources */,
+				FABC7A30205C00F300167FFA /* ChangePasswordViewController.swift in Sources */,
 				FAAE628D2056A7C800823BFE /* SetupWizard1ViewModel.swift in Sources */,
 				78FFF03020496E340013240D /* MedicalHistoryViewModel.swift in Sources */,
 				FA3326522040287900657C8A /* BindingViewController.swift in Sources */,
@@ -1344,6 +1367,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FADC33442046F16C0065A7EB /* SkinProblemPhotoInformationViewModel.swift in Sources */,
+				FABC7A35205C061F00167FFA /* ChangePasswordResponseModel.swift in Sources */,
 				FAF2CEB6204D55850001EEAB /* MyConsultsViewController.swift in Sources */,
 				FA6E8F692056CC8E001F6E16 /* Profile+CoreDataProperties.swift in Sources */,
 				FAC1AF112036FCE200547BBC /* RegistrationResponseModel.swift in Sources */,
@@ -1362,6 +1386,7 @@
 				7826470D2057D49E00F79FB7 /* SkinProblemAttachment+CoreDataProperties.swift in Sources */,
 				FAAE62892056A7B100823BFE /* SetupWizard1ViewController.swift in Sources */,
 				FAA774FA20529F8100A794FF /* MySkinProblemDiagnoseUpdateRequestViewModel.swift in Sources */,
+				FABC7A32205C010000167FFA /* ChangePasswordViewModel.swift in Sources */,
 				782647082057D49E00F79FB7 /* SkinProblems+CoreDataClass.swift in Sources */,
 				7826470C2057D49E00F79FB7 /* SkinProblemAttachment+CoreDataClass.swift in Sources */,
 				FA3326BA20441C8500657C8A /* CustomErrors.swift in Sources */,
@@ -1427,6 +1452,7 @@
 				782647042057D49E00F79FB7 /* DoctorNotes+CoreDataClass.swift in Sources */,
 				FAA775052052A5E100A794FF /* MySkinProblemDiagnoseUpdateRequestTableViewModel.swift in Sources */,
 				78DBCE542051742700C0D4B5 /* MySkinProblemDiagnosisViewModel.swift in Sources */,
+				FABC7A2F205C00F300167FFA /* ChangePasswordViewController.swift in Sources */,
 				FA3326512040287900657C8A /* BindingViewController.swift in Sources */,
 				782647062057D49E00F79FB7 /* DiagnoseAttachments+CoreDataClass.swift in Sources */,
 				FAAE628C2056A7C800823BFE /* SetupWizard1ViewModel.swift in Sources */,

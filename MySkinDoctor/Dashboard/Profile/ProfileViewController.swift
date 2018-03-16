@@ -268,6 +268,7 @@ class ProfileViewController: FormViewController {
 	}
 	
 	@IBAction func onChangePasswordButton(_ sender: Any) {
+		self.performSegue(withIdentifier: Segues.goToChangePasswordVC, sender: nil)
 	}
 	
 	@IBAction func onSaveButtonPressed(_ sender: Any) {

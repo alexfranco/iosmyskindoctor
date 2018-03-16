@@ -224,6 +224,10 @@ struct AppStyle {
 	static let positiveButtonTextColor = UIColor.white
 	static let positiveButtonTextColorDisable = BaseColors.formGrey
 
+	// Change Password
+	static let changePasswordNextButtonTitleColor = UIColor.white
+	static let changePasswordNextButtonBackgroundColor = BaseColors.skyBlue
+	
 	// No Background Button
 	static let noBackgroundButtonBackgroundColor = UIColor.clear
 	static let noBackgroundButtonTextColor = UIColor.black
