@@ -109,15 +109,17 @@
 "profile_personal_gp_information" = "GP Information";
 "profile_personal_logout" = "Logout";
 
-"setup_wizard1_main_vc_title" = "Setup Wizard 1";
+"setup_wizard1_main_vc_title" = "";
 
 "setup_wizard1_your_personal_details" = "Your Personal Details";
 "setup_wizard1_will_never_share" = "We will never share any of your personal details";
 
-"setup_wizard2_main_vc_title" = "Setup Wizard 2";
+"setup_wizard2_main_vc_title" = "";
 
 "setup_wizard2_nhs_or_self_pay_title" = "Would you like to use this app for NHS Consultations, or Self-Pay Consultations?";
 
 "setup_wizard2_nhs" = "NHS";
 "setup_wizard2_self_pay" = "Self-Pay";
-"setup_wizard3_main_vc_title" = "Setup Wizard 3";
+"setup_wizard3_main_vc_title" = "";
+
+"setup_wizard3_your_gp_information" = "Your GP Information";

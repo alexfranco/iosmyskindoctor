@@ -57,6 +57,7 @@ class SetupWizard1ViewController: FormViewController {
 		
 		initViewModel(viewModel: SetupWizard1ViewModel())
 		applyLocalization()
+		applyTheme()
 	}
 	
 	// MARK: Bindings
@@ -69,6 +70,7 @@ class SetupWizard1ViewController: FormViewController {
 		viewModelCast.dobUpdated = { [weak self] (date) in
 			DispatchQueue.main.async {
 				self?.dobTextField.text = date
+				self?.dobTextField.placeholder = ""
 			}
 		}
 		viewModelCast.goNextSegue = { [] () in
@@ -88,9 +90,13 @@ class SetupWizard1ViewController: FormViewController {
 		lastNameTextField.placeholder = NSLocalizedString("last_name", comment: "")
 		postcodeTextField.placeholder = NSLocalizedString("postcode", comment: "")
 		
-		neverShareLabel.text =  NSLocalizedString("setup_wizard1_your_personal_details", comment: "")
-		
-		personalDetailsTitleLabel.text =  NSLocalizedString("setup_wizard1_will_never_share", comment: "")
+		personalDetailsTitleLabel.text =  NSLocalizedString("setup_wizard1_your_personal_details", comment: "")
+		neverShareLabel.text =  NSLocalizedString("setup_wizard1_will_never_share", comment: "")
+	}
+	
+	func applyTheme() {
+		personalDetailsTitleLabel.font = AppFonts.mediumBoldFont
+		neverShareLabel.font = AppFonts.smallFont
 	}
 	
 	func showDatePicker() {

@@ -34,6 +34,7 @@ class SetupWizard3ViewController: FormViewController {
 		}
 	}
 	
+	@IBOutlet weak var yourGPInformationLabel: TitleLabel!
 	@IBOutlet weak var permisionTitleLabel: UILabel!
 	@IBOutlet weak var permisionDetailLabel: UILabel!
 	
@@ -80,9 +81,15 @@ class SetupWizard3ViewController: FormViewController {
 	
 	// MARK: Helpers
 	
+	func applyTheme() {
+		permisionTitleLabel.font = AppFonts.mediumBoldFont
+		permisionTitleLabel.font = AppFonts.mediumFont
+	}
+	
 	func applyLocalization() {
 		title = NSLocalizedString("setup_wizard3_main_vc_title", comment: "")
 		
+		yourGPInformationLabel.text = NSLocalizedString("setup_wizard3_your_gp_information", comment: "")
 		gpNameTextField.placeholder = NSLocalizedString("gp_name", comment: "")
 		gpAccessCodeTextField.placeholder = NSLocalizedString("gp_access_code", comment: "")
 		gpAddressLineTextField.placeholder = NSLocalizedString("gp_address_line", comment: "")

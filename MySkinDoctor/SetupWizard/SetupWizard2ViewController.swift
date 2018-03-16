@@ -28,6 +28,8 @@ class SetupWizard2ViewController: FormViewController {
 		navigationController?.setBackgroundColorWithoutShadowImage(bgColor: AppStyle.defaultNavigationBarColor, titleColor: AppStyle.defaultNavigationBarTitleColor)
 		
 		initViewModel(viewModel: SetupWizard2ViewModel())
+		applyLocalization()
+		applyTheme()
 	}
 	
 	// MARK: Bindings
@@ -56,13 +58,14 @@ class SetupWizard2ViewController: FormViewController {
 	
 	// MARK: Help
 	
+	func applyTheme() {
+		nhsOrSelfTitleLabel.font = AppFonts.mediumFont
+	}
+	
 	func applyLocalization() {
 		title = NSLocalizedString("setup_wizard2_main_vc_title", comment: "")
-		
 		nhsOrSelfTitleLabel.text = NSLocalizedString("setup_wizard2_nhs_or_self_pay_title", comment: "")
-		
-		nhsButton.setTitle(NSLocalizedString("setup_wizard2_nhs", comment: ""), for: .normal)
-		
+		nhsButton.setTitle(NSLocalizedString("setup_wizard2_nhs", comment: ""), for: .normal)		
 		selfPayButton.setTitle(NSLocalizedString("setup_wizard2_self_pay", comment: ""), for: .normal)
 
 	}
