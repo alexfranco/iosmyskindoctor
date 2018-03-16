@@ -13,7 +13,18 @@ class ProfileViewModel: BaseViewModel {
 	
 	var profile: Profile!
 	
-	var name = ""
+	var name: String {
+		get {
+			if let firstName = profile.firstName, let lastName = profile.lastName {
+				return firstName + " " + lastName
+			} else {
+				return "-"
+			}
+		}
+	}
+	
+	var firstName = ""
+	var lastName = ""
 	var email = ""
 	var phone = ""
 	
@@ -53,16 +64,15 @@ class ProfileViewModel: BaseViewModel {
 	
 	var profileImageUpdated: ((_ image: UIImage)->())?
 	
+	var didSaveChanges: (()->())?
+	
 	override init() {
 		super.init()
 		
 		profile = DataController.createUniqueEntity(type: Profile.self)
 		
-		if let firstName = profile.firstName, let lastName = profile.lastName {
-			name = firstName + " " + lastName
-		} else {
-			name = "-"
-		}
+		firstName = profile.firstName ?? ""
+		lastName = profile.lastName ?? ""
 		
 		email = profile.email ?? ""
 		phone = profile.phone ?? ""
@@ -90,6 +100,9 @@ class ProfileViewModel: BaseViewModel {
 	
 	func saveModel() {
 		
+		profile.firstName = firstName
+		profile.lastName = lastName
+		
 		profile.email = email
 		profile.phone = phone
 		
@@ -109,5 +122,7 @@ class ProfileViewModel: BaseViewModel {
 		profile.profileImage = profileImage
 		
 		DataController.saveEntity(managedObject: profile)
+		
+		didSaveChanges!()
 	}
 }

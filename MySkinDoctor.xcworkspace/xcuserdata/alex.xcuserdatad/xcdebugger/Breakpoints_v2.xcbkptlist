@@ -74,7 +74,7 @@
                   moduleName = "MySkinDoctor"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/alex/iosmyskindoctor/MySkinDoctor/Web/ApiUtils.swift"
-                  timestampString = "542896046.9473031"
+                  timestampString = "542897596.503724"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "83"
@@ -89,7 +89,7 @@
                   moduleName = "MySkinDoctor"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/alex/iosmyskindoctor/MySkinDoctor/Web/ApiUtils.swift"
-                  timestampString = "542896046.952152"
+                  timestampString = "542897596.507668"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "84"
@@ -122,7 +122,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MySkinDoctor/Utils/DataController.swift"
-            timestampString = "542896046.600602"
+            timestampString = "542900248.257194"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "71"
@@ -138,7 +138,7 @@
                   moduleName = "MySkinDoctor"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/alex/iosmyskindoctor/MySkinDoctor/Utils/DataController.swift"
-                  timestampString = "542896046.969959"
+                  timestampString = "542897596.5167249"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "71"
@@ -153,7 +153,7 @@
                   moduleName = "MySkinDoctor"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/alex/iosmyskindoctor/MySkinDoctor/Utils/DataController.swift"
-                  timestampString = "542896046.97448"
+                  timestampString = "542897596.520548"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "71"
@@ -176,6 +176,38 @@
             startingLineNumber = "23"
             endingLineNumber = "23"
             landmarkName = "saveModel()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MySkinDoctor/Dashboard/Profile/ProfileViewController.swift"
+            timestampString = "542900248.25737"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
+            landmarkName = "initViewModel(viewModel:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MySkinDoctor/Dashboard/Profile/ProfileViewController.swift"
+            timestampString = "542900248.257875"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "289"
+            endingLineNumber = "289"
+            landmarkName = "tapUserPhoto(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

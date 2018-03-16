@@ -184,7 +184,7 @@
                                 <rect key="frame" x="20" y="261" width="335" height="870"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="smb-gV-iDV">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="900.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="1000.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Personal Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a55-hi-Oy6" customClass="BoldLabel" customModule="MySkinDoctor" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
@@ -195,8 +195,26 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date of Birth" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yp1-wZ-c3h" customClass="ProfileTextField" customModule="MySkinDoctor" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Address Line 1" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g3n-gf-99a" userLabel="First Name" customClass="ProfileTextField" customModule="MySkinDoctor" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="50" width="335" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="nEg-HU-f5l"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Address Line 1" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="waY-Si-UBX" userLabel="Last Name" customClass="ProfileTextField" customModule="MySkinDoctor" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="100" width="335" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="AHT-86-hLQ"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date of Birth" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yp1-wZ-c3h" customClass="ProfileTextField" customModule="MySkinDoctor" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="150" width="335" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="VJ8-26-clm"/>
                                                 </constraints>
@@ -205,7 +223,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mobile Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3uV-qw-IQu" customClass="ProfileTextField" customModule="MySkinDoctor" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="100" width="335" height="50"/>
+                                                <rect key="frame" x="0.0" y="200" width="335" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="dhR-WU-eTp"/>
                                                 </constraints>
@@ -214,7 +232,7 @@
                                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LyX-SI-Tk6">
-                                                <rect key="frame" x="0.0" y="150" width="335" height="50"/>
+                                                <rect key="frame" x="0.0" y="250" width="335" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="2eO-im-hLe"/>
                                                 </constraints>
@@ -224,7 +242,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9jO-hO-ULn" customClass="BoldLabel" customModule="MySkinDoctor" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="200" width="335" height="50"/>
+                                                <rect key="frame" x="0.0" y="300" width="335" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="yos-1K-RsM"/>
                                                 </constraints>
@@ -233,7 +251,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Address Line 1" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hd3-VD-Uvd" customClass="ProfileTextField" customModule="MySkinDoctor" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="250" width="335" height="50"/>
+                                                <rect key="frame" x="0.0" y="350" width="335" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="k46-fz-oMn"/>
                                                 </constraints>
@@ -242,7 +260,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Address Line 2" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gcx-MD-21v" customClass="ProfileTextField" customModule="MySkinDoctor" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="300" width="335" height="50"/>
+                                                <rect key="frame" x="0.0" y="400" width="335" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="yQq-ZO-QdL"/>
                                                 </constraints>
@@ -251,7 +269,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Town/City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U3F-mk-V9Q" customClass="ProfileTextField" customModule="MySkinDoctor" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="350" width="335" height="50"/>
+                                                <rect key="frame" x="0.0" y="450" width="335" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="EZx-8S-yXY"/>
                                                 </constraints>
@@ -260,7 +278,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Postcode" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xo1-2q-nDH" customClass="ProfileTextField" customModule="MySkinDoctor" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="400" width="335" height="50"/>
+                                                <rect key="frame" x="0.0" y="500" width="335" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="7cW-tS-0Qq"/>
                                                 </constraints>
@@ -269,7 +287,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GP Information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TFY-JO-cOm" customClass="BoldLabel" customModule="MySkinDoctor" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="450" width="335" height="50"/>
+                                                <rect key="frame" x="0.0" y="550" width="335" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="qhq-T7-ura"/>
                                                 </constraints>
@@ -278,7 +296,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="GP Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ccm-Ib-i9a" customClass="ProfileTextField" customModule="MySkinDoctor" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="500" width="335" height="50"/>
+                                                <rect key="frame" x="0.0" y="600" width="335" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="Oq8-1O-yLs"/>
                                                 </constraints>
@@ -287,7 +305,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="GP Access Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="woI-UJ-7r9" customClass="ProfileTextField" customModule="MySkinDoctor" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="550" width="335" height="50"/>
+                                                <rect key="frame" x="0.0" y="650" width="335" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="ynr-yL-4zT"/>
                                                 </constraints>
@@ -296,7 +314,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="GP Address Line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7CK-hX-Qkt" customClass="ProfileTextField" customModule="MySkinDoctor" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="600" width="335" height="50"/>
+                                                <rect key="frame" x="0.0" y="700" width="335" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="Cmx-JV-VjE"/>
                                                 </constraints>
@@ -305,7 +323,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="GP Postcode" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lbJ-ot-1ym" customClass="ProfileTextField" customModule="MySkinDoctor" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="650" width="335" height="50"/>
+                                                <rect key="frame" x="0.0" y="750" width="335" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="ovB-JU-XT1"/>
                                                 </constraints>
@@ -314,16 +332,16 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A5p-5V-Fpi">
-                                                <rect key="frame" x="0.0" y="700" width="335" height="160.5"/>
+                                                <rect key="frame" x="0.0" y="800" width="335" height="160.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Permission to contact your GP?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dHL-eo-BLh">
-                                                        <rect key="frame" x="5" y="15" width="268" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="15" width="273" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mlN-Ra-CRM" customClass="GrayLabel" customModule="MySkinDoctor" customModuleProvider="target">
-                                                        <rect key="frame" x="5" y="51" width="320" height="101.5"/>
+                                                        <rect key="frame" x="0.0" y="51" width="325" height="101.5"/>
                                                         <string key="text">When you give us permission to contact your GP, we can share inforamtion about a diagnosis. This is especially handy for private consultations and helps keep all your important records in one place.</string>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -349,11 +367,11 @@
                                                     <constraint firstItem="nn7-5i-AD1" firstAttribute="leading" secondItem="dHL-eo-BLh" secondAttribute="trailing" constant="5" id="WXa-e5-7jd"/>
                                                     <constraint firstItem="dHL-eo-BLh" firstAttribute="top" secondItem="A5p-5V-Fpi" secondAttribute="top" constant="15" id="gqr-3M-C0M"/>
                                                     <constraint firstItem="mlN-Ra-CRM" firstAttribute="leading" secondItem="dHL-eo-BLh" secondAttribute="leading" id="p9G-Sg-IcH"/>
-                                                    <constraint firstItem="dHL-eo-BLh" firstAttribute="leading" secondItem="A5p-5V-Fpi" secondAttribute="leading" constant="5" id="x89-ho-J7b"/>
+                                                    <constraint firstItem="dHL-eo-BLh" firstAttribute="leading" secondItem="A5p-5V-Fpi" secondAttribute="leading" id="x89-ho-J7b"/>
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QjF-rd-wTU">
-                                                <rect key="frame" x="0.0" y="860.5" width="335" height="40"/>
+                                                <rect key="frame" x="0.0" y="960.5" width="335" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="rKj-g1-HYJ"/>
                                                 </constraints>
@@ -365,11 +383,8 @@
                                             </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="Yp1-wZ-c3h" firstAttribute="top" secondItem="a55-hi-Oy6" secondAttribute="bottom" id="C71-4D-ogj"/>
                                             <constraint firstItem="a55-hi-Oy6" firstAttribute="leading" secondItem="smb-gV-iDV" secondAttribute="leading" id="Ks3-hd-ujc"/>
-                                            <constraint firstAttribute="trailing" secondItem="Yp1-wZ-c3h" secondAttribute="trailing" id="O4A-Cg-cdv"/>
                                             <constraint firstAttribute="trailing" secondItem="9jO-hO-ULn" secondAttribute="trailing" id="RDs-RO-ixT"/>
-                                            <constraint firstItem="Yp1-wZ-c3h" firstAttribute="leading" secondItem="smb-gV-iDV" secondAttribute="leading" id="RgJ-NM-7Jk"/>
                                             <constraint firstItem="TFY-JO-cOm" firstAttribute="leading" secondItem="smb-gV-iDV" secondAttribute="leading" id="ZbC-XN-ztx"/>
                                             <constraint firstAttribute="trailing" secondItem="TFY-JO-cOm" secondAttribute="trailing" id="eDN-xB-Tuv"/>
                                             <constraint firstItem="9jO-hO-ULn" firstAttribute="top" secondItem="LyX-SI-Tk6" secondAttribute="bottom" id="hmQ-nm-3o4"/>
@@ -409,7 +424,12 @@
                         <viewLayoutGuide key="safeArea" id="PSz-1x-K0U"/>
                     </view>
                     <navigationItem key="navigationItem" id="Jq9-97-klM">
-                        <barButtonItem key="rightBarButtonItem" image="walletIcon" id="v6h-6W-WdQ"/>
+                        <barButtonItem key="leftBarButtonItem" image="walletIcon" id="v6h-6W-WdQ"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="Ffl-by-tph">
+                            <connections>
+                                <action selector="onSaveButtonPressed:" destination="WfN-R1-QQK" id="Wfp-tL-ePt"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="1200"/>
@@ -420,11 +440,13 @@
                         <outlet property="contactDetailsSectionLabel" destination="9jO-hO-ULn" id="NWi-3o-8m2"/>
                         <outlet property="dobTextField" destination="Yp1-wZ-c3h" id="Gaj-mL-w3g"/>
                         <outlet property="emailLabel" destination="YXW-J2-Htj" id="ulZ-si-qrB"/>
+                        <outlet property="firstNameTextField" destination="g3n-gf-99a" id="6Eb-mw-JwR"/>
                         <outlet property="gpAccessCodeTextField" destination="woI-UJ-7r9" id="POj-hB-CeO"/>
                         <outlet property="gpAddressLineTextField" destination="7CK-hX-Qkt" id="Umd-cy-9Ie"/>
                         <outlet property="gpInformationSectionLabel" destination="TFY-JO-cOm" id="6Ln-7S-ouq"/>
                         <outlet property="gpNameTextField" destination="ccm-Ib-i9a" id="Ik3-YI-0lc"/>
                         <outlet property="gpPostcodeTextField" destination="lbJ-ot-1ym" id="M3M-Po-pBQ"/>
+                        <outlet property="lastNameTextField" destination="waY-Si-UBX" id="PmU-uL-q5Q"/>
                         <outlet property="logoutButton" destination="QjF-rd-wTU" id="PMd-aD-GQu"/>
                         <outlet property="nameLabel" destination="Sb0-1z-y8v" id="FwZ-xd-yrf"/>
                         <outlet property="permisionDetailsLabel" destination="mlN-Ra-CRM" id="ZaK-SM-MPJ"/>
@@ -434,6 +456,7 @@
                         <outlet property="phoneTextField" destination="3uV-qw-IQu" id="50H-oJ-0Sq"/>
                         <outlet property="postcodeTextField" destination="xo1-2q-nDH" id="b5y-01-K5O"/>
                         <outlet property="profileTopView" destination="8wT-3I-hMH" id="cKB-vq-uAx"/>
+                        <outlet property="saveButton" destination="Ffl-by-tph" id="U6O-ad-qZY"/>
                         <outlet property="scrollView" destination="IQu-JN-mZm" id="A5P-vN-wzQ"/>
                         <outlet property="townTextField" destination="U3F-mk-V9Q" id="V4E-ch-uAx"/>
                         <outlet property="userPhotoImageView" destination="hXK-Gf-6Eq" id="y2h-1V-fgQ"/>

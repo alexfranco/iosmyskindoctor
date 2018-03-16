@@ -32,6 +32,8 @@ struct BaseColors {
 	static var formGrey: UIColor { return UIColor(red: 210.0 / 255.0, green: 210.0 / 255.0, blue: 210.0 / 255.0, alpha: 1.0) }
 	
 	static var tableViewGrey: UIColor { return UIColor(red: 250.0 / 255.0, green: 250.0 / 255.0, blue: 250.0 / 255.0, alpha: 1.0) }
+	
+	static var brightBlue: UIColor { return UIColor(red: 0.0, green: 122.0 / 255.0, blue: 1.0, alpha: 1.0) }
 }
 
 struct AppColors {
@@ -198,7 +200,7 @@ struct AppStyle {
 	
 	static let circularImageViewBorderColor = UIColor.white
 	
-	static let changePasswordButtonTitleColor = BaseColors.skyBlue
+	static let changePasswordButtonTitleColor = BaseColors.brightBlue
 	static let logoutButtonTitleColor = BaseColors.blush
 
 	// Default TextField

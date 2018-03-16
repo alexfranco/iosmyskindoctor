@@ -19,6 +19,18 @@ class ProfileViewController: FormViewController {
 	@IBOutlet weak var personalDetailsSectionLabel: BoldLabel!
 	@IBOutlet weak var dobTextField: ProfileTextField!
 	
+	@IBOutlet weak var firstNameTextField: ProfileTextField!  {
+		didSet {
+			firstNameTextField.bind { self.viewModelCast.firstName = $0 }
+		}
+	}
+
+	@IBOutlet weak var lastNameTextField: ProfileTextField!  {
+		didSet {
+			lastNameTextField.bind { self.viewModelCast.lastName = $0 }
+		}
+	}
+	
 	@IBOutlet weak var phoneTextField: ProfileTextField!  {
 		didSet {
 			phoneTextField.bind { self.viewModelCast.phone = $0 }
@@ -77,13 +89,17 @@ class ProfileViewController: FormViewController {
 	@IBOutlet weak var permisionDetailsLabel: UILabel!
 	
 	@IBOutlet weak var logoutButton: UIButton!
+	@IBOutlet weak var saveButton: UIBarButtonItem!
 	
 	var viewModelCast: ProfileViewModel!
 	
 	let datePicker = UIDatePicker()
+	var photoUtils: PhotoUtils!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
+		photoUtils = PhotoUtils(inViewController: self)
 		
 		profileTopView.backgroundColor = AppStyle.profileTopViewBackgroundColor
 		userPhotoImageView?.setRounded()
@@ -97,7 +113,9 @@ class ProfileViewController: FormViewController {
 		
 		navigationController?.setBackgroundColorWithoutShadowImage(bgColor: AppStyle.profileNavigationBarColor, titleColor: AppStyle.profileNavigationBarTitleColor)
 		
-		registerForKeyboardReturnKey([dobTextField,
+		registerForKeyboardReturnKey([firstNameTextField,
+									  lastNameTextField,
+									  dobTextField,
 									  phoneTextField,
 									  address1TextField,
 									  address2TextField,
@@ -134,11 +152,13 @@ class ProfileViewController: FormViewController {
 				self?.dobTextField.text = date
 			}
 		}
-	}
-	
-	override func viewWillDisappear(_ animated: Bool) {
-		super.viewWillDisappear(animated)
-		viewModelCast.saveModel()
+		
+		viewModelCast.didSaveChanges = { [weak self] () in
+			DispatchQueue.main.async {
+				self?.showAlertView(title: "", message:  NSLocalizedString("changes_saved", comment: ""))
+				self?.refreshFields()
+			}
+		}
 	}
 	
 	// MARK: UITextFieldDelegate
@@ -154,12 +174,22 @@ class ProfileViewController: FormViewController {
 	// MARK: Helpers
 	
 	func applytheme() {
+		personalDetailsSectionLabel.font = AppFonts.mediumBoldFont
+		gpInformationSectionLabel.font = AppFonts.mediumBoldFont
+		contactDetailsSectionLabel.font = AppFonts.mediumBoldFont
+		
+		permisionTitleLabel.font = AppFonts.mediumFont
+		permisionDetailsLabel.font = AppFonts.smallFont
+		
 		changePasswordButton.setTitleColor(AppStyle.changePasswordButtonTitleColor, for: .normal)
 		logoutButton.setTitleColor(AppStyle.logoutButtonTitleColor, for: .normal)
 	}
 	
 	func applyLocalization() {
 		title = NSLocalizedString("profile_main_vc_title", comment: "")
+		
+		firstNameTextField.placeholder = NSLocalizedString("first_name", comment: "")
+		lastNameTextField.placeholder = NSLocalizedString("last_name", comment: "")
 		
 		dobTextField.placeholder = NSLocalizedString("date_of_birth", comment: "")
 		phoneTextField.placeholder = NSLocalizedString("mobile_number", comment: "")
@@ -186,6 +216,8 @@ class ProfileViewController: FormViewController {
 		permisionDetailsLabel.text = NSLocalizedString("permisions_details", comment: "")
 		
 		logoutButton.setTitle(NSLocalizedString("profile_personal_logout", comment: ""), for: .normal)
+		saveButton.title = NSLocalizedString("save", comment: "")
+
 	}
 		
 	func showDatePicker() {
@@ -195,8 +227,8 @@ class ProfileViewController: FormViewController {
 		//ToolBar
 		let toolbar = UIToolbar()
 		toolbar.sizeToFit()
-		let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker))
-		let setButton = UIBarButtonItem(title: "Set", style: .plain, target: self, action: #selector(dobPicker))
+		let cancelButton = UIBarButtonItem(title: NSLocalizedString("cancel", comment: ""), style: .plain, target: self, action: #selector(cancelDatePicker))
+		let setButton = UIBarButtonItem(title: NSLocalizedString("set", comment: ""), style: .plain, target: self, action: #selector(dobPicker))
 		let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
 		
 		toolbar.setItems([cancelButton, spaceButton, setButton], animated: false)
@@ -219,6 +251,9 @@ class ProfileViewController: FormViewController {
 		nameLabel.text = viewModelCast.name
 		emailLabel.text = viewModelCast.email
 		
+		firstNameTextField.text = viewModelCast.firstName
+		lastNameTextField.text = viewModelCast.lastName
+		
 		dobTextField.text = viewModelCast.dobDisplayText
 		phoneTextField.text = viewModelCast.phone		
 		address1TextField.text = viewModelCast.addressLine1
@@ -235,6 +270,10 @@ class ProfileViewController: FormViewController {
 	@IBAction func onChangePasswordButton(_ sender: Any) {
 	}
 	
+	@IBAction func onSaveButtonPressed(_ sender: Any) {
+		viewModelCast.saveModel()
+	}
+	
 	@IBAction func onPermissionValueChanged(_ sender: Any) {
 		viewModelCast.isPermisionEnabled = permisionSwitch.isOn
 	}
@@ -246,7 +285,6 @@ class ProfileViewController: FormViewController {
 extension ProfileViewController: UIGestureRecognizerDelegate {
 	
 	@objc func tapUserPhoto(_ sender: UITapGestureRecognizer) {
-		let photoUtils = PhotoUtils(inViewController: self)
 		photoUtils.showChoosePhoto { (success, image) in
 			if success {
 				self.viewModelCast.profileImage = image!
