@@ -24,7 +24,11 @@ class ProfileViewController: FormViewController {
 			phoneTextField.bind { self.viewModelCast.phone = $0 }
 		}
 	}
-
+	@IBOutlet weak var emailTextField: ProfileTextField! {
+		didSet {
+			emailTextField.bind { self.viewModelCast.email = $0 }
+		}
+	}
 	@IBOutlet weak var changePasswordButton: UIButton!
 	
 	@IBOutlet weak var contactDetailsSectionLabel: BoldLabel!
@@ -76,14 +80,14 @@ class ProfileViewController: FormViewController {
 	@IBOutlet weak var permisionSwitch: UISwitch!
 	@IBOutlet weak var permisionDetailsLabel: UILabel!
 	
-	@IBOutlet weak var logoutButton: UIButton!
-	
 	var viewModelCast: ProfileViewModel!
 	
 	let datePicker = UIDatePicker()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
+		title = "My Profile"
 		
 		profileTopView.backgroundColor = AppStyle.profileTopViewBackgroundColor
 		userPhotoImageView?.setRounded()
@@ -99,6 +103,7 @@ class ProfileViewController: FormViewController {
 		
 		registerForKeyboardReturnKey([dobTextField,
 									  phoneTextField,
+									  emailTextField,
 									  address1TextField,
 									  address2TextField,
 									  townTextField,
@@ -109,10 +114,7 @@ class ProfileViewController: FormViewController {
 									  gpPostcodeTextField])
 		
 		initViewModel(viewModel: ProfileViewModel())
-		
 		refreshFields()
-		applyLocalization()
-		applytheme()
 	}
 	
 	// MARK: Bindings
@@ -134,6 +136,13 @@ class ProfileViewController: FormViewController {
 				self?.dobTextField.text = date
 			}
 		}
+		
+		viewModelCast.emailValidationStatus = { [weak self] () in
+			DispatchQueue.main.async {
+				self?.emailTextField.errorMessage = self?.viewModelCast.emailErrorMessage
+				self?.emailTextField.becomeFirstResponder()
+			}
+		}
 	}
 	
 	override func viewWillDisappear(_ animated: Bool) {
@@ -149,43 +158,6 @@ class ProfileViewController: FormViewController {
 		if textField == dobTextField {
 			showDatePicker()
 		}
-	}
-	
-	// MARK: Helpers
-	
-	func applytheme() {
-		changePasswordButton.setTitleColor(AppStyle.changePasswordButtonTitleColor, for: .normal)
-		logoutButton.setTitleColor(AppStyle.logoutButtonTitleColor, for: .normal)
-	}
-	
-	func applyLocalization() {
-		title = NSLocalizedString("profile_main_vc_title", comment: "")
-		
-		dobTextField.placeholder = NSLocalizedString("date_of_birth", comment: "")
-		phoneTextField.placeholder = NSLocalizedString("mobile_number", comment: "")
-		
-		address1TextField.placeholder = NSLocalizedString("address_line_1", comment: "")
-		address2TextField.placeholder = NSLocalizedString("address_line_2", comment: "")
-		townTextField.placeholder = NSLocalizedString("town_city", comment: "")
-		postcodeTextField.placeholder = NSLocalizedString("postcode", comment: "")
-		
-		gpNameTextField.placeholder = NSLocalizedString("gp_name", comment: "")
-		gpAccessCodeTextField.placeholder = NSLocalizedString("gp_access_code", comment: "")
-		gpAddressLineTextField.placeholder = NSLocalizedString("gp_address_line", comment: "")
-		gpPostcodeTextField.placeholder = NSLocalizedString("gp_postcode", comment: "")
-		
-		// Sections
-		personalDetailsSectionLabel.text = NSLocalizedString("profile_personal_details", comment: "")
-		contactDetailsSectionLabel.text = NSLocalizedString("profile_personal_contact_details", comment: "")
-		gpInformationSectionLabel.text = NSLocalizedString("profile_personal_gp_information", comment: "")
-		
-		changePasswordButton.setTitle(NSLocalizedString("profile_personal_change_password", comment: ""), for: .normal)
-		
-			permisionTitleLabel.text = NSLocalizedString("permisions_switch", comment: "")
-		
-		permisionDetailsLabel.text = NSLocalizedString("permisions_details", comment: "")
-		
-		logoutButton.setTitle(NSLocalizedString("profile_personal_logout", comment: ""), for: .normal)
 	}
 		
 	func showDatePicker() {
@@ -215,12 +187,9 @@ class ProfileViewController: FormViewController {
 	}
 	
 	func refreshFields() {
-		userPhotoImageView.image = viewModelCast.profileImage
-		nameLabel.text = viewModelCast.name
-		emailLabel.text = viewModelCast.email
-		
 		dobTextField.text = viewModelCast.dobDisplayText
-		phoneTextField.text = viewModelCast.phone		
+		phoneTextField.text = viewModelCast.phone
+		emailTextField.text = viewModelCast.email
 		address1TextField.text = viewModelCast.addressLine1
 		address2TextField.text = viewModelCast.addressLine2
 		townTextField.text = viewModelCast.town
@@ -237,9 +206,6 @@ class ProfileViewController: FormViewController {
 	
 	@IBAction func onPermissionValueChanged(_ sender: Any) {
 		viewModelCast.isPermisionEnabled = permisionSwitch.isOn
-	}
-	@IBAction func onLogoutPressed(_ sender: Any) {
-		DataController.logout()
 	}
 }
 

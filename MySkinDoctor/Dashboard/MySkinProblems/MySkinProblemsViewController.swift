@@ -31,9 +31,7 @@ class MySkinProblemsViewController: BindingViewController {
 		
 		initViewModel(viewModel: MySkinProblemsViewModel())
 		
-		if viewModelCast.shouldShowSetupWizard {
-			performSegue(withIdentifier: Segues.goToSetupWizard, sender: nil)
-		}
+//		self.performSegue(withIdentifier: Segues.goToSetupWizard, sender: nil)
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
@@ -104,9 +102,15 @@ extension MySkinProblemsViewController: UITableViewDelegate, UITableViewDataSour
 		let numOfSections = viewModelCast.getNumberOfSections()
 		
 		if numOfSections == 0 {
-			tableView.addNoDataLabel(labelText: NSLocalizedString("myskinproblems_no_data", comment: ""))
+			let noDataLabel: UILabel     = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
+			noDataLabel.text          = NSLocalizedString("myskinproblems_no_data", comment: "")
+			noDataLabel.textColor     = UIColor.black
+			noDataLabel.textAlignment = .center
+			tableView.backgroundView  = noDataLabel
+			tableView.separatorStyle  = .none
 		} else {
-			tableView.removeNoDataLabel()
+			tableView.separatorStyle = .singleLine
+			tableView.backgroundView = nil
 		}
 		
 		return numOfSections

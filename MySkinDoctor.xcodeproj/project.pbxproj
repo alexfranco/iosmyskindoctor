@@ -59,12 +59,6 @@
 		7849CCA4203EE2030030A7B1 /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7849CCA2203EE2030030A7B1 /* ForgotPasswordViewModel.swift */; };
 		7849CCA8203EE3E60030A7B1 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7849CCA7203EE3E60030A7B1 /* BaseViewModel.swift */; };
 		7849CCA9203EE3E60030A7B1 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7849CCA7203EE3E60030A7B1 /* BaseViewModel.swift */; };
-		7884D8B1205A64F900C59E7B /* UITableView+NoDataLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7884D8B0205A64F800C59E7B /* UITableView+NoDataLabel.swift */; };
-		7884D8B2205A64F900C59E7B /* UITableView+NoDataLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7884D8B0205A64F800C59E7B /* UITableView+NoDataLabel.swift */; };
-		7884D8B4205A787600C59E7B /* UITextField+Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7884D8B3205A787500C59E7B /* UITextField+Padding.swift */; };
-		7884D8B5205A787600C59E7B /* UITextField+Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7884D8B3205A787500C59E7B /* UITextField+Padding.swift */; };
-		7884D8B7205AB2D900C59E7B /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7884D8B6205AB2D900C59E7B /* UIImage+Extensions.swift */; };
-		7884D8B8205AB2D900C59E7B /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7884D8B6205AB2D900C59E7B /* UIImage+Extensions.swift */; };
 		788C3207204E7D680078A983 /* MySkinProblems.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 788C3206204E7D680078A983 /* MySkinProblems.storyboard */; };
 		788C3208204E7D680078A983 /* MySkinProblems.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 788C3206204E7D680078A983 /* MySkinProblems.storyboard */; };
 		788C320D204E813E0078A983 /* BookAConsultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788C320C204E813E0078A983 /* BookAConsultViewController.swift */; };
@@ -296,9 +290,6 @@
 		7849CC9D203EE15A0030A7B1 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		7849CCA2203EE2030030A7B1 /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 		7849CCA7203EE3E60030A7B1 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
-		7884D8B0205A64F800C59E7B /* UITableView+NoDataLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+NoDataLabel.swift"; sourceTree = "<group>"; };
-		7884D8B3205A787500C59E7B /* UITextField+Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Padding.swift"; sourceTree = "<group>"; };
-		7884D8B6205AB2D900C59E7B /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		788C3206204E7D680078A983 /* MySkinProblems.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MySkinProblems.storyboard; sourceTree = "<group>"; };
 		788C320C204E813E0078A983 /* BookAConsultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookAConsultViewController.swift; sourceTree = "<group>"; };
 		788C3212204E88D00078A983 /* BookAConsultCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookAConsultCalendarViewController.swift; sourceTree = "<group>"; };
@@ -725,7 +716,6 @@
 		FA9760D7203B0DF000242255 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				7884D8B0205A64F800C59E7B /* UITableView+NoDataLabel.swift */,
 				FA9760D8203B0E0A00242255 /* UIViewController+Alerts.swift */,
 				FA33265F204034B300657C8A /* UIImageView+Circular.swift */,
 				78C205CA20459D7D00F8E407 /* UINavigationController+Extensions.swift */,
@@ -734,8 +724,6 @@
 				788C3217204EB63B0078A983 /* UILabel+Padding.swift */,
 				FAAE62842056915100823BFE /* UIButton+Circular.swift */,
 				FA6E8F612056C239001F6E16 /* UIButton+Border.swift */,
-				7884D8B3205A787500C59E7B /* UITextField+Padding.swift */,
-				7884D8B6205AB2D900C59E7B /* UIImage+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1244,7 +1232,6 @@
 				FA33265C2040336F00657C8A /* PhotoViewController.swift in Sources */,
 				FAD6ADBD204461050050C1A9 /* AddSkinProblemsViewController.swift in Sources */,
 				FA332661204034B300657C8A /* UIImageView+Circular.swift in Sources */,
-				7884D8B2205A64F900C59E7B /* UITableView+NoDataLabel.swift in Sources */,
 				788C3214204E88D00078A983 /* BookAConsultCalendarViewController.swift in Sources */,
 				FA6130D7205023CE00731495 /* BookAConsultThankYouViewModel.swift in Sources */,
 				788C321E204EF0400078A983 /* BookAConsultCalendarViewModel.swift in Sources */,
@@ -1313,7 +1300,6 @@
 				78E44AA7203EBE5C0094F3AF /* PasswordStrength.swift in Sources */,
 				FAA774F620529F6F00A794FF /* MySkinProblemDiagnoseUpdateRequestViewController.swift in Sources */,
 				78B9E53F203C4CD70054CAD3 /* ForgotPasswordViewController.swift in Sources */,
-				7884D8B5205A787600C59E7B /* UITextField+Padding.swift in Sources */,
 				FA3326C320441C8500657C8A /* BoldLabel.swift in Sources */,
 				78264734205800FB00F79FB7 /* Consultation+CoreDataClass.swift in Sources */,
 				FA7F714020529344006B1EFF /* BaseMySkinProblemDiagnosisViewController.swift in Sources */,
@@ -1335,7 +1321,6 @@
 				78B9E543203C4CD70054CAD3 /* UIViewController+Alerts.swift in Sources */,
 				7826473B205800FB00F79FB7 /* Profile+CoreDataProperties.swift in Sources */,
 				78B9E544203C4CD70054CAD3 /* AppStyle.swift in Sources */,
-				7884D8B8205AB2D900C59E7B /* UIImage+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1367,7 +1352,6 @@
 				FA3326BA20441C8500657C8A /* CustomErrors.swift in Sources */,
 				FA33265B2040336F00657C8A /* PhotoViewController.swift in Sources */,
 				FA332660204034B300657C8A /* UIImageView+Circular.swift in Sources */,
-				7884D8B1205A64F900C59E7B /* UITableView+NoDataLabel.swift in Sources */,
 				FAC1AF0E2036F46F00547BBC /* ApiUtils.swift in Sources */,
 				FA33263A20400FD200657C8A /* DashboardTabViewController.swift in Sources */,
 				788C3213204E88D00078A983 /* BookAConsultCalendarViewController.swift in Sources */,
@@ -1436,7 +1420,6 @@
 				782647072057D49E00F79FB7 /* DiagnoseAttachments+CoreDataProperties.swift in Sources */,
 				78B9E516203C2B920054CAD3 /* ForgotPasswordViewController.swift in Sources */,
 				FADC334A204706DC0065A7EB /* SkinProblemLocationViewController.swift in Sources */,
-				7884D8B4205A787600C59E7B /* UITextField+Padding.swift in Sources */,
 				788C320D204E813E0078A983 /* BookAConsultViewController.swift in Sources */,
 				FAA774F520529F6F00A794FF /* MySkinProblemDiagnoseUpdateRequestViewController.swift in Sources */,
 				FA3326C220441C8500657C8A /* BoldLabel.swift in Sources */,
@@ -1458,7 +1441,6 @@
 				FA3326C620441C8500657C8A /* TitleLabel.swift in Sources */,
 				FA9760D9203B0E0A00242255 /* UIViewController+Alerts.swift in Sources */,
 				780F70202035A07000D96601 /* AppStyle.swift in Sources */,
-				7884D8B7205AB2D900C59E7B /* UIImage+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

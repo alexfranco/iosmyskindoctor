@@ -30,7 +30,7 @@ class SetupWizard3ViewController: FormViewController {
 	
 	@IBOutlet weak var gpPostcodeTextField: FormTextField!  {
 		didSet {
-			gpPostcodeTextField.bind { self.viewModelCast.gpPostcode = $0 }
+			gpPostcodeTextField.bind { self.viewModelCast.gpPostCode = $0 }
 		}
 	}
 	
@@ -43,7 +43,10 @@ class SetupWizard3ViewController: FormViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-			navigationController?.setBackgroundColorWithoutShadowImage(bgColor: AppStyle.defaultNavigationBarColor, titleColor: AppStyle.defaultNavigationBarTitleColor)
+		
+		title = "Setup Wizard 3"
+		
+		navigationController?.setBackgroundColorWithoutShadowImage(bgColor: AppStyle.defaultNavigationBarColor, titleColor: AppStyle.defaultNavigationBarTitleColor)
 		
 		registerForKeyboardReturnKey([gpNameTextField,
 									  gpAccessCodeTextField,
@@ -51,8 +54,6 @@ class SetupWizard3ViewController: FormViewController {
 									  gpPostcodeTextField])
 		
 		initViewModel(viewModel: SetupWizard3ViewModel())
-		
-		applyLocalization()
 	}
 	
 	// MARK: Bindings
@@ -68,30 +69,11 @@ class SetupWizard3ViewController: FormViewController {
 		}
 	}
 	
-	// MARK: IBActions
-	
 	@IBAction func onPermissionValueChanged(_ sender: Any) {
 		viewModelCast.isPermisionEnabled = permisionSwitch.isOn
 	}
 	
 	@IBAction func onNextButtonPressed(_ sender: Any) {
 		viewModelCast.saveModel()
-	}
-	
-	// MARK: Helpers
-	
-	func applyLocalization() {
-		title = NSLocalizedString("setup_wizard3_main_vc_title", comment: "")
-		
-		gpNameTextField.placeholder = NSLocalizedString("gp_name", comment: "")
-		gpAccessCodeTextField.placeholder = NSLocalizedString("gp_access_code", comment: "")
-		gpAddressLineTextField.placeholder = NSLocalizedString("gp_address_line", comment: "")
-		gpPostcodeTextField.placeholder = NSLocalizedString("gp_postcode", comment: "")
-		
-		permisionTitleLabel.text = NSLocalizedString("permisions_switch", comment: "")
-		
-		permisionDetailLabel.text = NSLocalizedString("permisions_details", comment: "")
-		
-		nextButton.setTitle(NSLocalizedString("finish", comment: ""), for: .normal)
 	}
 }

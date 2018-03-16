@@ -12,6 +12,14 @@ import TextFieldEffects
 
 class ProfileTextField: HoshiTextField {
 	
+	
+	override func awakeFromNib() {
+		super.awakeFromNib()
+		
+		borderActiveColor = AppStyle.formTextFieldBorderActiveColor
+		borderInactiveColor = AppStyle.formTextFieldBorderInactiveColor
+	}
+	
 	private var originalPlaceholder: String?
 	
 	private var _placeholder: String?
@@ -19,7 +27,7 @@ class ProfileTextField: HoshiTextField {
 		didSet {
 			_placeholder = placeholder
 			
-			if originalPlaceholder == nil {
+			if originalPlaceholder != nil {
 				originalPlaceholder = _placeholder
 			}
 		}
@@ -48,15 +56,6 @@ class ProfileTextField: HoshiTextField {
 			}
 		}
 	}
-	
-	override func awakeFromNib() {
-		super.awakeFromNib()
-		
-		addLeftPadding()
-		borderActiveColor = AppStyle.formTextFieldBorderActiveColor
-		borderInactiveColor = AppStyle.formTextFieldBorderInactiveColor
-	}
-	
 	
 	// MARK: Binding
 	

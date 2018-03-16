@@ -64,8 +64,8 @@ class LoginViewModel: BaseViewModel {
 //				print("login success")
 //
 				// TODO save token
-				DataController.login(email: email)
-		
+				let defaults = UserDefaults.standard
+				defaults.set(true, forKey: UserDefaultConsts.isUserLoggedIn)
 				self.goNextSegue!()
 //			case .failure(let model, let error):
 //				print("error")

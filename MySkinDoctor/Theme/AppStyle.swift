@@ -9,8 +9,8 @@
 import Foundation
 import UIKit
 
-//private let defaultFontName = "SFProText-Regular"
-//private let defaultFontBoldName = "SFProText-Semibold"
+private let defaultFontName = "Helvetica"
+private let defaultFontBoldName = "HelveticaNeue-Bold"
 
 struct BaseColors {
 	static var hospitalGreen: UIColor { return UIColor(red: 120.0 / 255.0, green: 219.0 / 255.0, blue: 140.0 / 255.0, alpha: 1.0) }
@@ -24,7 +24,6 @@ struct BaseColors {
 	static var warmGrey: UIColor { return UIColor(white: 129.0 / 255.0, alpha: 1.0) }
 	static var warmGreyTwo: UIColor { return UIColor(white: 113.0 / 255.0, alpha: 1.0) }
 	static var warmGreyThree: UIColor { return UIColor(white: 132.0 / 255.0, alpha: 1.0) }
-	static var warmGreyFour: UIColor { return UIColor(red: 115.0 / 255.0, green: 115.0 / 255.0, blue: 115.0 / 255.0, alpha: 1.0) }
 	static var black: UIColor { return UIColor(white: 46.0 / 255.0, alpha: 1.0) }
 	static var greyishBrown: UIColor { return UIColor(white: 70.0 / 255.0, alpha: 1.0) }
 	static var ice: UIColor { return UIColor(red: 239.0 / 255.0, green: 1.0, blue: 242.0 / 255.0, alpha: 1.0) }
@@ -44,27 +43,16 @@ struct AppColors {
 }
 
 struct AppFonts {
-//	static let smallFont = UIFont(name: defaultFontMediumName, size: AppFontSizes.smallTextSize)
-//	static let defaultFont = UIFont(name: defaultFontMediumName, size: AppFontSizes.defaultTextSize)
-//	static let mediumFont = UIFont(name: defaultFontMediumName, size: AppFontSizes.mediumTextSize)
-//	static let bigFont = UIFont(name: defaultFontMediumName, size: AppFontSizes.mediumTextSize)
-//	static let veryBigFont = UIFont(name: defaultFontMediumName, size: AppFontSizes.mediumTextSize)
-//
-//	static let defaultBoldFont = UIFont(name: defaultFontBoldName, size: AppFontSizes.defaultTextSize)
-//	static let mediumBoldFont = UIFont(name: defaultFontBoldName, size: AppFontSizes.mediumTextSize)
-//	static let bigBoldFont = UIFont(name: defaultFontBoldName, size: AppFontSizes.mediumTextSize)
-//	static let veryBigBoldFont = UIFont(name: defaultFontBoldName, size: AppFontSizes.mediumTextSize)
+	static let smallFont = UIFont(name: defaultFontName, size: AppFontSizes.smallTextSize)
+	static let defaultFont = UIFont(name: defaultFontName, size: AppFontSizes.defaultTextSize)
+	static let mediumFont = UIFont(name: defaultFontName, size: AppFontSizes.mediumTextSize)
+	static let bigFont = UIFont(name: defaultFontName, size: AppFontSizes.mediumTextSize)
+	static let veryBigFont = UIFont(name: defaultFontName, size: AppFontSizes.mediumTextSize)
 	
-	static let smallFont = UIFont.systemFont(ofSize: AppFontSizes.smallTextSize)
-	static let defaultFont = UIFont.systemFont(ofSize: AppFontSizes.defaultTextSize)
-	static let mediumFont = UIFont.systemFont(ofSize: AppFontSizes.mediumTextSize)
-	static let bigFont = UIFont.systemFont(ofSize: AppFontSizes.bigTextSize)
-	static let veryBigFont = UIFont.systemFont(ofSize: AppFontSizes.veryBigTextSize)
-	
-	static let defaultBoldFont = UIFont.boldSystemFont(ofSize: AppFontSizes.defaultTextSize)
-	static let mediumBoldFont = UIFont.boldSystemFont(ofSize: AppFontSizes.mediumTextSize)
-	static let bigBoldFont = UIFont.boldSystemFont(ofSize: AppFontSizes.bigTextSize)
-	static let veryBigBoldFont = UIFont.boldSystemFont(ofSize: AppFontSizes.veryBigTextSize)
+	static let defaultBoldFont = UIFont(name: defaultFontName, size: AppFontSizes.defaultTextSize)
+	static let mediumBoldFont = UIFont(name: defaultFontName, size: AppFontSizes.mediumTextSize)
+	static let bigBoldFont = UIFont(name: defaultFontName, size: AppFontSizes.mediumTextSize)
+	static let veryBigBoldFont = UIFont(name: defaultFontName, size: AppFontSizes.mediumTextSize)
 }
 
 private struct AppFontSizes {
@@ -73,7 +61,7 @@ private struct AppFontSizes {
 	static let mediumTextSize: CGFloat = 14.0
 	static let bigTextSize: CGFloat = 16.0
 	static let veryBigTextSize: CGFloat = 18.0
-	static let fieldTextSize: CGFloat = 12.0
+	static let fieldTextSize: CGFloat = 14.0
 }
 
 struct AppStyle {
@@ -104,9 +92,6 @@ struct AppStyle {
 	static let mySkinTableSectionTextFont = AppFonts.defaultBoldFont
 	
 	// Add Skin Problem
-	
-	static let mySkinProblemsDiagnoseTableViewBackground = BaseColors.tableViewGrey
-	static let mySkinProblemsUndiagnoseTableViewBackground = UIColor.white
 	
 	static let addSkinProblemInfoViewTextColor = UIColor.white
 	static let addSkinProblemUndiagnosedViewBackground = BaseColors.amethyst
@@ -197,17 +182,14 @@ struct AppStyle {
 	static let profileTopViewBackgroundColor = AppColors.thirdTabColor
 	
 	static let circularImageViewBorderColor = UIColor.white
-	
-	static let changePasswordButtonTitleColor = BaseColors.skyBlue
-	static let logoutButtonTitleColor = BaseColors.blush
 
 	// Default TextField
 
 	static let defaultTextFieldBackgroundColor = UIColor.white
 	static let defaultTextFieldBorderColor = BaseColors.formGrey
-	static let defaultTextFieldTextColor = BaseColors.warmGreyFour
+	static let defaultTextFieldTextColor = BaseColors.formGrey
 	static let defaultTextFieldError = UIColor.red
-	static let defaultTextFieldPlaceHolderColor = BaseColors.warmGreyThree
+	static let defaultTextFieldPlaceHolderColor = BaseColors.warmGrey
 	static let defaultTextFieldFont = AppFonts.defaultFont
 	
 	static let formTextFieldBorderActiveColor = AppColors.secudaryColor
@@ -217,6 +199,7 @@ struct AppStyle {
 	static let defaultTextViewTextColor = BaseColors.black
 	static let defaultTextViewPlaceHolderColor = BaseColors.brownishGrey
 	
+
 	// Positive Button
 	static let positiveButtonBackgroundColor = AppColors.primaryColor
 	static let positiveButtonTextColor = UIColor.white
@@ -228,10 +211,9 @@ struct AppStyle {
 	static let noBackgroundButtonFont = AppFonts.defaultFont
 	
 	// Wizard
+	
 	static let wizardNHSButtonColor = BaseColors.skyBlue 
 	static let wizardSelfPayButtonColor = BaseColors.hospitalGreen
-	
-	static let profileImageViewPlaceHolder = BaseColors.brownishGrey
 }
 
 

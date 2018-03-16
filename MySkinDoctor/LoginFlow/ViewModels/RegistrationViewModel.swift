@@ -63,8 +63,9 @@ class RegistrationViewModel: BaseViewModel {
 			case .success(let model):
 				print("registration success")
 				
-				DataController.login(email: self.email)
-				
+				// TODO save token
+				let defaults = UserDefaults.standard
+				defaults.set(true, forKey: UserDefaultConsts.isUserLoggedIn)
 				self.goNextSegue!()
 			case .failure(let model, let error):
 				print("error")

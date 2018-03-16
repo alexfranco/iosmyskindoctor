@@ -112,7 +112,7 @@ extension BookAConsultCalendarViewController: CVCalendarMenuViewDelegate, CVCale
 	}
 	
 	func dayOfWeekFont() -> UIFont {
-		return AppStyle.consultCalendarFont
+		return AppStyle.consultCalendarFont!
 	}
 	
 	func weekdaySymbolType() -> WeekdaySymbolType {

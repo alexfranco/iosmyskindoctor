@@ -18,13 +18,7 @@ class SkinProblemTableCellViewModel : NSObject {
 		
 	required init(withModel model: SkinProblemAttachment, index: Int) {
 		self.name = String.init(format: "Photo %d", index + 1)
-		
-		if model.attachmentTypeEnum == .document {
-			self.location = "Document"
-		} else {
-			self.location = model.locationTypeEnum.description
-		}
-		
+		self.location = model.locationTypeEnum.description
 		self.problemImage = model.problemImage == nil ? UIImage(named: "logo")! : model.problemImage as! UIImage
 		self.problemDescription = model.problemDescription
 		

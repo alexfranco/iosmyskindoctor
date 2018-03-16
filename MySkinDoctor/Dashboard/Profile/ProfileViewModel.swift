@@ -13,8 +13,16 @@ class ProfileViewModel: BaseViewModel {
 	
 	var profile: Profile!
 	
-	var name = ""
 	var email = ""
+	
+	var emailValidationStatus: (()->())?
+	
+	var emailErrorMessage: String = "" {
+		didSet {
+			self.emailValidationStatus?()
+		}
+	}
+	
 	var phone = ""
 	
 	var dob: Date? {
@@ -53,16 +61,24 @@ class ProfileViewModel: BaseViewModel {
 	
 	var profileImageUpdated: ((_ image: UIImage)->())?
 	
+
+	override func validateForm() -> Bool {
+		var isValid = true
+		
+//		if Validations.isValidEmail(testStr: email) {
+//			emailErrorMessage = ""
+//		} else {
+//			emailErrorMessage = NSLocalizedString("error_email_not_valid", comment: "")
+//			isValid = false
+//		}
+		
+		return isValid
+	}
+	
 	override init() {
 		super.init()
 		
 		profile = DataController.createUniqueEntity(type: Profile.self)
-		
-		if let firstName = profile.firstName, let lastName = profile.lastName {
-			name = firstName + " " + lastName
-		} else {
-			name = "-"
-		}
 		
 		email = profile.email ?? ""
 		phone = profile.phone ?? ""
@@ -84,11 +100,15 @@ class ProfileViewModel: BaseViewModel {
 		if let profileImageSafe = profile.profileImage as? UIImage {
 			profileImage = profileImageSafe
 		} else {
-			profileImage = UIImage.init(color: AppStyle.profileImageViewPlaceHolder)!
+			profileImage = UIImage(named: "logo")!
 		}
 	}
 	
 	func saveModel() {
+		
+		if !self.validateForm() {
+			return
+		}
 		
 		profile.email = email
 		profile.phone = phone

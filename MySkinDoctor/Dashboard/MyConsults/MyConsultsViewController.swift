@@ -94,9 +94,15 @@ extension MyConsultsViewController: UITableViewDelegate, UITableViewDataSource {
 		let numOfSections = viewModelCast.getNumberOfSections()
 		
 		if numOfSections == 0 {
-			tableView.addNoDataLabel(labelText: NSLocalizedString("myconsults_no_data", comment: ""))
+			let noDataLabel: UILabel     = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
+			noDataLabel.text          = NSLocalizedString("myconsults_no_data", comment: "")
+			noDataLabel.textColor     = UIColor.black
+			noDataLabel.textAlignment = .center
+			tableView.backgroundView  = noDataLabel
+			tableView.separatorStyle  = .none
 		} else {
-			tableView.removeNoDataLabel()
+			tableView.separatorStyle = .singleLine
+			tableView.backgroundView = nil
 		}
 		
 		return numOfSections

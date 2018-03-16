@@ -27,8 +27,6 @@ class MyConsultTableViewCellViewModel: BaseViewModel {
 			
 			if let profileImage = doctor.profilePicture as? UIImage {
 				self.profileImage = profileImage
-			} else {
-				self.profileImage = UIImage.init(color: AppStyle.profileImageViewPlaceHolder)!
 			}
 			
 			if let firstName = doctor.firstName, let lastName = doctor.lastName {
