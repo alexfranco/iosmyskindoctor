@@ -18,17 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 		IQKeyboardManager.sharedManager().enable = true // controls the scrollviews and uitextfields
 		ThemeManager.applyTheme()
-		
-		let defaults = UserDefaults.standard
-
-		if defaults.bool(forKey: UserDefaultConsts.isUserLoggedIn) {
-			let mainStoryboard : UIStoryboard = UIStoryboard(name: Storyboard.mainStoryboardName, bundle: nil)
-			let initialVC : UIViewController = mainStoryboard.instantiateViewController(withIdentifier: Storyboard.mainTabNavigationControllerId) as UIViewController
-			self.window = UIWindow(frame: UIScreen.main.bounds)
-			self.window?.rootViewController = initialVC
-			self.window?.makeKeyAndVisible()
-		}
-				
+		updateRootVC()
 		return true
 	}
 
@@ -56,5 +46,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		CoreDataStack.saveContext()
 	}
 	
+	func updateRootVC() {
+		
+		let isUserLoggedIn = UserDefaults.standard.bool(forKey: UserDefaultConsts.isUserLoggedIn)
+		var rootVC : UIViewController?
+			
+		if isUserLoggedIn == true {
+			rootVC = UIStoryboard(name: Storyboard.mainStoryboardName, bundle: nil).instantiateViewController(withIdentifier: Storyboard.mainTabNavigationControllerId)
+		} else{
+			rootVC = UIStoryboard(name: Storyboard.loginStoryboardName, bundle: nil).instantiateViewController(withIdentifier: Storyboard.loginNavigationControllerId)
+		}
+		
+		let appDelegate = UIApplication.shared.delegate as! AppDelegate
+		appDelegate.window?.rootViewController = rootVC
+	}
 }
 

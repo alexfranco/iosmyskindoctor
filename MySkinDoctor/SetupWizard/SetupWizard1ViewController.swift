@@ -88,7 +88,7 @@ class SetupWizard1ViewController: FormViewController {
 		lastNameTextField.placeholder = NSLocalizedString("last_name", comment: "")
 		postcodeTextField.placeholder = NSLocalizedString("postcode", comment: "")
 		
-		neverShareLabel.text =  NSLocalizedString("setup_wizard1_will_never_share", comment: "")
+		neverShareLabel.text =  NSLocalizedString("setup_wizard1_your_personal_details", comment: "")
 		
 		personalDetailsTitleLabel.text =  NSLocalizedString("setup_wizard1_will_never_share", comment: "")
 	}

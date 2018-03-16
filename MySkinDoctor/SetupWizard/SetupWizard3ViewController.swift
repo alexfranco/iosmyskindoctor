@@ -51,7 +51,7 @@ class SetupWizard3ViewController: FormViewController {
 									  gpPostcodeTextField])
 		
 		initViewModel(viewModel: SetupWizard3ViewModel())
-		
+		viewModelCast.isPermisionEnabled = true
 		applyLocalization()
 	}
 	

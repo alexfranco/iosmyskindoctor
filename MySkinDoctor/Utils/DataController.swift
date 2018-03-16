@@ -117,5 +117,8 @@ class DataController {
 		let defaults = UserDefaults.standard
 		defaults.set(false, forKey: UserDefaultConsts.isUserLoggedIn)
 		deleteEntity(type: Profile.self)
+		
+		 let appDelegate = UIApplication.shared.delegate as! AppDelegate
+		 appDelegate.updateRootVC()
 	}
 }

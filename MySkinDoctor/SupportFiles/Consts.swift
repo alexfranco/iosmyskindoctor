@@ -37,7 +37,9 @@ struct Segues {
 
 struct Storyboard {
 	static let mainStoryboardName = "Main"
+	static let loginStoryboardName = "Login"
 	static let mainTabNavigationControllerId = "MainTabNavigationController"
+	static let loginNavigationControllerId = "loginNavigationControllerId"
 }
 
 struct UserDefaultConsts {
