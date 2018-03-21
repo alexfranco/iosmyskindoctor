@@ -18,10 +18,24 @@ class SetupWizard2ViewModel: BaseViewModel {
 	}
 	
 	func saveModel() {
-		let profile = DataController.createUniqueEntity(type: Profile.self)
-		profile.isNHS = isNHS
-		DataController.saveEntity(managedObject: profile)
 		
-		goNextSegue!()
+		ApiUtils.updateProfile(accessToken: DataController.getAccessToken(), firstName: nil, lastName: nil, dob: nil, phone: nil, addressLine1: nil, addressLine2: nil, town: nil, postcode: nil, gpName: nil, gpAddress: nil, gpPostCode: nil, gpContactPermission: nil, selfPay: !isNHS, completionHandler: { (result) in
+			self.isLoading = false
+			
+			switch result {
+			case .success(let _):
+				print("update profile success")
+				
+				let profile = DataController.createUniqueEntity(type: Profile.self)
+				profile.isNHS = self.isNHS
+				DataController.saveEntity(managedObject: profile)
+				
+				self.goNextSegue!()
+			case .failure(let model, let error):
+				print("error")
+				self.showResponseErrorAlert!(model as? BaseResponseModel, error)
+			}
+		})
+		
 	}
 }

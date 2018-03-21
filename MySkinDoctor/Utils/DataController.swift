@@ -97,17 +97,22 @@ class DataController {
 				moc.delete(object as! NSManagedObject)
 			}
 			CoreDataStack.saveContext()
-		}
-		
+		}		
 	}
 	
-	static func login(email: String) {
+	static func getAccessToken() -> String {
+		return DataController.createUniqueEntity(type: Profile.self).key ?? ""
+	}
+	
+	static func login(email: String, key: String) {
 		let defaults = UserDefaults.standard
 		defaults.set(true, forKey: UserDefaultConsts.isUserLoggedIn)
+		defaults.set(true, forKey: UserDefaultConsts.isFirstTime)
 	
 		deleteEntity(type: Profile.self)
 		
 		let profile = createUniqueEntity(type: Profile.self)
+		profile.key = key
 		profile.email = email
 		
 		saveEntity(managedObject: profile)
@@ -116,6 +121,7 @@ class DataController {
 	static func logout() {
 		let defaults = UserDefaults.standard
 		defaults.set(false, forKey: UserDefaultConsts.isUserLoggedIn)
+		defaults.set(false, forKey: UserDefaultConsts.isFirstTime)
 		deleteEntity(type: Profile.self)
 		
 		 let appDelegate = UIApplication.shared.delegate as! AppDelegate

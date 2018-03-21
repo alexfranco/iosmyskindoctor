@@ -44,7 +44,8 @@ struct Storyboard {
 }
 
 struct UserDefaultConsts {
-	static let isUserLoggedIn = "isUserLoggedIn"	
+	static let isUserLoggedIn = "isUserLoggedIn"
+	static let isFirstTime = "isFirstTime"
 }
 
 struct CellId {

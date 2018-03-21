@@ -40,10 +40,16 @@ class BindingViewController: ProgressBarViewController {
 				let isLoading = viewModelSafe.isLoading
 				if isLoading {
 					self?.showSpinner("")
-					self?.nextButton.isEnabled = false
+					
+					if self?.nextButton != nil {
+						self?.nextButton.isEnabled = false
+					}
 				} else {
 					self?.hideSpinner()
-					self?.nextButton.isEnabled = true
+					
+					if self?.nextButton != nil {
+						self?.nextButton.isEnabled = true
+					}
 				}
 			}
 		}

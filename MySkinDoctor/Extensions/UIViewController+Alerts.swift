@@ -25,7 +25,7 @@ extension UIViewController {
 	
 	func showResponseError(responseModel: BaseResponseModel?, apiGenericError: ApiUtils.ApiGenericError) {
 		if let responseModelSafe = responseModel, let firstError = responseModelSafe.nonFieldErrors.first {
-			showAlertView(title: "Title", message: firstError)
+			showAlertView(title: "Error", message: firstError)
 		} else {
 			switch apiGenericError {
 			case .parseError:

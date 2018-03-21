@@ -15,15 +15,17 @@ class LoginViewController: FormViewController {
 	@IBOutlet weak var logoImageView: UIImageView!
 	@IBOutlet weak var emailTextField: FormTextField! {
 		didSet {
-			emailTextField.bind { (self.viewModel as! LoginViewModel).email = $0 }
+			emailTextField.bind { self.viewModelCast.email = $0 }
 		}
 	}
 	
 	@IBOutlet weak var passwordTextField: PasswordTextField! {
 		didSet {
-			passwordTextField.bind { (self.viewModel as! LoginViewModel).password = $0 }
+			passwordTextField.bind { self.viewModelCast.password = $0 }
 		}
 	}
+	
+	var viewModelCast: LoginViewModel!
 		
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -50,24 +52,24 @@ class LoginViewController: FormViewController {
 	override func initViewModel(viewModel: BaseViewModel) {
 		super.initViewModel(viewModel: viewModel)
 		
-		let loginViewModel = (viewModel as! LoginViewModel)
+		viewModelCast = (viewModel as! LoginViewModel)
 		
-		loginViewModel.goNextSegue = { [] () in
+		viewModelCast.goNextSegue = { [] () in
 			DispatchQueue.main.async {
 				self.performSegue(withIdentifier: Segues.goToMainStoryboardFromLogin, sender: nil)
 			}
 		}
 		
-		loginViewModel.emailValidationStatus = { [weak self] () in
+		viewModelCast.emailValidationStatus = { [weak self] () in
 			DispatchQueue.main.async {
-				self?.emailTextField.errorMessage = loginViewModel.emailErrorMessage
+				self?.emailTextField.errorMessage = self?.viewModelCast.emailErrorMessage
 				self?.emailTextField.becomeFirstResponder()
 			}
 		}
 		
-		loginViewModel.passwordValidationStatus = { [weak self] () in
+		viewModelCast.passwordValidationStatus = { [weak self] () in
 			DispatchQueue.main.async {
-				self?.passwordTextField.errorMessage = loginViewModel.passwordErrorMessage
+				self?.passwordTextField.errorMessage = self?.viewModelCast.passwordErrorMessage
 				self?.passwordTextField.becomeFirstResponder()
 			}
 		}
@@ -76,7 +78,7 @@ class LoginViewController: FormViewController {
 	// MARK: IBActions
 	
 	@IBAction func onNextButtonPressed(_ sender: Any) {
-		(self.viewModel as! LoginViewModel).loginUser()
+		viewModelCast.loginUser()
 	}
 	
 	// MARK: Unwind

@@ -30,7 +30,9 @@ class ProfileViewModel: BaseViewModel {
 	
 	var dob: Date? {
 		didSet {
-			dobUpdated!(dobDisplayText)
+			if dobUpdated != nil {
+				dobUpdated!(dobDisplayText)
+			}
 		}
 	}
 	
@@ -58,7 +60,9 @@ class ProfileViewModel: BaseViewModel {
 	
 	var profileImage: UIImage = UIImage(named: "logo")! {
 		didSet {
-			profileImageUpdated!(profileImage)
+			if profileImageUpdated != nil {
+				profileImageUpdated!(profileImage)
+			}
 		}
 	}
 	
@@ -69,6 +73,52 @@ class ProfileViewModel: BaseViewModel {
 	override init() {
 		super.init()
 		
+		loadDBModel()
+		fetchInternetModel()
+	}
+	
+	func fetchInternetModel() {		
+		isLoading = true
+		
+		ApiUtils.getProfile(accessToken: DataController.getAccessToken()) { (result) in
+			self.isLoading = false
+			
+			switch result {
+			case .success(let model):
+				print("get Profile")
+				let modelCast = model as! ProfileResponseModel
+				self.parseResponseModel(model: modelCast)
+				self.loadDBModel()
+				
+				self.onFetchFinished!()
+				
+			case .failure(let model, let error):
+				print("error \(error.localizedDescription)")
+				self.showResponseErrorAlert!(model as? BaseResponseModel, error)
+			}
+		}
+	}
+	
+	func parseResponseModel(model: ProfileResponseModel) {
+		let profile = DataController.createUniqueEntity(type: Profile.self)
+		
+		profile.firstName = model.firstName
+		profile.lastName = model.lastName
+		
+		profile.phone = model.mobileNumber
+		profile.postcode = model.postcode
+		profile.town = model.town
+		profile.gpName = model.gpName
+		profile.gpAddressLine = model.gpAddress
+		profile.gpPostcode = model.gpPostcode
+		profile.isNHS = model.selfPay ?? false
+		
+		if let dobSafe = model.dob as NSDate? { profile.dob = dobSafe }
+		
+		DataController.saveEntity(managedObject: profile)
+	}
+	
+	func loadDBModel() {
 		profile = DataController.createUniqueEntity(type: Profile.self)
 		
 		firstName = profile.firstName ?? ""
@@ -100,29 +150,40 @@ class ProfileViewModel: BaseViewModel {
 	
 	func saveModel() {
 		
-		profile.firstName = firstName
-		profile.lastName = lastName
-		
-		profile.email = email
-		profile.phone = phone
-		
-		if let dobSafe = dob as NSDate? {
-			profile.dob = dobSafe
-		}
-		
-		profile.addressLine1 = addressLine1
-		profile.addressLine2 = addressLine2
-		profile.town = town
-		profile.postcode = postcode
-		profile.gpName = gpName
-		profile.gpAccessCode = gpAccessCode
-		profile.gpAddressLine = gpAddressLine
-		profile.gpPostcode = gpPostcode
-		profile.isPermisionEnabled = isPermisionEnabled
-		profile.profileImage = profileImage
-		
-		DataController.saveEntity(managedObject: profile)
-		
-		didSaveChanges!()
+		ApiUtils.updateProfile(accessToken: DataController.getAccessToken(), firstName: firstName, lastName: lastName, dob: dob, phone: phone, addressLine1: addressLine1, addressLine2: addressLine2, town: town, postcode: postcode, gpName: gpName, gpAddress: gpAddressLine, gpPostCode: gpPostcode, gpContactPermission: isPermisionEnabled, selfPay: nil, completionHandler: { (result) in
+			self.isLoading = false
+			
+			switch result {
+			case .success(let model):
+				print("update profile success")
+				
+				self.profile.firstName = self.firstName
+				self.profile.lastName = self.lastName
+				
+				self.profile.phone = self.phone
+				
+				if let dobSafe = self.dob as NSDate? {
+					self.profile.dob = dobSafe
+				}
+				
+				self.profile.addressLine1 = self.addressLine1
+				self.profile.addressLine2 = self.addressLine2
+				self.profile.town = self.town
+				self.profile.postcode = self.postcode
+				self.profile.gpName = self.gpName
+				self.profile.gpAccessCode = self.gpAccessCode
+				self.profile.gpAddressLine = self.gpAddressLine
+				self.profile.gpPostcode = self.gpPostcode
+				self.profile.isPermisionEnabled = self.isPermisionEnabled
+				self.profile.profileImage = self.profileImage
+				
+				DataController.saveEntity(managedObject: self.profile)
+				
+				self.didSaveChanges!()
+			case .failure(let model, let error):
+				print("error")
+				self.showResponseErrorAlert!(model as? BaseResponseModel, error)
+			}
+		})
 	}
 }

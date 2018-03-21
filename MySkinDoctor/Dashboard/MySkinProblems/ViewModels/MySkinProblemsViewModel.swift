@@ -30,12 +30,13 @@ class MySkinProblemsViewModel: BaseViewModel {
 	
 	var shouldShowSetupWizard: Bool {
 		get {
-			if let profile = DataController.fetch(type: Profile.self) {
-				return !profile.profileFilled
-			}
-				
-			return true
+			return UserDefaults.standard.bool(forKey: UserDefaultConsts.isFirstTime)
 		}
+	}
+	
+	func wizardShown() {
+		let defaults = UserDefaults.standard
+		defaults.set(false, forKey: UserDefaultConsts.isFirstTime)
 	}
 
 	var allItems = [SkinProblems]()

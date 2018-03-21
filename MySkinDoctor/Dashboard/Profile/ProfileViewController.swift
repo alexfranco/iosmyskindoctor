@@ -140,6 +140,12 @@ class ProfileViewController: FormViewController {
 		
 		viewModelCast = (viewModel as! ProfileViewModel)
 		
+		viewModelCast.onFetchFinished = { [weak self] () in
+			DispatchQueue.main.async {
+				self?.refreshFields()
+			}
+		}
+		
 		viewModelCast.profileImageUpdated = { [weak self] (image) in
 			DispatchQueue.main.async {
 				self?.userPhotoImageView.contentMode = .scaleAspectFill

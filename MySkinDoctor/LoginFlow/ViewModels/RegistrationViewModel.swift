@@ -55,15 +55,16 @@ class RegistrationViewModel: BaseViewModel {
 		}
 		
 		self.isLoading = true
-		
-		ApiUtils.registration(email: email, password: password, firstName: "", lastName: "", dob: Date(), mobileNumber: "", postcode: "", deviceID: "") { (result) in
+
+		ApiUtils.registration(email: email, password:password) { (result) in
 			self.isLoading = false
 			
 			switch result {
 			case .success(let model):
 				print("registration success")
 				
-				DataController.login(email: self.email)
+				let modelCast = model as! RegistrationResponseModel
+				DataController.login(email: self.email, key: modelCast.key!)
 				
 				self.goNextSegue!()
 			case .failure(let model, let error):
@@ -71,6 +72,6 @@ class RegistrationViewModel: BaseViewModel {
 				self.showResponseErrorAlert!(model as? BaseResponseModel, error)
 			}
 		}
-	}	
+	}
 }
 

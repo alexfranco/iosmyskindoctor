@@ -110,4 +110,17 @@ extension Date {
 	internal static func components(_ fromDate: Date) -> DateComponents {
 		return Calendar.current.dateComponents(Date.componentFlags(), from: fromDate)
 	}
+	
+	func toIso() -> String {
+//		let formatter = DateFormatter()
+//		formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+//		formatter.timeZone = NSTimeZone(forSecondsFromGMT: 0) as TimeZone!
+//		return (formatter.string(from: self))
+		
+		let formatter = DateFormatter()
+		formatter.dateFormat = "yyyy-MM-dd"
+		formatter.timeZone = NSTimeZone(forSecondsFromGMT: 0) as TimeZone!
+		return (formatter.string(from: self))
+	}
+	
 }

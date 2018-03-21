@@ -14,16 +14,17 @@ class RegistrationViewController: FormViewController {
 	@IBOutlet weak var logoImageView: UIImageView!
 	@IBOutlet weak var emailTextField: FormTextField! {
 		didSet {
-			emailTextField.bind { (self.viewModel as! RegistrationViewModel).email = $0 }
+			emailTextField.bind { self.viewModelCast.email = $0 }
 		}
 	}
 	
 	@IBOutlet weak var passwordTextField: PasswordTextField! {
 		didSet {
-			passwordTextField.bind { (self.viewModel as! RegistrationViewModel).password = $0 }
+			passwordTextField.bind { self.viewModelCast.password = $0 }
 		}
 	}
 	
+	var viewModelCast: RegistrationViewModel!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -48,24 +49,27 @@ class RegistrationViewController: FormViewController {
 	override func initViewModel(viewModel: BaseViewModel) {
 		super.initViewModel(viewModel: viewModel)
 		
-		let registrationViewModel = viewModel as! RegistrationViewModel
+		viewModelCast = viewModel as! RegistrationViewModel
 		
-		registrationViewModel.goNextSegue = { [] () in
+		viewModelCast.goNextSegue = { [weak self] () in
 			DispatchQueue.main.async {
-				self.performSegue(withIdentifier: Segues.goToMainStoryboardFromLogin, sender: nil)
+			
+				self?.showAlertView(title: NSLocalizedString("registration_success_title", comment: ""), message: NSLocalizedString("registration_success_message", comment: ""), handler: { (action) in
+					self?.performSegue(withIdentifier: Segues.goToMainStoryboardFromLogin, sender: nil)
+				})
 			}
 		}
 		
-		registrationViewModel.emailValidationStatus = { [weak self] () in
+		viewModelCast.emailValidationStatus = { [weak self] () in
 			DispatchQueue.main.async {
-				self?.emailTextField.errorMessage = registrationViewModel.emailErrorMessage
+				self?.emailTextField.errorMessage = self?.viewModelCast.emailErrorMessage
 				self?.emailTextField.becomeFirstResponder()
 			}
 		}
 		
-		registrationViewModel.passwordValidationStatus = { [weak self] () in
+		viewModelCast.passwordValidationStatus = { [weak self] () in
 			DispatchQueue.main.async {
-				self?.passwordTextField.errorMessage = registrationViewModel.passwordErrorMessage
+				self?.passwordTextField.errorMessage = self?.viewModelCast.passwordErrorMessage
 				self?.passwordTextField.becomeFirstResponder()
 			}
 		}
@@ -74,7 +78,7 @@ class RegistrationViewController: FormViewController {
 	// MARK: IBActions
 	
 	@IBAction func onNextButtonPressed(_ sender: Any) {
-		(viewModel as! RegistrationViewModel).registerUser()
+		self.viewModelCast.registerUser()
 	}
 }
 

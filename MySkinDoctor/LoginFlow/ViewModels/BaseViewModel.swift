@@ -15,6 +15,7 @@ class BaseViewModel: NSObject {
 	var showAlert: ((_ title: String, _ message: String) -> ())?
 	var showResponseErrorAlert: ((_ responseModel: BaseResponseModel?, _ apiGenericError: ApiUtils.ApiGenericError)  -> ())?
 	var goNextSegue: (()->())?
+	var onFetchFinished: (()  -> ())?
 	
 	var isLoading: Bool = false {
 		didSet {

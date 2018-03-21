@@ -31,9 +31,10 @@ class MySkinProblemsViewController: BindingViewController {
 		
 		initViewModel(viewModel: MySkinProblemsViewModel())
 		
-		if viewModelCast.shouldShowSetupWizard {
+//		if viewModelCast.shouldShowSetupWizard {
 			performSegue(withIdentifier: Segues.goToSetupWizard, sender: nil)
-		}
+			viewModelCast.wizardShown()
+//		}
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {

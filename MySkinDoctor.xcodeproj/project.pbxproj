@@ -202,6 +202,8 @@
 		FA7F713C20529250006B1EFF /* BaseMySkinProblemDiagnosisViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7F713B20529250006B1EFF /* BaseMySkinProblemDiagnosisViewModel.swift */; };
 		FA7F713D20529250006B1EFF /* BaseMySkinProblemDiagnosisViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7F713B20529250006B1EFF /* BaseMySkinProblemDiagnosisViewModel.swift */; };
 		FA7F714020529344006B1EFF /* BaseMySkinProblemDiagnosisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7F713920529181006B1EFF /* BaseMySkinProblemDiagnosisViewController.swift */; };
+		FA8CFC7F2062A7A20067C11F /* ProfileResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8CFC7E2062A7A20067C11F /* ProfileResponseModel.swift */; };
+		FA8CFC802062A7A20067C11F /* ProfileResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8CFC7E2062A7A20067C11F /* ProfileResponseModel.swift */; };
 		FA9760D6203AFBD200242255 /* LoginResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9760D5203AFBD200242255 /* LoginResponseModel.swift */; };
 		FA9760D9203B0E0A00242255 /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9760D8203B0E0A00242255 /* UIViewController+Alerts.swift */; };
 		FA9760DD203B0EDC00242255 /* BaseResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9760DC203B0EDC00242255 /* BaseResponseModel.swift */; };
@@ -374,6 +376,7 @@
 		FA6E8FB520595FC9001F6E16 /* MyConsultDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyConsultDetailsViewModel.swift; sourceTree = "<group>"; };
 		FA7F713920529181006B1EFF /* BaseMySkinProblemDiagnosisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMySkinProblemDiagnosisViewController.swift; sourceTree = "<group>"; };
 		FA7F713B20529250006B1EFF /* BaseMySkinProblemDiagnosisViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMySkinProblemDiagnosisViewModel.swift; sourceTree = "<group>"; };
+		FA8CFC7E2062A7A20067C11F /* ProfileResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileResponseModel.swift; sourceTree = "<group>"; };
 		FA9760D5203AFBD200242255 /* LoginResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseModel.swift; sourceTree = "<group>"; };
 		FA9760D8203B0E0A00242255 /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
 		FA9760DC203B0EDC00242255 /* BaseResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponseModel.swift; sourceTree = "<group>"; };
@@ -818,6 +821,7 @@
 				FA9760D5203AFBD200242255 /* LoginResponseModel.swift */,
 				78B9E517203C2C670054CAD3 /* ForgotPasswordResposeModel.swift */,
 				FABC7A34205C061F00167FFA /* ChangePasswordResponseModel.swift */,
+				FA8CFC7E2062A7A20067C11F /* ProfileResponseModel.swift */,
 			);
 			path = APIModels;
 			sourceTree = "<group>";
@@ -1286,6 +1290,7 @@
 				FADC3356204D48BA0065A7EB /* SkinProblemThankYouViewController.swift in Sources */,
 				78264736205800FB00F79FB7 /* Doctor+CoreDataClass.swift in Sources */,
 				FAD6ADB820445EB20050C1A9 /* AddPhotoTableViewCell.swift in Sources */,
+				FA8CFC802062A7A20067C11F /* ProfileResponseModel.swift in Sources */,
 				FAD6ADC220446D310050C1A9 /* AddPhotoTableViewCellViewModel.swift in Sources */,
 				FA6E8FB02056D66C001F6E16 /* CoreDataStack.swift in Sources */,
 				FA3326472040220200657C8A /* MySkinProblemsTableCellViewModel.swift in Sources */,
@@ -1381,6 +1386,7 @@
 				78C205E22045AA9900F8E407 /* AddSkinProblemsViewModel.swift in Sources */,
 				FAF2CECD204D59E40001EEAB /* MyConsultsViewModel.swift in Sources */,
 				FAEC573B203DBEAE00D1A0AE /* LoginViewModel.swift in Sources */,
+				FA8CFC7F2062A7A20067C11F /* ProfileResponseModel.swift in Sources */,
 				FA33268B204413B500657C8A /* ProfileViewModel.swift in Sources */,
 				FA6E8F5C2056BFC3001F6E16 /* SetupWizard2ViewController.swift in Sources */,
 				7826470D2057D49E00F79FB7 /* SkinProblemAttachment+CoreDataProperties.swift in Sources */,

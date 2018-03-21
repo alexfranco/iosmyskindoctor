@@ -54,24 +54,24 @@ class LoginViewModel: BaseViewModel {
 			return
 		}
 		
-//		self.isLoading = true
+		self.isLoading = true
 		
-//		ApiUtils.login(email: email, password:password) { (result) in
-//			self.isLoading = false
-//
-//			switch result {
-//			case .success(let model):
-//				print("login success")
-//
-				// TODO save token
-				DataController.login(email: email)
+		ApiUtils.login(email: email, password:password) { (result) in
+			self.isLoading = false
+
+			switch result {
+			case .success(let model):
+				print("login success")
+				
+				let modelCast = model as! LoginResponseModel
+				DataController.login(email: self.email, key: modelCast.key!)
 		
 				self.goNextSegue!()
-//			case .failure(let model, let error):
-//				print("error")
-//				self.showResponseErrorAlert!(model as? BaseResponseModel, error)
-//			}
-//		}
+			case .failure(let model, let error):
+				print("error")
+				self.showResponseErrorAlert!(model as? BaseResponseModel, error)
+			}
+		}
 		
 	}
 	

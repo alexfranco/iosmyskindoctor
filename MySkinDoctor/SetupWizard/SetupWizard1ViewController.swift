@@ -73,9 +73,16 @@ class SetupWizard1ViewController: FormViewController {
 				self?.dobTextField.placeholder = ""
 			}
 		}
+		
 		viewModelCast.goNextSegue = { [] () in
 			DispatchQueue.main.async {
 				self.performSegue(withIdentifier: Segues.goToSetupWizard2, sender: nil)
+			}
+		}
+		
+		viewModelCast.onFetchFinished = { [weak self] () in
+			DispatchQueue.main.async {
+				self?.refreshFields()
 			}
 		}
 	}
@@ -98,6 +105,17 @@ class SetupWizard1ViewController: FormViewController {
 		personalDetailsTitleLabel.font = AppFonts.mediumBoldFont
 		neverShareLabel.font = AppFonts.smallFont
 	}
+	
+	func refreshFields() {
+		
+		firstNameTextField.text = viewModelCast.firstName
+		lastNameTextField.text = viewModelCast.lastName
+		
+		dobTextField.text = viewModelCast.dobDisplayText
+		phoneTextField.text = viewModelCast.phone
+		postcodeTextField.text = viewModelCast.postcode
+	}
+	
 	
 	func showDatePicker() {
 		//Formate Date

@@ -21,16 +21,30 @@ class SetupWizard3ViewModel: BaseViewModel {
 	}
 	
 	func saveModel() {
-		let profile = DataController.createUniqueEntity(type: Profile.self)
-		profile.gpName = gpName
-		profile.gpAccessCode = gpAccessCode
-		profile.gpAddressLine = gpAddressLine
-		profile.gpPostcode = gpPostcode
-		profile.isPermisionEnabled = isPermisionEnabled
-		profile.profileFilled = true
 		
-		DataController.saveEntity(managedObject: profile)
+		ApiUtils.updateProfile(accessToken: DataController.getAccessToken(), firstName: nil, lastName: nil, dob: nil, phone: nil, addressLine1: nil, addressLine2: nil, town: nil, postcode: nil, gpName: gpName, gpAddress: gpAddressLine, gpPostCode: gpPostcode, gpContactPermission: isPermisionEnabled, selfPay: nil, completionHandler: { (result) in
+			self.isLoading = false
+			
+			switch result {
+			case .success(_):
+				print("update profile success")
+				
+				let profile = DataController.createUniqueEntity(type: Profile.self)
+				profile.gpName = self.gpName
+				profile.gpAccessCode = self.gpAccessCode
+				profile.gpAddressLine = self.gpAddressLine
+				profile.gpPostcode = self.gpPostcode
+				profile.isPermisionEnabled = self.isPermisionEnabled
+				
+				DataController.saveEntity(managedObject: profile)
+				
+				self.goNextSegue!()
+				
+			case .failure(let model, let error):
+				print("error")
+				self.showResponseErrorAlert!(model as? BaseResponseModel, error)
+			}
+		})
 		
-		goNextSegue!()
 	}
 }
