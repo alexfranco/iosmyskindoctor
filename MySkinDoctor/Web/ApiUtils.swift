@@ -122,10 +122,30 @@ extension ApiUtils {
 		ApiUtils.request(url: url, httpMethod: HTTPMethod.get, params: nil, parseToModelType: ProfileResponseModel.self, accessToken: accessToken, completionHandler: completionHandler)
 	}
 	
-	static func getSkinProblems(accessToken: String, completionHandler: @escaping ((_ result: ApiArrayResult) -> Void)) {
+	static func getAllSkinProblems(accessToken: String, completionHandler: @escaping ((_ result: ApiArrayResult) -> Void)) {
 		let url = ApiUtils.getApiUrl(ApiMethod.skinProblems, nil)
 		
 		ApiUtils.requestArray(url: url, httpMethod: HTTPMethod.get, params: nil, parseToModelType: SkinProblemsResponseModel.self, accessToken: accessToken, completionHandler: completionHandler)
+	}
+	
+	static func getSkinProblems(accessToken: String, skinProblemsId: Int, completionHandler: @escaping ((_ result: ApiResult) -> Void)) {
+		var url = ApiUtils.getApiUrl(ApiMethod.skinProblems, nil)
+		url += "\(skinProblemsId)/"
+		
+		ApiUtils.request(url: url, httpMethod: HTTPMethod.get, params: nil, parseToModelType: SkinProblemsResponseModel.self, accessToken: accessToken, completionHandler: completionHandler)
+	}
+	
+	static func createSkinProblem(accessToken: String, skinProblemsDescription: String?, healthProblems: String?, medications: String?, history: String?, completionHandler: @escaping ((_ result: ApiResult) -> Void)) {
+		let url = ApiUtils.getApiUrl(ApiMethod.skinProblems, nil)
+		
+		var params: Parameters = [:]
+		
+		if let skinProblemsDescriptionSafe = skinProblemsDescription { params.updateValue(skinProblemsDescriptionSafe, forKey: "description") }
+		if let healthProblemsSafe = healthProblems { params.updateValue(healthProblemsSafe, forKey: "health_problems") }
+		if let medicationsSafe = medications { params.updateValue(medicationsSafe, forKey: "medications") }
+		if let historySafe = history { params.updateValue(historySafe, forKey: "history") }
+		
+		ApiUtils.request(url: url, httpMethod: HTTPMethod.post, params: params, parseToModelType: ProfileResponseModel.self, accessToken: accessToken, completionHandler: completionHandler)
 	}
 }
 

@@ -158,6 +158,8 @@ class ProfileViewModel: BaseViewModel {
 	override func saveModel() {
 		super.saveModel()
 		
+		self.isLoading = true
+		
 		ApiUtils.updateProfile(accessToken: DataController.getAccessToken(), firstName: firstName, lastName: lastName, dob: dob, phone: phone, addressLine1: addressLine1, addressLine2: addressLine2, town: town, postcode: postcode, gpName: gpName, gpAddress: gpAddressLine, gpPostCode: gpPostcode, gpContactPermission: isPermisionEnabled, selfPay: nil, completionHandler: { (result) in
 			self.isLoading = false
 			
