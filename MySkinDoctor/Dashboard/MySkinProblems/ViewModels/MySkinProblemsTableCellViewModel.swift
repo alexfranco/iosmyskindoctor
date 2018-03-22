@@ -28,7 +28,13 @@ class MySkinProblemsTableCellViewModel: NSObject {
 		}
 		
 		self.name = diagnose.diagnoseStatusEnum.description
-		self.date = MySkinProblemsTableCellViewModel.getDateFormatted(date: model.date! as Date)
+		
+		if let date = model.date as Date? {
+			self.date = MySkinProblemsTableCellViewModel.getDateFormatted(date: date)
+		} else {
+			self.date = "-"
+		}
+		
 		self.problemDescription = model.skinProblemDescription ?? "-"
 	}
 	

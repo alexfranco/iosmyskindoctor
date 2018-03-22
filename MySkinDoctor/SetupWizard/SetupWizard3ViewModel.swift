@@ -48,14 +48,17 @@ class SetupWizard3ViewModel: BaseViewModel {
 		}
 	}
 	
-	internal override func parseResponseModel(model: ProfileResponseModel) {
+	internal override func parseResponseModel(model: BaseResponseModel) {
 		super.parseResponseModel(model: model)
+		
+		let modelCast = model as! ProfileResponseModel
+		
 		let profile = DataController.createUniqueEntity(type: Profile.self)
 		
-		profile.gpName = model.gpName
-		profile.gpAddressLine = model.gpAddress
-		profile.gpPostcode = model.gpPostcode
-		profile.isPermisionEnabled = model.gpContactPermission
+		profile.gpName = modelCast.gpName
+		profile.gpAddressLine = modelCast.gpAddress
+		profile.gpPostcode = modelCast.gpPostcode
+		profile.isPermisionEnabled = modelCast.gpContactPermission
 		
 		DataController.saveEntity(managedObject: profile)
 	}

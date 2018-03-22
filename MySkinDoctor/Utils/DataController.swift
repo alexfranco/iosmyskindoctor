@@ -30,6 +30,30 @@ class DataController {
 		return NSManagedObject(entity: entity!, insertInto: CoreDataStack.managedObjectContext) as! T
 	}
 	
+	static func createOrUpdate<T: NSManagedObject>(objectIdKey: String, objectValue: Int, type: T.Type) -> T {
+		let entityName = String(describing: type)
+		let entity = NSEntityDescription.entity(forEntityName: entityName, in:  CoreDataStack.managedObjectContext)
+		
+		let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+		request.predicate = NSPredicate(format: "\(objectIdKey) == \(objectValue)")
+		
+		do {
+			let result = try CoreDataStack.managedObjectContext.fetch(request)
+			
+			if let first = result.first as? T {
+				return first
+			} else {
+				return createNew(type: type)
+			}
+			
+		} catch {
+			print("createOrUpdate")
+		}
+		
+		
+		return NSManagedObject(entity: entity!, insertInto: CoreDataStack.managedObjectContext) as! T
+	}
+	
 	static func createUniqueEntity<T: NSManagedObject>(type: T.Type) -> T {
 		let result = fetchAll(type: type)
 			

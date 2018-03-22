@@ -10,6 +10,8 @@ import Foundation
 import Alamofire
 import ObjectMapper
 
+// MARK: Constants
+
 class ApiUtils {
 	
 	struct Api {
@@ -23,6 +25,11 @@ class ApiUtils {
 	enum ApiResult {
 		case success(BaseMappable?)
 		case failure(BaseMappable?, ApiGenericError)
+	}
+	
+	enum ApiArrayResult {
+		case success([BaseMappable?]?)
+		case failure([BaseMappable?]?, ApiGenericError)
 	}
 	
 	enum ApiGenericError: Error {
@@ -41,76 +48,13 @@ class ApiUtils {
 		case changePassword = "/api/accounts/password/change/"
 		
 		case patientUpdate = "/api/accounts/patient/"
+		case skinProblems = "/api/cases/case/"
 	}
-	
-	fileprivate class func getBaseUrl() -> String {
-		#if DEV
-			return Api.DEV_BASE_URL
-		#else
-			return Api.BASE_URL
-		#endif
-	}
-	
-	fileprivate class func getApiUrl(_ method: ApiMethod, _ restParams: [String]?) -> String {
-		if let params = restParams {
-			switch (params.count) {
-			case 1:
-				// If 1 parameter
-				if let params = restParams, params.count > 0 {
-					let path = String(format: method.rawValue, arguments: [params[0]])
-					return "\(getBaseUrl())\(path)"
-				}
-				fallthrough
-				
-			default:
-				return "\(getBaseUrl())\(method.rawValue)"
-			}
-		}
-		return "\(getBaseUrl())\(method.rawValue)"
-	}
-	
-	/* Generic Request
-	  TODO add info
-	*/
-	fileprivate class func request<T: BaseMappable>(url: String, httpMethod: HTTPMethod, params: Parameters?, parseToModelType: T.Type, accessToken: String?, completionHandler: @escaping ((_ result: ApiResult) -> Void)) {
-		var headers: HTTPHeaders?
-		
-		if let accessTokenSafe = accessToken {
-			headers = [
-				"Authorization": "\(Api.TOKEN_TYPE) \(accessTokenSafe)",
-				"Accept": "application/json"
-			]
-		}
-		
-		Alamofire.request(url, method: httpMethod, parameters: params, encoding: URLEncoding.default, headers: headers).responseJSON { (response) in
-			print("Request: \(String(describing: response.request))")   // original url request
-			print("Response: \(String(describing: response.response))") // http url response
-			print("Result: \(response.result)")                         // response serialization result
-			
-			if let jsonCandidate = response.result.value {
-				print("JSON: \(jsonCandidate)") // serialized json response
-				
-				let jsonCandidateDict = jsonCandidate as! [String : Any]
-				
-				if let jsonResult = Mapper<T>().map(JSON: jsonCandidateDict) {
-					
-					if let status = response.response?.statusCode {
-						switch(status){
-						case 200, 201, ApiUtils.Api.DEFAULT_STATUS_CODE:
-							completionHandler(ApiResult.success(jsonResult))
-						default:
-							print("error with response status: \(status)")
-							completionHandler(ApiResult.failure(jsonResult, ApiGenericError.defaultStatusError))
-						}
-					}
-				} else {
-					completionHandler(ApiResult.failure(nil, ApiGenericError.parseError))
-				}
-			} else {
-				completionHandler(ApiResult.failure(nil, ApiGenericError.httpQueryError))
-			}
-		}
-	}
+}
+
+// MARK: WebCalls
+
+extension ApiUtils {
 	
 	static func login(email: String, password: String, completionHandler: @escaping ((_ result: ApiResult) -> Void)) {
 		let url = ApiUtils.getApiUrl(ApiMethod.login, nil)
@@ -129,7 +73,7 @@ class ApiUtils {
 									 "last_name": "Franco",
 									 "password1": password,
 									 "password2": password]
-	
+		
 		ApiUtils.request(url: url, httpMethod: HTTPMethod.post, params: params, parseToModelType: RegistrationResponseModel.self, accessToken: nil, completionHandler: completionHandler)
 	}
 	
@@ -169,14 +113,122 @@ class ApiUtils {
 		if let gpContactPermissionSafe = gpContactPermission { params.updateValue(gpContactPermissionSafe, forKey: "gp_contact_permission") }
 		if let selfPaySafe = selfPay { params.updateValue(selfPaySafe, forKey: "self_pay") }
 		
-		
 		ApiUtils.request(url: url, httpMethod: HTTPMethod.patch, params: params, parseToModelType: ProfileResponseModel.self, accessToken: accessToken, completionHandler: completionHandler)
 	}
 	
 	static func getProfile(accessToken: String, completionHandler: @escaping ((_ result: ApiResult) -> Void)) {
-		
 		let url = ApiUtils.getApiUrl(ApiMethod.patientUpdate, nil)
+		
 		ApiUtils.request(url: url, httpMethod: HTTPMethod.get, params: nil, parseToModelType: ProfileResponseModel.self, accessToken: accessToken, completionHandler: completionHandler)
 	}
 	
+	static func getSkinProblems(accessToken: String, completionHandler: @escaping ((_ result: ApiArrayResult) -> Void)) {
+		let url = ApiUtils.getApiUrl(ApiMethod.skinProblems, nil)
+		
+		ApiUtils.requestArray(url: url, httpMethod: HTTPMethod.get, params: nil, parseToModelType: SkinProblemsResponseModel.self, accessToken: accessToken, completionHandler: completionHandler)
+	}
 }
+
+// MARK: Utils
+
+extension ApiUtils {
+	
+	fileprivate class func getBaseUrl() -> String {
+		#if DEV
+			return Api.DEV_BASE_URL
+		#else
+			return Api.BASE_URL
+		#endif
+	}
+	
+	fileprivate class func getApiUrl(_ method: ApiMethod, _ restParams: [String]?) -> String {
+		if let params = restParams {
+			switch (params.count) {
+			case 1:
+				// If 1 parameter
+				if let params = restParams, params.count > 0 {
+					let path = String(format: method.rawValue, arguments: [params[0]])
+					return "\(getBaseUrl())\(path)"
+				}
+				fallthrough
+				
+			default:
+				return "\(getBaseUrl())\(method.rawValue)"
+			}
+		}
+		return "\(getBaseUrl())\(method.rawValue)"
+	}
+	
+	fileprivate class func createHeaders(accessToken: String?) -> HTTPHeaders? {
+		
+		var headers: HTTPHeaders?
+
+		if let accessTokenSafe = accessToken {
+			headers = [
+				"Authorization": "\(Api.TOKEN_TYPE) \(accessTokenSafe)",
+				"Accept": "application/json"
+			]
+		}
+		
+		return headers
+	}
+	
+	/* Generic Request
+	  TODO add info
+	*/
+	fileprivate class func request<T: BaseMappable>(url: String, httpMethod: HTTPMethod, params: Parameters?, parseToModelType: T.Type, accessToken: String?, completionHandler: @escaping ((_ result: ApiResult) -> Void)) {
+		
+		Alamofire.request(url, method: httpMethod, parameters: params, encoding: URLEncoding.default, headers: createHeaders(accessToken: accessToken)).responseJSON { (response) in
+			if let jsonCandidate = response.result.value {
+				print("JSON: \(jsonCandidate)") // serialized json response
+				
+				let jsonCandidateDict = jsonCandidate as! [String : Any]
+				
+				if let jsonResult = Mapper<T>().map(JSON: jsonCandidateDict) {
+					
+					if let status = response.response?.statusCode {
+						switch(status){
+						case 200, 201, ApiUtils.Api.DEFAULT_STATUS_CODE:
+							completionHandler(ApiResult.success(jsonResult))
+						default:
+							print("error with response status: \(status)")
+							completionHandler(ApiResult.failure(jsonResult, ApiGenericError.defaultStatusError))
+						}
+					}
+				} else {
+					completionHandler(ApiResult.failure(nil, ApiGenericError.parseError))
+				}
+			} else {
+				completionHandler(ApiResult.failure(nil, ApiGenericError.httpQueryError))
+			}
+		}
+	}
+	
+	fileprivate class func requestArray<T: BaseMappable>(url: String, httpMethod: HTTPMethod, params: Parameters?, parseToModelType: T.Type, accessToken: String?, completionHandler: @escaping ((_ result: ApiArrayResult) -> Void)) {
+		
+		Alamofire.request(url, method: httpMethod, parameters: params, encoding: URLEncoding.default, headers: createHeaders(accessToken: accessToken)).responseJSON { (response) in
+			if let jsonCandidate = response.result.value {
+				print("JSON: \(jsonCandidate)") // serialized json response
+				
+				if let jsonResult = Mapper<T>().mapArray(JSONObject: jsonCandidate) {
+					
+					if let status = response.response?.statusCode {
+						switch(status){
+						case 200, 201, ApiUtils.Api.DEFAULT_STATUS_CODE:
+							completionHandler(ApiArrayResult.success(jsonResult))
+						default:
+							print("error with response status: \(status)")
+							completionHandler(ApiArrayResult.failure(jsonResult, ApiGenericError.defaultStatusError))
+						}
+					}
+				} else {
+					completionHandler(ApiArrayResult.failure(nil, ApiGenericError.parseError))
+				}
+			} else {
+				completionHandler(ApiArrayResult.failure(nil, ApiGenericError.httpQueryError))
+			}
+		}
+	}
+}
+
+

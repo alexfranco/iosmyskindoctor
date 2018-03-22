@@ -45,19 +45,12 @@ class MySkinProblemsViewModel: BaseViewModel {
 
 	override init() {
 		super.init()
-		self.fetchData()
+		self.loadDBModel()
+		self.fetchInternetModel()
 	}
 	
-	func fetchData() {
-		if let results = DataController.fetchAll(type: SkinProblems.self) {
-			allItems = results
-			diagnosedItems = allItems.filter { (model) -> Bool in model.isDiagnosed }
-			undiagnosedItems = allItems.filter { (model) -> Bool in !model.isDiagnosed }
-		}
-	}
-	
-	func refreshData() {
-		fetchData()
+	func refreshData() {		
+		self.fetchInternetModel()
 		refresh!()
 	}
 	
@@ -120,4 +113,77 @@ class MySkinProblemsViewModel: BaseViewModel {
 			return getDataSourceCount(section: MySkinProblemsViewModel.undiagnosedSection) > 0 ? 1 : 0
 		}
 	}
+
+	// MARK - Override
+
+	override func fetchInternetModel() {
+		super.fetchInternetModel()
+		
+		isLoading = true
+		
+		ApiUtils.getSkinProblems(accessToken: DataController.getAccessToken()) { (result) in
+			self.isLoading = false
+			
+			switch result {
+			case .success(let model):
+				print("getSkinProblems")
+				self.parseResponseModel(models: model as! [BaseResponseModel])
+				self.loadDBModel()
+				
+				if self.onFetchFinished != nil {
+					self.onFetchFinished!()
+				}
+				
+			case .failure(_, let error):
+				print("error \(error.localizedDescription)")
+				self.showResponseErrorAlert!(nil, error)
+			}
+		}
+	}
+	
+	override func parseResponseModel(models: [BaseResponseModel]) {
+		super.parseResponseModel(models: models)
+		
+		let modelsCast = models as! [SkinProblemsResponseModel]
+		
+		for model in modelsCast {
+			let skinProblem = DataController.createOrUpdate(objectIdKey: "skinProblemId", objectValue: model.skinProblemId, type: SkinProblems.self)
+
+			skinProblem.skinProblemId = Int16(model.skinProblemId)
+			skinProblem.skinProblemDescription = model.skinProblemDescription
+			skinProblem.date = model.dateCreated as NSDate?
+
+			if skinProblem.medicalHistory == nil {
+				skinProblem.medicalHistory = DataController.createNew(type: MedicalHistory.self)
+			}
+			
+			skinProblem.medicalHistory!.healthProblems = model.healthProblems
+			skinProblem.medicalHistory!.medication = model.medications
+			skinProblem.medicalHistory!.pastHistoryProblems = model.history
+			// TODO skinProblem.medicalHistory!.skinProblems = modelCast.skinProblemDescription
+
+			if skinProblem.diagnose == nil {
+				skinProblem.diagnose = DataController.createNew(type: Diagnose.self)
+			}
+			
+			skinProblem.diagnose!.treatment = model.diagnosisTreatment
+			skinProblem.diagnose!.patientInformation = model.diagnosisPatientInformation
+			skinProblem.diagnose!.comments = model.diagnosisComments
+			skinProblem.diagnose!.diagnoseDate = model.outcomeDate as NSDate?
+			skinProblem.diagnose!.diagnoseStatus = Int16(model.outcome)
+
+			DataController.saveEntity(managedObject: skinProblem)
+		}		
+	}
+	
+	override func loadDBModel() {
+		super.loadDBModel()
+		
+		if let results = DataController.fetchAll(type: SkinProblems.self) {
+			allItems = results
+			diagnosedItems = allItems.filter { (model) -> Bool in model.isDiagnosed }
+			undiagnosedItems = allItems.filter { (model) -> Bool in !model.isDiagnosed }
+		}
+	}
 }
+

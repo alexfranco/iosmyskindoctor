@@ -88,8 +88,7 @@ class ProfileViewModel: BaseViewModel {
 			switch result {
 			case .success(let model):
 				print("get Profile")
-				let modelCast = model as! ProfileResponseModel
-				self.parseResponseModel(model: modelCast)
+				self.parseResponseModel(model: model as! BaseResponseModel)
 				self.loadDBModel()
 				
 				self.onFetchFinished!()
@@ -101,23 +100,25 @@ class ProfileViewModel: BaseViewModel {
 		}
 	}
 	
-	override func parseResponseModel(model: ProfileResponseModel) {
+	override func parseResponseModel(model: BaseResponseModel) {
 		super.parseResponseModel(model: model)
+		
+		let modelCast = model as! ProfileResponseModel
 		
 		let profile = DataController.createUniqueEntity(type: Profile.self)
 		
-		profile.firstName = model.firstName
-		profile.lastName = model.lastName
+		profile.firstName = modelCast.firstName
+		profile.lastName = modelCast.lastName
 		
-		profile.phone = model.mobileNumber
-		profile.postcode = model.postcode
-		profile.town = model.town
-		profile.gpName = model.gpName
-		profile.gpAddressLine = model.gpAddress
-		profile.gpPostcode = model.gpPostcode
-		profile.isNHS = model.selfPay ?? false
+		profile.phone = modelCast.mobileNumber
+		profile.postcode = modelCast.postcode
+		profile.town = modelCast.town
+		profile.gpName = modelCast.gpName
+		profile.gpAddressLine = modelCast.gpAddress
+		profile.gpPostcode = modelCast.gpPostcode
+		profile.isNHS = modelCast.selfPay ?? false
 		
-		if let dobSafe = model.dob as NSDate? { profile.dob = dobSafe }
+		if let dobSafe = modelCast.dob as NSDate? { profile.dob = dobSafe }
 		
 		DataController.saveEntity(managedObject: profile)
 	}

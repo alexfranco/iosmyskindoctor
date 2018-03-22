@@ -75,6 +75,7 @@
     <entity name="SkinProblems" representedClassName="SkinProblems" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" defaultDateTimeInterval="542644500" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="skinProblemDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="skinProblemId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="attachments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SkinProblemAttachment" inverseName="skinProblems" inverseEntity="SkinProblemAttachment" syncable="YES"/>
         <relationship name="diagnose" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Diagnose" inverseName="skinProblems" inverseEntity="Diagnose" syncable="YES"/>
         <relationship name="doctor" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Doctor" inverseName="skinProblems" inverseEntity="Doctor" syncable="YES"/>
@@ -89,6 +90,6 @@
         <element name="MedicalHistory" positionX="-27" positionY="126" width="128" height="120"/>
         <element name="Profile" positionX="-63" positionY="-18" width="128" height="315"/>
         <element name="SkinProblemAttachment" positionX="-54" positionY="108" width="128" height="120"/>
-        <element name="SkinProblems" positionX="-63" positionY="99" width="128" height="135"/>
+        <element name="SkinProblems" positionX="-63" positionY="99" width="128" height="150"/>
     </elements>
 </model>

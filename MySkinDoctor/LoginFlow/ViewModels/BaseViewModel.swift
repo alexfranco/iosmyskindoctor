@@ -30,7 +30,10 @@ class BaseViewModel: NSObject {
 	func fetchInternetModel() {
 	}
 	
-	func parseResponseModel(model: ProfileResponseModel) {
+	func parseResponseModel(model: BaseResponseModel) {
+	}
+	
+	func parseResponseModel(models: [BaseResponseModel]) {
 	}
 	
 	func loadDBModel() {
