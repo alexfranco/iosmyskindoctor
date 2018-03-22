@@ -35,7 +35,9 @@ class BookAConsultConfirmViewModel: BaseViewModel {
 		}
 	}
 	
-	func saveModel() {
+	override func saveModel() {
+		super.saveModel()
+		
 		let consultation = DataController.createNew(type: Consultation.self)
 		consultation.appointmentDate = selectedDate! as NSDate
 		

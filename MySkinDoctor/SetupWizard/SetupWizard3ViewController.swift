@@ -67,6 +67,12 @@ class SetupWizard3ViewController: FormViewController {
 				self.dismiss(animated: true, completion: nil)
 			}
 		}
+		
+		viewModelCast.onFetchFinished = { [weak self] () in
+			DispatchQueue.main.async {
+				self?.refreshFields()
+			}
+		}
 	}
 	
 	// MARK: IBActions
@@ -101,4 +107,13 @@ class SetupWizard3ViewController: FormViewController {
 		
 		nextButton.setTitle(NSLocalizedString("finish", comment: ""), for: .normal)
 	}
+	
+	func refreshFields() {
+		gpNameTextField.text = viewModelCast.gpName
+		gpAddressLineTextField.text = viewModelCast.gpAddressLine
+		
+		gpPostcodeTextField.text = viewModelCast.gpPostcode
+		permisionSwitch.isOn = viewModelCast.isPermisionEnabled
+	}
+	
 }

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1E76C61D0F8985CB9E01915EF62A0E05"
+               BlueprintIdentifier = "CAD961E790F982BEE5375989455357B8"
                BuildableName = "SZTextView.framework"
                BlueprintName = "SZTextView"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1E76C61D0F8985CB9E01915EF62A0E05"
+            BlueprintIdentifier = "CAD961E790F982BEE5375989455357B8"
             BuildableName = "SZTextView.framework"
             BlueprintName = "SZTextView"
             ReferencedContainer = "container:Pods.xcodeproj">

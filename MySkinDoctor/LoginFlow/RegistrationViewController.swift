@@ -62,14 +62,14 @@ class RegistrationViewController: FormViewController {
 		
 		viewModelCast.emailValidationStatus = { [weak self] () in
 			DispatchQueue.main.async {
-				self?.emailTextField.errorMessage = self?.viewModelCast.emailErrorMessage
+				self?.emailTextField.showError(message: self?.viewModelCast.emailErrorMessage)
 				self?.emailTextField.becomeFirstResponder()
 			}
 		}
 		
 		viewModelCast.passwordValidationStatus = { [weak self] () in
 			DispatchQueue.main.async {
-				self?.passwordTextField.errorMessage = self?.viewModelCast.passwordErrorMessage
+				self?.passwordTextField.showError(message: self?.viewModelCast.passwordErrorMessage)
 				self?.passwordTextField.becomeFirstResponder()
 			}
 		}

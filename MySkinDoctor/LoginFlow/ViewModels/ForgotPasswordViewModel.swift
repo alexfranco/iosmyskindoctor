@@ -45,7 +45,7 @@ class ForgotPasswordViewModel: BaseViewModel {
 			self.isLoading = false
 			
 			switch result {
-			case .success(let model):
+			case .success(_):
 				print("forgot password success")
 				self.goNextSegue!()
 			case .failure(let model, let error):

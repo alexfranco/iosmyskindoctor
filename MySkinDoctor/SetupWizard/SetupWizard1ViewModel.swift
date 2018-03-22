@@ -42,7 +42,9 @@ class SetupWizard1ViewModel: BaseViewModel {
 		self.fetchInternetModel()
 	}
 	
-	func fetchInternetModel() {
+	override func fetchInternetModel() {
+		super.fetchInternetModel()
+		
 		isLoading = true
 		
 		ApiUtils.getProfile(accessToken: DataController.getAccessToken()) { (result) in
@@ -64,7 +66,8 @@ class SetupWizard1ViewModel: BaseViewModel {
 		}
 	}
 
-	func parseResponseModel(model: ProfileResponseModel) {
+	internal override func parseResponseModel(model: ProfileResponseModel) {
+		super.parseResponseModel(model: model)
 		let profile = DataController.createUniqueEntity(type: Profile.self)
 		
 		profile.firstName = model.firstName
@@ -83,7 +86,9 @@ class SetupWizard1ViewModel: BaseViewModel {
 		DataController.saveEntity(managedObject: profile)
 	}
 
-	func loadDBModel() {
+	override func loadDBModel() {
+		super.loadDBModel()
+		
 		profile = DataController.createUniqueEntity(type: Profile.self)
 		
 		firstName = profile.firstName ?? ""
@@ -98,7 +103,8 @@ class SetupWizard1ViewModel: BaseViewModel {
 		postcode = profile.postcode ?? ""
 	}
 
-	func saveModel() {
+	override func saveModel() {
+		super.saveModel()
 		
 		ApiUtils.updateProfile(accessToken: DataController.getAccessToken(), firstName: firstName, lastName: lastName, dob: dob, phone: phone, addressLine1: nil, addressLine2: nil, town: nil, postcode: postcode, gpName: nil, gpAddress: nil, gpPostCode: nil, gpContactPermission: nil, selfPay: nil, completionHandler: { (result) in
 			self.isLoading = false

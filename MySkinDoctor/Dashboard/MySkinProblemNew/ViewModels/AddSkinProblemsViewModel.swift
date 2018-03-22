@@ -264,7 +264,8 @@ class AddSkinProblemsViewModel: BaseViewModel {
 		}
 	}
 
-	func saveModel() {
+	override func saveModel() {
+		super.saveModel()
 		
 		let persistentModel = DataController.createNew(type: SkinProblems.self)
 		persistentModel.skinProblemDescription = skinProblemDescription

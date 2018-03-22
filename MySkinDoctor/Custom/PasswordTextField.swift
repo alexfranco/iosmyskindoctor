@@ -72,9 +72,9 @@ class PasswordTextField: FormTextField {
 	func setRightViewIcon(icon: UIImage) {
 		let padding = CGFloat(3)
 		
-		secureTextButton = UIButton(frame: CGRect(x: 0, y: 0, width: frame.height * 0.70, height: frame.height * 0.70))
+		secureTextButton = UIButton(frame: CGRect(x: 0, y: 0, width: 35, height: 25))
 		secureTextButton?.setImage(icon, for: .normal)
-		secureTextButton?.imageEdgeInsets = UIEdgeInsets(top: padding * 2, left: padding, bottom: 0, right: padding)
+		secureTextButton?.imageEdgeInsets = UIEdgeInsets(top: padding, left: 0, bottom: 0, right: padding * 2)
 		secureTextButton?.addTarget(self, action: #selector(toggleShowPassword(_:)), for: UIControlEvents.touchUpInside)
 		rightViewMode = .always
 		rightView = secureTextButton

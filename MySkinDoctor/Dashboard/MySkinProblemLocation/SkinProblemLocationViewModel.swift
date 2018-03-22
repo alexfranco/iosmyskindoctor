@@ -49,7 +49,9 @@ class SkinProblemLocationViewModel: BaseViewModel {
 		self.model = model
 	}
 	
-	func saveModel() {
+	override func saveModel() {
+		super.saveModel()
+		
 		model.locationTypeEnum = locationProblemType
 		goNextSegue!()
 	}

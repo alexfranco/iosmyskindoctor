@@ -49,7 +49,8 @@ class MedicalHistoryViewModel: BaseViewModel {
 		hasPastHistoryProblems = false
 	}
 	
-	func saveModel() {
+	override func saveModel() {
+		super.saveModel()
 		
 		// TOOD API
 		

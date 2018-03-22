@@ -17,13 +17,14 @@ class SetupWizard2ViewModel: BaseViewModel {
 		super.init()
 	}
 	
-	func saveModel() {
+	override func saveModel() {
+		super.saveModel()
 		
 		ApiUtils.updateProfile(accessToken: DataController.getAccessToken(), firstName: nil, lastName: nil, dob: nil, phone: nil, addressLine1: nil, addressLine2: nil, town: nil, postcode: nil, gpName: nil, gpAddress: nil, gpPostCode: nil, gpContactPermission: nil, selfPay: !isNHS, completionHandler: { (result) in
 			self.isLoading = false
 			
 			switch result {
-			case .success(let _):
+			case .success( _):
 				print("update profile success")
 				
 				let profile = DataController.createUniqueEntity(type: Profile.self)

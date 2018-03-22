@@ -120,6 +120,8 @@
 		78DBCE552051742700C0D4B5 /* MySkinProblemDiagnosisViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DBCE532051742700C0D4B5 /* MySkinProblemDiagnosisViewModel.swift */; };
 		78E44AA6203EBE5C0094F3AF /* PasswordStrength.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E44AA5203EBE5C0094F3AF /* PasswordStrength.swift */; };
 		78E44AA7203EBE5C0094F3AF /* PasswordStrength.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E44AA5203EBE5C0094F3AF /* PasswordStrength.swift */; };
+		78FB31972063B8F300F155AE /* DTTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB31962063B8F300F155AE /* DTTextField.swift */; };
+		78FB31982063B8F300F155AE /* DTTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB31962063B8F300F155AE /* DTTextField.swift */; };
 		78FFF02A20496E240013240D /* MedicalHistoryViewControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FFF02920496E240013240D /* MedicalHistoryViewControler.swift */; };
 		78FFF02B20496E240013240D /* MedicalHistoryViewControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FFF02920496E240013240D /* MedicalHistoryViewControler.swift */; };
 		78FFF02F20496E340013240D /* MedicalHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FFF02E20496E340013240D /* MedicalHistoryViewModel.swift */; };
@@ -329,6 +331,7 @@
 		78DBCE4E2051741500C0D4B5 /* MySkinProblemDiagnosisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySkinProblemDiagnosisViewController.swift; sourceTree = "<group>"; };
 		78DBCE532051742700C0D4B5 /* MySkinProblemDiagnosisViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySkinProblemDiagnosisViewModel.swift; sourceTree = "<group>"; };
 		78E44AA5203EBE5C0094F3AF /* PasswordStrength.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordStrength.swift; sourceTree = "<group>"; };
+		78FB31962063B8F300F155AE /* DTTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTTextField.swift; sourceTree = "<group>"; };
 		78FFF02920496E240013240D /* MedicalHistoryViewControler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalHistoryViewControler.swift; sourceTree = "<group>"; };
 		78FFF02E20496E340013240D /* MedicalHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalHistoryViewModel.swift; sourceTree = "<group>"; };
 		85B14CEDA9F10AD5CDFAFE54 /* Pods-MySkinDoctorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySkinDoctorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MySkinDoctorTests/Pods-MySkinDoctorTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -678,6 +681,7 @@
 				FA3326AB20441C8500657C8A /* BoldLabel.swift */,
 				FA3326AC20441C8500657C8A /* TitleLabel.swift */,
 				FA3326AD20441C8500657C8A /* GrayLabel.swift */,
+				78FB31962063B8F300F155AE /* DTTextField.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -1152,7 +1156,6 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/JSONModel/JSONModel.framework",
-				"${BUILT_PRODUCTS_DIR}/LRTextField/LRTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/SZTextView/SZTextView.framework",
@@ -1168,7 +1171,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSONModel.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LRTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SZTextView.framework",
@@ -1209,7 +1211,6 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/JSONModel/JSONModel.framework",
-				"${BUILT_PRODUCTS_DIR}/LRTextField/LRTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/SZTextView/SZTextView.framework",
@@ -1225,7 +1226,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSONModel.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LRTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SZTextView.framework",
@@ -1269,6 +1269,7 @@
 				7826473A205800FB00F79FB7 /* Profile+CoreDataClass.swift in Sources */,
 				FA33265C2040336F00657C8A /* PhotoViewController.swift in Sources */,
 				FAD6ADBD204461050050C1A9 /* AddSkinProblemsViewController.swift in Sources */,
+				78FB31982063B8F300F155AE /* DTTextField.swift in Sources */,
 				FA332661204034B300657C8A /* UIImageView+Circular.swift in Sources */,
 				7884D8B2205A64F900C59E7B /* UITableView+NoDataLabel.swift in Sources */,
 				788C3214204E88D00078A983 /* BookAConsultCalendarViewController.swift in Sources */,
@@ -1396,6 +1397,7 @@
 				782647082057D49E00F79FB7 /* SkinProblems+CoreDataClass.swift in Sources */,
 				7826470C2057D49E00F79FB7 /* SkinProblemAttachment+CoreDataClass.swift in Sources */,
 				FA3326BA20441C8500657C8A /* CustomErrors.swift in Sources */,
+				78FB31972063B8F300F155AE /* DTTextField.swift in Sources */,
 				FA33265B2040336F00657C8A /* PhotoViewController.swift in Sources */,
 				FA332660204034B300657C8A /* UIImageView+Circular.swift in Sources */,
 				7884D8B1205A64F900C59E7B /* UITableView+NoDataLabel.swift in Sources */,

@@ -107,7 +107,6 @@ class SetupWizard1ViewController: FormViewController {
 	}
 	
 	func refreshFields() {
-		
 		firstNameTextField.text = viewModelCast.firstName
 		lastNameTextField.text = viewModelCast.lastName
 		
@@ -115,8 +114,7 @@ class SetupWizard1ViewController: FormViewController {
 		phoneTextField.text = viewModelCast.phone
 		postcodeTextField.text = viewModelCast.postcode
 	}
-	
-	
+		
 	func showDatePicker() {
 		//Formate Date
 		datePicker.datePickerMode = .date

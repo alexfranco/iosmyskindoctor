@@ -24,7 +24,8 @@ class BookAConsultCalendarViewModel: BaseViewModel {
 		}
 	}
 	
-	func saveModel() {		
+	override func saveModel() {
+		super.saveModel()
 		goNextSegue!()
 	}
 

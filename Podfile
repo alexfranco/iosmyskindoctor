@@ -13,7 +13,6 @@ pod 'Alamofire'
 pod 'TextFieldEffects'
 pod 'IQKeyboardManagerSwift'
 pod 'ObjectMapper'
-pod 'LRTextField'
 pod 'SZTextView'
 pod 'CVCalendar', '~> 1.6'
 
@@ -26,12 +25,3 @@ end
 target 'MySkinDoctorLive' do
 	shared_pods
 end
-
-target 'MySkinDoctorUITests' do
-	shared_pods
-end
-
-target 'MySkinDoctorTests' do
-	shared_pods
-end
-

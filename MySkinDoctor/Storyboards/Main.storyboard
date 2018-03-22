@@ -767,7 +767,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="577"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ans-Nb-BFy">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="422"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="290"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Personal Details" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O3Z-G2-GZU" customClass="TitleLabel" customModule="MySkinDoctor" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="0.0" width="335" height="21"/>
@@ -776,40 +776,37 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Syc-aE-oJA" customClass="FormTextField" customModule="MySkinDoctor" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="61" width="335" height="50"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="AgE-zI-uyM"/>
-                                                </constraints>
+                                                <rect key="frame" x="20" y="61" width="335" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BCF-WZ-jPx" customClass="FormTextField" customModule="MySkinDoctor" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="126" width="335" height="50"/>
+                                                <rect key="frame" x="20" y="106" width="335" height="22"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date of Birth" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7oJ-ae-aAc" customClass="FormTextField" customModule="MySkinDoctor" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="191" width="335" height="50"/>
+                                                <rect key="frame" x="20" y="143" width="335" height="22"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mobile Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rqb-P8-01G" customClass="FormTextField" customModule="MySkinDoctor" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="256" width="335" height="50"/>
+                                                <rect key="frame" x="20" y="180" width="335" height="22"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="phonePad"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Postcode" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y5z-5h-hSN" customClass="FormTextField" customModule="MySkinDoctor" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="321" width="335" height="50"/>
+                                                <rect key="frame" x="20" y="217" width="335" height="22"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We will never share any of your personal details" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="36N-49-evP">
-                                                <rect key="frame" x="20" y="386" width="335" height="21"/>
+                                                <rect key="frame" x="20" y="254" width="335" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -818,16 +815,13 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="O3Z-G2-GZU" secondAttribute="trailing" constant="20" id="00X-FL-yEM"/>
-                                            <constraint firstItem="BCF-WZ-jPx" firstAttribute="height" secondItem="Syc-aE-oJA" secondAttribute="height" id="2AP-LO-ghs"/>
                                             <constraint firstItem="36N-49-evP" firstAttribute="top" secondItem="Y5z-5h-hSN" secondAttribute="bottom" constant="15" id="5bZ-rD-B2i"/>
                                             <constraint firstItem="BCF-WZ-jPx" firstAttribute="leading" secondItem="Syc-aE-oJA" secondAttribute="leading" id="9Pt-uo-2DJ"/>
-                                            <constraint firstItem="7oJ-ae-aAc" firstAttribute="height" secondItem="Syc-aE-oJA" secondAttribute="height" id="C20-Yv-zNl"/>
                                             <constraint firstItem="36N-49-evP" firstAttribute="trailing" secondItem="Y5z-5h-hSN" secondAttribute="trailing" id="D9G-Qq-zvr"/>
                                             <constraint firstItem="Syc-aE-oJA" firstAttribute="top" secondItem="O3Z-G2-GZU" secondAttribute="bottom" constant="40" id="DdO-bA-LFU"/>
                                             <constraint firstItem="36N-49-evP" firstAttribute="leading" secondItem="Y5z-5h-hSN" secondAttribute="leading" id="HJ4-nH-lvh"/>
                                             <constraint firstItem="BCF-WZ-jPx" firstAttribute="top" secondItem="Syc-aE-oJA" secondAttribute="bottom" constant="15" id="I3s-6l-VJ2"/>
                                             <constraint firstItem="Y5z-5h-hSN" firstAttribute="trailing" secondItem="Rqb-P8-01G" secondAttribute="trailing" id="IO6-YL-B8O"/>
-                                            <constraint firstItem="Rqb-P8-01G" firstAttribute="height" secondItem="Syc-aE-oJA" secondAttribute="height" id="LCh-EP-D9Y"/>
                                             <constraint firstItem="Y5z-5h-hSN" firstAttribute="top" secondItem="Rqb-P8-01G" secondAttribute="bottom" constant="15" id="OY0-Su-Crz"/>
                                             <constraint firstItem="Syc-aE-oJA" firstAttribute="leading" secondItem="Ans-Nb-BFy" secondAttribute="leading" constant="20" id="Qkr-NC-uHH"/>
                                             <constraint firstItem="Y5z-5h-hSN" firstAttribute="leading" secondItem="Rqb-P8-01G" secondAttribute="leading" id="RWS-Wb-FiR"/>
@@ -841,7 +835,6 @@
                                             <constraint firstItem="Rqb-P8-01G" firstAttribute="top" secondItem="7oJ-ae-aAc" secondAttribute="bottom" constant="15" id="kAQ-me-c2e"/>
                                             <constraint firstItem="7oJ-ae-aAc" firstAttribute="trailing" secondItem="BCF-WZ-jPx" secondAttribute="trailing" id="l7B-MK-D69"/>
                                             <constraint firstAttribute="bottom" secondItem="36N-49-evP" secondAttribute="bottom" constant="15" id="pGb-Yh-DnL"/>
-                                            <constraint firstItem="Y5z-5h-hSN" firstAttribute="height" secondItem="Syc-aE-oJA" secondAttribute="height" id="xRA-3U-bfY"/>
                                             <constraint firstItem="7oJ-ae-aAc" firstAttribute="top" secondItem="BCF-WZ-jPx" secondAttribute="bottom" constant="15" id="zsh-x4-4II"/>
                                         </constraints>
                                     </view>
@@ -981,7 +974,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="577"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aMe-kd-Pmg">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="476.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="372.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your GP Information" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecW-8I-IiT" customClass="TitleLabel" customModule="MySkinDoctor" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="0.0" width="335" height="21"/>
@@ -990,34 +983,31 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="GP Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eqa-q2-Ly5" customClass="FormTextField" customModule="MySkinDoctor" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="51" width="335" height="50"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="7xq-YQ-hE0"/>
-                                                </constraints>
+                                                <rect key="frame" x="20" y="51" width="335" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="GP Access Code/Follow Up Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zwE-3w-DdJ" customClass="FormTextField" customModule="MySkinDoctor" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="116" width="335" height="50"/>
+                                                <rect key="frame" x="20" y="96" width="335" height="22"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="GP Address Line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TUa-i8-xV5" customClass="FormTextField" customModule="MySkinDoctor" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="181" width="335" height="50"/>
+                                                <rect key="frame" x="20" y="133" width="335" height="22"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="GP Postcode" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m8W-c7-A3E" customClass="FormTextField" customModule="MySkinDoctor" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="246" width="335" height="50"/>
+                                                <rect key="frame" x="20" y="170" width="335" height="22"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ydL-uR-gv0">
-                                                <rect key="frame" x="10" y="306" width="355" height="160.5"/>
+                                                <rect key="frame" x="10" y="202" width="355" height="160.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Permission to contact your GP?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ouD-dz-WTu">
                                                         <rect key="frame" x="5" y="15" width="288" height="20.5"/>
@@ -1064,8 +1054,6 @@
                                             <constraint firstItem="eqa-q2-Ly5" firstAttribute="leading" secondItem="aMe-kd-Pmg" secondAttribute="leading" constant="20" id="2RV-Hj-hrd"/>
                                             <constraint firstAttribute="bottom" secondItem="ydL-uR-gv0" secondAttribute="bottom" constant="10" id="A3l-0i-l5w"/>
                                             <constraint firstItem="m8W-c7-A3E" firstAttribute="leading" secondItem="TUa-i8-xV5" secondAttribute="leading" id="D1Y-za-NSL"/>
-                                            <constraint firstItem="m8W-c7-A3E" firstAttribute="height" secondItem="eqa-q2-Ly5" secondAttribute="height" id="DM6-jC-JmM"/>
-                                            <constraint firstItem="TUa-i8-xV5" firstAttribute="height" secondItem="eqa-q2-Ly5" secondAttribute="height" id="DUX-rD-eyo"/>
                                             <constraint firstAttribute="trailing" secondItem="ecW-8I-IiT" secondAttribute="trailing" constant="20" id="Ibc-CB-D32"/>
                                             <constraint firstItem="TUa-i8-xV5" firstAttribute="top" secondItem="zwE-3w-DdJ" secondAttribute="bottom" constant="15" id="IgO-fG-y4Y"/>
                                             <constraint firstItem="ecW-8I-IiT" firstAttribute="centerX" secondItem="aMe-kd-Pmg" secondAttribute="centerX" id="Ixe-pH-ULr"/>
@@ -1074,7 +1062,6 @@
                                             <constraint firstItem="m8W-c7-A3E" firstAttribute="trailing" secondItem="TUa-i8-xV5" secondAttribute="trailing" id="aSS-la-QPu"/>
                                             <constraint firstAttribute="trailing" secondItem="eqa-q2-Ly5" secondAttribute="trailing" constant="20" id="iBr-gL-fQM"/>
                                             <constraint firstItem="zwE-3w-DdJ" firstAttribute="top" secondItem="eqa-q2-Ly5" secondAttribute="bottom" constant="15" id="jzZ-Vr-oMd"/>
-                                            <constraint firstItem="zwE-3w-DdJ" firstAttribute="height" secondItem="eqa-q2-Ly5" secondAttribute="height" id="lBE-Zj-F7R"/>
                                             <constraint firstItem="ecW-8I-IiT" firstAttribute="top" secondItem="aMe-kd-Pmg" secondAttribute="top" id="lmn-Hf-I5W"/>
                                             <constraint firstItem="m8W-c7-A3E" firstAttribute="top" secondItem="TUa-i8-xV5" secondAttribute="bottom" constant="15" id="pYF-TG-lIs"/>
                                             <constraint firstItem="zwE-3w-DdJ" firstAttribute="trailing" secondItem="eqa-q2-Ly5" secondAttribute="trailing" id="qJb-2X-IdY"/>

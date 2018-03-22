@@ -56,7 +56,7 @@ class ForgotPasswordViewController: FormViewController {
 		
 		forgotPasswordViewModel.emailValidationStatus = { [weak self] () in
 			DispatchQueue.main.async {
-				self?.emailTextField.errorMessage = forgotPasswordViewModel.emailErrorMessage
+				self?.emailTextField.showError(message: forgotPasswordViewModel.emailErrorMessage)
 				self?.emailTextField.becomeFirstResponder()
 			}
 		}

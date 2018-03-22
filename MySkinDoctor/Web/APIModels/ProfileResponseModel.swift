@@ -15,7 +15,7 @@ class ProfileResponseModel : BaseResponseModel {
 	var addressLine2: String?
 	var dob: Date?
 	var gpAddress: String?
-	var gpContactPermission: String?
+	var gpContactPermission: Bool = false
 	var gpName: String?
 	var gpPostcode: String?
 	var firstName: String?

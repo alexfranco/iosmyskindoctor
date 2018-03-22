@@ -26,6 +26,18 @@ class BaseViewModel: NSObject {
 	func validateForm() -> Bool {
 		return true
 	}
+	
+	func fetchInternetModel() {
+	}
+	
+	func parseResponseModel(model: ProfileResponseModel) {
+	}
+	
+	func loadDBModel() {
+	}
+	
+	func saveModel() {
+	}
 }
 
 

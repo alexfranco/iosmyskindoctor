@@ -8,74 +8,23 @@
 
 import Foundation
 import TextFieldEffects
-import LRTextField
 
-class FormTextField: LRTextField {
+class FormTextField: DTTextField {
 	
-	private var originalPlaceholderActiveColor = BaseColors.warmGrey
-	private var originalPlaceholderInactiveColor = BaseColors.formGrey
-	private var originalTextFieldBorder = BaseColors.formGrey
-	private var errorColor = BaseColors.blush
-	
-	var hasErrors: Bool = false {
-		didSet {
-			if hasErrors {
-				layer.borderColor = errorColor.cgColor
-				placeholderActiveColor = errorColor
-				placeholderInactiveColor = errorColor
-			} else {
-				// default colours
-				layer.borderColor = originalTextFieldBorder.cgColor
-				placeholderActiveColor = originalPlaceholderActiveColor
-				placeholderInactiveColor = originalPlaceholderInactiveColor
-			}
-		}
-	}
-	
-	private var originalPlaceholder: String?
-	
-	private var _placeholder: String?
-	override var placeholder: String? {
-		didSet {
-			_placeholder = placeholder
-			
-			if originalPlaceholder == nil {
-				originalPlaceholder = _placeholder
-			}
-		}
-	}
-	
-	var errorMessage: String? {
-		didSet {
-			if let errorMessage = errorMessage, !errorMessage.isEmpty {
-				self.placeholder = errorMessage
-				hasErrors = true
-				
-			} else {
-				self.placeholder = originalPlaceholder
-				hasErrors = false
-			}
-		}
-	}
-
 	override func awakeFromNib() {
 		super.awakeFromNib()
-
-		textColor = BaseColors.warmGrey
-		borderStyle = UITextBorderStyle.line
-		layer.borderWidth = 1
-		layer.borderColor = originalTextFieldBorder.cgColor
-		
-		floatingLabelHeight = 12
-		placeholderActiveColor = originalPlaceholderActiveColor
-		placeholderInactiveColor = originalPlaceholderInactiveColor
-				
-		addLeftPadding()
+			
+		textColor = BaseColors.black
+		lblError.textColor = BaseColors.blush
+		placeholderColor = BaseColors.blush
+		floatPlaceholderActiveColor = BaseColors.skyBlue
+		floatPlaceholderColor = BaseColors.warmGrey
+		hideErrorWhenEditing = true
 	}
 	
 	// MARK: Binding
 	
-	var textChanged :(String) -> () = { _ in }
+	var textChanged: (String) -> () = { _ in }
 	
 	func bind(callback :@escaping (String) -> ()) {
 		self.textChanged = callback

@@ -10,17 +10,69 @@ import Foundation
 
 class SetupWizard3ViewModel: BaseViewModel {
 	
+	var profile: Profile!
+	
 	var gpName = ""
 	var gpAccessCode = ""
 	var gpAddressLine = ""
 	var gpPostcode = ""
 	var isPermisionEnabled = false
 	
-	override init() {		
+	override init() {
 		super.init()
+		self.loadDBModel()
+		self.fetchInternetModel()
 	}
 	
-	func saveModel() {
+	override func fetchInternetModel() {
+		super.fetchInternetModel()
+		
+		isLoading = true
+		
+		ApiUtils.getProfile(accessToken: DataController.getAccessToken()) { (result) in
+			self.isLoading = false
+			
+			switch result {
+			case .success(let model):
+				print("get Profile")
+				let modelCast = model as! ProfileResponseModel
+				
+				self.parseResponseModel(model: modelCast)
+				self.loadDBModel()
+				self.onFetchFinished!()
+				
+			case .failure(let model, let error):
+				print("error \(error.localizedDescription)")
+				self.showResponseErrorAlert!(model as? BaseResponseModel, error)
+			}
+		}
+	}
+	
+	internal override func parseResponseModel(model: ProfileResponseModel) {
+		super.parseResponseModel(model: model)
+		let profile = DataController.createUniqueEntity(type: Profile.self)
+		
+		profile.gpName = model.gpName
+		profile.gpAddressLine = model.gpAddress
+		profile.gpPostcode = model.gpPostcode
+		profile.isPermisionEnabled = model.gpContactPermission
+		
+		DataController.saveEntity(managedObject: profile)
+	}
+	
+	override func loadDBModel() {
+		super.loadDBModel()
+		
+		profile = DataController.createUniqueEntity(type: Profile.self)
+		
+		gpName = profile.gpName ?? ""
+		gpAddressLine = profile.gpAddressLine ?? ""
+		gpPostcode = profile.gpPostcode ?? ""
+		isPermisionEnabled = profile.isPermisionEnabled
+	}
+	
+	override func saveModel() {
+		super.saveModel()
 		
 		ApiUtils.updateProfile(accessToken: DataController.getAccessToken(), firstName: nil, lastName: nil, dob: nil, phone: nil, addressLine1: nil, addressLine2: nil, town: nil, postcode: nil, gpName: gpName, gpAddress: gpAddressLine, gpPostCode: gpPostcode, gpContactPermission: isPermisionEnabled, selfPay: nil, completionHandler: { (result) in
 			self.isLoading = false

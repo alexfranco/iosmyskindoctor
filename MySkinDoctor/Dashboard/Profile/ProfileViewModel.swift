@@ -77,7 +77,9 @@ class ProfileViewModel: BaseViewModel {
 		fetchInternetModel()
 	}
 	
-	func fetchInternetModel() {		
+	override func fetchInternetModel() {
+		super.fetchInternetModel()
+		
 		isLoading = true
 		
 		ApiUtils.getProfile(accessToken: DataController.getAccessToken()) { (result) in
@@ -99,7 +101,9 @@ class ProfileViewModel: BaseViewModel {
 		}
 	}
 	
-	func parseResponseModel(model: ProfileResponseModel) {
+	override func parseResponseModel(model: ProfileResponseModel) {
+		super.parseResponseModel(model: model)
+		
 		let profile = DataController.createUniqueEntity(type: Profile.self)
 		
 		profile.firstName = model.firstName
@@ -118,7 +122,9 @@ class ProfileViewModel: BaseViewModel {
 		DataController.saveEntity(managedObject: profile)
 	}
 	
-	func loadDBModel() {
+	override func loadDBModel() {
+		super.loadDBModel()
+		
 		profile = DataController.createUniqueEntity(type: Profile.self)
 		
 		firstName = profile.firstName ?? ""
@@ -148,13 +154,14 @@ class ProfileViewModel: BaseViewModel {
 		}
 	}
 	
-	func saveModel() {
+	override func saveModel() {
+		super.saveModel()
 		
 		ApiUtils.updateProfile(accessToken: DataController.getAccessToken(), firstName: firstName, lastName: lastName, dob: dob, phone: phone, addressLine1: addressLine1, addressLine2: addressLine2, town: town, postcode: postcode, gpName: gpName, gpAddress: gpAddressLine, gpPostCode: gpPostcode, gpContactPermission: isPermisionEnabled, selfPay: nil, completionHandler: { (result) in
 			self.isLoading = false
 			
 			switch result {
-			case .success(let model):
+			case .success(_):
 				print("update profile success")
 				
 				self.profile.firstName = self.firstName
