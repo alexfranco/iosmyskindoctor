@@ -1,5 +1,5 @@
 //
-//  SkinProblem.swift
+//  SkinProblemAttachment.swift
 //  MySkinDoctor
 //
 //  Created by Alex Núñez on 13/03/2018.
@@ -86,4 +86,5 @@ extension SkinProblemAttachment {
 		get { return LocationProblemType(rawValue: Int(self.locationType)) ?? .none }
 		set { self.locationType = Int16(newValue.rawValue) }
 	}
+
 }

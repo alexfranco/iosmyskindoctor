@@ -28,7 +28,13 @@ class MyConsultTableViewCell: UITableViewCell {
 		nameLabel.text = viewModel.displayName
 		timeLabel.text = viewModel.time
 		timeLabel.setRounded()
-		profileImageView.image = viewModel.profileImage == nil ? UIImage(named: "logo")! : viewModel.profileImage!
+		
+		if let profileImageSafe = viewModel.profileImage {
+			profileImageView.image = profileImageSafe
+		} else {
+			profileImageView.image = UIImage.init(color: AppStyle.profileImageViewPlaceHolder)!
+		}
+		
 		profileImageView.setRounded()
 		qualificationLabel.text = viewModel.qualification
 		

@@ -24,6 +24,8 @@ class SkinProblemsResponseModel : BaseResponseModel {
 	var diagnosisPatientInformation: String?
 	var diagnosisComments: String?
 	
+	var attachments: [SkinProblemAttachmentResponseModel] = []
+	
 	// Mappable
 	override func mapping(map: Map) {
 		super .mapping(map: map)
@@ -40,6 +42,7 @@ class SkinProblemsResponseModel : BaseResponseModel {
 		diagnosisTreatment <- map["diagnosis_treatment"]
 		diagnosisPatientInformation <- map["diagnosis_patient_information"]
 		diagnosisComments <- map["diagnosis_comments"]
+		attachments <- map["images"]
 		
 		if let dateString = map["date_created"].currentValue as? String, let _date = Formatter.iso8601.date(from: dateString) { dateCreated = _date }
 		

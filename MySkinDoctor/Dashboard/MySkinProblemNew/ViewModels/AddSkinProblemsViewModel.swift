@@ -105,19 +105,34 @@ class AddSkinProblemsViewModel: BaseViewModel {
 		
 		isLoading = true
 		ApiUtils.updateSkinProblems(accessToken: DataController.getAccessToken(), skinProblemsId: Int(model.skinProblemId), skinProblemsDescription: skinProblemDescription, healthProblems: healthProblems, medications: medication, history: pastHistoryProblems) { (result) in
-			self.isLoading = false
 			
 			switch result {
 			case .success(let responseModel):
 				print("updateSkinProblems")
 				
-				let modelCast = responseModel as! SkinProblemsResponseModel
-				model.date = modelCast.dateCreated as NSDate?
-				model.skinProblemDescription = self.skinProblemDescription
-				model.diagnose?.diagnoseStatusEnum = .submitted
+				if self.hasProfileMedicalHistory {
+					self.submitSkinProblems(responseModel: responseModel as! SkinProblemsResponseModel)
+				} else {
+					self.isLoading = false
+					self.goNextSegue!()
+				}
 				
-				DataController.saveEntity(managedObject: model)
-				
+			case .failure(let model, let error):
+				print("error")
+				self.isLoading = false
+				self.showResponseErrorAlert!(model as? BaseResponseModel, error)
+			}
+		}
+	}
+	
+	private func submitSkinProblems(responseModel: SkinProblemsResponseModel) {
+		ApiUtils.submitSkinProblem(accessToken: DataController.getAccessToken(), skinProblemsId: Int(self.model!.skinProblemId)) { (result) in
+			self.isLoading = false
+			
+			switch result {
+			case .success(let model):
+				print("submitSkinProblem")
+				SkinProblems.parseAndSaveResponse(skinProblemResponseModel: model as! SkinProblemsResponseModel)
 				self.goNextSegue!()
 				
 			case .failure(let model, let error):
@@ -129,6 +144,46 @@ class AddSkinProblemsViewModel: BaseViewModel {
 	
 	func discardModel() {
 		// TODO
+	}
+	
+	func insertNewModel(model: SkinProblemAttachment, indexPath: IndexPath) {
+		tableViewState = .insert(model, indexPath)
+		updateNextButton!(nextButtonIsEnabled)
+	}
+	
+	func appendNewModel(skinProblemAttachment: SkinProblemAttachment) {
+		guard let model = self.model else { return }
+		
+		isLoading = true
+		
+		ApiUtils.createSkinProblemAttachment(accessToken: DataController.getAccessToken(), skinProblemsId: Int(model.skinProblemId), location: skinProblemAttachment.locationTypeEnum.description, fileName: skinProblemAttachment.filename, description: skinProblemAttachment.problemDescription, attachmentType: skinProblemAttachment.attachmentTypeEnum, completionHandler: { (result) in
+			self.isLoading = false
+			
+			switch result {
+			case .success(let model):
+				print("createSkinProblemAttachment")
+				let attachment = SkinProblemAttachment.parseAndSaveSkinProblemsAttachmentResponse(attachment: model as! SkinProblemAttachmentResponseModel)
+				let appendToLastIndexPath = IndexPath.init(row: self.getDataSourceCountWithoutExtraAddPhoto(), section: 0)
+				self.tableViewState = .insert(attachment, appendToLastIndexPath)
+				self.updateNextButton!(self.nextButtonIsEnabled)
+				
+			case .failure(let model, let error):
+				print("error")
+				self.showResponseErrorAlert!(model as? BaseResponseModel, error)
+			}
+		})
+	}
+	
+	func removeModel(at indexPath: IndexPath) {
+		tableViewState = .delete(indexPath)
+		updateNextButton!(nextButtonIsEnabled)
+	}
+	
+	func createSkinProblemAttachment(image: UIImage) {
+		let skinProblem = DataController.disconnectedEntity(type: SkinProblemAttachment.self)
+		skinProblem.problemImage = image
+		DataController.saveEntity(managedObject: skinProblem)
+		onSkinProblemAttachmentImageAdded!(skinProblem)
 	}
 }
 
@@ -159,7 +214,6 @@ extension AddSkinProblemsViewModel {
 	
 	var isDiagnosed: Bool {
 		get {
-			
 			guard let model = self.model else { return false}
 			
 			return model.isDiagnosed
@@ -363,54 +417,5 @@ extension AddSkinProblemsViewModel {
 		} else {
 			return "-"
 		}
-	}
-	
-	func insertNewModel(model: SkinProblemAttachment, indexPath: IndexPath) {
-		tableViewState = .insert(model, indexPath)
-		updateNextButton!(nextButtonIsEnabled)
-	}
-	
-	func appendNewModel(skinProblemAttachment: SkinProblemAttachment) {
-		guard let model = self.model else { return }
-		
-		isLoading = true
-		
-		ApiUtils.createSkinProblemAttachment(accessToken: DataController.getAccessToken(), skinProblemsId: Int(model.skinProblemId), location: skinProblemAttachment.locationTypeEnum.description, fileName: skinProblemAttachment.filename, description: skinProblemAttachment.problemDescription, attachmentType: skinProblemAttachment.attachmentTypeEnum, completionHandler: { (result) in
-			self.isLoading = false
-			
-			switch result {
-			case .success(_):
-				print("createSkinProblemAttachment")
-				
-				let persistentModel = DataController.createNew(type: SkinProblemAttachment.self)
-				persistentModel.problemDescription = skinProblemAttachment.problemDescription
-				persistentModel.problemImage = skinProblemAttachment.problemImage
-				persistentModel.attachmentType = skinProblemAttachment.attachmentType
-				persistentModel.filename = skinProblemAttachment.filename
-				persistentModel.url = skinProblemAttachment.url
-				
-				DataController.saveEntity(managedObject: persistentModel)
-				
-				let appendToLastIndexPath = IndexPath.init(row: self.getDataSourceCountWithoutExtraAddPhoto(), section: 0)
-				self.tableViewState = .insert(persistentModel, appendToLastIndexPath)
-				self.updateNextButton!(self.nextButtonIsEnabled)
-				
-			case .failure(let model, let error):
-				print("error")
-				self.showResponseErrorAlert!(model as? BaseResponseModel, error)
-			}
-		})
-	}
-	
-	func removeModel(at indexPath: IndexPath) {
-		tableViewState = .delete(indexPath)
-		updateNextButton!(nextButtonIsEnabled)
-	}
-	
-	func createSkinProblemAttachment(image: UIImage) {
-		let skinProblem = DataController.disconnectedEntity(type: SkinProblemAttachment.self)
-		skinProblem.problemImage = image
-		DataController.saveEntity(managedObject: skinProblem)
-		onSkinProblemAttachmentImageAdded!(skinProblem)
 	}
 }

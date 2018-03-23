@@ -9,20 +9,24 @@
 import Foundation
 import ObjectMapper
 
-class SkinProblemsAttachmentResponseModel : BaseResponseModel {
+class SkinProblemAttachmentResponseModel : BaseResponseModel {
 	
 	var problemDescription: String?
-	var fileName: String?
-	var attachmentType: SkinProblemAttachment.AttachmentType = SkinProblemAttachment.AttachmentType.photo
-	var location: SkinProblemAttachment.LocationProblemType = SkinProblemAttachment.LocationProblemType
+	var filename: String?
+	var attachmentType: Int = 0
+	var location: Int = 0
+	var problemImage: NSObject?
+	var url: String?
+	var skinProblemAttachmentId: Int = 0
 	
 	// Mappable
 	override func mapping(map: Map) {
 		super .mapping(map: map)
 		
 		problemDescription <- map["description"]
-		fileName <- map["file_name"]
+		filename <- map["file_name"]
 		attachmentType <- map["photo_type"]
 		location <- map["photo_location"]
+		skinProblemAttachmentId <- map["id"]
 	}
 }

@@ -50,7 +50,11 @@ class MySkinProblemsViewModel: BaseViewModel {
 			switch result {
 			case .success(let model):
 				print("getSkinProblems")
-				self.parseResponseModel(models: model as! [BaseResponseModel])
+				
+				for skinProblemsResponseModel in model as! [SkinProblemsResponseModel] {
+					SkinProblems.parseAndSaveResponse(skinProblemResponseModel: skinProblemsResponseModel)
+				}
+				
 				self.loadDBModel()
 				
 				if self.onFetchFinished != nil {
@@ -63,46 +67,12 @@ class MySkinProblemsViewModel: BaseViewModel {
 			}
 		}
 	}
-	
-	override func parseResponseModel(models: [BaseResponseModel]) {
-		super.parseResponseModel(models: models)
-		
-		let modelsCast = models as! [SkinProblemsResponseModel]
-		
-		for model in modelsCast {
-			let skinProblem = DataController.createOrUpdate(objectIdKey: "skinProblemId", objectValue: model.skinProblemId, type: SkinProblems.self)
-			
-			skinProblem.skinProblemId = Int16(model.skinProblemId)
-			skinProblem.skinProblemDescription = model.skinProblemDescription
-			skinProblem.date = model.dateCreated as NSDate?
-			
-			if skinProblem.medicalHistory == nil {
-				skinProblem.medicalHistory = DataController.createNew(type: MedicalHistory.self)
-			}
-			
-			skinProblem.medicalHistory!.healthProblems = model.healthProblems
-			skinProblem.medicalHistory!.medication = model.medications
-			skinProblem.medicalHistory!.pastHistoryProblems = model.history
-			// TODO skinProblem.medicalHistory!.skinProblems = modelCast.skinProblemDescription
-			
-			if skinProblem.diagnose == nil {
-				skinProblem.diagnose = DataController.createNew(type: Diagnose.self)
-			}
-			
-			skinProblem.diagnose!.treatment = model.diagnosisTreatment
-			skinProblem.diagnose!.patientInformation = model.diagnosisPatientInformation
-			skinProblem.diagnose!.comments = model.diagnosisComments
-			skinProblem.diagnose!.diagnoseDate = model.outcomeDate as NSDate?
-			skinProblem.diagnose!.diagnoseStatus = Int16(model.outcome)
-			
-			DataController.saveEntity(managedObject: skinProblem)
-		}
-	}
+
 	
 	override func loadDBModel() {
 		super.loadDBModel()
 		
-		if let results = DataController.fetchAll(type: SkinProblems.self) {
+		if let results = DataController.fetchAll(type: SkinProblems.self, sortByKey: "date") {
 			allItems = results
 			diagnosedItems = allItems.filter { (model) -> Bool in model.isDiagnosed }
 			undiagnosedItems = allItems.filter { (model) -> Bool in !model.isDiagnosed }

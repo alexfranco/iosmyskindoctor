@@ -45,7 +45,7 @@ class MyConsultDetailsViewModel: BaseViewModel {
 			if let doctor = model.doctor, let profilePicture = doctor.profilePicture as? UIImage {
 				return profilePicture
 			} else {
-				return UIImage(named: "logo")!
+				return UIImage.init(color: AppStyle.profileImageViewPlaceHolder)!				
 			}
 		}
 	}

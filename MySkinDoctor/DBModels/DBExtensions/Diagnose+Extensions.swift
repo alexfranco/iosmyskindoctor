@@ -25,7 +25,7 @@ extension Diagnose {
 			case .none:
 				return "Draft"
 			case .submitted:
-				return "Pending"
+				return "Submitted"
 			case .bookConsultationRequest:
 				return "Consultation Request"
 			case .noFutherCommunicationRequired:

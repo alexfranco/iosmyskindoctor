@@ -58,12 +58,30 @@ class MedicalHistoryViewModel: BaseViewModel {
 		
 		self.isLoading = true
 		ApiUtils.updateSkinProblems(accessToken: DataController.getAccessToken(), skinProblemsId: Int(model.skinProblemId), skinProblemsDescription: nil, healthProblems: healthProblems, medications: medication, history: pastHistoryProblems) { (result) in
+			
+			switch result {
+			case .success(let model):
+				print("updateSkinProblems")
+				SkinProblems.parseAndSaveResponse(skinProblemResponseModel: model as! SkinProblemsResponseModel)
+				self.submitSkinProblems()
+				
+			case .failure(let model, let error):
+				print("error")
+				self.isLoading = false
+				self.showResponseErrorAlert!(model as? BaseResponseModel, error)
+			}
+		}
+	}
+	
+	private func submitSkinProblems() {		
+		ApiUtils.submitSkinProblem(accessToken: DataController.getAccessToken(), skinProblemsId: Int(self.model.skinProblemId)) { (result) in
 			self.isLoading = false
 			
 			switch result {
-			case .success(_):
-				print("updateSkinProblems")
-				self.saveLocalModel()
+			case .success(let model):
+				print("submitSkinProblem")
+				SkinProblems.parseAndSaveResponse(skinProblemResponseModel: model as! SkinProblemsResponseModel)
+				self.updateProfileMedicalHistory()
 				self.goNextSegue!()
 				
 			case .failure(let model, let error):
@@ -73,26 +91,7 @@ class MedicalHistoryViewModel: BaseViewModel {
 		}
 	}
 	
-	func saveLocalModel() {
-		if self.model.diagnose == nil {
-			self.model.diagnose = DataController.createNew(type: Diagnose.self)
-		}
-		self.model.diagnose?.diagnoseStatusEnum = .submitted
-		
-		if self.model.medicalHistory == nil {
-			self.model.medicalHistory = DataController.createNew(type: MedicalHistory.self)
-		}
-		
-		self.model.medicalHistory?.healthProblems = self.healthProblems
-		self.model.medicalHistory?.pastHistoryProblems = self.pastHistoryProblems
-		self.model.medicalHistory?.medication = self.medication
-		
-		DataController.saveEntity(managedObject: self.model)
-		
-		self.updateProfileMedicalHistory()
-	}
-	
-	func updateProfileMedicalHistory() {
+	private func updateProfileMedicalHistory() {
 		if saveMedicalHistory {
 			let profile = DataController.createUniqueEntity(type: Profile.self)
 			

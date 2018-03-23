@@ -100,7 +100,7 @@ class AddSkinProblemsViewController: BindingViewController {
 		
 		descriptionTextView.placeholder = "Please enter the description of your skin problem, click on Add Photo"
 		
-		nextButton.isEnabled = false
+		nextButton.isEnabled = viewModelCast.nextButtonIsEnabled
 		
 		configureTableView()
 		configureDiagnoseView()

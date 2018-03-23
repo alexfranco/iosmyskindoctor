@@ -178,7 +178,7 @@ extension ApiUtils {
 		params.updateValue(attachmentTypeInt, forKey: "photo_type")
 		params.updateValue(location, forKey: "photo_location")
 					
-		ApiUtils.request(url: url, httpMethod: HTTPMethod.post, params: params, parseToModelType: SkinProblemsAttachmentResponseModel.self, accessToken: accessToken, completionHandler: completionHandler)
+		ApiUtils.request(url: url, httpMethod: HTTPMethod.post, params: params, parseToModelType: SkinProblemAttachmentResponseModel.self, accessToken: accessToken, completionHandler: completionHandler)
 	}
 	
 	static func submitSkinProblem(accessToken: String, skinProblemsId: Int, completionHandler: @escaping ((_ result: ApiResult) -> Void)) {

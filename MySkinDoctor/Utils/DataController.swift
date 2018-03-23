@@ -64,10 +64,14 @@ class DataController {
 		}				
 	}
 	
-	static func fetchAll<T: NSManagedObject>(type: T.Type) -> [T]? {
+	static func fetchAll<T: NSManagedObject>(type: T.Type, sortByKey: String = "") -> [T]? {
 		let entityName = String(describing: type)
 		
 		let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+		
+		if !sortByKey.isEmpty {
+			request.sortDescriptors = [NSSortDescriptor(key: sortByKey, ascending: false)]
+		}
 		
 		do {
 			let result = try CoreDataStack.managedObjectContext.fetch(request)

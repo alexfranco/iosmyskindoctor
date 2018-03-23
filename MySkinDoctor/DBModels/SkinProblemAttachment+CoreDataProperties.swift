@@ -23,6 +23,7 @@ extension SkinProblemAttachment {
     @NSManaged public var problemImage: NSObject?
     @NSManaged public var filename: String?
     @NSManaged public var url: String?
+    @NSManaged public var skinProblemAttachmentId: Int16
     @NSManaged public var skinProblems: SkinProblems?
 
 }

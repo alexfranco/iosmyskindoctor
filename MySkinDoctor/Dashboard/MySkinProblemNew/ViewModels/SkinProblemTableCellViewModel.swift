@@ -25,7 +25,12 @@ class SkinProblemTableCellViewModel : NSObject {
 			self.location = model.locationTypeEnum.description
 		}
 		
-		self.problemImage = model.problemImage == nil ? UIImage(named: "logo")! : model.problemImage as! UIImage
+		if let profileImageSafe = model.problemImage as? UIImage {
+			problemImage = profileImageSafe
+		} else {
+			problemImage = UIImage.init(color: AppStyle.profileImageViewPlaceHolder)!
+		}
+				
 		self.problemDescription = model.problemDescription
 		
 		super.init()
