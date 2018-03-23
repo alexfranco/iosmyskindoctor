@@ -2,7 +2,7 @@
 //  Profile+CoreDataProperties.swift
 //  MySkinDoctor
 //
-//  Created by Alex on 21/03/2018.
+//  Created by Alex on 23/03/2018.
 //  Copyright © 2018 TouchSoft. All rights reserved.
 //
 //
@@ -28,12 +28,12 @@ extension Profile {
     @NSManaged public var gpPostcode: String?
     @NSManaged public var isNHS: Bool
     @NSManaged public var isPermisionEnabled: Bool
+    @NSManaged public var key: String?
     @NSManaged public var lastName: String?
     @NSManaged public var phone: String?
     @NSManaged public var postcode: String?
     @NSManaged public var profileImage: NSObject?
     @NSManaged public var town: String?
-    @NSManaged public var key: String?
-    @NSManaged public var medicalHisttory: MedicalHistory?
+    @NSManaged public var medicalHistory: MedicalHistory?
 
 }

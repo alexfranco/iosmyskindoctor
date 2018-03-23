@@ -36,7 +36,7 @@ class BaseMySkinProblemDiagnosisViewModel: BaseViewModel {
 			switch diagnoseStatus {
 			case .none:
 				return UIColor.white
-			case .pending:
+			case .submitted:
 				return UIColor.white
 			case .noFutherCommunicationRequired:
 				return AppStyle.diagnoseViewBackgroundColor
@@ -51,7 +51,7 @@ class BaseMySkinProblemDiagnosisViewModel: BaseViewModel {
 			switch diagnoseStatus {
 			case .none:
 				return ""
-			case .pending:
+			case .submitted:
 			   return ""
 			case .noFutherCommunicationRequired:
 				return "Diagnosis"

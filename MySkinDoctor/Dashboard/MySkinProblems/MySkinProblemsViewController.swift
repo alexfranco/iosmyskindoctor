@@ -86,9 +86,9 @@ class MySkinProblemsViewController: BindingViewController {
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if let nvc = segue.destination as? UINavigationController, let vc = nvc.viewControllers.first as? AddSkinProblemsViewController {
 			if let skinsProblem = sender as? SkinProblems {
-				vc.initViewModel(viewModel: AddSkinProblemsViewModel(model: skinsProblem))
+				vc.initViewModel(viewModel: AddSkinProblemsViewModel(modelId: skinsProblem.objectID))
 			} else {
-				vc.initViewModel(viewModel: AddSkinProblemsViewModel())
+				vc.initViewModel(viewModel: AddSkinProblemsViewModel(modelId: nil))
 			}
 		}
 	}

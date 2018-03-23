@@ -44,7 +44,7 @@ class MySkinProblemsViewModel: BaseViewModel {
 		
 		isLoading = true
 		
-		ApiUtils.getSkinProblems(accessToken: DataController.getAccessToken()) { (result) in
+		ApiUtils.getAllSkinProblems(accessToken: DataController.getAccessToken()) { (result) in
 			self.isLoading = false
 			
 			switch result {

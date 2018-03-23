@@ -20,7 +20,12 @@ class SkinProblemPhotoInformationViewModel: BaseViewModel {
 	required init(model: SkinProblemAttachment) {
 		self.model = model
 		self.problemDescription = model.problemDescription
-		self.problemImage = model.problemImage == nil ? UIImage(named: "logo")! : model.problemImage as! UIImage
+		
+		if let profileImageSafe = model.problemImage as? UIImage {
+			problemImage = profileImageSafe
+		} else {
+			problemImage = UIImage.init(color: AppStyle.profileImageViewPlaceHolder)!
+		}
 	}
 	
 	func saveModel(attachmentType: SkinProblemAttachment.AttachmentType) {

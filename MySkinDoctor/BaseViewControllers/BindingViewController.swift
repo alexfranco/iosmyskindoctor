@@ -31,7 +31,11 @@ class BindingViewController: ProgressBarViewController {
 		
 		viewModelSafe.showResponseErrorAlert = { [weak self] (baseResponseModel, apiGenericError) in
 			DispatchQueue.main.async {
-				self?.showResponseError(responseModel: baseResponseModel, apiGenericError: apiGenericError)
+				if apiGenericError == ApiUtils.ApiGenericError.authorizatioError {
+					DataController.logout()
+				} else {
+					self?.showResponseError(responseModel: baseResponseModel, apiGenericError: apiGenericError)
+				}
 			}
 		}
 		

@@ -46,9 +46,7 @@ class MedicalHistoryViewControler: FormViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
-		initViewModel(viewModel: MedicalHistoryViewModel())
-		
+				
 		hasHealthProblemsSwitch.isOn = viewModelCast.hasHealthProblems
 		hasMedicationSwitch.isOn = viewModelCast.hasMedication
 		hasPastHistoryProblemsSwitch.isOn = viewModelCast.hasPastHistoryProblems

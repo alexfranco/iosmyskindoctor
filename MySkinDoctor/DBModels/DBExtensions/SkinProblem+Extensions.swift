@@ -12,8 +12,8 @@ import CoreData
 extension SkinProblemAttachment {
 	
 	enum AttachmentType: Int {
-		case photo
-		case document
+		case photo = 1
+		case document = 2
 	}
 	
 	enum LocationProblemType: Int, CustomStringConvertible {

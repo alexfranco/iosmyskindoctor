@@ -80,6 +80,12 @@ class AddSkinProblemsViewController: BindingViewController {
 			}
 		}
 		
+		viewModelCast.onSkinProblemAttachmentImageAdded = { [weak self] (skinProblemAttachment) in
+			DispatchQueue.main.async {
+				self?.performSegue(withIdentifier: Segues.goToSkinProblemPhotoInformationViewController, sender: skinProblemAttachment)
+			}
+		}
+
 		viewModelCast.goNextSegue = { [weak self] () in
 			DispatchQueue.main.async {
 				self?.performSegue(withIdentifier: (self?.viewModelCast.nextSegue)!, sender: nil)
@@ -150,9 +156,9 @@ class AddSkinProblemsViewController: BindingViewController {
 	func showHideDiagnoseViews() {
 		descriptionLabelTop.constant = viewModelCast.diagnoseStatus == .none ? descriptionLabelTopDefault : descriptionLabelTopDefault + diagnosedViewHeightDefault
 		
-		undiagnosedViewHeight.constant = viewModelCast.diagnoseStatus == .pending ? diagnosedViewHeightDefault : 0
-		undiagnosedImageView.isHidden = viewModelCast.diagnoseStatus != .pending
-		undiagnosedInfoLabel.isHidden = viewModelCast.diagnoseStatus != .pending
+		undiagnosedViewHeight.constant = viewModelCast.diagnoseStatus == .submitted ? diagnosedViewHeightDefault : 0
+		undiagnosedImageView.isHidden = viewModelCast.diagnoseStatus != .submitted
+		undiagnosedInfoLabel.isHidden = viewModelCast.diagnoseStatus != .submitted
 		
 		diagnosedViewHeight.constant = viewModelCast.isDiagnosed ? diagnosedViewHeightDefault : 0
 		diagnosedImageView.isHidden = !viewModelCast.isDiagnosed
@@ -170,18 +176,20 @@ class AddSkinProblemsViewController: BindingViewController {
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == Segues.goToSkinProblemPhotoInformationViewController {
-		if let dest = segue.destination as? SkinProblemPhotoInformationViewController, let image = sender as? UIImage {
-				let skinProblem = DataController.createNew(type: SkinProblemAttachment.self)
-				skinProblem.problemImage = image
-				dest.initViewModel(viewModel: SkinProblemPhotoInformationViewModel(model:  skinProblem))
+		if let dest = segue.destination as? SkinProblemPhotoInformationViewController, let skinProblemAttachment = sender as? SkinProblemAttachment {
+				dest.initViewModel(viewModel: SkinProblemPhotoInformationViewModel(model:  skinProblemAttachment))
 			}
 		} else if segue.identifier == Segues.goToDiagnosis {
 			if let dest = segue.destination as? MySkinProblemDiagnosisViewController {
-				dest.initViewModel(viewModel: MySkinProblemDiagnosisViewModel(model:  viewModelCast.model))
+				dest.initViewModel(viewModel: MySkinProblemDiagnosisViewModel(model:  viewModelCast.model!))
 			}
 		} else if segue.identifier == Segues.goToMySkinProblemDiagnoseUpdateRequest {
 			if let dest = segue.destination as? MySkinProblemDiagnoseUpdateRequestViewController {
-				dest.initViewModel(viewModel: MySkinProblemDiagnoseUpdateRequestViewModel(model:  viewModelCast.model))
+				dest.initViewModel(viewModel: MySkinProblemDiagnoseUpdateRequestViewModel(model:  viewModelCast.model!))
+			}
+		} else if segue.identifier == Segues.goToMedicalHistoryViewControler {
+			if let dest = segue.destination as? MedicalHistoryViewControler {
+				dest.initViewModel(viewModel: MedicalHistoryViewModel(modelId: (self.viewModelCast.model?.objectID)!))
 			}
 		}
 	}
@@ -191,7 +199,7 @@ class AddSkinProblemsViewController: BindingViewController {
 	@IBAction func unwindToAddSkinProblems(segue: UIStoryboardSegue) {
 		if let sourceViewController = segue.source as? SkinProblemLocationViewController {
 			if let viewModel = sourceViewController.viewModelCast {				
-				viewModelCast.appendNewModel(model: viewModel.model)
+				viewModelCast.appendNewModel(skinProblemAttachment: viewModel.model)
 			}
 		}
 	}
@@ -199,11 +207,16 @@ class AddSkinProblemsViewController: BindingViewController {
 	@IBAction func unwindToAddSkinProblemsFromPhoto(segue: UIStoryboardSegue) {
 		if let sourceViewController = segue.source as? SkinProblemPhotoInformationViewController {
 			if let viewModel = sourceViewController.viewModelCast {
-				viewModelCast.appendNewModel(model: viewModel.model)
+				viewModelCast.appendNewModel(skinProblemAttachment: viewModel.model)
 			}
 		}
 	}
 	
+	@IBAction func unwindToAddSkinProblemsFromMedicalHistory(segue: UIStoryboardSegue) {
+		if let _ = segue.source as? MedicalHistoryViewControler {
+			viewModelCast.refreshData()
+		}
+	}
 }
 
 extension AddSkinProblemsViewController: UITableViewDelegate, UITableViewDataSource {
@@ -225,7 +238,7 @@ extension AddSkinProblemsViewController: UITableViewDelegate, UITableViewDataSou
 			return cell
 		} else {
 			let cell = tableView.dequeueReusableCell(withIdentifier: CellId.skinProblemTableViewCellId) as! SkinProblemTableViewCell
-			let cellViewModel = SkinProblemTableCellViewModel(withModel: viewModelCast.getItemAtIndexPath(indexPath: indexPath), index: indexPath.row)
+			let cellViewModel = SkinProblemTableCellViewModel(withModel: viewModelCast.getItemAtIndexPath(indexPath: indexPath)!, index: indexPath.row)
 			cell.configure(withViewModel: cellViewModel)
 			return cell
 		}
@@ -237,8 +250,8 @@ extension AddSkinProblemsViewController: UITableViewDelegate, UITableViewDataSou
 		if viewModelCast.isAddPhotoRow(indexPath: indexPath) {
 			// click on add photo
 			photoUtils.showChoosePhoto { (success, image) in
-				if success {
-					self.performSegue(withIdentifier: Segues.goToSkinProblemPhotoInformationViewController, sender: image)
+				if success && image != nil {
+					self.viewModelCast.createSkinProblemAttachment(image: image!)
 				}
 			}
 		}

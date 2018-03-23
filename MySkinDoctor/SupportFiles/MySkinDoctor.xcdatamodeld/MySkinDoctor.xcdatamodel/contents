@@ -42,7 +42,7 @@
         <attribute name="healthProblems" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="medication" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="pastHistoryProblems" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="profile" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Profile" inverseName="medicalHisttory" inverseEntity="Profile" syncable="YES"/>
+        <relationship name="profile" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Profile" inverseName="medicalHistory" inverseEntity="Profile" syncable="YES"/>
         <relationship name="skinProblems" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SkinProblems" inverseName="medicalHistory" inverseEntity="SkinProblems" syncable="YES"/>
     </entity>
     <entity name="Profile" representedClassName="Profile" syncable="YES">
@@ -63,13 +63,15 @@
         <attribute name="postcode" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="profileImage" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="town" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="medicalHisttory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MedicalHistory" inverseName="profile" inverseEntity="MedicalHistory" syncable="YES"/>
+        <relationship name="medicalHistory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MedicalHistory" inverseName="profile" inverseEntity="MedicalHistory" syncable="YES"/>
     </entity>
     <entity name="SkinProblemAttachment" representedClassName="SkinProblemAttachment" syncable="YES">
         <attribute name="attachmentType" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="filename" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="locationType" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="problemDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="problemImage" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="skinProblems" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SkinProblems" inverseName="attachments" inverseEntity="SkinProblems" syncable="YES"/>
     </entity>
     <entity name="SkinProblems" representedClassName="SkinProblems" syncable="YES">
@@ -89,7 +91,7 @@
         <element name="DoctorNotes" positionX="18" positionY="171" width="128" height="90"/>
         <element name="MedicalHistory" positionX="-27" positionY="126" width="128" height="120"/>
         <element name="Profile" positionX="-63" positionY="-18" width="128" height="315"/>
-        <element name="SkinProblemAttachment" positionX="-54" positionY="108" width="128" height="120"/>
+        <element name="SkinProblemAttachment" positionX="-54" positionY="108" width="128" height="150"/>
         <element name="SkinProblems" positionX="-63" positionY="99" width="128" height="150"/>
     </elements>
 </model>

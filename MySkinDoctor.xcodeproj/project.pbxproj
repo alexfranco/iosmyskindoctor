@@ -210,6 +210,10 @@
 		FA7F714020529344006B1EFF /* BaseMySkinProblemDiagnosisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7F713920529181006B1EFF /* BaseMySkinProblemDiagnosisViewController.swift */; };
 		FA8CFC7F2062A7A20067C11F /* ProfileResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8CFC7E2062A7A20067C11F /* ProfileResponseModel.swift */; };
 		FA8CFC802062A7A20067C11F /* ProfileResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8CFC7E2062A7A20067C11F /* ProfileResponseModel.swift */; };
+		FA8CFC83206521B60067C11F /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA8CFC82206521B60067C11F /* Photos.framework */; };
+		FA8CFC84206521BC0067C11F /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA8CFC82206521B60067C11F /* Photos.framework */; };
+		FA8CFC86206540CD0067C11F /* SkinProblemsAttachmentResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8CFC85206540CD0067C11F /* SkinProblemsAttachmentResponseModel.swift */; };
+		FA8CFC87206540CD0067C11F /* SkinProblemsAttachmentResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8CFC85206540CD0067C11F /* SkinProblemsAttachmentResponseModel.swift */; };
 		FA9760D6203AFBD200242255 /* LoginResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9760D5203AFBD200242255 /* LoginResponseModel.swift */; };
 		FA9760D9203B0E0A00242255 /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9760D8203B0E0A00242255 /* UIViewController+Alerts.swift */; };
 		FA9760DD203B0EDC00242255 /* BaseResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9760DC203B0EDC00242255 /* BaseResponseModel.swift */; };
@@ -386,6 +390,8 @@
 		FA7F713920529181006B1EFF /* BaseMySkinProblemDiagnosisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMySkinProblemDiagnosisViewController.swift; sourceTree = "<group>"; };
 		FA7F713B20529250006B1EFF /* BaseMySkinProblemDiagnosisViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMySkinProblemDiagnosisViewModel.swift; sourceTree = "<group>"; };
 		FA8CFC7E2062A7A20067C11F /* ProfileResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileResponseModel.swift; sourceTree = "<group>"; };
+		FA8CFC82206521B60067C11F /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		FA8CFC85206540CD0067C11F /* SkinProblemsAttachmentResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinProblemsAttachmentResponseModel.swift; sourceTree = "<group>"; };
 		FA9760D5203AFBD200242255 /* LoginResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseModel.swift; sourceTree = "<group>"; };
 		FA9760D8203B0E0A00242255 /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
 		FA9760DC203B0EDC00242255 /* BaseResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponseModel.swift; sourceTree = "<group>"; };
@@ -437,6 +443,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA8CFC84206521BC0067C11F /* Photos.framework in Frameworks */,
 				FA6E8F6D2056CCBF001F6E16 /* CoreData.framework in Frameworks */,
 				78B9E546203C4CD70054CAD3 /* Pods_MySkinDoctor.framework in Frameworks */,
 				D75D874EF6F3C1F821CF13C0 /* Pods_MySkinDoctorLive.framework in Frameworks */,
@@ -447,6 +454,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA8CFC83206521B60067C11F /* Photos.framework in Frameworks */,
 				FA6E8F6C2056CCB6001F6E16 /* CoreData.framework in Frameworks */,
 				BACDC2609AC77EBE02475BED /* Pods_MySkinDoctor.framework in Frameworks */,
 			);
@@ -458,6 +466,7 @@
 		6C7CC2BD03758D6ACE1BAADC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FA8CFC82206521B60067C11F /* Photos.framework */,
 				FA6E8F6B2056CCB6001F6E16 /* CoreData.framework */,
 				01583D02E29AF032A253E558 /* Pods_MySkinDoctor.framework */,
 				2E2D019D11880DC312A040CC /* Pods_MySkinDoctorTests.framework */,
@@ -834,6 +843,7 @@
 				FABC7A34205C061F00167FFA /* ChangePasswordResponseModel.swift */,
 				FA8CFC7E2062A7A20067C11F /* ProfileResponseModel.swift */,
 				78FB31992063CD4B00F155AE /* SkinProblemsResponseModel.swift */,
+				FA8CFC85206540CD0067C11F /* SkinProblemsAttachmentResponseModel.swift */,
 			);
 			path = APIModels;
 			sourceTree = "<group>";
@@ -1334,6 +1344,7 @@
 				FA33264120401A8C00657C8A /* MySkinProblemsViewController.swift in Sources */,
 				FA3326B320441C8500657C8A /* PasswordTextField.swift in Sources */,
 				78C205D12045A56B00F8E407 /* SkinProblemTableViewCell.swift in Sources */,
+				FA8CFC87206540CD0067C11F /* SkinProblemsAttachmentResponseModel.swift in Sources */,
 				FAF2CEC4204D56E00001EEAB /* MyConsultTableViewCell.swift in Sources */,
 				7849CCA9203EE3E60030A7B1 /* BaseViewModel.swift in Sources */,
 				78DBCE552051742700C0D4B5 /* MySkinProblemDiagnosisViewModel.swift in Sources */,
@@ -1464,6 +1475,7 @@
 				780F70222035A1B400D96601 /* ThemeManager.swift in Sources */,
 				FA3326AE20441C8500657C8A /* ProfileTextField.swift in Sources */,
 				782647092057D49E00F79FB7 /* SkinProblems+CoreDataProperties.swift in Sources */,
+				FA8CFC86206540CD0067C11F /* SkinProblemsAttachmentResponseModel.swift in Sources */,
 				78C205D02045A56B00F8E407 /* SkinProblemTableViewCell.swift in Sources */,
 				FA33268620440EA400657C8A /* PhotoUtils.swift in Sources */,
 				782647112057D49E00F79FB7 /* Doctor+CoreDataProperties.swift in Sources */,

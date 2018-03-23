@@ -12,7 +12,7 @@ import CoreData
 extension Diagnose {
 	enum DiagnoseStatus: Int16, CustomStringConvertible {
 		case none
-		case pending
+		case submitted
 		case noFutherCommunicationRequired
 		case bookConsultationRequest
 
@@ -23,8 +23,8 @@ extension Diagnose {
 		var description: String {
 			switch self {
 			case .none:
-				return "None"
-			case .pending:
+				return "Draft"
+			case .submitted:
 				return "Pending"
 			case .bookConsultationRequest:
 				return "Consultation Request"

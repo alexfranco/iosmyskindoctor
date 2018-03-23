@@ -143,12 +143,18 @@ class DataController {
 	}
 	
 	static func logout() {
+		ApiUtils.logoutUser(accessToken: DataController.getAccessToken()) { (result) in
+			self.clearDataAfterLoggedOut()
+		}
+	}
+	
+	private static func clearDataAfterLoggedOut() {
 		let defaults = UserDefaults.standard
 		defaults.set(false, forKey: UserDefaultConsts.isUserLoggedIn)
 		defaults.set(false, forKey: UserDefaultConsts.isFirstTime)
 		deleteEntity(type: Profile.self)
 		
-		 let appDelegate = UIApplication.shared.delegate as! AppDelegate
-		 appDelegate.updateRootVC()
+		let appDelegate = UIApplication.shared.delegate as! AppDelegate
+		appDelegate.updateRootVC()
 	}
 }

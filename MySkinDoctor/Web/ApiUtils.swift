@@ -15,7 +15,7 @@ import ObjectMapper
 class ApiUtils {
 	
 	struct Api {
-		static let DEV_BASE_URL = "https://boiling-chamber-30803.herokuapp.com/"
+		static let DEV_BASE_URL = "https://boiling-chamber-30803.herokuapp.com"
 		static let BASE_URL = "https://msd-dev.ttad-consultations.com" // TODO
 		
 		static let TOKEN_TYPE = "Token"
@@ -38,6 +38,8 @@ class ApiUtils {
 		case unknownError
 		case httpQueryError
 		case noErrors
+		case authorizatioError
+
 	}
 	
 	enum ApiMethod: String {
@@ -46,9 +48,12 @@ class ApiUtils {
 		case forgottenPassword = "/api/accounts/password/reset/"
 		case userProfile = "/api/msd-profiles/user/"
 		case changePassword = "/api/accounts/password/change/"
+		case logout = "/api/accounts/logout/"
 		
 		case patientUpdate = "/api/accounts/patient/"
 		case skinProblems = "/api/cases/case/"
+		case skinProblemsImage = "image/"
+		case skinProblemsSubmit = "submit/"
 	}
 }
 
@@ -122,6 +127,12 @@ extension ApiUtils {
 		ApiUtils.request(url: url, httpMethod: HTTPMethod.get, params: nil, parseToModelType: ProfileResponseModel.self, accessToken: accessToken, completionHandler: completionHandler)
 	}
 	
+	static func logoutUser(accessToken: String, completionHandler: @escaping ((_ result: ApiResult) -> Void)) {
+		let url = ApiUtils.getApiUrl(ApiMethod.logout, nil)
+		
+		ApiUtils.request(url: url, httpMethod: HTTPMethod.post, params: nil, parseToModelType: BaseResponseModel.self, accessToken: accessToken, completionHandler: completionHandler)
+	}
+	
 	static func getAllSkinProblems(accessToken: String, completionHandler: @escaping ((_ result: ApiArrayResult) -> Void)) {
 		let url = ApiUtils.getApiUrl(ApiMethod.skinProblems, nil)
 		
@@ -135,17 +146,46 @@ extension ApiUtils {
 		ApiUtils.request(url: url, httpMethod: HTTPMethod.get, params: nil, parseToModelType: SkinProblemsResponseModel.self, accessToken: accessToken, completionHandler: completionHandler)
 	}
 	
-	static func createSkinProblem(accessToken: String, skinProblemsDescription: String?, healthProblems: String?, medications: String?, history: String?, completionHandler: @escaping ((_ result: ApiResult) -> Void)) {
+	static func createSkinProblem(accessToken: String, completionHandler: @escaping ((_ result: ApiResult) -> Void)) {
 		let url = ApiUtils.getApiUrl(ApiMethod.skinProblems, nil)
 		
-		var params: Parameters = [:]
+		ApiUtils.request(url: url, httpMethod: HTTPMethod.post, params: nil, parseToModelType: SkinProblemsResponseModel.self, accessToken: accessToken, completionHandler: completionHandler)
+	}
+	
+	static func updateSkinProblems(accessToken: String, skinProblemsId: Int, skinProblemsDescription: String?, healthProblems: String?, medications: String?, history: String?, completionHandler: @escaping ((_ result: ApiResult) -> Void)) {
+		var url = ApiUtils.getApiUrl(ApiMethod.skinProblems, nil)
+		url += "\(skinProblemsId)/"
 		
+		var params: Parameters = [:]
 		if let skinProblemsDescriptionSafe = skinProblemsDescription { params.updateValue(skinProblemsDescriptionSafe, forKey: "description") }
 		if let healthProblemsSafe = healthProblems { params.updateValue(healthProblemsSafe, forKey: "health_problems") }
 		if let medicationsSafe = medications { params.updateValue(medicationsSafe, forKey: "medications") }
 		if let historySafe = history { params.updateValue(historySafe, forKey: "history") }
 		
-		ApiUtils.request(url: url, httpMethod: HTTPMethod.post, params: params, parseToModelType: ProfileResponseModel.self, accessToken: accessToken, completionHandler: completionHandler)
+		ApiUtils.request(url: url, httpMethod: HTTPMethod.put, params: params, parseToModelType: SkinProblemsResponseModel.self, accessToken: accessToken, completionHandler: completionHandler)
+	}
+	
+	static func createSkinProblemAttachment(accessToken: String, skinProblemsId: Int, location: String, fileName: String?, description: String?, attachmentType: SkinProblemAttachment.AttachmentType, completionHandler: @escaping ((_ result: ApiResult) -> Void)) {
+		var url = ApiUtils.getApiUrl(ApiMethod.skinProblems, nil)
+		url += "\(skinProblemsId)/\(ApiMethod.skinProblemsImage.rawValue)"
+	
+		var params: Parameters = [:]
+		
+		let attachmentTypeInt = attachmentType.hashValue
+		
+		params.updateValue(description ?? "-", forKey: "description")
+		params.updateValue(fileName ?? "-", forKey: "file_name")
+		params.updateValue(attachmentTypeInt, forKey: "photo_type")
+		params.updateValue(location, forKey: "photo_location")
+					
+		ApiUtils.request(url: url, httpMethod: HTTPMethod.post, params: params, parseToModelType: SkinProblemsAttachmentResponseModel.self, accessToken: accessToken, completionHandler: completionHandler)
+	}
+	
+	static func submitSkinProblem(accessToken: String, skinProblemsId: Int, completionHandler: @escaping ((_ result: ApiResult) -> Void)) {
+		var url = ApiUtils.getApiUrl(ApiMethod.skinProblems, nil)
+		url += "\(skinProblemsId)/\(ApiMethod.skinProblemsSubmit.rawValue)"
+		
+		ApiUtils.request(url: url, httpMethod: HTTPMethod.post, params: nil, parseToModelType: SkinProblemsResponseModel.self, accessToken: accessToken, completionHandler: completionHandler)
 	}
 }
 
@@ -159,6 +199,18 @@ extension ApiUtils {
 		#else
 			return Api.BASE_URL
 		#endif
+	}
+	
+	class func getDevId() -> String? {
+		guard let deviceId = UIDevice.current.identifierForVendor else {
+			return nil
+		}
+		
+		guard let appName = Bundle.main.infoDictionary!["CFBundleName"] as? String else {
+			return nil
+		}
+		
+		return "\(deviceId.uuidString)_\(appName)"
 	}
 	
 	fileprivate class func getApiUrl(_ method: ApiMethod, _ restParams: [String]?) -> String {
@@ -216,7 +268,7 @@ extension ApiUtils {
 						}
 					}
 				} else {
-					completionHandler(ApiResult.failure(nil, ApiGenericError.parseError))
+					completionHandler(ApiResult.failure(nil, ApiGenericError.authorizatioError))
 				}
 			} else {
 				completionHandler(ApiResult.failure(nil, ApiGenericError.httpQueryError))
@@ -242,7 +294,7 @@ extension ApiUtils {
 						}
 					}
 				} else {
-					completionHandler(ApiArrayResult.failure(nil, ApiGenericError.parseError))
+					completionHandler(ApiArrayResult.failure(nil, ApiGenericError.authorizatioError))
 				}
 			} else {
 				completionHandler(ApiArrayResult.failure(nil, ApiGenericError.httpQueryError))
