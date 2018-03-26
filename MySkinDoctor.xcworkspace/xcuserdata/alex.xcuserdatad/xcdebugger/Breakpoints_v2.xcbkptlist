@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MySkinDoctor/Dashboard/ProfileChangePassword/ChangePasswordViewModel.swift"
-            timestampString = "543750046.055657"
+            timestampString = "543771206.586172"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "43"
@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MySkinDoctor/Dashboard/ProfileChangePassword/ChangePasswordViewModel.swift"
-            timestampString = "543750046.055778"
+            timestampString = "543771206.586574"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "57"
@@ -57,44 +57,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MySkinDoctor/LoginFlow/ViewModels/RegistrationViewModel.swift"
-            timestampString = "543517084.503835"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
-            landmarkName = "registerUser()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MySkinDoctor/LoginFlow/ViewModels/RegistrationViewModel.swift"
-            timestampString = "543517084.503912"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
-            landmarkName = "registerUser()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "MySkinDoctor/Dashboard/MySkinProblemNew/ViewModels/AddSkinProblemsViewModel.swift"
-            timestampString = "543750046.055934"
+            timestampString = "543771206.5866441"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "316"
-            endingLineNumber = "316"
+            startingLineNumber = "267"
+            endingLineNumber = "267"
             landmarkName = "refreshData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -106,12 +74,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MySkinDoctor/Dashboard/MySkinProblemNew/AddSkinProblemsViewController.swift"
-            timestampString = "543750046.056054"
+            timestampString = "543771206.586912"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "223"
             endingLineNumber = "223"
-            landmarkName = "unwindToAddSkinProblemsFromMedicalHistory(segue:)"
+            landmarkName = "unwindToAddSkinProblemsFromPhoto(segue:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -122,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MySkinDoctor/Dashboard/MyConsultsCalendar/BookAConsultCalendarViewController.swift"
-            timestampString = "543750046.056192"
+            timestampString = "543771206.587171"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "109"
@@ -138,7 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MySkinDoctor/Dashboard/MyConsultsCalendar/BookAConsultCalendarViewController.swift"
-            timestampString = "543750046.0562479"
+            timestampString = "543771206.587391"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "104"
@@ -154,7 +122,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MySkinDoctor/Dashboard/MyConsultsCalendar/BookAConsultCalendarViewController.swift"
-            timestampString = "543750046.0563051"
+            timestampString = "543771206.587445"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "99"
@@ -170,12 +138,124 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MySkinDoctor/Dashboard/MyConsultsCalendar/BookAConsultCalendarViewController.swift"
-            timestampString = "543750046.05637"
+            timestampString = "543771206.5874929"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "114"
             endingLineNumber = "114"
             landmarkName = "pickerView(_:didSelectRow:inComponent:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MySkinDoctor/Web/ApiUtils.swift"
+            timestampString = "543771206.587543"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "192"
+            endingLineNumber = "192"
+            landmarkName = "deleteSkinProblemAttachment(accessToken:skinProblemsId:attachmentId:completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MySkinDoctor/Dashboard/MySkinProblems/ViewModels/MySkinProblemsViewModel.swift"
+            timestampString = "543771206.5877481"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "removeModel(at:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MySkinDoctor.MySkinProblemsViewModel.removeModel(at: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "MySkinDoctor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alex/iosmyskindoctor/MySkinDoctor/Dashboard/MySkinProblems/ViewModels/MySkinProblemsViewModel.swift"
+                  timestampString = "543771206.745374"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "87"
+                  endingLineNumber = "87"
+                  offsetFromSymbolStart = "156">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (MySkinDoctor.ApiUtils.ApiResult) -&gt; () in MySkinDoctor.MySkinProblemsViewModel.removeModel(at: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "MySkinDoctor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alex/iosmyskindoctor/MySkinDoctor/Dashboard/MySkinProblems/ViewModels/MySkinProblemsViewModel.swift"
+                  timestampString = "543771206.748935"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MySkinDoctor/Dashboard/MySkinProblems/ViewModels/MySkinProblemsViewModel.swift"
+            timestampString = "543771206.587949"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "removeModel(at:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MySkinDoctor/Web/ApiUtils.swift"
+            timestampString = "543771206.588019"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "updateProfile(accessToken:firstName:lastName:dob:phone:addressLine1:addressLine2:town:postcode:gpName:gpAddress:gpPostCode:gpContactPermission:selfPay:completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MySkinDoctor/SetupWizard/SetupWizard1ViewModel.swift"
+            timestampString = "543771206.588101"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "parseResponseModel(model:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

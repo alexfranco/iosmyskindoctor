@@ -78,6 +78,25 @@ class MySkinProblemsViewModel: BaseViewModel {
 			undiagnosedItems = allItems.filter { (model) -> Bool in !model.isDiagnosed }
 		}
 	}
+	
+	func removeModel(at indexPath: IndexPath) {
+		isLoading = true
+		
+		let item = getItemAtIndexPath(indexPath: indexPath)
+		
+		ApiUtils.deleteSkinProblem(accessToken: DataController.getAccessToken(), skinProblemsId: Int(item.skinProblemId)) { (result) in
+			self.isLoading = false
+			
+			switch result {
+			case .success(_):
+				print("getSkinProblems")
+				self.refreshData()
+			case .failure(_, let error):
+				print("error \(error.localizedDescription)")
+				self.showResponseErrorAlert!(nil, error)
+			}
+		}
+	}
 }
 	
 extension MySkinProblemsViewModel {
@@ -112,11 +131,11 @@ extension MySkinProblemsViewModel {
 		
 		switch selectedSegmented {
 		case .all:
-			headerTitle = section == MySkinProblemsViewModel.undiagnosedSection ? "Undiagnosed (%d)" : "Diagnosed (%d)"
+			headerTitle = section == MySkinProblemsViewModel.undiagnosedSection ? String.init(format: "%@ (%d)", NSLocalizedString("myskinproblems_segmented_undiagnosed", comment: "")) : String.init(format: "%@ (%d)", NSLocalizedString("myskinproblems_segmented_diagnosed", comment: ""))
 		case .undiagnosed:
-			headerTitle = "Undiagnosed (%d)"
+			headerTitle = String.init(format: "%@ (%d)", NSLocalizedString("myskinproblems_segmented_undiagnosed", comment: ""))
 		case .diagnosed:
-			headerTitle = "Diagnosed (%d)"
+			headerTitle = String.init(format: "%@ (%d)", NSLocalizedString("myskinproblems_segmented_diagnosed", comment: ""))
 		}
 		
 		return String.init(format: headerTitle.uppercased(), getDataSourceCount(section: section))
@@ -154,5 +173,12 @@ extension MySkinProblemsViewModel {
 		case .diagnosed:
 			return getDataSourceCount(section: MySkinProblemsViewModel.undiagnosedSection) > 0 ? 1 : 0
 		}
+	}
+	
+	func canEditRow(indexPath: IndexPath) -> Bool {
+		if let diagnose = getItemAtIndexPath(indexPath: indexPath).diagnose {
+			return diagnose.diagnoseStatusEnum == .none
+		}
+		return false
 	}
 }

@@ -38,19 +38,50 @@ class MedicalHistoryViewModel: BaseViewModel {
 	
 	var saveMedicalHistory = false
 	
+	var healthProblemsUpdate: (()->())?
+	var medicationUpdate: (()->())?
+	var pastHistoryProblemsUpdate: (()->())?
+	
 	var healthProblemsViewConstraintUpdate: ((_ show: Bool)->())?
 	var medicationViewConstraintUpdate: ((_ show: Bool)->())?
 	var pastHistoryProblemsViewConstraintUpdate: ((_ show: Bool)->())?
 	
+	var hasProfileMedicalHistory: Bool {
+		get {
+			return (profileMedicalHistory() != nil)
+		}
+	}
+	
+	func profileMedicalHistory() -> MedicalHistory? {
+		let profile = DataController.createUniqueEntity(type: Profile.self)
+		return profile.medicalHistory
+	}
+	
+	
 	required init(modelId: NSManagedObjectID) {
 		super.init()
 		
-		model = DataController.getManagedObject(managedObjectId: modelId) as! SkinProblems
-		
-		saveMedicalHistory = true
-		hasHealthProblems = false
-		hasMedication = false
-		hasPastHistoryProblems = false				
+		model = DataController.getManagedObject(managedObjectId: modelId) as! SkinProblems		
+	}
+	
+	func loadProfileMedicalHistory() {
+		if let medicalHistory = profileMedicalHistory() {
+			healthProblems = medicalHistory.healthProblems ?? ""
+			medication = medicalHistory.medication ?? ""
+			pastHistoryProblems = medicalHistory.pastHistoryProblems ?? ""
+			
+			healthProblemsUpdate!()
+			medicationUpdate!()
+			pastHistoryProblemsUpdate!()
+			
+			hasHealthProblems = !healthProblems.isEmpty
+			hasMedication = !medication.isEmpty
+			hasPastHistoryProblems = !pastHistoryProblems.isEmpty
+			
+			saveMedicalHistory = false
+		} else {
+			saveMedicalHistory = true
+		}
 	}
 	
 	override func saveModel() {

@@ -267,11 +267,12 @@
                     <navigationItem key="navigationItem" title="Add Skin Problem" id="jzJ-2U-OK3">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="c2L-l4-358">
                             <connections>
-                                <segue destination="4L0-a8-re3" kind="unwind" unwindAction="unwindToMySkinProblemsWithSegue:" id="wc8-CD-EGP"/>
+                                <action selector="onCancelButtonPressed:" destination="lc7-mY-wck" id="rxt-Cc-ARF"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="cancelButton" destination="c2L-l4-358" id="KW1-Dn-jOc"/>
                         <outlet property="descriptionLabel" destination="0UE-2k-yMl" id="y7X-8A-DEc"/>
                         <outlet property="descriptionLabelTop" destination="SP8-Pv-Evf" id="KqO-sb-B1V"/>
                         <outlet property="descriptionTextView" destination="w97-yk-cXx" id="kuV-fP-mYJ"/>
@@ -289,12 +290,10 @@
                         <segue destination="4QV-Yj-9Bw" kind="show" identifier="goToSkinProblemPhotoInformationViewController" id="ure-eX-gdg">
                             <nil key="action"/>
                         </segue>
-                        <segue destination="Xyn-Mr-3Jc" kind="show" identifier="goToSkinProblemThankYouViewControllerFromAddSkinProblem" id="Q8G-vR-5Jm">
-                            <nil key="action"/>
-                        </segue>
                         <segue destination="1RX-Za-Veg" kind="show" identifier="goToMySkinProblemDiagnoseUpdateRequest" id="OI7-OK-vvJ"/>
                         <segue destination="Jyl-Zp-YEE" kind="show" identifier="goToDiagnosis" id="o0d-ft-IKZ"/>
                         <segue destination="NAq-kP-lUC" kind="show" identifier="goToMedicalHistoryViewControler" id="cc6-Sx-oh9"/>
+                        <segue destination="4L0-a8-re3" kind="unwind" identifier="unwindToMySkinProblemsWith" unwindAction="unwindToMySkinProblemsWithSegue:" id="28F-wO-2QJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j1b-CY-gyV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1374,7 +1373,4 @@
         <image name="problemLocationActive" width="54" height="54"/>
         <image name="problemLocationInactive" width="28" height="29"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="Q8G-vR-5Jm"/>
-    </inferredMetricsTieBreakers>
 </document>

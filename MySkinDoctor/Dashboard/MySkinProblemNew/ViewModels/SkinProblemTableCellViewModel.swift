@@ -17,10 +17,10 @@ class SkinProblemTableCellViewModel : NSObject {
 	var problemImage: UIImage
 		
 	required init(withModel model: SkinProblemAttachment, index: Int) {
-		self.name = String.init(format: "Photo %d", index + 1)
+		self.name = String.init(format: "%@ %d", NSLocalizedString("photo", comment: ""), index + 1)
 		
 		if model.attachmentTypeEnum == .document {
-			self.location = "Document"
+			self.location = NSLocalizedString("photo", comment: "")
 		} else {
 			self.location = model.locationTypeEnum.description
 		}

@@ -38,7 +38,7 @@ class SkinProblemLocationViewModel: BaseViewModel {
 	var problemLocationText: String! {
 		get {
 			if locationProblemType == .none {
-				return "None"
+				return NSLocalizedString("none", comment: "")
 			} else {
 				return String.init(format: "%@ %@", isFrontSelected ? "Front": "Back", locationProblemType.description)
 			}

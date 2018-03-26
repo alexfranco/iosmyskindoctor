@@ -27,6 +27,7 @@ class AddSkinProblemsViewController: BindingViewController {
 	@IBOutlet weak var descriptionLabel: GrayLabel!
 	@IBOutlet weak var descriptionLabelTop: NSLayoutConstraint!
 	
+	@IBOutlet weak var cancelButton: UIBarButtonItem!
 	@IBOutlet weak var descriptionTextView: FormTextView! {
 		didSet {
 			descriptionTextView.bind { self.viewModelCast.skinProblemDescription = $0 }
@@ -88,7 +89,7 @@ class AddSkinProblemsViewController: BindingViewController {
 
 		viewModelCast.goNextSegue = { [weak self] () in
 			DispatchQueue.main.async {
-				self?.performSegue(withIdentifier: (self?.viewModelCast.nextSegue)!, sender: nil)
+				self?.performSegue(withIdentifier: Segues.goToMedicalHistoryViewControler, sender: nil)
 			}
 		}
 		
@@ -174,6 +175,22 @@ class AddSkinProblemsViewController: BindingViewController {
 		self.performSegue(withIdentifier: viewModelCast.diagnoseNextSegue, sender: nil)
 	}
 	
+	@IBAction func onCancelButtonPressed(_ sender: Any) {
+		
+		let alertController = UIAlertController(
+			title: "",
+			message: "Do you want to...",
+			preferredStyle: .alert)
+		
+		let OKAction = UIAlertAction(title: NSLocalizedString("continue_editting", comment: "Close button"), style: .default, handler: handler)
+		let OKAction = UIAlertAction(title: NSLocalizedString("save_later", comment: "Close button"), style: .default, handler: handler)
+		let OKAction = UIAlertAction(title: NSLocalizedString("discard", comment: "Close button"), style: .default, handler: handler)
+		
+		alertController.addAction(OKAction)
+		self.present(alertController, animated: true) {}
+		
+		self.performSegue(withIdentifier: Segues.unwindToMySkinProblems, sender: nil)
+	}
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == Segues.goToSkinProblemPhotoInformationViewController {
 		if let dest = segue.destination as? SkinProblemPhotoInformationViewController, let skinProblemAttachment = sender as? SkinProblemAttachment {
@@ -197,6 +214,7 @@ class AddSkinProblemsViewController: BindingViewController {
 	// MARK: Helpers	
 	func applyLocalization() {
 		nextButton.setTitle(NSLocalizedString("next", comment: ""), for: .normal)
+		cancelButton.title = NSLocalizedString("cancel", comment: "")
 		descriptionTextView.placeholder = NSLocalizedString("addskinproblems_description", comment: "")
 		diagnosedViewButton.setTitle(NSLocalizedString("addskinproblems_view", comment: ""), for: .normal)
 	}

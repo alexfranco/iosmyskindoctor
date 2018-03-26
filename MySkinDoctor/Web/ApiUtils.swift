@@ -16,7 +16,7 @@ class ApiUtils {
 	
 	struct Api {
 		static let DEV_BASE_URL = "https://boiling-chamber-30803.herokuapp.com"
-		static let BASE_URL = "https://msd-dev.ttad-consultations.com" // TODO
+		static let BASE_URL = "https://boiling-chamber-30803.herokuapp.com" // TODO
 		
 		static let TOKEN_TYPE = "Token"
 		static let DEFAULT_STATUS_CODE: NSInteger = -1
@@ -38,6 +38,7 @@ class ApiUtils {
 		case unknownError
 		case httpQueryError
 		case noErrors
+		case permisionDenied
 		case authorizatioError
 
 	}
@@ -73,11 +74,7 @@ extension ApiUtils {
 	static func registration(email: String, password: String, completionHandler: @escaping ((_ result: ApiResult) -> Void)) {
 		let url = ApiUtils.getApiUrl(ApiMethod.register, nil)
 		let params: Parameters =	["email": email,
-									 "accept_tos": true,
-									 "first_name": "Alex",
-									 "last_name": "Franco",
-									 "password1": password,
-									 "password2": password]
+									 "password": password]
 		
 		ApiUtils.request(url: url, httpMethod: HTTPMethod.post, params: params, parseToModelType: RegistrationResponseModel.self, accessToken: nil, completionHandler: completionHandler)
 	}
@@ -106,7 +103,7 @@ extension ApiUtils {
 		
 		if let firstNameSafe = firstName { params.updateValue(firstNameSafe, forKey: "first_name") }
 		if let lastNameSafe = lastName { params.updateValue(lastNameSafe, forKey: "last_name") }
-		if let dobSafe = dob { params.updateValue(dobSafe.toIso(), forKey: "date_of_birth") }
+		if let dobSafe = dob { params.updateValue(dobSafe.iso8601, forKey: "date_of_birth") }
 		if let phoneSafe = phone { params.updateValue(phoneSafe, forKey: "mobile_number") }
 		if let addressLine1Safe = addressLine1 { params.updateValue(addressLine1Safe, forKey: "address_line_1") }
 		if let addressLine2Safe = addressLine2 { params.updateValue(addressLine2Safe, forKey: "address_line_2") }
@@ -152,6 +149,13 @@ extension ApiUtils {
 		ApiUtils.request(url: url, httpMethod: HTTPMethod.post, params: nil, parseToModelType: SkinProblemsResponseModel.self, accessToken: accessToken, completionHandler: completionHandler)
 	}
 	
+	static func deleteSkinProblem(accessToken: String, skinProblemsId: Int, completionHandler: @escaping ((_ result: ApiResult) -> Void)) {
+		var url = ApiUtils.getApiUrl(ApiMethod.skinProblems, nil)
+		url += "\(skinProblemsId)/"
+		
+		ApiUtils.request(url: url, httpMethod: HTTPMethod.delete, params: nil, parseToModelType: SkinProblemsResponseModel.self, accessToken: accessToken, completionHandler: completionHandler)
+	}
+	
 	static func updateSkinProblems(accessToken: String, skinProblemsId: Int, skinProblemsDescription: String?, healthProblems: String?, medications: String?, history: String?, completionHandler: @escaping ((_ result: ApiResult) -> Void)) {
 		var url = ApiUtils.getApiUrl(ApiMethod.skinProblems, nil)
 		url += "\(skinProblemsId)/"
@@ -179,6 +183,13 @@ extension ApiUtils {
 		params.updateValue(location, forKey: "photo_location")
 					
 		ApiUtils.request(url: url, httpMethod: HTTPMethod.post, params: params, parseToModelType: SkinProblemAttachmentResponseModel.self, accessToken: accessToken, completionHandler: completionHandler)
+	}
+	
+	static func deleteSkinProblemAttachment(accessToken: String, skinProblemsId: Int, attachmentId: Int, completionHandler: @escaping ((_ result: ApiResult) -> Void)) {
+		var url = ApiUtils.getApiUrl(ApiMethod.skinProblems, nil)
+		url += "\(skinProblemsId)/\(ApiMethod.skinProblemsImage.rawValue)/\(attachmentId)/"
+		
+		ApiUtils.request(url: url, httpMethod: HTTPMethod.delete, params: nil, parseToModelType: SkinProblemAttachmentResponseModel.self, accessToken: accessToken, completionHandler: completionHandler)
 	}
 	
 	static func submitSkinProblem(accessToken: String, skinProblemsId: Int, completionHandler: @escaping ((_ result: ApiResult) -> Void)) {
@@ -262,6 +273,8 @@ extension ApiUtils {
 						switch(status){
 						case 200, 201, ApiUtils.Api.DEFAULT_STATUS_CODE:
 							completionHandler(ApiResult.success(jsonResult))
+						case 403:
+							completionHandler(ApiResult.failure(nil, ApiGenericError.permisionDenied))
 						default:
 							print("error with response status: \(status)")
 							completionHandler(ApiResult.failure(jsonResult, ApiGenericError.defaultStatusError))
@@ -288,6 +301,8 @@ extension ApiUtils {
 						switch(status){
 						case 200, 201, ApiUtils.Api.DEFAULT_STATUS_CODE:
 							completionHandler(ApiArrayResult.success(jsonResult))
+						case 403:
+							completionHandler(ApiArrayResult.failure(nil, ApiGenericError.permisionDenied))
 						default:
 							print("error with response status: \(status)")
 							completionHandler(ApiArrayResult.failure(jsonResult, ApiGenericError.defaultStatusError))

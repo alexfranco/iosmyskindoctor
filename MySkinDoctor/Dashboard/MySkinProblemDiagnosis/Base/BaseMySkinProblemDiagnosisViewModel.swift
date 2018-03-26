@@ -54,9 +54,9 @@ class BaseMySkinProblemDiagnosisViewModel: BaseViewModel {
 			case .submitted:
 			   return ""
 			case .noFutherCommunicationRequired:
-				return "Diagnosis"
+				return NSLocalizedString("myskinproblem_diagnosis_vc_title", comment: "")
 			case .bookConsultationRequest:
-				return "Diagnosis Update"
+				return NSLocalizedString("myskinproblem_diagnosis_update_vc_title", comment: "")
 			}
 		}
 	}

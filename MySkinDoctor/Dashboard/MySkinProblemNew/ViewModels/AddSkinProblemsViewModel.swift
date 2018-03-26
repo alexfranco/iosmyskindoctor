@@ -93,50 +93,18 @@ class AddSkinProblemsViewModel: BaseViewModel {
 		
 		guard let model = self.model else { return }
 		
-		var healthProblems: String?
-		var pastHistoryProblems: String?
-		var medication: String?
-		
-		if let medicalHistory = profileMedicalHistory() {
-			healthProblems = medicalHistory.healthProblems
-			pastHistoryProblems = medicalHistory.pastHistoryProblems
-			medication = medicalHistory.medication
-		}
-		
 		isLoading = true
-		ApiUtils.updateSkinProblems(accessToken: DataController.getAccessToken(), skinProblemsId: Int(model.skinProblemId), skinProblemsDescription: skinProblemDescription, healthProblems: healthProblems, medications: medication, history: pastHistoryProblems) { (result) in
-			
-			switch result {
-			case .success(let responseModel):
-				print("updateSkinProblems")
-				
-				if self.hasProfileMedicalHistory {
-					self.submitSkinProblems(responseModel: responseModel as! SkinProblemsResponseModel)
-				} else {
-					self.isLoading = false
-					self.goNextSegue!()
-				}
-				
-			case .failure(let model, let error):
-				print("error")
-				self.isLoading = false
-				self.showResponseErrorAlert!(model as? BaseResponseModel, error)
-			}
-		}
-	}
-	
-	private func submitSkinProblems(responseModel: SkinProblemsResponseModel) {
-		ApiUtils.submitSkinProblem(accessToken: DataController.getAccessToken(), skinProblemsId: Int(self.model!.skinProblemId)) { (result) in
+		ApiUtils.updateSkinProblems(accessToken: DataController.getAccessToken(), skinProblemsId: Int(model.skinProblemId), skinProblemsDescription: skinProblemDescription, healthProblems: nil, medications: nil, history: nil) { (result) in
 			self.isLoading = false
 			
 			switch result {
 			case .success(let model):
-				print("submitSkinProblem")
+				print("updateSkinProblems")
 				SkinProblems.parseAndSaveResponse(skinProblemResponseModel: model as! SkinProblemsResponseModel)
 				self.goNextSegue!()
-				
 			case .failure(let model, let error):
 				print("error")
+				self.isLoading = false
 				self.showResponseErrorAlert!(model as? BaseResponseModel, error)
 			}
 		}
@@ -220,12 +188,6 @@ extension AddSkinProblemsViewModel {
 		}
 	}
 	
-	var hasProfileMedicalHistory: Bool {
-		get {
-			return (profileMedicalHistory() != nil)
-		}
-	}
-	
 	var navigationTitle: String {
 		get {
 			switch diagnoseStatus {
@@ -297,17 +259,6 @@ extension AddSkinProblemsViewModel {
 				return Segues.goToMySkinProblemDiagnoseUpdateRequest
 			}
 		}
-	}
-	
-	var nextSegue: String! {
-		get {
-			return hasProfileMedicalHistory ? Segues.goToSkinProblemThankYouViewControllerFromAddSkinProblem : Segues.goToMedicalHistoryViewControler
-		}
-	}
-	
-	func profileMedicalHistory() -> MedicalHistory? {
-		let profile = DataController.createUniqueEntity(type: Profile.self)
-		return profile.medicalHistory
 	}
 	
 	// MARK Helpers

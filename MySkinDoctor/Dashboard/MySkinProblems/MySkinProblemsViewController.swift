@@ -145,5 +145,13 @@ extension MySkinProblemsViewController: UITableViewDelegate, UITableViewDataSour
 		self.performSegue(withIdentifier: Segues.goToAddSkinProblem, sender: viewModel)
 	}
 	
+	func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+		return viewModelCast.canEditRow(indexPath: indexPath)
+	}
+	
+	func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+		guard editingStyle == .delete else { return }
+		viewModelCast.removeModel(at: indexPath)
+	}
 }
 

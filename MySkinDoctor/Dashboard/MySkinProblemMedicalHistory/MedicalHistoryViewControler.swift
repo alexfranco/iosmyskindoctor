@@ -46,12 +46,10 @@ class MedicalHistoryViewControler: FormViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-				
-		hasHealthProblemsSwitch.isOn = viewModelCast.hasHealthProblems
-		hasMedicationSwitch.isOn = viewModelCast.hasMedication
-		hasPastHistoryProblemsSwitch.isOn = viewModelCast.hasPastHistoryProblems
-		saveMedicalHistorySwitch.isOn = viewModelCast.saveMedicalHistory
 		
+		viewModelCast.loadProfileMedicalHistory()
+		
+		updateUI()
 		applyLocalization()
 		applyTheme()
 	}
@@ -60,6 +58,24 @@ class MedicalHistoryViewControler: FormViewController {
 		super.initViewModel(viewModel: viewModel)
 		
 		viewModelCast = (viewModel as! MedicalHistoryViewModel)
+		
+		viewModelCast.healthProblemsUpdate = { [weak self] () in
+			DispatchQueue.main.async {
+				self?.healthProblemsTextView.text = self?.viewModelCast.healthProblems
+			}
+		}
+		
+		viewModelCast.medicationUpdate = { [weak self] () in
+			DispatchQueue.main.async {
+				self?.medicationTextView.text = self?.viewModelCast.medication
+			}
+		}
+		
+		viewModelCast.pastHistoryProblemsUpdate = { [weak self] () in
+			DispatchQueue.main.async {
+				self?.pastHistoryProblemsTextView.text = self?.viewModelCast.pastHistoryProblems
+			}
+		}
 		
 		viewModelCast.healthProblemsViewConstraintUpdate = { [weak self] (show) in
 			DispatchQueue.main.async {
@@ -107,6 +123,13 @@ class MedicalHistoryViewControler: FormViewController {
 	
 	@IBAction func onNextButtonPressed(_ sender: Any) {
 		viewModelCast.saveModel()
+	}
+	
+	func updateUI() {
+		hasHealthProblemsSwitch.isOn = viewModelCast.hasHealthProblems
+		hasMedicationSwitch.isOn = viewModelCast.hasMedication
+		hasPastHistoryProblemsSwitch.isOn = viewModelCast.hasPastHistoryProblems
+		saveMedicalHistorySwitch.isOn = viewModelCast.saveMedicalHistory
 	}
 	
 	func applyLocalization() {

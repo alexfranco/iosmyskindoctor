@@ -23,7 +23,6 @@ struct Segues {
 	static let goToSkinProblemLocationViewController = "goToSkinProblemLocationViewController"
 	static let goToMedicalHistoryViewControler = "goToMedicalHistoryViewControler"
 	static let goToSkinProblemThankYouViewControllerFromMedicalHistory = "goToSkinProblemThankYouViewControllerFromMedicalHistory"
-	static let goToSkinProblemThankYouViewControllerFromAddSkinProblem = "goToSkinProblemThankYouViewControllerFromAddSkinProblem"
 	static let goToConfirmConsult = "goToConfirmConsult"
 	static let goToThankYouViewController = "goToThankYouViewController"
 	static let goToDiagnosis = "goToDiagnosis"
@@ -34,6 +33,7 @@ struct Segues {
 	
 	static let unwindToAddSkinProblems = "unwindToAddSkinProblems"
 	static let unwindToAddSkinProblemsFromPhoto = "unwindToAddSkinProblemsFromPhoto"
+	static let unwindToMySkinProblems = "unwindToMySkinProblems"
 }
 
 struct Storyboard {

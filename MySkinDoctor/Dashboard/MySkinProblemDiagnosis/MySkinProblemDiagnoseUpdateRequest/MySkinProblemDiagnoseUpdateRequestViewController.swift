@@ -51,7 +51,7 @@ extension MySkinProblemDiagnoseUpdateRequestViewController: UITableViewDelegate,
 	func numberOfSections(in tableView: UITableView) -> Int {
 		if viewModelCast.getDataSourceCount() == 0 {
 			let noDataLabel: UILabel     = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
-			noDataLabel.text          = "No notes available"
+			noDataLabel.text          = NSLocalizedString("myskinproblem_no_notes", comment: "")
 			noDataLabel.textColor     = UIColor.black
 			noDataLabel.textAlignment = .center
 			tableView.backgroundView  = noDataLabel

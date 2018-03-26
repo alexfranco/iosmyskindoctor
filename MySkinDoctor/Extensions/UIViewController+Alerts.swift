@@ -28,10 +28,12 @@ extension UIViewController {
 			showAlertView(title: "Error", message: firstError)
 		} else {
 			switch apiGenericError {
+			case .permisionDenied:
+				showAlertView(title: "Error", message: "Permission denied.")
 			case .parseError:
-				showAlertView(title: "Error", message: "There is an error parsing the JSON object from the server")
+				showAlertView(title: "Error", message: "There is an error parsing the JSON object from the server.")
 			case .httpQueryError:
-				showAlertView(title: "Error", message: "There is an error with the HTTP query")
+				showAlertView(title: "Error", message: "There is an error with the HTTP query.")
 			case .noErrors: break
 				// nothing
 			default:

@@ -279,6 +279,8 @@
 		FAF2CECE204D59E40001EEAB /* MyConsultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF2CECC204D59E40001EEAB /* MyConsultsViewModel.swift */; };
 		FAF2CED2204D745D0001EEAB /* UILabel+RoundedBorders.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF2CED1204D745D0001EEAB /* UILabel+RoundedBorders.swift */; };
 		FAF2CED3204D7C680001EEAB /* UILabel+RoundedBorders.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF2CED1204D745D0001EEAB /* UILabel+RoundedBorders.swift */; };
+		FAFD8FFD2069468B008DBAB9 /* String+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD8FFC2069468B008DBAB9 /* String+Extentions.swift */; };
+		FAFD8FFE2069468B008DBAB9 /* String+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD8FFC2069468B008DBAB9 /* String+Extentions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -439,6 +441,7 @@
 		FAF2CEC7204D574F0001EEAB /* MyConsultTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyConsultTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		FAF2CECC204D59E40001EEAB /* MyConsultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyConsultsViewModel.swift; sourceTree = "<group>"; };
 		FAF2CED1204D745D0001EEAB /* UILabel+RoundedBorders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+RoundedBorders.swift"; sourceTree = "<group>"; };
+		FAFD8FFC2069468B008DBAB9 /* String+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extentions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -773,6 +776,7 @@
 				7884D8B3205A787500C59E7B /* UITextField+Padding.swift */,
 				7884D8B6205AB2D900C59E7B /* UIImage+Extensions.swift */,
 				78FB319C2063F59500F155AE /* Formatter+Extentions.swift */,
+				FAFD8FFC2069468B008DBAB9 /* String+Extentions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1291,6 +1295,7 @@
 				FA3326BB20441C8500657C8A /* CustomErrors.swift in Sources */,
 				7826473A205800FB00F79FB7 /* Profile+CoreDataClass.swift in Sources */,
 				FA33265C2040336F00657C8A /* PhotoViewController.swift in Sources */,
+				FAFD8FFE2069468B008DBAB9 /* String+Extentions.swift in Sources */,
 				FAD6ADBD204461050050C1A9 /* AddSkinProblemsViewController.swift in Sources */,
 				78FB31982063B8F300F155AE /* DTTextField.swift in Sources */,
 				FA332661204034B300657C8A /* UIImageView+Circular.swift in Sources */,
@@ -1423,6 +1428,7 @@
 				FABC7A32205C010000167FFA /* ChangePasswordViewModel.swift in Sources */,
 				782647082057D49E00F79FB7 /* SkinProblems+CoreDataClass.swift in Sources */,
 				7826470C2057D49E00F79FB7 /* SkinProblemAttachment+CoreDataClass.swift in Sources */,
+				FAFD8FFD2069468B008DBAB9 /* String+Extentions.swift in Sources */,
 				FA3326BA20441C8500657C8A /* CustomErrors.swift in Sources */,
 				78FB31972063B8F300F155AE /* DTTextField.swift in Sources */,
 				FA33265B2040336F00657C8A /* PhotoViewController.swift in Sources */,
@@ -1565,6 +1571,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 75343VFMU9;
 				INFOPLIST_FILE = MySkinDoctor/MySkinDoctorLive.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.touchsoft.MySkinDoctor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1582,6 +1589,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 75343VFMU9;
 				INFOPLIST_FILE = MySkinDoctor/MySkinDoctorLive.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.touchsoft.MySkinDoctor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1706,6 +1714,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 75343VFMU9;
 				INFOPLIST_FILE = MySkinDoctor/MySkinDoctor.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DDEV\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.touchsoft.dev.MySkinDoctor;
@@ -1724,6 +1733,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 75343VFMU9;
 				INFOPLIST_FILE = MySkinDoctor/MySkinDoctor.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DDEV\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.touchsoft.dev.MySkinDoctor;
