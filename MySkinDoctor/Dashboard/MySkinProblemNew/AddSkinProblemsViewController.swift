@@ -91,27 +91,27 @@ class AddSkinProblemsViewController: BindingViewController {
 				self?.performSegue(withIdentifier: (self?.viewModelCast.nextSegue)!, sender: nil)
 			}
 		}
+		
+		navigationController?.title = viewModelCast.navigationTitle
 	}
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
 		photoUtils = PhotoUtils.init(inViewController: self)
-		
-		descriptionTextView.placeholder = "Please enter the description of your skin problem, click on Add Photo"
-		
 		nextButton.isEnabled = viewModelCast.nextButtonIsEnabled
 		
 		configureTableView()
 		configureDiagnoseView()
 
 		reloadUI()
+		
+		applyLocalization()
 	}
 	
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
 		navigationController?.setBackgroundColorWithoutShadowImage(bgColor: AppStyle.defaultNavigationBarColor, titleColor: AppStyle.defaultNavigationBarTitleColor)
-		navigationController?.title = NSLocalizedString("Add Skin Problem", comment: "")
+		navigationController?.title = viewModelCast.navigationTitle
 	}
 	
 	// MARK: Helpers
@@ -194,6 +194,13 @@ class AddSkinProblemsViewController: BindingViewController {
 		}
 	}
 	
+	// MARK: Helpers	
+	func applyLocalization() {
+		nextButton.setTitle(NSLocalizedString("next", comment: ""), for: .normal)
+		descriptionTextView.placeholder = NSLocalizedString("addskinproblems_description", comment: "")
+		diagnosedViewButton.setTitle(NSLocalizedString("addskinproblems_view", comment: ""), for: .normal)
+	}
+	
 	// MARK: Unwind
 	
 	@IBAction func unwindToAddSkinProblems(segue: UIStoryboardSegue) {
@@ -266,4 +273,3 @@ extension AddSkinProblemsViewController: UITableViewDelegate, UITableViewDataSou
 		viewModelCast.removeModel(at: indexPath)
 	}
 }
-

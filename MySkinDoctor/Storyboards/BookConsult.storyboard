@@ -145,12 +145,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="O78-bB-aEI">
-                                <rect key="frame" x="0.0" y="401" width="375" height="216"/>
-                                <date key="date" timeIntervalSinceReferenceDate="542029470.90216196">
-                                    <!--2018-03-06 11:44:30 +0000-->
-                                </date>
-                            </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wpK-3Q-gpp" customClass="PositiveButton" customModule="MySkinDoctor" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="617" width="375" height="50"/>
                                 <constraints>
@@ -167,28 +161,35 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DOB-CW-oln">
+                                <rect key="frame" x="0.0" y="401" width="375" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="lkh-4L-twa" id="olh-2f-L4d"/>
+                                    <outlet property="delegate" destination="lkh-4L-twa" id="g6g-WE-eSp"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="0uY-dq-Ujt" firstAttribute="leading" secondItem="ovj-4A-mzO" secondAttribute="leading" id="1Ex-QF-FOQ"/>
                             <constraint firstItem="Y3u-TF-kLu" firstAttribute="centerX" secondItem="lkh-4L-twa" secondAttribute="centerX" id="1tU-Tz-D30"/>
-                            <constraint firstItem="O78-bB-aEI" firstAttribute="top" secondItem="0Zy-iG-g6r" secondAttribute="bottom" id="9ki-1x-Bas"/>
+                            <constraint firstItem="DOB-CW-oln" firstAttribute="top" secondItem="0Zy-iG-g6r" secondAttribute="bottom" id="1ux-cj-tNN"/>
                             <constraint firstItem="ln9-yH-Xev" firstAttribute="top" secondItem="0uY-dq-Ujt" secondAttribute="bottom" id="BHZ-Jx-fs4"/>
                             <constraint firstItem="Y3u-TF-kLu" firstAttribute="leading" secondItem="ln9-yH-Xev" secondAttribute="leading" id="IiD-cv-nlx"/>
+                            <constraint firstItem="DOB-CW-oln" firstAttribute="leading" secondItem="ovj-4A-mzO" secondAttribute="leading" id="LoG-Z0-Yy5"/>
                             <constraint firstItem="ovj-4A-mzO" firstAttribute="trailing" secondItem="xna-gZ-hSZ" secondAttribute="trailing" id="MdQ-1N-I5W"/>
                             <constraint firstItem="wpK-3Q-gpp" firstAttribute="leading" secondItem="lkh-4L-twa" secondAttribute="leading" id="MuC-M2-vJN"/>
-                            <constraint firstItem="O78-bB-aEI" firstAttribute="leading" secondItem="ovj-4A-mzO" secondAttribute="leading" id="OQm-1T-sJL"/>
                             <constraint firstItem="xna-gZ-hSZ" firstAttribute="top" secondItem="ovj-4A-mzO" secondAttribute="top" id="Ov4-f6-eXu"/>
                             <constraint firstItem="0Zy-iG-g6r" firstAttribute="trailing" secondItem="ovj-4A-mzO" secondAttribute="trailing" id="RqV-ry-I3v"/>
                             <constraint firstItem="ln9-yH-Xev" firstAttribute="top" secondItem="xna-gZ-hSZ" secondAttribute="bottom" constant="30" id="Rzo-Jh-BfL"/>
                             <constraint firstAttribute="bottom" secondItem="wpK-3Q-gpp" secondAttribute="bottom" id="gfg-W0-Fs6"/>
-                            <constraint firstAttribute="trailing" secondItem="O78-bB-aEI" secondAttribute="trailing" id="hkf-hC-t9Z"/>
                             <constraint firstItem="xna-gZ-hSZ" firstAttribute="leading" secondItem="ovj-4A-mzO" secondAttribute="leading" id="isP-xm-ESU"/>
                             <constraint firstItem="Y3u-TF-kLu" firstAttribute="top" secondItem="ln9-yH-Xev" secondAttribute="bottom" id="kfo-zn-2wu"/>
+                            <constraint firstItem="wpK-3Q-gpp" firstAttribute="top" secondItem="DOB-CW-oln" secondAttribute="bottom" id="klx-Xo-wxc"/>
                             <constraint firstItem="ln9-yH-Xev" firstAttribute="leading" secondItem="ovj-4A-mzO" secondAttribute="leading" id="mld-Oo-z8r"/>
                             <constraint firstItem="0Zy-iG-g6r" firstAttribute="top" secondItem="Y3u-TF-kLu" secondAttribute="bottom" id="qhg-7t-Afa"/>
                             <constraint firstItem="ovj-4A-mzO" firstAttribute="trailing" secondItem="wpK-3Q-gpp" secondAttribute="trailing" id="rGh-qN-T34"/>
-                            <constraint firstItem="wpK-3Q-gpp" firstAttribute="top" secondItem="O78-bB-aEI" secondAttribute="bottom" id="rwk-do-JPz"/>
+                            <constraint firstAttribute="trailing" secondItem="DOB-CW-oln" secondAttribute="trailing" id="sw8-pZ-zdb"/>
                             <constraint firstItem="ovj-4A-mzO" firstAttribute="trailing" secondItem="ln9-yH-Xev" secondAttribute="trailing" id="tHs-2W-1Wk"/>
                             <constraint firstItem="ovj-4A-mzO" firstAttribute="trailing" secondItem="0uY-dq-Ujt" secondAttribute="trailing" id="uuE-bd-m6C"/>
                             <constraint firstItem="0uY-dq-Ujt" firstAttribute="top" secondItem="xna-gZ-hSZ" secondAttribute="bottom" id="vn1-QD-3aE"/>
@@ -203,7 +204,7 @@
                         <outlet property="nextButton" destination="wpK-3Q-gpp" id="qBe-DK-FBv"/>
                         <outlet property="pickADateLabel" destination="xna-gZ-hSZ" id="mao-Zx-hp8"/>
                         <outlet property="pickATimeLabel" destination="0Zy-iG-g6r" id="FfV-f3-zWZ"/>
-                        <outlet property="timePicker" destination="O78-bB-aEI" id="HDP-JA-lLb"/>
+                        <outlet property="timeslotsPicker" destination="DOB-CW-oln" id="hR7-pc-clx"/>
                         <segue destination="QcT-TO-s8Z" kind="show" identifier="goToConfirmConsult" id="UGK-yE-Ep9"/>
                     </connections>
                 </viewController>

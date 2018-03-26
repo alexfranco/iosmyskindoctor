@@ -15,6 +15,7 @@ class AddPhotoTableViewCell: UITableViewCell {
 	@IBOutlet weak var addPhotoButton: UIButton!
 	
 	func configure(isFirstPhoto: Bool) {
-		addPhotoLabel.text = isFirstPhoto ? "Add photo" : "Add another photo"
+		
+		addPhotoLabel.text = isFirstPhoto ? NSLocalizedString("addskinproblems_add_photo", comment: "") : NSLocalizedString("addskinproblems_add_another_photo", comment: "")
 	}
 }

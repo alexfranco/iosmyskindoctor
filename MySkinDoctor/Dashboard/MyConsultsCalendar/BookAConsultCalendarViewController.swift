@@ -16,7 +16,7 @@ class BookAConsultCalendarViewController: BindingViewController {
 	@IBOutlet weak var pickADateLabel: UILabel!
 	@IBOutlet weak var menuView: CVCalendarMenuView!
 	@IBOutlet weak var calendarView: CVCalendarView!
-	@IBOutlet weak var timePicker: UIDatePicker!
+	@IBOutlet weak var timeslotsPicker: UIPickerView!
 	@IBOutlet weak var monthLabel: UILabel!
 	
 	var viewModelCast: BookAConsultCalendarViewModel!
@@ -27,9 +27,8 @@ class BookAConsultCalendarViewController: BindingViewController {
 		initViewModel(viewModel: BookAConsultCalendarViewModel())
 		
 		configureCalendarView()
-		configureTimePicker()
+		configureTimeslotsPicker()
 		applyTheme()
-		
 	}
 	
 	override func initViewModel(viewModel: BaseViewModel) {
@@ -68,9 +67,9 @@ class BookAConsultCalendarViewController: BindingViewController {
 		calendarView.calendarAppearanceDelegate = self
 	}
 	
-	func configureTimePicker() {
-		timePicker.datePickerMode = .time
-		timePicker.addTarget(self, action: #selector(BookAConsultCalendarViewController.timeChanged), for: UIControlEvents.valueChanged)
+	func configureTimeslotsPicker() {
+		timeslotsPicker.delegate = self
+		timeslotsPicker.dataSource = self
 	}
 	
 	override func viewDidLayoutSubviews() {
@@ -86,10 +85,6 @@ class BookAConsultCalendarViewController: BindingViewController {
 		viewModelCast.saveModel()
 	}
 	
-	@objc func timeChanged(sender: UIDatePicker) {
-		viewModelCast.selectedDate = viewModelCast.selectedDate.adjust(hour: timePicker.date.component(.hour), minute: timePicker.date.component(.minute), second: timePicker.date.component(.second))
-	}
-	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == Segues.goToConfirmConsult {
 			if let dest = segue.destination as? BookAConsultConfirmViewController {
@@ -97,7 +92,26 @@ class BookAConsultCalendarViewController: BindingViewController {
 			}
 		}
 	}
+}
+
+extension BookAConsultCalendarViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+	func numberOfComponents(in pickerView: UIPickerView) -> Int {
+		return viewModelCast.numberOfComponentsInPickerView
+	}
 	
+	// The number of rows of data
+	func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+		return viewModelCast.numberOfItems
+	}
+	
+	// The data to return for the row and component (column) that's being passed in
+	func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+		return viewModelCast.getItemAtIndexPath(row)
+	}
+
+	func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+		
+	}
 }
 
 extension BookAConsultCalendarViewController: CVCalendarMenuViewDelegate, CVCalendarViewDelegate {
@@ -139,7 +153,7 @@ extension BookAConsultCalendarViewController: CVCalendarMenuViewDelegate, CVCale
 	
 	func didSelectDayView(_ dayView: DayView, animationDidFinish: Bool) {
 		if let dateSafe = dayView.date, let convertedDate = dateSafe.convertedDate() {
-			viewModelCast.selectedDate = (convertedDate.adjust(hour: timePicker.date.component(.hour), minute: timePicker.date.component(.minute), second: timePicker.date.component(.second)))
+//			viewModelCast.selectedDate = (convertedDate.adjust(hour: timePicker.date.component(.hour), minute: timePicker.date.component(.minute), second: timePicker.date.component(.second)))
 		}
 	}
 }

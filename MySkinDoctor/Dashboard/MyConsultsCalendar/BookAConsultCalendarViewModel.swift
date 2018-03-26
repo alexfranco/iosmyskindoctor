@@ -10,6 +10,8 @@ import Foundation
 
 class BookAConsultCalendarViewModel: BaseViewModel {
 	
+	var timeslots: [String] = [String]()
+	
 	var selectedDate = Date() {
 		didSet {
 			selectedDateUpdated!(selectedDate)
@@ -22,6 +24,28 @@ class BookAConsultCalendarViewModel: BaseViewModel {
 		get {
 			return selectedDate.ordinalMonthAndYear()
 		}
+	}
+	
+	override init() {
+		super.init()
+		
+		 timeslots = ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6"]
+	}
+	
+	var numberOfComponentsInPickerView: Int {
+		get {
+			return 1
+		}
+	}
+	
+	var numberOfItems: Int {
+		get {
+			return timeslots.count
+		}
+	}
+	
+	func getItemAtIndexPath(_ row: Int) -> String {
+		return timeslots[row]
 	}
 	
 	override func saveModel() {

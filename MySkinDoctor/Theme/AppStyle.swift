@@ -122,6 +122,9 @@ struct AppStyle {
 	static let addSkinPhotoBodyButtonBackgroundColor = BaseColors.amethyst
 	static let addSkinPhotoDocumentButtonBackgroundColor = BaseColors.skyBlue
 	
+	static let addSkinPhotoTextFont = UIFont.systemFont(ofSize: 13.0)
+	static let addSkinPhotoTypeTextColor = BaseColors.black
+	
 	// Skin Problem Location
 	static let locationNavigationBarBackgroundColor = BaseColors.amethyst
 	static let locationSegmentedControlTint = UIColor.white

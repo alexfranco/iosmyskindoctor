@@ -16,6 +16,8 @@
 "next" = "Next";
 "finish" = "Finish";
 "save" = "Save";
+"close" = "Close";
+"edit" = "Edit";
 
 // Fields
 
@@ -75,8 +77,23 @@
 "addskinproblems_main_vc_title_nodiagnosed" = "Skin Problem - Submitted";
 "addskinproblems_main_vc_title_diagnosed" = "Skin Problem - Diagnosed";
 "addskinproblems_main_vc_title_diagnosed_update_request" = "Skin Problem - Info Request";
+"addskinproblems_description" = "Please enter the description of your skin problem, click on Add Photo";
 
-"skinproblem_main_vc_title" = "Photo Information";
+"addskinproblems_review" = "Your skin problem is currently been reviewed by a consultant. Please check back later for diagnosis.";
+"addskinproblems_diagnosed" = "diagnosed your skin condition on";
+"addskinproblems_follow_up" = "We have diagnosed your skin condition, but request a follow up appointment.";
+"addskinproblems_view" = "View";
+
+"addskinproblems_add_photo" = "Add Photo";
+"addskinproblems_add_another_photo" = "Add another photo";
+
+"skinproblems_photo_information_main_vc_title" = "Photo Information";
+"skinproblems_photo_information_description_text_view" = "Please enter here a description of your problem";
+"skinproblems_photo_information_photo_type" = "This is a photo of my skin problem";
+"skinproblems_photo_information_document_type" = "This is a medical note or prescription";
+
+"skinproblem_thank_you" = "Thank you";
+"skinproblem_diagnosis" = "You will receive a diagnosis within 72 hours.";
 
 "medical_history_main_vc_title" = "Medical History";
 "medical_history_enter_health_problems" = "Enter here your health problems";
@@ -140,3 +157,5 @@
 "change_password_new_password" = "New Password";
 "change_password_confirm_password" = "Confirm New Password";
 "change_passowrd_new_and_confirm_are_different" = "Your passwords don't match";
+
+"change_password_success" = "Password changed successfully";

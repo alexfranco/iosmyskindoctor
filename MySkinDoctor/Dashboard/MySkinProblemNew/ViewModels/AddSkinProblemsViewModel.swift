@@ -279,7 +279,7 @@ extension AddSkinProblemsViewModel {
 			case .noFutherCommunicationRequired:
 				return generateDiagnosedInfoText()
 			case .bookConsultationRequest:
-				return generateDiagnosedUpdateRequestInfoText()
+				return generateDiagnosedFollowUpRequestInfoText()
 			}
 		}
 	}
@@ -334,7 +334,7 @@ extension AddSkinProblemsViewModel {
 	}
 	
 	func getDataSourceCountWithoutExtraAddPhoto() -> Int {
-		guard let model = self.model else { return  0}
+		guard let model = self.model else { return 0 }
 		
 		guard let attachments = model.attachments else {
 			return 0
@@ -361,7 +361,6 @@ extension AddSkinProblemsViewModel {
 		}
 	}
 	
-	
 	func isAddPhotoRow(indexPath: IndexPath) -> Bool {
 		if isEditEnabled {
 			return getDataSourceCount() == indexPath.row + 1
@@ -371,7 +370,7 @@ extension AddSkinProblemsViewModel {
 	}
 	
 	private func generateNodiagnosedInfoText() -> String {
-		return "Your skin problem is currently been reviewed by a consultant. Please check back later for diagnosis."
+		return NSLocalizedString("addskinproblems_review", comment: "")
 	}
 	
 	private func generateDiagnosedInfoText() -> String {
@@ -384,38 +383,13 @@ extension AddSkinProblemsViewModel {
 			let doctorLastName = doctor.lastName {
 			let diagnoseDate = diagnose.diagnoseDate! as Date
 			
-			return String.init(format: "%@ %@ diagnosed your skin condition on %@.", doctorFirstName, doctorLastName, diagnoseDate.ordinalMonthAndYear())
-		} else {
-			return "-"
-		}
-	}
-	
-	private func generateDiagnosedUpdateRequestInfoText() -> String {
-		
-		guard let model = self.model else { return "-" }
-		
-		if let diagnose = model.diagnose,
-			let doctor = diagnose.doctor,
-			let doctorFirstName = doctor.firstName,
-			let doctorLastName = doctor.lastName {
-			
-			return String.init(format: "%@ %@ has requested more information from you.", doctorFirstName, doctorLastName)
+			return String.init(format: "%@ %@ %@ %@.", doctorFirstName, doctorLastName, NSLocalizedString("addskinproblems_diagnosed", comment: ""),  diagnoseDate.ordinalMonthAndYear())
 		} else {
 			return "-"
 		}
 	}
 	
 	private func generateDiagnosedFollowUpRequestInfoText() -> String {
-		guard let model = self.model else { return "-" }
-		
-		if let diagnose = model.diagnose,
-			let doctor = diagnose.doctor,
-			let doctorFirstName = doctor.firstName,
-			let doctorLastName = doctor.lastName {
-			
-			return String.init(format: "%@ %@ has requested a follow up from you.", doctorFirstName, doctorLastName)
-		} else {
-			return "-"
-		}
+		return NSLocalizedString("addskinproblems_follow_up", comment: "")
 	}
 }

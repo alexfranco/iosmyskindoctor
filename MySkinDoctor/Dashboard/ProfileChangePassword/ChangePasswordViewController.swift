@@ -53,21 +53,21 @@ class ChangePasswordViewController: FormViewController {
 		
 		viewModelCast.oldPasswordValidationStatus = { [weak self] () in
 			DispatchQueue.main.async {
-				self?.oldPasswordTextField.errorMessage = (self?.viewModelCast.oldPasswordErrorMessage)!
+				self?.oldPasswordTextField.showError(message: self?.viewModelCast.oldPasswordErrorMessage)
 				self?.oldPasswordTextField.becomeFirstResponder()
 			}
 		}
 		
 		viewModelCast.newPasswordValidationStatus = { [weak self] () in
 			DispatchQueue.main.async {
-				self?.newPasswordTextField.errorMessage = (self?.viewModelCast.newPasswordErrorMessage)!
+				self?.newPasswordTextField.showError(message: self?.viewModelCast.newPasswordErrorMessage)
 				self?.newPasswordTextField.becomeFirstResponder()
 			}
 		}
 		
 		viewModelCast.confirmPasswordValidationStatus = { [weak self] () in
 			DispatchQueue.main.async {
-				self?.confirmNewPasswordTextField.errorMessage = (self?.viewModelCast.confirmPasswordErrorMessage)!
+				self?.confirmNewPasswordTextField.showError(message: self?.viewModelCast.confirmPasswordErrorMessage)
 				self?.confirmNewPasswordTextField.becomeFirstResponder()
 			}
 		}
@@ -80,7 +80,7 @@ class ChangePasswordViewController: FormViewController {
 		
 		viewModelCast.didSaveChanges = { [weak self] () in
 			DispatchQueue.main.async {
-				self?.showAlertView(title: "", message: NSLocalizedString("changes_saved", comment: ""), handler: { (action) in
+				self?.showAlertView(title: "", message: NSLocalizedString("change_password_success", comment: ""), handler: { (action) in
 					self?.dismiss(animated: true, completion: nil)
 				})
 			}

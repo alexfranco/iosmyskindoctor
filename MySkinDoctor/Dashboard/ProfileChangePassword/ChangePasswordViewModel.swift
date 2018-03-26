@@ -81,19 +81,18 @@ class ChangePasswordViewModel: BaseViewModel {
 			return
 		}
 		
-//		self.isLoading = true
+		self.isLoading = true
 		
-//		ApiUtils.changePassword(oldPassword: oldPassword, newPassword: newPassword, confirmPassowrd: confirmPassword, completionHandler: { (result) in
-//			self.isLoading = false
-//
-//			switch result {
-//			case .success(_):
-//				print("change password success")
+		ApiUtils.changePassword(oldPassword: oldPassword, newPassword: newPassword, confirmPassowrd: confirmPassword, completionHandler: { (result) in
+			self.isLoading = false
+
+			switch result {
+			case .success(_):				
 				self.didSaveChanges!()
-//			case .failure(let model, let error):
-//				print("error")
-//				self.showResponseErrorAlert!(model as? BaseResponseModel, error)
-//			}
-//		})
+			case .failure(let model, let error):
+				print("error")
+				self.showResponseErrorAlert!(model as? BaseResponseModel, error)
+			}
+		})
 	}
 }

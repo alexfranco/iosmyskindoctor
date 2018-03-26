@@ -30,22 +30,15 @@ class SkinProblemPhotoInformationViewController: PhotoViewController {
 		
 		delegate = self
 		
-		descriptionTextView.placeholder = "Please enter here a description of your problem"
 		userPhotoImageView.image = viewModelCast.problemImage
 		
-		editButton.setTitleColor(AppStyle.addSkinPhotoEditTextColor, for: .normal)
-		
-		skinBodyOptionButton.backgroundColor = AppStyle.addSkinPhotoBodyButtonBackgroundColor
-		documentOptionButton.backgroundColor = AppStyle.addSkinPhotoDocumentButtonBackgroundColor
-		
-		skinBodyOptionButton.setRounded()
-		documentOptionButton.setRounded()
+		applyTheme()
+		applyLocalization()
 	}
 	
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
 		navigationController?.setBackgroundColorWithoutShadowImage(bgColor: AppStyle.defaultNavigationBarColor, titleColor: AppStyle.defaultNavigationBarTitleColor)
-		navigationController?.title = NSLocalizedString("skinproblem_main_vc_title", comment: "")
 	}
 
 	// MARK: Helpers
@@ -88,6 +81,29 @@ class SkinProblemPhotoInformationViewController: PhotoViewController {
 				dest.initViewModel(viewModel: SkinProblemLocationViewModel(model:  viewModelCast.model))
 			}
 		}
+	}
+	
+	// MARK: Helpers
+	func applyTheme() {
+		skinBodyOptionButton.backgroundColor = AppStyle.addSkinPhotoBodyButtonBackgroundColor
+		documentOptionButton.backgroundColor = AppStyle.addSkinPhotoDocumentButtonBackgroundColor
+		
+		editButton.setTitleColor(AppStyle.addSkinPhotoEditTextColor, for: .normal)
+		skinBodyOptionButton.setTitleColor(AppStyle.addSkinPhotoTypeTextColor, for: .normal)
+		documentOptionButton.setTitleColor(AppStyle.addSkinPhotoTypeTextColor, for: .normal)
+		
+		editButton.titleLabel?.font = AppStyle.addSkinPhotoTextFont
+		skinBodyOptionButton.titleLabel?.font = AppStyle.addSkinPhotoTextFont
+		documentOptionButton.titleLabel?.font = AppStyle.addSkinPhotoTextFont
+		
+		skinBodyOptionButton.setRounded()
+		documentOptionButton.setRounded()
+	}
+	
+	func applyLocalization() {
+		descriptionTextView.placeholder =  NSLocalizedString("skinproblems_photo_information_description_text_view", comment: "")
+		skinBodyInfoLabel.text = NSLocalizedString("skinproblems_photo_information_photo_type", comment: "")
+		documentInfoLabel.text = NSLocalizedString("skinproblems_photo_information_document_type", comment: "")
 	}
 }
 
