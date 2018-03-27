@@ -16,6 +16,7 @@ class LoginViewModel: BaseViewModel {
 	var emailValidationStatus: (()->())?
 	var passwordValidationStatus: (()->())?
 	
+	
 	var emailErrorMessage: String = "" {
 		didSet {
 			self.emailValidationStatus?()
@@ -69,11 +70,28 @@ class LoginViewModel: BaseViewModel {
 				self.goNextSegue!()
 			case .failure(let model, let error):
 				print("error")
+				
+				if let modelCast = model as? LoginResponseModel {
+					if let firstEmailError = modelCast.emailErrors.first {
+						self.showAlert!("", firstEmailError)
+						return
+					}
+					if let firstPasswordError = modelCast.passwordErrors.first {
+						self.showAlert!("", firstPasswordError)
+						return
+					}
+				}
+				
 				self.showResponseErrorAlert!(model as? BaseResponseModel, error)
 			}
 		}
 		
 	}
 	
+	func storedEmail() -> String {
+		let defaults = UserDefaults.standard
+		email = defaults.string(forKey: UserDefaultConsts.email) ?? ""
+		return email
+	}
 }
 

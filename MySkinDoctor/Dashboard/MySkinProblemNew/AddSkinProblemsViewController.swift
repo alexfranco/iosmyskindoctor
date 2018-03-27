@@ -182,11 +182,19 @@ class AddSkinProblemsViewController: BindingViewController {
 			message: "Do you want to...",
 			preferredStyle: .alert)
 		
-		let OKAction = UIAlertAction(title: NSLocalizedString("continue_editting", comment: "Close button"), style: .default, handler: handler)
-		let OKAction = UIAlertAction(title: NSLocalizedString("save_later", comment: "Close button"), style: .default, handler: handler)
-		let OKAction = UIAlertAction(title: NSLocalizedString("discard", comment: "Close button"), style: .default, handler: handler)
+		let continueAction = UIAlertAction(title: NSLocalizedString("continue_editting", comment: "Close button"), style: .default, handler: nil)
 		
-		alertController.addAction(OKAction)
+		let saveLaterAction = UIAlertAction(title: NSLocalizedString("save_later", comment: "Close button"), style: .default) { (action) in
+			self.dismiss(animated: true, completion: nil)
+		}
+		
+		let discardAction = UIAlertAction(title: NSLocalizedString("discard", comment: "Close button"), style: .destructive) { (action) in
+			self.viewModelCast.discardModel()
+		}
+		
+		alertController.addAction(discardAction)
+		alertController.addAction(saveLaterAction)
+		alertController.addAction(continueAction)
 		self.present(alertController, animated: true) {}
 		
 		self.performSegue(withIdentifier: Segues.unwindToMySkinProblems, sender: nil)

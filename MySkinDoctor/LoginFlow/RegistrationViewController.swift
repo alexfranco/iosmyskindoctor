@@ -55,7 +55,7 @@ class RegistrationViewController: FormViewController {
 			DispatchQueue.main.async {
 			
 				self?.showAlertView(title: NSLocalizedString("registration_success_title", comment: ""), message: NSLocalizedString("registration_success_message", comment: ""), handler: { (action) in
-					self?.performSegue(withIdentifier: Segues.goToMainStoryboardFromLogin, sender: nil)
+					self?.navigationController?.popViewController(animated: true)
 				})
 			}
 		}

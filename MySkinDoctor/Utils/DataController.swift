@@ -146,6 +146,12 @@ class DataController {
 		saveEntity(managedObject: profile)
 	}
 	
+	static func register(email: String) {
+		let defaults = UserDefaults.standard
+		defaults.set(email, forKey: UserDefaultConsts.email)
+		defaults.synchronize()
+	}
+	
 	static func logout() {
 		ApiUtils.logoutUser(accessToken: DataController.getAccessToken()) { (result) in
 			self.clearDataAfterLoggedOut()
@@ -156,6 +162,7 @@ class DataController {
 		let defaults = UserDefaults.standard
 		defaults.set(false, forKey: UserDefaultConsts.isUserLoggedIn)
 		defaults.set(false, forKey: UserDefaultConsts.isFirstTime)
+		defaults.removeObject(forKey: UserDefaultConsts.email)
 		deleteEntity(type: Profile.self)
 		
 		let appDelegate = UIApplication.shared.delegate as! AppDelegate

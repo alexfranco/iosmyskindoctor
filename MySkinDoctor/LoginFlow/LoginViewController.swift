@@ -45,6 +45,8 @@ class LoginViewController: FormViewController {
 		
 		// Hide the navigation bar on the this view controller
 		self.navigationController?.setNavigationBarHidden(true, animated: animated)
+		
+		self.emailTextField.text = viewModelCast.storedEmail()
 	}
 	
 	// MARK: Bindings

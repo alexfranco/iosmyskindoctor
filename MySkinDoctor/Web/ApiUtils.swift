@@ -39,13 +39,13 @@ class ApiUtils {
 		case httpQueryError
 		case noErrors
 		case permisionDenied
-		case authorizatioError
+		case authorizationError
 
 	}
 	
 	enum ApiMethod: String {
 		case login = "/api/accounts/login/"
-		case register = "/api/accounts/register"
+		case register = "/api/accounts/register/"
 		case forgottenPassword = "/api/accounts/password/reset/"
 		case userProfile = "/api/msd-profiles/user/"
 		case changePassword = "/api/accounts/password/change/"
@@ -281,7 +281,7 @@ extension ApiUtils {
 						}
 					}
 				} else {
-					completionHandler(ApiResult.failure(nil, ApiGenericError.authorizatioError))
+					completionHandler(ApiResult.failure(nil, ApiGenericError.authorizationError))
 				}
 			} else {
 				completionHandler(ApiResult.failure(nil, ApiGenericError.httpQueryError))
@@ -309,7 +309,7 @@ extension ApiUtils {
 						}
 					}
 				} else {
-					completionHandler(ApiArrayResult.failure(nil, ApiGenericError.authorizatioError))
+					completionHandler(ApiArrayResult.failure(nil, ApiGenericError.authorizationError))
 				}
 			} else {
 				completionHandler(ApiArrayResult.failure(nil, ApiGenericError.httpQueryError))

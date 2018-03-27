@@ -42,7 +42,8 @@ extension SkinProblems {
 		skinProblem.diagnose!.patientInformation = skinProblemResponseModel.diagnosisPatientInformation
 		skinProblem.diagnose!.comments = skinProblemResponseModel.diagnosisComments
 		skinProblem.diagnose!.diagnoseDate = skinProblemResponseModel.outcomeDate as NSDate?
-		skinProblem.diagnose!.diagnoseStatus = Int16(skinProblemResponseModel.outcome)
+//		skinProblem.diagnose!.diagnoseStatus = Int16(skinProblemResponseModel.outcome)
+		skinProblem.diagnose!.diagnoseStatusEnum = .noFutherCommunicationRequired
 		parseAndSaveSkinProblemsAttachmentResponse(skinProblemsResponseModel: skinProblemResponseModel, skinProblems: &skinProblem)
 		
 		DataController.saveEntity(managedObject: skinProblem)

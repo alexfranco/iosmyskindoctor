@@ -111,7 +111,26 @@ class AddSkinProblemsViewModel: BaseViewModel {
 	}
 	
 	func discardModel() {
-		// TODO
+		guard let model = self.model else { return }
+		
+		isLoading = true
+		
+		ApiUtils.deleteSkinProblem(accessToken: DataController.getAccessToken(), skinProblemsId: Int(model.skinProblemId)) { (result) in
+			self.isLoading = false
+			
+			switch result {
+			case .success(let model):
+				print("deleteSkinProblem")
+				let attachment = SkinProblemAttachment.parseAndSaveSkinProblemsAttachmentResponse(attachment: model as! SkinProblemAttachmentResponseModel)
+				let appendToLastIndexPath = IndexPath.init(row: self.getDataSourceCountWithoutExtraAddPhoto(), section: 0)
+				self.tableViewState = .insert(attachment, appendToLastIndexPath)
+				self.updateNextButton!(self.nextButtonIsEnabled)
+				
+			case .failure(let model, let error):
+				print("error")
+				self.showResponseErrorAlert!(model as? BaseResponseModel, error)
+			}
+		}
 	}
 	
 	func insertNewModel(model: SkinProblemAttachment, indexPath: IndexPath) {

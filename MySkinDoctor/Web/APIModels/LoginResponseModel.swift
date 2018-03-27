@@ -13,6 +13,7 @@ class LoginResponseModel : BaseResponseModel {
 	
 	var key: String?
 	var emailErrors: [String] = []
+	var passwordErrors: [String] = []
 	
 	// Mappable
 	override func mapping(map: Map) {
@@ -20,6 +21,7 @@ class LoginResponseModel : BaseResponseModel {
 		
 		key <- map["key"]
 		emailErrors <- map["email"]
+		passwordErrors <- map["password"]
 	}
 	
 }

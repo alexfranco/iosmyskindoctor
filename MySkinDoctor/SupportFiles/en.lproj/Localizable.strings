@@ -54,8 +54,8 @@
 // Registration
 
 "registration_success_title" = "Sign Up";
-"registration_success_message" = "Thanks for signing up to %@. An email has been sent to you, please verify your email address.";
-"registration_success_message_no_verification" = "Thanks for signing up to %@. Please log in to continue.";
+"registration_success_message" = "Thanks for signing up. An email has been sent to you, please verify your email address.";
+"registration_success_message_no_verification" = "Thanks for signing up. Please log in to continue.";
 
 "registration_error_generic_title" = "Sign Up Error";
 "registration_error_generic_message" = "There was an error signing up. Please try again later.";

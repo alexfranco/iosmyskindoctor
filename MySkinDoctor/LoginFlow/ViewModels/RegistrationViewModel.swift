@@ -60,15 +60,24 @@ class RegistrationViewModel: BaseViewModel {
 			self.isLoading = false
 			
 			switch result {
-			case .success(let model):
+			case .success(_):
 				print("registration success")
-				
-				let modelCast = model as! RegistrationResponseModel
-				DataController.login(email: self.email, key: modelCast.key!)
-				
+				DataController.register(email: self.email)
 				self.goNextSegue!()
 			case .failure(let model, let error):
 				print("error")
+				
+				if let modelCast = model as? RegistrationResponseModel {
+					if let firstEmailError = modelCast.emailErrors.first {
+						self.showAlert!("", firstEmailError)
+						return
+					}
+					if let firstPasswordError = modelCast.passwordErrors.first {
+						self.showAlert!("", firstPasswordError)
+						return 
+					}
+				}
+				
 				self.showResponseErrorAlert!(model as? BaseResponseModel, error)
 			}
 		}
