@@ -29,7 +29,7 @@ class ProfileResponseModel : BaseResponseModel {
 	override func mapping(map: Map) {
 		super .mapping(map: map)
 		
-		if let dateString = map["date_of_birth"].currentValue as? String, let _date = dateString.dateFromISO8601 { dob = _date }
+		if let dateString = map["date_of_birth"].currentValue as? String, let _date = dateString.dateFromISO8601WithoutTime { dob = _date }
 	
 		addressLine1 <- map["address_line_1"]
 		addressLine2 <- map["address_line_2"]
@@ -43,7 +43,6 @@ class ProfileResponseModel : BaseResponseModel {
 		postcode <- map["postcode"]
 		town <- map["town"]
 		selfPay <- map["selfPay"]
-		
 	}
 	
 }

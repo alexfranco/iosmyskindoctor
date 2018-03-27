@@ -15,7 +15,7 @@ extension SkinProblemAttachment {
 		let skinProblemAttachment = DataController.createOrUpdate(objectIdKey: "skinProblemAttachmentId", objectValue: attachment.skinProblemAttachmentId, type: SkinProblemAttachment.self)
 		skinProblemAttachment.skinProblemAttachmentId = Int16(attachment.skinProblemAttachmentId)
 		skinProblemAttachment.attachmentType = Int16(attachment.attachmentType)
-		skinProblemAttachment.locationType = Int16(attachment.location)
+		skinProblemAttachment.locationType = attachment.location ?? "none"
 		skinProblemAttachment.url = attachment.url
 		skinProblemAttachment.filename = attachment.filename
 		skinProblemAttachment.problemImage = attachment.problemImage

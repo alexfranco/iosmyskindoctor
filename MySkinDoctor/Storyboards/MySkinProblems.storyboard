@@ -293,7 +293,7 @@
                         <segue destination="1RX-Za-Veg" kind="show" identifier="goToMySkinProblemDiagnoseUpdateRequest" id="OI7-OK-vvJ"/>
                         <segue destination="Jyl-Zp-YEE" kind="show" identifier="goToDiagnosis" id="o0d-ft-IKZ"/>
                         <segue destination="NAq-kP-lUC" kind="show" identifier="goToMedicalHistoryViewControler" id="cc6-Sx-oh9"/>
-                        <segue destination="4L0-a8-re3" kind="unwind" identifier="unwindToMySkinProblemsWith" unwindAction="unwindToMySkinProblemsWithSegue:" id="28F-wO-2QJ"/>
+                        <segue destination="4L0-a8-re3" kind="unwind" identifier="unwindToMySkinProblems" unwindAction="unwindToMySkinProblemsWithSegue:" id="28F-wO-2QJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j1b-CY-gyV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -730,20 +730,20 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bodyFront" translatesAutoresizingMaskIntoConstraints="NO" id="wG0-rT-RW5">
                                                 <rect key="frame" x="20" y="0.0" width="248" height="376"/>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bep-wS-r6L">
-                                                <rect key="frame" x="129.5" y="102" width="28" height="29"/>
-                                                <state key="normal" image="problemLocationInactive"/>
-                                                <state key="selected" image="problemLocationActive"/>
-                                                <connections>
-                                                    <action selector="onLocationPressed:" destination="Tlw-GB-isY" eventType="touchUpInside" id="ucD-UB-Bpe"/>
-                                                </connections>
-                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LY9-Dc-wfX">
                                                 <rect key="frame" x="129.5" y="18.5" width="28" height="29"/>
                                                 <state key="normal" image="problemLocationInactive"/>
                                                 <state key="selected" image="problemLocationActive"/>
                                                 <connections>
                                                     <action selector="onLocationPressed:" destination="Tlw-GB-isY" eventType="touchUpInside" id="Szy-dr-nb8"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bep-wS-r6L">
+                                                <rect key="frame" x="130" y="102" width="28" height="29"/>
+                                                <state key="normal" image="problemLocationInactive"/>
+                                                <state key="selected" image="problemLocationActive"/>
+                                                <connections>
+                                                    <action selector="onLocationPressed:" destination="Tlw-GB-isY" eventType="touchUpInside" id="ucD-UB-Bpe"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="avj-X1-eXV">
@@ -948,13 +948,13 @@
                         <outlet property="locationChestButton" destination="Bh5-2l-uZq" id="b0K-92-Ybw"/>
                         <outlet property="locationFootLeftButton" destination="xZb-bq-TuF" id="VFK-4E-sbn"/>
                         <outlet property="locationFootRightButton" destination="OBA-wk-QDu" id="YT7-KD-nqc"/>
-                        <outlet property="locationHeadButton" destination="Bep-wS-r6L" id="sWC-K1-r0B"/>
+                        <outlet property="locationHeadButton" destination="LY9-Dc-wfX" id="N8a-Ia-JGm"/>
                         <outlet property="locationLabel" destination="MyD-zO-bAN" id="BXw-zI-571"/>
                         <outlet property="locationLowerArmLeftButton" destination="VGa-Rg-8cc" id="z7z-Gb-ha4"/>
                         <outlet property="locationLowerArmRightButton" destination="Lhk-ov-Dkj" id="Enq-QN-Esy"/>
                         <outlet property="locationLowerLegLeftButton" destination="Git-al-TEy" id="8Pj-JQ-dCO"/>
                         <outlet property="locationLowerLegRightButton" destination="avj-X1-eXV" id="bOr-JE-5Wa"/>
-                        <outlet property="locationNeckButton" destination="LY9-Dc-wfX" id="nhk-KO-mgr"/>
+                        <outlet property="locationNeckButton" destination="Bep-wS-r6L" id="p63-vB-MHY"/>
                         <outlet property="locationPelvisButton" destination="SiB-WK-gTm" id="rYS-jy-Bia"/>
                         <outlet property="locationUpperArmLeftButton" destination="Vd4-Mo-BOC" id="Ljt-sY-cGS"/>
                         <outlet property="locationUpperArmRightButton" destination="tc2-0y-PuU" id="Wet-BF-Va1"/>
@@ -1023,7 +1023,7 @@
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4nR-jT-6hy">
-                                <rect key="frame" x="110" y="68" width="100" height="100"/>
+                                <rect key="frame" x="0.0" y="68" width="100" height="100"/>
                                 <color key="backgroundColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="7IB-8A-YQK"/>

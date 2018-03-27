@@ -20,7 +20,7 @@ class SkinProblemTableCellViewModel : NSObject {
 		self.name = String.init(format: "%@ %d", NSLocalizedString("photo", comment: ""), index + 1)
 		
 		if model.attachmentTypeEnum == .document {
-			self.location = NSLocalizedString("photo", comment: "")
+			self.location = NSLocalizedString("document", comment: "")
 		} else {
 			self.location = model.locationTypeEnum.description
 		}

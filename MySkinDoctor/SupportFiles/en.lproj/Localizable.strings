@@ -77,6 +77,7 @@
 "myskinproblems_segmented_undiagnosed" = "Undiagnosed";
 "myskinproblems_segmented_diagnosed" = "Diagnosed";
 
+
 "addskinproblems_main_vc_title_none" = "Add Skin Problem";
 "addskinproblems_main_vc_title_nodiagnosed" = "Skin Problem - Submitted";
 "addskinproblems_main_vc_title_diagnosed" = "Skin Problem - Diagnosed";
@@ -88,13 +89,20 @@
 "addskinproblems_follow_up" = "We have diagnosed your skin condition, but request a follow up appointment.";
 "addskinproblems_view" = "View";
 
+"addskinproblems_question" = "Do you want to...";
+"addskinproblems_continue_editing" = "Continue Editing";
+"addskinproblems_save_later" = "Save for later";
+"addskinproblems_discard" = "Discard";
+
 "addskinproblems_add_photo" = "Add Photo";
 "addskinproblems_add_another_photo" = "Add another photo";
 
 "skinproblems_photo_information_main_vc_title" = "Photo Information";
 "skinproblems_photo_information_description_text_view" = "Please enter here a description of your problem";
+"skinproblems_photo_information_description_text_view_empty" = "Please enter here a description of your problem";
 "skinproblems_photo_information_photo_type" = "This is a photo of my skin problem";
 "skinproblems_photo_information_document_type" = "This is a medical note or prescription";
+
 
 "skinproblem_thank_you" = "Thank you";
 "skinproblem_diagnosis" = "You will receive a diagnosis within 72 hours.";

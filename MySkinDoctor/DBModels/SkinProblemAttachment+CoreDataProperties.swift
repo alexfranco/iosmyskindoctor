@@ -18,7 +18,7 @@ extension SkinProblemAttachment {
     }
 
     @NSManaged public var attachmentType: Int16
-    @NSManaged public var locationType: Int16
+    @NSManaged public var locationType: String
     @NSManaged public var problemDescription: String?
     @NSManaged public var problemImage: NSObject?
     @NSManaged public var filename: String?

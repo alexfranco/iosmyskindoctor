@@ -16,7 +16,7 @@ class BaseMySkinProblemDiagnosisViewModel: BaseViewModel {
 	var diagnoseStatus: Diagnose.DiagnoseStatus {
 		get {
 			guard let diagnose = model.diagnose else {
-				return Diagnose.DiagnoseStatus.none
+				return Diagnose.DiagnoseStatus.draft
 			}
 			
 			return diagnose.diagnoseStatusEnum
@@ -34,7 +34,7 @@ class BaseMySkinProblemDiagnosisViewModel: BaseViewModel {
 	var viewBackgroundColor: UIColor {
 		get {
 			switch diagnoseStatus {
-			case .none:
+			case .unknown, .draft:
 				return UIColor.white
 			case .submitted:
 				return UIColor.white
@@ -49,7 +49,7 @@ class BaseMySkinProblemDiagnosisViewModel: BaseViewModel {
 	var navigationTitle: String {
 		get {
 			switch diagnoseStatus {
-			case .none:
+			case .unknown, .draft:
 				return ""
 			case .submitted:
 			   return ""

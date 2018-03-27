@@ -68,7 +68,7 @@
     <entity name="SkinProblemAttachment" representedClassName="SkinProblemAttachment" syncable="YES">
         <attribute name="attachmentType" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="filename" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="locationType" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="locationType" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="problemDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="problemImage" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="skinProblemAttachmentId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>

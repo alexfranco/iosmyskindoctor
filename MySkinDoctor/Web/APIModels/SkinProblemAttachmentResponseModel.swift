@@ -14,7 +14,7 @@ class SkinProblemAttachmentResponseModel : BaseResponseModel {
 	var problemDescription: String?
 	var filename: String?
 	var attachmentType: Int = 0
-	var location: Int = 0
+	var location: String?
 	var problemImage: NSObject?
 	var url: String?
 	var skinProblemAttachmentId: Int = 0
@@ -27,6 +27,7 @@ class SkinProblemAttachmentResponseModel : BaseResponseModel {
 		filename <- map["file_name"]
 		attachmentType <- map["photo_type"]
 		location <- map["photo_location"]
+		url <- map["file_url"]
 		skinProblemAttachmentId <- map["id"]
 	}
 }

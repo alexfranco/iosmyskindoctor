@@ -107,6 +107,16 @@ class DataController {
 		return  CoreDataStack.managedObjectContext.object(with: managedObjectId)
 	}
 	
+	static func deleteManagedObject(managedObject: NSManagedObject) {
+		CoreDataStack.managedObjectContext.delete(managedObject)
+		
+		do {
+			try CoreDataStack.managedObjectContext.save()
+		} catch let error {
+			print("saveEntity error \(error.localizedDescription)")
+		}
+	}
+	
 	static func saveEntity(managedObject: NSManagedObject) {
 		do {
 			try managedObject.managedObjectContext?.save()

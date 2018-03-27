@@ -19,7 +19,7 @@ extension SkinProblems {
 		return diagnoseSafe.diagnoseStatusEnum == .noFutherCommunicationRequired ||  diagnoseSafe.diagnoseStatusEnum == .bookConsultationRequest
 	}
 	
-	static func parseAndSaveResponse(skinProblemResponseModel: SkinProblemsResponseModel) {
+	static func parseAndSaveResponse(skinProblemResponseModel: SkinProblemsResponseModel) -> SkinProblems {
 		var skinProblem = DataController.createOrUpdate(objectIdKey: "skinProblemId", objectValue: skinProblemResponseModel.skinProblemId, type: SkinProblems.self)
 		
 		skinProblem.skinProblemId = Int16(skinProblemResponseModel.skinProblemId)
@@ -42,11 +42,13 @@ extension SkinProblems {
 		skinProblem.diagnose!.patientInformation = skinProblemResponseModel.diagnosisPatientInformation
 		skinProblem.diagnose!.comments = skinProblemResponseModel.diagnosisComments
 		skinProblem.diagnose!.diagnoseDate = skinProblemResponseModel.outcomeDate as NSDate?
-//		skinProblem.diagnose!.diagnoseStatus = Int16(skinProblemResponseModel.outcome)
-		skinProblem.diagnose!.diagnoseStatusEnum = .noFutherCommunicationRequired
+		skinProblem.diagnose!.diagnoseStatus = Int16(skinProblemResponseModel.status)
+		
 		parseAndSaveSkinProblemsAttachmentResponse(skinProblemsResponseModel: skinProblemResponseModel, skinProblems: &skinProblem)
 		
 		DataController.saveEntity(managedObject: skinProblem)
+		
+		return skinProblem
 	}
 	
 	static func parseAndSaveSkinProblemsAttachmentResponse(skinProblemsResponseModel:  SkinProblemsResponseModel, skinProblems: inout SkinProblems) {

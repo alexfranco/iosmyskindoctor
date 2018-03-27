@@ -11,7 +11,7 @@ import UIKit
 
 class SkinProblemPhotoInformationViewModel: BaseViewModel {
 	var model: SkinProblemAttachment!
-	var problemDescription: String!
+	var problemDescription = ""
 	var problemImage: UIImage!
 	
 	var goPhotoLocation: (()->())?
@@ -19,7 +19,7 @@ class SkinProblemPhotoInformationViewModel: BaseViewModel {
 	
 	required init(model: SkinProblemAttachment) {
 		self.model = model
-		self.problemDescription = model.problemDescription
+		self.problemDescription = model.problemDescription ?? ""
 		
 		if let profileImageSafe = model.problemImage as? UIImage {
 			problemImage = profileImageSafe
@@ -28,7 +28,23 @@ class SkinProblemPhotoInformationViewModel: BaseViewModel {
 		}
 	}
 	
+	override func validateForm() -> Bool {
+		var isValid = true
+		
+		if problemDescription.isEmpty {
+			showAlert!("", NSLocalizedString("skinproblems_photo_information_description_text_view_empty", comment: ""))
+			isValid = false
+		}
+				
+		return isValid
+	}
+	
 	func saveModel(attachmentType: SkinProblemAttachment.AttachmentType) {
+		
+		if !self.validateForm() {
+			return
+		}
+		
 		model.attachmentTypeEnum = attachmentType
 		model.problemDescription = problemDescription
 		model.problemImage = problemImage

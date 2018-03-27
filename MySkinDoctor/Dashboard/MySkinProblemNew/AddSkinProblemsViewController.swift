@@ -93,6 +93,18 @@ class AddSkinProblemsViewController: BindingViewController {
 			}
 		}
 		
+		viewModelCast.onSaveLaterSuccess = { [weak self] () in
+			DispatchQueue.main.async {
+				self?.performSegue(withIdentifier: Segues.unwindToMySkinProblems, sender: nil)
+			}
+		}
+		
+		viewModelCast.onModelDiscarted = { [weak self] () in
+			DispatchQueue.main.async {
+				self?.performSegue(withIdentifier: Segues.unwindToMySkinProblems, sender: nil)
+			}
+		}
+		
 		navigationController?.title = viewModelCast.navigationTitle
 	}
 	
@@ -155,7 +167,7 @@ class AddSkinProblemsViewController: BindingViewController {
 	}
 	
 	func showHideDiagnoseViews() {
-		descriptionLabelTop.constant = viewModelCast.diagnoseStatus == .none ? descriptionLabelTopDefault : descriptionLabelTopDefault + diagnosedViewHeightDefault
+		descriptionLabelTop.constant = viewModelCast.diagnoseStatus == .draft ? descriptionLabelTopDefault : descriptionLabelTopDefault + diagnosedViewHeightDefault
 		
 		undiagnosedViewHeight.constant = viewModelCast.diagnoseStatus == .submitted ? diagnosedViewHeightDefault : 0
 		undiagnosedImageView.isHidden = viewModelCast.diagnoseStatus != .submitted
@@ -168,7 +180,7 @@ class AddSkinProblemsViewController: BindingViewController {
 	}
 	
 	@IBAction func onNextButtonPressed(_ sender: Any) {
-		viewModelCast.saveModel()
+		viewModelCast.saveModel(saveLater: false)
 	}
 	
 	@IBAction func onViewDiagnosePressed(_ sender: Any) {
@@ -176,29 +188,33 @@ class AddSkinProblemsViewController: BindingViewController {
 	}
 	
 	@IBAction func onCancelButtonPressed(_ sender: Any) {
-		
-		let alertController = UIAlertController(
-			title: "",
-			message: "Do you want to...",
-			preferredStyle: .alert)
-		
-		let continueAction = UIAlertAction(title: NSLocalizedString("continue_editting", comment: "Close button"), style: .default, handler: nil)
-		
-		let saveLaterAction = UIAlertAction(title: NSLocalizedString("save_later", comment: "Close button"), style: .default) { (action) in
-			self.dismiss(animated: true, completion: nil)
+
+		if viewModelCast.shouldShowCancelAlert() {
+			let alertController = UIAlertController (
+				title: "",
+				message: NSLocalizedString("addskinproblems_question", comment: ""),
+				preferredStyle: .alert)
+			
+			let continueAction = UIAlertAction(title: NSLocalizedString("addskinproblems_continue_editing", comment: "Close button"), style: .default) { (action) in
+			}
+			
+			let saveLaterAction = UIAlertAction(title: NSLocalizedString("addskinproblems_save_later", comment: "Close button"), style: .default) { (action) in
+				self.viewModelCast.saveModel(saveLater: true)
+			}
+			
+			let discardAction = UIAlertAction(title: NSLocalizedString("addskinproblems_discard", comment: "Close button"), style: .destructive) { (action) in
+				self.viewModelCast.discardModel()
+			}
+			
+			alertController.addAction(discardAction)
+			alertController.addAction(continueAction)
+			alertController.addAction(saveLaterAction)
+			self.present(alertController, animated: true) {}
+		} else {
+			self.performSegue(withIdentifier: Segues.unwindToMySkinProblems, sender: nil)
 		}
-		
-		let discardAction = UIAlertAction(title: NSLocalizedString("discard", comment: "Close button"), style: .destructive) { (action) in
-			self.viewModelCast.discardModel()
-		}
-		
-		alertController.addAction(discardAction)
-		alertController.addAction(saveLaterAction)
-		alertController.addAction(continueAction)
-		self.present(alertController, animated: true) {}
-		
-		self.performSegue(withIdentifier: Segues.unwindToMySkinProblems, sender: nil)
 	}
+	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == Segues.goToSkinProblemPhotoInformationViewController {
 		if let dest = segue.destination as? SkinProblemPhotoInformationViewController, let skinProblemAttachment = sender as? SkinProblemAttachment {
@@ -232,7 +248,7 @@ class AddSkinProblemsViewController: BindingViewController {
 	@IBAction func unwindToAddSkinProblems(segue: UIStoryboardSegue) {
 		if let sourceViewController = segue.source as? SkinProblemLocationViewController {
 			if let viewModel = sourceViewController.viewModelCast {				
-				viewModelCast.appendNewModel(skinProblemAttachment: viewModel.model)
+				viewModelCast.appendAttachment(skinProblemAttachment: viewModel.model)
 			}
 		}
 	}
@@ -240,7 +256,7 @@ class AddSkinProblemsViewController: BindingViewController {
 	@IBAction func unwindToAddSkinProblemsFromPhoto(segue: UIStoryboardSegue) {
 		if let sourceViewController = segue.source as? SkinProblemPhotoInformationViewController {
 			if let viewModel = sourceViewController.viewModelCast {
-				viewModelCast.appendNewModel(skinProblemAttachment: viewModel.model)
+				viewModelCast.appendAttachment(skinProblemAttachment: viewModel.model)
 			}
 		}
 	}
@@ -296,6 +312,6 @@ extension AddSkinProblemsViewController: UITableViewDelegate, UITableViewDataSou
 	
 	func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
 		guard editingStyle == .delete else { return }
-		viewModelCast.removeModel(at: indexPath)
+		viewModelCast.removeAttachment(at: indexPath)
 	}
 }

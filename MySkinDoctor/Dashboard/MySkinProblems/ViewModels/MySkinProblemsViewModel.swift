@@ -36,7 +36,6 @@ class MySkinProblemsViewModel: BaseViewModel {
 	
 	func refreshData() {
 		self.fetchInternetModel()
-		refresh!()
 	}
 	
 	override func fetchInternetModel() {
@@ -52,7 +51,7 @@ class MySkinProblemsViewModel: BaseViewModel {
 				print("getSkinProblems")
 				
 				for skinProblemsResponseModel in model as! [SkinProblemsResponseModel] {
-					SkinProblems.parseAndSaveResponse(skinProblemResponseModel: skinProblemsResponseModel)
+					let _ = SkinProblems.parseAndSaveResponse(skinProblemResponseModel: skinProblemsResponseModel)
 				}
 				
 				self.loadDBModel()
@@ -68,7 +67,6 @@ class MySkinProblemsViewModel: BaseViewModel {
 		}
 	}
 
-	
 	override func loadDBModel() {
 		super.loadDBModel()
 		
@@ -77,6 +75,8 @@ class MySkinProblemsViewModel: BaseViewModel {
 			diagnosedItems = allItems.filter { (model) -> Bool in model.isDiagnosed }
 			undiagnosedItems = allItems.filter { (model) -> Bool in !model.isDiagnosed }
 		}
+		
+		if refresh != nil { refresh!() }
 	}
 	
 	func removeModel(at indexPath: IndexPath) {
@@ -90,6 +90,7 @@ class MySkinProblemsViewModel: BaseViewModel {
 			switch result {
 			case .success(_):
 				print("getSkinProblems")
+				DataController.deleteManagedObject(managedObject: item)
 				self.refreshData()
 			case .failure(_, let error):
 				print("error \(error.localizedDescription)")
@@ -177,7 +178,7 @@ extension MySkinProblemsViewModel {
 	
 	func canEditRow(indexPath: IndexPath) -> Bool {
 		if let diagnose = getItemAtIndexPath(indexPath: indexPath).diagnose {
-			return diagnose.diagnoseStatusEnum == .none
+			return diagnose.diagnoseStatusEnum == .draft
 		}
 		return false
 	}

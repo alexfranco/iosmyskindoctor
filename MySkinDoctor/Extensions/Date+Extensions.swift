@@ -114,4 +114,10 @@ extension Date {
 	var iso8601: String {
 		return Formatter.iso8601.string(from: self)
 	}
+	
+	var iso8601WithoutTime: String {
+		let dateFormatter = DateFormatter()
+		dateFormatter.dateFormat = "yyyy-MM-dd"
+		return dateFormatter.string(from: self)
+	}
 }

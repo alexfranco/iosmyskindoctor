@@ -23,6 +23,7 @@ class SkinProblemsResponseModel : BaseResponseModel {
 	var diagnosisTreatment: String?
 	var diagnosisPatientInformation: String?
 	var diagnosisComments: String?
+	var status: Int = 0
 	
 	var attachments: [SkinProblemAttachmentResponseModel] = []
 	
@@ -42,6 +43,7 @@ class SkinProblemsResponseModel : BaseResponseModel {
 		diagnosisTreatment <- map["diagnosis_treatment"]
 		diagnosisPatientInformation <- map["diagnosis_patient_information"]
 		diagnosisComments <- map["diagnosis_comments"]
+		status <- map["status"]
 		attachments <- map["images"]
 		
 		if let dateString = map["date_created"].currentValue as? String, let _date = Formatter.iso8601.date(from: dateString) { dateCreated = _date }

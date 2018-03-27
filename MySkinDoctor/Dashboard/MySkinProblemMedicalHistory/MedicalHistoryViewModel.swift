@@ -93,7 +93,7 @@ class MedicalHistoryViewModel: BaseViewModel {
 			switch result {
 			case .success(let model):
 				print("updateSkinProblems")
-				SkinProblems.parseAndSaveResponse(skinProblemResponseModel: model as! SkinProblemsResponseModel)
+				let _ = SkinProblems.parseAndSaveResponse(skinProblemResponseModel: model as! SkinProblemsResponseModel)
 				self.submitSkinProblems()
 				
 			case .failure(let model, let error):
@@ -111,7 +111,7 @@ class MedicalHistoryViewModel: BaseViewModel {
 			switch result {
 			case .success(let model):
 				print("submitSkinProblem")
-				SkinProblems.parseAndSaveResponse(skinProblemResponseModel: model as! SkinProblemsResponseModel)
+				let _ = SkinProblems.parseAndSaveResponse(skinProblemResponseModel: model as! SkinProblemsResponseModel)
 				self.updateProfileMedicalHistory()
 				self.goNextSegue!()
 				

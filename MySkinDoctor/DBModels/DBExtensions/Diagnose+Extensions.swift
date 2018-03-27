@@ -11,10 +11,11 @@ import CoreData
 
 extension Diagnose {
 	enum DiagnoseStatus: Int16, CustomStringConvertible {
-		case none
-		case submitted
-		case noFutherCommunicationRequired
-		case bookConsultationRequest
+		case unknown = 0
+		case draft = 1
+		case submitted = 2
+		case bookConsultationRequest = 3
+		case noFutherCommunicationRequired = 4
 
 		var index: Int16 {
 			return rawValue
@@ -22,7 +23,9 @@ extension Diagnose {
 
 		var description: String {
 			switch self {
-			case .none:
+			case .unknown:
+				return "Draft"
+			case .draft:
 				return "Draft"
 			case .submitted:
 				return "Submitted"
