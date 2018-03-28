@@ -67,9 +67,9 @@ class ProfileViewController: FormViewController {
 			gpNameTextField.bind { self.viewModelCast.gpName = $0 }
 		}
 	}
-	@IBOutlet weak var gpAccessCodeTextField: ProfileTextField!  {
+	@IBOutlet weak var accessCodeTextField: ProfileTextField!  {
 		didSet {
-			gpAccessCodeTextField.bind { self.viewModelCast.gpAccessCode = $0 }
+			accessCodeTextField.bind { self.viewModelCast.accessCode = $0 }
 		}
 	}
 	
@@ -122,7 +122,7 @@ class ProfileViewController: FormViewController {
 									  townTextField,
 									  postcodeTextField,
 									  gpNameTextField,
-									  gpAccessCodeTextField,
+									  accessCodeTextField,
 									  gpAddressLineTextField,
 									  gpPostcodeTextField])
 		
@@ -206,7 +206,7 @@ class ProfileViewController: FormViewController {
 		postcodeTextField.placeholder = NSLocalizedString("postcode", comment: "")
 		
 		gpNameTextField.placeholder = NSLocalizedString("gp_name", comment: "")
-		gpAccessCodeTextField.placeholder = NSLocalizedString("gp_access_code", comment: "")
+		accessCodeTextField.placeholder = NSLocalizedString("gp_access_code", comment: "")
 		gpAddressLineTextField.placeholder = NSLocalizedString("gp_address_line", comment: "")
 		gpPostcodeTextField.placeholder = NSLocalizedString("gp_postcode", comment: "")
 		
@@ -267,7 +267,7 @@ class ProfileViewController: FormViewController {
 		townTextField.text = viewModelCast.town
 		postcodeTextField.text = viewModelCast.postcode
 		gpNameTextField.text = viewModelCast.gpName
-		gpAccessCodeTextField.text = viewModelCast.gpAccessCode
+		accessCodeTextField.text = viewModelCast.accessCode
 		gpAddressLineTextField.text = viewModelCast.gpAddressLine
 		gpPostcodeTextField.text = viewModelCast.gpPostcode
 		permisionSwitch.isOn = viewModelCast.isPermisionEnabled

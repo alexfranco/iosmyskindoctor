@@ -22,7 +22,7 @@ extension Profile {
     @NSManaged public var dob: NSDate?
     @NSManaged public var email: String?
     @NSManaged public var firstName: String?
-    @NSManaged public var gpAccessCode: String?
+    @NSManaged public var accessCode: String?
     @NSManaged public var gpAddressLine: String?
     @NSManaged public var gpName: String?
     @NSManaged public var gpPostcode: String?

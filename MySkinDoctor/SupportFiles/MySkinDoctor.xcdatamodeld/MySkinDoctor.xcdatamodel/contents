@@ -46,12 +46,12 @@
         <relationship name="skinProblems" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SkinProblems" inverseName="medicalHistory" inverseEntity="SkinProblems" syncable="YES"/>
     </entity>
     <entity name="Profile" representedClassName="Profile" syncable="YES">
+        <attribute name="accessCode" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="addressLine1" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="addressLine2" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="dob" optional="YES" attributeType="Date" defaultDateTimeInterval="542644500" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="gpAccessCode" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="gpAddressLine" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="gpName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="gpPostcode" optional="YES" attributeType="String" syncable="YES"/>

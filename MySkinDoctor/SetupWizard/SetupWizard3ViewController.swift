@@ -16,9 +16,9 @@ class SetupWizard3ViewController: FormViewController {
 			gpNameTextField.bind { self.viewModelCast.gpName = $0 }
 		}
 	}
-	@IBOutlet weak var gpAccessCodeTextField: FormTextField! {
+	@IBOutlet weak var accessCodeTextField: FormTextField! {
 		didSet {
-			gpAccessCodeTextField.bind { self.viewModelCast.gpAccessCode = $0 }
+			accessCodeTextField.bind { self.viewModelCast.accessCode = $0 }
 		}
 	}
 	
@@ -47,7 +47,7 @@ class SetupWizard3ViewController: FormViewController {
 			navigationController?.setBackgroundColorWithoutShadowImage(bgColor: AppStyle.defaultNavigationBarColor, titleColor: AppStyle.defaultNavigationBarTitleColor)
 		
 		registerForKeyboardReturnKey([gpNameTextField,
-									  gpAccessCodeTextField,
+									  accessCodeTextField,
 									  gpAddressLineTextField,
 									  gpPostcodeTextField])
 		
@@ -97,7 +97,7 @@ class SetupWizard3ViewController: FormViewController {
 		
 		yourGPInformationLabel.text = NSLocalizedString("setup_wizard3_your_gp_information", comment: "")
 		gpNameTextField.placeholder = NSLocalizedString("gp_name", comment: "")
-		gpAccessCodeTextField.placeholder = NSLocalizedString("gp_access_code", comment: "")
+		accessCodeTextField.placeholder = NSLocalizedString("gp_access_code", comment: "")
 		gpAddressLineTextField.placeholder = NSLocalizedString("gp_address_line", comment: "")
 		gpPostcodeTextField.placeholder = NSLocalizedString("gp_postcode", comment: "")
 		

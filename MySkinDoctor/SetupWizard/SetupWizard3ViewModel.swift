@@ -13,7 +13,7 @@ class SetupWizard3ViewModel: BaseViewModel {
 	var profile: Profile!
 	
 	var gpName = ""
-	var gpAccessCode = ""
+	var accessCode = ""
 	var gpAddressLine = ""
 	var gpPostcode = ""
 	var isPermisionEnabled = false
@@ -35,9 +35,7 @@ class SetupWizard3ViewModel: BaseViewModel {
 			switch result {
 			case .success(let model):
 				print("get Profile")
-				let modelCast = model as! ProfileResponseModel
-				
-				self.parseResponseModel(model: modelCast)
+				let _ = Profile.parseAndSavProfileResponse(profileResponseModel: model as! ProfileResponseModel)
 				self.loadDBModel()
 				self.onFetchFinished!()
 				
@@ -46,21 +44,6 @@ class SetupWizard3ViewModel: BaseViewModel {
 				self.showResponseErrorAlert!(model as? BaseResponseModel, error)
 			}
 		}
-	}
-	
-	internal override func parseResponseModel(model: BaseResponseModel) {
-		super.parseResponseModel(model: model)
-		
-		let modelCast = model as! ProfileResponseModel
-		
-		let profile = DataController.createUniqueEntity(type: Profile.self)
-		
-		profile.gpName = modelCast.gpName
-		profile.gpAddressLine = modelCast.gpAddress
-		profile.gpPostcode = modelCast.gpPostcode
-		profile.isPermisionEnabled = modelCast.gpContactPermission
-		
-		DataController.saveEntity(managedObject: profile)
 	}
 	
 	override func loadDBModel() {
@@ -86,7 +69,7 @@ class SetupWizard3ViewModel: BaseViewModel {
 				
 				let profile = DataController.createUniqueEntity(type: Profile.self)
 				profile.gpName = self.gpName
-				profile.gpAccessCode = self.gpAccessCode
+				profile.accessCode = self.accessCode
 				profile.gpAddressLine = self.gpAddressLine
 				profile.gpPostcode = self.gpPostcode
 				profile.isPermisionEnabled = self.isPermisionEnabled

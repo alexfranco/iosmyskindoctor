@@ -53,9 +53,7 @@ class SetupWizard1ViewModel: BaseViewModel {
 			switch result {
 			case .success(let model):
 				print("get Profile")
-				let modelCast = model as! ProfileResponseModel
-				
-				self.parseResponseModel(model: modelCast)
+				let _ = Profile.parseAndSavProfileResponse(profileResponseModel: model as! ProfileResponseModel)
 				self.loadDBModel()
 				self.onFetchFinished!()
 				
@@ -64,29 +62,6 @@ class SetupWizard1ViewModel: BaseViewModel {
 				self.showResponseErrorAlert!(model as? BaseResponseModel, error)
 			}
 		}
-	}
-
-	internal override func parseResponseModel(model: BaseResponseModel) {
-		super.parseResponseModel(model: model)
-		
-		let modelCast = model as! ProfileResponseModel
-		
-		let profile = DataController.createUniqueEntity(type: Profile.self)
-		
-		profile.firstName = modelCast.firstName
-		profile.lastName = modelCast.lastName
-		
-		profile.phone = modelCast.mobileNumber
-		profile.postcode = modelCast.postcode
-		profile.town = modelCast.town
-		profile.gpName = modelCast.gpName
-		profile.gpAddressLine = modelCast.gpAddress
-		profile.gpPostcode = modelCast.gpPostcode
-		profile.isNHS = modelCast.selfPay ?? false
-		
-		if let dobSafe = modelCast.dob as NSDate? { profile.dob = dobSafe }
-		
-		DataController.saveEntity(managedObject: profile)
 	}
 
 	override func loadDBModel() {

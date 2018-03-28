@@ -434,6 +434,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="1200"/>
                     <connections>
+                        <outlet property="accessCodeTextField" destination="woI-UJ-7r9" id="POj-hB-CeO"/>
                         <outlet property="address1TextField" destination="Hd3-VD-Uvd" id="61g-aY-kMJ"/>
                         <outlet property="address2TextField" destination="Gcx-MD-21v" id="R2i-m8-vgR"/>
                         <outlet property="changePasswordButton" destination="LyX-SI-Tk6" id="0ty-QK-pmz"/>
@@ -441,7 +442,6 @@
                         <outlet property="dobTextField" destination="Yp1-wZ-c3h" id="Gaj-mL-w3g"/>
                         <outlet property="emailLabel" destination="YXW-J2-Htj" id="ulZ-si-qrB"/>
                         <outlet property="firstNameTextField" destination="g3n-gf-99a" id="6Eb-mw-JwR"/>
-                        <outlet property="gpAccessCodeTextField" destination="woI-UJ-7r9" id="POj-hB-CeO"/>
                         <outlet property="gpAddressLineTextField" destination="7CK-hX-Qkt" id="Umd-cy-9Ie"/>
                         <outlet property="gpInformationSectionLabel" destination="TFY-JO-cOm" id="6Ln-7S-ouq"/>
                         <outlet property="gpNameTextField" destination="ccm-Ib-i9a" id="Ik3-YI-0lc"/>
@@ -1099,7 +1099,7 @@
                     <navigationItem key="navigationItem" id="YQA-Kk-NYc"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="gpAccessCodeTextField" destination="zwE-3w-DdJ" id="G6j-Fr-yve"/>
+                        <outlet property="accessCodeTextField" destination="zwE-3w-DdJ" id="G6j-Fr-yve"/>
                         <outlet property="gpAddressLineTextField" destination="TUa-i8-xV5" id="9Pe-2z-p56"/>
                         <outlet property="gpNameTextField" destination="eqa-q2-Ly5" id="RYU-Gv-baX"/>
                         <outlet property="gpPostcodeTextField" destination="m8W-c7-A3E" id="Uft-cD-GfJ"/>

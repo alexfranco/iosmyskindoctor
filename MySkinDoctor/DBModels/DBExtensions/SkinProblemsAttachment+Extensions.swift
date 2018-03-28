@@ -1,5 +1,5 @@
 //
-//  SkinProblemsAttachment+Extentions.swift
+//  SkinProblemsAttachment+Extensions.swift
 //  MySkinDoctor
 //
 //  Created by Alex on 23/03/2018.

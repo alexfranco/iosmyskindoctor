@@ -53,7 +53,7 @@ class ProfileViewModel: BaseViewModel {
 	var town = ""
 	var postcode = ""
 	var gpName = ""
-	var gpAccessCode = ""
+	var accessCode = ""
 	var gpAddressLine = ""
 	var gpPostcode = ""
 	var isPermisionEnabled = true
@@ -88,9 +88,8 @@ class ProfileViewModel: BaseViewModel {
 			switch result {
 			case .success(let model):
 				print("get Profile")
-				self.parseResponseModel(model: model as! BaseResponseModel)
+				let _ = Profile.parseAndSavProfileResponse(profileResponseModel: model as! ProfileResponseModel)
 				self.loadDBModel()
-				
 				self.onFetchFinished!()
 				
 			case .failure(let model, let error):
@@ -98,29 +97,6 @@ class ProfileViewModel: BaseViewModel {
 				self.showResponseErrorAlert!(model as? BaseResponseModel, error)
 			}
 		}
-	}
-	
-	override func parseResponseModel(model: BaseResponseModel) {
-		super.parseResponseModel(model: model)
-		
-		let modelCast = model as! ProfileResponseModel
-		
-		let profile = DataController.createUniqueEntity(type: Profile.self)
-		
-		profile.firstName = modelCast.firstName
-		profile.lastName = modelCast.lastName
-		
-		profile.phone = modelCast.mobileNumber
-		profile.postcode = modelCast.postcode
-		profile.town = modelCast.town
-		profile.gpName = modelCast.gpName
-		profile.gpAddressLine = modelCast.gpAddress
-		profile.gpPostcode = modelCast.gpPostcode
-		profile.isNHS = modelCast.selfPay ?? false
-		
-		if let dobSafe = modelCast.dob as NSDate? { profile.dob = dobSafe }
-		
-		DataController.saveEntity(managedObject: profile)
 	}
 	
 	override func loadDBModel() {
@@ -143,7 +119,7 @@ class ProfileViewModel: BaseViewModel {
 		town = profile.town ?? ""
 		postcode = profile.postcode ?? ""
 		gpName = profile.gpName ?? ""
-		gpAccessCode = profile.gpAccessCode ?? ""
+		accessCode = profile.accessCode ?? ""
 		gpAddressLine = profile.gpAddressLine ?? ""
 		gpPostcode = profile.gpPostcode ?? ""
 		isPermisionEnabled = profile.isPermisionEnabled
@@ -181,7 +157,7 @@ class ProfileViewModel: BaseViewModel {
 				self.profile.town = self.town
 				self.profile.postcode = self.postcode
 				self.profile.gpName = self.gpName
-				self.profile.gpAccessCode = self.gpAccessCode
+				self.profile.accessCode = self.accessCode
 				self.profile.gpAddressLine = self.gpAddressLine
 				self.profile.gpPostcode = self.gpPostcode
 				self.profile.isPermisionEnabled = self.isPermisionEnabled

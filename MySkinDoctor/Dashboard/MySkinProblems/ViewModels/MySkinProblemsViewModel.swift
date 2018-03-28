@@ -41,14 +41,14 @@ class MySkinProblemsViewModel: BaseViewModel {
 	override func fetchInternetModel() {
 		super.fetchInternetModel()
 		
-		isLoading = true
-		
+//		isLoading = true
+		print("fetchInternetModel")
 		ApiUtils.getAllSkinProblems(accessToken: DataController.getAccessToken()) { (result) in
-			self.isLoading = false
+//			self.isLoading = false
+			print("getAllSkinProblems Finished")
 			
 			switch result {
 			case .success(let model):
-				print("getSkinProblems")
 				
 				for skinProblemsResponseModel in model as! [SkinProblemsResponseModel] {
 					let _ = SkinProblems.parseAndSaveResponse(skinProblemResponseModel: skinProblemsResponseModel)
