@@ -8,13 +8,15 @@
 
 import Foundation
 import UIKit
+import SDWebImage
 
 class SkinProblemTableCellViewModel : NSObject {
 	
 	var name: String!
 	var location: String!
 	var problemDescription: String!
-	var problemImage: UIImage
+	var problemPlaceHolder: UIImage!
+	var problemImageUrl: URL?
 		
 	required init(withModel model: SkinProblemAttachment, index: Int) {
 		self.name = String.init(format: "%@ %d", NSLocalizedString("photo", comment: ""), index + 1)
@@ -25,12 +27,15 @@ class SkinProblemTableCellViewModel : NSObject {
 			self.location = model.locationTypeEnum.description
 		}
 		
-		if let profileImageSafe = model.problemImage as? UIImage {
-			problemImage = profileImageSafe
-		} else {
-			problemImage = UIImage.init(color: AppStyle.profileImageViewPlaceHolder)!
+		problemDescription = model.problemDescription
+		
+		problemPlaceHolder = UIImage.init(color: AppStyle.profileImageViewPlaceHolder)!
+		if let problemImage = model.problemImage as? UIImage {
+			problemPlaceHolder = problemImage
 		}
-				
+		
+		problemImageUrl = URL.init(string: model.url ?? "")
+						
 		self.problemDescription = model.problemDescription
 		
 		super.init()

@@ -40,7 +40,7 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>NSCameraUsageDescription</key>
-	<string>You can take picture of your skin problems.</string>
+	<string>$(PRODUCT_NAME) will use the camera when you upload a skin problem</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>You can select pictures to attach to your skin problems.</string>
 </dict>

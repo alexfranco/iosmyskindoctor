@@ -31,7 +31,6 @@ class MySkinProblemsViewModel: BaseViewModel {
 	override init() {
 		super.init()
 		self.loadDBModel()
-		self.fetchInternetModel()
 	}
 	
 	func refreshData() {
@@ -132,11 +131,11 @@ extension MySkinProblemsViewModel {
 		
 		switch selectedSegmented {
 		case .all:
-			headerTitle = section == MySkinProblemsViewModel.undiagnosedSection ? String.init(format: "%@ (%d)", NSLocalizedString("myskinproblems_segmented_undiagnosed", comment: "")) : String.init(format: "%@ (%d)", NSLocalizedString("myskinproblems_segmented_diagnosed", comment: ""))
+			headerTitle = section == MySkinProblemsViewModel.undiagnosedSection ? String.init(format: "%@ (%d)", NSLocalizedString("myskinproblems_segmented_undiagnosed", comment: ""), undiagnosedItems.count) : String.init(format: "%@ (%d)", NSLocalizedString("myskinproblems_segmented_diagnosed", comment: ""), diagnosedItems.count)
 		case .undiagnosed:
-			headerTitle = String.init(format: "%@ (%d)", NSLocalizedString("myskinproblems_segmented_undiagnosed", comment: ""))
+			headerTitle = String.init(format: "%@ (%d)", NSLocalizedString("myskinproblems_segmented_undiagnosed", comment: ""), undiagnosedItems.count)
 		case .diagnosed:
-			headerTitle = String.init(format: "%@ (%d)", NSLocalizedString("myskinproblems_segmented_diagnosed", comment: ""))
+			headerTitle = String.init(format: "%@ (%d)", NSLocalizedString("myskinproblems_segmented_diagnosed", comment: ""), diagnosedItems.count)
 		}
 		
 		return String.init(format: headerTitle.uppercased(), getDataSourceCount(section: section))

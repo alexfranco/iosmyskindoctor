@@ -114,13 +114,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="10g-25-XVF"/>
                     </view>
-                    <navigationItem key="navigationItem" title="MyConsults" id="aBO-BM-RCc">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="5v8-dc-ZCe">
-                            <connections>
-                                <segue destination="xmv-mi-Ftn" kind="presentation" id="jTz-TK-49U"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="MyConsults" id="aBO-BM-RCc"/>
                     <connections>
                         <outlet property="segmentedControl" destination="8pX-cx-JOp" id="ll9-yX-QEX"/>
                         <outlet property="tableView" destination="XGW-ax-xgg" id="Mol-nf-n38"/>
@@ -334,7 +328,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A5p-5V-Fpi">
                                                 <rect key="frame" x="0.0" y="800" width="335" height="160.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Permission to contact your GP?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dHL-eo-BLh">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Permission to contact your GP?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dHL-eo-BLh" customClass="GrayLabel" customModule="MySkinDoctor" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="15" width="273" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>

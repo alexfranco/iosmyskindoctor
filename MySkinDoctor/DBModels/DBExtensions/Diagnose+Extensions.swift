@@ -30,9 +30,9 @@ extension Diagnose {
 			case .submitted:
 				return "Submitted"
 			case .bookConsultationRequest:
-				return "Consultation Request"
+				return "Consultation request"
 			case .noFutherCommunicationRequired:
-				return "Futher comunication Required"
+				return "No further communication required"
 			}
 		}
 	}

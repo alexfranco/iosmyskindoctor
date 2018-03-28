@@ -62,7 +62,7 @@ class PhotoUtils: NSObject, UIGestureRecognizerDelegate, UIImagePickerController
 			viewController?.present(pickerController, animated: true, completion: nil)
 		}
 	}
-	
+
 	// MARK: UIImagePickerControllerDelegate
 	
 	func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {

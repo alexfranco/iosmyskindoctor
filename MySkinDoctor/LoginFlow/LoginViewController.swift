@@ -80,6 +80,7 @@ class LoginViewController: FormViewController {
 	// MARK: IBActions
 	
 	@IBAction func onNextButtonPressed(_ sender: Any) {
+		self.view.endEditing(true)
 		viewModelCast.loginUser()
 	}
 	

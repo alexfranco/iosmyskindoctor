@@ -56,6 +56,42 @@ class CoreDataStack {
 		return managedObjectContext
 	}()
 	
+	static func deleteAllObjects(completionHandler: @escaping (() -> Void)) {
+		let entitesByName = CoreDataStack.persistentStoreCoordinator.managedObjectModel.entitiesByName
+			
+		for (_, entityDescription) in entitesByName {
+			if !CoreDataStack.deleteAllObjectsForEntity(entity: entityDescription) {
+				print("deleteAllObjects failed")
+				completionHandler()
+				return
+			}
+		}
+		
+		CoreDataStack.managedObjectContext.performAndWait {
+			CoreDataStack.saveContext()
+		}
+		
+		completionHandler()
+	}
+	
+	static func deleteAllObjectsForEntity(entity: NSEntityDescription) -> Bool {
+		let fetchRequest = NSFetchRequest<NSFetchRequestResult>()
+		fetchRequest.entity = entity
+		fetchRequest.fetchBatchSize = 50
+		
+		do {
+			let fetchResults = try CoreDataStack.managedObjectContext.fetch(fetchRequest)
+			
+			for object in fetchResults {
+				CoreDataStack.managedObjectContext.delete(object as! NSManagedObject)
+			}
+		} catch {
+			return false
+		}
+		
+		return true
+	}
+	
 	// MARK: - Core Data Saving support
 	
 	static func saveContext () {

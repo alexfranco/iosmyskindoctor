@@ -13,7 +13,7 @@ extension Formatter {
 		let formatter = DateFormatter()
 		formatter.calendar = Calendar(identifier: .iso8601)
 		formatter.timeZone = TimeZone(secondsFromGMT: 0)
-		formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSXXXXX"
+		formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
 		return formatter
 	}()
 }

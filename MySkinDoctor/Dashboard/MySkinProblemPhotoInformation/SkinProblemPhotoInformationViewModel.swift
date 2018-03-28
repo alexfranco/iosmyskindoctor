@@ -48,6 +48,7 @@ class SkinProblemPhotoInformationViewModel: BaseViewModel {
 		model.attachmentTypeEnum = attachmentType
 		model.problemDescription = problemDescription
 		model.problemImage = problemImage
+		model.filename = AWS3Utils.storeImage(image: problemImage)
 		
 		if attachmentType == .photo {
 			goPhotoLocation!()

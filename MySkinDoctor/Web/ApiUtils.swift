@@ -40,7 +40,7 @@ class ApiUtils {
 		case noErrors
 		case permisionDenied
 		case authorizationError
-
+		case connectionError
 	}
 	
 	enum ApiMethod: String {
@@ -50,6 +50,7 @@ class ApiUtils {
 		case userProfile = "/api/msd-profiles/user/"
 		case changePassword = "/api/accounts/password/change/"
 		case logout = "/api/accounts/logout/"
+		case accessCode = "/api/accounts/access-code/use/"
 		
 		case patientUpdate = "/api/accounts/patient/"
 		case skinProblems = "/api/cases/case/"
@@ -198,6 +199,16 @@ extension ApiUtils {
 		
 		ApiUtils.request(url: url, httpMethod: HTTPMethod.post, params: nil, parseToModelType: SkinProblemsResponseModel.self, accessToken: accessToken, completionHandler: completionHandler)
 	}
+	
+	static func accessCode(accessToken: String, accesscode: String, completionHandler: @escaping ((_ result: ApiResult) -> Void)) {
+		let url = ApiUtils.getApiUrl(ApiMethod.accessCode, nil)
+		
+		var params: Parameters = [:]
+		params.updateValue(accesscode, forKey: "code")
+		
+		ApiUtils.request(url: url, httpMethod: HTTPMethod.post, params: params, parseToModelType: AccessCodeResponseModel.self, accessToken: accessToken, completionHandler: completionHandler)
+	}
+	
 }
 
 // MARK: Utils
@@ -322,5 +333,3 @@ extension ApiUtils {
 		}
 	}
 }
-
-

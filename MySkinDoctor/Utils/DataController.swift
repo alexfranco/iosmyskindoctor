@@ -169,13 +169,14 @@ class DataController {
 	}
 	
 	private static func clearDataAfterLoggedOut() {
-		let defaults = UserDefaults.standard
-		defaults.set(false, forKey: UserDefaultConsts.isUserLoggedIn)
-		defaults.set(false, forKey: UserDefaultConsts.isFirstTime)
-		defaults.removeObject(forKey: UserDefaultConsts.email)
-		deleteEntity(type: Profile.self)
-		
-		let appDelegate = UIApplication.shared.delegate as! AppDelegate
-		appDelegate.updateRootVC()
+		CoreDataStack.deleteAllObjects { () in
+			let defaults = UserDefaults.standard
+			defaults.set(false, forKey: UserDefaultConsts.isUserLoggedIn)
+			defaults.set(false, forKey: UserDefaultConsts.isFirstTime)
+			defaults.removeObject(forKey: UserDefaultConsts.email)
+			
+			let appDelegate = UIApplication.shared.delegate as! AppDelegate
+			appDelegate.updateRootVC()
+		}
 	}
 }

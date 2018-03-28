@@ -36,6 +36,8 @@ extension UIViewController {
 				showAlertView(title: "Error", message: "There is an error with the HTTP query.")
 			case .noErrors: break
 				// nothing
+			case .connectionError:
+				showAlertView(title: NSLocalizedString("offline_generic_title", comment: ""), message:  NSLocalizedString("offline_generic_message", comment: ""))
 			default:
 				showAlertView(title: "Error", message: "There is an unknown error")
 			}

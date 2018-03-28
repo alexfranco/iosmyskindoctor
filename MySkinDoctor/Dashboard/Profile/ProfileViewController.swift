@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import AWSS3
+import SDWebImage
 
 class ProfileViewController: FormViewController {
 	
@@ -278,6 +280,7 @@ class ProfileViewController: FormViewController {
 	}
 	
 	@IBAction func onSaveButtonPressed(_ sender: Any) {
+		self.view.endEditing(true)
 		viewModelCast.saveModel()
 	}
 	
@@ -285,7 +288,21 @@ class ProfileViewController: FormViewController {
 		viewModelCast.isPermisionEnabled = permisionSwitch.isOn
 	}
 	@IBAction func onLogoutPressed(_ sender: Any) {
-		DataController.logout()
+		let alertController = UIAlertController (
+			title: NSLocalizedString("profile_personal_logout_are_you_sure_title", comment: ""),
+			message: NSLocalizedString("profile_personal_logout_are_you_sure_message", comment: ""),
+			preferredStyle: .alert)
+		
+		let cancelAction = UIAlertAction(title: NSLocalizedString("cancel", comment: ""), style: .cancel) { (action) in
+		}
+		
+		let yesAction = UIAlertAction(title: NSLocalizedString("yes", comment: ""), style: .destructive) { (action) in
+			DataController.logout()
+		}
+		
+		alertController.addAction(cancelAction)
+		alertController.addAction(yesAction)
+		self.present(alertController, animated: true) {}
 	}
 }
 

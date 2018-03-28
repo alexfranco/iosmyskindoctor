@@ -283,6 +283,12 @@
 		FAFD8FFE2069468B008DBAB9 /* String+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD8FFC2069468B008DBAB9 /* String+Extentions.swift */; };
 		FAFD9000206B8C7D008DBAB9 /* Profile+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD8FFF206B8C7D008DBAB9 /* Profile+Extensions.swift */; };
 		FAFD9001206B8C7D008DBAB9 /* Profile+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD8FFF206B8C7D008DBAB9 /* Profile+Extensions.swift */; };
+		FAFD9003206B9D02008DBAB9 /* AWS3Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD9002206B9D02008DBAB9 /* AWS3Utils.swift */; };
+		FAFD9004206B9D02008DBAB9 /* AWS3Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD9002206B9D02008DBAB9 /* AWS3Utils.swift */; };
+		FAFD9006206BCA97008DBAB9 /* MySkinDoctorLive.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAFD9005206BCA97008DBAB9 /* MySkinDoctorLive.plist */; };
+		FAFD9007206BCA97008DBAB9 /* MySkinDoctorLive.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAFD9005206BCA97008DBAB9 /* MySkinDoctorLive.plist */; };
+		FAFD9009206BDCF8008DBAB9 /* AccessCodeResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD9008206BDCF8008DBAB9 /* AccessCodeResponseModel.swift */; };
+		FAFD900A206BDCF8008DBAB9 /* AccessCodeResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD9008206BDCF8008DBAB9 /* AccessCodeResponseModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -334,7 +340,6 @@
 		78B9E527203C4A920054CAD3 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		78B9E529203C4AF20054CAD3 /* Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consts.swift; sourceTree = "<group>"; };
 		78B9E553203C4CD70054CAD3 /* MySkinDoctorLive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySkinDoctorLive.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		78B9E554203C4CD70054CAD3 /* MySkinDoctorLive.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = MySkinDoctorLive.plist; path = /Users/alexnunez/iosmyskindoctor/MySkinDoctor/MySkinDoctorLive.plist; sourceTree = "<absolute>"; };
 		78B9E555203C4CED0054CAD3 /* MySkinDoctor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MySkinDoctor.entitlements; sourceTree = "<group>"; };
 		78B9E556203C4CF30054CAD3 /* MySkinDoctorLive.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MySkinDoctorLive.entitlements; sourceTree = "<group>"; };
 		78B9E557203C4ED70054CAD3 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -445,6 +450,9 @@
 		FAF2CED1204D745D0001EEAB /* UILabel+RoundedBorders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+RoundedBorders.swift"; sourceTree = "<group>"; };
 		FAFD8FFC2069468B008DBAB9 /* String+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extentions.swift"; sourceTree = "<group>"; };
 		FAFD8FFF206B8C7D008DBAB9 /* Profile+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile+Extensions.swift"; sourceTree = "<group>"; };
+		FAFD9002206B9D02008DBAB9 /* AWS3Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWS3Utils.swift; sourceTree = "<group>"; };
+		FAFD9005206BCA97008DBAB9 /* MySkinDoctorLive.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MySkinDoctorLive.plist; sourceTree = "<group>"; };
+		FAFD9008206BDCF8008DBAB9 /* AccessCodeResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessCodeResponseModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -546,6 +554,7 @@
 				78E44AA5203EBE5C0094F3AF /* PasswordStrength.swift */,
 				FA33268520440EA400657C8A /* PhotoUtils.swift */,
 				FA6E8F6E2056CE87001F6E16 /* DataController.swift */,
+				FAFD9002206B9D02008DBAB9 /* AWS3Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -856,6 +865,7 @@
 				FA8CFC7E2062A7A20067C11F /* ProfileResponseModel.swift */,
 				78FB31992063CD4B00F155AE /* SkinProblemsResponseModel.swift */,
 				FA8CFC85206540CD0067C11F /* SkinProblemAttachmentResponseModel.swift */,
+				FAFD9008206BDCF8008DBAB9 /* AccessCodeResponseModel.swift */,
 			);
 			path = APIModels;
 			sourceTree = "<group>";
@@ -913,7 +923,7 @@
 				78B9E555203C4CED0054CAD3 /* MySkinDoctor.entitlements */,
 				78B9E556203C4CF30054CAD3 /* MySkinDoctorLive.entitlements */,
 				FAE733D02034494D00898E65 /* MySkinDoctor.plist */,
-				78B9E554203C4CD70054CAD3 /* MySkinDoctorLive.plist */,
+				FAFD9005206BCA97008DBAB9 /* MySkinDoctorLive.plist */,
 				FA6E8F642056CC64001F6E16 /* DBModels */,
 				78B9E51F203C2DBD0054CAD3 /* BaseViewControllers */,
 				FA3326A520441C8500657C8A /* Custom */,
@@ -1099,6 +1109,7 @@
 				78B9E54A203C4CD70054CAD3 /* Assets.xcassets in Resources */,
 				788C3208204E7D680078A983 /* MySkinProblems.storyboard in Resources */,
 				78B9E54B203C4CD70054CAD3 /* Main.storyboard in Resources */,
+				FAFD9007206BCA97008DBAB9 /* MySkinDoctorLive.plist in Resources */,
 				78B9E54D203C4CD70054CAD3 /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1107,6 +1118,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAFD9006206BCA97008DBAB9 /* MySkinDoctorLive.plist in Resources */,
 				FA6130DB20503F9500731495 /* BookConsult.storyboard in Resources */,
 				78B9E558203C4ED70054CAD3 /* Podfile in Resources */,
 				78B9E520203C2E630054CAD3 /* Localizable.strings in Resources */,
@@ -1179,6 +1191,9 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MySkinDoctorLive/Pods-MySkinDoctorLive-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AWSCognito/AWSCognito.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSS3/AWSS3.framework",
 				"${BUILT_PRODUCTS_DIR}/ActionSheetPicker-3.0/ActionSheetPicker_3_0.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/BSKeyboardControls/BSKeyboardControls.framework",
@@ -1188,12 +1203,16 @@
 				"${BUILT_PRODUCTS_DIR}/JSONModel/JSONModel.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SZTextView/SZTextView.framework",
 				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCognito.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSS3.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ActionSheetPicker_3_0.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BSKeyboardControls.framework",
@@ -1203,6 +1222,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSONModel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SZTextView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -1234,6 +1254,9 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MySkinDoctor/Pods-MySkinDoctor-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AWSCognito/AWSCognito.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSS3/AWSS3.framework",
 				"${BUILT_PRODUCTS_DIR}/ActionSheetPicker-3.0/ActionSheetPicker_3_0.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/BSKeyboardControls/BSKeyboardControls.framework",
@@ -1243,12 +1266,16 @@
 				"${BUILT_PRODUCTS_DIR}/JSONModel/JSONModel.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SZTextView/SZTextView.framework",
 				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCognito.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSS3.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ActionSheetPicker_3_0.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BSKeyboardControls.framework",
@@ -1258,6 +1285,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSONModel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SZTextView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -1281,6 +1309,7 @@
 				78B9E530203C4CD70054CAD3 /* RegistrationResponseModel.swift in Sources */,
 				78264732205800FB00F79FB7 /* SkinProblemAttachment+CoreDataClass.swift in Sources */,
 				78DBCE502051741500C0D4B5 /* MySkinProblemDiagnosisViewController.swift in Sources */,
+				FAFD900A206BDCF8008DBAB9 /* AccessCodeResponseModel.swift in Sources */,
 				FAFD9001206B8C7D008DBAB9 /* Profile+Extensions.swift in Sources */,
 				FADC33402046E8C80065A7EB /* FormTextView.swift in Sources */,
 				78264731205800FB00F79FB7 /* Diagnose+CoreDataProperties.swift in Sources */,
@@ -1299,6 +1328,7 @@
 				FABC7A33205C010000167FFA /* ChangePasswordViewModel.swift in Sources */,
 				FA3326BB20441C8500657C8A /* CustomErrors.swift in Sources */,
 				7826473A205800FB00F79FB7 /* Profile+CoreDataClass.swift in Sources */,
+				FAFD9004206B9D02008DBAB9 /* AWS3Utils.swift in Sources */,
 				FA33265C2040336F00657C8A /* PhotoViewController.swift in Sources */,
 				FAFD8FFE2069468B008DBAB9 /* String+Extentions.swift in Sources */,
 				FAD6ADBD204461050050C1A9 /* AddSkinProblemsViewController.swift in Sources */,
@@ -1415,6 +1445,7 @@
 				FAC1AF112036FCE200547BBC /* RegistrationResponseModel.swift in Sources */,
 				78DBCE4F2051741500C0D4B5 /* MySkinProblemDiagnosisViewController.swift in Sources */,
 				FADC333F2046E8C80065A7EB /* FormTextView.swift in Sources */,
+				FAFD9009206BDCF8008DBAB9 /* AccessCodeResponseModel.swift in Sources */,
 				FAFD9000206B8C7D008DBAB9 /* Profile+Extensions.swift in Sources */,
 				7826470E2057D49E00F79FB7 /* Consultation+CoreDataClass.swift in Sources */,
 				FA332656204029BD00657C8A /* MySkinProblemsViewModel.swift in Sources */,
@@ -1433,6 +1464,7 @@
 				FAA774FA20529F8100A794FF /* MySkinProblemDiagnoseUpdateRequestViewModel.swift in Sources */,
 				FABC7A32205C010000167FFA /* ChangePasswordViewModel.swift in Sources */,
 				782647082057D49E00F79FB7 /* SkinProblems+CoreDataClass.swift in Sources */,
+				FAFD9003206B9D02008DBAB9 /* AWS3Utils.swift in Sources */,
 				7826470C2057D49E00F79FB7 /* SkinProblemAttachment+CoreDataClass.swift in Sources */,
 				FAFD8FFD2069468B008DBAB9 /* String+Extentions.swift in Sources */,
 				FA3326BA20441C8500657C8A /* CustomErrors.swift in Sources */,

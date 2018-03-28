@@ -23,7 +23,11 @@ extension Profile {
 		profile.gpName = profileResponseModel.gpName
 		profile.gpAddressLine = profileResponseModel.gpAddress
 		profile.gpPostcode = profileResponseModel.gpPostcode
-		profile.accessCode = profileResponseModel.accessCodes.first
+		
+		if let firstAccessCode = profileResponseModel.accessCodes.first, let code = firstAccessCode.code {
+			profile.accessCode = code
+		}
+		
 		profile.isNHS = profileResponseModel.selfPay ?? false
 		
 		if let dobSafe = profileResponseModel.dob as NSDate? { profile.dob = dobSafe }

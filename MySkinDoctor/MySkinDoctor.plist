@@ -39,5 +39,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>$(PRODUCT_NAME) will use the camera when you upload a skin problem</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>You can select pictures to attach to your skin problems.</string>
 </dict>
 </plist>

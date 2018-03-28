@@ -137,9 +137,29 @@ class AddSkinProblemsViewModel: BaseViewModel {
 	}
 	
 	func appendAttachment(skinProblemAttachment: SkinProblemAttachment) {
-		guard let model = self.model else { return }
-		
+		self.uploadToS3(skinProblemAttachment: skinProblemAttachment)
+	}
+	
+	private func uploadToS3(skinProblemAttachment: SkinProblemAttachment) {
+		guard let _ = skinProblemAttachment.filename else { return }
 		isLoading = true
+		
+		AWS3Utils.uploadImageToS3(filename: skinProblemAttachment.filename!) { (result) in
+			
+			switch result {
+			case .success(let filename):
+				print("uploadImageToS3 " + filename!)
+				self.createSkinProblemAttachment(skinProblemAttachment: skinProblemAttachment)
+			case .failure(let error):
+				self.isLoading = false
+				print("error")
+				self.showResponseErrorAlert!(nil, error)
+			}
+		}
+	}
+		
+	private func createSkinProblemAttachment(skinProblemAttachment: SkinProblemAttachment) {
+		guard let model = self.model else { return }
 		
 		ApiUtils.createSkinProblemAttachment(accessToken: DataController.getAccessToken(), skinProblemsId: Int(model.skinProblemId), location: skinProblemAttachment.locationType, filename: skinProblemAttachment.filename, description: skinProblemAttachment.problemDescription, attachmentType:Int(skinProblemAttachment.attachmentType), completionHandler: { (result) in
 			self.isLoading = false
@@ -196,7 +216,7 @@ extension AddSkinProblemsViewModel {
 	
 	var isEditEnabled: Bool {
 		get {
-			return diagnoseStatus == .draft
+			return diagnoseStatus == Diagnose.DiagnoseStatus.draft || diagnoseStatus == Diagnose.DiagnoseStatus.unknown
 		}
 	}
 	
@@ -380,6 +400,6 @@ extension AddSkinProblemsViewModel {
 		guard let model = self.model else { return false }
 		guard let diagnose = model.diagnose else { return true }
 		
-		return diagnose.diagnoseStatusEnum == .draft
+		return diagnose.diagnoseStatusEnum == Diagnose.DiagnoseStatus.draft || diagnose.diagnoseStatusEnum == Diagnose.DiagnoseStatus.unknown
 	}
 }

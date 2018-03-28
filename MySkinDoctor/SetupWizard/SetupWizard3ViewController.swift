@@ -111,6 +111,7 @@ class SetupWizard3ViewController: FormViewController {
 	func refreshFields() {
 		gpNameTextField.text = viewModelCast.gpName
 		gpAddressLineTextField.text = viewModelCast.gpAddressLine
+		accessCodeTextField.text = viewModelCast.accessCode
 		
 		gpPostcodeTextField.text = viewModelCast.gpPostcode
 		permisionSwitch.isOn = viewModelCast.isPermisionEnabled

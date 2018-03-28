@@ -38,6 +38,7 @@ extension SkinProblems {
 			skinProblem.diagnose = DataController.createNew(type: Diagnose.self)
 		}
 		
+		skinProblem.diagnose!.summary = skinProblemResponseModel.diagnosisName
 		skinProblem.diagnose!.treatment = skinProblemResponseModel.diagnosisTreatment
 		skinProblem.diagnose!.patientInformation = skinProblemResponseModel.diagnosisPatientInformation
 		skinProblem.diagnose!.comments = skinProblemResponseModel.diagnosisComments

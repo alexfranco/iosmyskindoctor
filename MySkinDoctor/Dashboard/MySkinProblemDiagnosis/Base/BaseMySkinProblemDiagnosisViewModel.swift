@@ -74,9 +74,9 @@ class BaseMySkinProblemDiagnosisViewModel: BaseViewModel {
 	var profileImage: UIImage {
 		get {
 			guard let diagnose = model.diagnose, let diagnosedBy = diagnose.doctor, let profilePicture = diagnosedBy.profilePicture else {
-				return UIImage(named: "logo")!
+				return UIImage.init(color: AppStyle.profileImageViewPlaceHolder)!
 			}
-			
+						
 			return profilePicture as! UIImage
 		}
 	}

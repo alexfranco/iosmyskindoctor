@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SDWebImage
 
 class SkinProblemTableViewCell: UITableViewCell {
 	
@@ -30,8 +31,10 @@ class SkinProblemTableViewCell: UITableViewCell {
 	func configure(withViewModel viewModel: SkinProblemTableCellViewModel) {
 		nameLabel.text = viewModel.name
 		locationLabel.text = viewModel.location
-		problemImageView.image = viewModel.problemImage
-		problemImageView.contentMode = .scaleAspectFill
 		descriptionLabel.text = viewModel.problemDescription
+		
+		problemImageView.sd_setImage(with: viewModel.problemImageUrl, placeholderImage: viewModel.problemPlaceHolder, options: .highPriority) { (image, error, type, url) in
+			self.problemImageView.contentMode = .scaleAspectFill
+		}
 	}
 }

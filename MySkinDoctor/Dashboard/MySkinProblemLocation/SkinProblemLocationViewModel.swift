@@ -49,8 +49,23 @@ class SkinProblemLocationViewModel: BaseViewModel {
 		self.model = model
 	}
 	
+	override func validateForm() -> Bool {
+		var isValid = true
+		
+		if locationProblemType == .none {
+			showAlert!("", NSLocalizedString("addskinproblems_location_empty", comment: ""))
+			isValid = false
+		}
+		
+		return isValid
+	}
+	
 	override func saveModel() {
 		super.saveModel()
+		
+		if !self.validateForm() {
+			return
+		}
 		
 		model.locationTypeEnum = locationProblemType
 		goNextSegue!()

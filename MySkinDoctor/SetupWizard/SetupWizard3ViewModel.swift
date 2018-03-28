@@ -54,12 +54,47 @@ class SetupWizard3ViewModel: BaseViewModel {
 		gpName = profile.gpName ?? ""
 		gpAddressLine = profile.gpAddressLine ?? ""
 		gpPostcode = profile.gpPostcode ?? ""
+		accessCode = profile.accessCode ?? ""
 		isPermisionEnabled = profile.isPermisionEnabled
 	}
 	
 	override func saveModel() {
 		super.saveModel()
 		
+		if accessCode != self.profile.accessCode && !accessCode.isEmpty{
+			self.isLoading = true
+			
+			createAccessCode { (success) in
+				if success {
+					self.updateProfile()
+				} else {
+					self.isLoading = false
+					
+					self.showAlert!("Access code", "Invalid Access Code")
+				}
+			}
+		} else {
+			self.isLoading = true
+			self.updateProfile()
+		}
+	}
+	
+	private func createAccessCode(completionHandler: @escaping ((_ success: Bool) -> Void)) {
+		
+		ApiUtils.accessCode(accessToken: DataController.getAccessToken(), accesscode: accessCode, completionHandler: { (result) in
+			
+			switch result {
+			case .success(_):
+				print("accessCode")
+				completionHandler(true)
+			case .failure(_, _):
+				print("error")
+				completionHandler(false)
+			}
+		})
+	}
+	
+	private func updateProfile() {
 		ApiUtils.updateProfile(accessToken: DataController.getAccessToken(), firstName: nil, lastName: nil, dob: nil, phone: nil, addressLine1: nil, addressLine2: nil, town: nil, postcode: nil, gpName: gpName, gpAddress: gpAddressLine, gpPostCode: gpPostcode, gpContactPermission: isPermisionEnabled, selfPay: nil, completionHandler: { (result) in
 			self.isLoading = false
 			

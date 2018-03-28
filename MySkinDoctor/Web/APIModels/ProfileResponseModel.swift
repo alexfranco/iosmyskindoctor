@@ -18,7 +18,7 @@ class ProfileResponseModel : BaseResponseModel {
 	var gpContactPermission: Bool = false
 	var gpName: String?
 	var gpPostcode: String?
-	var accessCodes: [String] = []
+	var accessCodes: [AccessCodeResponseModel] = []
 	var firstName: String?
 	var lastName: String?
 	var mobileNumber: String?
@@ -42,10 +42,9 @@ class ProfileResponseModel : BaseResponseModel {
 		lastName <- map["last_name"]
 		mobileNumber <- map["mobile_number"]
 		postcode <- map["postcode"]
-		accessCodes <- map["accessCodes"]
+		accessCodes <- map["access_codes"]
 		town <- map["town"]
 		selfPay <- map["selfPay"]
 	}
-	
 }
 

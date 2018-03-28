@@ -15,6 +15,10 @@ pod 'IQKeyboardManagerSwift'
 pod 'ObjectMapper'
 pod 'SZTextView'
 pod 'CVCalendar', '~> 1.6'
+pod 'AWSCognito', '~> 2.4.16'
+pod 'AWSCore', '~> 2.4.16'
+pod 'AWSS3', '~> 2.4.16'
+pod 'SDWebImage'
 
 end
 

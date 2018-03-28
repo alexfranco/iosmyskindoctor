@@ -134,8 +134,40 @@ class ProfileViewModel: BaseViewModel {
 	override func saveModel() {
 		super.saveModel()
 		
-		self.isLoading = true
+		if accessCode != self.profile.accessCode && !accessCode.isEmpty {
+			self.isLoading = true
+
+			createAccessCode { (success) in
+				if success {
+					self.updateProfile()
+				} else {
+					self.isLoading = false
+
+					self.showAlert!("Access code", "Invalid Access Code")
+				}
+			}
+		} else {
+			self.isLoading = true
+			self.updateProfile()
+		}
+	}
+	
+	private func createAccessCode(completionHandler: @escaping ((_ success: Bool) -> Void)) {
 		
+		ApiUtils.accessCode(accessToken: DataController.getAccessToken(), accesscode: accessCode, completionHandler: { (result) in
+			
+			switch result {
+			case .success(_):
+				print("accessCode")
+				completionHandler(true)
+			case .failure(_, _):
+				print("error")
+				completionHandler(false)
+			}
+		})
+	}
+	
+	private func updateProfile() {
 		ApiUtils.updateProfile(accessToken: DataController.getAccessToken(), firstName: firstName, lastName: lastName, dob: dob, phone: phone, addressLine1: addressLine1, addressLine2: addressLine2, town: town, postcode: postcode, gpName: gpName, gpAddress: gpAddressLine, gpPostCode: gpPostcode, gpContactPermission: isPermisionEnabled, selfPay: nil, completionHandler: { (result) in
 			self.isLoading = false
 			
@@ -172,4 +204,5 @@ class ProfileViewModel: BaseViewModel {
 			}
 		})
 	}
+
 }

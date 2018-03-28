@@ -36,13 +36,16 @@
 "town_city" = "Town/City";
 "postcode" = "Postcode";
 "gp_name" = "GP Name";
-"gp_access_code" = "GP Access Code";
+"gp_access_code" = "Access Code";
 "gp_address_line" = "GP Address Line";
 "gp_postcode" = "GP Postcode";
 
 // Errors
 "error_email_not_valid" = "The email is invalid";
 "error_password_not_valid" = "Your password must be minimum %d characters";
+
+"offline_generic_title" = "Connection Error";
+"offline_generic_message" = "There was a problem connecting to a network. Please make sure you have an internet connection and try again.";
 
 // Login
 
@@ -97,12 +100,13 @@
 "addskinproblems_add_photo" = "Add Photo";
 "addskinproblems_add_another_photo" = "Add another photo";
 
+"addskinproblems_location_empty" = "Pleaser select the location of your problem";
+
 "skinproblems_photo_information_main_vc_title" = "Photo Information";
 "skinproblems_photo_information_description_text_view" = "Please enter here a description of your problem";
 "skinproblems_photo_information_description_text_view_empty" = "Please enter here a description of your problem";
 "skinproblems_photo_information_photo_type" = "This is a photo of my skin problem";
 "skinproblems_photo_information_document_type" = "This is a medical note or prescription";
-
 
 "skinproblem_thank_you" = "Thank you";
 "skinproblem_diagnosis" = "You will receive a diagnosis within 72 hours.";
@@ -151,6 +155,9 @@
 "profile_personal_gp_information" = "GP Information";
 "profile_personal_logout" = "Logout";
 "profile_personal_save" = "Save";
+
+"profile_personal_logout_are_you_sure_title" = "Logout";
+"profile_personal_logout_are_you_sure_message" = "Are you sure you want to logout?";
 
 "changes_saved" = "Changes saved.";
 

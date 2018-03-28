@@ -16,6 +16,6 @@ class AddPhotoTableViewCell: UITableViewCell {
 	
 	func configure(isFirstPhoto: Bool) {
 		
-		addPhotoLabel.text = isFirstPhoto ? NSLocalizedString("addskinproblems_add_photo", comment: "") : NSLocalizedString("addskinproblems_add_another_photo", comment: "")
+		addPhotoLabel.text = isFirstPhoto ? NSLocalizedString("addskinproblems_add_photo", comment: "") : NSLocalizedString("addskinproblems_add_another_photo", comment: "")				
 	}
 }

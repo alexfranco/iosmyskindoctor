@@ -779,7 +779,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eqt-SP-Yot">
-                                                <rect key="frame" x="130" y="183" width="28" height="29"/>
+                                                <rect key="frame" x="130" y="197" width="28" height="29"/>
                                                 <state key="normal" image="problemLocationInactive"/>
                                                 <state key="selected" image="problemLocationActive"/>
                                                 <connections>
@@ -882,7 +882,7 @@
                                             <constraint firstItem="OBA-wk-QDu" firstAttribute="centerX" secondItem="8wh-qt-JPw" secondAttribute="centerX" multiplier="1.14" id="Pfo-gr-OQ3"/>
                                             <constraint firstItem="OBA-wk-QDu" firstAttribute="centerY" secondItem="8wh-qt-JPw" secondAttribute="centerY" multiplier="1.65" id="RCR-wE-9Jd"/>
                                             <constraint firstItem="Bep-wS-r6L" firstAttribute="centerY" secondItem="8wh-qt-JPw" secondAttribute="centerY" multiplier="0.53" id="TWJ-K4-2sx"/>
-                                            <constraint firstItem="eqt-SP-Yot" firstAttribute="centerY" secondItem="8wh-qt-JPw" secondAttribute="centerY" multiplier="0.9" id="U3Z-Ux-88a"/>
+                                            <constraint firstItem="eqt-SP-Yot" firstAttribute="centerY" secondItem="8wh-qt-JPw" secondAttribute="centerY" multiplier="0.9" constant="13.949999999999989" id="U3Z-Ux-88a"/>
                                             <constraint firstItem="tc2-0y-PuU" firstAttribute="centerY" secondItem="8wh-qt-JPw" secondAttribute="centerY" multiplier="0.75" id="UF4-uR-coa"/>
                                             <constraint firstItem="LY9-Dc-wfX" firstAttribute="centerY" secondItem="8wh-qt-JPw" secondAttribute="centerY" multiplier="0.15" id="WTp-OC-V1d"/>
                                             <constraint firstItem="9ha-yx-9WN" firstAttribute="leading" secondItem="wG0-rT-RW5" secondAttribute="leading" id="X9U-cm-7Fu"/>

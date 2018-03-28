@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import IQKeyboardManagerSwift
+import AWSCognito
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +20,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		IQKeyboardManager.sharedManager().enable = true // controls the scrollviews and uitextfields
 		ThemeManager.applyTheme()
 		updateRootVC()
+		
+		// Amazon AWS S3
+		let region = AWSRegionType.euWest1
+		let cognitoIdentityPoolId: String = "eu-west-1:c940565a-9d4e-4aa8-b054-e6a2cf9aca54"
+		let credentialsProvider = AWSCognitoCredentialsProvider(regionType: region, identityPoolId: cognitoIdentityPoolId)
+		let defaultServiceConfiguration = AWSServiceConfiguration(region: region, credentialsProvider: credentialsProvider)
+		AWSServiceManager.default().defaultServiceConfiguration = defaultServiceConfiguration
+		
 		return true
 	}
 

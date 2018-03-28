@@ -188,7 +188,6 @@ class AddSkinProblemsViewController: BindingViewController {
 	}
 	
 	@IBAction func onCancelButtonPressed(_ sender: Any) {
-
 		if viewModelCast.shouldShowCancelAlert() {
 			let alertController = UIAlertController (
 				title: "",
