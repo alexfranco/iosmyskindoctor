@@ -32,7 +32,7 @@ class SkinProblemPhotoInformationViewModel: BaseViewModel {
 		var isValid = true
 		
 		if problemDescription.isEmpty {
-			showAlert!("", NSLocalizedString("skinproblems_photo_information_description_text_view_empty", comment: ""))
+			showAlert!("", NSLocalizedString("addskinproblems_description", comment: ""))
 			isValid = false
 		}
 				

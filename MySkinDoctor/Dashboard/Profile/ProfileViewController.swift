@@ -132,7 +132,7 @@ class ProfileViewController: FormViewController {
 		
 		refreshFields()
 		applyLocalization()
-		applytheme()
+		applyTheme()
 	}
 	
 	// MARK: Bindings
@@ -181,7 +181,7 @@ class ProfileViewController: FormViewController {
 	
 	// MARK: Helpers
 	
-	func applytheme() {
+	func applyTheme() {
 		personalDetailsSectionLabel.font = AppFonts.mediumBoldFont
 		gpInformationSectionLabel.font = AppFonts.mediumBoldFont
 		contactDetailsSectionLabel.font = AppFonts.mediumBoldFont
@@ -191,6 +191,8 @@ class ProfileViewController: FormViewController {
 		
 		changePasswordButton.setTitleColor(AppStyle.changePasswordButtonTitleColor, for: .normal)
 		logoutButton.setTitleColor(AppStyle.logoutButtonTitleColor, for: .normal)
+		
+		permisionSwitch.isEnabled = false
 	}
 	
 	func applyLocalization() {

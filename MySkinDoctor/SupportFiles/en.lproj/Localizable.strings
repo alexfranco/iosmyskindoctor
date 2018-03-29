@@ -101,6 +101,7 @@
 "addskinproblems_add_another_photo" = "Add another photo";
 
 "addskinproblems_location_empty" = "Pleaser select the location of your problem";
+"addskinproblems_description" = "Please enter here a description";
 
 "skinproblems_photo_information_main_vc_title" = "Photo Information";
 "skinproblems_photo_information_description_text_view" = "Please enter here a description of your problem";

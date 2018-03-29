@@ -69,7 +69,7 @@ class MySkinProblemsViewModel: BaseViewModel {
 	override func loadDBModel() {
 		super.loadDBModel()
 		
-		if let results = DataController.fetchAll(type: SkinProblems.self, sortByKey: "date") {
+		if let results = DataController.fetchAll(type: SkinProblems.self, sortByKey: "skinProblemId") {
 			allItems = results
 			diagnosedItems = allItems.filter { (model) -> Bool in model.isDiagnosed }
 			undiagnosedItems = allItems.filter { (model) -> Bool in !model.isDiagnosed }

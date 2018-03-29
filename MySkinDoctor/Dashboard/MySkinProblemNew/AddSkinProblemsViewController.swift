@@ -52,23 +52,6 @@ class AddSkinProblemsViewController: BindingViewController {
 			}
 		}
 		
-		viewModelCast.tableViewStageChanged = { [weak self] (tableViewState) in
-			DispatchQueue.main.async {
-				switch tableViewState {
-				case .none:
-					self?.tableView.reloadData()
-				case let .insert(_, indexPath):
-					self?.tableView.beginUpdates()
-					self?.tableView.insertRows(at: [indexPath], with: .automatic)
-					self?.tableView.endUpdates()
-				case let .delete(indexPath):
-					self?.tableView.beginUpdates()
-					self?.tableView.deleteRows(at: [indexPath], with: .automatic)
-					self?.tableView.endUpdates()
-				}
-			}
-		}
-		
 		viewModelCast.updateNextButton = { [weak self] (isEnabled) in
 			DispatchQueue.main.async {
 				self?.nextButton.isEnabled = isEnabled
@@ -247,7 +230,7 @@ class AddSkinProblemsViewController: BindingViewController {
 	@IBAction func unwindToAddSkinProblems(segue: UIStoryboardSegue) {
 		if let sourceViewController = segue.source as? SkinProblemLocationViewController {
 			if let viewModel = sourceViewController.viewModelCast {				
-				viewModelCast.appendAttachment(skinProblemAttachment: viewModel.model)
+				viewModelCast.insertAttachment(skinProblemAttachment: viewModel.model)
 			}
 		}
 	}
@@ -255,7 +238,7 @@ class AddSkinProblemsViewController: BindingViewController {
 	@IBAction func unwindToAddSkinProblemsFromPhoto(segue: UIStoryboardSegue) {
 		if let sourceViewController = segue.source as? SkinProblemPhotoInformationViewController {
 			if let viewModel = sourceViewController.viewModelCast {
-				viewModelCast.appendAttachment(skinProblemAttachment: viewModel.model)
+				viewModelCast.insertAttachment(skinProblemAttachment: viewModel.model)
 			}
 		}
 	}

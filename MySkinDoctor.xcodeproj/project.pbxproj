@@ -1609,7 +1609,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 75343VFMU9;
 				INFOPLIST_FILE = MySkinDoctor/MySkinDoctorLive.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.touchsoft.MySkinDoctor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1627,7 +1627,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 75343VFMU9;
 				INFOPLIST_FILE = MySkinDoctor/MySkinDoctorLive.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.touchsoft.MySkinDoctor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1752,7 +1752,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 75343VFMU9;
 				INFOPLIST_FILE = MySkinDoctor/MySkinDoctor.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DDEV\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.touchsoft.dev.MySkinDoctor;
@@ -1771,7 +1771,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 75343VFMU9;
 				INFOPLIST_FILE = MySkinDoctor/MySkinDoctor.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DDEV\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.touchsoft.dev.MySkinDoctor;

@@ -18,32 +18,10 @@ class AddSkinProblemsViewModel: BaseViewModel {
 	// Bind properties
 	var refresh: (()->())?
 	var onModelDiscarted: (()->())?
-	var tableViewStageChanged: ((_ state: EditingStyle)->())?
 	var updateNextButton: ((_ isEnabled: Bool)->())?
 	var diagnosedStatusChanged: ((_ state: Diagnose.DiagnoseStatus)->())?
 	var onSkinProblemAttachmentImageAdded: ((_ skinProblemAttachment: SkinProblemAttachment)->())?
 	var onSaveLaterSuccess: (()->())?
-	
-	private(set) var tableViewState: EditingStyle = EditingStyle.none {
-		didSet {
-			guard let model = self.model else { return }
-			
-			switch tableViewState {
-			case let .insert(new, _):
-				let skinProblemAttachment = new
-				model.addToAttachments(skinProblemAttachment)
-			case let .delete(indexPath):
-				if let attachment = model.attachments?.allObjects[indexPath.row] {
-					model.removeFromAttachments(attachment as! SkinProblemAttachment)
-					DataController.deleteManagedObject(managedObject: (attachment as! SkinProblemAttachment))
-				}
-			default:
-				break
-			}
-			
-			tableViewStageChanged!(tableViewState)
-		}
-	}
 	
 	required init(modelId: NSManagedObjectID?) {
 		super.init()
@@ -86,8 +64,23 @@ class AddSkinProblemsViewModel: BaseViewModel {
 		self.skinProblemDescription = model.skinProblemDescription	?? "-"
 	}
 	
+	override func validateForm() -> Bool {
+		var isValid = true
+		
+		if skinProblemDescription.isEmpty {
+			showAlert!("", NSLocalizedString("skinproblems_photo_information_description_text_view_empty", comment: ""))
+			isValid = false
+		}
+		
+		return isValid
+	}
+	
 	func saveModel(saveLater: Bool = false) {
 		guard let model = self.model else { return }
+		
+		if !self.validateForm() {
+			return
+		}
 		
 		isLoading = true
 		ApiUtils.updateSkinProblems(accessToken: DataController.getAccessToken(), skinProblemsId: Int(model.skinProblemId), skinProblemsDescription: skinProblemDescription, healthProblems: nil, medications: nil, history: nil) { (result) in
@@ -131,12 +124,7 @@ class AddSkinProblemsViewModel: BaseViewModel {
 		}
 	}
 	
-	func insertNewModel(model: SkinProblemAttachment, indexPath: IndexPath) {
-		tableViewState = .insert(model, indexPath)
-		updateNextButton!(nextButtonIsEnabled)
-	}
-	
-	func appendAttachment(skinProblemAttachment: SkinProblemAttachment) {
+	func insertAttachment(skinProblemAttachment: SkinProblemAttachment) {
 		self.uploadToS3(skinProblemAttachment: skinProblemAttachment)
 	}
 	
@@ -168,10 +156,9 @@ class AddSkinProblemsViewModel: BaseViewModel {
 			case .success(let model):
 				print("createSkinProblemAttachment")
 				let attachment = SkinProblemAttachment.parseAndSaveSkinProblemsAttachmentResponse(attachment: model as! SkinProblemAttachmentResponseModel)
-				let appendToLastIndexPath = IndexPath.init(row: self.getDataSourceCountWithoutExtraAddPhoto(), section: 0)
-				self.tableViewState = .insert(attachment, appendToLastIndexPath)
+				self.model?.addToAttachments(attachment)
 				self.updateNextButton!(self.nextButtonIsEnabled)
-				
+				self.refresh!()
 			case .failure(let model, let error):
 				print("error")
 				self.showResponseErrorAlert!(model as? BaseResponseModel, error)
@@ -190,8 +177,10 @@ class AddSkinProblemsViewModel: BaseViewModel {
 			switch result {
 			case .success(_):
 				print("deleteSkinProblemAttachment")
-				self.tableViewState = .delete(indexPath)
+				self.model?.removeFromAttachments(attachment)
+				DataController.deleteManagedObject(managedObject: attachment)
 				self.updateNextButton!(self.nextButtonIsEnabled)
+				self.refresh!()
 			case .failure(let model, let error):
 				print("error")
 				self.showResponseErrorAlert!(model as? BaseResponseModel, error)
@@ -347,9 +336,7 @@ extension AddSkinProblemsViewModel {
 	}
 	
 	func getItemAtIndexPath(indexPath: IndexPath) -> SkinProblemAttachment? {
-		guard let model = self.model else { return nil}
-		
-		return model.attachments?.allObjects[indexPath.row] as? SkinProblemAttachment
+		return allAttachmentSorted()[indexPath.row]
 	}
 	
 	func getNumberOfSections() -> Int {
@@ -370,6 +357,11 @@ extension AddSkinProblemsViewModel {
 		} else {
 			return false
 		}
+	}
+	
+	private func allAttachmentSorted() -> [SkinProblemAttachment] {
+		guard let model = self.model, let attachments = model.attachments?.allObjects as? [SkinProblemAttachment] else { return []}
+		return attachments.sorted(by: { $0.skinProblemAttachmentId < $1.skinProblemAttachmentId})
 	}
 	
 	private func generateNodiagnosedInfoText() -> String {

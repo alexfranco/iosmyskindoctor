@@ -16,6 +16,7 @@ class MyConsultsViewController: BindingViewController {
 	@IBOutlet weak var tableView: UITableView!
 	
 	var viewModelCast: MyConsultsViewModel!
+	var refreshControl: UIRefreshControl!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -48,7 +49,7 @@ class MyConsultsViewController: BindingViewController {
 		viewModelCast.refresh = { [weak self] () in
 			DispatchQueue.main.async {
 				self?.tableView.reloadData()
-				self?.tableView.refreshControl?.endRefreshing()
+				self?.refreshControl?.endRefreshing()
 			}
 		}
 	}
@@ -60,11 +61,14 @@ class MyConsultsViewController: BindingViewController {
 		tableView.estimatedRowHeight = 80.0
 		tableView.rowHeight = UITableViewAutomaticDimension
 		
-		let refreshControl = UIRefreshControl()
-		refreshControl.backgroundColor = UIColor.clear
-		refreshControl.tintColor = UIColor.black
-		tableView.refreshControl =  refreshControl
-		tableView.refreshControl?.addTarget(self, action: #selector(handleRefresh(refreshControl:)), for: UIControlEvents.valueChanged)
+		refreshControl = UIRefreshControl()
+		refreshControl.addTarget(self, action: #selector(handleRefresh(refreshControl:)),for: UIControlEvents.valueChanged)
+		
+		if #available(iOS 10.0, *) {
+			tableView.refreshControl = refreshControl
+		} else {
+			tableView.addSubview(refreshControl)
+		}
 	}
 	
 	@objc func handleRefresh(refreshControl: UIRefreshControl) {
