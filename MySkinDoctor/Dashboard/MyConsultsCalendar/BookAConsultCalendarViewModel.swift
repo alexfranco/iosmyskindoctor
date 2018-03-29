@@ -10,7 +10,7 @@ import Foundation
 
 class BookAConsultCalendarViewModel: BaseViewModel {
 	
-	var timeslots: [String] = [String]()
+	var timeslots: [String] = []
 	
 	var selectedDate = Date() {
 		didSet {
@@ -19,6 +19,7 @@ class BookAConsultCalendarViewModel: BaseViewModel {
 	}
 	
 	var selectedDateUpdated: ((_ date: Date)->())?
+	var timeslotsUpdated: (()->())?
 	
 	var monthLabelText: String {
 		get {
@@ -26,10 +27,33 @@ class BookAConsultCalendarViewModel: BaseViewModel {
 		}
 	}
 	
+	var shouldShowEmptyTimeSlotsLabel: Bool {
+		get {
+			return timeslots.count == 0
+		}
+	}
+	
 	override init() {
 		super.init()
-		
-		 timeslots = ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6"]
+	}
+	
+	func fetchTimeslots() {
+		isLoading = true
+	
+		ApiUtils.getTimeslots(accessToken: DataController.getAccessToken(), date: selectedDate) { (result) in
+			self.isLoading = false
+			
+			switch result {
+			case .success(let model):
+				print("getTimeslots")
+				self.timeslots = [Date().timeAndDateText, Date().adjust(.hour, offset: 1).timeAndDateText, Date().adjust(.hour, offset: 1).timeAndDateText, Date().adjust(.hour, offset: 2).timeAndDateText, Date().adjust(.hour, offset: 3).timeAndDateText, Date().adjust(.hour, offset: 4).timeAndDateText]
+			case .failure(let model, let error):
+				print("error")
+				self.showResponseErrorAlert!(model as? BaseResponseModel, error)
+			}
+			
+			self.timeslotsUpdated!()
+		}
 	}
 	
 	var numberOfComponentsInPickerView: Int {

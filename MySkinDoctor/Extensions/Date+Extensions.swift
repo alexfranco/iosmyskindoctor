@@ -78,6 +78,20 @@ extension Date {
 		return Calendar.current.date(from: comp)!
 	}
 	
+	var timeAndDateText: String {
+		get {
+			let timeFormater = DateFormatter()
+			timeFormater.dateFormat = "hh:ss a"
+			timeFormater.amSymbol = "am"
+			timeFormater.pmSymbol = "pm"
+			
+			let dateFormater = DateFormatter()
+			dateFormater.dateFormat = "MMMM"
+			
+			return String.init(format: "%@ @ %@ %@", timeFormater.string(from: self),  self.ordinal(), dateFormater.string(from: self))
+		}
+	}
+	
 	// MARK: Extracting components
 	
 	func component(_ component:DateComponentType) -> Int? {

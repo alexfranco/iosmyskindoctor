@@ -18,6 +18,7 @@ class BookAConsultCalendarViewController: BindingViewController {
 	@IBOutlet weak var calendarView: CVCalendarView!
 	@IBOutlet weak var timeslotsPicker: UIPickerView!
 	@IBOutlet weak var monthLabel: UILabel!
+	@IBOutlet weak var noTimeslotsLabel: UILabel!
 	
 	var viewModelCast: BookAConsultCalendarViewModel!
 	
@@ -29,6 +30,7 @@ class BookAConsultCalendarViewController: BindingViewController {
 		configureCalendarView()
 		configureTimeslotsPicker()
 		applyTheme()
+		applyLocalization()
 	}
 	
 	override func initViewModel(viewModel: BaseViewModel) {
@@ -39,6 +41,14 @@ class BookAConsultCalendarViewController: BindingViewController {
 		viewModelCast.selectedDateUpdated = { [weak self] (date) in
 			DispatchQueue.main.async {
 				self?.monthLabel.text = self?.viewModelCast.monthLabelText
+			}
+		}
+		
+		viewModelCast.timeslotsUpdated = { [weak self] () in
+			DispatchQueue.main.async {
+				self?.timeslotsPicker.reloadAllComponents()
+				self?.timeslotsPicker.isHidden = (self?.viewModelCast.shouldShowEmptyTimeSlotsLabel)!
+				self?.noTimeslotsLabel.isHidden = !(self?.viewModelCast.shouldShowEmptyTimeSlotsLabel)!
 			}
 		}
 		
@@ -59,6 +69,18 @@ class BookAConsultCalendarViewController: BindingViewController {
 		pickADateLabel.textColor = AppStyle.consultCalendarHeaderTextColor
 		pickATimeLabel.backgroundColor = AppStyle.consultCalendarHeaderBackgroundColor
 		pickATimeLabel.textColor = AppStyle.consultCalendarHeaderTextColor
+		
+		noTimeslotsLabel.font = AppFonts.bigBoldFont
+		
+		noTimeslotsLabel.isHidden = false
+		timeslotsPicker.isHidden = true
+	}
+	
+	func applyLocalization() {
+		title = NSLocalizedString("booking_calendar_vc_title", comment: "")
+		pickADateLabel.text = NSLocalizedString("booking_calendar_pick_a_date", comment: "")
+		pickATimeLabel.text = NSLocalizedString("booking_calendar_pick_a_time", comment: "")
+		noTimeslotsLabel.text = NSLocalizedString("booking_calendar_timeslot_emtpy", comment: "")
 	}
 	
 	func configureCalendarView() {
@@ -153,7 +175,8 @@ extension BookAConsultCalendarViewController: CVCalendarMenuViewDelegate, CVCale
 	
 	func didSelectDayView(_ dayView: DayView, animationDidFinish: Bool) {
 		if let dateSafe = dayView.date, let convertedDate = dateSafe.convertedDate() {
-//			viewModelCast.selectedDate = (convertedDate.adjust(hour: timePicker.date.component(.hour), minute: timePicker.date.component(.minute), second: timePicker.date.component(.second)))
+			viewModelCast.selectedDate = convertedDate
+			viewModelCast.fetchTimeslots()
 		}
 	}
 }

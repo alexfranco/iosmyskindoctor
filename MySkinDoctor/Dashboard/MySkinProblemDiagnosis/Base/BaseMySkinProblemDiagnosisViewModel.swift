@@ -108,7 +108,7 @@ class BaseMySkinProblemDiagnosisViewModel: BaseViewModel {
 	
 	private func timeText() -> String {
 		let df = DateFormatter()
-		df.dateFormat = "HH.ss a"
+		df.dateFormat = "hh.ss a"
 		df.amSymbol = "am"
 		df.pmSymbol = "pm"
 		return df.string(from: (model.date! as Date))

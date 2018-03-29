@@ -51,6 +51,7 @@ class ApiUtils {
 		case changePassword = "/api/accounts/password/change/"
 		case logout = "/api/accounts/logout/"
 		case accessCode = "/api/accounts/access-code/use/"
+		case timeslots = "/api/consult/timeslots"
 		
 		case patientUpdate = "/api/accounts/patient/"
 		case skinProblems = "/api/cases/case/"
@@ -207,6 +208,17 @@ extension ApiUtils {
 		params.updateValue(accesscode, forKey: "code")
 		
 		ApiUtils.request(url: url, httpMethod: HTTPMethod.post, params: params, parseToModelType: AccessCodeResponseModel.self, accessToken: accessToken, completionHandler: completionHandler)
+	}
+	
+	static func getTimeslots(accessToken: String, date: Date, completionHandler: @escaping ((_ result: ApiResult) -> Void)) {
+		let url = ApiUtils.getApiUrl(ApiMethod.timeslots, nil)
+		
+		var params: Parameters = [:]
+		params.updateValue(date.iso8601WithoutTime, forKey: "date")
+
+		completionHandler(.success(nil))
+		
+//		ApiUtils.request(url: url, httpMethod: HTTPMethod.get, params: params, parseToModelType: AccessCodeResponseModel.self, accessToken: accessToken, completionHandler: completionHandler)
 	}
 	
 }

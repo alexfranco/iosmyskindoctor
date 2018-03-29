@@ -46,13 +46,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pre-booking information..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BcB-Dm-2GE" customClass="TitleLabel" customModule="MySkinDoctor" customModuleProvider="target">
-                                <rect key="frame" x="20" y="124" width="335" height="21"/>
+                                <rect key="frame" x="20" y="94" width="335" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A doctor will respond whitin 72 hours working with:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ax4-1A-LTT">
-                                <rect key="frame" x="40" y="165" width="295" height="21"/>
+                                <rect key="frame" x="40" y="135" width="295" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -67,7 +67,7 @@
                             <constraint firstItem="TBg-av-ehU" firstAttribute="bottom" secondItem="xzp-kD-jk6" secondAttribute="bottom" id="UgD-YM-hwP"/>
                             <constraint firstItem="TBg-av-ehU" firstAttribute="trailing" secondItem="xzp-kD-jk6" secondAttribute="trailing" id="ZBB-51-ppd"/>
                             <constraint firstItem="ax4-1A-LTT" firstAttribute="leading" secondItem="xzp-kD-jk6" secondAttribute="leading" constant="40" id="gqW-Uj-8aE"/>
-                            <constraint firstItem="BcB-Dm-2GE" firstAttribute="top" secondItem="xzp-kD-jk6" secondAttribute="top" constant="60" id="nI3-Os-5Ww"/>
+                            <constraint firstItem="BcB-Dm-2GE" firstAttribute="top" secondItem="xzp-kD-jk6" secondAttribute="top" constant="30" id="nI3-Os-5Ww"/>
                             <constraint firstItem="TBg-av-ehU" firstAttribute="leading" secondItem="xzp-kD-jk6" secondAttribute="leading" id="omo-pM-JAq"/>
                             <constraint firstItem="ax4-1A-LTT" firstAttribute="top" secondItem="BcB-Dm-2GE" secondAttribute="bottom" constant="20" id="wxP-1W-BZ5"/>
                         </constraints>
@@ -168,12 +168,19 @@
                                     <outlet property="delegate" destination="lkh-4L-twa" id="g6g-WE-eSp"/>
                                 </connections>
                             </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7DS-vV-0Lf">
+                                <rect key="frame" x="0.0" y="401" width="375" height="216"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="0uY-dq-Ujt" firstAttribute="leading" secondItem="ovj-4A-mzO" secondAttribute="leading" id="1Ex-QF-FOQ"/>
                             <constraint firstItem="Y3u-TF-kLu" firstAttribute="centerX" secondItem="lkh-4L-twa" secondAttribute="centerX" id="1tU-Tz-D30"/>
                             <constraint firstItem="DOB-CW-oln" firstAttribute="top" secondItem="0Zy-iG-g6r" secondAttribute="bottom" id="1ux-cj-tNN"/>
+                            <constraint firstItem="7DS-vV-0Lf" firstAttribute="leading" secondItem="ovj-4A-mzO" secondAttribute="leading" id="9Xi-Bd-4ZK"/>
                             <constraint firstItem="ln9-yH-Xev" firstAttribute="top" secondItem="0uY-dq-Ujt" secondAttribute="bottom" id="BHZ-Jx-fs4"/>
                             <constraint firstItem="Y3u-TF-kLu" firstAttribute="leading" secondItem="ln9-yH-Xev" secondAttribute="leading" id="IiD-cv-nlx"/>
                             <constraint firstItem="DOB-CW-oln" firstAttribute="leading" secondItem="ovj-4A-mzO" secondAttribute="leading" id="LoG-Z0-Yy5"/>
@@ -182,13 +189,16 @@
                             <constraint firstItem="xna-gZ-hSZ" firstAttribute="top" secondItem="ovj-4A-mzO" secondAttribute="top" id="Ov4-f6-eXu"/>
                             <constraint firstItem="0Zy-iG-g6r" firstAttribute="trailing" secondItem="ovj-4A-mzO" secondAttribute="trailing" id="RqV-ry-I3v"/>
                             <constraint firstItem="ln9-yH-Xev" firstAttribute="top" secondItem="xna-gZ-hSZ" secondAttribute="bottom" constant="30" id="Rzo-Jh-BfL"/>
+                            <constraint firstItem="7DS-vV-0Lf" firstAttribute="top" secondItem="0Zy-iG-g6r" secondAttribute="bottom" id="fha-8F-cjc"/>
                             <constraint firstAttribute="bottom" secondItem="wpK-3Q-gpp" secondAttribute="bottom" id="gfg-W0-Fs6"/>
                             <constraint firstItem="xna-gZ-hSZ" firstAttribute="leading" secondItem="ovj-4A-mzO" secondAttribute="leading" id="isP-xm-ESU"/>
                             <constraint firstItem="Y3u-TF-kLu" firstAttribute="top" secondItem="ln9-yH-Xev" secondAttribute="bottom" id="kfo-zn-2wu"/>
                             <constraint firstItem="wpK-3Q-gpp" firstAttribute="top" secondItem="DOB-CW-oln" secondAttribute="bottom" id="klx-Xo-wxc"/>
                             <constraint firstItem="ln9-yH-Xev" firstAttribute="leading" secondItem="ovj-4A-mzO" secondAttribute="leading" id="mld-Oo-z8r"/>
+                            <constraint firstItem="ovj-4A-mzO" firstAttribute="trailing" secondItem="7DS-vV-0Lf" secondAttribute="trailing" id="oT4-t9-DNm"/>
                             <constraint firstItem="0Zy-iG-g6r" firstAttribute="top" secondItem="Y3u-TF-kLu" secondAttribute="bottom" id="qhg-7t-Afa"/>
                             <constraint firstItem="ovj-4A-mzO" firstAttribute="trailing" secondItem="wpK-3Q-gpp" secondAttribute="trailing" id="rGh-qN-T34"/>
+                            <constraint firstItem="wpK-3Q-gpp" firstAttribute="top" secondItem="7DS-vV-0Lf" secondAttribute="bottom" id="sbw-Tv-8Ek"/>
                             <constraint firstAttribute="trailing" secondItem="DOB-CW-oln" secondAttribute="trailing" id="sw8-pZ-zdb"/>
                             <constraint firstItem="ovj-4A-mzO" firstAttribute="trailing" secondItem="ln9-yH-Xev" secondAttribute="trailing" id="tHs-2W-1Wk"/>
                             <constraint firstItem="ovj-4A-mzO" firstAttribute="trailing" secondItem="0uY-dq-Ujt" secondAttribute="trailing" id="uuE-bd-m6C"/>
@@ -202,6 +212,7 @@
                         <outlet property="menuView" destination="ln9-yH-Xev" id="5RI-lB-cJw"/>
                         <outlet property="monthLabel" destination="0uY-dq-Ujt" id="ISM-hN-NHC"/>
                         <outlet property="nextButton" destination="wpK-3Q-gpp" id="qBe-DK-FBv"/>
+                        <outlet property="noTimeslotsLabel" destination="7DS-vV-0Lf" id="E9s-WZ-hkK"/>
                         <outlet property="pickADateLabel" destination="xna-gZ-hSZ" id="mao-Zx-hp8"/>
                         <outlet property="pickATimeLabel" destination="0Zy-iG-g6r" id="FfV-f3-zWZ"/>
                         <outlet property="timeslotsPicker" destination="DOB-CW-oln" id="hR7-pc-clx"/>

@@ -133,8 +133,12 @@
 
 "bookaconsult_main_vc_title" = "Book a Consult";
 "bookaconsult_prebooking" = "Pre-booking information";
-"bookaconsult_doctor_response" = "A doctor will respond whitin 72 hours with:\n\n- A diagnoses\n\n- A treatmen plan\n\n- Supporting patient advice\n\n\n This will be copied to your GP unless you have withheld permision\n\n\n";
+"bookaconsult_doctor_response" = "A doctor will respond whitin 72 hours with:\n\n- A diagnoses\n\n- A treatmen plan\n\n- Supporting patient advice\n\n\n This will be copied to your GP unless you have withheld permision\n\n\nif we are unable to make a diagnosis or a treatment plan, we will ask you to book an online consultation at a date and time you choose\n\n\nWe may also respond to arrange a medical consultation or a direct booking for further skin surgery/investigation in clinic";
 
+"booking_calendar_vc_title" = "Book a Consult";
+"booking_calendar_pick_a_date" = "1 - Pick a Date:";
+"booking_calendar_pick_a_time" = "2 - Pick a Time:";
+"booking_calendar_timeslot_emtpy" = "No timeslots available for that day";
 
 "booking_cancel_confirm_title" = "Cancel Appointment";
 "booking_cancel_confirm_message" = "Are you sure you want to cancel this appointment? There is a cancellation fee of %@ credits.";

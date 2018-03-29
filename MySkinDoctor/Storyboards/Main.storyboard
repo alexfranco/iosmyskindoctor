@@ -119,6 +119,7 @@
                         <outlet property="segmentedControl" destination="8pX-cx-JOp" id="ll9-yX-QEX"/>
                         <outlet property="tableView" destination="XGW-ax-xgg" id="Mol-nf-n38"/>
                         <segue destination="H33-FP-GZa" kind="presentation" identifier="goToMyConsultDetails" id="Wq3-0u-Q1G"/>
+                        <segue destination="xmv-mi-Ftn" kind="presentation" identifier="goToBookAConsultNavigation" id="EzX-Ut-SSK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hQp-lU-Baw" userLabel="First Responder" sceneMemberID="firstResponder"/>
