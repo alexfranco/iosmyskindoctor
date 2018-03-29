@@ -38,18 +38,12 @@ class SkinProblemLocationViewController: FormViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		navigationController?.setBackgroundColorWithoutShadowImage(bgColor: AppStyle.locationNavigationBarBackgroundColor, titleColor: AppStyle.locationTextColor)
-		
-		view.backgroundColor = AppStyle.locationBackgroundColor
-		locationLabel.textColor = AppStyle.locationTextColor
-		tipLabel.textColor = AppStyle.locationTextColor
-		
 		viewModelCast.isFrontSelected = true
-		locationLabel.text = viewModelCast.problemLocationText
-
-		configureLocationButtons()
+		nextButton.isEnabled = false
 		
-		self.nextButton.isEnabled = false
+		configureLocationButtons()
+		applyTheme()
+		applyLocalization()
 	}
 
 	override func initViewModel(viewModel: BaseViewModel) {
@@ -60,6 +54,8 @@ class SkinProblemLocationViewController: FormViewController {
 		viewModelCast.bodyImageChanged = { [weak self] (isFrontSelected, bodyImage) in
 			DispatchQueue.main.async {
 				self?.bodyImageView.image = bodyImage
+				self?.bodyLeftButton.isHidden = (self?.viewModelCast.isFrontSelected)!
+				self?.bodyRightButton.isHidden = !(self?.viewModelCast.isFrontSelected)!
 			}
 		}
 		
@@ -91,8 +87,35 @@ class SkinProblemLocationViewController: FormViewController {
 		}
 	}
 	
-	// MARK: Helpers
+	// MARK: IBActions
+	
+	@IBAction func onBodyLrftButtonPressed(_ sender: Any) {
+		viewModelCast.isFrontSelected = true
+	}
+	
+	@IBAction func onBodyRightButtonPressed(_ sender: Any) {
+		viewModelCast.isFrontSelected = false
+	}
+	
+	@IBAction func onLocationPressed(_ sender: Any) {
+		if let button = sender as? UIButton {
+			button.isSelected = true
+			let locationProblemRawValue = button.tag
+			var finalLocation = SkinProblemAttachment.LocationProblemType.element(at: locationProblemRawValue) ?? .none
+			if !viewModelCast.isFrontSelected {
+				finalLocation = SkinProblemAttachment.convertLocationTypeAnteriorToPosterior(type: finalLocation)
+			}
+			
+			viewModelCast.locationProblemType = finalLocation
+		}
+	}
 		
+	@IBAction func onNextButtonPressed(_ sender: Any) {
+		viewModelCast.saveModel()
+	}
+	
+	// MARK: Helpers
+	
 	func configureLocationButtons() {
 		locationHeadButton.tag = SkinProblemAttachment.LocationProblemType.indexOf(locationProblemType: .headAnterior)
 		locationNeckButton.tag = SkinProblemAttachment.LocationProblemType.indexOf(locationProblemType: .neckAnterior)
@@ -128,28 +151,19 @@ class SkinProblemLocationViewController: FormViewController {
 						   locationFootRightButton]
 	}
 	
-	@IBAction func onBodyLrftButtonPressed(_ sender: Any) {
-		viewModelCast.isFrontSelected = true
-	}
-	
-	@IBAction func onBodyRightButtonPressed(_ sender: Any) {
-		viewModelCast.isFrontSelected = false
-	}
-	
-	@IBAction func onLocationPressed(_ sender: Any) {
-		if let button = sender as? UIButton {
-			button.isSelected = true
-			let locationProblemRawValue = button.tag
-			var finalLocation = SkinProblemAttachment.LocationProblemType.element(at: locationProblemRawValue) ?? .none
-			if !viewModelCast.isFrontSelected {
-				finalLocation = SkinProblemAttachment.convertLocationTypeAnteriorToPosterior(type: finalLocation)
-			}
-			
-			viewModelCast.locationProblemType = finalLocation
-		}
-	}
+	func applyTheme() {
+		navigationController?.setBackgroundColorWithoutShadowImage(bgColor: AppStyle.locationNavigationBarBackgroundColor, titleColor: AppStyle.locationTextColor)
 		
-	@IBAction func onNextButtonPressed(_ sender: Any) {
-		viewModelCast.saveModel()
+		view.backgroundColor = AppStyle.locationBackgroundColor
+		locationLabel.textColor = AppStyle.locationTextColor
+		tipLabel.textColor = AppStyle.locationTextColor
+		locationLabel.text = viewModelCast.problemLocationText
 	}
+	
+	func applyLocalization() {
+		title = NSLocalizedString("skinproblems_photo_information_main_vc_title", comment: "")
+		tipLabel.text = NSLocalizedString("addskinproblems_location_tip", comment: "")
+		nextButton.setTitle(NSLocalizedString("addskinproblems_location_next_button", comment: ""), for: .normal)
+	}
+	
 }

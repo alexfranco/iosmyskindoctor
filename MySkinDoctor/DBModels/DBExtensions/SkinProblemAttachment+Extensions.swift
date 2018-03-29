@@ -161,7 +161,7 @@ extension SkinProblemAttachment {
 		case .lowerLegLeftAnterior:
 			return LocationProblemType.lowerLegRightPosterior
 		case .lowerLegRightAnterior:
-			return LocationProblemType.lowerLegRightPosterior
+			return LocationProblemType.lowerLegLeftPosterior
 		case .footLeftAnterior:
 			return LocationProblemType.ankleRightPosterior
 		case .footRightAnterior:

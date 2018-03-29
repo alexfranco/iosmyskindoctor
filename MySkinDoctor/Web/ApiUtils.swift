@@ -289,6 +289,8 @@ extension ApiUtils {
 						switch(status){
 						case 200, 201, ApiUtils.Api.DEFAULT_STATUS_CODE:
 							completionHandler(ApiResult.success(jsonResult))
+						case 401:
+							completionHandler(ApiResult.failure(nil, ApiGenericError.authorizationError))
 						case 403:
 							completionHandler(ApiResult.failure(nil, ApiGenericError.permisionDenied))
 						default:
@@ -317,6 +319,8 @@ extension ApiUtils {
 						switch(status){
 						case 200, 201, ApiUtils.Api.DEFAULT_STATUS_CODE:
 							completionHandler(ApiArrayResult.success(jsonResult))
+						case 401:
+							completionHandler(ApiArrayResult.failure(nil, ApiGenericError.authorizationError))
 						case 403:
 							completionHandler(ApiArrayResult.failure(nil, ApiGenericError.permisionDenied))
 						default:

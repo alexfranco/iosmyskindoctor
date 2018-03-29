@@ -108,6 +108,8 @@
 "skinproblems_photo_information_photo_type" = "This is a photo of my skin problem";
 "skinproblems_photo_information_document_type" = "This is a medical note or prescription";
 
+"addskinproblems_location_tip" = "Please tell us where on the body this photo was taken";
+"addskinproblems_location_next_button" = "Finish and Add Photo";
 "skinproblem_thank_you" = "Thank you";
 "skinproblem_diagnosis" = "You will receive a diagnosis within 72 hours.";
 
