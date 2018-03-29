@@ -39,7 +39,7 @@ class SkinProblemLocationViewController: FormViewController {
 		super.viewDidLoad()
 		
 		viewModelCast.isFrontSelected = true
-		nextButton.isEnabled = false
+		nextButton.isEnabled = viewModelCast.isNextButtonEnabled
 		
 		configureLocationButtons()
 		applyTheme()
@@ -55,13 +55,13 @@ class SkinProblemLocationViewController: FormViewController {
 			DispatchQueue.main.async {
 				self?.bodyImageView.image = bodyImage
 				self?.bodyLeftButton.isHidden = (self?.viewModelCast.isFrontSelected)!
-				self?.bodyRightButton.isHidden = !(self?.viewModelCast.isFrontSelected)!
+				self?.bodyRightButton.isHidden = !(self?.viewModelCast.isFrontSelected)!								
 			}
 		}
 		
 		viewModelCast.locationProblemUpdated = { [weak self] (locationProblemType) in
 			DispatchQueue.main.async {
-				self?.nextButton.isEnabled = true
+				self?.nextButton.isEnabled = (self?.viewModelCast.isNextButtonEnabled)!
 				
 				var finalLocationProblemType = locationProblemType
 				
@@ -165,5 +165,4 @@ class SkinProblemLocationViewController: FormViewController {
 		tipLabel.text = NSLocalizedString("addskinproblems_location_tip", comment: "")
 		nextButton.setTitle(NSLocalizedString("addskinproblems_location_next_button", comment: ""), for: .normal)
 	}
-	
 }

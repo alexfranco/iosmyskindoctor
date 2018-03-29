@@ -49,7 +49,7 @@
         <attribute name="accessCode" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="addressLine1" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="addressLine2" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="dob" optional="YES" attributeType="Date" defaultDateTimeInterval="542644500" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="dob" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="gpAddressLine" optional="YES" attributeType="String" syncable="YES"/>

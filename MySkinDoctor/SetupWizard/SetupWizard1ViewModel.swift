@@ -14,21 +14,25 @@ class SetupWizard1ViewModel: BaseViewModel {
 	var firstName = ""
 	var lastName = ""
 	
-	var dob: Date = Date() {
+	var dob: Date? {
 		didSet {
 			let formatter = DateFormatter()
 			formatter.dateFormat = "dd/MM/yyyy"
 			
-			if dobUpdated != nil {
-				dobUpdated!(formatter.string(from: dob))
+			if dobUpdated != nil && dob != nil {
+				dobUpdated!(formatter.string(from: dob!))
 			}
 		}
 	}
 	
 	var dobDisplayText: String {
-		let formatter = DateFormatter()
-		formatter.dateFormat = "dd/MM/yyyy"
-		return formatter.string(from: dob)
+		if let dobSafe = dob {
+			let formatter = DateFormatter()
+			formatter.dateFormat = "dd/MM/yyyy"
+			return formatter.string(from: dobSafe)
+		} else {
+			return ""
+		}
 	}
 	
 	var dobUpdated: ((_ date: String)->())?
@@ -94,7 +98,11 @@ class SetupWizard1ViewModel: BaseViewModel {
 				let profile = DataController.createUniqueEntity(type: Profile.self)
 				profile.firstName = self.firstName
 				profile.lastName = self.self.lastName
-				profile.dob = self.dob as NSDate
+				
+				if let dobSafe = self.dob as NSDate? {
+					profile.dob = dobSafe
+				}
+				
 				profile.phone = self.phone
 				profile.postcode = self.postcode
 				DataController.saveEntity(managedObject: profile)

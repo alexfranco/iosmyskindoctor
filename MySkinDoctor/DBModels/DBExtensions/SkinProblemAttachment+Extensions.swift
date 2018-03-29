@@ -83,7 +83,7 @@ extension SkinProblemAttachment {
 			case .lowerArmLeft:
 				return "Lower Left Arm"
 			case .lowerArmRight:
-				return "Lower Left Arm"
+				return "Lower Right Arm"
 			case .pubicAndGroinAnterior:
 				return "Pubic And Groin"
 			case .upperLegLeftAnterior:

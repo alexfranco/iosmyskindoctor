@@ -22,12 +22,19 @@ class SkinProblemLocationViewModel: BaseViewModel {
 	var isFrontSelected: Bool = true {
 		didSet {
 			self.bodyImageChanged?(isFrontSelected, bodyImage())
+			self.locationProblemType = .none
 		}
 	}
 	
 	var locationProblemType:  SkinProblemAttachment.LocationProblemType = .none {
 		didSet {
 			self.locationProblemUpdated?(locationProblemType)
+		}
+	}
+	
+	var isNextButtonEnabled: Bool {
+		get {
+			return locationProblemType != .none
 		}
 	}
 	
