@@ -140,6 +140,10 @@ struct AppStyle {
 	static let diagnoseTitleColor = AppColors.secondTabColor
 	static let diagnoseNextButtonColor = AppColors.secondTabColor
 	
+	static let diagnoseInformationSheetBackgroundColor = BaseColors.ice
+	static let diagnoseInformationSheetHightlightBackgroundColor = BaseColors.warmGreyFour
+	static let diagnoseInformationTextcolor = BaseColors.hospitalGreen
+	
 	// Medical History
 	
 	static let medicalHistorySaveViewBackgroundColor = BaseColors.ice

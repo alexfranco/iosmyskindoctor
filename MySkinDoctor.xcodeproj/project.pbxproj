@@ -15,8 +15,6 @@
 		780F70262035AABB00D96601 /* NoBackgroundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780F70252035AABB00D96601 /* NoBackgroundButton.swift */; };
 		782647042057D49E00F79FB7 /* DoctorNotes+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782646F42057D49E00F79FB7 /* DoctorNotes+CoreDataClass.swift */; };
 		782647052057D49E00F79FB7 /* DoctorNotes+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782646F52057D49E00F79FB7 /* DoctorNotes+CoreDataProperties.swift */; };
-		782647062057D49E00F79FB7 /* DiagnoseAttachments+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782646F62057D49E00F79FB7 /* DiagnoseAttachments+CoreDataClass.swift */; };
-		782647072057D49E00F79FB7 /* DiagnoseAttachments+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782646F72057D49E00F79FB7 /* DiagnoseAttachments+CoreDataProperties.swift */; };
 		782647082057D49E00F79FB7 /* SkinProblems+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782646F82057D49E00F79FB7 /* SkinProblems+CoreDataClass.swift */; };
 		782647092057D49E00F79FB7 /* SkinProblems+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782646F92057D49E00F79FB7 /* SkinProblems+CoreDataProperties.swift */; };
 		7826470A2057D49E00F79FB7 /* Diagnose+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782646FA2057D49E00F79FB7 /* Diagnose+CoreDataClass.swift */; };
@@ -33,8 +31,6 @@
 		782647182057E47800F79FB7 /* Diagnose+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782647172057E47800F79FB7 /* Diagnose+Extensions.swift */; };
 		7826472A205800FB00F79FB7 /* DoctorNotes+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782646F42057D49E00F79FB7 /* DoctorNotes+CoreDataClass.swift */; };
 		7826472B205800FB00F79FB7 /* DoctorNotes+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782646F52057D49E00F79FB7 /* DoctorNotes+CoreDataProperties.swift */; };
-		7826472C205800FB00F79FB7 /* DiagnoseAttachments+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782646F62057D49E00F79FB7 /* DiagnoseAttachments+CoreDataClass.swift */; };
-		7826472D205800FB00F79FB7 /* DiagnoseAttachments+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782646F72057D49E00F79FB7 /* DiagnoseAttachments+CoreDataProperties.swift */; };
 		7826472E205800FB00F79FB7 /* SkinProblems+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782646F82057D49E00F79FB7 /* SkinProblems+CoreDataClass.swift */; };
 		7826472F205800FB00F79FB7 /* SkinProblems+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782646F92057D49E00F79FB7 /* SkinProblems+CoreDataProperties.swift */; };
 		78264730205800FB00F79FB7 /* Diagnose+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782646FA2057D49E00F79FB7 /* Diagnose+CoreDataClass.swift */; };
@@ -75,6 +71,16 @@
 		788C3219204EB63B0078A983 /* UILabel+Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788C3217204EB63B0078A983 /* UILabel+Padding.swift */; };
 		788C321D204EF0400078A983 /* BookAConsultCalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788C321C204EF0400078A983 /* BookAConsultCalendarViewModel.swift */; };
 		788C321E204EF0400078A983 /* BookAConsultCalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788C321C204EF0400078A983 /* BookAConsultCalendarViewModel.swift */; };
+		7898C60E207386D000F93F7E /* DiagnoseAttachmentResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7898C60D207386D000F93F7E /* DiagnoseAttachmentResponseModel.swift */; };
+		7898C60F207386D000F93F7E /* DiagnoseAttachmentResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7898C60D207386D000F93F7E /* DiagnoseAttachmentResponseModel.swift */; };
+		7898C612207387F800F93F7E /* DiagnoseAttachment+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7898C610207387F700F93F7E /* DiagnoseAttachment+CoreDataClass.swift */; };
+		7898C613207387F800F93F7E /* DiagnoseAttachment+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7898C610207387F700F93F7E /* DiagnoseAttachment+CoreDataClass.swift */; };
+		7898C614207387F800F93F7E /* DiagnoseAttachment+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7898C611207387F700F93F7E /* DiagnoseAttachment+CoreDataProperties.swift */; };
+		7898C615207387F800F93F7E /* DiagnoseAttachment+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7898C611207387F700F93F7E /* DiagnoseAttachment+CoreDataProperties.swift */; };
+		7898C617207388B600F93F7E /* DiagnoseAttachment+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7898C616207388B600F93F7E /* DiagnoseAttachment+Extensions.swift */; };
+		7898C618207388B600F93F7E /* DiagnoseAttachment+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7898C616207388B600F93F7E /* DiagnoseAttachment+Extensions.swift */; };
+		7898C61D20739C2000F93F7E /* UIButtonCustomHighlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7898C61C20739C2000F93F7E /* UIButtonCustomHighlight.swift */; };
+		7898C61E20739C2000F93F7E /* UIButtonCustomHighlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7898C61C20739C2000F93F7E /* UIButtonCustomHighlight.swift */; };
 		78B9E516203C2B920054CAD3 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B9E515203C2B920054CAD3 /* ForgotPasswordViewController.swift */; };
 		78B9E518203C2C670054CAD3 /* ForgotPasswordResposeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B9E517203C2C670054CAD3 /* ForgotPasswordResposeModel.swift */; };
 		78B9E520203C2E630054CAD3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78B9E522203C2E630054CAD3 /* Localizable.strings */; };
@@ -306,8 +312,6 @@
 		780F70252035AABB00D96601 /* NoBackgroundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoBackgroundButton.swift; sourceTree = "<group>"; };
 		782646F42057D49E00F79FB7 /* DoctorNotes+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DoctorNotes+CoreDataClass.swift"; sourceTree = "<group>"; };
 		782646F52057D49E00F79FB7 /* DoctorNotes+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DoctorNotes+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		782646F62057D49E00F79FB7 /* DiagnoseAttachments+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DiagnoseAttachments+CoreDataClass.swift"; sourceTree = "<group>"; };
-		782646F72057D49E00F79FB7 /* DiagnoseAttachments+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DiagnoseAttachments+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		782646F82057D49E00F79FB7 /* SkinProblems+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SkinProblems+CoreDataClass.swift"; sourceTree = "<group>"; };
 		782646F92057D49E00F79FB7 /* SkinProblems+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SkinProblems+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		782646FA2057D49E00F79FB7 /* Diagnose+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Diagnose+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -334,6 +338,11 @@
 		788C3212204E88D00078A983 /* BookAConsultCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookAConsultCalendarViewController.swift; sourceTree = "<group>"; };
 		788C3217204EB63B0078A983 /* UILabel+Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Padding.swift"; sourceTree = "<group>"; };
 		788C321C204EF0400078A983 /* BookAConsultCalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookAConsultCalendarViewModel.swift; sourceTree = "<group>"; };
+		7898C60D207386D000F93F7E /* DiagnoseAttachmentResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnoseAttachmentResponseModel.swift; sourceTree = "<group>"; };
+		7898C610207387F700F93F7E /* DiagnoseAttachment+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DiagnoseAttachment+CoreDataClass.swift"; sourceTree = "<group>"; };
+		7898C611207387F700F93F7E /* DiagnoseAttachment+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DiagnoseAttachment+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7898C616207388B600F93F7E /* DiagnoseAttachment+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DiagnoseAttachment+Extensions.swift"; sourceTree = "<group>"; };
+		7898C61C20739C2000F93F7E /* UIButtonCustomHighlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonCustomHighlight.swift; sourceTree = "<group>"; };
 		78B9E515203C2B920054CAD3 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		78B9E517203C2C670054CAD3 /* ForgotPasswordResposeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordResposeModel.swift; sourceTree = "<group>"; };
 		78B9E521203C2E630054CAD3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -508,6 +517,7 @@
 			isa = PBXGroup;
 			children = (
 				782647172057E47800F79FB7 /* Diagnose+Extensions.swift */,
+				7898C616207388B600F93F7E /* DiagnoseAttachment+Extensions.swift */,
 				7826473E2058016B00F79FB7 /* SkinProblemAttachment+Extensions.swift */,
 				782647142057DADE00F79FB7 /* SkinProblems+Extensions.swift */,
 				FA8CFC882065606D0067C11F /* SkinProblemsAttachment+Extensions.swift */,
@@ -717,6 +727,7 @@
 				FA3326AC20441C8500657C8A /* TitleLabel.swift */,
 				FA3326AD20441C8500657C8A /* GrayLabel.swift */,
 				78FB31962063B8F300F155AE /* DTTextField.swift */,
+				7898C61C20739C2000F93F7E /* UIButtonCustomHighlight.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -743,12 +754,12 @@
 			isa = PBXGroup;
 			children = (
 				78264741205802C700F79FB7 /* DBExtensions */,
+				7898C610207387F700F93F7E /* DiagnoseAttachment+CoreDataClass.swift */,
+				7898C611207387F700F93F7E /* DiagnoseAttachment+CoreDataProperties.swift */,
 				782646FE2057D49E00F79FB7 /* Consultation+CoreDataClass.swift */,
 				782646FF2057D49E00F79FB7 /* Consultation+CoreDataProperties.swift */,
 				782646FA2057D49E00F79FB7 /* Diagnose+CoreDataClass.swift */,
 				782646FB2057D49E00F79FB7 /* Diagnose+CoreDataProperties.swift */,
-				782646F62057D49E00F79FB7 /* DiagnoseAttachments+CoreDataClass.swift */,
-				782646F72057D49E00F79FB7 /* DiagnoseAttachments+CoreDataProperties.swift */,
 				782647002057D49E00F79FB7 /* Doctor+CoreDataClass.swift */,
 				782647012057D49E00F79FB7 /* Doctor+CoreDataProperties.swift */,
 				782646F42057D49E00F79FB7 /* DoctorNotes+CoreDataClass.swift */,
@@ -866,6 +877,7 @@
 				78FB31992063CD4B00F155AE /* SkinProblemsResponseModel.swift */,
 				FA8CFC85206540CD0067C11F /* SkinProblemAttachmentResponseModel.swift */,
 				FAFD9008206BDCF8008DBAB9 /* AccessCodeResponseModel.swift */,
+				7898C60D207386D000F93F7E /* DiagnoseAttachmentResponseModel.swift */,
 			);
 			path = APIModels;
 			sourceTree = "<group>";
@@ -1302,7 +1314,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7826472C205800FB00F79FB7 /* DiagnoseAttachments+CoreDataClass.swift in Sources */,
 				FABC7A36205C061F00167FFA /* ChangePasswordResponseModel.swift in Sources */,
 				FADC33452046F16C0065A7EB /* SkinProblemPhotoInformationViewModel.swift in Sources */,
 				FAF2CEB7204D55850001EEAB /* MyConsultsViewController.swift in Sources */,
@@ -1318,6 +1329,7 @@
 				FADC3350204706E70065A7EB /* SkinProblemLocationViewModel.swift in Sources */,
 				FAF2CECE204D59E40001EEAB /* MyConsultsViewModel.swift in Sources */,
 				78C205E32045AA9900F8E407 /* AddSkinProblemsViewModel.swift in Sources */,
+				7898C615207387F800F93F7E /* DiagnoseAttachment+CoreDataProperties.swift in Sources */,
 				FAEC573C203DBEAE00D1A0AE /* LoginViewModel.swift in Sources */,
 				78FB319E2063F59500F155AE /* Formatter+Extentions.swift in Sources */,
 				FA6E8F5D2056BFC3001F6E16 /* SetupWizard2ViewController.swift in Sources */,
@@ -1343,6 +1355,7 @@
 				78B9E532203C4CD70054CAD3 /* ApiUtils.swift in Sources */,
 				FA6130CC20500DCD00731495 /* BookAConsultConfirmViewController.swift in Sources */,
 				FA33263B20400FD200657C8A /* DashboardTabViewController.swift in Sources */,
+				7898C613207387F800F93F7E /* DiagnoseAttachment+CoreDataClass.swift in Sources */,
 				78B9E533203C4CD70054CAD3 /* PositiveButton.swift in Sources */,
 				78B9E534203C4CD70054CAD3 /* FormViewController.swift in Sources */,
 				7826473C205800FB00F79FB7 /* SkinProblems+Extensions.swift in Sources */,
@@ -1358,9 +1371,9 @@
 				FAD6ADC220446D310050C1A9 /* AddPhotoTableViewCellViewModel.swift in Sources */,
 				FA6E8FB02056D66C001F6E16 /* CoreDataStack.swift in Sources */,
 				FA3326472040220200657C8A /* MySkinProblemsTableCellViewModel.swift in Sources */,
+				7898C61E20739C2000F93F7E /* UIButtonCustomHighlight.swift in Sources */,
 				FA6130C720500DB800731495 /* BookAConsultConfirmViewModel.swift in Sources */,
 				7849CC9F203EE15A0030A7B1 /* RegistrationViewModel.swift in Sources */,
-				7826472D205800FB00F79FB7 /* DiagnoseAttachments+CoreDataProperties.swift in Sources */,
 				FA6E8F5A2056BBE0001F6E16 /* SetupWizard3ViewModel.swift in Sources */,
 				FAF2CED3204D7C680001EEAB /* UILabel+RoundedBorders.swift in Sources */,
 				78B9E538203C4CD70054CAD3 /* NoBackgroundButton.swift in Sources */,
@@ -1392,6 +1405,7 @@
 				FAF2CEC4204D56E00001EEAB /* MyConsultTableViewCell.swift in Sources */,
 				7849CCA9203EE3E60030A7B1 /* BaseViewModel.swift in Sources */,
 				78DBCE552051742700C0D4B5 /* MySkinProblemDiagnosisViewModel.swift in Sources */,
+				7898C60F207386D000F93F7E /* DiagnoseAttachmentResponseModel.swift in Sources */,
 				FAA775062052A5E100A794FF /* MySkinProblemDiagnoseUpdateRequestTableViewModel.swift in Sources */,
 				78FB319B2063CD4B00F155AE /* SkinProblemsResponseModel.swift in Sources */,
 				78B9E53D203C4CD70054CAD3 /* ThemeManager.swift in Sources */,
@@ -1400,6 +1414,7 @@
 				FABC7A30205C00F300167FFA /* ChangePasswordViewController.swift in Sources */,
 				FAAE628D2056A7C800823BFE /* SetupWizard1ViewModel.swift in Sources */,
 				78FFF03020496E340013240D /* MedicalHistoryViewModel.swift in Sources */,
+				7898C618207388B600F93F7E /* DiagnoseAttachment+Extensions.swift in Sources */,
 				FA3326522040287900657C8A /* BindingViewController.swift in Sources */,
 				FADC334B204706DC0065A7EB /* SkinProblemLocationViewController.swift in Sources */,
 				78B9E53E203C4CD70054CAD3 /* AppDelegate.swift in Sources */,
@@ -1454,6 +1469,7 @@
 				782647122057D49E00F79FB7 /* MedicalHistory+CoreDataClass.swift in Sources */,
 				78C205E22045AA9900F8E407 /* AddSkinProblemsViewModel.swift in Sources */,
 				FAF2CECD204D59E40001EEAB /* MyConsultsViewModel.swift in Sources */,
+				7898C614207387F800F93F7E /* DiagnoseAttachment+CoreDataProperties.swift in Sources */,
 				FAEC573B203DBEAE00D1A0AE /* LoginViewModel.swift in Sources */,
 				78FB319D2063F59500F155AE /* Formatter+Extentions.swift in Sources */,
 				FA8CFC7F2062A7A20067C11F /* ProfileResponseModel.swift in Sources */,
@@ -1479,6 +1495,7 @@
 				FA6130D6205023CE00731495 /* BookAConsultThankYouViewModel.swift in Sources */,
 				788C321D204EF0400078A983 /* BookAConsultCalendarViewModel.swift in Sources */,
 				780F70242035A63700D96601 /* PositiveButton.swift in Sources */,
+				7898C612207387F800F93F7E /* DiagnoseAttachment+CoreDataClass.swift in Sources */,
 				FA6130CB20500DCD00731495 /* BookAConsultConfirmViewController.swift in Sources */,
 				FA7F713A20529181006B1EFF /* BaseMySkinProblemDiagnosisViewController.swift in Sources */,
 				780F7017203587CB00D96601 /* FormViewController.swift in Sources */,
@@ -1493,6 +1510,7 @@
 				7826470A2057D49E00F79FB7 /* Diagnose+CoreDataClass.swift in Sources */,
 				FA6E8F562056BBC4001F6E16 /* SetupWizard3ViewController.swift in Sources */,
 				7849CC9E203EE15A0030A7B1 /* RegistrationViewModel.swift in Sources */,
+				7898C61D20739C2000F93F7E /* UIButtonCustomHighlight.swift in Sources */,
 				78C205CB20459D7D00F8E407 /* UINavigationController+Extensions.swift in Sources */,
 				FAF2CED2204D745D0001EEAB /* UILabel+RoundedBorders.swift in Sources */,
 				780F70262035AABB00D96601 /* NoBackgroundButton.swift in Sources */,
@@ -1528,6 +1546,7 @@
 				78C205D02045A56B00F8E407 /* SkinProblemTableViewCell.swift in Sources */,
 				FA33268620440EA400657C8A /* PhotoUtils.swift in Sources */,
 				782647112057D49E00F79FB7 /* Doctor+CoreDataProperties.swift in Sources */,
+				7898C60E207386D000F93F7E /* DiagnoseAttachmentResponseModel.swift in Sources */,
 				FAF2CEC3204D56E00001EEAB /* MyConsultTableViewCell.swift in Sources */,
 				78FB319A2063CD4B00F155AE /* SkinProblemsResponseModel.swift in Sources */,
 				782647042057D49E00F79FB7 /* DoctorNotes+CoreDataClass.swift in Sources */,
@@ -1535,12 +1554,11 @@
 				78DBCE542051742700C0D4B5 /* MySkinProblemDiagnosisViewModel.swift in Sources */,
 				FABC7A2F205C00F300167FFA /* ChangePasswordViewController.swift in Sources */,
 				FA3326512040287900657C8A /* BindingViewController.swift in Sources */,
-				782647062057D49E00F79FB7 /* DiagnoseAttachments+CoreDataClass.swift in Sources */,
+				7898C617207388B600F93F7E /* DiagnoseAttachment+Extensions.swift in Sources */,
 				FAAE628C2056A7C800823BFE /* SetupWizard1ViewModel.swift in Sources */,
 				FAE733C22034494D00898E65 /* AppDelegate.swift in Sources */,
 				78E44AA6203EBE5C0094F3AF /* PasswordStrength.swift in Sources */,
 				78FFF02F20496E340013240D /* MedicalHistoryViewModel.swift in Sources */,
-				782647072057D49E00F79FB7 /* DiagnoseAttachments+CoreDataProperties.swift in Sources */,
 				78B9E516203C2B920054CAD3 /* ForgotPasswordViewController.swift in Sources */,
 				FADC334A204706DC0065A7EB /* SkinProblemLocationViewController.swift in Sources */,
 				7884D8B4205A787600C59E7B /* UITextField+Padding.swift in Sources */,

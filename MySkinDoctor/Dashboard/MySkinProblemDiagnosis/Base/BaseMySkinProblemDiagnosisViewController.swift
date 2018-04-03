@@ -37,16 +37,12 @@ class BaseMySkinProblemDiagnosisViewController: BindingViewController {
 		doctorNameLabel.text = viewModelCast.doctorNameText
 		qualificationsLabel.text = viewModelCast.qualificationsText
 		
-		nextButton.isHidden = !viewModelCast.shouldShowNextButton
-
 		applyTheme()
 	}
 	
 	func applyTheme() {
 		navigationController?.setBackgroundColorWithoutShadowImage(bgColor: viewModelCast.viewBackgroundColor, titleColor: AppStyle.diagnoseViewTextColor)
-		
-		nextButton.backgroundColor = AppStyle.diagnoseNextButtonColor
-		
+				
 		view.backgroundColor = viewModelCast.viewBackgroundColor
 		profileHeaderView.backgroundColor = viewModelCast.viewBackgroundColor
 			
@@ -56,7 +52,7 @@ class BaseMySkinProblemDiagnosisViewController: BindingViewController {
 	// MARK: IBActions
 	
 	@IBAction func onNextButtonPressed(_ sender: Any) {
-		dismiss(animated: true, completion: nil)
+		self.performSegue(withIdentifier: Segues.goToBookingConsult, sender: nil)
 	}
 }
 

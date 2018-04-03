@@ -24,7 +24,7 @@ class SkinProblemsResponseModel : BaseResponseModel {
 	var diagnosisPatientInformation: String?
 	var diagnosisComments: String?
 	var status: Int = 0
-	
+	var diagnosisResources: [DiagnoseAttachmentResponseModel] = []
 	var attachments: [SkinProblemAttachmentResponseModel] = []
 	
 	// Mappable
@@ -49,5 +49,7 @@ class SkinProblemsResponseModel : BaseResponseModel {
 		if let dateString = map["date_created"].currentValue as? String, let _date = Formatter.iso8601.date(from: dateString) { dateCreated = _date }
 		
 		if let dateString = map["outcome_date"].currentValue as? String, let _date = Formatter.iso8601.date(from: dateString) { outcomeDate = _date }
+		
+		diagnosisResources <- map["diagnosis_resources"]
 	}
 }

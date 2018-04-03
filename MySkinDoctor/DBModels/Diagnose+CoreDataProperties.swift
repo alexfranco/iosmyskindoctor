@@ -2,7 +2,7 @@
 //  Diagnose+CoreDataProperties.swift
 //  MySkinDoctor
 //
-//  Created by Alex on 14/03/2018.
+//  Created by Alex Núñez on 03/04/2018.
 //  Copyright © 2018 TouchSoft. All rights reserved.
 //
 //
@@ -34,10 +34,10 @@ extension Diagnose {
 extension Diagnose {
 
     @objc(addAttachmentsObject:)
-    @NSManaged public func addToAttachments(_ value: DiagnoseAttachments)
+    @NSManaged public func addToAttachments(_ value: DiagnoseAttachment)
 
     @objc(removeAttachmentsObject:)
-    @NSManaged public func removeFromAttachments(_ value: DiagnoseAttachments)
+    @NSManaged public func removeFromAttachments(_ value: DiagnoseAttachment)
 
     @objc(addAttachments:)
     @NSManaged public func addToAttachments(_ values: NSSet)

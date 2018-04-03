@@ -74,7 +74,11 @@
                         <viewLayoutGuide key="safeArea" id="xzp-kD-jk6"/>
                     </view>
                     <navigationItem key="navigationItem" title="Book a Consult" id="4xa-0i-j01">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="tCC-Th-9DG"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="tCC-Th-9DG">
+                            <connections>
+                                <action selector="onCancelButtonPressed:" destination="w4S-Oi-ilu" id="Gms-Oq-MwJ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="cancelButton" destination="tCC-Th-9DG" id="49I-N0-KNi"/>

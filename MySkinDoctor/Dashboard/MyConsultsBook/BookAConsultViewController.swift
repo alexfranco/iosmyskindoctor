@@ -26,4 +26,8 @@ class BookAConsultViewController: BindingViewController {
 		navigationController?.setBackgroundColorWithoutShadowImage(bgColor: AppStyle.defaultNavigationBarColor, titleColor: AppStyle.defaultNavigationBarTitleColor)
 	}
 	
+	@IBAction func onCancelButtonPressed(_ sender : UIButton) {
+		dismiss(animated: true, completion: nil)
+	}
+	
 }

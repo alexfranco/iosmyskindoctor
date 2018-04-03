@@ -23,14 +23,6 @@ class BaseMySkinProblemDiagnosisViewModel: BaseViewModel {
 		}
 	}
 	
-	var shouldShowNextButton: Bool {
-		guard let diagnose = model.diagnose else {
-			return false
-		}
-		
-		return diagnose.diagnoseStatusEnum == .bookConsultationRequest
-	}
-	
 	var viewBackgroundColor: UIColor {
 		get {
 			switch diagnoseStatus {

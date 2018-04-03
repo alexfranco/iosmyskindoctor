@@ -43,9 +43,15 @@ extension SkinProblems {
 		skinProblem.diagnose!.patientInformation = skinProblemResponseModel.diagnosisPatientInformation
 		skinProblem.diagnose!.comments = skinProblemResponseModel.diagnosisComments
 		skinProblem.diagnose!.diagnoseDate = skinProblemResponseModel.outcomeDate as NSDate?
-		skinProblem.diagnose!.diagnoseStatus = Int16(skinProblemResponseModel.status)
+		
+		if skinProblemResponseModel.status == 0 { skinProblem.diagnose!.diagnoseStatusEnum = .draft }
+		if skinProblemResponseModel.status == 1 { skinProblem.diagnose!.diagnoseStatusEnum = .submitted }
+		if skinProblemResponseModel.status == 2 { skinProblem.diagnose!.diagnoseStatusEnum = .submitted }
+		if skinProblemResponseModel.status == 3 { skinProblem.diagnose!.diagnoseStatusEnum = .bookConsultationRequest }
+		if skinProblemResponseModel.status == 3 { skinProblem.diagnose!.diagnoseStatusEnum = .noFutherCommunicationRequired }
 		
 		parseAndSaveSkinProblemsAttachmentResponse(skinProblemsResponseModel: skinProblemResponseModel, skinProblems: &skinProblem)
+		parseAndSaveDiagnoseAttachmentResponse(skinProblemsResponseModel: skinProblemResponseModel, skinProblems: &skinProblem)
 		
 		DataController.saveEntity(managedObject: skinProblem)
 		
@@ -56,6 +62,13 @@ extension SkinProblems {
 		for attachment in skinProblemsResponseModel.attachments {
 			let localAttachment = SkinProblemAttachment.parseAndSaveSkinProblemsAttachmentResponse(attachment: attachment)
 			skinProblems.addToAttachments(localAttachment)
+		}
+	}
+	
+	static func parseAndSaveDiagnoseAttachmentResponse(skinProblemsResponseModel: SkinProblemsResponseModel, skinProblems: inout SkinProblems) {
+		for diagnoseResourceResponse in skinProblemsResponseModel.diagnosisResources {
+			let localDiagnoseResource = DiagnoseAttachment.parseAndSave(attachmentResponse: diagnoseResourceResponse)
+			skinProblems.diagnose?.addToAttachments(localDiagnoseResource)
 		}
 	}
 }

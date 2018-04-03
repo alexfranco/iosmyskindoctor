@@ -19,7 +19,6 @@ extension SkinProblemAttachment {
 		skinProblemAttachment.url = attachment.url
 		skinProblemAttachment.filename = attachment.filename
 		skinProblemAttachment.problemDescription = attachment.problemDescription
-		skinProblemAttachment.problemImage = attachment.problemImage
 		DataController.saveEntity(managedObject: skinProblemAttachment)
 		
 		return skinProblemAttachment

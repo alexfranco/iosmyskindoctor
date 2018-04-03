@@ -15,7 +15,6 @@ class SkinProblemAttachmentResponseModel : BaseResponseModel {
 	var filename: String?
 	var attachmentType: Int = 0
 	var location: String?
-	var problemImage: NSObject?
 	var url: String?
 	var skinProblemAttachmentId: Int = 0
 	

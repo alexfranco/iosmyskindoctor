@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 class MySkinProblemDiagnosisViewModel: BaseMySkinProblemDiagnosisViewModel {
+	
 	var diagnosis: String {
 		return self.model.diagnose!.summary ?? "-"
 	}
@@ -25,4 +26,37 @@ class MySkinProblemDiagnosisViewModel: BaseMySkinProblemDiagnosisViewModel {
 	var comments: String {
 		return self.model.diagnose!.comments ?? "-"
 	}
+}
+
+extension MySkinProblemDiagnosisViewModel {
+	
+	func getDataSourceCount() -> Int {
+		return allAttachmentsSorted().count
+	}
+	
+	func getAttachmentAtIndex(index: Int) -> DiagnoseAttachment? {
+		return allAttachmentsSorted()[index]
+	}
+	
+	func getAttachmentNameAtIndex(index: Int) -> String {
+		return getAttachmentAtIndex(index: index)?.diagnoseAttachmentName ?? "-"
+	}
+	
+	func getAttachmentUrlAtIndex(index: Int) -> String? {
+		return getAttachmentAtIndex(index: index)?.url
+	}
+	
+	private func allAttachmentsSorted() -> [DiagnoseAttachment] {
+		guard let model = self.model, let diagnose = model.diagnose, let attachments = diagnose.attachments?.allObjects as? [DiagnoseAttachment] else { return []}
+		return attachments.sorted(by: { $0.diagnosemAttachmentId < $1.diagnosemAttachmentId})
+	}
+	
+	func openAttachment(index: Int) {
+		if let urlString = getAttachmentUrlAtIndex(index: index), let url = URL(string: urlString), UIApplication.shared.openURL(url) {
+			print("default browser was successfully opened")
+		} else {
+			showAlert!("Error", "Error opening the attachment file")
+		}
+	}
+	
 }

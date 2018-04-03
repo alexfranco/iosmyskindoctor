@@ -31,6 +31,7 @@ class MySkinProblemDiagnoseUpdateRequestViewController: BaseMySkinProblemDiagnos
 		super.applyTheme()
 		
 		notesTitleLabel.textColor = AppStyle.diagnoseTitleColor
+		nextButton.backgroundColor = AppStyle.diagnoseNextButtonColor
 	}
 	
 	func configureTableView() {
