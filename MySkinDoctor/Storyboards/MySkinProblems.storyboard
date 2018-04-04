@@ -1189,7 +1189,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rZj-dU-Hz4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4981.875" y="-792.25352112676057"/>
+            <point key="canvasLocation" x="4982" y="-650"/>
         </scene>
         <!--My Skin Problem Diagnose Update Request View Controller-->
         <scene sceneID="Mpd-k5-JTo">
@@ -1360,7 +1360,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZjU-ba-No6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4981.6000000000004" y="-112.89355322338831"/>
+            <point key="canvasLocation" x="4982" y="267"/>
         </scene>
         <!--BookAConsultNavigationBar-->
         <scene sceneID="hMC-gW-6A7">
@@ -1368,7 +1368,7 @@
                 <viewControllerPlaceholder storyboardName="BookConsult" referencedIdentifier="BookAConsultNavigationBar" id="wbi-i7-pRT" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1D6-Ru-2Fz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5753" y="-136"/>
+            <point key="canvasLocation" x="5945" y="267"/>
         </scene>
     </scenes>
     <resources>

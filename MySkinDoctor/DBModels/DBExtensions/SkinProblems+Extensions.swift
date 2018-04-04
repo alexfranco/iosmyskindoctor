@@ -47,8 +47,8 @@ extension SkinProblems {
 		if skinProblemResponseModel.status == 0 { skinProblem.diagnose!.diagnoseStatusEnum = .draft }
 		if skinProblemResponseModel.status == 1 { skinProblem.diagnose!.diagnoseStatusEnum = .submitted }
 		if skinProblemResponseModel.status == 2 { skinProblem.diagnose!.diagnoseStatusEnum = .submitted }
-		if skinProblemResponseModel.status == 3 { skinProblem.diagnose!.diagnoseStatusEnum = .bookConsultationRequest }
-		if skinProblemResponseModel.status == 3 { skinProblem.diagnose!.diagnoseStatusEnum = .noFutherCommunicationRequired }
+		if skinProblemResponseModel.outcome == 3 { skinProblem.diagnose!.diagnoseStatusEnum = .bookConsultationRequest }
+		if skinProblemResponseModel.outcome == 4 { skinProblem.diagnose!.diagnoseStatusEnum = .noFutherCommunicationRequired }
 		
 		parseAndSaveSkinProblemsAttachmentResponse(skinProblemsResponseModel: skinProblemResponseModel, skinProblems: &skinProblem)
 		parseAndSaveDiagnoseAttachmentResponse(skinProblemsResponseModel: skinProblemResponseModel, skinProblems: &skinProblem)

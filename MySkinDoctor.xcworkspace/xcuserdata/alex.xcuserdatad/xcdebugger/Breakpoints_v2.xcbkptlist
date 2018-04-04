@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MySkinDoctor/Dashboard/ProfileChangePassword/ChangePasswordViewModel.swift"
-            timestampString = "543944585.73921"
+            timestampString = "544525743.1514111"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "43"
@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MySkinDoctor/Dashboard/ProfileChangePassword/ChangePasswordViewModel.swift"
-            timestampString = "543944585.739522"
+            timestampString = "544525743.151832"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "57"
@@ -122,7 +122,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MySkinDoctor/Utils/AWS3Utils.swift"
-            timestampString = "543944585.739966"
+            timestampString = "544525743.152101"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "54"
@@ -164,7 +164,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MySkinDoctor/Dashboard/Profile/ProfileViewModel.swift"
-            timestampString = "543944585.740172"
+            timestampString = "544525743.152582"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "161"
@@ -180,7 +180,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MySkinDoctor/Dashboard/Profile/ProfileViewModel.swift"
-            timestampString = "543944585.740378"
+            timestampString = "544525743.152892"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "151"
@@ -196,7 +196,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MySkinDoctor/Dashboard/Profile/ProfileViewModel.swift"
-            timestampString = "543944585.740432"
+            timestampString = "544525743.152958"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "192"
@@ -212,12 +212,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MySkinDoctor/Dashboard/Profile/ProfileViewModel.swift"
-            timestampString = "543944585.7404799"
+            timestampString = "544525743.153039"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "137"
             endingLineNumber = "137"
             landmarkName = "saveModel()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MySkinDoctor/DBModels/DBExtensions/SkinProblems+Extensions.swift"
+            timestampString = "544525743.1530941"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "parseAndSaveResponse(skinProblemResponseModel:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
