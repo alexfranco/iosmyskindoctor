@@ -1,5 +1,5 @@
 //
-//  Formatter+Extentions.swift
+//  Formatter+Extensions.swift
 //  MySkinDoctor
 //
 //  Created by Alex Núñez on 22/03/2018.

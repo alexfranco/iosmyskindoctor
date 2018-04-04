@@ -130,8 +130,8 @@
 		78FB31982063B8F300F155AE /* DTTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB31962063B8F300F155AE /* DTTextField.swift */; };
 		78FB319A2063CD4B00F155AE /* SkinProblemsResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB31992063CD4B00F155AE /* SkinProblemsResponseModel.swift */; };
 		78FB319B2063CD4B00F155AE /* SkinProblemsResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB31992063CD4B00F155AE /* SkinProblemsResponseModel.swift */; };
-		78FB319D2063F59500F155AE /* Formatter+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB319C2063F59500F155AE /* Formatter+Extentions.swift */; };
-		78FB319E2063F59500F155AE /* Formatter+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB319C2063F59500F155AE /* Formatter+Extentions.swift */; };
+		78FB319D2063F59500F155AE /* Formatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB319C2063F59500F155AE /* Formatter+Extensions.swift */; };
+		78FB319E2063F59500F155AE /* Formatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB319C2063F59500F155AE /* Formatter+Extensions.swift */; };
 		78FFF02A20496E240013240D /* MedicalHistoryViewControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FFF02920496E240013240D /* MedicalHistoryViewControler.swift */; };
 		78FFF02B20496E240013240D /* MedicalHistoryViewControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FFF02920496E240013240D /* MedicalHistoryViewControler.swift */; };
 		78FFF02F20496E340013240D /* MedicalHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FFF02E20496E340013240D /* MedicalHistoryViewModel.swift */; };
@@ -299,6 +299,22 @@
 		FAFD900D2074D5A9008DBAB9 /* TimeslotModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD900B2074D5A9008DBAB9 /* TimeslotModel.swift */; };
 		FAFD900F2074D768008DBAB9 /* TimeslotViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD900E2074D768008DBAB9 /* TimeslotViewModel.swift */; };
 		FAFD90102074D768008DBAB9 /* TimeslotViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD900E2074D768008DBAB9 /* TimeslotViewModel.swift */; };
+		FAFD90142074EC5D008DBAB9 /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD90132074EC5D008DBAB9 /* CreditsViewController.swift */; };
+		FAFD90152074EC5D008DBAB9 /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD90132074EC5D008DBAB9 /* CreditsViewController.swift */; };
+		FAFD90172074ECDF008DBAB9 /* CreditsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD90162074ECDF008DBAB9 /* CreditsViewModel.swift */; };
+		FAFD90182074ECDF008DBAB9 /* CreditsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD90162074ECDF008DBAB9 /* CreditsViewModel.swift */; };
+		FAFD901B2074ED1F008DBAB9 /* CreditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD901A2074ED1F008DBAB9 /* CreditTableViewCell.swift */; };
+		FAFD901C2074ED1F008DBAB9 /* CreditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD901A2074ED1F008DBAB9 /* CreditTableViewCell.swift */; };
+		FAFD901E2074ED96008DBAB9 /* CreditTableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD901D2074ED96008DBAB9 /* CreditTableCellViewModel.swift */; };
+		FAFD901F2074ED96008DBAB9 /* CreditTableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD901D2074ED96008DBAB9 /* CreditTableCellViewModel.swift */; };
+		FAFD90242074EFFC008DBAB9 /* Float+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD90232074EFFC008DBAB9 /* Float+Extensions.swift */; };
+		FAFD90252074EFFC008DBAB9 /* Float+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD90232074EFFC008DBAB9 /* Float+Extensions.swift */; };
+		FAFD903020750A2E008DBAB9 /* CreditCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD902E20750A2E008DBAB9 /* CreditCardViewController.swift */; };
+		FAFD903120750A2E008DBAB9 /* CreditCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD902F20750A2E008DBAB9 /* CreditCardViewModel.swift */; };
+		FAFD903620750D2F008DBAB9 /* CreditCardResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD903520750D2F008DBAB9 /* CreditCardResponseModel.swift */; };
+		FAFD903720750D2F008DBAB9 /* CreditCardResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD903520750D2F008DBAB9 /* CreditCardResponseModel.swift */; };
+		FAFD9039207521AA008DBAB9 /* CreditOptionsResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD9038207521AA008DBAB9 /* CreditOptionsResponseModel.swift */; };
+		FAFD903A207521AA008DBAB9 /* CreditOptionsResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD9038207521AA008DBAB9 /* CreditOptionsResponseModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -365,7 +381,7 @@
 		78E44AA5203EBE5C0094F3AF /* PasswordStrength.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordStrength.swift; sourceTree = "<group>"; };
 		78FB31962063B8F300F155AE /* DTTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTTextField.swift; sourceTree = "<group>"; };
 		78FB31992063CD4B00F155AE /* SkinProblemsResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinProblemsResponseModel.swift; sourceTree = "<group>"; };
-		78FB319C2063F59500F155AE /* Formatter+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Formatter+Extentions.swift"; sourceTree = "<group>"; };
+		78FB319C2063F59500F155AE /* Formatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Formatter+Extensions.swift"; sourceTree = "<group>"; };
 		78FFF02920496E240013240D /* MedicalHistoryViewControler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalHistoryViewControler.swift; sourceTree = "<group>"; };
 		78FFF02E20496E340013240D /* MedicalHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalHistoryViewModel.swift; sourceTree = "<group>"; };
 		85B14CEDA9F10AD5CDFAFE54 /* Pods-MySkinDoctorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySkinDoctorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MySkinDoctorTests/Pods-MySkinDoctorTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -468,6 +484,15 @@
 		FAFD9008206BDCF8008DBAB9 /* AccessCodeResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessCodeResponseModel.swift; sourceTree = "<group>"; };
 		FAFD900B2074D5A9008DBAB9 /* TimeslotModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeslotModel.swift; sourceTree = "<group>"; };
 		FAFD900E2074D768008DBAB9 /* TimeslotViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeslotViewModel.swift; sourceTree = "<group>"; };
+		FAFD90132074EC5D008DBAB9 /* CreditsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
+		FAFD90162074ECDF008DBAB9 /* CreditsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsViewModel.swift; sourceTree = "<group>"; };
+		FAFD901A2074ED1F008DBAB9 /* CreditTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditTableViewCell.swift; sourceTree = "<group>"; };
+		FAFD901D2074ED96008DBAB9 /* CreditTableCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditTableCellViewModel.swift; sourceTree = "<group>"; };
+		FAFD90232074EFFC008DBAB9 /* Float+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float+Extensions.swift"; sourceTree = "<group>"; };
+		FAFD902E20750A2E008DBAB9 /* CreditCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCardViewController.swift; sourceTree = "<group>"; };
+		FAFD902F20750A2E008DBAB9 /* CreditCardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCardViewModel.swift; sourceTree = "<group>"; };
+		FAFD903520750D2F008DBAB9 /* CreditCardResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardResponseModel.swift; sourceTree = "<group>"; };
+		FAFD9038207521AA008DBAB9 /* CreditOptionsResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditOptionsResponseModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -682,6 +707,8 @@
 				FA6E8FB120595F79001F6E16 /* MyConsultDetails */,
 				FA3326642040350400657C8A /* Profile */,
 				FABC7A2D205C00D200167FFA /* ProfileChangePassword */,
+				FAFD90122074EC09008DBAB9 /* ProfileCredits */,
+				FAFD90272075089B008DBAB9 /* ProfileCreditCard */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -716,6 +743,7 @@
 		FA3326642040350400657C8A /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				FAFD90112074EBED008DBAB9 /* Cells */,
 				FA33268A204413B500657C8A /* ProfileViewModel.swift */,
 				FA3326652040351500657C8A /* ProfileViewController.swift */,
 			);
@@ -807,8 +835,9 @@
 				FA6E8F612056C239001F6E16 /* UIButton+Border.swift */,
 				7884D8B3205A787500C59E7B /* UITextField+Padding.swift */,
 				7884D8B6205AB2D900C59E7B /* UIImage+Extensions.swift */,
-				78FB319C2063F59500F155AE /* Formatter+Extentions.swift */,
+				78FB319C2063F59500F155AE /* Formatter+Extensions.swift */,
 				FAFD8FFC2069468B008DBAB9 /* String+Extentions.swift */,
+				FAFD90232074EFFC008DBAB9 /* Float+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -886,6 +915,8 @@
 				FA8CFC85206540CD0067C11F /* SkinProblemAttachmentResponseModel.swift */,
 				FAFD9008206BDCF8008DBAB9 /* AccessCodeResponseModel.swift */,
 				7898C60D207386D000F93F7E /* DiagnoseAttachmentResponseModel.swift */,
+				FAFD9038207521AA008DBAB9 /* CreditOptionsResponseModel.swift */,
+				FAFD903520750D2F008DBAB9 /* CreditCardResponseModel.swift */,
 			);
 			path = APIModels;
 			sourceTree = "<group>";
@@ -1025,6 +1056,41 @@
 				FAF2CECC204D59E40001EEAB /* MyConsultsViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		FAFD90112074EBED008DBAB9 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		FAFD90122074EC09008DBAB9 /* ProfileCredits */ = {
+			isa = PBXGroup;
+			children = (
+				FAFD90192074ED00008DBAB9 /* Cells */,
+				FAFD90162074ECDF008DBAB9 /* CreditsViewModel.swift */,
+				FAFD90132074EC5D008DBAB9 /* CreditsViewController.swift */,
+			);
+			path = ProfileCredits;
+			sourceTree = "<group>";
+		};
+		FAFD90192074ED00008DBAB9 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FAFD901A2074ED1F008DBAB9 /* CreditTableViewCell.swift */,
+				FAFD901D2074ED96008DBAB9 /* CreditTableCellViewModel.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		FAFD90272075089B008DBAB9 /* ProfileCreditCard */ = {
+			isa = PBXGroup;
+			children = (
+				FAFD902F20750A2E008DBAB9 /* CreditCardViewModel.swift */,
+				FAFD902E20750A2E008DBAB9 /* CreditCardViewController.swift */,
+			);
+			path = ProfileCreditCard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1225,6 +1291,7 @@
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SZTextView/SZTextView.framework",
+				"${BUILT_PRODUCTS_DIR}/Stripe/Stripe.framework",
 				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -1244,6 +1311,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SZTextView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stripe.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -1288,6 +1356,7 @@
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SZTextView/SZTextView.framework",
+				"${BUILT_PRODUCTS_DIR}/Stripe/Stripe.framework",
 				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -1307,6 +1376,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SZTextView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stripe.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -1329,8 +1399,11 @@
 				78264732205800FB00F79FB7 /* SkinProblemAttachment+CoreDataClass.swift in Sources */,
 				78DBCE502051741500C0D4B5 /* MySkinProblemDiagnosisViewController.swift in Sources */,
 				FAFD900A206BDCF8008DBAB9 /* AccessCodeResponseModel.swift in Sources */,
+				FAFD903720750D2F008DBAB9 /* CreditCardResponseModel.swift in Sources */,
 				FAFD90102074D768008DBAB9 /* TimeslotViewModel.swift in Sources */,
+				FAFD901F2074ED96008DBAB9 /* CreditTableCellViewModel.swift in Sources */,
 				FAFD9001206B8C7D008DBAB9 /* Profile+Extensions.swift in Sources */,
+				FAFD90252074EFFC008DBAB9 /* Float+Extensions.swift in Sources */,
 				FADC33402046E8C80065A7EB /* FormTextView.swift in Sources */,
 				78264731205800FB00F79FB7 /* Diagnose+CoreDataProperties.swift in Sources */,
 				FA332657204029BD00657C8A /* MySkinProblemsViewModel.swift in Sources */,
@@ -1340,7 +1413,7 @@
 				78C205E32045AA9900F8E407 /* AddSkinProblemsViewModel.swift in Sources */,
 				7898C615207387F800F93F7E /* DiagnoseAttachment+CoreDataProperties.swift in Sources */,
 				FAEC573C203DBEAE00D1A0AE /* LoginViewModel.swift in Sources */,
-				78FB319E2063F59500F155AE /* Formatter+Extentions.swift in Sources */,
+				78FB319E2063F59500F155AE /* Formatter+Extensions.swift in Sources */,
 				FA6E8F5D2056BFC3001F6E16 /* SetupWizard2ViewController.swift in Sources */,
 				FAAE628A2056A7B100823BFE /* SetupWizard1ViewController.swift in Sources */,
 				FAA774FB20529F8100A794FF /* MySkinProblemDiagnoseUpdateRequestViewModel.swift in Sources */,
@@ -1372,6 +1445,7 @@
 				78B9E535203C4CD70054CAD3 /* Validations.swift in Sources */,
 				78B9E536203C4CD70054CAD3 /* ForgotPasswordResposeModel.swift in Sources */,
 				FA6E8F572056BBC4001F6E16 /* SetupWizard3ViewController.swift in Sources */,
+				FAFD901C2074ED1F008DBAB9 /* CreditTableViewCell.swift in Sources */,
 				78C205CC20459D7D00F8E407 /* UINavigationController+Extensions.swift in Sources */,
 				FADC3356204D48BA0065A7EB /* SkinProblemThankYouViewController.swift in Sources */,
 				78264736205800FB00F79FB7 /* Doctor+CoreDataClass.swift in Sources */,
@@ -1397,6 +1471,7 @@
 				7849CCA4203EE2030030A7B1 /* ForgotPasswordViewModel.swift in Sources */,
 				FAAE62862056915100823BFE /* UIButton+Circular.swift in Sources */,
 				78264735205800FB00F79FB7 /* Consultation+CoreDataProperties.swift in Sources */,
+				FAFD90182074ECDF008DBAB9 /* CreditsViewModel.swift in Sources */,
 				78B9E53C203C4CD70054CAD3 /* LoginResponseModel.swift in Sources */,
 				782647402058016B00F79FB7 /* SkinProblemAttachment+Extensions.swift in Sources */,
 				78C205D62045A65C00F8E407 /* SkinProblemTableCellViewModel.swift in Sources */,
@@ -1416,6 +1491,7 @@
 				78DBCE552051742700C0D4B5 /* MySkinProblemDiagnosisViewModel.swift in Sources */,
 				7898C60F207386D000F93F7E /* DiagnoseAttachmentResponseModel.swift in Sources */,
 				FAA775062052A5E100A794FF /* MySkinProblemDiagnoseUpdateRequestTableViewModel.swift in Sources */,
+				FAFD90152074EC5D008DBAB9 /* CreditsViewController.swift in Sources */,
 				78FB319B2063CD4B00F155AE /* SkinProblemsResponseModel.swift in Sources */,
 				78B9E53D203C4CD70054CAD3 /* ThemeManager.swift in Sources */,
 				FA3326AF20441C8500657C8A /* ProfileTextField.swift in Sources */,
@@ -1453,6 +1529,7 @@
 				FA3326CB20441C8500657C8A /* GrayLabel.swift in Sources */,
 				FA3326C720441C8500657C8A /* TitleLabel.swift in Sources */,
 				78B9E543203C4CD70054CAD3 /* UIViewController+Alerts.swift in Sources */,
+				FAFD903A207521AA008DBAB9 /* CreditOptionsResponseModel.swift in Sources */,
 				7826473B205800FB00F79FB7 /* Profile+CoreDataProperties.swift in Sources */,
 				78B9E544203C4CD70054CAD3 /* AppStyle.swift in Sources */,
 				7884D8B8205AB2D900C59E7B /* UIImage+Extensions.swift in Sources */,
@@ -1471,7 +1548,10 @@
 				78DBCE4F2051741500C0D4B5 /* MySkinProblemDiagnosisViewController.swift in Sources */,
 				FADC333F2046E8C80065A7EB /* FormTextView.swift in Sources */,
 				FAFD900F2074D768008DBAB9 /* TimeslotViewModel.swift in Sources */,
+				FAFD901E2074ED96008DBAB9 /* CreditTableCellViewModel.swift in Sources */,
 				FAFD9009206BDCF8008DBAB9 /* AccessCodeResponseModel.swift in Sources */,
+				FAFD90242074EFFC008DBAB9 /* Float+Extensions.swift in Sources */,
+				FAFD903020750A2E008DBAB9 /* CreditCardViewController.swift in Sources */,
 				FAFD9000206B8C7D008DBAB9 /* Profile+Extensions.swift in Sources */,
 				7826470E2057D49E00F79FB7 /* Consultation+CoreDataClass.swift in Sources */,
 				FA332656204029BD00657C8A /* MySkinProblemsViewModel.swift in Sources */,
@@ -1482,7 +1562,7 @@
 				FAF2CECD204D59E40001EEAB /* MyConsultsViewModel.swift in Sources */,
 				7898C614207387F800F93F7E /* DiagnoseAttachment+CoreDataProperties.swift in Sources */,
 				FAEC573B203DBEAE00D1A0AE /* LoginViewModel.swift in Sources */,
-				78FB319D2063F59500F155AE /* Formatter+Extentions.swift in Sources */,
+				78FB319D2063F59500F155AE /* Formatter+Extensions.swift in Sources */,
 				FA8CFC7F2062A7A20067C11F /* ProfileResponseModel.swift in Sources */,
 				FA33268B204413B500657C8A /* ProfileViewModel.swift in Sources */,
 				FA6E8F5C2056BFC3001F6E16 /* SetupWizard2ViewController.swift in Sources */,
@@ -1513,10 +1593,12 @@
 				FA3326BE20441C8500657C8A /* FormTextField.swift in Sources */,
 				FA9760E3203B29D600242255 /* Validations.swift in Sources */,
 				78B9E518203C2C670054CAD3 /* ForgotPasswordResposeModel.swift in Sources */,
+				FAFD901B2074ED1F008DBAB9 /* CreditTableViewCell.swift in Sources */,
 				FA3326462040220200657C8A /* MySkinProblemsTableCellViewModel.swift in Sources */,
 				782647152057DADE00F79FB7 /* SkinProblems+Extensions.swift in Sources */,
 				782647182057E47800F79FB7 /* Diagnose+Extensions.swift in Sources */,
 				7826470F2057D49E00F79FB7 /* Consultation+CoreDataProperties.swift in Sources */,
+				FAFD903120750A2E008DBAB9 /* CreditCardViewModel.swift in Sources */,
 				7826470B2057D49E00F79FB7 /* Diagnose+CoreDataProperties.swift in Sources */,
 				7826470A2057D49E00F79FB7 /* Diagnose+CoreDataClass.swift in Sources */,
 				FA6E8F562056BBC4001F6E16 /* SetupWizard3ViewController.swift in Sources */,
@@ -1538,12 +1620,14 @@
 				FA7F713C20529250006B1EFF /* BaseMySkinProblemDiagnosisViewModel.swift in Sources */,
 				FA3326B620441C8500657C8A /* PasswordProgressBarView.swift in Sources */,
 				FA33264020401A8C00657C8A /* MySkinProblemsViewController.swift in Sources */,
+				FAFD90172074ECDF008DBAB9 /* CreditsViewModel.swift in Sources */,
 				FAAE62852056915100823BFE /* UIButton+Circular.swift in Sources */,
 				782647102057D49E00F79FB7 /* Doctor+CoreDataClass.swift in Sources */,
 				782647132057D49E00F79FB7 /* MedicalHistory+CoreDataProperties.swift in Sources */,
 				FA3326B220441C8500657C8A /* PasswordTextField.swift in Sources */,
 				7826473F2058016B00F79FB7 /* SkinProblemAttachment+Extensions.swift in Sources */,
 				FA6E8FB320595FB4001F6E16 /* MyConsultDetailsViewController.swift in Sources */,
+				FAFD9039207521AA008DBAB9 /* CreditOptionsResponseModel.swift in Sources */,
 				FA6E8F5F2056BFDA001F6E16 /* SetupWizard2ViewModel.swift in Sources */,
 				782647052057D49E00F79FB7 /* DoctorNotes+CoreDataProperties.swift in Sources */,
 				78C205D52045A65C00F8E407 /* SkinProblemTableCellViewModel.swift in Sources */,
@@ -1557,12 +1641,14 @@
 				78C205D02045A56B00F8E407 /* SkinProblemTableViewCell.swift in Sources */,
 				FA33268620440EA400657C8A /* PhotoUtils.swift in Sources */,
 				782647112057D49E00F79FB7 /* Doctor+CoreDataProperties.swift in Sources */,
+				FAFD90142074EC5D008DBAB9 /* CreditsViewController.swift in Sources */,
 				7898C60E207386D000F93F7E /* DiagnoseAttachmentResponseModel.swift in Sources */,
 				FAF2CEC3204D56E00001EEAB /* MyConsultTableViewCell.swift in Sources */,
 				78FB319A2063CD4B00F155AE /* SkinProblemsResponseModel.swift in Sources */,
 				782647042057D49E00F79FB7 /* DoctorNotes+CoreDataClass.swift in Sources */,
 				FAA775052052A5E100A794FF /* MySkinProblemDiagnoseUpdateRequestTableViewModel.swift in Sources */,
 				78DBCE542051742700C0D4B5 /* MySkinProblemDiagnosisViewModel.swift in Sources */,
+				FAFD903620750D2F008DBAB9 /* CreditCardResponseModel.swift in Sources */,
 				FABC7A2F205C00F300167FFA /* ChangePasswordViewController.swift in Sources */,
 				FA3326512040287900657C8A /* BindingViewController.swift in Sources */,
 				7898C617207388B600F93F7E /* DiagnoseAttachment+Extensions.swift in Sources */,

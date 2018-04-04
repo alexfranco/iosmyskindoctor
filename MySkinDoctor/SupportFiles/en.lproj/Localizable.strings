@@ -190,3 +190,16 @@
 "change_passowrd_new_and_confirm_are_different" = "Your passwords don't match";
 
 "change_password_success" = "Password changed successfully";
+
+"credit_vc_title" = "My Wallet";
+"credit_available_balance_title" = "Available Balance";
+"credit_card_vc_title" = "Credit/Debit Card";
+"credit_card_pay" = "Buy";
+"add_credit_credit_value" = "%@ Credit(s)";
+"add_credit_buy_value" = "Buy for %@ %@";
+"payment_accepted_title" = "Payment Complete";
+"payment_accepted_message" = "You have successfully added %@ credit(s) to your account.";
+"payment_failed_title" = "Payment Failed";
+"payment_failed_message" = "We were unable to process the payment. Please try again later";
+
+

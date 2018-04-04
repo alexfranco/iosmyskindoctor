@@ -32,6 +32,8 @@ struct Segues {
 	static let goToChangePasswordVC = "goToChangePasswordVC"
 	static let goToBookAConsultNavigation = "goToBookAConsultNavigation"
 	static let goToBookingConsult = "goToBookingConsult"
+	static let goToCredit = "goToCredit"
+	static let goToCreditCard = "goToCreditCard"
 	
 	static let unwindToAddSkinProblems = "unwindToAddSkinProblems"
 	static let unwindToAddSkinProblemsFromPhoto = "unwindToAddSkinProblemsFromPhoto"
@@ -57,6 +59,7 @@ struct CellId {
 	static let skinProblemTableViewCellId = "SkinProblemTableViewCellId"
 	static let myConsultTableViewCellId = "MyConsultTableViewCellId"
 	static let updateRequestCellId = "UpdateRequestCellId"
+	static let creditCellId = "CreditCellId"
 }
 
 struct CoreData {

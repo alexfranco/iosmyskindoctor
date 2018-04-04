@@ -302,8 +302,8 @@ class ProfileViewController: FormViewController {
 		viewModelCast.isPermisionEnabled = permisionSwitch.isOn
 	}
 	
-	func onWalletButtonPressed(_ sender: Any) {
-		
+	@objc func onWalletButtonPressed(_ sender: Any) {
+		self.performSegue(withIdentifier: Segues.goToCredit, sender: nil)
 	}
 	
 	@IBAction func onLogoutPressed(_ sender: Any) {

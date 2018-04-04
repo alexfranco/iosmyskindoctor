@@ -245,6 +245,11 @@ struct AppStyle {
 	static let wizardSelfPayButtonColor = BaseColors.hospitalGreen
 	
 	static let profileImageViewPlaceHolder = BaseColors.brownishGrey
+	
+	// Credit
+	static let availableBalanceTitleFont = AppFonts.mediumFont
+	static let availableBalanceLabelFont = UIFont.systemFont(ofSize: 30)
+	static let availableBalanceLabelTextColor = BaseColors.amethyst
 }
 
 

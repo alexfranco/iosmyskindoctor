@@ -52,6 +52,7 @@ class ApiUtils {
 		case logout = "/api/accounts/logout/"
 		case accessCode = "/api/accounts/access-code/use/"
 		case timeslots = "/api/consult/timeslots"
+		case purchase_credits = "/api/payments/purchase-credits/"
 		
 		case patientUpdate = "/api/accounts/patient/"
 		case skinProblems = "/api/cases/case/"
@@ -68,7 +69,6 @@ extension ApiUtils {
 		let url = ApiUtils.getApiUrl(ApiMethod.login, nil)
 		let params: Parameters =	["email": email,
 									 "password": password]
-		
 		
 		ApiUtils.request(url: url, httpMethod: HTTPMethod.post, params: params, parseToModelType: LoginResponseModel.self, accessToken: nil, completionHandler: completionHandler)
 	}
@@ -221,6 +221,23 @@ extension ApiUtils {
 //		ApiUtils.request(url: url, httpMethod: HTTPMethod.get, params: params, parseToModelType: AccessCodeResponseModel.self, accessToken: accessToken, completionHandler: completionHandler)
 	}
 	
+	static func getCreditsOptions(accessToken: String, completionHandler: @escaping ((_ results: ApiArrayResult) -> Void)) {
+		let url = ApiUtils.getApiUrl(ApiMethod.purchase_credits, nil)
+		ApiUtils.requestArray(url: url, httpMethod: HTTPMethod.get, params: nil, parseToModelType: CreditOptionsResponseModel.self, accessToken: accessToken, completionHandler: completionHandler)
+	}
+	
+	static func payWithCreditCard(accessToken: String, stripeToken: String, optionId: Int, amount: String, currency: String, credits: String, completionHandler: @escaping ((_ result: ApiResult) -> Void)) {
+		let url = ApiUtils.getApiUrl(ApiMethod.purchase_credits, nil)
+		
+		var params: Dictionary<String, AnyObject> = [:]
+		params["token"] = stripeToken as AnyObject?
+		params["option_id"] = optionId as AnyObject?
+		params["amount"] = amount as AnyObject?
+		params["currency"] = currency as AnyObject?
+		params["credits"] = credits as AnyObject?
+		
+		ApiUtils.request(url: url, httpMethod: HTTPMethod.post, params: params, parseToModelType: CreditCardResponseModel.self, accessToken: accessToken, completionHandler: completionHandler)
+	}
 }
 
 // MARK: Utils

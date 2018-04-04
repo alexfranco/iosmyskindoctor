@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 import IQKeyboardManagerSwift
 import AWSCognito
+import Stripe
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,6 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		IQKeyboardManager.sharedManager().enable = true // controls the scrollviews and uitextfields
 		ThemeManager.applyTheme()
 		updateRootVC()
+		
+		// Stripe
+		Stripe.setDefaultPublishableKey("pk_test_yBVOY74Yx55HpY6pbRLgvSGU") // DEV KEY
 		
 		// Amazon AWS S3
 		let region = AWSRegionType.euWest1
