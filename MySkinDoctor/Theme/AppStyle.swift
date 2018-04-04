@@ -19,7 +19,7 @@ struct BaseColors {
 	static var blush: UIColor { return UIColor(red: 238.0 / 255.0, green: 114.0 / 255.0, blue: 114.0 / 255.0, alpha: 1.0) }
 	static var skyBlue: UIColor { return UIColor(red: 77.0 / 255.0, green: 200.0 / 255.0, blue: 1.0, alpha: 1.0) }
 	static var brownishGrey: UIColor { return UIColor(white: 110.0 / 255.0, alpha: 1.0) }
-	static var white: UIColor { return UIColor(white: 240.0 / 255.0, alpha: 1.0) }
+	static var lightGray: UIColor { return UIColor(white: 240.0 / 255.0, alpha: 1.0) }
 	static var whiteTwo: UIColor { return UIColor(white: 236.0 / 255.0, alpha: 1.0) }
 	static var warmGrey: UIColor { return UIColor(white: 129.0 / 255.0, alpha: 1.0) }
 	static var warmGreyTwo: UIColor { return UIColor(white: 113.0 / 255.0, alpha: 1.0) }
@@ -150,19 +150,19 @@ struct AppStyle {
 	static let medicalHistorySaveLabelTextColor = BaseColors.hospitalGreen
 	
 	static let thankYouBackground = BaseColors.hospitalGreen
-	static let thankYouTextColor = BaseColors.white
+	static let thankYouTextColor = BaseColors.lightGray
 	
 	// Consult TabBar
 	static let consultTabBarTitleColor = AppColors.secondTabColor
 	
 	static let consultTableViewHeaderBGColor = AppColors.secondTabColor
-	static let consultTableViewHeaderBGColorDisabled = BaseColors.white
-	static let consultTableViewHeaderTextColor = BaseColors.white
+	static let consultTableViewHeaderBGColorDisabled = BaseColors.lightGray
+	static let consultTableViewHeaderTextColor = BaseColors.lightGray
 	static let consultTableViewHeaderTextColorDisabled = BaseColors.warmGreyTwo
 	
 	static let consultTableViewCellTimeBackgroundColor = BaseColors.hospitalGreen
 	static let consultTableViewCellTimeBackgroundColorDisabled = UIColor.clear
-	static let consultTableViewCellTextColor = BaseColors.white
+	static let consultTableViewCellTextColor = BaseColors.lightGray
 	static let consultTableViewCellTextColorDisabled = UIColor.black
 	static let consultTableSectionTextFont = AppFonts.defaultBoldFont
 	
@@ -191,7 +191,7 @@ struct AppStyle {
 	static let consultThankYouViewBackgroundColor = AppColors.primaryColor
 	static let consultThankYouViewTextColor = UIColor.white
 	static let consultThankYouProfileViewBackgroundColor = UIColor.white
-	static let consultThankYouAppointmentViewBackgroundColor = BaseColors.white
+	static let consultThankYouAppointmentViewBackgroundColor = BaseColors.lightGray
 	static let consultThankYouTextColor = AppColors.secudaryColor
 	
 	// MyConsultTableViewCellView

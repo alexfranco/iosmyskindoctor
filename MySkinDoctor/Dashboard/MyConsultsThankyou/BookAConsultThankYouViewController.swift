@@ -62,6 +62,8 @@ class BookAConsultThankYouViewController: BindingViewController {
 		
 		doctorNameLabel.textColor = AppStyle.consultConfirmHighligthedLabelTextColor
 		appointmentDateLabel.textColor = AppStyle.consultConfirmHighligthedLabelTextColor
+		
+		thankYouLabel.font = AppFonts.bigFont
 	}
 	
 	// MARK: IBActions

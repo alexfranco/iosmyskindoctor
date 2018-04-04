@@ -511,21 +511,15 @@
                                 <rect key="frame" x="0.0" y="79" width="375" height="140"/>
                                 <subviews>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" image="bigWhiteArrow" translatesAutoresizingMaskIntoConstraints="NO" id="naL-8F-NAt">
-                                        <rect key="frame" x="153.5" y="0.0" width="68" height="68"/>
+                                        <rect key="frame" x="167.5" y="0.0" width="40" height="40"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="68" id="4rg-oG-TcC"/>
-                                            <constraint firstAttribute="height" constant="68" id="EVm-2P-7Hz"/>
+                                            <constraint firstAttribute="width" constant="40" id="4rg-oG-TcC"/>
+                                            <constraint firstAttribute="height" constant="40" id="EVm-2P-7Hz"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thank you" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lCa-R2-Agd">
-                                        <rect key="frame" x="10" y="74" width="355" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your consultation has been booked" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Idx-EY-8GG">
-                                        <rect key="frame" x="10" y="109" width="355" height="21"/>
+                                        <rect key="frame" x="10" y="60" width="355" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -533,15 +527,12 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="lCa-R2-Agd" secondAttribute="trailing" constant="10" id="4mL-8g-6hr"/>
                                     <constraint firstItem="naL-8F-NAt" firstAttribute="centerX" secondItem="sbW-Zr-gTa" secondAttribute="centerX" id="59u-4g-XU0"/>
+                                    <constraint firstItem="Idx-EY-8GG" firstAttribute="leading" secondItem="sbW-Zr-gTa" secondAttribute="leading" constant="10" id="CjH-Ln-qzt"/>
                                     <constraint firstItem="naL-8F-NAt" firstAttribute="top" secondItem="sbW-Zr-gTa" secondAttribute="top" id="DrT-u9-LEY"/>
-                                    <constraint firstItem="lCa-R2-Agd" firstAttribute="top" secondItem="naL-8F-NAt" secondAttribute="bottom" constant="6" id="I56-fg-zEL"/>
-                                    <constraint firstItem="Idx-EY-8GG" firstAttribute="top" secondItem="lCa-R2-Agd" secondAttribute="bottom" constant="14" id="LW1-rC-Hgr"/>
-                                    <constraint firstItem="Idx-EY-8GG" firstAttribute="trailing" secondItem="lCa-R2-Agd" secondAttribute="trailing" id="YVn-Lq-69H"/>
                                     <constraint firstAttribute="height" constant="140" id="YXr-du-Cgi"/>
-                                    <constraint firstItem="lCa-R2-Agd" firstAttribute="leading" secondItem="sbW-Zr-gTa" secondAttribute="leading" constant="10" id="mV5-6f-q0a"/>
-                                    <constraint firstItem="Idx-EY-8GG" firstAttribute="leading" secondItem="lCa-R2-Agd" secondAttribute="leading" id="vyv-Og-eEC"/>
+                                    <constraint firstAttribute="trailing" secondItem="Idx-EY-8GG" secondAttribute="trailing" constant="10" id="q6e-Wj-47v"/>
+                                    <constraint firstItem="Idx-EY-8GG" firstAttribute="top" secondItem="naL-8F-NAt" secondAttribute="bottom" constant="20" id="w6J-zq-dEI"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9pJ-KY-XZE">
@@ -681,7 +672,6 @@
                         <outlet property="profileImageView" destination="KS1-18-sb6" id="Ul5-op-Rfr"/>
                         <outlet property="profileView" destination="Zlf-T1-AMM" id="vVn-oa-eLz"/>
                         <outlet property="qualificationsLabel" destination="qHF-TQ-UjL" id="Ic9-Uo-KA5"/>
-                        <outlet property="thankYouLabel" destination="lCa-R2-Agd" id="6ZR-0W-uDL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OYu-S6-mHR" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -44,7 +44,9 @@ class BookAConsultConfirmViewController: BindingViewController {
 		nextButton.backgroundColor = AppStyle.consultNextButtonBackgroundColor
 		
 		yourAppointmentDateLabel.textColor = AppStyle.consultConfirmHighligthedLabelTextColor
+		yourAppointmentDateLabel.font = AppFonts.bigBoldFont
 		yourAppointmentTimeLabel.textColor = AppStyle.consultConfirmHighligthedLabelTextColor
+		yourAppointmentTimeLabel.font = AppFonts.bigBoldFont
 	}
 	
 	// MARK: IBActions

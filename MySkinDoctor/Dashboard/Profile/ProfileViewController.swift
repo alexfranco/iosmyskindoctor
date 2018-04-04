@@ -97,6 +97,7 @@ class ProfileViewController: FormViewController {
 	
 	let datePicker = UIDatePicker()
 	var photoUtils: PhotoUtils!
+	var walletButton: UIButton!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -133,6 +134,12 @@ class ProfileViewController: FormViewController {
 		refreshFields()
 		applyLocalization()
 		applyTheme()
+		
+		walletButton = UIButton(type: .system)
+		walletButton.setImage(UIImage(named: "walletIcon"), for: .normal)
+		walletButton.addTarget(self, action: #selector(onWalletButtonPressed), for: .touchUpInside)
+		navigationItem.leftBarButtonItem = UIBarButtonItem(customView: walletButton)
+		updateCreditButton()
 	}
 	
 	// MARK: Bindings
@@ -229,7 +236,12 @@ class ProfileViewController: FormViewController {
 		saveButton.title = NSLocalizedString("save", comment: "")
 
 	}
-		
+	
+	func updateCreditButton() {
+		walletButton.setTitle(viewModelCast.getCreditText, for: .normal)
+		walletButton.sizeToFit()
+	}
+	
 	func showDatePicker() {
 		//Formate Date
 		datePicker.datePickerMode = .date
@@ -289,6 +301,11 @@ class ProfileViewController: FormViewController {
 	@IBAction func onPermissionValueChanged(_ sender: Any) {
 		viewModelCast.isPermisionEnabled = permisionSwitch.isOn
 	}
+	
+	func onWalletButtonPressed(_ sender: Any) {
+		
+	}
+	
 	@IBAction func onLogoutPressed(_ sender: Any) {
 		let alertController = UIAlertController (
 			title: NSLocalizedString("profile_personal_logout_are_you_sure_title", comment: ""),

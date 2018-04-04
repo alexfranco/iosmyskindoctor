@@ -70,6 +70,10 @@ class ProfileViewModel: BaseViewModel {
 	
 	var didSaveChanges: (()->())?
 	
+	var getCreditText: String {
+		return " 1"
+	}
+	
 	override init() {
 		super.init()
 		

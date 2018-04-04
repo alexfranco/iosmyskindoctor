@@ -52,7 +52,11 @@ class MyConsultDetailsViewModel: BaseViewModel {
 	
 	var qualificationsText: String {
 		get {
-			return model.doctor!.qualifications ?? "-"
+			if let qualifications = model.doctor!.qualifications {
+				return qualifications.uppercased()
+			}
+			
+			return ""
 		}
 	}
 	
@@ -73,7 +77,7 @@ class MyConsultDetailsViewModel: BaseViewModel {
 	
 	func timeText() -> String {
 		let df = DateFormatter()
-		df.dateFormat = "HH.ss a"
+		df.dateFormat = "HH.ssa"
 		df.amSymbol = "am"
 		df.pmSymbol = "pm"
 		return df.string(from: model.appointmentDate! as Date)

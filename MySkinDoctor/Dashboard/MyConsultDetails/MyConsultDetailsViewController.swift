@@ -12,7 +12,6 @@ import UIKit
 class MyConsultDetailsViewController: BindingViewController {
 	
 	@IBOutlet weak var profileImageView: UIImageView!
-	@IBOutlet weak var thankYouLabel: UILabel!
 	@IBOutlet weak var consultationBookedLabel: UILabel!
 	@IBOutlet weak var doctorNameLabel: UILabel!
 	@IBOutlet weak var qualificationsLabel: UILabel!
@@ -57,8 +56,8 @@ class MyConsultDetailsViewController: BindingViewController {
 		profileView.backgroundColor = AppStyle.consultThankYouProfileViewBackgroundColor
 		appointmentView.backgroundColor = AppStyle.consultThankYouAppointmentViewBackgroundColor
 		
-		thankYouLabel.textColor = AppStyle.consultThankYouViewTextColor
 		consultationBookedLabel.textColor = AppStyle.consultThankYouViewTextColor
+		consultationBookedLabel.font = AppFonts.veryBigFont
 		
 		doctorNameLabel.textColor = AppStyle.consultConfirmHighligthedLabelTextColor
 		appointmentDateLabel.textColor = AppStyle.consultConfirmHighligthedLabelTextColor
