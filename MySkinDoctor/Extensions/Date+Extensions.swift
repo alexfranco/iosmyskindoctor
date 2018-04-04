@@ -92,6 +92,14 @@ extension Date {
 		}
 	}
 	
+	var timeText: String {
+		get {
+			let timeFormater = DateFormatter()
+			timeFormater.dateFormat = "HH:ss"
+			return timeFormater.string(from: self)
+		}
+	}
+	
 	// MARK: Extracting components
 	
 	func component(_ component:DateComponentType) -> Int? {

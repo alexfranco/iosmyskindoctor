@@ -295,6 +295,10 @@
 		FAFD9007206BCA97008DBAB9 /* MySkinDoctorLive.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAFD9005206BCA97008DBAB9 /* MySkinDoctorLive.plist */; };
 		FAFD9009206BDCF8008DBAB9 /* AccessCodeResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD9008206BDCF8008DBAB9 /* AccessCodeResponseModel.swift */; };
 		FAFD900A206BDCF8008DBAB9 /* AccessCodeResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD9008206BDCF8008DBAB9 /* AccessCodeResponseModel.swift */; };
+		FAFD900C2074D5A9008DBAB9 /* TimeslotModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD900B2074D5A9008DBAB9 /* TimeslotModel.swift */; };
+		FAFD900D2074D5A9008DBAB9 /* TimeslotModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD900B2074D5A9008DBAB9 /* TimeslotModel.swift */; };
+		FAFD900F2074D768008DBAB9 /* TimeslotViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD900E2074D768008DBAB9 /* TimeslotViewModel.swift */; };
+		FAFD90102074D768008DBAB9 /* TimeslotViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD900E2074D768008DBAB9 /* TimeslotViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -462,6 +466,8 @@
 		FAFD9002206B9D02008DBAB9 /* AWS3Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWS3Utils.swift; sourceTree = "<group>"; };
 		FAFD9005206BCA97008DBAB9 /* MySkinDoctorLive.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MySkinDoctorLive.plist; sourceTree = "<group>"; };
 		FAFD9008206BDCF8008DBAB9 /* AccessCodeResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessCodeResponseModel.swift; sourceTree = "<group>"; };
+		FAFD900B2074D5A9008DBAB9 /* TimeslotModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeslotModel.swift; sourceTree = "<group>"; };
+		FAFD900E2074D768008DBAB9 /* TimeslotViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeslotViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -537,6 +543,8 @@
 		788C3211204E88A00078A983 /* MyConsultsCalendar */ = {
 			isa = PBXGroup;
 			children = (
+				FAFD900B2074D5A9008DBAB9 /* TimeslotModel.swift */,
+				FAFD900E2074D768008DBAB9 /* TimeslotViewModel.swift */,
 				788C321C204EF0400078A983 /* BookAConsultCalendarViewModel.swift */,
 				788C3212204E88D00078A983 /* BookAConsultCalendarViewController.swift */,
 			);
@@ -1321,6 +1329,7 @@
 				78264732205800FB00F79FB7 /* SkinProblemAttachment+CoreDataClass.swift in Sources */,
 				78DBCE502051741500C0D4B5 /* MySkinProblemDiagnosisViewController.swift in Sources */,
 				FAFD900A206BDCF8008DBAB9 /* AccessCodeResponseModel.swift in Sources */,
+				FAFD90102074D768008DBAB9 /* TimeslotViewModel.swift in Sources */,
 				FAFD9001206B8C7D008DBAB9 /* Profile+Extensions.swift in Sources */,
 				FADC33402046E8C80065A7EB /* FormTextView.swift in Sources */,
 				78264731205800FB00F79FB7 /* Diagnose+CoreDataProperties.swift in Sources */,
@@ -1430,6 +1439,7 @@
 				FA6130D22050238E00731495 /* BookAConsultThankYouViewController.swift in Sources */,
 				FA33264D2040240400657C8A /* MySkinProblemsTableViewCell.swift in Sources */,
 				78B9E540203C4CD70054CAD3 /* RegistrationViewController.swift in Sources */,
+				FAFD900D2074D5A9008DBAB9 /* TimeslotModel.swift in Sources */,
 				78B9E541203C4CD70054CAD3 /* BaseResponseModel.swift in Sources */,
 				FA6E8F702056CE87001F6E16 /* DataController.swift in Sources */,
 				78FFF02B20496E240013240D /* MedicalHistoryViewControler.swift in Sources */,
@@ -1460,6 +1470,7 @@
 				FAC1AF112036FCE200547BBC /* RegistrationResponseModel.swift in Sources */,
 				78DBCE4F2051741500C0D4B5 /* MySkinProblemDiagnosisViewController.swift in Sources */,
 				FADC333F2046E8C80065A7EB /* FormTextView.swift in Sources */,
+				FAFD900F2074D768008DBAB9 /* TimeslotViewModel.swift in Sources */,
 				FAFD9009206BDCF8008DBAB9 /* AccessCodeResponseModel.swift in Sources */,
 				FAFD9000206B8C7D008DBAB9 /* Profile+Extensions.swift in Sources */,
 				7826470E2057D49E00F79FB7 /* Consultation+CoreDataClass.swift in Sources */,
@@ -1569,6 +1580,7 @@
 				FA33264C2040240400657C8A /* MySkinProblemsTableViewCell.swift in Sources */,
 				FADC33392046DA9A0065A7EB /* SkinProblemPhotoInformationViewController.swift in Sources */,
 				FA6130D12050238E00731495 /* BookAConsultThankYouViewController.swift in Sources */,
+				FAFD900C2074D5A9008DBAB9 /* TimeslotModel.swift in Sources */,
 				FAE733F820344B2800898E65 /* RegistrationViewController.swift in Sources */,
 				FA9760DD203B0EDC00242255 /* BaseResponseModel.swift in Sources */,
 				78B9E52A203C4AF20054CAD3 /* Consts.swift in Sources */,

@@ -10,26 +10,33 @@ import Foundation
 
 class BookAConsultCalendarViewModel: BaseViewModel {
 	
-	var timeslots: [String] = []
+	var timeslots: [TimeslotViewModel] = []
 	
 	var selectedDate = Date() {
 		didSet {
 			selectedDateUpdated!(selectedDate)
 		}
 	}
-	
+
+	var nextButtonUpdate: ((_ show: Bool)->())?
 	var selectedDateUpdated: ((_ date: Date)->())?
 	var timeslotsUpdated: (()->())?
 	
 	var monthLabelText: String {
 		get {
-			return selectedDate.ordinalMonthAndYear()
+			return timeslots.count == 0 ? selectedDate.ordinalMonthAndYear(): selectedDate.ordinalMonthAndYear() + " " + selectedDate.timeText
 		}
 	}
 	
 	var shouldShowEmptyTimeSlotsLabel: Bool {
 		get {
 			return timeslots.count == 0
+		}
+	}
+	
+	var isNextButtonEnabled: Bool {
+		get {
+			return timeslots.count > 0
 		}
 	}
 	
@@ -46,12 +53,19 @@ class BookAConsultCalendarViewModel: BaseViewModel {
 			switch result {
 			case .success(let model):
 				print("getTimeslots")
-				self.timeslots = [Date().timeAndDateText, Date().adjust(.hour, offset: 1).timeAndDateText, Date().adjust(.hour, offset: 1).timeAndDateText, Date().adjust(.hour, offset: 2).timeAndDateText, Date().adjust(.hour, offset: 3).timeAndDateText, Date().adjust(.hour, offset: 4).timeAndDateText]
+				self.timeslots = [TimeslotViewModel(model: TimeslotModel(startDate: Date(), endDate: Date().adjust(.hour, offset: 1))),
+								  TimeslotViewModel(model: TimeslotModel(startDate: Date().adjust(.hour, offset: 1), endDate: Date().adjust(.hour, offset: 2)))]
+
+				if let first = self.timeslots.first {
+					self.selectedDate = first.date
+				}
+				
 			case .failure(let model, let error):
 				print("error")
 				self.showResponseErrorAlert!(model as? BaseResponseModel, error)
 			}
 			
+			self.nextButtonUpdate!(self.isNextButtonEnabled)
 			self.timeslotsUpdated!()
 		}
 	}
@@ -68,7 +82,7 @@ class BookAConsultCalendarViewModel: BaseViewModel {
 		}
 	}
 	
-	func getItemAtIndexPath(_ row: Int) -> String {
+	func getItemAtIndexPath(_ row: Int) -> TimeslotViewModel {
 		return timeslots[row]
 	}
 	

@@ -31,12 +31,22 @@ class BookAConsultCalendarViewController: BindingViewController {
 		configureTimeslotsPicker()
 		applyTheme()
 		applyLocalization()
+		
+		nextButton.isEnabled = viewModelCast.isNextButtonEnabled
+		timeslotsPicker.isHidden = viewModelCast.shouldShowEmptyTimeSlotsLabel
+		noTimeslotsLabel.isHidden = !viewModelCast.shouldShowEmptyTimeSlotsLabel
 	}
 	
 	override func initViewModel(viewModel: BaseViewModel) {
 		super.initViewModel(viewModel: viewModel)
 		
 		viewModelCast = viewModel as! BookAConsultCalendarViewModel
+		
+		viewModelCast.nextButtonUpdate = { [weak self] (show) in
+			DispatchQueue.main.async {
+				self?.nextButton.isEnabled = show
+			}
+		}
 		
 		viewModelCast.selectedDateUpdated = { [weak self] (date) in
 			DispatchQueue.main.async {
@@ -128,11 +138,11 @@ extension BookAConsultCalendarViewController: UIPickerViewDelegate, UIPickerView
 	
 	// The data to return for the row and component (column) that's being passed in
 	func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-		return viewModelCast.getItemAtIndexPath(row)
+		return viewModelCast.getItemAtIndexPath(row).timeslotDisplayText
 	}
 
 	func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-		
+		viewModelCast.selectedDate = viewModelCast.getItemAtIndexPath(row).date
 	}
 }
 
