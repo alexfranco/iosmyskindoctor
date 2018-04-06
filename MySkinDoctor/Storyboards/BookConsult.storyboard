@@ -672,6 +672,7 @@
                         <outlet property="profileImageView" destination="KS1-18-sb6" id="Ul5-op-Rfr"/>
                         <outlet property="profileView" destination="Zlf-T1-AMM" id="vVn-oa-eLz"/>
                         <outlet property="qualificationsLabel" destination="qHF-TQ-UjL" id="Ic9-Uo-KA5"/>
+                        <segue destination="uG1-G5-BCR" kind="show" identifier="goToVideoConsultation" id="CDT-Gf-tdG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OYu-S6-mHR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -681,7 +682,7 @@
         <!--Consultation-->
         <scene sceneID="GiJ-ZK-2RP">
             <objects>
-                <viewController id="uG1-G5-BCR" customClass="VideoChatViewController" customModule="MySkinDoctor" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="uG1-G5-BCR" customClass="MyConsultVideoChatViewController" customModule="MySkinDoctor" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="X31-vh-aAg"/>
                         <viewControllerLayoutGuide type="bottom" id="Sj0-US-Epa"/>
@@ -711,15 +712,15 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wQA-bC-BPr">
-                                <rect key="frame" x="0.0" y="20" width="320" height="498"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="454"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9eR-1w-JIa">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="498"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="454"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PAL-2I-nph">
-                                                <rect key="frame" x="120" y="209" width="80" height="80"/>
+                                                <rect key="frame" x="120" y="187" width="80" height="80"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="expert-profile" translatesAutoresizingMaskIntoConstraints="NO" id="4sr-Oe-yEu">
+                                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="videoChatExpertProfile" translatesAutoresizingMaskIntoConstraints="NO" id="4sr-Oe-yEu">
                                                         <rect key="frame" x="16" y="16" width="48" height="48"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="48" id="V0J-FF-6H6"/>
@@ -748,7 +749,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KaM-w6-Cdt">
-                                        <rect key="frame" x="200" y="408" width="120" height="90"/>
+                                        <rect key="frame" x="200" y="364" width="120" height="90"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P5U-3j-2zU">
                                                 <rect key="frame" x="0.0" y="0.0" width="120" height="90"/>
@@ -756,7 +757,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="md1-Yz-pDi">
                                                         <rect key="frame" x="0.0" y="0.0" width="120" height="90"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="customer-profile" translatesAutoresizingMaskIntoConstraints="NO" id="SiP-OW-KM9">
+                                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="videoChatCustomerProfile" translatesAutoresizingMaskIntoConstraints="NO" id="SiP-OW-KM9">
                                                                 <rect key="frame" x="36" y="21" width="48" height="48"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="48" id="5k3-MY-gU6"/>
@@ -822,21 +823,15 @@
                         <viewLayoutGuide key="safeArea" id="8XA-TV-sCX"/>
                     </view>
                     <navigationItem key="navigationItem" title="Consultation" id="13J-Ub-2bW">
-                        <barButtonItem key="leftBarButtonItem" image="back" id="NtY-fa-HW8">
-                            <connections>
-                                <action selector="onClickBackButton:" destination="uG1-G5-BCR" id="CYY-6U-F0w"/>
-                            </connections>
-                        </barButtonItem>
                         <rightBarButtonItems>
-                            <barButtonItem image="ic_volume_up_white" id="ihx-qR-Fff"/>
-                            <barButtonItem image="ic_videocam_white" id="R7H-8p-66n"/>
+                            <barButtonItem image="videoChatVolumeOn" id="ihx-qR-Fff"/>
+                            <barButtonItem image="videoChatVideocamOn" id="R7H-8p-66n"/>
                         </rightBarButtonItems>
                     </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="568"/>
                     <connections>
                         <outlet property="audioButton" destination="ihx-qR-Fff" id="yY8-tj-Uzb"/>
-                        <outlet property="backButton" destination="NtY-fa-HW8" id="zsG-Ii-Rlt"/>
                         <outlet property="endSessionButton" destination="rAh-GI-OPh" id="5gE-N1-uVi"/>
                         <outlet property="expertActivityIndicator" destination="Hkq-MT-AGC" id="CJ6-sj-yEV"/>
                         <outlet property="selfieView" destination="P5U-3j-2zU" id="xaO-ID-pgz"/>
@@ -851,12 +846,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="back" width="16" height="16"/>
         <image name="bigWhiteArrow" width="49" height="37"/>
-        <image name="customer-profile" width="16" height="16"/>
-        <image name="expert-profile" width="16" height="16"/>
-        <image name="ic_videocam_white" width="16" height="16"/>
-        <image name="ic_volume_up_white" width="16" height="16"/>
         <image name="settingsIcon" width="20" height="20"/>
+        <image name="videoChatCustomerProfile" width="32" height="32"/>
+        <image name="videoChatExpertProfile" width="48" height="48"/>
+        <image name="videoChatVideocamOn" width="24" height="24"/>
+        <image name="videoChatVolumeOn" width="24" height="24"/>
     </resources>
 </document>

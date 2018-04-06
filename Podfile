@@ -20,6 +20,7 @@ pod 'AWSCore', '~> 2.4.16'
 pod 'AWSS3', '~> 2.4.16'
 pod 'SDWebImage'
 pod 'Stripe'
+pod 'OpenTok', '~> 2.13'
 
 end
 

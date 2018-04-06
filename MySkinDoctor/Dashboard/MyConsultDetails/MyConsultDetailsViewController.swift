@@ -29,7 +29,14 @@ class MyConsultDetailsViewController: BindingViewController {
 		super.initViewModel(viewModel: viewModel)
 		
 		viewModelCast = viewModel as! MyConsultDetailsViewModel
+		
+		viewModelCast.goNextSegue = { [weak self] () in
+			DispatchQueue.main.async {
+				self?.performSegue(withIdentifier: Segues.goToVideoConsultation, sender: nil)
+			}
+		}
 	}
+	
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -93,5 +100,14 @@ class MyConsultDetailsViewController: BindingViewController {
 	
 	@IBAction func onCloseButtonPressed(_ sender: Any) {
 		dismiss(animated: true, completion: nil)
+	}
+	
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if segue.identifier == Segues.goToVideoConsultation {
+			if let dest = segue.destination as? MyConsultVideoChatViewController {
+				dest.initViewModel(viewModel: MyConsultVideoChatViewModel(model: viewModelCast.model))
+			}
+		}
 	}
 }

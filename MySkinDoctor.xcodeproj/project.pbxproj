@@ -55,6 +55,10 @@
 		7849CCA4203EE2030030A7B1 /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7849CCA2203EE2030030A7B1 /* ForgotPasswordViewModel.swift */; };
 		7849CCA8203EE3E60030A7B1 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7849CCA7203EE3E60030A7B1 /* BaseViewModel.swift */; };
 		7849CCA9203EE3E60030A7B1 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7849CCA7203EE3E60030A7B1 /* BaseViewModel.swift */; };
+		788463F12076057D002216A7 /* MyConsultVideoChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788463F02076057D002216A7 /* MyConsultVideoChatViewController.swift */; };
+		788463F22076057D002216A7 /* MyConsultVideoChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788463F02076057D002216A7 /* MyConsultVideoChatViewController.swift */; };
+		788463F42076091B002216A7 /* MyConsultVideoChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788463F32076091B002216A7 /* MyConsultVideoChatViewModel.swift */; };
+		788463F52076091B002216A7 /* MyConsultVideoChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788463F32076091B002216A7 /* MyConsultVideoChatViewModel.swift */; };
 		7884D8B1205A64F900C59E7B /* UITableView+NoDataLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7884D8B0205A64F800C59E7B /* UITableView+NoDataLabel.swift */; };
 		7884D8B2205A64F900C59E7B /* UITableView+NoDataLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7884D8B0205A64F800C59E7B /* UITableView+NoDataLabel.swift */; };
 		7884D8B4205A787600C59E7B /* UITextField+Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7884D8B3205A787500C59E7B /* UITextField+Padding.swift */; };
@@ -350,6 +354,8 @@
 		7849CC9D203EE15A0030A7B1 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		7849CCA2203EE2030030A7B1 /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 		7849CCA7203EE3E60030A7B1 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		788463F02076057D002216A7 /* MyConsultVideoChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyConsultVideoChatViewController.swift; sourceTree = "<group>"; };
+		788463F32076091B002216A7 /* MyConsultVideoChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyConsultVideoChatViewModel.swift; sourceTree = "<group>"; };
 		7884D8B0205A64F800C59E7B /* UITableView+NoDataLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+NoDataLabel.swift"; sourceTree = "<group>"; };
 		7884D8B3205A787500C59E7B /* UITextField+Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Padding.swift"; sourceTree = "<group>"; };
 		7884D8B6205AB2D900C59E7B /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
@@ -557,6 +563,15 @@
 			path = DBExtensions;
 			sourceTree = "<group>";
 		};
+		788463EF20760546002216A7 /* MyConsultVideoChat */ = {
+			isa = PBXGroup;
+			children = (
+				788463F32076091B002216A7 /* MyConsultVideoChatViewModel.swift */,
+				788463F02076057D002216A7 /* MyConsultVideoChatViewController.swift */,
+			);
+			path = MyConsultVideoChat;
+			sourceTree = "<group>";
+		};
 		788C320B204E81260078A983 /* MyConsultsBook */ = {
 			isa = PBXGroup;
 			children = (
@@ -705,6 +720,7 @@
 				FA6130C420500D9500731495 /* MyConsultsConfirmBooking */,
 				FA6130CF2050234100731495 /* MyConsultsThankyou */,
 				FA6E8FB120595F79001F6E16 /* MyConsultDetails */,
+				788463EF20760546002216A7 /* MyConsultVideoChat */,
 				FA3326642040350400657C8A /* Profile */,
 				FABC7A2D205C00D200167FFA /* ProfileChangePassword */,
 				FAFD90122074EC09008DBAB9 /* ProfileCredits */,
@@ -1422,6 +1438,7 @@
 				FABC7A33205C010000167FFA /* ChangePasswordViewModel.swift in Sources */,
 				FA3326BB20441C8500657C8A /* CustomErrors.swift in Sources */,
 				7826473A205800FB00F79FB7 /* Profile+CoreDataClass.swift in Sources */,
+				788463F22076057D002216A7 /* MyConsultVideoChatViewController.swift in Sources */,
 				FAFD9004206B9D02008DBAB9 /* AWS3Utils.swift in Sources */,
 				FA33265C2040336F00657C8A /* PhotoViewController.swift in Sources */,
 				FAFD8FFE2069468B008DBAB9 /* String+Extentions.swift in Sources */,
@@ -1521,6 +1538,7 @@
 				78FFF02B20496E240013240D /* MedicalHistoryViewControler.swift in Sources */,
 				78B9E542203C4CD70054CAD3 /* Consts.swift in Sources */,
 				FAF2CEC9204D574F0001EEAB /* MyConsultTableViewCellViewModel.swift in Sources */,
+				788463F52076091B002216A7 /* MyConsultVideoChatViewModel.swift in Sources */,
 				FA3326672040351500657C8A /* ProfileViewController.swift in Sources */,
 				78264738205800FB00F79FB7 /* MedicalHistory+CoreDataClass.swift in Sources */,
 				FA8CFC8A2065606D0067C11F /* SkinProblemsAttachment+Extensions.swift in Sources */,
@@ -1546,6 +1564,7 @@
 				FA6E8F692056CC8E001F6E16 /* Profile+CoreDataProperties.swift in Sources */,
 				FAC1AF112036FCE200547BBC /* RegistrationResponseModel.swift in Sources */,
 				78DBCE4F2051741500C0D4B5 /* MySkinProblemDiagnosisViewController.swift in Sources */,
+				788463F42076091B002216A7 /* MyConsultVideoChatViewModel.swift in Sources */,
 				FADC333F2046E8C80065A7EB /* FormTextView.swift in Sources */,
 				FAFD900F2074D768008DBAB9 /* TimeslotViewModel.swift in Sources */,
 				FAFD901E2074ED96008DBAB9 /* CreditTableCellViewModel.swift in Sources */,
@@ -1628,6 +1647,7 @@
 				7826473F2058016B00F79FB7 /* SkinProblemAttachment+Extensions.swift in Sources */,
 				FA6E8FB320595FB4001F6E16 /* MyConsultDetailsViewController.swift in Sources */,
 				FAFD9039207521AA008DBAB9 /* CreditOptionsResponseModel.swift in Sources */,
+				788463F12076057D002216A7 /* MyConsultVideoChatViewController.swift in Sources */,
 				FA6E8F5F2056BFDA001F6E16 /* SetupWizard2ViewModel.swift in Sources */,
 				782647052057D49E00F79FB7 /* DoctorNotes+CoreDataProperties.swift in Sources */,
 				78C205D52045A65C00F8E407 /* SkinProblemTableCellViewModel.swift in Sources */,

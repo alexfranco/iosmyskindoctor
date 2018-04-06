@@ -88,7 +88,7 @@ class MyConsultDetailsViewModel: BaseViewModel {
 	}
 	
 	func startConsultation() {
-		
+		goNextSegue!()
 	}
 	
 }

@@ -34,6 +34,7 @@ struct Segues {
 	static let goToBookingConsult = "goToBookingConsult"
 	static let goToCredit = "goToCredit"
 	static let goToCreditCard = "goToCreditCard"
+	static let goToVideoConsultation = "goToVideoConsultation"
 	
 	static let unwindToAddSkinProblems = "unwindToAddSkinProblems"
 	static let unwindToAddSkinProblemsFromPhoto = "unwindToAddSkinProblemsFromPhoto"
