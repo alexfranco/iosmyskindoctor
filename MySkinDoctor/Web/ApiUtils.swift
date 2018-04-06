@@ -211,7 +211,7 @@ extension ApiUtils {
 		var url = ApiUtils.getApiUrl(ApiMethod.skinProblems, nil)
 		url += "\(skinProblemsId)/\(ApiMethod.skinProblemsSubmit.rawValue)"
 		
-		ApiUtils.request(url: url, httpMethod: HTTPMethod.post, params: nil, parseToModelType: SkinProblemsResponseModel.self, accessToken: accessToken, completionHandler: completionHandler)
+		ApiUtils.request(url: url, httpMethod: HTTPMethod.post, params: nil, parseToModelType: SubmittedSkinProblemsResponseModel.self, accessToken: accessToken, completionHandler: completionHandler)
 	}
 	
 	static func accessCode(accessToken: String, accesscode: String, completionHandler: @escaping ((_ result: ApiResult) -> Void)) {
@@ -225,18 +225,29 @@ extension ApiUtils {
 	
 	static func getAllAppointments(accessToken: String, completionHandler: @escaping ((_ result: ApiArrayResult) -> Void)) {
 		let url = ApiUtils.getApiUrl(ApiMethod.appointments, nil)
-		ApiUtils.requestArray(url: url, httpMethod: HTTPMethod.get, params: nil, parseToModelType: AccessCodeResponseModel.self, accessToken: accessToken, completionHandler: completionHandler)
+		ApiUtils.requestArray(url: url, httpMethod: HTTPMethod.get, params: nil, parseToModelType: EventResponseModel.self, accessToken: accessToken, completionHandler: completionHandler)
 	}
 	
-	static func getTimeslots(accessToken: String, skinProblemsId: Int, startDate: Date, endDate: Date, completionHandler: @escaping ((_ result: ApiResult) -> Void)) {
+	static func getTimeslots(accessToken: String, skinProblemsId: Int, startDate: Date, endDate: Date, completionHandler: @escaping ((_ result: ApiArrayResult) -> Void)) {
 		var url = ApiUtils.getApiUrl(ApiMethod.appointmentsCase, nil)
 		url += "\(skinProblemsId)/"
 		
 		var params: Parameters = [:]
-		params.updateValue(startDate.iso8601WithoutTime, forKey: "startDate")
-		params.updateValue(endDate.iso8601WithoutTime, forKey: "endDate")
+		params.updateValue(startDate.iso8601, forKey: "start")
+		params.updateValue(endDate.iso8601, forKey: "end")
 		
-		ApiUtils.request(url: url, httpMethod: HTTPMethod.get, params: params, parseToModelType: AccessCodeResponseModel.self, accessToken: accessToken, completionHandler: completionHandler)
+		ApiUtils.requestArray(url: url, httpMethod: HTTPMethod.get, params: params, parseToModelType: AppointmentsResponseModel.self, accessToken: accessToken, completionHandler: completionHandler)
+	}
+	
+	static func createAppointment(accessToken: String, skinProblemsId: Int, startDate: Date, endDate: Date, completionHandler: @escaping ((_ result: ApiResult) -> Void)) {
+		var url = ApiUtils.getApiUrl(ApiMethod.appointmentsCase, nil)
+		url += "\(skinProblemsId)/"
+		
+		var params: Parameters = [:]
+		params.updateValue(startDate.iso8601, forKey: "timeslot")
+		params.updateValue(endDate.iso8601, forKey: "end")
+		
+		ApiUtils.request(url: url, httpMethod: HTTPMethod.post, params: params, parseToModelType: ConsultationResponseModel.self, accessToken: accessToken, completionHandler: completionHandler)
 	}
 	
 	static func getCreditsOptions(accessToken: String, completionHandler: @escaping ((_ results: ApiResult) -> Void)) {

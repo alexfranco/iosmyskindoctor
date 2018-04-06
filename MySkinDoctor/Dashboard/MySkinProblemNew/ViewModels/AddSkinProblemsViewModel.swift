@@ -70,6 +70,9 @@ class AddSkinProblemsViewModel: BaseViewModel {
 		if skinProblemDescription.isEmpty {
 			showAlert!("", NSLocalizedString("skinproblems_photo_information_description_text_view_empty", comment: ""))
 			isValid = false
+		} else if model?.attachments == nil || model?.attachments!.count == 0 {
+			showAlert!("", NSLocalizedString("skinproblems_photo_information_description_photo_empty", comment: ""))
+			isValid = false
 		}
 		
 		return isValid
@@ -149,7 +152,7 @@ class AddSkinProblemsViewModel: BaseViewModel {
 	private func createSkinProblemAttachment(skinProblemAttachment: SkinProblemAttachment) {
 		guard let model = self.model else { return }
 		
-		ApiUtils.createSkinProblemAttachment(accessToken: DataController.getAccessToken(), skinProblemsId: Int(model.skinProblemId), location: skinProblemAttachment.locationType, filename: skinProblemAttachment.filename, description: skinProblemAttachment.problemDescription, attachmentType:Int(skinProblemAttachment.attachmentType), completionHandler: { (result) in
+		ApiUtils.createSkinProblemAttachment(accessToken: DataController.getAccessToken(), skinProblemsId: Int(model.skinProblemId), location: skinProblemAttachment.locationType!, filename: skinProblemAttachment.filename, description: skinProblemAttachment.problemDescription, attachmentType:Int(skinProblemAttachment.attachmentType), completionHandler: { (result) in
 			self.isLoading = false
 			
 			switch result {
@@ -266,7 +269,7 @@ extension AddSkinProblemsViewModel {
 			guard let model = self.model else { return false }
 			
 			guard let attachments = model.attachments else {
-				return true
+				return false
 			}
 			
 			return attachments.count > 0
@@ -278,7 +281,7 @@ extension AddSkinProblemsViewModel {
 		get {
 			switch diagnoseStatus {
 			case .unknown, .draft:
-				return "-"
+				return ""
 			case .submitted:
 				return generateNodiagnosedInfoText()
 			case .noFutherCommunicationRequired:

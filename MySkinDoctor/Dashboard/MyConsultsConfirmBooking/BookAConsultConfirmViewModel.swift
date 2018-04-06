@@ -11,47 +11,49 @@ import CoreData
 
 class BookAConsultConfirmViewModel: BaseViewModel {
 	
-	var selectedDate: Date!
-	var modelId: NSManagedObjectID?
+	var appointment: AppointmentsResponseModel!
+	var model: SkinProblems!
+	var consultationModel: Consultation?
 
-	required init(selectedDate: Date) {
+	required init(skinProblemsManagedObjectId: NSManagedObjectID, appointment: AppointmentsResponseModel) {
 		super.init()
-		self.selectedDate = selectedDate
+		self.model = DataController.getManagedObject(managedObjectId: skinProblemsManagedObjectId) as? SkinProblems
+		self.appointment = appointment
 	}
 	
 	var dateLabelText: String {
 		get {
-			return selectedDate.ordinalMonthAndYear()
+			return appointment.start!.ordinalMonthAndYear()
 		}
 	}
 	
 	var timeLabelText: String {
 		get {
 			let df = DateFormatter()
-			df.dateFormat = "HH:ss a"
+			df.dateFormat = "HH:mm a"
 			df.amSymbol = "AM"
 			df.pmSymbol = "PM"
-			return df.string(from: selectedDate)
+			return df.string(from: appointment.start!)
 		}
 	}
 	
 	override func saveModel() {
 		super.saveModel()
 		
-		let consultation = DataController.createNew(type: Consultation.self)
-		consultation.appointmentDate = selectedDate! as NSDate
-		
-		let doctor = DataController.createNew(type: Doctor.self)
-		doctor.displayName = "Dr Jane"
-		doctor.qualifications = "A lot of qualifications"
-		
-		DataController.saveEntity(managedObject: doctor)
-		consultation.doctor = doctor
-		DataController.saveEntity(managedObject: consultation)
-		
-		modelId = consultation.objectID
-					
-		goNextSegue!()
+		self.isLoading = true
+		ApiUtils.createAppointment(accessToken: DataController.getAccessToken(), skinProblemsId: Int(model.skinProblemId), startDate: appointment.start!, endDate: appointment.end!) { (result) in
+			self.isLoading = false
+			
+			switch result {
+			case .success(let model):
+				print("createAppointment")
+				self.consultationModel = Consultation.parseAndSaveResponse(consultationResponseModel: (model as! ConsultationResponseModel).event!)!
+				self.goNextSegue!()
+			case .failure(let model, let error):
+				print("error")
+				self.showResponseErrorAlert!(model as? BaseResponseModel, error)
+			}
+		}
 	}
 	
 }

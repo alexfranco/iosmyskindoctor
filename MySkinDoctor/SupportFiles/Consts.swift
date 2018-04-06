@@ -66,3 +66,7 @@ struct CellId {
 struct CoreData {
 	static let dataBaseName = "MySkinDoctor"
 }
+
+struct Payments {
+	static let submitFee = "10.00"
+}

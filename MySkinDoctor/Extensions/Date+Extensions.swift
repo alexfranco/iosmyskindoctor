@@ -81,7 +81,7 @@ extension Date {
 	var timeAndDateText: String {
 		get {
 			let timeFormater = DateFormatter()
-			timeFormater.dateFormat = "hh:ss a"
+			timeFormater.dateFormat = "hh:mm a"
 			timeFormater.amSymbol = "am"
 			timeFormater.pmSymbol = "pm"
 			
@@ -95,9 +95,16 @@ extension Date {
 	var timeText: String {
 		get {
 			let timeFormater = DateFormatter()
-			timeFormater.dateFormat = "HH:ss"
+			timeFormater.dateFormat = "HH:mm"
 			return timeFormater.string(from: self)
 		}
+	}
+	
+	func isDateToday() -> Bool {
+		let calendar = Calendar.current
+		let date = Date()
+	
+		return calendar.isDateInToday(date)
 	}
 	
 	// MARK: Extracting components

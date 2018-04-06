@@ -130,7 +130,7 @@ extension SkinProblemAttachment {
 	}
 
 	var locationTypeEnum: LocationProblemType {
-		get { return LocationProblemType(rawValue: self.locationType) ?? .none }
+		get { return LocationProblemType(rawValue: self.locationType!) ?? .none }
 		set { self.locationType = newValue.rawValue }
 	}
 	

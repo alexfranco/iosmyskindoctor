@@ -13,14 +13,20 @@ class BookAConsultCalendarViewModel: BaseViewModel {
 	
 	var model: SkinProblems!
 	
-	var timeslots: [TimeslotViewModel] = []
+	var timeslots: [AppointmentsResponseModel] = []
 	
 	var selectedDate = Date() {
 		didSet {
 			selectedDateUpdated!(selectedDate)
 		}
 	}
-
+	
+	var selectedAppointment: AppointmentsResponseModel? {
+		didSet {
+			selectedDate = (selectedAppointment?.start)!
+		}
+	}
+	
 	var nextButtonUpdate: ((_ show: Bool)->())?
 	var selectedDateUpdated: ((_ date: Date)->())?
 	var timeslotsUpdated: (()->())?
@@ -43,29 +49,38 @@ class BookAConsultCalendarViewModel: BaseViewModel {
 		}
 	}
 	
-	required init(skinProblemsId: NSManagedObjectID) {
-		self.model = DataController.getManagedObject(managedObjectId: skinProblemsId) as? SkinProblems
+	required init(skinProblemsManagedObjectId: NSManagedObjectID) {
+		self.model = DataController.getManagedObject(managedObjectId: skinProblemsManagedObjectId) as? SkinProblems
 	}
 	
 	func fetchTimeslots() {
-		isLoading = true
 	
-		ApiUtils.getTimeslots(accessToken: DataController.getAccessToken(), skinProblemsId: Int(model.skinProblemId), startDate: selectedDate.startOfDayForDate(), endDate: selectedDate.endOfDayForDate()) { (result) in
+		var startOfDayForDate = selectedDate.startOfDayForDate()
+		if startOfDayForDate.isDateToday() {
+			startOfDayForDate = Date().adjust(.hour, offset: 1)
+		} else if startOfDayForDate < Date() { // is in the past
+			timeslots = []
+			self.nextButtonUpdate!(self.isNextButtonEnabled)
+			self.timeslotsUpdated!()
+			return
+		}
+		
+		isLoading = true
+		ApiUtils.getTimeslots(accessToken: DataController.getAccessToken(), skinProblemsId: Int(model.skinProblemId), startDate: startOfDayForDate, endDate: selectedDate.endOfDayForDate()) { (result) in
 			self.isLoading = false
 			
 			switch result {
-			case .success(let model):
+			case .success(let models):
 				print("getTimeslots")
-				self.timeslots = [TimeslotViewModel(model: TimeslotModel(startDate: Date(), endDate: Date().adjust(.hour, offset: 1))),
-								  TimeslotViewModel(model: TimeslotModel(startDate: Date().adjust(.hour, offset: 1), endDate: Date().adjust(.hour, offset: 2)))]
+				self.timeslots = models as! [AppointmentsResponseModel]
 
 				if let first = self.timeslots.first {
-					self.selectedDate = first.date
+					self.selectedAppointment = first
 				}
 				
-			case .failure(let model, let error):
+			case .failure(_, let error):
 				print("error")
-				self.showResponseErrorAlert!(model as? BaseResponseModel, error)
+				self.showResponseErrorAlert!(nil, error)
 			}
 			
 			self.nextButtonUpdate!(self.isNextButtonEnabled)
@@ -85,7 +100,7 @@ class BookAConsultCalendarViewModel: BaseViewModel {
 		}
 	}
 	
-	func getItemAtIndexPath(_ row: Int) -> TimeslotViewModel {
+	func getItemAtIndexPath(_ row: Int) -> AppointmentsResponseModel {
 		return timeslots[row]
 	}
 	

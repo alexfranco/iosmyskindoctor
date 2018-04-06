@@ -108,6 +108,7 @@
 "skinproblems_photo_information_main_vc_title" = "Photo Information";
 "skinproblems_photo_information_description_text_view" = "Please enter here a description of your problem";
 "skinproblems_photo_information_description_text_view_empty" = "Please enter here a description of your problem";
+"skinproblems_photo_information_description_photo_empty" = "Please enter add a skin problem photo";
 "skinproblems_photo_information_photo_type" = "This is a photo of my skin problem";
 "skinproblems_photo_information_document_type" = "This is a medical note or prescription";
 

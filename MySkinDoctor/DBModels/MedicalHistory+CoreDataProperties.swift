@@ -2,7 +2,7 @@
 //  MedicalHistory+CoreDataProperties.swift
 //  MySkinDoctor
 //
-//  Created by Alex on 21/03/2018.
+//  Created by Alex Núñez on 10/04/2018.
 //  Copyright © 2018 TouchSoft. All rights reserved.
 //
 //
@@ -20,7 +20,7 @@ extension MedicalHistory {
     @NSManaged public var healthProblems: String?
     @NSManaged public var medication: String?
     @NSManaged public var pastHistoryProblems: String?
-    @NSManaged public var skinProblems: SkinProblems?
     @NSManaged public var profile: Profile?
+    @NSManaged public var skinProblems: SkinProblems?
 
 }

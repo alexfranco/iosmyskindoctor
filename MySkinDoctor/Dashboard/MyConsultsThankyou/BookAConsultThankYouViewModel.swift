@@ -16,7 +16,7 @@ class BookAConsultThankYouViewModel: BaseViewModel {
 	
 	var doctorNameText: String {
 		get {
-			if let doctor = model.doctor, let displayName = doctor.displayName {
+			if let skinProblems = model.skinProblems, let diagnose = skinProblems.diagnose, let doctor = diagnose.doctor, let displayName = doctor.displayName {
 				return displayName
 			} else {
 				return  "-"
@@ -26,7 +26,7 @@ class BookAConsultThankYouViewModel: BaseViewModel {
 	
 	var profileImage: UIImage {
 		get {
-			if let doctor = model.doctor, let profilePicture = doctor.profilePicture as? UIImage {
+			if let skinProblems = model.skinProblems, let diagnose = skinProblems.diagnose, let doctor = diagnose.doctor, let profilePicture = doctor.profilePicture as? UIImage {
 				return profilePicture
 			} else {
 				return UIImage.init(color: AppStyle.profileImageViewPlaceHolder)!
@@ -36,7 +36,11 @@ class BookAConsultThankYouViewModel: BaseViewModel {
 	
 	var qualificationsText: String {
 		get {
-			return model.doctor!.qualifications ?? "-"
+			if let skinProblems = model.skinProblems, let diagnose = skinProblems.diagnose, let doctor = diagnose.doctor {
+				return doctor.qualifications ?? "-"
+			} else {
+				return "-"
+			}
 		}
 	}
 	
@@ -57,7 +61,7 @@ class BookAConsultThankYouViewModel: BaseViewModel {
 		
 	func timeText() -> String {
 		let df = DateFormatter()
-		df.dateFormat = "HH.ss a"
+		df.dateFormat = "HH.mm a"
 		df.amSymbol = "am"
 		df.pmSymbol = "pm"
 		return df.string(from: model.appointmentDate! as Date)

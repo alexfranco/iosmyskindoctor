@@ -56,9 +56,9 @@ class MyConsultsViewModel: BaseViewModel {
 			switch result {
 			case .success(let model):
 				
-//				for skinProblemsResponseModel in model as! [SkinProblemsResponseModel] {
-//					let _ = SkinProblems.parseAndSaveResponse(skinProblemResponseModel: skinProblemsResponseModel)
-//				}
+				for eventResponseModel in model as! [EventResponseModel] {
+					let _ = Consultation.parseAndSaveResponse(consultationResponseModel: eventResponseModel)
+				}
 				
 				self.loadDBModel()
 				
@@ -81,7 +81,7 @@ class MyConsultsViewModel: BaseViewModel {
 			allItems = results
 			
 			allItems.sort { (modelA, modelB) -> Bool in
-				return modelA.appointmentDate! as Date > modelB.appointmentDate! as Date
+				return modelB.appointmentDate! as Date > modelA.appointmentDate! as Date
 			}
 			
 			upcomingItems = allItems.filter { (model) -> Bool in (model.appointmentDate! as Date) >= Date() }

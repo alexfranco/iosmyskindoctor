@@ -9,15 +9,16 @@
 import Foundation
 import ObjectMapper
 
-class TopupListResponseModel: Mappable {
+class TopupListResponseModel: BaseResponseModel {
 	var options: [CreditOptionsResponseModel] = []
 	var stripe: StripeResponseModel?
 	
 	required init?(map: Map) {
+		super.init(map: map)
 	}
 	
 	// Mappable
-	func mapping(map: Map) {
+	override func mapping(map: Map) {
 		options <- map["options"]
 		stripe <- map["stripe"]
 	}

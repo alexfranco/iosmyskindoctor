@@ -43,7 +43,6 @@ class MyConsultDetailsViewController: BindingViewController {
 		
 		applyTheme()
 		
-		profileImageView.image = viewModelCast.profileImage
 		profileImageView?.setRounded()
 		profileImageView.setWhiteBorder()
 		
@@ -53,6 +52,12 @@ class MyConsultDetailsViewController: BindingViewController {
 		
 		cancelConsultation.isEnabled = viewModelCast.isBeforeConsultation()
 		nextButton.isEnabled = viewModelCast.isConsultationTime()
+		
+		if let profileImageUrl = URL(string: (self.viewModelCast.profileImageUrl)) {
+			self.profileImageView.sd_setImage(with: profileImageUrl, placeholderImage: UIImage.init(color: AppStyle.profileImageViewPlaceHolder)!, options: .highPriority) { (image, error, type, url) in
+				self.profileImageView.contentMode = .scaleAspectFill
+			}
+		}
 	}
 	
 	func applyTheme() {

@@ -2,7 +2,7 @@
 //  DiagnoseAttachment+CoreDataProperties.swift
 //  MySkinDoctor
 //
-//  Created by Alex Núñez on 03/04/2018.
+//  Created by Alex Núñez on 10/04/2018.
 //  Copyright © 2018 TouchSoft. All rights reserved.
 //
 //
@@ -18,9 +18,9 @@ extension DiagnoseAttachment {
     }
 
     @NSManaged public var diagnoseAttachmentName: String?
+    @NSManaged public var diagnosemAttachmentId: Int16
     @NSManaged public var icon: NSObject?
     @NSManaged public var url: String?
-    @NSManaged public var diagnosemAttachmentId: Int16
     @NSManaged public var diagnose: Diagnose?
 
 }

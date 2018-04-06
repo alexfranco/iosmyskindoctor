@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-class CreditCardResponseModel: Mappable {
+class CreditCardResponseModel: BaseResponseModel {
 	
 	var id: Int?
 	var siteId: Int?
@@ -21,10 +21,11 @@ class CreditCardResponseModel: Mappable {
 	var dateCreatedTimestamp: Date?
 
 	required init?(map: Map) {
+		super.init(map: map)
 	}
 
 	// Mappable
-	func mapping(map: Map) {
+	override func mapping(map: Map) {
 		id <- map["id"]
 		siteId <- map["site_id"]
 		summary <- map["summary"]

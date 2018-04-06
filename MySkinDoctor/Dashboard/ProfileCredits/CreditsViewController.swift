@@ -25,15 +25,19 @@ class CreditsViewController: BindingViewController {
 		configureTableView()
 		applyTheme()
 		applyLocalization()
-		
-		availableBalanceLabel.text = viewModelCast.getCreditText
 	}
 	
+	override func viewWillAppear(_ animated: Bool) {
+		availableBalanceLabel.text = viewModelCast.getCreditText
+		navigationController?.title = viewModelCast.navigationTitle
+		
+		viewModelCast.refreshData()
+	}
 	
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
 		navigationController?.setBackgroundColorWithoutShadowImage(bgColor: AppStyle.defaultNavigationBarColor, titleColor: AppStyle.defaultNavigationBarTitleColor)
-		navigationController?.title = viewModelCast.navigationTitle
+		
 	}
 	
 	func configureTableView() {

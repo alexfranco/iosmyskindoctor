@@ -118,7 +118,7 @@ class BookAConsultCalendarViewController: BindingViewController {
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == Segues.goToConfirmConsult {
 			if let dest = segue.destination as? BookAConsultConfirmViewController {
-				dest.initViewModel(viewModel: BookAConsultConfirmViewModel(selectedDate: viewModelCast.selectedDate))
+				dest.initViewModel(viewModel: BookAConsultConfirmViewModel(skinProblemsManagedObjectId: viewModelCast.model.objectID, appointment: viewModelCast.selectedAppointment!))
 			}
 		}
 	}
@@ -136,11 +136,11 @@ extension BookAConsultCalendarViewController: UIPickerViewDelegate, UIPickerView
 	
 	// The data to return for the row and component (column) that's being passed in
 	func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-		return viewModelCast.getItemAtIndexPath(row).timeslotDisplayText
+		return TimeslotViewModel(model: viewModelCast.getItemAtIndexPath(row)).timeslotDisplayText
 	}
 
 	func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-		viewModelCast.selectedDate = viewModelCast.getItemAtIndexPath(row).date
+		viewModelCast.selectedAppointment = viewModelCast.getItemAtIndexPath(row)
 	}
 }
 

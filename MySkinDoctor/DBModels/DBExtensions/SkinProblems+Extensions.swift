@@ -45,17 +45,14 @@ extension SkinProblems {
 		skinProblem.diagnose!.comments = skinProblemResponseModel.diagnosisComments
 		skinProblem.diagnose!.diagnoseDate = skinProblemResponseModel.outcomeDate as NSDate?
 		skinProblem.diagnose!.diagnoseStatus = Int16(skinProblemResponseModel.status)
-
-		if skinProblem.doctor == nil {
-			skinProblem.doctor = DataController.createNew(type: Doctor.self)
-		}
 		
 		if let doctorResponseModel = skinProblemResponseModel.doctor {
-			skinProblem.doctor = DataController.createOrUpdate(objectIdKey: "doctorId", objectValue: doctorResponseModel.doctorId, type: Doctor.self)
-			skinProblem.doctor!.doctorId = Int16(doctorResponseModel.doctorId)
-			skinProblem.doctor!.displayName = doctorResponseModel.displayName
-			skinProblem.doctor!.profilePictureUrl = doctorResponseModel.profileImageUrl
-			skinProblem.doctor!.qualifications = doctorResponseModel.qualifications
+			let doctor = DataController.createOrUpdate(objectIdKey: "doctorId", objectValue: doctorResponseModel.doctorId, type: Doctor.self)
+			skinProblem.diagnose!.doctor = doctor
+			skinProblem.diagnose!.doctor!.doctorId = Int16(doctorResponseModel.doctorId)
+			skinProblem.diagnose!.doctor!.displayName = doctorResponseModel.displayName
+			skinProblem.diagnose!.doctor!.profilePictureUrl = doctorResponseModel.profileImageUrl
+			skinProblem.diagnose!.doctor!.qualifications = doctorResponseModel.qualifications
 		}
 		
 		parseAndSaveSkinProblemsAttachmentResponse(skinProblemsResponseModel: skinProblemResponseModel, skinProblems: &skinProblem)

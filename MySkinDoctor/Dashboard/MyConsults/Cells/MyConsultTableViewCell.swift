@@ -21,6 +21,7 @@ class MyConsultTableViewCell: UITableViewCell {
 		
 		timeLabel.backgroundColor = AppStyle.consultTableViewCellTimeBackgroundColor
 		timeLabel.textColor = AppStyle.consultTableViewCellTextColor
+		profileImageView.setRounded()
 	}
 	
 	func configure(withViewModel viewModel: MyConsultTableViewCellViewModel) {
@@ -29,13 +30,10 @@ class MyConsultTableViewCell: UITableViewCell {
 		timeLabel.text = viewModel.time
 		timeLabel.setRounded()
 		
-		if let profileImageSafe = viewModel.profileImage {
-			profileImageView.image = profileImageSafe
-		} else {
-			profileImageView.image = UIImage.init(color: AppStyle.profileImageViewPlaceHolder)!
+		profileImageView.sd_setImage(with: viewModel.profileImageUrl, placeholderImage: viewModel.profilePlaceHolder, options: .highPriority) { (image, error, type, url) in
+			self.profileImageView.contentMode = .scaleAspectFill
 		}
-		
-		profileImageView.setRounded()
+	
 		qualificationLabel.text = viewModel.qualification
 		
 		if viewModel.isInThePast {

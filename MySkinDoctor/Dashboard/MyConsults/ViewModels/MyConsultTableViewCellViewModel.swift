@@ -11,11 +11,12 @@ import UIKit
 
 class MyConsultTableViewCellViewModel: BaseViewModel {
 	var model: Consultation!
-	var profileImage: UIImage?
+	var profileImageUrl: URL?
+	var profilePlaceHolder: UIImage?
 	var displayName: String?
 	var time: String?
 	var qualification: String?
-	var dateFormatString = "HH:ss"
+	var dateFormatString = "HH:mm"
 	var appointmentDate: Date?
 	var isInThePast = false
 
@@ -23,13 +24,14 @@ class MyConsultTableViewCellViewModel: BaseViewModel {
 		super.init()
 		self.model = model
 		
-		if let doctor = model.doctor {
+		if let skinProblems = model.skinProblems, let diagnose = skinProblems.diagnose, let doctor = diagnose.doctor {
 			
-			if let profileImage = doctor.profilePicture as? UIImage {
-				self.profileImage = profileImage
-			} else {
-				self.profileImage = UIImage.init(color: AppStyle.profileImageViewPlaceHolder)!
+			profilePlaceHolder = UIImage.init(color: AppStyle.profileImageViewPlaceHolder)!
+			if let problemImage = doctor.profilePicture as? UIImage {
+				profilePlaceHolder = problemImage
 			}
+			
+			profileImageUrl = URL.init(string: doctor.profilePictureUrl ?? "")
 			
 			self.displayName = doctor.displayName ?? "-"
 			qualification = doctor.qualifications?.uppercased() ?? "-"

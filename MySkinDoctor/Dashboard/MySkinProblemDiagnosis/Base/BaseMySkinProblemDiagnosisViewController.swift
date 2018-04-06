@@ -28,14 +28,19 @@ class BaseMySkinProblemDiagnosisViewController: BindingViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		title = viewModelCast.navigationTitle
-
-		profileImageView.image = viewModelCast.profileImage
+		
 		profileImageView?.setRounded()
 		profileImageView.setWhiteBorder()
 		
+		title = viewModelCast.navigationTitle
 		doctorNameLabel.text = viewModelCast.doctorNameText
 		qualificationsLabel.text = viewModelCast.qualificationsText
+		
+		if let profileImageUrl = URL(string: (self.viewModelCast.profileImageUrl)) {
+			self.profileImageView.sd_setImage(with: profileImageUrl, placeholderImage: UIImage.init(color: AppStyle.profileImageViewPlaceHolder)!, options: .highPriority) { (image, error, type, url) in
+				self.profileImageView.contentMode = .scaleAspectFill
+			}
+		}
 		
 		applyTheme()
 	}

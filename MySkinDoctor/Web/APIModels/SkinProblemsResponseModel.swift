@@ -69,7 +69,7 @@ class DoctorResponseModel : BaseResponseModel {
 		super .mapping(map: map)
 		
 		doctorId <- map["id"]
-		displayName <- map["displayName"]
+		displayName <- map["display_name"]
 		profileImageUrl <- map["profile_image_url"]
 		qualifications <- map["qualifications"]
 	}

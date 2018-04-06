@@ -21,15 +21,17 @@ class CreditsViewModel: BaseViewModel {
 	
 	var getCreditText: String {
 		get {
-			return profile.credits ?? "0"
+			return profile.credits ?? "£0"
 		}
 	}
 	
 	override init() {
 		super.init()
 		
-		profile = DataController.createUniqueEntity(type: Profile.self)
-		
+		profile = DataController.createUniqueEntity(type: Profile.self)				
+	}
+	
+	func refreshData() {
 		isLoading = true
 		
 		ApiUtils.getCreditsOptions(accessToken: DataController.getAccessToken()) { (result) in

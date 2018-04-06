@@ -41,7 +41,9 @@ extension Diagnose {
 	}
 	
 	var diagnoseStatusEnum: DiagnoseStatus {
-		get { return DiagnoseStatus(rawValue: self.diagnoseStatus )! }
+		get {
+			return DiagnoseStatus(rawValue: self.diagnoseStatus) ?? .unknown
+		}
 		set { self.diagnoseStatus = Int16(newValue.rawValue) }
 	}
 	

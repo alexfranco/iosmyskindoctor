@@ -99,7 +99,7 @@ class MedicalHistoryViewControler: FormViewController {
 		}
 		
 		viewModelCast.goNextSegue = { [weak self] () in
-			DispatchQueue.main.async {
+			DispatchQueue.main.async {								
 				self?.performSegue(withIdentifier: Segues.goToSkinProblemThankYouViewControllerFromMedicalHistory, sender: nil)
 			}
 		}

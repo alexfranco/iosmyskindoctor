@@ -21,6 +21,7 @@ class ProfileViewController: FormViewController {
 	@IBOutlet weak var personalDetailsSectionLabel: BoldLabel!
 	@IBOutlet weak var dobTextField: ProfileTextField!
 	
+	@IBOutlet weak var accessCodeTextFieldConstraint: NSLayoutConstraint!
 	@IBOutlet weak var firstNameTextField: ProfileTextField!  {
 		didSet {
 			firstNameTextField.bind { self.viewModelCast.firstName = $0 }
@@ -136,7 +137,6 @@ class ProfileViewController: FormViewController {
 		walletButton.setImage(UIImage(named: "walletIcon"), for: .normal)
 		walletButton.addTarget(self, action: #selector(onWalletButtonPressed), for: .touchUpInside)
 		navigationItem.leftBarButtonItem = UIBarButtonItem(customView: walletButton)
-		updateCreditButton()
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
@@ -289,6 +289,17 @@ class ProfileViewController: FormViewController {
 				self.userPhotoImageView.contentMode = .scaleAspectFill
 			}
 		}
+		
+//		if viewModelCast.isAccessCodeHidden {
+//			accessCodeTextFieldConstraint.constant = 0
+//			accessCodeTextField.isHidden = true
+//		}
+//
+//		if viewModelCast.isWalletIconHidden {
+//			navigationItem.leftBarButtonItem = nil
+//		}
+		
+		updateCreditButton()
 	}
 	
 	@IBAction func onChangePasswordButton(_ sender: Any) {

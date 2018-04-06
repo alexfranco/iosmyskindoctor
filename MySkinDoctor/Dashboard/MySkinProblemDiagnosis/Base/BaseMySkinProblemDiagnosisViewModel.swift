@@ -64,13 +64,13 @@ class BaseMySkinProblemDiagnosisViewModel: BaseViewModel {
 		}
 	}
 	
-	var profileImage: UIImage {
+	var profileImageUrl: String {
 		get {
-			guard let diagnose = model.diagnose, let diagnosedBy = diagnose.doctor, let profilePicture = diagnosedBy.profilePicture else {
-				return UIImage.init(color: AppStyle.profileImageViewPlaceHolder)!
+			guard let diagnose = model.diagnose, let diagnosedBy = diagnose.doctor, let profilePictureUrl = diagnosedBy.profilePictureUrl else {
+				return ""
 			}
 						
-			return profilePicture as! UIImage
+			return profilePictureUrl
 		}
 	}
 	
@@ -90,9 +90,10 @@ class BaseMySkinProblemDiagnosisViewModel: BaseViewModel {
 		}
 	}
 	
-	required init(model: SkinProblems) {
+	required init(modelId: NSManagedObjectID) {
 		super.init()
-		self.model = model
+		
+		model = DataController.getManagedObject(managedObjectId: modelId) as! SkinProblems
 	}
 	
 	private func dateText() -> String {
@@ -101,7 +102,7 @@ class BaseMySkinProblemDiagnosisViewModel: BaseViewModel {
 	
 	private func timeText() -> String {
 		let df = DateFormatter()
-		df.dateFormat = "hh.ss a"
+		df.dateFormat = "hh.mm a"
 		df.amSymbol = "am"
 		df.pmSymbol = "pm"
 		return df.string(from: (model.date! as Date))

@@ -2,7 +2,7 @@
 //  Diagnose+CoreDataProperties.swift
 //  MySkinDoctor
 //
-//  Created by Alex Núñez on 03/04/2018.
+//  Created by Alex Núñez on 10/04/2018.
 //  Copyright © 2018 TouchSoft. All rights reserved.
 //
 //

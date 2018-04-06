@@ -62,6 +62,18 @@ class ProfileViewModel: BaseViewModel {
 	
 	private (set) var credits = "0"
 	
+	var isAccessCodeHidden: Bool {
+		get {
+			return !profile.isNHS
+		}
+	}
+	
+	var isWalletIconHidden: Bool {
+		get {
+			return !profile.isNHS
+		}
+	}
+	
 	var didSaveChanges: (()->())?
 	
 	override init() {

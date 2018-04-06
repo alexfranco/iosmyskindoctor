@@ -36,7 +36,7 @@ class BookAConsultViewController: BindingViewController {
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if let vc = segue.destination as? BookAConsultCalendarViewController {
-			vc.initViewModel(viewModel: BookAConsultCalendarViewModel(skinProblemsId: skinProblemId))
+			vc.initViewModel(viewModel: BookAConsultCalendarViewModel(skinProblemsManagedObjectId: skinProblemId))
 		}
 	}
 	

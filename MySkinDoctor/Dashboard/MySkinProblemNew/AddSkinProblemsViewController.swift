@@ -94,7 +94,6 @@ class AddSkinProblemsViewController: BindingViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		photoUtils = PhotoUtils.init(inViewController: self)
-		nextButton.isEnabled = viewModelCast.nextButtonIsEnabled
 		
 		configureTableView()
 		configureDiagnoseView()
@@ -108,6 +107,8 @@ class AddSkinProblemsViewController: BindingViewController {
 		super.viewDidAppear(animated)
 		navigationController?.setBackgroundColorWithoutShadowImage(bgColor: AppStyle.defaultNavigationBarColor, titleColor: AppStyle.defaultNavigationBarTitleColor)
 		navigationController?.title = viewModelCast.navigationTitle
+		
+		nextButton.isEnabled = false
 	}
 	
 	// MARK: Helpers
@@ -145,7 +146,8 @@ class AddSkinProblemsViewController: BindingViewController {
 		
 		showHideDiagnoseViews()
 		nextButton.isHidden = !viewModelCast.isEditEnabled
-		
+		nextButton.isEnabled = viewModelCast.nextButtonIsEnabled
+
 		tableView.reloadData()
 	}
 	
@@ -204,11 +206,11 @@ class AddSkinProblemsViewController: BindingViewController {
 			}
 		} else if segue.identifier == Segues.goToDiagnosis {
 			if let dest = segue.destination as? MySkinProblemDiagnosisViewController {
-				dest.initViewModel(viewModel: MySkinProblemDiagnosisViewModel(model:  viewModelCast.model!))
+				dest.initViewModel(viewModel: MySkinProblemDiagnosisViewModel(modelId: (self.viewModelCast.model?.objectID)!))
 			}
 		} else if segue.identifier == Segues.goToMySkinProblemDiagnoseUpdateRequest {
 			if let dest = segue.destination as? MySkinProblemDiagnoseUpdateRequestViewController {
-				dest.initViewModel(viewModel: MySkinProblemDiagnoseUpdateRequestViewModel(model:  viewModelCast.model!))
+				dest.initViewModel(viewModel: MySkinProblemDiagnoseUpdateRequestViewModel(modelId: (self.viewModelCast.model?.objectID)!))
 			}
 		} else if segue.identifier == Segues.goToMedicalHistoryViewControler {
 			if let dest = segue.destination as? MedicalHistoryViewControler {

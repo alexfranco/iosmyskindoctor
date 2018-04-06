@@ -90,5 +90,4 @@ class PhotoViewController: FormViewController, UIGestureRecognizerDelegate, UIIm
 	func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
 		print("Cancel")
 	}
-
 }

@@ -111,10 +111,11 @@ class MedicalHistoryViewModel: BaseViewModel {
 			switch result {
 			case .success(let model):
 				print("submitSkinProblem")
-				let _ = SkinProblems.parseAndSaveResponse(skinProblemResponseModel: model as! SkinProblemsResponseModel)
-				self.updateProfileMedicalHistory()
-				self.goNextSegue!()
-				
+				if let submit = model as? SubmittedSkinProblemsResponseModel, let skinProblemResponseModel = submit.skinProblems {
+					let _ = SkinProblems.parseAndSaveResponse(skinProblemResponseModel: skinProblemResponseModel)
+					self.updateProfileMedicalHistory()
+					self.goNextSegue!()
+				}
 			case .failure(let model, let error):
 				print("error")
 				self.showResponseErrorAlert!(model as? BaseResponseModel, error)

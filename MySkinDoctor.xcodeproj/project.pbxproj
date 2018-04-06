@@ -29,22 +29,6 @@
 		782647132057D49E00F79FB7 /* MedicalHistory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782647032057D49E00F79FB7 /* MedicalHistory+CoreDataProperties.swift */; };
 		782647152057DADE00F79FB7 /* SkinProblems+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782647142057DADE00F79FB7 /* SkinProblems+Extensions.swift */; };
 		782647182057E47800F79FB7 /* Diagnose+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782647172057E47800F79FB7 /* Diagnose+Extensions.swift */; };
-		7826472A205800FB00F79FB7 /* DoctorNotes+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782646F42057D49E00F79FB7 /* DoctorNotes+CoreDataClass.swift */; };
-		7826472B205800FB00F79FB7 /* DoctorNotes+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782646F52057D49E00F79FB7 /* DoctorNotes+CoreDataProperties.swift */; };
-		7826472E205800FB00F79FB7 /* SkinProblems+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782646F82057D49E00F79FB7 /* SkinProblems+CoreDataClass.swift */; };
-		7826472F205800FB00F79FB7 /* SkinProblems+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782646F92057D49E00F79FB7 /* SkinProblems+CoreDataProperties.swift */; };
-		78264730205800FB00F79FB7 /* Diagnose+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782646FA2057D49E00F79FB7 /* Diagnose+CoreDataClass.swift */; };
-		78264731205800FB00F79FB7 /* Diagnose+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782646FB2057D49E00F79FB7 /* Diagnose+CoreDataProperties.swift */; };
-		78264732205800FB00F79FB7 /* SkinProblemAttachment+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782646FC2057D49E00F79FB7 /* SkinProblemAttachment+CoreDataClass.swift */; };
-		78264733205800FB00F79FB7 /* SkinProblemAttachment+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782646FD2057D49E00F79FB7 /* SkinProblemAttachment+CoreDataProperties.swift */; };
-		78264734205800FB00F79FB7 /* Consultation+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782646FE2057D49E00F79FB7 /* Consultation+CoreDataClass.swift */; };
-		78264735205800FB00F79FB7 /* Consultation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782646FF2057D49E00F79FB7 /* Consultation+CoreDataProperties.swift */; };
-		78264736205800FB00F79FB7 /* Doctor+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782647002057D49E00F79FB7 /* Doctor+CoreDataClass.swift */; };
-		78264737205800FB00F79FB7 /* Doctor+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782647012057D49E00F79FB7 /* Doctor+CoreDataProperties.swift */; };
-		78264738205800FB00F79FB7 /* MedicalHistory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782647022057D49E00F79FB7 /* MedicalHistory+CoreDataClass.swift */; };
-		78264739205800FB00F79FB7 /* MedicalHistory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782647032057D49E00F79FB7 /* MedicalHistory+CoreDataProperties.swift */; };
-		7826473A205800FB00F79FB7 /* Profile+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E8F652056CC8E001F6E16 /* Profile+CoreDataClass.swift */; };
-		7826473B205800FB00F79FB7 /* Profile+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E8F662056CC8E001F6E16 /* Profile+CoreDataProperties.swift */; };
 		7826473C205800FB00F79FB7 /* SkinProblems+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782647142057DADE00F79FB7 /* SkinProblems+Extensions.swift */; };
 		7826473D205800FB00F79FB7 /* Diagnose+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782647172057E47800F79FB7 /* Diagnose+Extensions.swift */; };
 		7826473F2058016B00F79FB7 /* SkinProblemAttachment+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7826473E2058016B00F79FB7 /* SkinProblemAttachment+Extensions.swift */; };
@@ -75,12 +59,35 @@
 		788C3219204EB63B0078A983 /* UILabel+Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788C3217204EB63B0078A983 /* UILabel+Padding.swift */; };
 		788C321D204EF0400078A983 /* BookAConsultCalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788C321C204EF0400078A983 /* BookAConsultCalendarViewModel.swift */; };
 		788C321E204EF0400078A983 /* BookAConsultCalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788C321C204EF0400078A983 /* BookAConsultCalendarViewModel.swift */; };
+		78918230207CB2210039A508 /* SubmittedSkinProblemsResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7891822F207CB2210039A508 /* SubmittedSkinProblemsResponseModel.swift */; };
+		78918231207CE8330039A508 /* DiagnoseAttachment+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7898C610207387F700F93F7E /* DiagnoseAttachment+CoreDataClass.swift */; };
+		78918232207CE8330039A508 /* DiagnoseAttachment+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7898C611207387F700F93F7E /* DiagnoseAttachment+CoreDataProperties.swift */; };
+		78918233207CE8330039A508 /* Consultation+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782646FE2057D49E00F79FB7 /* Consultation+CoreDataClass.swift */; };
+		78918234207CE8330039A508 /* Consultation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782646FF2057D49E00F79FB7 /* Consultation+CoreDataProperties.swift */; };
+		78918235207CE8330039A508 /* Diagnose+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782646FA2057D49E00F79FB7 /* Diagnose+CoreDataClass.swift */; };
+		78918236207CE8330039A508 /* Diagnose+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782646FB2057D49E00F79FB7 /* Diagnose+CoreDataProperties.swift */; };
+		78918237207CE8330039A508 /* Doctor+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782647002057D49E00F79FB7 /* Doctor+CoreDataClass.swift */; };
+		78918238207CE8330039A508 /* Doctor+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782647012057D49E00F79FB7 /* Doctor+CoreDataProperties.swift */; };
+		78918239207CE8330039A508 /* DoctorNotes+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782646F42057D49E00F79FB7 /* DoctorNotes+CoreDataClass.swift */; };
+		7891823A207CE8330039A508 /* DoctorNotes+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782646F52057D49E00F79FB7 /* DoctorNotes+CoreDataProperties.swift */; };
+		7891823B207CE8330039A508 /* MedicalHistory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782647022057D49E00F79FB7 /* MedicalHistory+CoreDataClass.swift */; };
+		7891823C207CE8330039A508 /* MedicalHistory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782647032057D49E00F79FB7 /* MedicalHistory+CoreDataProperties.swift */; };
+		7891823D207CE8330039A508 /* Profile+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E8F652056CC8E001F6E16 /* Profile+CoreDataClass.swift */; };
+		7891823E207CE8330039A508 /* Profile+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E8F662056CC8E001F6E16 /* Profile+CoreDataProperties.swift */; };
+		7891823F207CE8330039A508 /* SkinProblemAttachment+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782646FC2057D49E00F79FB7 /* SkinProblemAttachment+CoreDataClass.swift */; };
+		78918240207CE8330039A508 /* SkinProblemAttachment+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782646FD2057D49E00F79FB7 /* SkinProblemAttachment+CoreDataProperties.swift */; };
+		78918241207CE8330039A508 /* SkinProblems+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782646F82057D49E00F79FB7 /* SkinProblems+CoreDataClass.swift */; };
+		78918242207CE8330039A508 /* SkinProblems+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782646F92057D49E00F79FB7 /* SkinProblems+CoreDataProperties.swift */; };
+		78918244207CF1DE0039A508 /* AppointmentsResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78918243207CF1DE0039A508 /* AppointmentsResponseModel.swift */; };
+		78918245207CF1DE0039A508 /* AppointmentsResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78918243207CF1DE0039A508 /* AppointmentsResponseModel.swift */; };
+		78918247207D07E90039A508 /* ConsultationResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78918246207D07E90039A508 /* ConsultationResponseModel.swift */; };
+		78918248207D07E90039A508 /* ConsultationResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78918246207D07E90039A508 /* ConsultationResponseModel.swift */; };
+		7891824A207D09030039A508 /* Consultation+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78918249207D09030039A508 /* Consultation+Extentions.swift */; };
+		7891824B207D09030039A508 /* Consultation+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78918249207D09030039A508 /* Consultation+Extentions.swift */; };
 		7898C60E207386D000F93F7E /* DiagnoseAttachmentResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7898C60D207386D000F93F7E /* DiagnoseAttachmentResponseModel.swift */; };
 		7898C60F207386D000F93F7E /* DiagnoseAttachmentResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7898C60D207386D000F93F7E /* DiagnoseAttachmentResponseModel.swift */; };
 		7898C612207387F800F93F7E /* DiagnoseAttachment+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7898C610207387F700F93F7E /* DiagnoseAttachment+CoreDataClass.swift */; };
-		7898C613207387F800F93F7E /* DiagnoseAttachment+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7898C610207387F700F93F7E /* DiagnoseAttachment+CoreDataClass.swift */; };
 		7898C614207387F800F93F7E /* DiagnoseAttachment+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7898C611207387F700F93F7E /* DiagnoseAttachment+CoreDataProperties.swift */; };
-		7898C615207387F800F93F7E /* DiagnoseAttachment+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7898C611207387F700F93F7E /* DiagnoseAttachment+CoreDataProperties.swift */; };
 		7898C617207388B600F93F7E /* DiagnoseAttachment+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7898C616207388B600F93F7E /* DiagnoseAttachment+Extensions.swift */; };
 		7898C618207388B600F93F7E /* DiagnoseAttachment+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7898C616207388B600F93F7E /* DiagnoseAttachment+Extensions.swift */; };
 		7898C61D20739C2000F93F7E /* UIButtonCustomHighlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7898C61C20739C2000F93F7E /* UIButtonCustomHighlight.swift */; };
@@ -296,11 +303,8 @@
 		FAFD9003206B9D02008DBAB9 /* AWS3Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD9002206B9D02008DBAB9 /* AWS3Utils.swift */; };
 		FAFD9004206B9D02008DBAB9 /* AWS3Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD9002206B9D02008DBAB9 /* AWS3Utils.swift */; };
 		FAFD9006206BCA97008DBAB9 /* MySkinDoctorLive.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAFD9005206BCA97008DBAB9 /* MySkinDoctorLive.plist */; };
-		FAFD9007206BCA97008DBAB9 /* MySkinDoctorLive.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAFD9005206BCA97008DBAB9 /* MySkinDoctorLive.plist */; };
 		FAFD9009206BDCF8008DBAB9 /* AccessCodeResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD9008206BDCF8008DBAB9 /* AccessCodeResponseModel.swift */; };
 		FAFD900A206BDCF8008DBAB9 /* AccessCodeResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD9008206BDCF8008DBAB9 /* AccessCodeResponseModel.swift */; };
-		FAFD900C2074D5A9008DBAB9 /* TimeslotModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD900B2074D5A9008DBAB9 /* TimeslotModel.swift */; };
-		FAFD900D2074D5A9008DBAB9 /* TimeslotModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD900B2074D5A9008DBAB9 /* TimeslotModel.swift */; };
 		FAFD900F2074D768008DBAB9 /* TimeslotViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD900E2074D768008DBAB9 /* TimeslotViewModel.swift */; };
 		FAFD90102074D768008DBAB9 /* TimeslotViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD900E2074D768008DBAB9 /* TimeslotViewModel.swift */; };
 		FAFD90142074EC5D008DBAB9 /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD90132074EC5D008DBAB9 /* CreditsViewController.swift */; };
@@ -364,6 +368,10 @@
 		788C3212204E88D00078A983 /* BookAConsultCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookAConsultCalendarViewController.swift; sourceTree = "<group>"; };
 		788C3217204EB63B0078A983 /* UILabel+Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Padding.swift"; sourceTree = "<group>"; };
 		788C321C204EF0400078A983 /* BookAConsultCalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookAConsultCalendarViewModel.swift; sourceTree = "<group>"; };
+		7891822F207CB2210039A508 /* SubmittedSkinProblemsResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmittedSkinProblemsResponseModel.swift; sourceTree = "<group>"; };
+		78918243207CF1DE0039A508 /* AppointmentsResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsResponseModel.swift; sourceTree = "<group>"; };
+		78918246207D07E90039A508 /* ConsultationResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultationResponseModel.swift; sourceTree = "<group>"; };
+		78918249207D09030039A508 /* Consultation+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Consultation+Extentions.swift"; sourceTree = "<group>"; };
 		7898C60D207386D000F93F7E /* DiagnoseAttachmentResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnoseAttachmentResponseModel.swift; sourceTree = "<group>"; };
 		7898C610207387F700F93F7E /* DiagnoseAttachment+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DiagnoseAttachment+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7898C611207387F700F93F7E /* DiagnoseAttachment+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DiagnoseAttachment+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -488,7 +496,6 @@
 		FAFD9002206B9D02008DBAB9 /* AWS3Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWS3Utils.swift; sourceTree = "<group>"; };
 		FAFD9005206BCA97008DBAB9 /* MySkinDoctorLive.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MySkinDoctorLive.plist; sourceTree = "<group>"; };
 		FAFD9008206BDCF8008DBAB9 /* AccessCodeResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessCodeResponseModel.swift; sourceTree = "<group>"; };
-		FAFD900B2074D5A9008DBAB9 /* TimeslotModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeslotModel.swift; sourceTree = "<group>"; };
 		FAFD900E2074D768008DBAB9 /* TimeslotViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeslotViewModel.swift; sourceTree = "<group>"; };
 		FAFD90132074EC5D008DBAB9 /* CreditsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
 		FAFD90162074ECDF008DBAB9 /* CreditsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsViewModel.swift; sourceTree = "<group>"; };
@@ -559,6 +566,7 @@
 				782647142057DADE00F79FB7 /* SkinProblems+Extensions.swift */,
 				FA8CFC882065606D0067C11F /* SkinProblemsAttachment+Extensions.swift */,
 				FAFD8FFF206B8C7D008DBAB9 /* Profile+Extensions.swift */,
+				78918249207D09030039A508 /* Consultation+Extentions.swift */,
 			);
 			path = DBExtensions;
 			sourceTree = "<group>";
@@ -583,7 +591,6 @@
 		788C3211204E88A00078A983 /* MyConsultsCalendar */ = {
 			isa = PBXGroup;
 			children = (
-				FAFD900B2074D5A9008DBAB9 /* TimeslotModel.swift */,
 				FAFD900E2074D768008DBAB9 /* TimeslotViewModel.swift */,
 				788C321C204EF0400078A983 /* BookAConsultCalendarViewModel.swift */,
 				788C3212204E88D00078A983 /* BookAConsultCalendarViewController.swift */,
@@ -932,6 +939,9 @@
 				7898C60D207386D000F93F7E /* DiagnoseAttachmentResponseModel.swift */,
 				FAFD9038207521AA008DBAB9 /* TopupListResponseModel.swift */,
 				FAFD903520750D2F008DBAB9 /* CreditCardResponseModel.swift */,
+				7891822F207CB2210039A508 /* SubmittedSkinProblemsResponseModel.swift */,
+				78918243207CF1DE0039A508 /* AppointmentsResponseModel.swift */,
+				78918246207D07E90039A508 /* ConsultationResponseModel.swift */,
 			);
 			path = APIModels;
 			sourceTree = "<group>";
@@ -1203,7 +1213,6 @@
 				78B9E54A203C4CD70054CAD3 /* Assets.xcassets in Resources */,
 				788C3208204E7D680078A983 /* MySkinProblems.storyboard in Resources */,
 				78B9E54B203C4CD70054CAD3 /* Main.storyboard in Resources */,
-				FAFD9007206BCA97008DBAB9 /* MySkinDoctorLive.plist in Resources */,
 				78B9E54D203C4CD70054CAD3 /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1404,62 +1413,60 @@
 				FADC33452046F16C0065A7EB /* SkinProblemPhotoInformationViewModel.swift in Sources */,
 				FAF2CEB7204D55850001EEAB /* MyConsultsViewController.swift in Sources */,
 				78B9E530203C4CD70054CAD3 /* RegistrationResponseModel.swift in Sources */,
-				78264732205800FB00F79FB7 /* SkinProblemAttachment+CoreDataClass.swift in Sources */,
 				78DBCE502051741500C0D4B5 /* MySkinProblemDiagnosisViewController.swift in Sources */,
 				FAFD900A206BDCF8008DBAB9 /* AccessCodeResponseModel.swift in Sources */,
+				78918232207CE8330039A508 /* DiagnoseAttachment+CoreDataProperties.swift in Sources */,
 				FAFD903720750D2F008DBAB9 /* CreditCardResponseModel.swift in Sources */,
 				FAFD90102074D768008DBAB9 /* TimeslotViewModel.swift in Sources */,
 				FAFD901F2074ED96008DBAB9 /* CreditTableCellViewModel.swift in Sources */,
 				FAFD9001206B8C7D008DBAB9 /* Profile+Extensions.swift in Sources */,
 				FAFD90252074EFFC008DBAB9 /* Float+Extensions.swift in Sources */,
 				FADC33402046E8C80065A7EB /* FormTextView.swift in Sources */,
-				78264731205800FB00F79FB7 /* Diagnose+CoreDataProperties.swift in Sources */,
 				FA332657204029BD00657C8A /* MySkinProblemsViewModel.swift in Sources */,
 				FA6E8F632056C239001F6E16 /* UIButton+Border.swift in Sources */,
 				FADC3350204706E70065A7EB /* SkinProblemLocationViewModel.swift in Sources */,
 				FAF2CECE204D59E40001EEAB /* MyConsultsViewModel.swift in Sources */,
 				78C205E32045AA9900F8E407 /* AddSkinProblemsViewModel.swift in Sources */,
-				7898C615207387F800F93F7E /* DiagnoseAttachment+CoreDataProperties.swift in Sources */,
 				FAEC573C203DBEAE00D1A0AE /* LoginViewModel.swift in Sources */,
 				78FB319E2063F59500F155AE /* Formatter+Extensions.swift in Sources */,
 				FA6E8F5D2056BFC3001F6E16 /* SetupWizard2ViewController.swift in Sources */,
 				FAAE628A2056A7B100823BFE /* SetupWizard1ViewController.swift in Sources */,
 				FAA774FB20529F8100A794FF /* MySkinProblemDiagnoseUpdateRequestViewModel.swift in Sources */,
 				FA33268C204413B500657C8A /* ProfileViewModel.swift in Sources */,
-				78264737205800FB00F79FB7 /* Doctor+CoreDataProperties.swift in Sources */,
 				FABC7A33205C010000167FFA /* ChangePasswordViewModel.swift in Sources */,
 				FA3326BB20441C8500657C8A /* CustomErrors.swift in Sources */,
-				7826473A205800FB00F79FB7 /* Profile+CoreDataClass.swift in Sources */,
 				788463F22076057D002216A7 /* MyConsultVideoChatViewController.swift in Sources */,
 				FAFD9004206B9D02008DBAB9 /* AWS3Utils.swift in Sources */,
 				FA33265C2040336F00657C8A /* PhotoViewController.swift in Sources */,
+				78918248207D07E90039A508 /* ConsultationResponseModel.swift in Sources */,
 				FAFD8FFE2069468B008DBAB9 /* String+Extentions.swift in Sources */,
 				FAD6ADBD204461050050C1A9 /* AddSkinProblemsViewController.swift in Sources */,
 				78FB31982063B8F300F155AE /* DTTextField.swift in Sources */,
 				FA332661204034B300657C8A /* UIImageView+Circular.swift in Sources */,
 				7884D8B2205A64F900C59E7B /* UITableView+NoDataLabel.swift in Sources */,
 				788C3214204E88D00078A983 /* BookAConsultCalendarViewController.swift in Sources */,
+				78918234207CE8330039A508 /* Consultation+CoreDataProperties.swift in Sources */,
 				FA6130D7205023CE00731495 /* BookAConsultThankYouViewModel.swift in Sources */,
 				788C321E204EF0400078A983 /* BookAConsultCalendarViewModel.swift in Sources */,
-				78264733205800FB00F79FB7 /* SkinProblemAttachment+CoreDataProperties.swift in Sources */,
-				78264730205800FB00F79FB7 /* Diagnose+CoreDataClass.swift in Sources */,
 				78B9E532203C4CD70054CAD3 /* ApiUtils.swift in Sources */,
 				FA6130CC20500DCD00731495 /* BookAConsultConfirmViewController.swift in Sources */,
 				FA33263B20400FD200657C8A /* DashboardTabViewController.swift in Sources */,
-				7898C613207387F800F93F7E /* DiagnoseAttachment+CoreDataClass.swift in Sources */,
 				78B9E533203C4CD70054CAD3 /* PositiveButton.swift in Sources */,
 				78B9E534203C4CD70054CAD3 /* FormViewController.swift in Sources */,
+				78918236207CE8330039A508 /* Diagnose+CoreDataProperties.swift in Sources */,
+				78918245207CF1DE0039A508 /* AppointmentsResponseModel.swift in Sources */,
 				7826473C205800FB00F79FB7 /* SkinProblems+Extensions.swift in Sources */,
 				FA3326BF20441C8500657C8A /* FormTextField.swift in Sources */,
 				78B9E535203C4CD70054CAD3 /* Validations.swift in Sources */,
 				78B9E536203C4CD70054CAD3 /* ForgotPasswordResposeModel.swift in Sources */,
+				78918237207CE8330039A508 /* Doctor+CoreDataClass.swift in Sources */,
 				FA6E8F572056BBC4001F6E16 /* SetupWizard3ViewController.swift in Sources */,
 				FAFD901C2074ED1F008DBAB9 /* CreditTableViewCell.swift in Sources */,
 				78C205CC20459D7D00F8E407 /* UINavigationController+Extensions.swift in Sources */,
 				FADC3356204D48BA0065A7EB /* SkinProblemThankYouViewController.swift in Sources */,
-				78264736205800FB00F79FB7 /* Doctor+CoreDataClass.swift in Sources */,
 				FAD6ADB820445EB20050C1A9 /* AddPhotoTableViewCell.swift in Sources */,
 				FA8CFC802062A7A20067C11F /* ProfileResponseModel.swift in Sources */,
+				7891823A207CE8330039A508 /* DoctorNotes+CoreDataProperties.swift in Sources */,
 				FAD6ADC220446D310050C1A9 /* AddPhotoTableViewCellViewModel.swift in Sources */,
 				FA6E8FB02056D66C001F6E16 /* CoreDataStack.swift in Sources */,
 				FA3326472040220200657C8A /* MySkinProblemsTableCellViewModel.swift in Sources */,
@@ -1468,34 +1475,33 @@
 				7849CC9F203EE15A0030A7B1 /* RegistrationViewModel.swift in Sources */,
 				FA6E8F5A2056BBE0001F6E16 /* SetupWizard3ViewModel.swift in Sources */,
 				FAF2CED3204D7C680001EEAB /* UILabel+RoundedBorders.swift in Sources */,
+				78918238207CE8330039A508 /* Doctor+CoreDataProperties.swift in Sources */,
 				78B9E538203C4CD70054CAD3 /* NoBackgroundButton.swift in Sources */,
 				78B9E539203C4CD70054CAD3 /* ProgressBarViewController.swift in Sources */,
 				78B9E53A203C4CD70054CAD3 /* LoginViewController.swift in Sources */,
-				7826472F205800FB00F79FB7 /* SkinProblems+CoreDataProperties.swift in Sources */,
-				7826472B205800FB00F79FB7 /* DoctorNotes+CoreDataProperties.swift in Sources */,
-				7826472E205800FB00F79FB7 /* SkinProblems+CoreDataClass.swift in Sources */,
 				78B9E53B203C4CD70054CAD3 /* MySkinDoctor.xcdatamodeld in Sources */,
-				78264739205800FB00F79FB7 /* MedicalHistory+CoreDataProperties.swift in Sources */,
 				FA7F713D20529250006B1EFF /* BaseMySkinProblemDiagnosisViewModel.swift in Sources */,
 				7849CCA4203EE2030030A7B1 /* ForgotPasswordViewModel.swift in Sources */,
 				FAAE62862056915100823BFE /* UIButton+Circular.swift in Sources */,
-				78264735205800FB00F79FB7 /* Consultation+CoreDataProperties.swift in Sources */,
 				FAFD90182074ECDF008DBAB9 /* CreditsViewModel.swift in Sources */,
+				78918233207CE8330039A508 /* Consultation+CoreDataClass.swift in Sources */,
 				78B9E53C203C4CD70054CAD3 /* LoginResponseModel.swift in Sources */,
 				782647402058016B00F79FB7 /* SkinProblemAttachment+Extensions.swift in Sources */,
 				78C205D62045A65C00F8E407 /* SkinProblemTableCellViewModel.swift in Sources */,
 				FA6E8FB420595FB4001F6E16 /* MyConsultDetailsViewController.swift in Sources */,
 				FA6E8F602056BFDA001F6E16 /* SetupWizard2ViewModel.swift in Sources */,
+				7891823C207CE8330039A508 /* MedicalHistory+CoreDataProperties.swift in Sources */,
 				FA3326B720441C8500657C8A /* PasswordProgressBarView.swift in Sources */,
-				7826472A205800FB00F79FB7 /* DoctorNotes+CoreDataClass.swift in Sources */,
 				788C3219204EB63B0078A983 /* UILabel+Padding.swift in Sources */,
 				FAA775012052A5C400A794FF /* MySkinProblemDiagnoseUpdateRequestTableViewCell.swift in Sources */,
 				7826473D205800FB00F79FB7 /* Diagnose+Extensions.swift in Sources */,
+				78918242207CE8330039A508 /* SkinProblems+CoreDataProperties.swift in Sources */,
 				FA33264120401A8C00657C8A /* MySkinProblemsViewController.swift in Sources */,
 				FA3326B320441C8500657C8A /* PasswordTextField.swift in Sources */,
 				78C205D12045A56B00F8E407 /* SkinProblemTableViewCell.swift in Sources */,
 				FA8CFC87206540CD0067C11F /* SkinProblemAttachmentResponseModel.swift in Sources */,
 				FAF2CEC4204D56E00001EEAB /* MyConsultTableViewCell.swift in Sources */,
+				7891823E207CE8330039A508 /* Profile+CoreDataProperties.swift in Sources */,
 				7849CCA9203EE3E60030A7B1 /* BaseViewModel.swift in Sources */,
 				78DBCE552051742700C0D4B5 /* MySkinProblemDiagnosisViewModel.swift in Sources */,
 				7898C60F207386D000F93F7E /* DiagnoseAttachmentResponseModel.swift in Sources */,
@@ -1505,12 +1511,18 @@
 				78B9E53D203C4CD70054CAD3 /* ThemeManager.swift in Sources */,
 				FA3326AF20441C8500657C8A /* ProfileTextField.swift in Sources */,
 				FA33268720440EA400657C8A /* PhotoUtils.swift in Sources */,
+				78918231207CE8330039A508 /* DiagnoseAttachment+CoreDataClass.swift in Sources */,
+				78918241207CE8330039A508 /* SkinProblems+CoreDataClass.swift in Sources */,
 				FABC7A30205C00F300167FFA /* ChangePasswordViewController.swift in Sources */,
+				78918235207CE8330039A508 /* Diagnose+CoreDataClass.swift in Sources */,
 				FAAE628D2056A7C800823BFE /* SetupWizard1ViewModel.swift in Sources */,
 				78FFF03020496E340013240D /* MedicalHistoryViewModel.swift in Sources */,
 				7898C618207388B600F93F7E /* DiagnoseAttachment+Extensions.swift in Sources */,
+				78918239207CE8330039A508 /* DoctorNotes+CoreDataClass.swift in Sources */,
 				FA3326522040287900657C8A /* BindingViewController.swift in Sources */,
 				FADC334B204706DC0065A7EB /* SkinProblemLocationViewController.swift in Sources */,
+				7891823B207CE8330039A508 /* MedicalHistory+CoreDataClass.swift in Sources */,
+				7891824B207D09030039A508 /* Consultation+Extentions.swift in Sources */,
 				78B9E53E203C4CD70054CAD3 /* AppDelegate.swift in Sources */,
 				788C320E204E813E0078A983 /* BookAConsultViewController.swift in Sources */,
 				78E44AA7203EBE5C0094F3AF /* PasswordStrength.swift in Sources */,
@@ -1518,13 +1530,13 @@
 				78B9E53F203C4CD70054CAD3 /* ForgotPasswordViewController.swift in Sources */,
 				7884D8B5205A787600C59E7B /* UITextField+Padding.swift in Sources */,
 				FA3326C320441C8500657C8A /* BoldLabel.swift in Sources */,
-				78264734205800FB00F79FB7 /* Consultation+CoreDataClass.swift in Sources */,
 				FA7F714020529344006B1EFF /* BaseMySkinProblemDiagnosisViewController.swift in Sources */,
 				FADC333A2046DA9A0065A7EB /* SkinProblemPhotoInformationViewController.swift in Sources */,
 				FA6130D22050238E00731495 /* BookAConsultThankYouViewController.swift in Sources */,
 				FA33264D2040240400657C8A /* MySkinProblemsTableViewCell.swift in Sources */,
 				78B9E540203C4CD70054CAD3 /* RegistrationViewController.swift in Sources */,
-				FAFD900D2074D5A9008DBAB9 /* TimeslotModel.swift in Sources */,
+				7891823D207CE8330039A508 /* Profile+CoreDataClass.swift in Sources */,
+				7891823F207CE8330039A508 /* SkinProblemAttachment+CoreDataClass.swift in Sources */,
 				78B9E541203C4CD70054CAD3 /* BaseResponseModel.swift in Sources */,
 				FA6E8F702056CE87001F6E16 /* DataController.swift in Sources */,
 				78FFF02B20496E240013240D /* MedicalHistoryViewControler.swift in Sources */,
@@ -1532,7 +1544,6 @@
 				FAF2CEC9204D574F0001EEAB /* MyConsultTableViewCellViewModel.swift in Sources */,
 				788463F52076091B002216A7 /* MyConsultVideoChatViewModel.swift in Sources */,
 				FA3326672040351500657C8A /* ProfileViewController.swift in Sources */,
-				78264738205800FB00F79FB7 /* MedicalHistory+CoreDataClass.swift in Sources */,
 				FA8CFC8A2065606D0067C11F /* SkinProblemsAttachment+Extensions.swift in Sources */,
 				FA6E8FB720595FC9001F6E16 /* MyConsultDetailsViewModel.swift in Sources */,
 				FA6130C1204D9A0600731495 /* Date+Extensions.swift in Sources */,
@@ -1540,9 +1551,9 @@
 				FA3326C720441C8500657C8A /* TitleLabel.swift in Sources */,
 				78B9E543203C4CD70054CAD3 /* UIViewController+Alerts.swift in Sources */,
 				FAFD903A207521AA008DBAB9 /* TopupListResponseModel.swift in Sources */,
-				7826473B205800FB00F79FB7 /* Profile+CoreDataProperties.swift in Sources */,
 				78B9E544203C4CD70054CAD3 /* AppStyle.swift in Sources */,
 				7884D8B8205AB2D900C59E7B /* UIImage+Extensions.swift in Sources */,
+				78918240207CE8330039A508 /* SkinProblemAttachment+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1565,6 +1576,7 @@
 				FAFD903020750A2E008DBAB9 /* CreditCardViewController.swift in Sources */,
 				FAFD9000206B8C7D008DBAB9 /* Profile+Extensions.swift in Sources */,
 				7826470E2057D49E00F79FB7 /* Consultation+CoreDataClass.swift in Sources */,
+				7891824A207D09030039A508 /* Consultation+Extentions.swift in Sources */,
 				FA332656204029BD00657C8A /* MySkinProblemsViewModel.swift in Sources */,
 				FADC334F204706E70065A7EB /* SkinProblemLocationViewModel.swift in Sources */,
 				FA6E8F622056C239001F6E16 /* UIButton+Border.swift in Sources */,
@@ -1579,6 +1591,7 @@
 				FA6E8F5C2056BFC3001F6E16 /* SetupWizard2ViewController.swift in Sources */,
 				7826470D2057D49E00F79FB7 /* SkinProblemAttachment+CoreDataProperties.swift in Sources */,
 				FAAE62892056A7B100823BFE /* SetupWizard1ViewController.swift in Sources */,
+				78918247207D07E90039A508 /* ConsultationResponseModel.swift in Sources */,
 				FAA774FA20529F8100A794FF /* MySkinProblemDiagnoseUpdateRequestViewModel.swift in Sources */,
 				FABC7A32205C010000167FFA /* ChangePasswordViewModel.swift in Sources */,
 				782647082057D49E00F79FB7 /* SkinProblems+CoreDataClass.swift in Sources */,
@@ -1669,6 +1682,7 @@
 				78E44AA6203EBE5C0094F3AF /* PasswordStrength.swift in Sources */,
 				78FFF02F20496E340013240D /* MedicalHistoryViewModel.swift in Sources */,
 				78B9E516203C2B920054CAD3 /* ForgotPasswordViewController.swift in Sources */,
+				78918230207CB2210039A508 /* SubmittedSkinProblemsResponseModel.swift in Sources */,
 				FADC334A204706DC0065A7EB /* SkinProblemLocationViewController.swift in Sources */,
 				7884D8B4205A787600C59E7B /* UITextField+Padding.swift in Sources */,
 				788C320D204E813E0078A983 /* BookAConsultViewController.swift in Sources */,
@@ -1678,7 +1692,6 @@
 				FA33264C2040240400657C8A /* MySkinProblemsTableViewCell.swift in Sources */,
 				FADC33392046DA9A0065A7EB /* SkinProblemPhotoInformationViewController.swift in Sources */,
 				FA6130D12050238E00731495 /* BookAConsultThankYouViewController.swift in Sources */,
-				FAFD900C2074D5A9008DBAB9 /* TimeslotModel.swift in Sources */,
 				FAE733F820344B2800898E65 /* RegistrationViewController.swift in Sources */,
 				FA9760DD203B0EDC00242255 /* BaseResponseModel.swift in Sources */,
 				78B9E52A203C4AF20054CAD3 /* Consts.swift in Sources */,
@@ -1686,6 +1699,7 @@
 				78FFF02A20496E240013240D /* MedicalHistoryViewControler.swift in Sources */,
 				FAD6ADB720445EB20050C1A9 /* AddPhotoTableViewCell.swift in Sources */,
 				FAF2CEC8204D574F0001EEAB /* MyConsultTableViewCellViewModel.swift in Sources */,
+				78918244207CF1DE0039A508 /* AppointmentsResponseModel.swift in Sources */,
 				FA8CFC892065606D0067C11F /* SkinProblemsAttachment+Extensions.swift in Sources */,
 				FA6E8FB620595FC9001F6E16 /* MyConsultDetailsViewModel.swift in Sources */,
 				FA3326662040351500657C8A /* ProfileViewController.swift in Sources */,

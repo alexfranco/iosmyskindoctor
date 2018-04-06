@@ -1276,7 +1276,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oX3-TS-WC1" customClass="GrayLabel" customModule="MySkinDoctor" customModuleProvider="target">
-                                                            <rect key="frame" x="15" y="11" width="250" height="21"/>
+                                                            <rect key="frame" x="15" y="11" width="530" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="txA-Yu-3lQ"/>
                                                             </constraints>
@@ -1285,7 +1285,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S2p-on-pse">
-                                                            <rect key="frame" x="15" y="40" width="250" height="11"/>
+                                                            <rect key="frame" x="15" y="40" width="530" height="11"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>

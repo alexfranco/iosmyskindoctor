@@ -11,21 +11,21 @@ import UIKit
 
 class TimeslotViewModel: BaseViewModel {
 	
-	var model: TimeslotModel
+	var model: AppointmentsResponseModel
 	
-	var date: Date {
+	var start: Date {
 		get {
-			return model.startDate
+			return model.start!
 		}
 	}
 	
 	var timeslotDisplayText: String {
 		get {
-			 return String.init("\(model.startDate.timeText) - \(model.endDate.timeText)")
+			 return String.init("\(model.start!.timeText) - \(model.end!.timeText)")
 		}
 	}
 	
-	required init(model: TimeslotModel) {
+	required init(model: AppointmentsResponseModel) {
 		self.model = model
 	}
 	

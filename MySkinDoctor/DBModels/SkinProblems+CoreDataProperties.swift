@@ -2,7 +2,7 @@
 //  SkinProblems+CoreDataProperties.swift
 //  MySkinDoctor
 //
-//  Created by Alex Núñez on 22/03/2018.
+//  Created by Alex Núñez on 10/04/2018.
 //  Copyright © 2018 TouchSoft. All rights reserved.
 //
 //
@@ -22,8 +22,8 @@ extension SkinProblems {
     @NSManaged public var skinProblemId: Int16
     @NSManaged public var attachments: NSSet?
     @NSManaged public var diagnose: Diagnose?
-    @NSManaged public var doctor: Doctor?
     @NSManaged public var medicalHistory: MedicalHistory?
+    @NSManaged public var consultation: NSSet?
 
 }
 
@@ -41,5 +41,22 @@ extension SkinProblems {
 
     @objc(removeAttachments:)
     @NSManaged public func removeFromAttachments(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for consultation
+extension SkinProblems {
+
+    @objc(addConsultationObject:)
+    @NSManaged public func addToConsultation(_ value: Consultation)
+
+    @objc(removeConsultationObject:)
+    @NSManaged public func removeFromConsultation(_ value: Consultation)
+
+    @objc(addConsultation:)
+    @NSManaged public func addToConsultation(_ values: NSSet)
+
+    @objc(removeConsultation:)
+    @NSManaged public func removeFromConsultation(_ values: NSSet)
 
 }

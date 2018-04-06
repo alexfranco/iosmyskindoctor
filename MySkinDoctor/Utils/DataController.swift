@@ -103,6 +103,23 @@ class DataController {
 		return nil
 	}
 	
+	static func fetch<T: NSManagedObject>(objectIdKey: String, objectValue: Int, type: T.Type) -> T? {
+		let entityName = String(describing: type)
+		
+		let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+		request.predicate = NSPredicate(format: "\(objectIdKey) == \(objectValue)")
+		
+		do {
+			let result = try CoreDataStack.managedObjectContext.fetch(request)
+			return result.first as? T
+			
+		} catch {
+			print("fetch")
+		}
+		
+		return nil
+	}
+	
 	static func getManagedObject(managedObjectId: NSManagedObjectID) -> NSManagedObject {
 		return  CoreDataStack.managedObjectContext.object(with: managedObjectId)
 	}
