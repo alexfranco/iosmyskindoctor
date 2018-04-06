@@ -317,8 +317,8 @@
 		FAFD903120750A2E008DBAB9 /* CreditCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD902F20750A2E008DBAB9 /* CreditCardViewModel.swift */; };
 		FAFD903620750D2F008DBAB9 /* CreditCardResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD903520750D2F008DBAB9 /* CreditCardResponseModel.swift */; };
 		FAFD903720750D2F008DBAB9 /* CreditCardResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD903520750D2F008DBAB9 /* CreditCardResponseModel.swift */; };
-		FAFD9039207521AA008DBAB9 /* CreditOptionsResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD9038207521AA008DBAB9 /* CreditOptionsResponseModel.swift */; };
-		FAFD903A207521AA008DBAB9 /* CreditOptionsResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD9038207521AA008DBAB9 /* CreditOptionsResponseModel.swift */; };
+		FAFD9039207521AA008DBAB9 /* TopupListResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD9038207521AA008DBAB9 /* TopupListResponseModel.swift */; };
+		FAFD903A207521AA008DBAB9 /* TopupListResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD9038207521AA008DBAB9 /* TopupListResponseModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -498,7 +498,7 @@
 		FAFD902E20750A2E008DBAB9 /* CreditCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCardViewController.swift; sourceTree = "<group>"; };
 		FAFD902F20750A2E008DBAB9 /* CreditCardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCardViewModel.swift; sourceTree = "<group>"; };
 		FAFD903520750D2F008DBAB9 /* CreditCardResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardResponseModel.swift; sourceTree = "<group>"; };
-		FAFD9038207521AA008DBAB9 /* CreditOptionsResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditOptionsResponseModel.swift; sourceTree = "<group>"; };
+		FAFD9038207521AA008DBAB9 /* TopupListResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopupListResponseModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -759,7 +759,6 @@
 		FA3326642040350400657C8A /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				FAFD90112074EBED008DBAB9 /* Cells */,
 				FA33268A204413B500657C8A /* ProfileViewModel.swift */,
 				FA3326652040351500657C8A /* ProfileViewController.swift */,
 			);
@@ -931,7 +930,7 @@
 				FA8CFC85206540CD0067C11F /* SkinProblemAttachmentResponseModel.swift */,
 				FAFD9008206BDCF8008DBAB9 /* AccessCodeResponseModel.swift */,
 				7898C60D207386D000F93F7E /* DiagnoseAttachmentResponseModel.swift */,
-				FAFD9038207521AA008DBAB9 /* CreditOptionsResponseModel.swift */,
+				FAFD9038207521AA008DBAB9 /* TopupListResponseModel.swift */,
 				FAFD903520750D2F008DBAB9 /* CreditCardResponseModel.swift */,
 			);
 			path = APIModels;
@@ -1072,13 +1071,6 @@
 				FAF2CECC204D59E40001EEAB /* MyConsultsViewModel.swift */,
 			);
 			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		FAFD90112074EBED008DBAB9 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Cells;
 			sourceTree = "<group>";
 		};
 		FAFD90122074EC09008DBAB9 /* ProfileCredits */ = {
@@ -1547,7 +1539,7 @@
 				FA3326CB20441C8500657C8A /* GrayLabel.swift in Sources */,
 				FA3326C720441C8500657C8A /* TitleLabel.swift in Sources */,
 				78B9E543203C4CD70054CAD3 /* UIViewController+Alerts.swift in Sources */,
-				FAFD903A207521AA008DBAB9 /* CreditOptionsResponseModel.swift in Sources */,
+				FAFD903A207521AA008DBAB9 /* TopupListResponseModel.swift in Sources */,
 				7826473B205800FB00F79FB7 /* Profile+CoreDataProperties.swift in Sources */,
 				78B9E544203C4CD70054CAD3 /* AppStyle.swift in Sources */,
 				7884D8B8205AB2D900C59E7B /* UIImage+Extensions.swift in Sources */,
@@ -1646,7 +1638,7 @@
 				FA3326B220441C8500657C8A /* PasswordTextField.swift in Sources */,
 				7826473F2058016B00F79FB7 /* SkinProblemAttachment+Extensions.swift in Sources */,
 				FA6E8FB320595FB4001F6E16 /* MyConsultDetailsViewController.swift in Sources */,
-				FAFD9039207521AA008DBAB9 /* CreditOptionsResponseModel.swift in Sources */,
+				FAFD9039207521AA008DBAB9 /* TopupListResponseModel.swift in Sources */,
 				788463F12076057D002216A7 /* MyConsultVideoChatViewController.swift in Sources */,
 				FA6E8F5F2056BFDA001F6E16 /* SetupWizard2ViewModel.swift in Sources */,
 				782647052057D49E00F79FB7 /* DoctorNotes+CoreDataProperties.swift in Sources */,

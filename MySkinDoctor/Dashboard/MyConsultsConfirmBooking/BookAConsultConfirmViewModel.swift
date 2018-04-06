@@ -42,8 +42,7 @@ class BookAConsultConfirmViewModel: BaseViewModel {
 		consultation.appointmentDate = selectedDate! as NSDate
 		
 		let doctor = DataController.createNew(type: Doctor.self)
-		doctor.firstName = "Dr Jane"
-		doctor.lastName = "Doe"
+		doctor.displayName = "Dr Jane"
 		doctor.qualifications = "A lot of qualifications"
 		
 		DataController.saveEntity(managedObject: doctor)

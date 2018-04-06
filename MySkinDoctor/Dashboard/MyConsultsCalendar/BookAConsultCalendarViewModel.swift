@@ -7,8 +7,11 @@
 //
 
 import Foundation
+import CoreData
 
 class BookAConsultCalendarViewModel: BaseViewModel {
+	
+	var model: SkinProblems!
 	
 	var timeslots: [TimeslotViewModel] = []
 	
@@ -40,14 +43,14 @@ class BookAConsultCalendarViewModel: BaseViewModel {
 		}
 	}
 	
-	override init() {
-		super.init()
+	required init(skinProblemsId: NSManagedObjectID) {
+		self.model = DataController.getManagedObject(managedObjectId: skinProblemsId) as? SkinProblems
 	}
 	
 	func fetchTimeslots() {
 		isLoading = true
 	
-		ApiUtils.getTimeslots(accessToken: DataController.getAccessToken(), date: selectedDate) { (result) in
+		ApiUtils.getTimeslots(accessToken: DataController.getAccessToken(), skinProblemsId: Int(model.skinProblemId), startDate: selectedDate.startOfDayForDate(), endDate: selectedDate.endOfDayForDate()) { (result) in
 			self.isLoading = false
 			
 			switch result {

@@ -8,10 +8,15 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 class BaseMySkinProblemDiagnosisViewModel: BaseViewModel {
 	
 	var model: SkinProblems!
+	
+	var skinProblemsManagedId: NSManagedObjectID {
+		return model.objectID
+	}
 	
 	var diagnoseStatus: Diagnose.DiagnoseStatus {
 		get {
@@ -26,13 +31,11 @@ class BaseMySkinProblemDiagnosisViewModel: BaseViewModel {
 	var viewBackgroundColor: UIColor {
 		get {
 			switch diagnoseStatus {
-			case .unknown, .draft:
-				return UIColor.white
-			case .submitted:
+			case .unknown, .draft, .submitted, .consultationBooked:
 				return UIColor.white
 			case .noFutherCommunicationRequired:
 				return AppStyle.diagnoseViewBackgroundColor
-			case .bookConsultationRequest:
+			case .bookConsultationRequested:
 				return AppStyle.diagnoseUpdateRequestViewBackgroundColor
 			}
 		}
@@ -41,13 +44,11 @@ class BaseMySkinProblemDiagnosisViewModel: BaseViewModel {
 	var navigationTitle: String {
 		get {
 			switch diagnoseStatus {
-			case .unknown, .draft:
+			case .unknown, .draft, .submitted, .consultationBooked:
 				return ""
-			case .submitted:
-			   return ""
 			case .noFutherCommunicationRequired:
 				return NSLocalizedString("myskinproblem_diagnosis_vc_title", comment: "")
-			case .bookConsultationRequest:
+			case .bookConsultationRequested:
 				return NSLocalizedString("myskinproblem_diagnosis_update_vc_title", comment: "")
 			}
 		}
@@ -55,8 +56,8 @@ class BaseMySkinProblemDiagnosisViewModel: BaseViewModel {
 	
 	var doctorNameText: String {
 		get {
-			if let diagnose = model.diagnose, let diagnosedBy = diagnose.doctor, let firstName = diagnosedBy.firstName, let lastName = diagnosedBy.lastName {
-				return firstName + " " + lastName
+			if let diagnose = model.diagnose, let diagnosedBy = diagnose.doctor, let displayName = diagnosedBy.displayName {
+				return displayName
 			} else {
 				return  "-"
 			}

@@ -16,7 +16,8 @@ extension SkinProblems {
 			return false
 		}
 		
-		return diagnoseSafe.diagnoseStatusEnum == .noFutherCommunicationRequired ||  diagnoseSafe.diagnoseStatusEnum == .bookConsultationRequest
+		return diagnoseSafe.diagnoseStatusEnum == .noFutherCommunicationRequired ||  diagnoseSafe.diagnoseStatusEnum == .bookConsultationRequested ||
+			diagnoseSafe.diagnoseStatusEnum == .consultationBooked
 	}
 	
 	static func parseAndSaveResponse(skinProblemResponseModel: SkinProblemsResponseModel) -> SkinProblems {
@@ -25,7 +26,7 @@ extension SkinProblems {
 		skinProblem.skinProblemId = Int16(skinProblemResponseModel.skinProblemId)
 		skinProblem.skinProblemDescription = skinProblemResponseModel.skinProblemDescription
 		skinProblem.date = skinProblemResponseModel.dateCreated as NSDate?
-		
+			
 		if skinProblem.medicalHistory == nil {
 			skinProblem.medicalHistory = DataController.createNew(type: MedicalHistory.self)
 		}
@@ -43,12 +44,19 @@ extension SkinProblems {
 		skinProblem.diagnose!.patientInformation = skinProblemResponseModel.diagnosisPatientInformation
 		skinProblem.diagnose!.comments = skinProblemResponseModel.diagnosisComments
 		skinProblem.diagnose!.diagnoseDate = skinProblemResponseModel.outcomeDate as NSDate?
+		skinProblem.diagnose!.diagnoseStatus = Int16(skinProblemResponseModel.status)
+
+		if skinProblem.doctor == nil {
+			skinProblem.doctor = DataController.createNew(type: Doctor.self)
+		}
 		
-		if skinProblemResponseModel.status == 0 { skinProblem.diagnose!.diagnoseStatusEnum = .draft }
-		if skinProblemResponseModel.status == 1 { skinProblem.diagnose!.diagnoseStatusEnum = .submitted }
-		if skinProblemResponseModel.status == 2 { skinProblem.diagnose!.diagnoseStatusEnum = .submitted }
-		if skinProblemResponseModel.outcome == 3 { skinProblem.diagnose!.diagnoseStatusEnum = .bookConsultationRequest }
-		if skinProblemResponseModel.outcome == 4 { skinProblem.diagnose!.diagnoseStatusEnum = .noFutherCommunicationRequired }
+		if let doctorResponseModel = skinProblemResponseModel.doctor {
+			skinProblem.doctor = DataController.createOrUpdate(objectIdKey: "doctorId", objectValue: doctorResponseModel.doctorId, type: Doctor.self)
+			skinProblem.doctor!.doctorId = Int16(doctorResponseModel.doctorId)
+			skinProblem.doctor!.displayName = doctorResponseModel.displayName
+			skinProblem.doctor!.profilePictureUrl = doctorResponseModel.profileImageUrl
+			skinProblem.doctor!.qualifications = doctorResponseModel.qualifications
+		}
 		
 		parseAndSaveSkinProblemsAttachmentResponse(skinProblemsResponseModel: skinProblemResponseModel, skinProblems: &skinProblem)
 		parseAndSaveDiagnoseAttachmentResponse(skinProblemsResponseModel: skinProblemResponseModel, skinProblems: &skinProblem)

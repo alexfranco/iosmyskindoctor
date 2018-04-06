@@ -19,7 +19,9 @@ class CreditTableViewCell: UITableViewCell {
 		super.awakeFromNib()
 		
 		creditLabel.font = AppFonts.bigBoldFont
-		buyForLabel.font = AppFonts.mediumFont		
+		buyForLabel.font = AppFonts.mediumFont
+		
+		buyButton.isUserInteractionEnabled = false
 	}
 	
 	func configure(withViewModel viewModel: CreditTableViewModel) {

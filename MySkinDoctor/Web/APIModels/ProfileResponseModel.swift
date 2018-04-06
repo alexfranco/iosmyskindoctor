@@ -25,6 +25,8 @@ class ProfileResponseModel : BaseResponseModel {
 	var postcode: String?
 	var town: String?
 	var selfPay: Bool?
+	var credits: String?
+	var profileImageUrl: String?
 	
 	// Mappable
 	override func mapping(map: Map) {
@@ -45,6 +47,8 @@ class ProfileResponseModel : BaseResponseModel {
 		accessCodes <- map["access_codes"]
 		town <- map["town"]
 		selfPay <- map["selfPay"]
+		credits <- map["credits"]
+		profileImageUrl <- map["profile_image_url"]
 	}
 }
 

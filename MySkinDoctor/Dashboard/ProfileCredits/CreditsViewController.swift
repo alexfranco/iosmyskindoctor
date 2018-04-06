@@ -49,12 +49,11 @@ class CreditsViewController: BindingViewController {
 		
 		viewModelCast = viewModel as? CreditsViewModel
 		
-//		viewModelCast.diagnosedStatusChanged = { [weak self] (status) in
-//			DispatchQueue.main.async {
-//				self?.reloadUI()
-//				self?.showHideDiagnoseViews()
-//			}
-//		}
+		viewModelCast.onFetchFinished = { [weak self] () in
+			DispatchQueue.main.async {
+				self?.tableView.reloadData()
+			}
+		}
 	}
 	
 	// MARK: Helpers

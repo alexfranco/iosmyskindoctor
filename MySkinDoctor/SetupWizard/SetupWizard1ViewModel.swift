@@ -57,7 +57,7 @@ class SetupWizard1ViewModel: BaseViewModel {
 			switch result {
 			case .success(let model):
 				print("get Profile")
-				let _ = Profile.parseAndSavProfileResponse(profileResponseModel: model as! ProfileResponseModel)
+				let _ = Profile.parseAndSaveProfileResponse(profileResponseModel: model as! ProfileResponseModel)
 				self.loadDBModel()
 				self.onFetchFinished!()
 				

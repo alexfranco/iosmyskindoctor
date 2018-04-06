@@ -21,10 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		IQKeyboardManager.sharedManager().enable = true // controls the scrollviews and uitextfields
 		ThemeManager.applyTheme()
 		updateRootVC()
-		
-		// Stripe
-		Stripe.setDefaultPublishableKey("pk_test_yBVOY74Yx55HpY6pbRLgvSGU") // DEV KEY
-		
+				
 		// Amazon AWS S3
 		let region = AWSRegionType.euWest1
 		let cognitoIdentityPoolId: String = "eu-west-1:c940565a-9d4e-4aa8-b054-e6a2cf9aca54"

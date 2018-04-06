@@ -52,7 +52,10 @@ class ApiUtils {
 		case logout = "/api/accounts/logout/"
 		case accessCode = "/api/accounts/access-code/use/"
 		case timeslots = "/api/consult/timeslots"
-		case purchase_credits = "/api/payments/purchase-credits/"
+		case appointments = "/api/appointments/appointments/"
+		case appointmentsCase = "/api/appointments/case/"
+		case profileImage = "/api/accounts/patient/profile-image/"
+		case topup = "/api/accounts/payments/topup/"
 		
 		case patientUpdate = "/api/accounts/patient/"
 		case skinProblems = "/api/cases/case/"
@@ -119,6 +122,16 @@ extension ApiUtils {
 		
 		ApiUtils.request(url: url, httpMethod: HTTPMethod.patch, params: params, parseToModelType: ProfileResponseModel.self, accessToken: accessToken, completionHandler: completionHandler)
 	}
+	
+	static func updateProfileImage(accessToken: String, profileImageFilename: String, completionHandler: @escaping ((_ result: ApiResult) -> Void)) {
+		
+		let url = ApiUtils.getApiUrl(ApiMethod.profileImage, nil)
+		
+		var params: Parameters = [:]
+		params.updateValue(profileImageFilename, forKey: "file_name")
+		ApiUtils.request(url: url, httpMethod: HTTPMethod.put, params: params, parseToModelType: ProfileResponseModel.self, accessToken: accessToken, completionHandler: completionHandler)
+	}
+	
 	
 	static func getProfile(accessToken: String, completionHandler: @escaping ((_ result: ApiResult) -> Void)) {
 		let url = ApiUtils.getApiUrl(ApiMethod.patientUpdate, nil)
@@ -210,31 +223,35 @@ extension ApiUtils {
 		ApiUtils.request(url: url, httpMethod: HTTPMethod.post, params: params, parseToModelType: AccessCodeResponseModel.self, accessToken: accessToken, completionHandler: completionHandler)
 	}
 	
-	static func getTimeslots(accessToken: String, date: Date, completionHandler: @escaping ((_ result: ApiResult) -> Void)) {
-		let url = ApiUtils.getApiUrl(ApiMethod.timeslots, nil)
+	static func getAllAppointments(accessToken: String, completionHandler: @escaping ((_ result: ApiArrayResult) -> Void)) {
+		let url = ApiUtils.getApiUrl(ApiMethod.appointments, nil)
+		ApiUtils.requestArray(url: url, httpMethod: HTTPMethod.get, params: nil, parseToModelType: AccessCodeResponseModel.self, accessToken: accessToken, completionHandler: completionHandler)
+	}
+	
+	static func getTimeslots(accessToken: String, skinProblemsId: Int, startDate: Date, endDate: Date, completionHandler: @escaping ((_ result: ApiResult) -> Void)) {
+		var url = ApiUtils.getApiUrl(ApiMethod.appointmentsCase, nil)
+		url += "\(skinProblemsId)/"
 		
 		var params: Parameters = [:]
-		params.updateValue(date.iso8601WithoutTime, forKey: "date")
-
-		completionHandler(.success(nil))
+		params.updateValue(startDate.iso8601WithoutTime, forKey: "startDate")
+		params.updateValue(endDate.iso8601WithoutTime, forKey: "endDate")
 		
-//		ApiUtils.request(url: url, httpMethod: HTTPMethod.get, params: params, parseToModelType: AccessCodeResponseModel.self, accessToken: accessToken, completionHandler: completionHandler)
+		ApiUtils.request(url: url, httpMethod: HTTPMethod.get, params: params, parseToModelType: AccessCodeResponseModel.self, accessToken: accessToken, completionHandler: completionHandler)
 	}
 	
-	static func getCreditsOptions(accessToken: String, completionHandler: @escaping ((_ results: ApiArrayResult) -> Void)) {
-		let url = ApiUtils.getApiUrl(ApiMethod.purchase_credits, nil)
-		ApiUtils.requestArray(url: url, httpMethod: HTTPMethod.get, params: nil, parseToModelType: CreditOptionsResponseModel.self, accessToken: accessToken, completionHandler: completionHandler)
+	static func getCreditsOptions(accessToken: String, completionHandler: @escaping ((_ results: ApiResult) -> Void)) {
+		let url = ApiUtils.getApiUrl(ApiMethod.topup, nil)
+		ApiUtils.request(url: url, httpMethod: HTTPMethod.get, params: nil, parseToModelType: TopupListResponseModel.self, accessToken: accessToken, completionHandler: completionHandler)
 	}
 	
-	static func payWithCreditCard(accessToken: String, stripeToken: String, optionId: Int, amount: String, currency: String, credits: String, completionHandler: @escaping ((_ result: ApiResult) -> Void)) {
-		let url = ApiUtils.getApiUrl(ApiMethod.purchase_credits, nil)
+	static func payWithCreditCard(accessToken: String, stripeToken: String, optionId: Int, amount: String, credits: String, completionHandler: @escaping ((_ result: ApiResult) -> Void)) {
+		let url = ApiUtils.getApiUrl(ApiMethod.topup, nil)
 		
-		var params: Dictionary<String, AnyObject> = [:]
-		params["token"] = stripeToken as AnyObject?
-		params["option_id"] = optionId as AnyObject?
-		params["amount"] = amount as AnyObject?
-		params["currency"] = currency as AnyObject?
-		params["credits"] = credits as AnyObject?
+		var params: Parameters = [:]
+		params.updateValue(stripeToken, forKey: "token")
+		params.updateValue(String(optionId), forKey: "option_id")
+		params.updateValue(amount, forKey: "amount")
+		params.updateValue(credits, forKey: "credits")
 		
 		ApiUtils.request(url: url, httpMethod: HTTPMethod.post, params: params, parseToModelType: CreditCardResponseModel.self, accessToken: accessToken, completionHandler: completionHandler)
 	}

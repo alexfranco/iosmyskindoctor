@@ -11,11 +11,12 @@ import CoreData
 
 extension Profile {
 	
-	static func parseAndSavProfileResponse(profileResponseModel: ProfileResponseModel) -> Profile {
+	static func parseAndSaveProfileResponse(profileResponseModel: ProfileResponseModel) -> Profile {
 		let profile = DataController.createUniqueEntity(type: Profile.self)
 		
 		profile.firstName = profileResponseModel.firstName
 		profile.lastName = profileResponseModel.lastName
+		profile.credits = profileResponseModel.credits
 		
 		profile.phone = profileResponseModel.mobileNumber
 		profile.postcode = profileResponseModel.postcode
@@ -23,6 +24,7 @@ extension Profile {
 		profile.gpName = profileResponseModel.gpName
 		profile.gpAddressLine = profileResponseModel.gpAddress
 		profile.gpPostcode = profileResponseModel.gpPostcode
+		profile.profileImageUrl = profileResponseModel.profileImageUrl
 		
 		if let firstAccessCode = profileResponseModel.accessCodes.first, let code = firstAccessCode.code {
 			profile.accessCode = code

@@ -25,8 +25,6 @@ class BookAConsultCalendarViewController: BindingViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		initViewModel(viewModel: BookAConsultCalendarViewModel())
-		
 		configureCalendarView()
 		configureTimeslotsPicker()
 		applyTheme()

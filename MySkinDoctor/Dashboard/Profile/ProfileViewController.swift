@@ -114,8 +114,6 @@ class ProfileViewController: FormViewController {
 		imageTapGesture.numberOfTapsRequired = 1
 		userPhotoImageView.isUserInteractionEnabled = true
 		
-		navigationController?.setBackgroundColorWithoutShadowImage(bgColor: AppStyle.profileNavigationBarColor, titleColor: AppStyle.profileNavigationBarTitleColor)
-		
 		registerForKeyboardReturnKey([firstNameTextField,
 									  lastNameTextField,
 									  dobTextField,
@@ -131,7 +129,6 @@ class ProfileViewController: FormViewController {
 		
 		initViewModel(viewModel: ProfileViewModel())
 		
-		refreshFields()
 		applyLocalization()
 		applyTheme()
 		
@@ -140,6 +137,13 @@ class ProfileViewController: FormViewController {
 		walletButton.addTarget(self, action: #selector(onWalletButtonPressed), for: .touchUpInside)
 		navigationItem.leftBarButtonItem = UIBarButtonItem(customView: walletButton)
 		updateCreditButton()
+	}
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		
+		navigationController?.setBackgroundColorWithoutShadowImage(bgColor: AppStyle.profileNavigationBarColor, titleColor: AppStyle.profileNavigationBarTitleColor)
+		viewModelCast.refreshData()
 	}
 	
 	// MARK: Bindings
@@ -152,13 +156,6 @@ class ProfileViewController: FormViewController {
 		viewModelCast.onFetchFinished = { [weak self] () in
 			DispatchQueue.main.async {
 				self?.refreshFields()
-			}
-		}
-		
-		viewModelCast.profileImageUpdated = { [weak self] (image) in
-			DispatchQueue.main.async {
-				self?.userPhotoImageView.contentMode = .scaleAspectFill
-				self?.userPhotoImageView.image = image
 			}
 		}
 		
@@ -238,7 +235,7 @@ class ProfileViewController: FormViewController {
 	}
 	
 	func updateCreditButton() {
-		walletButton.setTitle(viewModelCast.getCreditText, for: .normal)
+		walletButton.setTitle(viewModelCast.credits, for: .normal)
 		walletButton.sizeToFit()
 	}
 	
@@ -269,7 +266,6 @@ class ProfileViewController: FormViewController {
 	}
 	
 	func refreshFields() {
-		userPhotoImageView.image = viewModelCast.profileImage
 		nameLabel.text = viewModelCast.name
 		emailLabel.text = viewModelCast.email
 		
@@ -287,6 +283,12 @@ class ProfileViewController: FormViewController {
 		gpAddressLineTextField.text = viewModelCast.gpAddressLine
 		gpPostcodeTextField.text = viewModelCast.gpPostcode
 		permisionSwitch.isOn = viewModelCast.isPermisionEnabled
+		
+		if let profileImageUrl = URL(string: (self.viewModelCast.profileImageUrl)) {
+			self.userPhotoImageView.sd_setImage(with: profileImageUrl, placeholderImage: UIImage.init(color: AppStyle.profileImageViewPlaceHolder)!, options: .highPriority) { (image, error, type, url) in
+				self.userPhotoImageView.contentMode = .scaleAspectFill
+			}
+		}
 	}
 	
 	@IBAction func onChangePasswordButton(_ sender: Any) {
@@ -330,7 +332,7 @@ extension ProfileViewController: UIGestureRecognizerDelegate {
 	@objc func tapUserPhoto(_ sender: UITapGestureRecognizer) {
 		photoUtils.showChoosePhoto { (success, image) in
 			if success {
-				self.viewModelCast.profileImage = image!
+				self.viewModelCast.updateProfileImage(profileImage: image!)
 			}
 		}
 	}

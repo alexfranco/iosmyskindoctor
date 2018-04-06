@@ -37,22 +37,60 @@ class MyConsultsViewModel: BaseViewModel {
 	override init() {
 		super.init()
 		
-		refreshData()
+		self.loadDBModel()
 	}
 	
 	func refreshData() {
-		allItems = DataController.fetchAll(type: Consultation.self)!
+		self.fetchInternetModel()
+	}
+	
+	override func fetchInternetModel() {
+		super.fetchInternetModel()
 		
-		allItems.sort { (modelA, modelB) -> Bool in
-			return modelA.appointmentDate! as Date > modelB.appointmentDate! as Date
+		//		isLoading = true
+		print("fetchInternetModel")
+		ApiUtils.getAllAppointments(accessToken: DataController.getAccessToken()) { (result) in
+			//			self.isLoading = false
+			print("getAllAppointments")
+			
+			switch result {
+			case .success(let model):
+				
+//				for skinProblemsResponseModel in model as! [SkinProblemsResponseModel] {
+//					let _ = SkinProblems.parseAndSaveResponse(skinProblemResponseModel: skinProblemsResponseModel)
+//				}
+				
+				self.loadDBModel()
+				
+				if self.onFetchFinished != nil {
+					self.onFetchFinished!()
+				}
+				
+			case .failure(_, let error):
+				print("error \(error.localizedDescription)")
+				self.showResponseErrorAlert!(nil, error)
+			}
 		}
-		
-		upcomingItems = allItems.filter { (model) -> Bool in (model.appointmentDate! as Date) >= Date() }
-		historyItems = allItems.filter { (model) -> Bool in (model.appointmentDate! as Date) < Date() }
-		
-		sectionsInTableAll = createDateSections(models: allItems)
-		sectionsInTableUpcoming = createDateSections(models: upcomingItems)
-		sectionsInTableHistory = createDateSections(models: historyItems)
+	}
+	
+	override func loadDBModel() {
+		super.loadDBModel()
+	
+		if let results = DataController.fetchAll(type: Consultation.self, sortByKey: "appointmentId") {
+				
+			allItems = results
+			
+			allItems.sort { (modelA, modelB) -> Bool in
+				return modelA.appointmentDate! as Date > modelB.appointmentDate! as Date
+			}
+			
+			upcomingItems = allItems.filter { (model) -> Bool in (model.appointmentDate! as Date) >= Date() }
+			historyItems = allItems.filter { (model) -> Bool in (model.appointmentDate! as Date) < Date() }
+			
+			sectionsInTableAll = createDateSections(models: allItems)
+			sectionsInTableUpcoming = createDateSections(models: upcomingItems)
+			sectionsInTableHistory = createDateSections(models: historyItems)
+		}
 		
 		if refresh != nil { refresh!() }
 	}

@@ -85,11 +85,13 @@
 "addskinproblems_main_vc_title_nodiagnosed" = "Skin Problem - Submitted";
 "addskinproblems_main_vc_title_diagnosed" = "Skin Problem - Diagnosed";
 "addskinproblems_main_vc_title_diagnosed_update_request" = "Skin Problem - Info Request";
+"addskinproblems_main_vc_title_diagnosed_consultation_booked" = "Skin Problem - Booked";
 "addskinproblems_description" = "Please enter the description of your skin problem, click on Add Photo";
 
 "addskinproblems_review" = "Your skin problem is currently been reviewed by a consultant. Please check back later for diagnosis.";
 "addskinproblems_diagnosed" = "diagnosed your skin condition on";
 "addskinproblems_follow_up" = "We have diagnosed your skin condition, but request a follow up appointment.";
+"addskinproblems_booked" = "You have booked a consultation.";
 "addskinproblems_view" = "View";
 
 "addskinproblems_question" = "Do you want to...";
@@ -202,4 +204,8 @@
 "payment_failed_title" = "Payment Failed";
 "payment_failed_message" = "We were unable to process the payment. Please try again later";
 
-
+"skinproblem_case_draft" = "Draft";
+"skinproblem_case_submitted" = "Submitted";
+"skinproblem_case_no_further_ommunication_required" = "No further communication required";
+"skinproblem_case_book_consultation_request" = "Consultation requested";
+"skinproblem_case_consultation_booked" = "Consultation Booked";

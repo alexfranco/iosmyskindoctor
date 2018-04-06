@@ -43,6 +43,14 @@ class MySkinProblemDiagnoseUpdateRequestViewController: BaseMySkinProblemDiagnos
 		tableView.allowsSelection = false
 		tableView.separatorStyle = .none
 	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if segue.identifier == Segues.goToBookingConsult {
+			if let nvc = segue.destination as? UINavigationController, let vc = nvc.viewControllers.first as? BookAConsultViewController {
+				vc.skinProblemId = viewModelCast.skinProblemsManagedId
+			}
+		}				
+	}
 }
 
 extension MySkinProblemDiagnoseUpdateRequestViewController: UITableViewDelegate, UITableViewDataSource {

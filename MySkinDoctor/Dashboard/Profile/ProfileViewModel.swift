@@ -56,28 +56,21 @@ class ProfileViewModel: BaseViewModel {
 	var accessCode = ""
 	var gpAddressLine = ""
 	var gpPostcode = ""
+	
 	var isPermisionEnabled = true
+	var profileImageUrl = ""
 	
-	var profileImage: UIImage = UIImage(named: "logo")! {
-		didSet {
-			if profileImageUpdated != nil {
-				profileImageUpdated!(profileImage)
-			}
-		}
-	}
-	
-	var profileImageUpdated: ((_ image: UIImage)->())?
+	private (set) var credits = "0"
 	
 	var didSaveChanges: (()->())?
-	
-	var getCreditText: String {
-		return " 1"
-	}
 	
 	override init() {
 		super.init()
 		
 		loadDBModel()
+	}
+	
+	func refreshData() {
 		fetchInternetModel()
 	}
 	
@@ -92,7 +85,7 @@ class ProfileViewModel: BaseViewModel {
 			switch result {
 			case .success(let model):
 				print("get Profile")
-				let _ = Profile.parseAndSavProfileResponse(profileResponseModel: model as! ProfileResponseModel)
+				let _ = Profile.parseAndSaveProfileResponse(profileResponseModel: model as! ProfileResponseModel)
 				self.loadDBModel()
 				self.onFetchFinished!()
 				
@@ -126,13 +119,9 @@ class ProfileViewModel: BaseViewModel {
 		accessCode = profile.accessCode ?? ""
 		gpAddressLine = profile.gpAddressLine ?? ""
 		gpPostcode = profile.gpPostcode ?? ""
-		isPermisionEnabled = profile.isPermisionEnabled
-		
-		if let profileImageSafe = profile.profileImage as? UIImage {
-			profileImage = profileImageSafe
-		} else {
-			profileImage = UIImage.init(color: AppStyle.profileImageViewPlaceHolder)!
-		}
+		isPermisionEnabled = profile.isPermisionEnabled		
+		credits = profile.credits ?? "0"
+		profileImageUrl = profile.profileImageUrl ?? ""
 	}
 	
 	override func saveModel() {
@@ -172,36 +161,16 @@ class ProfileViewModel: BaseViewModel {
 	}
 	
 	private func updateProfile() {
+		
 		ApiUtils.updateProfile(accessToken: DataController.getAccessToken(), firstName: firstName, lastName: lastName, dob: dob, phone: phone, addressLine1: addressLine1, addressLine2: addressLine2, town: town, postcode: postcode, gpName: gpName, gpAddress: gpAddressLine, gpPostCode: gpPostcode, gpContactPermission: isPermisionEnabled, selfPay: nil, completionHandler: { (result) in
 			self.isLoading = false
 			
 			switch result {
-			case .success(_):
+			case .success(let model):
 				print("update profile success")
-				
-				self.profile.firstName = self.firstName
-				self.profile.lastName = self.lastName
-				
-				self.profile.phone = self.phone
-				
-				if let dobSafe = self.dob as NSDate? {
-					self.profile.dob = dobSafe
-				}
-				
-				self.profile.addressLine1 = self.addressLine1
-				self.profile.addressLine2 = self.addressLine2
-				self.profile.town = self.town
-				self.profile.postcode = self.postcode
-				self.profile.gpName = self.gpName
-				self.profile.accessCode = self.accessCode
-				self.profile.gpAddressLine = self.gpAddressLine
-				self.profile.gpPostcode = self.gpPostcode
-				self.profile.isPermisionEnabled = self.isPermisionEnabled
-				self.profile.profileImage = self.profileImage
-				
-				DataController.saveEntity(managedObject: self.profile)
-				
-				self.didSaveChanges!()
+				_ = Profile.parseAndSaveProfileResponse(profileResponseModel: model as! ProfileResponseModel)
+				self.loadDBModel()
+				self.onFetchFinished!()
 			case .failure(let model, let error):
 				print("error")
 				self.showResponseErrorAlert!(model as? BaseResponseModel, error)
@@ -209,4 +178,38 @@ class ProfileViewModel: BaseViewModel {
 		})
 	}
 
+	func updateProfileImage(profileImage: UIImage) {
+		let profileImageName = AWS3Utils.storeImage(image: profileImage)
+		uploadToS3(imageName: profileImageName)
+	}
+	
+	private func uploadToS3(imageName: String) {
+		AWS3Utils.uploadImageToS3(filename: imageName) { (result) in
+			switch result {
+			case .success(let filename):
+				print("uploadImageToS3 " + filename!)
+				self.updateToServer(profileImageName: filename!)
+			case .failure(let error):
+				self.isLoading = false
+				self.showResponseErrorAlert!(nil, error)
+			}
+		}
+	}
+	
+	private func updateToServer(profileImageName: String) {
+		ApiUtils.updateProfileImage(accessToken: DataController.getAccessToken(), profileImageFilename: profileImageName, completionHandler: { (result) in
+			switch result {
+			case .success(let model):
+				print("updateProfileImage")
+				_ = Profile.parseAndSaveProfileResponse(profileResponseModel: model as! ProfileResponseModel)
+				self.loadDBModel()
+				self.onFetchFinished!()
+			case .failure(let model, let error):
+				print("error")
+				self.showResponseErrorAlert!(model as? BaseResponseModel, error)
+			}
+		})
+	}
+	
+	
 }

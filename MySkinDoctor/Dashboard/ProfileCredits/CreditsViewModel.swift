@@ -11,6 +11,7 @@ import Foundation
 class CreditsViewModel: BaseViewModel {
 	
 	var credits: [CreditOptionsResponseModel] = []
+	var profile: Profile!
 	
 	var navigationTitle: String {
 		get {
@@ -19,11 +20,15 @@ class CreditsViewModel: BaseViewModel {
 	}
 	
 	var getCreditText: String {
-		return "£ 1"
+		get {
+			return profile.credits ?? "0"
+		}
 	}
 	
 	override init() {
 		super.init()
+		
+		profile = DataController.createUniqueEntity(type: Profile.self)
 		
 		isLoading = true
 		
@@ -33,9 +38,16 @@ class CreditsViewModel: BaseViewModel {
 			switch result {
 			case .success(let model):
 				print("get getCreditsOptions")
-				self.credits = model as! [CreditOptionsResponseModel]
+				let modelSafe = model as! TopupListResponseModel
+				self.credits = modelSafe.options
 				
-			case .failure(let model, let error):
+				if let stripe = modelSafe.stripe {
+					self.profile.stripeKey = stripe.apiKey
+					DataController.saveEntity(managedObject: self.profile)
+				}
+				
+				self.onFetchFinished!()
+			case .failure(_, let error):
 				print("error \(error.localizedDescription)")
 				self.showResponseErrorAlert!(nil, error)
 			}

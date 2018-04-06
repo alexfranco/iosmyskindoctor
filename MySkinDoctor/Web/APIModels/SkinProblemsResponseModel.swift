@@ -24,6 +24,8 @@ class SkinProblemsResponseModel : BaseResponseModel {
 	var diagnosisPatientInformation: String?
 	var diagnosisComments: String?
 	var status: Int = 0
+	var doctor: DoctorResponseModel?
+	
 	var diagnosisResources: [DiagnoseAttachmentResponseModel] = []
 	var attachments: [SkinProblemAttachmentResponseModel] = []
 	
@@ -51,5 +53,24 @@ class SkinProblemsResponseModel : BaseResponseModel {
 		if let dateString = map["outcome_date"].currentValue as? String, let _date = Formatter.iso8601.date(from: dateString) { outcomeDate = _date }
 		
 		diagnosisResources <- map["diagnosis_resources"]
+		doctor <- map["doctor"]
+	}
+}
+
+class DoctorResponseModel : BaseResponseModel {
+	
+	var doctorId: Int = 0
+	var displayName: String?
+	var profileImageUrl: String?
+	var qualifications: String?
+	
+	// Mappable
+	override func mapping(map: Map) {
+		super .mapping(map: map)
+		
+		doctorId <- map["id"]
+		displayName <- map["displayName"]
+		profileImageUrl <- map["profile_image_url"]
+		qualifications <- map["qualifications"]
 	}
 }

@@ -238,8 +238,10 @@ extension AddSkinProblemsViewModel {
 				return NSLocalizedString("addskinproblems_main_vc_title_nodiagnosed", comment: "")
 			case .noFutherCommunicationRequired:
 				return NSLocalizedString("addskinproblems_main_vc_title_diagnosed", comment: "")
-			case .bookConsultationRequest:
+			case .bookConsultationRequested:
 				return NSLocalizedString("addskinproblems_main_vc_title_diagnosed_update_request", comment: "")
+			case .consultationBooked:
+				return NSLocalizedString("addskinproblems_main_vc_title_diagnosed_consultation_booked", comment: "")
 			}
 		}
 	}
@@ -249,11 +251,11 @@ extension AddSkinProblemsViewModel {
 			switch diagnoseStatus {
 			case .unknown, .draft:
 				return UIColor.white
-			case .submitted:
+			case .submitted, .consultationBooked:
 				return AppStyle.addSkinProblemUndiagnosedViewBackground
 			case .noFutherCommunicationRequired:
 				return AppStyle.addSkinProblemDiagnosedViewBackground
-			case .bookConsultationRequest:
+			case .bookConsultationRequested:
 				return AppStyle.addSkinProblemDiagnosedUpdateRequestViewBackground
 			}
 		}
@@ -281,8 +283,10 @@ extension AddSkinProblemsViewModel {
 				return generateNodiagnosedInfoText()
 			case .noFutherCommunicationRequired:
 				return generateDiagnosedInfoText()
-			case .bookConsultationRequest:
+			case .bookConsultationRequested:
 				return generateDiagnosedFollowUpRequestInfoText()
+			case .consultationBooked:
+				return generateConsultationBookedInfoText()
 			}
 		}
 	}
@@ -290,13 +294,11 @@ extension AddSkinProblemsViewModel {
 	var diagnoseNextSegue: String {
 		get {
 			switch diagnoseStatus {
-			case .unknown, .draft:
-				return ""
-			case .submitted:
+			case .unknown, .draft, .submitted, .consultationBooked:
 				return ""
 			case .noFutherCommunicationRequired:
 				return Segues.goToDiagnosis
-			case .bookConsultationRequest:
+			case .bookConsultationRequested:
 				return Segues.goToMySkinProblemDiagnoseUpdateRequest
 			}
 		}
@@ -374,11 +376,10 @@ extension AddSkinProblemsViewModel {
 		
 		if let diagnose = model.diagnose,
 			let doctor = diagnose.doctor,
-			let doctorFirstName = doctor.firstName,
-			let doctorLastName = doctor.lastName {
+			let displayName = doctor.displayName {
 			let diagnoseDate = diagnose.diagnoseDate! as Date
 			
-			return String.init(format: "%@ %@ %@ %@.", doctorFirstName, doctorLastName, NSLocalizedString("addskinproblems_diagnosed", comment: ""),  diagnoseDate.ordinalMonthAndYear())
+			return String.init(format: "%@ %@ %@.", displayName, NSLocalizedString("addskinproblems_diagnosed", comment: ""),  diagnoseDate.ordinalMonthAndYear())
 		} else {
 			return "-"
 		}
@@ -386,6 +387,10 @@ extension AddSkinProblemsViewModel {
 	
 	private func generateDiagnosedFollowUpRequestInfoText() -> String {
 		return NSLocalizedString("addskinproblems_follow_up", comment: "")
+	}
+	
+	private func generateConsultationBookedInfoText() -> String {
+		return NSLocalizedString("addskinproblems_booked", comment: "")
 	}
 	
 	func shouldShowCancelAlert() -> Bool {

@@ -14,8 +14,9 @@ extension Diagnose {
 		case unknown = 0
 		case draft = 1
 		case submitted = 2
-		case bookConsultationRequest = 3
 		case noFutherCommunicationRequired = 4
+		case bookConsultationRequested = 5
+		case consultationBooked = 6
 
 		var index: Int16 {
 			return rawValue
@@ -24,15 +25,17 @@ extension Diagnose {
 		var description: String {
 			switch self {
 			case .unknown:
-				return "Draft"
+				return NSLocalizedString("skinproblem_case_draft", comment: "")
 			case .draft:
-				return "Draft"
+				return NSLocalizedString("skinproblem_case_draft", comment: "")
 			case .submitted:
-				return "Submitted"
-			case .bookConsultationRequest:
-				return "Consultation request"
+				return NSLocalizedString("skinproblem_case_submitted", comment: "")
 			case .noFutherCommunicationRequired:
-				return "No further communication required"
+				return NSLocalizedString("skinproblem_case_no_further_ommunication_required", comment: "")
+			case .bookConsultationRequested:
+				return NSLocalizedString("skinproblem_case_book_consultation_request", comment: "")
+			case .consultationBooked:
+				return NSLocalizedString("skinproblem_case_consultation_booked", comment: "")
 			}
 		}
 	}

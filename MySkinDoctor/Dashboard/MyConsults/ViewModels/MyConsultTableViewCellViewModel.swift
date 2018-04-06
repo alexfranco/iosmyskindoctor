@@ -31,12 +31,7 @@ class MyConsultTableViewCellViewModel: BaseViewModel {
 				self.profileImage = UIImage.init(color: AppStyle.profileImageViewPlaceHolder)!
 			}
 			
-			if let firstName = doctor.firstName, let lastName = doctor.lastName {
-				self.displayName = firstName + " " + lastName
-			} else {
-				self.displayName  = "-"
-			}
-			
+			self.displayName = doctor.displayName ?? "-"
 			qualification = doctor.qualifications?.uppercased() ?? "-"
 		}
 		

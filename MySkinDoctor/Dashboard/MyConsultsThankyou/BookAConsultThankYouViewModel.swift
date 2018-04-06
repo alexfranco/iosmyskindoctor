@@ -16,8 +16,8 @@ class BookAConsultThankYouViewModel: BaseViewModel {
 	
 	var doctorNameText: String {
 		get {
-			if let doctor = model.doctor, let firstName = doctor.firstName, let lastName = doctor.lastName {
-				return firstName + " " + lastName
+			if let doctor = model.doctor, let displayName = doctor.displayName {
+				return displayName
 			} else {
 				return  "-"
 			}

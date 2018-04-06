@@ -2,6 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="17D47" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Consultation" representedClassName="Consultation" syncable="YES">
         <attribute name="appointmentDate" optional="YES" attributeType="Date" defaultDateTimeInterval="542644500" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="appointmentId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="status" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="doctor" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Doctor" inverseName="consultation" inverseEntity="Doctor" syncable="YES"/>
     </entity>
@@ -25,9 +26,10 @@
         <relationship name="diagnose" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Diagnose" inverseName="attachments" inverseEntity="Diagnose" syncable="YES"/>
     </entity>
     <entity name="Doctor" representedClassName="Doctor" syncable="YES">
-        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="displayName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="doctorId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="profilePicture" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="profilePictureUrl" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="qualifications" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="consultation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Consultation" inverseName="doctor" inverseEntity="Consultation" syncable="YES"/>
         <relationship name="diagnose" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Diagnose" inverseName="doctor" inverseEntity="Diagnose" syncable="YES"/>
@@ -49,6 +51,7 @@
         <attribute name="accessCode" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="addressLine1" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="addressLine2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="credits" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="dob" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
@@ -62,6 +65,8 @@
         <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="postcode" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="profileImage" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="profileImageUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="stripeKey" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="town" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="medicalHistory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MedicalHistory" inverseName="profile" inverseEntity="MedicalHistory" syncable="YES"/>
     </entity>
@@ -85,13 +90,13 @@
         <relationship name="medicalHistory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MedicalHistory" inverseName="skinProblems" inverseEntity="MedicalHistory" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Consultation" positionX="-36" positionY="117" width="128" height="90"/>
+        <element name="Consultation" positionX="-36" positionY="117" width="128" height="105"/>
         <element name="Diagnose" positionX="-18" positionY="135" width="128" height="195"/>
         <element name="DiagnoseAttachment" positionX="-27" positionY="126" width="128" height="120"/>
-        <element name="Doctor" positionX="0" positionY="144" width="128" height="150"/>
+        <element name="Doctor" positionX="0" positionY="144" width="128" height="165"/>
         <element name="DoctorNotes" positionX="18" positionY="171" width="128" height="90"/>
         <element name="MedicalHistory" positionX="-18" positionY="117" width="128" height="120"/>
-        <element name="Profile" positionX="-63" positionY="-18" width="128" height="315"/>
+        <element name="Profile" positionX="-63" positionY="-18" width="128" height="360"/>
         <element name="SkinProblemAttachment" positionX="-54" positionY="108" width="128" height="165"/>
         <element name="SkinProblems" positionX="-63" positionY="99" width="128" height="150"/>
     </elements>

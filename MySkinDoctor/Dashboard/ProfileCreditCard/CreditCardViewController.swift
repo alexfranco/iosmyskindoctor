@@ -18,8 +18,20 @@ class CreditCardViewController: BindingViewController, STPPaymentCardTextFieldDe
 	@IBOutlet weak var payButton: UIButton!
 	
 	var viewModelCast: CreditCardViewModel!
-	var creditResponseModel: CreditOptionsResponseModel!
 	let paymentTextField = STPPaymentCardTextField()
+	
+	override func initViewModel(viewModel: BaseViewModel) {
+		super.initViewModel(viewModel: viewModel)
+		viewModelCast = viewModel as! CreditCardViewModel
+	
+		viewModelCast.onPaymentSuccess = { [weak self] (summary) in
+			DispatchQueue.main.async {
+				self?.showAlertView(title: "", message: summary, handler: { (alert) in
+					self?.navigationController?.popViewController(animated: true)
+				})
+			}
+		}
+	}
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -28,6 +40,7 @@ class CreditCardViewController: BindingViewController, STPPaymentCardTextFieldDe
 		
 		creditLabel.text = viewModelCast.creditText
 		currencyLabel.text = viewModelCast.amountText
+		payButton.isEnabled = paymentTextField.isValid
 	}
 	
 	// MARK: STPPaymentCardTextFieldDelegate

@@ -126,6 +126,17 @@ extension Date {
 		}
 	}
 	
+	func startOfDayForDate() -> Date {
+		return NSCalendar.current.startOfDay(for: self)
+	}
+	
+	func endOfDayForDate() -> Date {
+		var components = DateComponents()
+		components.day = 1
+		components.second = -1
+		return NSCalendar.current.date(byAdding: components, to: self)!
+	}
+	
 	// MARK: Internal Components
 	
 	internal static func componentFlags() -> Set<Calendar.Component> { return [Calendar.Component.year, Calendar.Component.month, Calendar.Component.day, Calendar.Component.weekOfYear, Calendar.Component.hour, Calendar.Component.minute, Calendar.Component.second, Calendar.Component.weekday, Calendar.Component.weekdayOrdinal, Calendar.Component.weekOfYear] }

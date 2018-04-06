@@ -25,8 +25,8 @@ class CreditTableViewModel : NSObject {
 	
 	var buyForText: String {
 		get {
-			if let amount = model.amount, let currency = model.currency {
-				return String(format: "Buy for %@ %@", amount, currency.uppercased())
+			if let amount = model.amount {
+				return String(format: "Buy for %@ %@", amount, "GBP")
 			} else {
 				return "0"
 			}
