@@ -30,6 +30,12 @@ class MyConsultDetailsViewController: BindingViewController {
 		
 		viewModelCast = viewModel as! MyConsultDetailsViewModel
 		
+		viewModelCast.onFetchFinished = { [weak self] () in
+			DispatchQueue.main.async {
+				self?.dismiss(animated: true, completion: nil)
+			}
+		}
+		
 		viewModelCast.goNextSegue = { [weak self] () in
 			DispatchQueue.main.async {
 				self?.performSegue(withIdentifier: Segues.goToVideoConsultation, sender: nil)
@@ -85,7 +91,7 @@ class MyConsultDetailsViewController: BindingViewController {
 	
 	@IBAction func cancelConsultationButton(_ sender: Any) {
 		let title: String = NSLocalizedString("booking_cancel_confirm_title", comment: "Cancel appointment")
-		let message: String = String(format: NSLocalizedString("booking_cancel_confirm_message", comment: "Confirm cancellation"), arguments: ["100£"])
+		let message: String = String(format: NSLocalizedString("booking_cancel_confirm_message", comment: "Confirm cancellation"), arguments: [])
 		
 		let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
 		

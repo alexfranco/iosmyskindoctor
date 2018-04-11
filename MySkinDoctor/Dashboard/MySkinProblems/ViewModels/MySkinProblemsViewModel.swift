@@ -40,10 +40,8 @@ class MySkinProblemsViewModel: BaseViewModel {
 	override func fetchInternetModel() {
 		super.fetchInternetModel()
 		
-//		isLoading = true
-		print("fetchInternetModel")
 		ApiUtils.getAllSkinProblems(accessToken: DataController.getAccessToken()) { (result) in
-//			self.isLoading = false
+
 			print("getAllSkinProblems Finished")
 			
 			switch result {

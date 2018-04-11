@@ -69,6 +69,6 @@ class BookAConsultThankYouViewController: BindingViewController {
 	// MARK: IBActions
 	
 	@IBAction func onNextButtonPressed(_ sender: Any) {
-		dismiss(animated: true, completion: nil)
+		performSegue(withIdentifier: Segues.unwindToMySkinProblemFromConsult, sender: nil)
 	}
 }

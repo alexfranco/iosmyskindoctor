@@ -29,8 +29,7 @@ class CreditsViewController: BindingViewController {
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-		navigationController?.title = viewModelCast.navigationTitle
-		
+		title = viewModelCast.navigationTitle
 		viewModelCast.refreshData()
 	}
 	

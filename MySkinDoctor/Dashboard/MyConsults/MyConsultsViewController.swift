@@ -87,7 +87,7 @@ class MyConsultsViewController: BindingViewController {
 				dest.initViewModel(viewModel: MyConsultDetailsViewModel(modelId: objectID))
 			}
 		}
-	}
+	}	
 }
 
 extension MyConsultsViewController: UITableViewDelegate, UITableViewDataSource {

@@ -9,6 +9,7 @@
 import Foundation
 import Alamofire
 import ObjectMapper
+import Firebase
 
 // MARK: Constants
 
@@ -61,6 +62,7 @@ class ApiUtils {
 		case skinProblems = "/api/cases/case/"
 		case skinProblemsImage = "image/"
 		case skinProblemsSubmit = "submit/"
+		case event = "event/"
 	}
 }
 
@@ -70,8 +72,11 @@ extension ApiUtils {
 	
 	static func login(email: String, password: String, completionHandler: @escaping ((_ result: ApiResult) -> Void)) {
 		let url = ApiUtils.getApiUrl(ApiMethod.login, nil)
-		let params: Parameters =	["email": email,
-									 "password": password]
+		var params: Parameters =	["email": email,
+									 "password": password,
+									 "platform" : 1]
+		
+		if let apnsToken = Messaging.messaging().apnsToken { params.updateValue(apnsToken, forKey: "reg_id") }
 		
 		ApiUtils.request(url: url, httpMethod: HTTPMethod.post, params: params, parseToModelType: LoginResponseModel.self, accessToken: nil, completionHandler: completionHandler)
 	}
@@ -139,9 +144,11 @@ extension ApiUtils {
 		ApiUtils.request(url: url, httpMethod: HTTPMethod.get, params: nil, parseToModelType: ProfileResponseModel.self, accessToken: accessToken, completionHandler: completionHandler)
 	}
 	
-	static func logoutUser(accessToken: String, completionHandler: @escaping ((_ result: ApiResult) -> Void)) {
+	static func logoutUser(accessToken: String, deviceId: String, completionHandler: @escaping ((_ result: ApiResult) -> Void)) {
 		let url = ApiUtils.getApiUrl(ApiMethod.logout, nil)
 		
+		var params: Parameters = [:]
+		params.updateValue(deviceId, forKey: "device_id")
 		ApiUtils.request(url: url, httpMethod: HTTPMethod.post, params: nil, parseToModelType: BaseResponseModel.self, accessToken: accessToken, completionHandler: completionHandler)
 	}
 	
@@ -248,6 +255,13 @@ extension ApiUtils {
 		params.updateValue(endDate.iso8601, forKey: "end")
 		
 		ApiUtils.request(url: url, httpMethod: HTTPMethod.post, params: params, parseToModelType: ConsultationResponseModel.self, accessToken: accessToken, completionHandler: completionHandler)
+	}
+	
+	static func deleteAppointment(accessToken: String, skinProblemsId: Int, eventId: Int, completionHandler: @escaping ((_ result: ApiResult) -> Void)) {
+		var url = ApiUtils.getApiUrl(ApiMethod.appointmentsCase, nil)
+		url += "\(skinProblemsId)/\(ApiMethod.event)/\(eventId)/"
+		
+		ApiUtils.request(url: url, httpMethod: HTTPMethod.delete, params: nil, parseToModelType: ConsultationResponseModel.self, accessToken: accessToken, completionHandler: completionHandler)
 	}
 	
 	static func getCreditsOptions(accessToken: String, completionHandler: @escaping ((_ results: ApiResult) -> Void)) {
@@ -370,23 +384,24 @@ extension ApiUtils {
 			if let jsonCandidate = response.result.value {
 				print("JSON: \(jsonCandidate)") // serialized json response
 				
-				if let jsonResult = Mapper<T>().mapArray(JSONObject: jsonCandidate) {
-					
-					if let status = response.response?.statusCode {
-						switch(status){
-						case 200, 201, ApiUtils.Api.DEFAULT_STATUS_CODE:
+				if let status = response.response?.statusCode {
+					switch (status) {
+					case 200, 201, ApiUtils.Api.DEFAULT_STATUS_CODE:
+						print("error with response status: \(status)")
+						if let jsonResult = Mapper<T>().mapArray(JSONObject: jsonCandidate) {
 							completionHandler(ApiArrayResult.success(jsonResult))
-						case 401:
-							completionHandler(ApiArrayResult.failure(nil, ApiGenericError.authorizationError))
-						case 403:
-							completionHandler(ApiArrayResult.failure(nil, ApiGenericError.permisionDenied))
-						default:
-							print("error with response status: \(status)")
-							completionHandler(ApiArrayResult.failure(jsonResult, ApiGenericError.defaultStatusError))
+						} else {
+							completionHandler(ApiArrayResult.failure(nil, ApiGenericError.defaultStatusError))
 						}
+					case 401:
+						completionHandler(ApiArrayResult.failure(nil, ApiGenericError.authorizationError))
+					case 403:
+						completionHandler(ApiArrayResult.failure(nil, ApiGenericError.permisionDenied))
+					default:
+						completionHandler(ApiArrayResult.failure(nil, ApiGenericError.defaultStatusError))
 					}
 				} else {
-					completionHandler(ApiArrayResult.failure(nil, ApiGenericError.authorizationError))
+					completionHandler(ApiArrayResult.failure(nil, ApiGenericError.defaultStatusError))
 				}
 			} else {
 				completionHandler(ApiArrayResult.failure(nil, ApiGenericError.httpQueryError))

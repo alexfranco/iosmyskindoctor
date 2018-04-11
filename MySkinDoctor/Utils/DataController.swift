@@ -159,7 +159,7 @@ class DataController {
 		return DataController.createUniqueEntity(type: Profile.self).key ?? ""
 	}
 	
-	static func login(email: String, key: String) {
+	static func login(email: String, key: String, deviceId: String) {
 		let defaults = UserDefaults.standard
 		defaults.set(true, forKey: UserDefaultConsts.isUserLoggedIn)
 		defaults.set(true, forKey: UserDefaultConsts.isFirstTime)
@@ -169,6 +169,7 @@ class DataController {
 		let profile = createUniqueEntity(type: Profile.self)
 		profile.key = key
 		profile.email = email
+		profile.deviceId = deviceId
 		
 		saveEntity(managedObject: profile)
 	}
@@ -180,7 +181,7 @@ class DataController {
 	}
 	
 	static func logout() {
-		ApiUtils.logoutUser(accessToken: DataController.getAccessToken()) { (result) in
+		ApiUtils.logoutUser(accessToken: DataController.getAccessToken(), deviceId: DataController.createUniqueEntity(type: Profile.self).deviceId ?? "") { (result) in
 			self.clearDataAfterLoggedOut()
 		}
 	}
@@ -196,4 +197,5 @@ class DataController {
 			appDelegate.updateRootVC()
 		}
 	}
+		
 }

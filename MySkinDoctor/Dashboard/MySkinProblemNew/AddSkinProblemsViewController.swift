@@ -107,8 +107,6 @@ class AddSkinProblemsViewController: BindingViewController {
 		super.viewDidAppear(animated)
 		navigationController?.setBackgroundColorWithoutShadowImage(bgColor: AppStyle.defaultNavigationBarColor, titleColor: AppStyle.defaultNavigationBarTitleColor)
 		navigationController?.title = viewModelCast.navigationTitle
-		
-		nextButton.isEnabled = false
 	}
 	
 	// MARK: Helpers

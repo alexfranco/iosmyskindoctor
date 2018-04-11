@@ -65,7 +65,7 @@ class LoginViewModel: BaseViewModel {
 				print("login success")
 				
 				let modelCast = model as! LoginResponseModel
-				DataController.login(email: self.email, key: modelCast.key!)
+				DataController.login(email: self.email, key: modelCast.key ?? "", deviceId: modelCast.deviceId ?? "")
 		
 				self.goNextSegue!()
 			case .failure(let model, let error):

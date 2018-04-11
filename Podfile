@@ -21,6 +21,9 @@ pod 'AWSS3', '~> 2.4.16'
 pod 'SDWebImage'
 pod 'Stripe'
 pod 'OpenTok', '~> 2.13'
+pod 'Firebase/Core'
+pod 'Firebase/Messaging'
+
 
 end
 

@@ -12,6 +12,7 @@ import ObjectMapper
 class LoginResponseModel : BaseResponseModel {
 	
 	var key: String?
+	var deviceId: String?
 	var emailErrors: [String] = []
 	var passwordErrors: [String] = []
 	
@@ -22,6 +23,7 @@ class LoginResponseModel : BaseResponseModel {
 		key <- map["key"]
 		emailErrors <- map["email"]
 		passwordErrors <- map["password"]
+		deviceId <- map["device_id"]
 	}
 	
 }

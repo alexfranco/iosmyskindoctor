@@ -11,6 +11,7 @@ import CoreData
 import IQKeyboardManagerSwift
 import AWSCognito
 import Stripe
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,7 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		IQKeyboardManager.sharedManager().enable = true // controls the scrollviews and uitextfields
 		ThemeManager.applyTheme()
 		updateRootVC()
-				
+		
+		// Firebase
+		FirebaseApp.configure()
+		
 		// Amazon AWS S3
 		let region = AWSRegionType.euWest1
 		let cognitoIdentityPoolId: String = "eu-west-1:c940565a-9d4e-4aa8-b054-e6a2cf9aca54"
@@ -29,6 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		let defaultServiceConfiguration = AWSServiceConfiguration(region: region, credentialsProvider: credentialsProvider)
 		AWSServiceManager.default().defaultServiceConfiguration = defaultServiceConfiguration
 		
+		KANotificationManager.shared.setup(application, launchOptions: launchOptions)
 		return true
 	}
 
@@ -69,6 +74,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		
 		let appDelegate = UIApplication.shared.delegate as! AppDelegate
 		appDelegate.window?.rootViewController = rootVC
+	}
+	
+	//MARK: - Notifications
+	func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+		KANotificationManager.shared.application(application, didRegisterForRemoteNotificationsWithDeviceToken: deviceToken)
+	}
+	
+	// Receive Notification (open or closed) iOS9+
+	func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any],
+					 fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+		KANotificationManager.shared.application(application, didReceiveRemoteNotification: userInfo, fetchCompletionHandler: completionHandler)
 	}
 }
 

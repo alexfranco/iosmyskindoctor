@@ -48,7 +48,7 @@ extension MySkinProblemDiagnosisViewModel {
 	}
 	
 	private func allAttachmentsSorted() -> [DiagnoseAttachment] {
-		guard let model = self.model, let diagnose = model.diagnose, let attachments = diagnose.attachments?.allObjects as? [DiagnoseAttachment] else { return []}
+		guard let model = self.model, let diagnose = model.diagnose, let attachments = diagnose.diagnoseAttachment?.allObjects as? [DiagnoseAttachment] else { return []}
 		return attachments.sorted(by: { $0.diagnosemAttachmentId < $1.diagnosemAttachmentId})
 	}
 	

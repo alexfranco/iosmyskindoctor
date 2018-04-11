@@ -145,7 +145,7 @@
 "booking_calendar_timeslot_emtpy" = "No timeslots available for that day";
 
 "booking_cancel_confirm_title" = "Cancel Appointment";
-"booking_cancel_confirm_message" = "Are you sure you want to cancel this appointment? There is a cancellation fee of %@ credits.";
+"booking_cancel_confirm_message" = "Are you sure you want to cancel this appointment?";
 
 "booking_cancel_error_title" = "Cancellation Error";
 "booking_cancel_error_message" = "There was a problem cancelling the appointment. Please try again later.";

@@ -39,6 +39,7 @@ struct Segues {
 	static let unwindToAddSkinProblems = "unwindToAddSkinProblems"
 	static let unwindToAddSkinProblemsFromPhoto = "unwindToAddSkinProblemsFromPhoto"
 	static let unwindToMySkinProblems = "unwindToMySkinProblems"
+	static let unwindToMySkinProblemFromConsult = "unwindToMySkinProblemFromConsult"
 }
 
 struct Storyboard {

@@ -477,9 +477,11 @@
                         <outlet property="profileView" destination="t4z-Zc-1aC" id="N2c-MM-NHI"/>
                         <outlet property="qualificationsLabel" destination="91r-we-Fdh" id="ptu-g4-0EI"/>
                         <outlet property="thankYouLabel" destination="qBL-dx-96C" id="i8x-xV-tAy"/>
+                        <segue destination="1YV-Gq-0en" kind="unwind" identifier="unwindToMySkinProblemFromConsult" unwindAction="unwindToMySkinProblemsWithSegue:" id="oCN-uA-ZuL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ggX-vZ-ENY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="1YV-Gq-0en" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="6434" y="396"/>
         </scene>

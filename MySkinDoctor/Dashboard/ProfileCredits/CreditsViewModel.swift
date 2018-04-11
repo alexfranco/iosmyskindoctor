@@ -39,7 +39,6 @@ class CreditsViewModel: BaseViewModel {
 		isLoading = true
 		
 		ApiUtils.getProfile(accessToken: DataController.getAccessToken()) { (result) in
-			self.isLoading = false
 			
 			switch result {
 			case .success(let model):
@@ -49,6 +48,7 @@ class CreditsViewModel: BaseViewModel {
 				self.fetchCredits()
 			case .failure(let model, let error):
 				print("error \(error.localizedDescription)")
+				self.isLoading = false
 				self.showResponseErrorAlert!(model as? BaseResponseModel, error)
 			}
 		}
@@ -61,8 +61,6 @@ class CreditsViewModel: BaseViewModel {
 	}
 	
 	func fetchCredits() {
-		isLoading = true
-		
 		ApiUtils.getCreditsOptions(accessToken: DataController.getAccessToken()) { (result) in
 			self.isLoading = false
 			

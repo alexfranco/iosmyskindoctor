@@ -84,7 +84,24 @@ class MyConsultDetailsViewModel: BaseViewModel {
 	}
 	
 	func cancelConsultation() {
+		isLoading = true
 		
+		ApiUtils.deleteAppointment(accessToken: DataController.getAccessToken(), skinProblemsId: Int(model.skinProblems!.skinProblemId), eventId: Int(model.appointmentId)) { (result) in
+			self.isLoading = false
+			
+			print("deleteAppointment")
+			
+			switch result {
+			case .success(_):
+				if self.onFetchFinished != nil {
+					self.onFetchFinished!()
+				}
+				
+			case .failure(_, let error):
+				print("error \(error.localizedDescription)")
+				self.showResponseErrorAlert!(nil, error)
+			}
+		}
 	}
 	
 	func startConsultation() {

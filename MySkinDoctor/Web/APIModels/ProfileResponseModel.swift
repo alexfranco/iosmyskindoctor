@@ -37,6 +37,7 @@ class ProfileResponseModel : BaseResponseModel {
 		addressLine1 <- map["address_line_1"]
 		addressLine2 <- map["address_line_2"]
 		firstName <- map["first_name"]
+		lastName <- map["last_name"]
 		gpAddress <- map["gp_address"]
 		gpContactPermission <- map["gp_contact_permission"]
 		gpName <- map["gp_name"]

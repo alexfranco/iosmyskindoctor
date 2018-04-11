@@ -102,9 +102,7 @@ extension Date {
 	
 	func isDateToday() -> Bool {
 		let calendar = Calendar.current
-		let date = Date()
-	
-		return calendar.isDateInToday(date)
+		return calendar.isDateInToday(self)
 	}
 	
 	// MARK: Extracting components

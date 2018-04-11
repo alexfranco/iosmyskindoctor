@@ -2,7 +2,7 @@
 //  Profile+CoreDataProperties.swift
 //  MySkinDoctor
 //
-//  Created by Alex Núñez on 10/04/2018.
+//  Created by Alex on 11/04/2018.
 //  Copyright © 2018 TouchSoft. All rights reserved.
 //
 //
@@ -37,6 +37,7 @@ extension Profile {
     @NSManaged public var profileImageUrl: String?
     @NSManaged public var stripeKey: String?
     @NSManaged public var town: String?
+    @NSManaged public var deviceId: String?
     @NSManaged public var medicalHistory: MedicalHistory?
 
 }

@@ -78,9 +78,9 @@ class BookAConsultCalendarViewModel: BaseViewModel {
 					self.selectedAppointment = first
 				}
 				
-			case .failure(_, let error):
-				print("error")
-				self.showResponseErrorAlert!(nil, error)
+			case .failure(_, _):
+				print("getTimeslots error")
+				self.timeslots = []
 			}
 			
 			self.nextButtonUpdate!(self.isNextButtonEnabled)

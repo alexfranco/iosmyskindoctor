@@ -93,7 +93,7 @@ class BaseMySkinProblemDiagnosisViewModel: BaseViewModel {
 	required init(modelId: NSManagedObjectID) {
 		super.init()
 		
-		model = DataController.getManagedObject(managedObjectId: modelId) as! SkinProblems
+		model = DataController.getManagedObject(managedObjectId: modelId) as! SkinProblems		
 	}
 	
 	private func dateText() -> String {

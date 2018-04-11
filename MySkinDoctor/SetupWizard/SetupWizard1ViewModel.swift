@@ -97,7 +97,7 @@ class SetupWizard1ViewModel: BaseViewModel {
 				
 				let profile = DataController.createUniqueEntity(type: Profile.self)
 				profile.firstName = self.firstName
-				profile.lastName = self.self.lastName
+				profile.lastName = self.lastName
 				
 				if let dobSafe = self.dob as NSDate? {
 					profile.dob = dobSafe

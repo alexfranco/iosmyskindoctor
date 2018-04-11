@@ -2,7 +2,7 @@
 //  Diagnose+CoreDataProperties.swift
 //  MySkinDoctor
 //
-//  Created by Alex Núñez on 10/04/2018.
+//  Created by Alex on 11/04/2018.
 //  Copyright © 2018 TouchSoft. All rights reserved.
 //
 //
@@ -23,27 +23,27 @@ extension Diagnose {
     @NSManaged public var patientInformation: String?
     @NSManaged public var summary: String?
     @NSManaged public var treatment: String?
-    @NSManaged public var attachments: NSSet?
+    @NSManaged public var diagnoseAttachment: NSSet?
     @NSManaged public var doctor: Doctor?
     @NSManaged public var doctorNotes: NSSet?
     @NSManaged public var skinProblems: SkinProblems?
 
 }
 
-// MARK: Generated accessors for attachments
+// MARK: Generated accessors for diagnoseAttachment
 extension Diagnose {
 
-    @objc(addAttachmentsObject:)
-    @NSManaged public func addToAttachments(_ value: DiagnoseAttachment)
+    @objc(addDiagnoseAttachmentObject:)
+    @NSManaged public func addToDiagnoseAttachment(_ value: DiagnoseAttachment)
 
-    @objc(removeAttachmentsObject:)
-    @NSManaged public func removeFromAttachments(_ value: DiagnoseAttachment)
+    @objc(removeDiagnoseAttachmentObject:)
+    @NSManaged public func removeFromDiagnoseAttachment(_ value: DiagnoseAttachment)
 
-    @objc(addAttachments:)
-    @NSManaged public func addToAttachments(_ values: NSSet)
+    @objc(addDiagnoseAttachment:)
+    @NSManaged public func addToDiagnoseAttachment(_ values: NSSet)
 
-    @objc(removeAttachments:)
-    @NSManaged public func removeFromAttachments(_ values: NSSet)
+    @objc(removeDiagnoseAttachment:)
+    @NSManaged public func removeFromDiagnoseAttachment(_ values: NSSet)
 
 }
 
