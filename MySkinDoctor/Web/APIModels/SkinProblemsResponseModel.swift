@@ -26,8 +26,8 @@ class SkinProblemsResponseModel : BaseResponseModel {
 	var status: Int = 0
 	var doctor: DoctorResponseModel?
 	
-	var diagnosisResources: [DiagnoseAttachmentResponseModel] = []
 	var attachments: [SkinProblemAttachmentResponseModel] = []
+	var diagnosisResources: [DiagnoseAttachmentResponseModel] = []
 	
 	// Mappable
 	override func mapping(map: Map) {

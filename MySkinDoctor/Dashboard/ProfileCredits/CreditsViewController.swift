@@ -28,7 +28,7 @@ class CreditsViewController: BindingViewController {
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
-		availableBalanceLabel.text = viewModelCast.getCreditText
+		super.viewWillAppear(animated)
 		navigationController?.title = viewModelCast.navigationTitle
 		
 		viewModelCast.refreshData()
@@ -37,15 +37,6 @@ class CreditsViewController: BindingViewController {
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
 		navigationController?.setBackgroundColorWithoutShadowImage(bgColor: AppStyle.defaultNavigationBarColor, titleColor: AppStyle.defaultNavigationBarTitleColor)
-		
-	}
-	
-	func configureTableView() {
-		tableView.dataSource = self
-		tableView.delegate = self
-		
-		tableView.estimatedRowHeight = 80.0
-		tableView.rowHeight = UITableViewAutomaticDimension
 	}
 	
 	override func initViewModel(viewModel: BaseViewModel) {
@@ -55,9 +46,19 @@ class CreditsViewController: BindingViewController {
 		
 		viewModelCast.onFetchFinished = { [weak self] () in
 			DispatchQueue.main.async {
+				self?.availableBalanceLabel.text = self?.viewModelCast.getCreditText
 				self?.tableView.reloadData()
 			}
-		}
+		}}
+	
+		
+	
+	func configureTableView() {
+		tableView.dataSource = self
+		tableView.delegate = self
+		
+		tableView.estimatedRowHeight = 80.0
+		tableView.rowHeight = UITableViewAutomaticDimension
 	}
 	
 	// MARK: Helpers

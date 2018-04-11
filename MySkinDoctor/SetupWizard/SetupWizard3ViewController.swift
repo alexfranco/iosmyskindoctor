@@ -37,8 +37,8 @@ class SetupWizard3ViewController: FormViewController {
 	@IBOutlet weak var yourGPInformationLabel: TitleLabel!
 	@IBOutlet weak var permisionTitleLabel: UILabel!
 	@IBOutlet weak var permisionDetailLabel: UILabel!
-	
 	@IBOutlet weak var permisionSwitch: UISwitch!
+	@IBOutlet weak var accessCodeTextFieldConstraint: NSLayoutConstraint!
 	
 	var viewModelCast: SetupWizard3ViewModel!
 	
@@ -115,6 +115,11 @@ class SetupWizard3ViewController: FormViewController {
 		
 		gpPostcodeTextField.text = viewModelCast.gpPostcode
 		permisionSwitch.isOn = viewModelCast.isPermisionEnabled
+		
+		if viewModelCast.isAccessCodeHidden {
+			accessCodeTextFieldConstraint.constant = 0
+			accessCodeTextField.isHidden = true
+		}
 	}
 	
 }

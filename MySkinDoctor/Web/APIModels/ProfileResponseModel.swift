@@ -24,7 +24,7 @@ class ProfileResponseModel : BaseResponseModel {
 	var mobileNumber: String?
 	var postcode: String?
 	var town: String?
-	var selfPay: Bool?
+	var selfPay: Bool = false
 	var credits: String?
 	var profileImageUrl: String?
 	
@@ -46,7 +46,7 @@ class ProfileResponseModel : BaseResponseModel {
 		postcode <- map["postcode"]
 		accessCodes <- map["access_codes"]
 		town <- map["town"]
-		selfPay <- map["selfPay"]
+		selfPay <- map["self_pay"]
 		credits <- map["credits"]
 		profileImageUrl <- map["profile_image_url"]
 	}

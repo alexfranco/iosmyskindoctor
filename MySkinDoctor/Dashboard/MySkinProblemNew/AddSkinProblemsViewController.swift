@@ -161,7 +161,7 @@ class AddSkinProblemsViewController: BindingViewController {
 		diagnosedViewHeight.constant = viewModelCast.isDiagnosed ? diagnosedViewHeightDefault : 0
 		diagnosedImageView.isHidden = !viewModelCast.isDiagnosed
 		diagnosedInfoLabel.isHidden = !viewModelCast.isDiagnosed
-		diagnosedViewButton.isHidden = !viewModelCast.isDiagnosed
+		diagnosedViewButton.isHidden = !viewModelCast.isDiagnoseViewButtonVisible
 	}
 	
 	@IBAction func onNextButtonPressed(_ sender: Any) {

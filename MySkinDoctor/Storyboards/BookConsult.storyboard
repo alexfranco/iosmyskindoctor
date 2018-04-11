@@ -508,7 +508,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sbW-Zr-gTa">
-                                <rect key="frame" x="0.0" y="79" width="375" height="140"/>
+                                <rect key="frame" x="0.0" y="79" width="375" height="100"/>
                                 <subviews>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" image="bigWhiteArrow" translatesAutoresizingMaskIntoConstraints="NO" id="naL-8F-NAt">
                                         <rect key="frame" x="167.5" y="0.0" width="40" height="40"/>
@@ -530,20 +530,20 @@
                                     <constraint firstItem="naL-8F-NAt" firstAttribute="centerX" secondItem="sbW-Zr-gTa" secondAttribute="centerX" id="59u-4g-XU0"/>
                                     <constraint firstItem="Idx-EY-8GG" firstAttribute="leading" secondItem="sbW-Zr-gTa" secondAttribute="leading" constant="10" id="CjH-Ln-qzt"/>
                                     <constraint firstItem="naL-8F-NAt" firstAttribute="top" secondItem="sbW-Zr-gTa" secondAttribute="top" id="DrT-u9-LEY"/>
-                                    <constraint firstAttribute="height" constant="140" id="YXr-du-Cgi"/>
+                                    <constraint firstAttribute="height" constant="100" id="YXr-du-Cgi"/>
                                     <constraint firstAttribute="trailing" secondItem="Idx-EY-8GG" secondAttribute="trailing" constant="10" id="q6e-Wj-47v"/>
                                     <constraint firstItem="Idx-EY-8GG" firstAttribute="top" secondItem="naL-8F-NAt" secondAttribute="bottom" constant="20" id="w6J-zq-dEI"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9pJ-KY-XZE">
-                                <rect key="frame" x="0.0" y="239" width="375" height="60"/>
+                                <rect key="frame" x="0.0" y="199" width="375" height="60"/>
                                 <color key="backgroundColor" red="0.0" green="0.59346731090000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="OQM-m1-POJ"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zlf-T1-AMM">
-                                <rect key="frame" x="0.0" y="299" width="375" height="258"/>
+                                <rect key="frame" x="0.0" y="259" width="375" height="298"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your consultant:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Li-aG-nMQ" customClass="GrayLabel" customModule="MySkinDoctor" customModuleProvider="target">
                                         <rect key="frame" x="20" y="50" width="335" height="21"/>
@@ -579,7 +579,7 @@
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KS1-18-sb6">
-                                <rect key="frame" x="137" y="243" width="100" height="100"/>
+                                <rect key="frame" x="137" y="203" width="100" height="100"/>
                                 <color key="backgroundColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="0MU-Za-EfH"/>

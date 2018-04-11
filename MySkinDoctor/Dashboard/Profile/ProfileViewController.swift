@@ -290,14 +290,14 @@ class ProfileViewController: FormViewController {
 			}
 		}
 		
-//		if viewModelCast.isAccessCodeHidden {
-//			accessCodeTextFieldConstraint.constant = 0
-//			accessCodeTextField.isHidden = true
-//		}
-//
-//		if viewModelCast.isWalletIconHidden {
-//			navigationItem.leftBarButtonItem = nil
-//		}
+		if viewModelCast.isAccessCodeHidden {
+			accessCodeTextFieldConstraint.constant = 0
+			accessCodeTextField.isHidden = true
+		}
+
+		if viewModelCast.isWalletIconHidden {
+			navigationItem.leftBarButtonItem = nil
+		}
 		
 		updateCreditButton()
 	}

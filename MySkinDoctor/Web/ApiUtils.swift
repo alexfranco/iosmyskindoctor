@@ -184,7 +184,7 @@ extension ApiUtils {
 		ApiUtils.request(url: url, httpMethod: HTTPMethod.put, params: params, parseToModelType: SkinProblemsResponseModel.self, accessToken: accessToken, completionHandler: completionHandler)
 	}
 	
-	static func createSkinProblemAttachment(accessToken: String, skinProblemsId: Int, location: String, filename: String?, description: String?, attachmentType: Int, completionHandler: @escaping ((_ result: ApiResult) -> Void)) {
+	static func createSkinProblemAttachment(accessToken: String, skinProblemsId: Int, location: String?, filename: String?, description: String?, attachmentType: Int, completionHandler: @escaping ((_ result: ApiResult) -> Void)) {
 		var url = ApiUtils.getApiUrl(ApiMethod.skinProblems, nil)
 		url += "\(skinProblemsId)/\(ApiMethod.skinProblemsImage.rawValue)"
 	
@@ -195,7 +195,7 @@ extension ApiUtils {
 		params.updateValue(description ?? "-", forKey: "description")
 		params.updateValue(filename ?? "-", forKey: "file_name")
 		params.updateValue(attachmentTypeInt, forKey: "photo_type")
-		params.updateValue(location, forKey: "photo_location")
+		params.updateValue(location ?? "", forKey: "photo_location")
 					
 		ApiUtils.request(url: url, httpMethod: HTTPMethod.post, params: params, parseToModelType: SkinProblemAttachmentResponseModel.self, accessToken: accessToken, completionHandler: completionHandler)
 	}

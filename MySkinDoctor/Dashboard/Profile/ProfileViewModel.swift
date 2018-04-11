@@ -70,7 +70,7 @@ class ProfileViewModel: BaseViewModel {
 	
 	var isWalletIconHidden: Bool {
 		get {
-			return !profile.isNHS
+			return profile.isNHS
 		}
 	}
 	

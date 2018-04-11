@@ -18,6 +18,12 @@ class SetupWizard3ViewModel: BaseViewModel {
 	var gpPostcode = ""
 	var isPermisionEnabled = false
 	
+	var isAccessCodeHidden: Bool {
+		get {
+			return !profile.isNHS
+		}
+	}
+	
 	override init() {
 		super.init()
 		self.loadDBModel()

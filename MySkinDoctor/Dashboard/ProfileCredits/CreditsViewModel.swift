@@ -27,11 +27,40 @@ class CreditsViewModel: BaseViewModel {
 	
 	override init() {
 		super.init()
-		
-		profile = DataController.createUniqueEntity(type: Profile.self)				
 	}
 	
 	func refreshData() {
+		fetchInternetModel()
+	}
+	
+	override func fetchInternetModel() {
+		super.fetchInternetModel()
+		
+		isLoading = true
+		
+		ApiUtils.getProfile(accessToken: DataController.getAccessToken()) { (result) in
+			self.isLoading = false
+			
+			switch result {
+			case .success(let model):
+				print("get Profile")
+				let _ = Profile.parseAndSaveProfileResponse(profileResponseModel: model as! ProfileResponseModel)
+				self.loadDBModel()
+				self.fetchCredits()
+			case .failure(let model, let error):
+				print("error \(error.localizedDescription)")
+				self.showResponseErrorAlert!(model as? BaseResponseModel, error)
+			}
+		}
+	}
+	
+	override func loadDBModel() {
+		super.loadDBModel()
+		
+		profile = DataController.createUniqueEntity(type: Profile.self)
+	}
+	
+	func fetchCredits() {
 		isLoading = true
 		
 		ApiUtils.getCreditsOptions(accessToken: DataController.getAccessToken()) { (result) in
@@ -47,7 +76,6 @@ class CreditsViewModel: BaseViewModel {
 					self.profile.stripeKey = stripe.apiKey
 					DataController.saveEntity(managedObject: self.profile)
 				}
-				
 				self.onFetchFinished!()
 			case .failure(_, let error):
 				print("error \(error.localizedDescription)")

@@ -539,7 +539,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="73" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="74S-x7-Qdk">
-                                <rect key="frame" x="0.0" y="167" width="375" height="451"/>
+                                <rect key="frame" x="0.0" y="146" width="375" height="472"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CreditCellId" rowHeight="73" id="yGt-WN-pFG" customClass="CreditTableViewCell" customModule="MySkinDoctor" customModuleProvider="target">
@@ -605,8 +605,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nfH-de-ARr">
-                                <rect key="frame" x="20" y="126" width="335" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nfH-de-ARr">
+                                <rect key="frame" x="20" y="126" width="335" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -849,7 +849,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YxX-Rt-Ai8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1204" y="2481"/>
+            <point key="canvasLocation" x="1225" y="2590"/>
         </scene>
         <!--Setup Wizard1 View Controller-->
         <scene sceneID="sDx-03-qcD">
@@ -986,7 +986,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EVX-x1-NZg" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2052" y="2481"/>
+            <point key="canvasLocation" x="2052" y="2591"/>
         </scene>
         <!--Setup Wizard2 View Controller-->
         <scene sceneID="cNL-Aa-erc">
@@ -1070,7 +1070,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="577"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aMe-kd-Pmg">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="402.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="425.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your GP Information" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecW-8I-IiT" customClass="TitleLabel" customModule="MySkinDoctor" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="0.0" width="335" height="20.5"/>
@@ -1079,7 +1079,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="OS3-as-Wfe">
-                                                <rect key="frame" x="20" y="51" width="335" height="126"/>
+                                                <rect key="frame" x="20" y="51" width="335" height="149"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="GP Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eqa-q2-Ly5" customClass="FormTextField" customModule="MySkinDoctor" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
@@ -1088,19 +1088,22 @@
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="GP Access Code/Follow Up Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zwE-3w-DdJ" customClass="FormTextField" customModule="MySkinDoctor" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="40" width="335" height="22"/>
+                                                        <rect key="frame" x="0.0" y="40" width="335" height="45"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="45" id="3mb-XD-NTw"/>
+                                                        </constraints>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="GP Address Line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TUa-i8-xV5" customClass="FormTextField" customModule="MySkinDoctor" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="72" width="335" height="22"/>
+                                                        <rect key="frame" x="0.0" y="95" width="335" height="22"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="GP Postcode" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m8W-c7-A3E" customClass="FormTextField" customModule="MySkinDoctor" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="104" width="335" height="22"/>
+                                                        <rect key="frame" x="0.0" y="127" width="335" height="22"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no"/>
@@ -1108,7 +1111,7 @@
                                                 </subviews>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ydL-uR-gv0">
-                                                <rect key="frame" x="10" y="232" width="355" height="160.5"/>
+                                                <rect key="frame" x="10" y="255" width="355" height="160.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Permission to contact your GP?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ouD-dz-WTu">
                                                         <rect key="frame" x="5" y="15" width="288" height="20.5"/>
@@ -1201,6 +1204,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="accessCodeTextField" destination="zwE-3w-DdJ" id="G6j-Fr-yve"/>
+                        <outlet property="accessCodeTextFieldConstraint" destination="3mb-XD-NTw" id="QRS-p3-m5b"/>
                         <outlet property="gpAddressLineTextField" destination="TUa-i8-xV5" id="9Pe-2z-p56"/>
                         <outlet property="gpNameTextField" destination="eqa-q2-Ly5" id="RYU-Gv-baX"/>
                         <outlet property="gpPostcodeTextField" destination="m8W-c7-A3E" id="Uft-cD-GfJ"/>

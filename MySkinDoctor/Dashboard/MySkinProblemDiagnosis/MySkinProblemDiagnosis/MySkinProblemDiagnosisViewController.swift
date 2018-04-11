@@ -57,6 +57,12 @@ class MySkinProblemDiagnosisViewController: BaseMySkinProblemDiagnosisViewContro
 	}
 	
 	func loadInformationSheets() {
+		for index in 0..<viewModelCast.getDataSourceCount() {
+			addInformationSheetRow(index: index)
+		}
+	}
+	
+	func addInformationSheetRow(index: Int) {
 		// Sheet View
 		let sheetButton = UIButtonCustomHighlight(frame: CGRect(x: 0, y: 0, width: informationSheetsStackView.frame.size.width, height: 60))
 		sheetButton.isUserInteractionEnabled = true
@@ -66,16 +72,9 @@ class MySkinProblemDiagnosisViewController: BaseMySkinProblemDiagnosisViewContro
 		
 		sheetButton.translatesAutoresizingMaskIntoConstraints = false
 		sheetButton.addConstraint(NSLayoutConstraint(item: sheetButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 30))
-		informationSheetsStackView.addArrangedSubview(sheetButton)
-		
-		for index in 0..<viewModelCast.getDataSourceCount() {
-			addInformationSheetRow(sheetButton: sheetButton, index: index)
-		}
-	}
-	
-	func addInformationSheetRow(sheetButton: UIButton, index: Int) {
 		sheetButton.tag = index
 		sheetButton.addTarget(self, action:#selector(onDiagnoseAttachmentPressed), for: .touchUpInside)
+		informationSheetsStackView.addArrangedSubview(sheetButton)
 		
 		// Icon Image
 		let iconImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 17, height: 20))

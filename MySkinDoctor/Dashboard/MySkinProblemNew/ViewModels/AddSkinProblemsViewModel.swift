@@ -152,7 +152,7 @@ class AddSkinProblemsViewModel: BaseViewModel {
 	private func createSkinProblemAttachment(skinProblemAttachment: SkinProblemAttachment) {
 		guard let model = self.model else { return }
 		
-		ApiUtils.createSkinProblemAttachment(accessToken: DataController.getAccessToken(), skinProblemsId: Int(model.skinProblemId), location: skinProblemAttachment.locationType!, filename: skinProblemAttachment.filename, description: skinProblemAttachment.problemDescription, attachmentType:Int(skinProblemAttachment.attachmentType), completionHandler: { (result) in
+		ApiUtils.createSkinProblemAttachment(accessToken: DataController.getAccessToken(), skinProblemsId: Int(model.skinProblemId), location: skinProblemAttachment.locationType, filename: skinProblemAttachment.filename, description: skinProblemAttachment.problemDescription, attachmentType:Int(skinProblemAttachment.attachmentType), completionHandler: { (result) in
 			self.isLoading = false
 			
 			switch result {
@@ -231,6 +231,19 @@ extension AddSkinProblemsViewModel {
 			return model.isDiagnosed
 		}
 	}
+	
+	
+	var isDiagnoseViewButtonVisible: Bool {
+		get {
+			switch diagnoseStatus {
+			case .unknown, .draft, .submitted, .consultationBooked:
+				return false
+			case .noFutherCommunicationRequired, .bookConsultationRequested:
+				return true
+			}
+		}
+	}
+	
 	
 	var navigationTitle: String {
 		get {
@@ -380,9 +393,9 @@ extension AddSkinProblemsViewModel {
 		if let diagnose = model.diagnose,
 			let doctor = diagnose.doctor,
 			let displayName = doctor.displayName {
-			let diagnoseDate = diagnose.diagnoseDate! as Date
+			let diagnoseDate = diagnose.diagnoseDate as Date?
 			
-			return String.init(format: "%@ %@ %@.", displayName, NSLocalizedString("addskinproblems_diagnosed", comment: ""),  diagnoseDate.ordinalMonthAndYear())
+			return String.init(format: "%@ %@ %@.", displayName, NSLocalizedString("addskinproblems_diagnosed", comment: ""), diagnoseDate!.ordinalMonthAndYear())
 		} else {
 			return "-"
 		}

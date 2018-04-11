@@ -64,7 +64,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Photo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y2F-An-c6a" customClass="BoldLabel" customModule="MySkinDoctor" customModuleProvider="target">
-                                                    <rect key="frame" x="57" y="15.5" width="211" height="21"/>
+                                                    <rect key="frame" x="57" y="16.5" width="211" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -81,10 +81,10 @@
                                             <constraints>
                                                 <constraint firstItem="A6I-v5-fI0" firstAttribute="leading" secondItem="anH-ee-8Dk" secondAttribute="leadingMargin" id="1Cn-fW-lXp"/>
                                                 <constraint firstItem="Y2F-An-c6a" firstAttribute="leading" secondItem="A6I-v5-fI0" secondAttribute="trailing" constant="10" id="QDA-wD-f95"/>
-                                                <constraint firstItem="Y2F-An-c6a" firstAttribute="top" secondItem="anH-ee-8Dk" secondAttribute="topMargin" constant="4.5" id="a9Y-lg-l8V"/>
+                                                <constraint firstItem="Y2F-An-c6a" firstAttribute="top" secondItem="anH-ee-8Dk" secondAttribute="topMargin" constant="5.5" id="a9Y-lg-l8V"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Y2F-An-c6a" secondAttribute="trailing" constant="5" id="d8G-Iw-gWn"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Y2F-An-c6a" secondAttribute="bottom" constant="4.5" id="n0Q-l1-jcD"/>
-                                                <constraint firstItem="A6I-v5-fI0" firstAttribute="centerY" secondItem="Y2F-An-c6a" secondAttribute="centerY" constant="3" id="on3-TO-lQK"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Y2F-An-c6a" secondAttribute="bottom" constant="3.5" id="n0Q-l1-jcD"/>
+                                                <constraint firstItem="A6I-v5-fI0" firstAttribute="centerY" secondItem="Y2F-An-c6a" secondAttribute="centerY" constant="2" id="on3-TO-lQK"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -1276,7 +1276,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oX3-TS-WC1" customClass="GrayLabel" customModule="MySkinDoctor" customModuleProvider="target">
-                                                            <rect key="frame" x="15" y="11" width="530" height="21"/>
+                                                            <rect key="frame" x="15" y="11" width="250" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="txA-Yu-3lQ"/>
                                                             </constraints>
@@ -1285,7 +1285,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S2p-on-pse">
-                                                            <rect key="frame" x="15" y="40" width="530" height="11"/>
+                                                            <rect key="frame" x="15" y="40" width="250" height="11"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>

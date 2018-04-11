@@ -30,7 +30,7 @@ extension Profile {
 			profile.accessCode = code
 		}
 		
-		profile.isNHS = profileResponseModel.selfPay ?? false
+		profile.isNHS = !profileResponseModel.selfPay
 		
 		if let dobSafe = profileResponseModel.dob as NSDate? { profile.dob = dobSafe }
 		
