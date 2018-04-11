@@ -222,8 +222,8 @@
 		FA6E8FB620595FC9001F6E16 /* MyConsultDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E8FB520595FC9001F6E16 /* MyConsultDetailsViewModel.swift */; };
 		FA6E8FB720595FC9001F6E16 /* MyConsultDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E8FB520595FC9001F6E16 /* MyConsultDetailsViewModel.swift */; };
 		FA7C4BA8207E13D900A7DB28 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA7C4BA7207E13D800A7DB28 /* GoogleService-Info.plist */; };
-		FA7C4BAC207E191400A7DB28 /* KANotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7C4BAB207E191300A7DB28 /* KANotificationManager.swift */; };
-		FA7C4BAD207E191400A7DB28 /* KANotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7C4BAB207E191300A7DB28 /* KANotificationManager.swift */; };
+		FA7C4BAC207E191400A7DB28 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7C4BAB207E191300A7DB28 /* NotificationManager.swift */; };
+		FA7C4BAD207E191400A7DB28 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7C4BAB207E191300A7DB28 /* NotificationManager.swift */; };
 		FA7C4BB1207E1E2600A7DB28 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA7C4BAE207E1E1800A7DB28 /* GoogleService-Info.plist */; };
 		FA7F713A20529181006B1EFF /* BaseMySkinProblemDiagnosisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7F713920529181006B1EFF /* BaseMySkinProblemDiagnosisViewController.swift */; };
 		FA7F713C20529250006B1EFF /* BaseMySkinProblemDiagnosisViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7F713B20529250006B1EFF /* BaseMySkinProblemDiagnosisViewModel.swift */; };
@@ -446,7 +446,7 @@
 		FA6E8FB220595FB4001F6E16 /* MyConsultDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyConsultDetailsViewController.swift; sourceTree = "<group>"; };
 		FA6E8FB520595FC9001F6E16 /* MyConsultDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyConsultDetailsViewModel.swift; sourceTree = "<group>"; };
 		FA7C4BA7207E13D800A7DB28 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		FA7C4BAB207E191300A7DB28 /* KANotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KANotificationManager.swift; sourceTree = "<group>"; };
+		FA7C4BAB207E191300A7DB28 /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		FA7C4BAE207E1E1800A7DB28 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "SupportFiles/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FA7F713920529181006B1EFF /* BaseMySkinProblemDiagnosisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMySkinProblemDiagnosisViewController.swift; sourceTree = "<group>"; };
 		FA7F713B20529250006B1EFF /* BaseMySkinProblemDiagnosisViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMySkinProblemDiagnosisViewModel.swift; sourceTree = "<group>"; };
@@ -608,7 +608,7 @@
 		78B9E51B203C2D600054CAD3 /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
-				FA7C4BAB207E191300A7DB28 /* KANotificationManager.swift */,
+				FA7C4BAB207E191300A7DB28 /* NotificationManager.swift */,
 				78B9E557203C4ED70054CAD3 /* Podfile */,
 				FAE733C12034494D00898E65 /* AppDelegate.swift */,
 				FAE733CB2034494D00898E65 /* Assets.xcassets */,
@@ -1559,7 +1559,7 @@
 				78B9E542203C4CD70054CAD3 /* Consts.swift in Sources */,
 				FAF2CEC9204D574F0001EEAB /* MyConsultTableViewCellViewModel.swift in Sources */,
 				788463F52076091B002216A7 /* MyConsultVideoChatViewModel.swift in Sources */,
-				FA7C4BAD207E191400A7DB28 /* KANotificationManager.swift in Sources */,
+				FA7C4BAD207E191400A7DB28 /* NotificationManager.swift in Sources */,
 				FA3326672040351500657C8A /* ProfileViewController.swift in Sources */,
 				FA8CFC8A2065606D0067C11F /* SkinProblemsAttachment+Extensions.swift in Sources */,
 				FA6E8FB720595FC9001F6E16 /* MyConsultDetailsViewModel.swift in Sources */,
@@ -1629,7 +1629,7 @@
 				780F70242035A63700D96601 /* PositiveButton.swift in Sources */,
 				7898C612207387F800F93F7E /* DiagnoseAttachment+CoreDataClass.swift in Sources */,
 				FA6130CB20500DCD00731495 /* BookAConsultConfirmViewController.swift in Sources */,
-				FA7C4BAC207E191400A7DB28 /* KANotificationManager.swift in Sources */,
+				FA7C4BAC207E191400A7DB28 /* NotificationManager.swift in Sources */,
 				FA7F713A20529181006B1EFF /* BaseMySkinProblemDiagnosisViewController.swift in Sources */,
 				780F7017203587CB00D96601 /* FormViewController.swift in Sources */,
 				FA3326BE20441C8500657C8A /* FormTextField.swift in Sources */,

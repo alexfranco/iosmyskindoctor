@@ -12,12 +12,14 @@ import IQKeyboardManagerSwift
 import AWSCognito
 import Stripe
 import Firebase
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	var window: UIWindow?
-
+	let notificationManager = NotificationManager.shared
+	
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 		IQKeyboardManager.sharedManager().enable = true // controls the scrollviews and uitextfields
 		ThemeManager.applyTheme()
@@ -25,6 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		
 		// Firebase
 		FirebaseApp.configure()
+		FirebaseConfiguration.shared.setLoggerLevel(FirebaseLoggerLevel.min)
 		
 		// Amazon AWS S3
 		let region = AWSRegionType.euWest1
@@ -33,10 +36,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		let defaultServiceConfiguration = AWSServiceConfiguration(region: region, credentialsProvider: credentialsProvider)
 		AWSServiceManager.default().defaultServiceConfiguration = defaultServiceConfiguration
 		
-		KANotificationManager.shared.setup(application, launchOptions: launchOptions)
+		// Register for notifications
+		notificationManager.setup(application, launchOptions: launchOptions)
+		
 		return true
 	}
 
+	var applicationStateString: String {
+		if UIApplication.shared.applicationState == .active {
+			return "active"
+		} else if UIApplication.shared.applicationState == .background {
+			return "background"
+		}else {
+			return "inactive"
+		}
+	}
+	
 	func applicationWillResignActive(_ application: UIApplication) {
 		// Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
 		// Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
@@ -61,6 +76,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		CoreDataStack.saveContext()
 	}
 	
+	//MARK: - Notification methods that cannot be passed off
+	func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+		notificationManager.application(application, didRegisterForRemoteNotificationsWithDeviceToken: deviceToken)
+	}
+	
+	// Receive Notification (open or closed) iOS9+
+	func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any],
+					 fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+		notificationManager.application(application, didReceiveRemoteNotification: userInfo, fetchCompletionHandler: completionHandler)
+	}
+
 	func updateRootVC() {
 		
 		let isUserLoggedIn = UserDefaults.standard.bool(forKey: UserDefaultConsts.isUserLoggedIn)
@@ -76,15 +102,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		appDelegate.window?.rootViewController = rootVC
 	}
 	
-	//MARK: - Notifications
-	func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-		KANotificationManager.shared.application(application, didRegisterForRemoteNotificationsWithDeviceToken: deviceToken)
-	}
-	
-	// Receive Notification (open or closed) iOS9+
-	func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any],
-					 fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-		KANotificationManager.shared.application(application, didReceiveRemoteNotification: userInfo, fetchCompletionHandler: completionHandler)
-	}
 }
 
