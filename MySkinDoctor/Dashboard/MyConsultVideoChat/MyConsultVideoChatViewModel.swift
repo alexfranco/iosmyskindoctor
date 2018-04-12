@@ -12,7 +12,8 @@ import CoreData
 
 class MyConsultVideoChatViewModel: BaseViewModel {
 	
-	var model: Consultation!
+	private (set) var model: Consultation!
+	private (set) var eventSession: EventSessionResponseModel?
 	
 	var timer: Timer?
 	var sessionStartTime: Date?
@@ -24,6 +25,48 @@ class MyConsultVideoChatViewModel: BaseViewModel {
 
 	var videoIsEnabledUpdated: ((_ isVideoEnabled: Bool)->())?
 	var audioIsEnabledUpdated: ((_ isAudioEnabled: Bool)->())?
+	
+	var onGetVideoChatSessionFinished: ((_ successful: Bool)->())?
+	
+	var isValidEventSession: Bool {
+		get {
+			guard let eventSessionSafe = eventSession else {
+				return false
+			}
+			
+			return eventSessionSafe.apiKey != nil && eventSessionSafe.opentokSessionId != nil && eventSessionSafe.opentokToken != nil
+		}
+	}
+	
+	var apiKey: String {
+		get {
+			guard let eventSessionSafe = eventSession else {
+				return ""
+			}
+			
+			return eventSessionSafe.apiKey ?? ""
+		}
+	}
+	
+	var opentokToken: String {
+		get {
+			guard let eventSessionSafe = eventSession else {
+				return ""
+			}
+			
+			return eventSessionSafe.opentokToken ?? ""
+		}
+	}
+	
+	var opentokSessionId: String {
+		get {
+			guard let eventSessionSafe = eventSession else {
+				return ""
+			}
+			
+			return eventSessionSafe.opentokSessionId ?? ""
+		}
+	}
 	
 	var isVideoOn: Bool = false {
 		didSet {
@@ -64,14 +107,39 @@ class MyConsultVideoChatViewModel: BaseViewModel {
 	required init(model: Consultation) {
 		super.init()
 		self.model = model
+		
+		fetchInternetModel()
+	}
+	
+	override func fetchInternetModel() {
+		super.fetchInternetModel()
+		
+		isLoading = true
+		
+		ApiUtils.getVideoChatSession(accessToken: DataController.getAccessToken(), skinProblemsId: Int(self.model.skinProblems!.skinProblemId), eventId: Int(model.appointmentId)) { (result) in
+			self.isLoading = false
+			
+			switch result {
+			case .success(let model):
+				print("get startSessionAppointment")
+				self.eventSession = model as? EventSessionResponseModel
+				self.onGetVideoChatSessionFinished!(true)
+			case .failure(let model, let error):
+				print("error \(error.localizedDescription)")
+				self.showResponseErrorAlert!(model as? BaseResponseModel, error)
+				self.onGetVideoChatSessionFinished!(false)
+			}
+		}
 	}
 	
 	func isConsultationTime() -> Bool {
-		let now = Date()
-		if let appointmentDate = model.appointmentDate as Date? {
-			return appointmentDate > now && appointmentDate < now.adjust(.hour, offset: 15)
-		}
-		return false
+		// TODO uncomment these lines
+		return true
+//		let now = Date()
+//		if let appointmentDate = model.appointmentDate as Date? {
+//			return appointmentDate > now && appointmentDate < now.adjust(.minute, offset: 15)
+//		}
+//		return false
 	}
 	
 	func isBeforeConsultation() -> Bool {

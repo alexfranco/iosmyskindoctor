@@ -137,6 +137,11 @@
 		78DBCE552051742700C0D4B5 /* MySkinProblemDiagnosisViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DBCE532051742700C0D4B5 /* MySkinProblemDiagnosisViewModel.swift */; };
 		78E44AA6203EBE5C0094F3AF /* PasswordStrength.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E44AA5203EBE5C0094F3AF /* PasswordStrength.swift */; };
 		78E44AA7203EBE5C0094F3AF /* PasswordStrength.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E44AA5203EBE5C0094F3AF /* PasswordStrength.swift */; };
+		78ECA5D6207F4A09006B4361 /* SubmittedSkinProblemsResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7891822F207CB2210039A508 /* SubmittedSkinProblemsResponseModel.swift */; };
+		78ECA5D7207F4AA8006B4361 /* CreditCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD902E20750A2E008DBAB9 /* CreditCardViewController.swift */; };
+		78ECA5D8207F4AB3006B4361 /* CreditCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD902F20750A2E008DBAB9 /* CreditCardViewModel.swift */; };
+		78ECA5DA207F510E006B4361 /* EventSessionResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ECA5D9207F510E006B4361 /* EventSessionResponseModel.swift */; };
+		78ECA5DB207F510E006B4361 /* EventSessionResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ECA5D9207F510E006B4361 /* EventSessionResponseModel.swift */; };
 		78FB31972063B8F300F155AE /* DTTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB31962063B8F300F155AE /* DTTextField.swift */; };
 		78FB31982063B8F300F155AE /* DTTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB31962063B8F300F155AE /* DTTextField.swift */; };
 		78FB319A2063CD4B00F155AE /* SkinProblemsResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB31992063CD4B00F155AE /* SkinProblemsResponseModel.swift */; };
@@ -397,6 +402,7 @@
 		78DBCE4E2051741500C0D4B5 /* MySkinProblemDiagnosisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySkinProblemDiagnosisViewController.swift; sourceTree = "<group>"; };
 		78DBCE532051742700C0D4B5 /* MySkinProblemDiagnosisViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySkinProblemDiagnosisViewModel.swift; sourceTree = "<group>"; };
 		78E44AA5203EBE5C0094F3AF /* PasswordStrength.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordStrength.swift; sourceTree = "<group>"; };
+		78ECA5D9207F510E006B4361 /* EventSessionResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSessionResponseModel.swift; sourceTree = "<group>"; };
 		78FB31962063B8F300F155AE /* DTTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTTextField.swift; sourceTree = "<group>"; };
 		78FB31992063CD4B00F155AE /* SkinProblemsResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinProblemsResponseModel.swift; sourceTree = "<group>"; };
 		78FB319C2063F59500F155AE /* Formatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Formatter+Extensions.swift"; sourceTree = "<group>"; };
@@ -950,6 +956,7 @@
 				7891822F207CB2210039A508 /* SubmittedSkinProblemsResponseModel.swift */,
 				78918243207CF1DE0039A508 /* AppointmentsResponseModel.swift */,
 				78918246207D07E90039A508 /* ConsultationResponseModel.swift */,
+				78ECA5D9207F510E006B4361 /* EventSessionResponseModel.swift */,
 			);
 			path = APIModels;
 			sourceTree = "<group>";
@@ -1441,6 +1448,7 @@
 				FA332657204029BD00657C8A /* MySkinProblemsViewModel.swift in Sources */,
 				FA6E8F632056C239001F6E16 /* UIButton+Border.swift in Sources */,
 				FADC3350204706E70065A7EB /* SkinProblemLocationViewModel.swift in Sources */,
+				78ECA5D8207F4AB3006B4361 /* CreditCardViewModel.swift in Sources */,
 				FAF2CECE204D59E40001EEAB /* MyConsultsViewModel.swift in Sources */,
 				78C205E32045AA9900F8E407 /* AddSkinProblemsViewModel.swift in Sources */,
 				FAEC573C203DBEAE00D1A0AE /* LoginViewModel.swift in Sources */,
@@ -1538,6 +1546,7 @@
 				FA3326522040287900657C8A /* BindingViewController.swift in Sources */,
 				FADC334B204706DC0065A7EB /* SkinProblemLocationViewController.swift in Sources */,
 				7891823B207CE8330039A508 /* MedicalHistory+CoreDataClass.swift in Sources */,
+				78ECA5D7207F4AA8006B4361 /* CreditCardViewController.swift in Sources */,
 				7891824B207D09030039A508 /* Consultation+Extentions.swift in Sources */,
 				78B9E53E203C4CD70054CAD3 /* AppDelegate.swift in Sources */,
 				788C320E204E813E0078A983 /* BookAConsultViewController.swift in Sources */,
@@ -1551,6 +1560,7 @@
 				FA6130D22050238E00731495 /* BookAConsultThankYouViewController.swift in Sources */,
 				FA33264D2040240400657C8A /* MySkinProblemsTableViewCell.swift in Sources */,
 				78B9E540203C4CD70054CAD3 /* RegistrationViewController.swift in Sources */,
+				78ECA5DB207F510E006B4361 /* EventSessionResponseModel.swift in Sources */,
 				7891823D207CE8330039A508 /* Profile+CoreDataClass.swift in Sources */,
 				7891823F207CE8330039A508 /* SkinProblemAttachment+CoreDataClass.swift in Sources */,
 				78B9E541203C4CD70054CAD3 /* BaseResponseModel.swift in Sources */,
@@ -1569,6 +1579,7 @@
 				78B9E543203C4CD70054CAD3 /* UIViewController+Alerts.swift in Sources */,
 				FAFD903A207521AA008DBAB9 /* TopupListResponseModel.swift in Sources */,
 				78B9E544203C4CD70054CAD3 /* AppStyle.swift in Sources */,
+				78ECA5D6207F4A09006B4361 /* SubmittedSkinProblemsResponseModel.swift in Sources */,
 				7884D8B8205AB2D900C59E7B /* UIImage+Extensions.swift in Sources */,
 				78918240207CE8330039A508 /* SkinProblemAttachment+CoreDataProperties.swift in Sources */,
 			);
@@ -1706,6 +1717,7 @@
 				788C320D204E813E0078A983 /* BookAConsultViewController.swift in Sources */,
 				FAA774F520529F6F00A794FF /* MySkinProblemDiagnoseUpdateRequestViewController.swift in Sources */,
 				FA3326C220441C8500657C8A /* BoldLabel.swift in Sources */,
+				78ECA5DA207F510E006B4361 /* EventSessionResponseModel.swift in Sources */,
 				FAD6ADC120446D310050C1A9 /* AddPhotoTableViewCellViewModel.swift in Sources */,
 				FA33264C2040240400657C8A /* MySkinProblemsTableViewCell.swift in Sources */,
 				FADC33392046DA9A0065A7EB /* SkinProblemPhotoInformationViewController.swift in Sources */,

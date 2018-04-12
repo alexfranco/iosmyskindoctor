@@ -63,6 +63,7 @@ class ApiUtils {
 		case skinProblemsImage = "image/"
 		case skinProblemsSubmit = "submit/"
 		case event = "event/"
+		case session = "session/"
 	}
 }
 
@@ -76,7 +77,7 @@ extension ApiUtils {
 									 "password": password,
 									 "platform" : 1]
 		
-		if let apnsToken = Messaging.messaging().apnsToken { params.updateValue(apnsToken, forKey: "reg_id") }
+		if let apnsToken = Messaging.messaging().fcmToken { params.updateValue(apnsToken, forKey: "reg_id") }
 		
 		ApiUtils.request(url: url, httpMethod: HTTPMethod.post, params: params, parseToModelType: LoginResponseModel.self, accessToken: nil, completionHandler: completionHandler)
 	}
@@ -262,6 +263,14 @@ extension ApiUtils {
 		url += "\(skinProblemsId)/\(ApiMethod.event)/\(eventId)/"
 		
 		ApiUtils.request(url: url, httpMethod: HTTPMethod.delete, params: nil, parseToModelType: ConsultationResponseModel.self, accessToken: accessToken, completionHandler: completionHandler)
+	}
+	
+	static func getVideoChatSession(accessToken: String, skinProblemsId: Int, eventId: Int, completionHandler: @escaping ((_ result: ApiResult) -> Void)) {
+		var url = ApiUtils.getApiUrl(ApiMethod.appointmentsCase, nil)
+		url += "\(skinProblemsId)/\(ApiMethod.event)/\(eventId)/"
+		url += ApiMethod.session.rawValue
+		
+		ApiUtils.request(url: url, httpMethod: HTTPMethod.get, params: nil, parseToModelType: EventSessionResponseModel.self, accessToken: accessToken, completionHandler: completionHandler)
 	}
 	
 	static func getCreditsOptions(accessToken: String, completionHandler: @escaping ((_ results: ApiResult) -> Void)) {

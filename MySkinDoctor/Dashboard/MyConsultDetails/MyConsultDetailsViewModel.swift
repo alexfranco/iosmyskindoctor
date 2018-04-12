@@ -15,11 +15,13 @@ class MyConsultDetailsViewModel: BaseViewModel {
 	var model: Consultation!
 	
 	func isConsultationTime() -> Bool {
-		let now = Date()
-		if let appointmentDate = model.appointmentDate as Date? {
-			return appointmentDate > now && appointmentDate < now.adjust(.hour, offset: 15)
-		}
-		return false
+		// TODO uncomment these lines
+		return true
+//		let now = Date()
+//		if let appointmentDate = model.appointmentDate as Date? {
+//			return appointmentDate > now && appointmentDate < now.adjust(.minute, offset: 15)
+//		}
+//		return false
 	}
 	
 	func isBeforeConsultation() -> Bool {

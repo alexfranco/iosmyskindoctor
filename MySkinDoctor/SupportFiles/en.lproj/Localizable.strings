@@ -210,3 +210,11 @@
 "skinproblem_case_no_further_ommunication_required" = "No further communication required";
 "skinproblem_case_book_consultation_request" = "Consultation requested";
 "skinproblem_case_consultation_booked" = "Consultation Booked";
+
+
+"video_chat_connection_error_title" = "Connection Error";
+"video_chat_connection_error_message" = "There was a problem connecting to the session. Please try again later.";
+
+"video_chat_session_unavailable_title" = "Session Unavailable";
+"video_chat_session_unavailable_message" = "There was a problem connecting to the session. Please make sure you have an internet connection and try again.";
+

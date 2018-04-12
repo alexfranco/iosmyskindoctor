@@ -54,6 +54,26 @@ class MyConsultVideoChatViewController: BindingViewController {
 				self?.audioButton.isEnabled = isAudioEnabled
 			}
 		}
+		
+		viewModelCast.updateLoadingStatus = { [weak self] () in
+			DispatchQueue.main.async {
+				if (self?.viewModelCast.isLoading)! {
+					self?.expertActivityIndicator.startAnimating()
+					self?.userActivityIndicator.startAnimating()
+				} else {
+					self?.expertActivityIndicator.stopAnimating()
+					self?.userActivityIndicator.stopAnimating()
+				}
+			}
+		}
+		
+		viewModelCast.onGetVideoChatSessionFinished = { [weak self] (successful) in
+			DispatchQueue.main.async {
+				if successful {
+					self?.startSession()
+				}
+			}
+		}
 	}
 		
 	override func viewDidLoad() {
@@ -68,29 +88,10 @@ class MyConsultVideoChatViewController: BindingViewController {
 		
 		audioButton.target = self
 		audioButton.action = #selector(onClickAudioToggleButton)
-				
-		expertActivityIndicator.startAnimating()
-		userActivityIndicator.startAnimating()
 		
 		viewModelCast.disableToggleOptions()
 	}
-	
-	override func viewDidAppear(_ animated: Bool) {
-		super.viewDidAppear(animated)
 		
-		// Keep screen on
-		UIApplication.shared.isIdleTimerDisabled = true
-		
-		viewModelCast.sessionStartTime = Date()
-		
-		viewModelCast.timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(endSessionIfExpired), userInfo: nil, repeats: true)
-		
-		// Step 2: As the view comes into the foreground, begin the connection process.
-		if viewModelCast.isConsultationTime() {
-			doConnect()
-		}
-	}
-	
 	override func viewWillDisappear(_ animated: Bool) {
 		super.viewWillDisappear(animated)
 		
@@ -167,9 +168,31 @@ class MyConsultVideoChatViewController: BindingViewController {
 		viewModelCast.enableToggleOptions()
 	}
 	
-	@objc func endSessionIfExpired() {
-		if !viewModelCast.isConsultationTime() {
+	func startSession() {
+		// Step 1: As the view is loaded initialize a new instance of OTSession
+		if viewModelCast.isValidEventSession {
+			session = OTSession(apiKey: viewModelCast.apiKey, sessionId: viewModelCast.opentokSessionId, delegate: self)
 			
+			// Keep screen on
+			UIApplication.shared.isIdleTimerDisabled = true
+			
+			viewModelCast.sessionStartTime = Date()
+			
+			viewModelCast.timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(endSessionIfExpired), userInfo: nil, repeats: true)
+			
+			// Step 2: As the view comes into the foreground, begin the connection process.
+			if viewModelCast.isConsultationTime() {
+				doConnect()
+			}
+		} else {
+			showAlertView(title: NSLocalizedString("video_chat_connection_error_title", comment: "Session ended"), message: NSLocalizedString("video_chat_connection_error_message", comment: "Your session has now ended."), handler: { (alert) in
+				self.navigationController?.popViewController(animated: true)
+			})
+		}
+	}
+	
+	@objc func endSessionIfExpired() {
+		if !viewModelCast.isConsultationTime() {			
 			// End timer
 			viewModelCast.disableTimer()
 			
@@ -179,21 +202,9 @@ class MyConsultVideoChatViewController: BindingViewController {
 				self.session?.disconnect(&maybeError)
 			}
 			
-			let alertController = UIAlertController(
-				title: NSLocalizedString("session_ended_title", comment: "Session ended"),
-				message: String(format: NSLocalizedString("session_ended_message", comment: "Your session has now ended."), arguments: ["MySkinDoctor"]),
-				preferredStyle: .alert)
-			
-			let OKAction = UIAlertAction(title: NSLocalizedString("ok", comment: "Close button"), style: .default) { (action) in
-				DispatchQueue.main.async(execute: {
-					self.navigationController?.popViewController(animated: true)
-				})
-			}
-			
-			alertController.addAction(OKAction)
-			
-			self.present(alertController, animated: true) {}
-
+			showAlertView(title: NSLocalizedString("session_ended_title", comment: "Session ended"), message: NSLocalizedString("session_ended_message", comment: "Your session has now ended."), handler: { (alert) in
+				self.navigationController?.popViewController(animated: true)
+			})
 		}
 	}
 	
@@ -223,13 +234,13 @@ extension MyConsultVideoChatViewController: OTSessionDelegate, OTSubscriberKitDe
 	* expect a delegate method to call us back with the results of this action.
 	*/
 	func doConnect() {
-//		if let session = self.session {
-//			var maybeError : OTError?
-//			session.connect(withToken: eventSession!.token!, error: &maybeError)
-//			if let error = maybeError {
-//				showAlertView(title: "error", message: error.localizedDescription)
-//			}
-//		}
+		if let session = self.session {
+			var maybeError : OTError?
+			session.connect(withToken: viewModelCast.opentokToken, error: &maybeError)
+			if let error = maybeError {
+				showAlertView(title: "error", message: error.localizedDescription)
+			}
+		}
 	}
 	
 	/**

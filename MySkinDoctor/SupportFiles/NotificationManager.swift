@@ -62,32 +62,32 @@ class NotificationManager: NSObject, UNUserNotificationCenterDelegate, Messaging
 	
 	//PUBLIC: to be called whenever we need to register Firebase CM with out server
 	public func registerUser() {
-		if Utils.userIsLoggedIn(), let fcmToken = Messaging.messaging().fcmToken{
-			registerFcmDeviceWithServer(fcmToken)
-		}
+//		if Utils.userIsLoggedIn(), let fcmToken = Messaging.messaging().fcmToken{
+//			registerFcmDeviceWithServer(fcmToken)
+//		}
 	}
 	
 	// iOS9 +
 	// FIRMessagingDelegate - Token has been updated..... called only the first time it's registered (e.g. first run)
 	func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
-		if Utils.userIsLoggedIn() {
-			registerUser()
-		}
+//		if Utils.userIsLoggedIn() {
+//			registerUser()
+//		}
 	}
 	
 	// Register the firebase token with the server
 	private func registerFcmDeviceWithServer(_ refreshedToken: String) {
-		let userDefaults = UserDefaults.standard
-		if let sessionId = userDefaults.string(forKey: SessionData.KEY_SESSION_ID) {
-			ApiUtils.postRegisterDevice(sessionId, gcmToken: refreshedToken, completionHandler: { (success, statusCode, model) in
-				if (success) {
-					// Store GCM token
-					if let response = model, let token = response.regId {
-						userDefaults.setValue(token, forKey: SessionData.KEY_GCM_TOKEN)
-					}
-				}
-			})
-		}
+//		let userDefaults = UserDefaults.standard
+//		if let sessionId = userDefaults.string(forKey: SessionData.KEY_SESSION_ID) {
+//			ApiUtils.postRegisterDevice(sessionId, gcmToken: refreshedToken, completionHandler: { (success, statusCode, model) in
+//				if (success) {
+//					// Store GCM token
+//					if let response = model, let token = response.regId {
+//						userDefaults.setValue(token, forKey: SessionData.KEY_GCM_TOKEN)
+//					}
+//				}
+//			})
+//		}
 	}
 	
 	//************************************************************************************************************************************************************//
@@ -167,7 +167,6 @@ class NotificationManager: NSObject, UNUserNotificationCenterDelegate, Messaging
 	
 	
 	func handleNotification(userInfo: [AnyHashable: Any], handler: () -> Void) {
-		let isLoggedIn = Utils.userIsLoggedIn()
 		// If you are receiving a notification message while your app is in the background,
 		// this callback will not be fired till the user taps on the notification launching the application.
 		
@@ -192,17 +191,17 @@ class NotificationManager: NSObject, UNUserNotificationCenterDelegate, Messaging
 	
 	//Called when a notification is delivered to a foreground app.
 	private func displayAlert(_ title: String, message: String?) {
-		if let alertText = message {
-			let alertController = UIAlertController(title: title, message: alertText, preferredStyle: UIAlertControllerStyle.alert)
-			
-			let OKAction = UIAlertAction(title: NSLocalizedString("ok", comment: "Close button"), style: .default) { (action) in
-			}
-			alertController.addAction(OKAction)
-			
-			DispatchQueue.main.async(execute: {
-				UIApplication.shared.keyWindow!.rootViewController!.topMostViewController().present(alertController, animated: true, completion: nil)
-			})
-		}
+//		if let alertText = message {
+//			let alertController = UIAlertController(title: title, message: alertText, preferredStyle: UIAlertControllerStyle.alert)
+//
+//			let OKAction = UIAlertAction(title: NSLocalizedString("ok", comment: "Close button"), style: .default) { (action) in
+//			}
+//			alertController.addAction(OKAction)
+//
+//			DispatchQueue.main.async(execute: {
+//				UIApplication.shared.keyWindow!.rootViewController!.topMostViewController().present(alertController, animated: true, completion: nil)
+//			})
+//		}
 	}
 	
 	private func displayAlertAsLocalNotification(_ title: String, message: String?, userInfo: [AnyHashable: Any]) {
