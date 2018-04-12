@@ -12,14 +12,17 @@ class MySkinProblemDiagnoseUpdateRequestTableViewModel: NSObject {
 	
 	var note: String!
 	var date: String!
-	
 	var model: DoctorNotes!
 	
 	required init(withModel model: DoctorNotes) {
 		self.model = model
-		self.date =  (model.date! as Date).ordinalMonthAndYear()
-		self.note = model.note
-	
+		
+		if let date = model.date as Date? {
+			self.date =  date.ordinalMonthAndYear()
+		}
+		
+		self.note = model.note ?? "-"
+		
 		super.init()
 	}
 }
