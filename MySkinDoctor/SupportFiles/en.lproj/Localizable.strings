@@ -218,3 +218,6 @@
 "video_chat_session_unavailable_title" = "Session Unavailable";
 "video_chat_session_unavailable_message" = "There was a problem connecting to the session. Please make sure you have an internet connection and try again.";
 
+"alert_upcoming_appointment" = "You have an appointment with %@ in %d minutes.";
+"alert_upcoming_appointment_starting" = "Your appointment with %@ starts now.";
+

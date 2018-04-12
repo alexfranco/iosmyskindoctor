@@ -57,6 +57,7 @@ extension SkinProblems {
 		
 		parseAndSaveSkinProblemsAttachmentResponse(skinProblemsResponseModel: skinProblemResponseModel, skinProblems: &skinProblem)
 		parseAndSaveDiagnoseAttachmentResponse(skinProblemsResponseModel: skinProblemResponseModel, skinProblems: &skinProblem)
+		parseAndSaveNoteResponse(skinProblemsResponseModel: skinProblemResponseModel, skinProblems: &skinProblem)
 		
 		DataController.saveEntity(managedObject: skinProblem)
 				
@@ -74,6 +75,13 @@ extension SkinProblems {
 		for diagnoseResourceResponse in skinProblemsResponseModel.diagnosisResources {
 			let localDiagnoseResource = DiagnoseAttachment.parseAndSave(attachmentResponse: diagnoseResourceResponse)
 			skinProblems.diagnose!.addToDiagnoseAttachment(localDiagnoseResource)
+		}
+	}
+	
+	static func parseAndSaveNoteResponse(skinProblemsResponseModel: SkinProblemsResponseModel, skinProblems: inout SkinProblems) {
+		for noteResponse in skinProblemsResponseModel.notes {
+			let localDoctorNote = DoctorNotes.parseAndSave(noteResponseModel: noteResponse)
+			skinProblems.diagnose!.addToDoctorNotes(localDoctorNote)
 		}
 	}
 }

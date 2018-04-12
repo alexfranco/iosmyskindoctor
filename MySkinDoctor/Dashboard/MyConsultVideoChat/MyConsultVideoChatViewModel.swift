@@ -133,13 +133,11 @@ class MyConsultVideoChatViewModel: BaseViewModel {
 	}
 	
 	func isConsultationTime() -> Bool {
-		// TODO uncomment these lines
-		return true
-//		let now = Date()
-//		if let appointmentDate = model.appointmentDate as Date? {
-//			return appointmentDate > now && appointmentDate < now.adjust(.minute, offset: 15)
-//		}
-//		return false
+		let now = Date()
+		if let appointmentDate = model.appointmentDate as Date? {
+			return appointmentDate > now && appointmentDate < now.adjust(.minute, offset: 15)
+		}
+		return false
 	}
 	
 	func isBeforeConsultation() -> Bool {

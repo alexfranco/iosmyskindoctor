@@ -71,3 +71,8 @@ struct CoreData {
 struct Payments {
 	static let submitFee = "10.00"
 }
+
+struct Reminders {
+	static let firstReminderMinutes = -5
+	static let secondReminderMinutes = 0
+}

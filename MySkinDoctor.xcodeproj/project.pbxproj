@@ -142,6 +142,10 @@
 		78ECA5D8207F4AB3006B4361 /* CreditCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD902F20750A2E008DBAB9 /* CreditCardViewModel.swift */; };
 		78ECA5DA207F510E006B4361 /* EventSessionResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ECA5D9207F510E006B4361 /* EventSessionResponseModel.swift */; };
 		78ECA5DB207F510E006B4361 /* EventSessionResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ECA5D9207F510E006B4361 /* EventSessionResponseModel.swift */; };
+		78ECA5DD207F7187006B4361 /* LocalNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ECA5DC207F7187006B4361 /* LocalNotifications.swift */; };
+		78ECA5DE207F7187006B4361 /* LocalNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ECA5DC207F7187006B4361 /* LocalNotifications.swift */; };
+		78ECA5E0207F8307006B4361 /* DoctorNotes+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ECA5DF207F8307006B4361 /* DoctorNotes+Extentions.swift */; };
+		78ECA5E1207F8307006B4361 /* DoctorNotes+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ECA5DF207F8307006B4361 /* DoctorNotes+Extentions.swift */; };
 		78FB31972063B8F300F155AE /* DTTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB31962063B8F300F155AE /* DTTextField.swift */; };
 		78FB31982063B8F300F155AE /* DTTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB31962063B8F300F155AE /* DTTextField.swift */; };
 		78FB319A2063CD4B00F155AE /* SkinProblemsResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB31992063CD4B00F155AE /* SkinProblemsResponseModel.swift */; };
@@ -403,6 +407,8 @@
 		78DBCE532051742700C0D4B5 /* MySkinProblemDiagnosisViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySkinProblemDiagnosisViewModel.swift; sourceTree = "<group>"; };
 		78E44AA5203EBE5C0094F3AF /* PasswordStrength.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordStrength.swift; sourceTree = "<group>"; };
 		78ECA5D9207F510E006B4361 /* EventSessionResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSessionResponseModel.swift; sourceTree = "<group>"; };
+		78ECA5DC207F7187006B4361 /* LocalNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotifications.swift; sourceTree = "<group>"; };
+		78ECA5DF207F8307006B4361 /* DoctorNotes+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DoctorNotes+Extentions.swift"; sourceTree = "<group>"; };
 		78FB31962063B8F300F155AE /* DTTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTTextField.swift; sourceTree = "<group>"; };
 		78FB31992063CD4B00F155AE /* SkinProblemsResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinProblemsResponseModel.swift; sourceTree = "<group>"; };
 		78FB319C2063F59500F155AE /* Formatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Formatter+Extensions.swift"; sourceTree = "<group>"; };
@@ -580,6 +586,7 @@
 				FA8CFC882065606D0067C11F /* SkinProblemsAttachment+Extensions.swift */,
 				FAFD8FFF206B8C7D008DBAB9 /* Profile+Extensions.swift */,
 				78918249207D09030039A508 /* Consultation+Extentions.swift */,
+				78ECA5DF207F8307006B4361 /* DoctorNotes+Extentions.swift */,
 			);
 			path = DBExtensions;
 			sourceTree = "<group>";
@@ -634,6 +641,7 @@
 				FA33268520440EA400657C8A /* PhotoUtils.swift */,
 				FA6E8F6E2056CE87001F6E16 /* DataController.swift */,
 				FAFD9002206B9D02008DBAB9 /* AWS3Utils.swift */,
+				78ECA5DC207F7187006B4361 /* LocalNotifications.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1480,6 +1488,7 @@
 				78918236207CE8330039A508 /* Diagnose+CoreDataProperties.swift in Sources */,
 				78918245207CF1DE0039A508 /* AppointmentsResponseModel.swift in Sources */,
 				7826473C205800FB00F79FB7 /* SkinProblems+Extensions.swift in Sources */,
+				78ECA5E1207F8307006B4361 /* DoctorNotes+Extentions.swift in Sources */,
 				FA3326BF20441C8500657C8A /* FormTextField.swift in Sources */,
 				78B9E535203C4CD70054CAD3 /* Validations.swift in Sources */,
 				78B9E536203C4CD70054CAD3 /* ForgotPasswordResposeModel.swift in Sources */,
@@ -1554,6 +1563,7 @@
 				FAA774F620529F6F00A794FF /* MySkinProblemDiagnoseUpdateRequestViewController.swift in Sources */,
 				78B9E53F203C4CD70054CAD3 /* ForgotPasswordViewController.swift in Sources */,
 				7884D8B5205A787600C59E7B /* UITextField+Padding.swift in Sources */,
+				78ECA5DE207F7187006B4361 /* LocalNotifications.swift in Sources */,
 				FA3326C320441C8500657C8A /* BoldLabel.swift in Sources */,
 				FA7F714020529344006B1EFF /* BaseMySkinProblemDiagnosisViewController.swift in Sources */,
 				FADC333A2046DA9A0065A7EB /* SkinProblemPhotoInformationViewController.swift in Sources */,
@@ -1637,6 +1647,7 @@
 				FA6E8F672056CC8E001F6E16 /* Profile+CoreDataClass.swift in Sources */,
 				FA6130D6205023CE00731495 /* BookAConsultThankYouViewModel.swift in Sources */,
 				788C321D204EF0400078A983 /* BookAConsultCalendarViewModel.swift in Sources */,
+				78ECA5E0207F8307006B4361 /* DoctorNotes+Extentions.swift in Sources */,
 				780F70242035A63700D96601 /* PositiveButton.swift in Sources */,
 				7898C612207387F800F93F7E /* DiagnoseAttachment+CoreDataClass.swift in Sources */,
 				FA6130CB20500DCD00731495 /* BookAConsultConfirmViewController.swift in Sources */,
@@ -1711,6 +1722,7 @@
 				78E44AA6203EBE5C0094F3AF /* PasswordStrength.swift in Sources */,
 				78FFF02F20496E340013240D /* MedicalHistoryViewModel.swift in Sources */,
 				78B9E516203C2B920054CAD3 /* ForgotPasswordViewController.swift in Sources */,
+				78ECA5DD207F7187006B4361 /* LocalNotifications.swift in Sources */,
 				78918230207CB2210039A508 /* SubmittedSkinProblemsResponseModel.swift in Sources */,
 				FADC334A204706DC0065A7EB /* SkinProblemLocationViewController.swift in Sources */,
 				7884D8B4205A787600C59E7B /* UITextField+Padding.swift in Sources */,

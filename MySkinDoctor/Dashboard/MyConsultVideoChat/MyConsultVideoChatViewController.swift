@@ -357,7 +357,11 @@ extension MyConsultVideoChatViewController: OTSessionDelegate, OTSubscriberKitDe
 	func session(_ session: OTSession, connectionDestroyed connection : OTConnection) {
 		print("session connectionDestroyed (\(connection.connectionId))")
 		
-		if (subscriber?.stream?.connection.connectionId)! == connection.connectionId {
+		guard let subscriberSafe = subscriber, let stream = subscriberSafe.stream else {
+			return
+		}
+				
+		if stream.connection.connectionId == connection.connectionId {
 			cleanUpSubscriber()
 		}
 	}

@@ -21,9 +21,25 @@ extension Consultation {
 		consultation.appointmentId = Int16(consultationResponseModel.eventId)
 		consultation.appointmentDate = consultationResponseModel.start! as NSDate
 		consultation.duration = Int16(consultationResponseModel.duration)
+		consultation.isCancelled = consultationResponseModel.cancelled
 		consultation.skinProblems = skinProblems
 		
 		DataController.saveEntity(managedObject: consultation)
+		
+		if consultation.isCancelled {
+			// Remove notifications
+			LocalNotifications.deleteAllEventNotifications(Int(consultation.appointmentId))
+		} else {
+			// Create notifications if it does not exist
+			if let eventStart = consultation.appointmentDate,
+				let skinProblems = consultation.skinProblems,
+				let diagnose = skinProblems.diagnose,
+				let doctor = diagnose.doctor,
+				let expertName = doctor.displayName {
+				
+				LocalNotifications.createAllEventNotifications(Int(consultation.appointmentId), eventStart: eventStart as Date, expertName: expertName, firstReminderMinutes: Reminders.firstReminderMinutes, secondReminderMinutes: Reminders.secondReminderMinutes)
+			}
+		}
 		
 		return consultation
 	}
