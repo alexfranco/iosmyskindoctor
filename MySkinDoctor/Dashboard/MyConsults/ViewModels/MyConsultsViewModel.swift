@@ -79,6 +79,7 @@ class MyConsultsViewModel: BaseViewModel {
 		if let results = DataController.fetchAll(type: Consultation.self, sortByKey: "appointmentId") {
 				
 			allItems = results
+			allItems = allItems.filter { (model) -> Bool in (model.isCancelled == false) }
 			
 			allItems.sort { (modelA, modelB) -> Bool in
 				return modelB.appointmentDate! as Date > modelA.appointmentDate! as Date
@@ -170,12 +171,7 @@ class MyConsultsViewModel: BaseViewModel {
 	
 	func isBeforeConsultation(indexPath: IndexPath) -> Bool {
 		let model = getItemAtIndexPath(indexPath: indexPath)
-		
-		let now = Date()
-		if let appointmentDate = model.appointmentDate as Date? {
-			return appointmentDate > now
-		}
-		return false
+		return model.isBeforeConsultation()
 	}
 	
 	func getHeaderBackgroundColor(section: Int) -> UIColor {

@@ -236,12 +236,12 @@ extension ApiUtils {
 		ApiUtils.requestArray(url: url, httpMethod: HTTPMethod.get, params: nil, parseToModelType: EventResponseModel.self, accessToken: accessToken, completionHandler: completionHandler)
 	}
 	
-	static func getTimeslots(accessToken: String, skinProblemsId: Int, startDate: Date, endDate: Date, completionHandler: @escaping ((_ result: ApiArrayResult) -> Void)) {
+	static func getTimeslots(accessToken: String, skinProblemsId: Int, startDate: Date?, endDate: Date, completionHandler: @escaping ((_ result: ApiArrayResult) -> Void)) {
 		var url = ApiUtils.getApiUrl(ApiMethod.appointmentsCase, nil)
 		url += "\(skinProblemsId)/"
 		
 		var params: Parameters = [:]
-		params.updateValue(startDate.iso8601, forKey: "start")
+		if let startDateSafe = startDate { params.updateValue(startDateSafe.iso8601, forKey: "start") }
 		params.updateValue(endDate.iso8601, forKey: "end")
 		
 		ApiUtils.requestArray(url: url, httpMethod: HTTPMethod.get, params: params, parseToModelType: AppointmentsResponseModel.self, accessToken: accessToken, completionHandler: completionHandler)

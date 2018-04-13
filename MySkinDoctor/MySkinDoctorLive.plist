@@ -22,8 +22,14 @@
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>$(PRODUCT_NAME) will use the camera when you upload a skin problem</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>$(PRODUCT_NAME) will use the microphone when you have a video chat with your doctor</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>You can select pictures to attach to your skin problems.</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

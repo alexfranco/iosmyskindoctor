@@ -52,11 +52,7 @@ class MyConsultTableViewCellViewModel: BaseViewModel {
 	}
 	
 	private func isBeforeConsultation() -> Bool {
-		let now = Date()
-		if let appointmentDate = appointmentDate {
-			return appointmentDate > now
-		}
-		return false
+		return model.isBeforeConsultation()
 	}
 	
 }

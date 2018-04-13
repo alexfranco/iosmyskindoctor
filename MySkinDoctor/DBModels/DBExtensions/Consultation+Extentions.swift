@@ -43,4 +43,29 @@ extension Consultation {
 		
 		return consultation
 	}
+	
+	func isConsultationTime() -> Bool {
+		
+		if let appointmentDateSafe = appointmentDate as Date? {
+			
+			let now = Date()
+			let nowMinusTwoMinutes = now.adjust(.minute, offset: -2)
+			let nowEndDate = now.adjust(.minute, offset: 15)
+			
+			return appointmentDateSafe > nowMinusTwoMinutes && appointmentDateSafe < nowEndDate
+		}
+		
+		return false
+	}
+	
+	func isBeforeConsultation() -> Bool {
+		
+		if let appointmentDateSafe = appointmentDate as Date? {
+			let now = Date()
+			let nowMinusTwoMinutes = now.adjust(.minute, offset: -2)
+			return appointmentDateSafe < nowMinusTwoMinutes
+		}
+		
+		return false
+	}
 }

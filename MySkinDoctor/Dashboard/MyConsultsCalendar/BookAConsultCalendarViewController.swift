@@ -178,7 +178,7 @@ extension BookAConsultCalendarViewController: CVCalendarMenuViewDelegate, CVCale
 	}
 	
 	func earliestSelectableDate() -> Date {
-		return Date().adjust(.day, offset: -1)
+		return Date()
 	}
 	
 	func didSelectDayView(_ dayView: DayView, animationDidFinish: Bool) {

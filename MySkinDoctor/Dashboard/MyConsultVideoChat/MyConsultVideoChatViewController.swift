@@ -129,7 +129,7 @@ class MyConsultVideoChatViewController: BindingViewController {
 	
 	@IBAction func onClickVideoToggleButton(_ sender: AnyObject) {
 		if let pub = publisher {
-			if viewModelCast.isVideoEnabled {
+			if viewModelCast.isVideoOn {
 				// Disable
 				pub.publishVideo = false
 				viewModelCast.isVideoOn = false
@@ -144,7 +144,7 @@ class MyConsultVideoChatViewController: BindingViewController {
 	
 	@IBAction func onClickAudioToggleButton(_ sender: AnyObject) {
 		if let pub = publisher {
-			if viewModelCast.isAudioEnabled {
+			if viewModelCast.isAudioOn {
 				// Disable
 				pub.publishAudio = false
 				viewModelCast.isAudioOn = false

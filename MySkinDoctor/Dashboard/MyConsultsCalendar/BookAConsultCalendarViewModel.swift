@@ -55,10 +55,12 @@ class BookAConsultCalendarViewModel: BaseViewModel {
 	
 	func fetchTimeslots() {
 	
-		var startOfDayForDate = selectedDate.startOfDayForDate()
-		if startOfDayForDate.isDateToday() {
-			startOfDayForDate = Date().adjust(.hour, offset: 1)
-		} else if startOfDayForDate < Date() { // is in the past
+		var startOfDayForDate: Date?
+		startOfDayForDate = selectedDate.startOfDayForDate()
+		
+		if startOfDayForDate!.isDateToday() {
+			startOfDayForDate = nil
+		} else if startOfDayForDate! < Date() { // is in the past
 			timeslots = []
 			self.nextButtonUpdate!(self.isNextButtonEnabled)
 			self.timeslotsUpdated!()

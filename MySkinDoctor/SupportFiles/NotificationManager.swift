@@ -182,6 +182,13 @@ class NotificationManager: NSObject, UNUserNotificationCenterDelegate, Messaging
 		// Let FCM know about the message for analytics etc.
 		Messaging.messaging().appDidReceiveMessage(userInfo)
 		
+		if UIApplication.shared.applicationState == UIApplicationState.active {
+			// App is running in foreground, show alert
+			
+			if let aps = userInfo["aps"] as? [AnyHashable: Any], let alert = aps["alert"] as? [AnyHashable: Any], let title = alert["title"] as? String, let body = alert["body"] as? String {
+				displayAlert(title, message: body)
+			}
+		}
 		
 		// Invoke the completion handler passing the appropriate UIBackgroundFetchResult value
 		// [START_EXCLUDE]
@@ -191,17 +198,18 @@ class NotificationManager: NSObject, UNUserNotificationCenterDelegate, Messaging
 	
 	//Called when a notification is delivered to a foreground app.
 	private func displayAlert(_ title: String, message: String?) {
-//		if let alertText = message {
-//			let alertController = UIAlertController(title: title, message: alertText, preferredStyle: UIAlertControllerStyle.alert)
-//
-//			let OKAction = UIAlertAction(title: NSLocalizedString("ok", comment: "Close button"), style: .default) { (action) in
-//			}
-//			alertController.addAction(OKAction)
-//
-//			DispatchQueue.main.async(execute: {
-//				UIApplication.shared.keyWindow!.rootViewController!.topMostViewController().present(alertController, animated: true, completion: nil)
-//			})
-//		}
+		if let alertText = message {
+			let alertController = UIAlertController(title: title, message: alertText, preferredStyle: UIAlertControllerStyle.alert)
+
+			let OKAction = UIAlertAction(title: NSLocalizedString("ok", comment: "Close button"), style: .default) { (action) in
+			}
+			
+			alertController.addAction(OKAction)
+
+			DispatchQueue.main.async(execute: {
+				UIApplication.shared.keyWindow!.rootViewController?.present(alertController, animated: true, completion: nil)
+			})
+		}
 	}
 	
 	private func displayAlertAsLocalNotification(_ title: String, message: String?, userInfo: [AnyHashable: Any]) {

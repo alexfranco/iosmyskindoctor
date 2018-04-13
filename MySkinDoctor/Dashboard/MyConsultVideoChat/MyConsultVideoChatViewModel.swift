@@ -70,13 +70,13 @@ class MyConsultVideoChatViewModel: BaseViewModel {
 	
 	var isVideoOn: Bool = false {
 		didSet {
-			videoIconUpdated!(isVideoEnabled)
+			videoIconUpdated!(isVideoOn)
 		}
 	}
 	
 	var isAudioOn: Bool = false {
 		didSet {
-			audioIconUpdated!(isAudioEnabled)
+			audioIconUpdated!(isAudioOn)
 		}
 	}
 	
@@ -94,13 +94,13 @@ class MyConsultVideoChatViewModel: BaseViewModel {
 	
 	var videoImage: UIImage {
 		get {
-			return (isVideoEnabled ? UIImage(named: "videoChatVideocamOn") : UIImage(named: "videoChatVideocamOff"))!
+			return (isVideoOn ? UIImage(named: "videoChatVideocamOn") : UIImage(named: "videoChatVideocamOff"))!
 		}
 	}
 	
 	var audioImage: UIImage {
 		get {
-			return (isAudioEnabled ? UIImage(named: "videoChatVolumeOn") : UIImage(named: "videoChatVolumeOff"))!
+			return (isAudioOn ? UIImage(named: "videoChatVolumeOn") : UIImage(named: "videoChatVolumeOff"))!
 		}
 	}
 	
@@ -133,29 +133,25 @@ class MyConsultVideoChatViewModel: BaseViewModel {
 	}
 	
 	func isConsultationTime() -> Bool {
-		let now = Date()
-		if let appointmentDate = model.appointmentDate as Date? {
-			return appointmentDate > now && appointmentDate < now.adjust(.minute, offset: 15)
-		}
-		return false
+		return model.isConsultationTime()
 	}
 	
 	func isBeforeConsultation() -> Bool {
-		let now = Date()
-		if let appointmentDate = model.appointmentDate as Date? {
-			return appointmentDate > now
-		}
-		return false
+		return model.isBeforeConsultation()
 	}
 	
 	func enableToggleOptions() {
 		isAudioEnabled = true
 		isVideoEnabled = true
+		isVideoOn = true
+		isAudioOn = true
 	}
 	
 	func disableToggleOptions() {
 		isAudioEnabled = false
 		isVideoEnabled = false
+		isVideoOn = false
+		isAudioOn = false
 	}
 	
 	func disableTimer() {
