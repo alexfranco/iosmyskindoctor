@@ -23,6 +23,8 @@ pod 'Stripe'
 pod 'OpenTok', '~> 2.13'
 pod 'Firebase/Core'
 pod 'Firebase/Messaging'
+pod 'Fabric'
+pod 'Crashlytics'
 
 
 end

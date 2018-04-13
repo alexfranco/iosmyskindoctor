@@ -7,7 +7,10 @@ PODS:
   - AWSS3 (2.4.16):
     - AWSCore (= 2.4.16)
   - BSKeyboardControls (2.2)
+  - Crashlytics (3.10.1):
+    - Fabric (~> 1.7.5)
   - CVCalendar (1.6.1)
+  - Fabric (1.7.5)
   - Firebase/Core (4.8.2):
     - FirebaseAnalytics (= 4.0.9)
     - FirebaseCore (= 4.0.14)
@@ -59,7 +62,9 @@ DEPENDENCIES:
   - AWSCore (~> 2.4.16)
   - AWSS3 (~> 2.4.16)
   - BSKeyboardControls
+  - Crashlytics
   - CVCalendar (~> 1.6)
+  - Fabric
   - Firebase/Core
   - Firebase/Messaging
   - IQKeyboardManagerSwift
@@ -79,7 +84,9 @@ SPEC CHECKSUMS:
   AWSCore: 7c3c129991e6387bcbad7132bc3661e7135754db
   AWSS3: fef6aa8f8f625df8f67f1b6574fe761f3a4ddc99
   BSKeyboardControls: b701935e789961102e3f20063bba7185800a2d3f
+  Crashlytics: aee1a064cbbf99b32efa3f056a5f458d846bc8ff
   CVCalendar: 505c11b11a088b43f159806e791eba1c2540853b
+  Fabric: ae7146a5f505ea370a1e44820b4b1dc8890e2890
   Firebase: 7d3b8cd837ad9fcd391657734c0d56dab8e9a5a3
   FirebaseAnalytics: 388b630c15713f5dbf364071f5f3d6077fb52f4e
   FirebaseCore: 2e0b98fb2d64ca8140136beff15772bdd14d2dd7
@@ -98,6 +105,6 @@ SPEC CHECKSUMS:
   SZTextView: 094dc6acc9beec537685c545d6e3e0d4975174e1
   TextFieldEffects: 4ee41b5216e674d55fb6ac25107bf1af7629176f
 
-PODFILE CHECKSUM: eae65d1a6d03f7148f76eb13c4e2336feb8551bc
+PODFILE CHECKSUM: ad00b513a1b5533dcbfbc8b54bb4b265910b5864
 
 COCOAPODS: 1.4.0
