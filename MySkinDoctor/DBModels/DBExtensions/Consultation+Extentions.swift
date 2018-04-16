@@ -63,7 +63,7 @@ extension Consultation {
 		if let appointmentDateSafe = appointmentDate as Date? {
 			let now = Date()
 			let nowMinusTwoMinutes = now.adjust(.minute, offset: -2)
-			return appointmentDateSafe < nowMinusTwoMinutes
+			return appointmentDateSafe > nowMinusTwoMinutes
 		}
 		
 		return false

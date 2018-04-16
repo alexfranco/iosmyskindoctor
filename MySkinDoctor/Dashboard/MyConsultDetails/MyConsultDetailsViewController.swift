@@ -56,8 +56,8 @@ class MyConsultDetailsViewController: BindingViewController {
 		qualificationsLabel.text = viewModelCast.qualificationsText
 		appointmentDateLabel.text = viewModelCast.appointmentDateText
 		
-		cancelConsultation.isEnabled = viewModelCast.isBeforeConsultation()
-		nextButton.isEnabled = viewModelCast.isConsultationTime()
+		cancelConsultation.isEnabled = viewModelCast.isCancelConsultationButtonEnabled
+		nextButton.isEnabled = viewModelCast.isConsultationTime
 		
 		if let profileImageUrl = URL(string: (self.viewModelCast.profileImageUrl)) {
 			self.profileImageView.sd_setImage(with: profileImageUrl, placeholderImage: UIImage.init(color: AppStyle.profileImageViewPlaceHolder)!, options: .highPriority) { (image, error, type, url) in

@@ -374,7 +374,7 @@ extension ApiUtils {
 						case 403:
 							completionHandler(ApiResult.failure(nil, ApiGenericError.permisionDenied))
 						default:
-							print("error with response status: \(status)")
+							print("status: \(status)")
 							completionHandler(ApiResult.failure(jsonResult, ApiGenericError.defaultStatusError))
 						}
 					}
@@ -396,7 +396,7 @@ extension ApiUtils {
 				if let status = response.response?.statusCode {
 					switch (status) {
 					case 200, 201, ApiUtils.Api.DEFAULT_STATUS_CODE:
-						print("error with response status: \(status)")
+						print("response status: \(status)")
 						if let jsonResult = Mapper<T>().mapArray(JSONObject: jsonCandidate) {
 							completionHandler(ApiArrayResult.success(jsonResult))
 						} else {

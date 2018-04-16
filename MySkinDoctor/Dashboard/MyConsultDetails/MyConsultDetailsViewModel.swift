@@ -14,12 +14,22 @@ class MyConsultDetailsViewModel: BaseViewModel {
 	
 	var model: Consultation!
 	
-	func isConsultationTime() -> Bool {
-		return model.isConsultationTime()
+	var isConsultationTime: Bool {
+		get {
+			return model.isConsultationTime()
+		}
 	}
 	
-	func isBeforeConsultation() -> Bool {
-		return model.isBeforeConsultation()
+	var isBeforeConsultation: Bool {
+		get {
+			return model.isBeforeConsultation()
+		}
+	}
+	
+	var isCancelConsultationButtonEnabled: Bool {
+		get {
+			return isBeforeConsultation
+		}
 	}
 
 	var doctorNameText: String {
